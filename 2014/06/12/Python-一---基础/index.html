@@ -1,0 +1,613 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Python 一 - 基础 | Zoe&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Zoe">
+    
+
+    
+    <meta name="description" content="断断续续的学了几次Python了，所谓不求甚解，语法过了一遍没去用忘了，又过一遍又没去用又忘了。虽然现在用Python的机会不多，还是真心喜欢这门语言。所以还是另起门户，把学习笔记记下来，免得自己捡起来又扔掉了。
+Python是著名的“龟叔”Guido van Russum在1989年圣诞节期间，为了打发无聊的圣诞节而编写的一个编程语言（我的天。。。）。牛逼闪闪的“龟叔”Python提供了非常完善">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python 一 - 基础">
+<meta property="og:url" content="http://seniorzhai.github.io/2014/06/12/Python-一---基础/index.html">
+<meta property="og:site_name" content="Zoe's blog">
+<meta property="og:description" content="断断续续的学了几次Python了，所谓不求甚解，语法过了一遍没去用忘了，又过一遍又没去用又忘了。虽然现在用Python的机会不多，还是真心喜欢这门语言。所以还是另起门户，把学习笔记记下来，免得自己捡起来又扔掉了。
+Python是著名的“龟叔”Guido van Russum在1989年圣诞节期间，为了打发无聊的圣诞节而编写的一个编程语言（我的天。。。）。牛逼闪闪的“龟叔”Python提供了非常完善">
+<meta property="og:image" content="https://github.com/zt1991616/blog/raw/master/Image/14031401.jpg">
+<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python 一 - 基础">
+<meta name="twitter:description" content="断断续续的学了几次Python了，所谓不求甚解，语法过了一遍没去用忘了，又过一遍又没去用又忘了。虽然现在用Python的机会不多，还是真心喜欢这门语言。所以还是另起门户，把学习笔记记下来，免得自己捡起来又扔掉了。
+Python是著名的“龟叔”Guido van Russum在1989年圣诞节期间，为了打发无聊的圣诞节而编写的一个编程语言（我的天。。。）。牛逼闪闪的“龟叔”Python提供了非常完善">
+<meta name="twitter:image" content="https://github.com/zt1991616/blog/raw/master/Image/14031401.jpg">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Zoe&#39;s blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/logo.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/logo.png">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Zoe&#39;s blog" title="Zoe&#39;s blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Zoe&#39;s blog">Zoe&#39;s blog</a></h1>
+				<h2 class="blog-motto">宅学长的博客</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:seniorzhai.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/06/12/Python-一---基础/" title="Python 一 - 基础" itemprop="url">Python 一 - 基础</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
+		
+  <p class="article-time">
+    <time datetime="2014-06-12T03:12:36.000Z" itemprop="datePublished"> 发表于 2014-06-12</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#coding-utf-8"><span class="toc-number">1.</span> <span class="toc-text">-- coding: utf-8 --</span></a></li></ol>
+		
+		</div>
+		
+		<p>断断续续的学了几次Python了，所谓不求甚解，语法过了一遍没去用忘了，又过一遍又没去用又忘了。虽然现在用Python的机会不多，还是真心喜欢这门语言。所以还是另起门户，把学习笔记记下来，免得自己捡起来又扔掉了。</p>
+<p>Python是著名的“龟叔”Guido van Russum在1989年圣诞节期间，为了打发无聊的圣诞节而编写的一个编程语言（我的天。。。）。<br>牛逼闪闪的“龟叔”<br><img src="https://github.com/zt1991616/blog/raw/master/Image/14031401.jpg" alt=""><br>Python提供了非常完善的基础代码库，覆盖了网络、文件、GUI、数据库、文本等大量内容，还有大量的第三方库。</p>
+<p>Python的定位是<code>优雅</code>、<code>明确</code>、<code>简单</code>，Python是不能加密的，发布Python程序就相当于发布了源代码（到处都能看源代码，想想都有点小激动呢）。</p>
+<p>##安装Python</p>
+<p>###Mac<br>Python是Mac上的一等公民，天生自带。</p>
+<p>###Windows</p>
+<p>1.从<a href="www.python.org">Python官网</a>在下2.7.X版本<br>2.运行<code>.MSI</code>安装包，一路<code>Nest</code>即可<br>3.添加环境变量，即把Python的安装路径添加到系统环境变量<code>path</code>中去</p>
+<p>###Linux</p>
+<p>没实践过不表，相信google、百度一大把</p>
+<p>##First Blood</p>
+<p>国际惯例，我们编写一个<code>Hello,World</code></p>
+<p>在命令行里计入Python交互环境（Python，回车）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; print &quot;Hello,world&quot;</div><div class="line">Hello,world</div></pre></td></tr></table></figure></p>
+<p>完成。</p>
+<p>##输入与输出</p>
+<p>###输出<br>用<code>print</code>加上字符串，就可以向屏幕上输出指定的文字。比如输出<code>&#39;hello, world&#39;</code>，用代码实现如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; print &apos;hello, world&apos;</div></pre></td></tr></table></figure></p>
+<p>print语句也可以跟上多个字符串，用逗号“,”隔开，就可以连成一串输出：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; print &apos;The quick brown fox&apos;, &apos;jumps over&apos;, &apos;the lazy dog&apos;</div><div class="line">The quick brown fox jumps over the lazy dog</div></pre></td></tr></table></figure></p>
+<p>###输入<br>Python提供了一个raw_input，可以让用户输入字符串，并存放到一个变量里。比如输入用户的名字：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; name = raw_input()</div><div class="line">zoe</div><div class="line">&gt;&gt;&gt; name</div><div class="line">&apos;zoe&apos;</div></pre></td></tr></table></figure></p>
+<p>当你输入<code>name = raw_input()</code>并按下回车后，Python交互式命令行就在等待你的输入了。这时，你可以输入任意字符，然后按回车后完成输入。<br>我们在文本编辑器中编写一个完整版的试试：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/env python</div><div class="line"></div><div class="line">name = raw_input(&apos;please enter your name:&apos;)</div><div class="line">print &apos;hello,&apos;,name</div></pre></td></tr></table></figure></p>
+<p>在终端运行，切换到文件的目录(注意权限，可能需要<code>chmod a+x</code>)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">./hello.py</div><div class="line">please enter your name:zoe</div><div class="line">hello, zoe</div></pre></td></tr></table></figure></p>
+<p>##Python基础</p>
+<p>Python以<code>#</code>开头的语句是注解，注解是给人看的，所以解释器会忽略掉注释。其他没一行都是一个语句，当语句以冒号<code>&quot;:&quot;</code>结尾时，所接的语句视为代码块。<br>还有一点值得注意，Python是<code>大小写敏感</code>的，大小写区分，如果写错了大小写，程序会报错</p>
+<p>###数据类型</p>
+<p>####整数<br>Python可以处理任意大小的整数，包括负整数，如：<code>1</code>,<code>1000</code>,<code>-1000</code>,<code>0</code>等，十六进度也使用<code>0x</code>前缀和<code>0-9</code>、<code>a-f</code>表示，如：<code>0xffff</code>,<code>0xabcd1234</code>等</p>
+<p>####浮点数<br>数学写法，如<code>1.23</code>、<code>-4.5</code>、<code>3.1415926</code>，科学计数法，把10用e表示，即<code>1.23e9</code>或<code>13.54e-6</code>。</p>
+<p>####字符串<br>字符串是以’’或””括起来的任意文本，比如”abc”,’123xyz’.Python也有转义字符，如<code>\n</code>、<code>\t</code>、<code>\&#39;</code>等等。<br>Python 还允许用<code>r&#39;&#39;</code>表示’’内的字符串默认不转义：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; print &apos;\\\t\\&apos;</div><div class="line">\	\</div><div class="line">&gt;&gt;&gt; print r&apos;\\\t\\&apos;</div><div class="line">\\\t\\</div></pre></td></tr></table></figure></p>
+<p>Python允许使用<code>&#39;&#39;&#39;...&#39;&#39;&#39;</code>表示多行内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; print &apos;&apos;&apos;line1</div><div class="line">... line2</div><div class="line">... line3</div><div class="line">... line4&apos;&apos;&apos;</div><div class="line">line1</div><div class="line">line2</div><div class="line">line3</div><div class="line">line4</div></pre></td></tr></table></figure></p>
+<p>####布尔值</p>
+<p>布尔只存在<code>True</code>、<code>False</code>两种值（注意大小写）<br>通过布尔运算：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; 3 &gt; 3</div><div class="line">False</div><div class="line">&gt;&gt;&gt; 3 &gt;= 3</div><div class="line">True</div><div class="line">&gt;&gt;&gt; 3 &gt; 2</div><div class="line">True</div></pre></td></tr></table></figure></p>
+<p>布尔值可以用and、or和not运算。</p>
+<p>and运算是<code>与运算</code>，只有所有都为True，and运算结果才是True;<br>or运算是或运算，只要其中有一个为True，or运算结果就是True;<br>not运算是非运算，它是一个单目运算符，把True变成False，False变成True;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; True and True</div><div class="line">True</div><div class="line">&gt;&gt;&gt; True and False</div><div class="line">False</div><div class="line">&gt;&gt;&gt; False and False</div><div class="line">False</div><div class="line">&gt;&gt;&gt; True or True</div><div class="line">True</div><div class="line">&gt;&gt;&gt; True or False</div><div class="line">True</div><div class="line">&gt;&gt;&gt; False or False</div><div class="line">False</div><div class="line">&gt;&gt;&gt; not True</div><div class="line">False</div><div class="line">&gt;&gt;&gt; not False</div><div class="line">True</div></pre></td></tr></table></figure></p>
+<p>####空值</p>
+<p>空值在Python里用<code>None</code>表示</p>
+<p>###变量</p>
+<p>Python里的变量貌似缺少定义的过程，而且不限制数据类型，可以是任意的数据类型，命名方式与C相同：必须是大小写英文、数字和_的组合，且不能用数字开头<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; a = 2</div><div class="line">&gt;&gt;&gt; b = 5</div><div class="line">&gt;&gt;&gt; c = a</div><div class="line">&gt;&gt;&gt; a = b</div><div class="line">&gt;&gt;&gt; b = c</div><div class="line">&gt;&gt;&gt; print a,b,c</div><div class="line">5 2 2</div><div class="line">``</div><div class="line"></div><div class="line">###常量</div><div class="line"></div><div class="line">常量即不可变的量，但是Python根本没有任何机制保证常量不可变，通常使用全部大写的变量名，表示常量，而不去改变它。</div><div class="line"></div><div class="line">###Python数据之我见</div><div class="line"></div><div class="line">Python其实是把任何数据都当作对象，变量只是指向这些数据对象</div><div class="line"></div><div class="line">###字符编码</div><div class="line"></div><div class="line">####字符编码</div><div class="line"></div><div class="line">字符串也是一种数据类型，但是，字符串比较特殊的是还有一个编码问题。</div><div class="line"></div><div class="line">因为计算机只能处理数字，如果要处理文本，就必须先把文本转换为数字才能处理。最早的计算机在设计时采用8个比特（bit）作为一个字节（byte），所以，一个字节能表示的最大的整数就是255（二进制11111111=十进制255），如果要表示更大的整数，就必须用更多的字节。比如两个字节可以表示的最大整数是65535，4个字节可以表示的最大整数是4294967295。</div><div class="line"></div><div class="line">由于计算机是美国人发明的，因此，最早只有127个字母被编码到计算机里，也就是大小写英文字母、数字和一些符号，这个编码表被称为ASCII编码，比如大写字母A的编码是65，小写字母z的编码是122。</div><div class="line"></div><div class="line">但是要处理中文显然一个字节是不够的，至少需要两个字节，而且还不能和ASCII编码冲突，所以，中国制定了GB2312编码，用来把中文编进去。</div><div class="line"></div><div class="line">你可以想得到的是，全世界有上百种语言，日本把日文编到Shift_JIS里，韩国把韩文编到Euc-kr里，各国有各国的标准，就会不可避免地出现冲突，结果就是，在多语言混合的文本中，显示出来会有乱码。</div><div class="line">因此，Unicode应运而生。Unicode把所有语言都统一到一套编码里，这样就不会再有乱码问题了。</div><div class="line"></div><div class="line">Unicode标准也在不断发展，但最常用的是用两个字节表示一个字符（如果要用到非常偏僻的字符，就需要4个字节）。现代操作系统和大多数编程语言都直接支持Unicode。</div><div class="line"></div><div class="line">现在，捋一捋ASCII编码和Unicode编码的区别：ASCII编码是1个字节，而Unicode编码通常是2个字节。</div><div class="line"></div><div class="line">字母A用ASCII编码是十进制的65，二进制的01000001；</div><div class="line"></div><div class="line">字母0用ASCII编码是十进制的48，二进制的00110000，注意字母&apos;0&apos;和整数0是不同的；</div><div class="line"></div><div class="line">汉字中已经超出了ASCII编码的范围，用Unicode编码是十进制的20013，二进制的01001110 00101101。</div><div class="line"></div><div class="line">你可以猜测，如果把ASCII编码的A用Unicode编码，只需要在前面补0就可以，因此，A的Unicode编码是00000000 01000001。</div><div class="line"></div><div class="line">新的问题又出现了：如果统一成Unicode编码，乱码问题从此消失了。但是，如果你写的文本基本上全部是英文的话，用Unicode编码比ASCII编码需要多一倍的存储空间，在存储和传输上就十分不划算。</div><div class="line"></div><div class="line">所以，本着节约的精神，又出现了把Unicode编码转化为“可变长编码”的UTF-8编码。UTF-8编码把一个Unicode字符根据不同的数字大小编码成1-6个字节，常用的英文字母被编码成1个字节，汉字通常是3个字节，只有很生僻的字符才会被编码成4-6个字节。如果你要传输的文本包含大量英文字符，用UTF-8编码就能节省空间：</div><div class="line"></div><div class="line">|**字符**|**ASCII**|**Unicode**|**UTF-8**|</div><div class="line">|---|---|---|---|</div><div class="line">|A|01000001|00000000 01000001|01000001</div><div class="line">|中|x|01001110|00101101	11100100|10111000 10101101|</div><div class="line">从上面的表格还可以发现，UTF-8编码有一个额外的好处，就是ASCII编码实际上可以被看成是UTF-8编码的一部分，所以，大量只支持ASCII编码的历史遗留软件可以在UTF-8编码下继续工作。</div><div class="line">用记事本编辑的时候，从文件读取的UTF-8字符被转换为Unicode字符到内存里，编辑完成后，保存的时候再把Unicode转换为UTF-8保存到文件：</div><div class="line">![](https://github.com/zt1991616/blog/raw/master/Image/14031402.png)</div><div class="line">浏览网页的时候，服务器会把动态生成的Unicode内容转换为UTF-8再传输到浏览器：</div><div class="line">![](https://github.com/zt1991616/blog/raw/master/Image/14031403.png)</div><div class="line"></div><div class="line">####Python的字符串</div><div class="line"></div><div class="line">Python提供了ord()和chr()函数，可以把字母和对应的数字相互转换：</div></pre></td></tr></table></figure></p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>ord(‘A’)<br>65<br>chr(65)<br>‘A’<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Python在后来添加了对Unicode的支持，以Unicode表示的字符串用u&apos;...&apos;表示，比如：</div></pre></td></tr></table></figure></p>
+<p>print u’中文’<br>中文<br>u’中’<br>u’\u4e2d’<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">把u&apos;xxx&apos;转换为UTF-8编码的&apos;xxx&apos;用encode(&apos;utf-8&apos;)方法：</div></pre></td></tr></table></figure></p>
+<p>u’ABC’.encode(‘utf-8’)<br>‘ABC’<br>u’中文’.encode(‘utf-8’)<br>‘\xe4\xb8\xad\xe6\x96\x87’<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">len()函数可以返回字符串的长度：</div></pre></td></tr></table></figure></p>
+<p>len(u’ABC’)<br>3<br>len(‘ABC’)<br>3<br>len(u’中文’)<br>2<br>len(‘\xe4\xb8\xad\xe6\x96\x87’)<br>6<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">反过来，把UTF-8编码表示的字符串&apos;xxx&apos;转换为Unicode字符串u&apos;xxx&apos;用decode(&apos;utf-8&apos;)方法：</div></pre></td></tr></table></figure></p>
+<p>‘abc’.decode(‘utf-8’)<br>u’abc’<br>‘\xe4\xb8\xad\xe6\x96\x87’.decode(‘utf-8’)<br>u’\u4e2d\u6587’<br>print ‘\xe4\xb8\xad\xe6\x96\x87’.decode(‘utf-8’)<br>中文<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">由于Python源代码也是一个文本文件，所以，当你的源代码中包含中文的时候，在保存源代码时，就需要务必指定保存为UTF-8编码。当Python解释器读取源代码时，为了让它按UTF-8编码读取，我们通常在文件开头写上这两行：</div></pre></td></tr></table></figure></p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>#!/usr/bin/env python</p>
+<h1 id="coding-utf-8"><a href="#coding-utf-8" class="headerlink" title="-- coding: utf-8 --"></a>-<em>- coding: utf-8 -</em>-</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">第一行注释是为了告诉Linux/OS X系统，这是一个Python可执行程序，Windows系统会忽略这个注释；</div><div class="line"></div><div class="line">第二行注释是为了告诉Python解释器，按照UTF-8编码读取源代码，否则，你在源代码中写的中文输出可能会有乱码。</div><div class="line"></div><div class="line">####格式化</div><div class="line"></div><div class="line">格式化方式与C语言抑制，用`%`实现</div><div class="line">例如：</div></pre></td></tr></table></figure>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>‘Hello, %s’ % ‘world’<br>‘Hello, world’<br>‘Hi, %s, you have $%d.’ % (‘Zoe’, 1000000)<br>‘Hi, Zoe, you have $1000000.’<br>```<br>|%d|整数|<br>|—|—|<br>|%f|浮点数|<br>|%s|字符串|<br>|%x|十六进制数|</p>
+</blockquote>
+</blockquote>
+</blockquote>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Python/">Python</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Python/">Python</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://seniorzhai.github.io/2014/06/12/Python-一---基础/" data-title="Python 一 - 基础 | Zoe&#39;s blog" data-tsina="seniorszhai" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2014/06/12/Python-二---集合/" title="Python 二 - 集合">
+  <strong>上一篇：</strong><br/>
+  <span>
+  Python 二 - 集合</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2014/06/12/Google-全球IP地址库/"  title="Google 全球IP地址库">
+ <strong>下一篇：</strong><br/> 
+ <span>Google 全球IP地址库
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2014/06/12/Python-一---基础/" data-title="Python 一 - 基础" data-url="http://seniorzhai.github.io/2014/06/12/Python-一---基础/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#coding-utf-8"><span class="toc-number">1.</span> <span class="toc-text">-- coding: utf-8 --</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/Android/" title="Android">Android<sup>185</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Camera/" title="Camera">Camera<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Cocos2d-X/" title="Cocos2d-X">Cocos2d-X<sup>11</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Prose/" title="Prose">Prose<sup>27</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Python/" title="Python">Python<sup>22</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/ReactNative/" title="ReactNative">ReactNative<sup>7</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/iOS/" title="iOS">iOS<sup>79</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/node-js/" title="node.js">node.js<sup>30</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/杂文/" title="杂文">杂文<sup>3</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+  <div class="tagcloudlist">
+    <p class="asidetitle">标签云</p>
+    <div class="tagcloudlist clearfix">
+       <a href="/tags/AFNetworking/" style="font-size: 10px;">AFNetworking</a> <a href="/tags/APK/" style="font-size: 10px;">APK</a> <a href="/tags/AS/" style="font-size: 10px;">AS</a> <a href="/tags/Adapter/" style="font-size: 10px;">Adapter</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Android-5-0/" style="font-size: 10px;">Android 5.0</a> <a href="/tags/Android-Studio/" style="font-size: 11.67px;">Android Studio</a> <a href="/tags/AndroidAninotations/" style="font-size: 10px;">AndroidAninotations</a> <a href="/tags/AndroidStudio/" style="font-size: 15.83px;">AndroidStudio</a> <a href="/tags/Animation/" style="font-size: 12.5px;">Animation</a> <a href="/tags/Api/" style="font-size: 11.67px;">Api</a> <a href="/tags/App/" style="font-size: 10px;">App</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Async/" style="font-size: 10px;">Async</a> <a href="/tags/Atom/" style="font-size: 10.83px;">Atom</a> <a href="/tags/AutoLayout/" style="font-size: 10px;">AutoLayout</a> <a href="/tags/BaseAdapter/" style="font-size: 10px;">BaseAdapter</a> <a href="/tags/Blur/" style="font-size: 10px;">Blur</a> <a href="/tags/Box2D/" style="font-size: 10px;">Box2D</a> <a href="/tags/Broadcast/" style="font-size: 10px;">Broadcast</a> <a href="/tags/CardView/" style="font-size: 10px;">CardView</a> <a href="/tags/CocoaPods/" style="font-size: 10px;">CocoaPods</a> <a href="/tags/Cocos2d-X/" style="font-size: 13.33px;">Cocos2d-X</a> <a href="/tags/CocosPods/" style="font-size: 10px;">CocosPods</a> <a href="/tags/ContentProvider/" style="font-size: 10px;">ContentProvider</a> <a href="/tags/Context/" style="font-size: 10px;">Context</a> <a href="/tags/Crouton/" style="font-size: 10px;">Crouton</a> <a href="/tags/CursorLoader/" style="font-size: 10px;">CursorLoader</a> <a href="/tags/Demo/" style="font-size: 10.83px;">Demo</a> <a href="/tags/Dialog/" style="font-size: 10px;">Dialog</a> <a href="/tags/EditView/" style="font-size: 10px;">EditView</a> <a href="/tags/EventBus/" style="font-size: 10px;">EventBus</a> <a href="/tags/Express/" style="font-size: 10px;">Express</a> <a href="/tags/Express学习笔记/" style="font-size: 10px;">Express学习笔记</a> <a href="/tags/Flex/" style="font-size: 10px;">Flex</a> <a href="/tags/Fragment/" style="font-size: 10.83px;">Fragment</a> <a href="/tags/GET/" style="font-size: 10px;">GET</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Gradle/" style="font-size: 10.83px;">Gradle</a> <a href="/tags/GridLayout/" style="font-size: 10px;">GridLayout</a> <a href="/tags/GridView/" style="font-size: 10.83px;">GridView</a> <a href="/tags/Gson/" style="font-size: 10px;">Gson</a> <a href="/tags/HTTP/" style="font-size: 10.83px;">HTTP</a> <a href="/tags/Handler/" style="font-size: 10px;">Handler</a> <a href="/tags/HeadersList/" style="font-size: 10px;">HeadersList</a> <a href="/tags/Hello-World/" style="font-size: 10px;">Hello World</a> <a href="/tags/Holo/" style="font-size: 10px;">Holo</a> <a href="/tags/IDE/" style="font-size: 10px;">IDE</a> <a href="/tags/IM/" style="font-size: 10.83px;">IM</a> <a href="/tags/Indicator/" style="font-size: 10px;">Indicator</a> <a href="/tags/IntentService/" style="font-size: 10px;">IntentService</a> <a href="/tags/JCenter/" style="font-size: 10px;">JCenter</a> <a href="/tags/JSON解析/" style="font-size: 10px;">JSON解析</a> <a href="/tags/Java/" style="font-size: 16.67px;">Java</a> <a href="/tags/Json/" style="font-size: 10.83px;">Json</a> <a href="/tags/KVO/" style="font-size: 10.83px;">KVO</a> <a href="/tags/Kotlin/" style="font-size: 10px;">Kotlin</a> <a href="/tags/Layout/" style="font-size: 10px;">Layout</a> <a href="/tags/Lint/" style="font-size: 10px;">Lint</a> <a href="/tags/ListView/" style="font-size: 10.83px;">ListView</a> <a href="/tags/Log/" style="font-size: 10px;">Log</a> <a href="/tags/MVVM/" style="font-size: 10.83px;">MVVM</a> <a href="/tags/Mac/" style="font-size: 10.83px;">Mac</a> <a href="/tags/Markdown/" style="font-size: 10.83px;">Markdown</a> <a href="/tags/Masonry/" style="font-size: 10px;">Masonry</a> <a href="/tags/Material/" style="font-size: 10.83px;">Material</a> <a href="/tags/Material-Design/" style="font-size: 10px;">Material Design</a> <a href="/tags/MaterialDesign/" style="font-size: 10px;">MaterialDesign</a> <a href="/tags/Meterial/" style="font-size: 10.83px;">Meterial</a> <a href="/tags/Meterial-Design/" style="font-size: 10px;">Meterial Design</a> <a href="/tags/Model/" style="font-size: 10px;">Model</a> <a href="/tags/MongoDB/" style="font-size: 10.83px;">MongoDB</a> <a href="/tags/Mongoose/" style="font-size: 10px;">Mongoose</a> <a href="/tags/NavBar/" style="font-size: 10px;">NavBar</a> <a href="/tags/Navigator/" style="font-size: 10px;">Navigator</a> <a href="/tags/NavtigationBar/" style="font-size: 10px;">NavtigationBar</a> <a href="/tags/NoSQL/" style="font-size: 10px;">NoSQL</a> <a href="/tags/OSX/" style="font-size: 10px;">OSX</a> <a href="/tags/Objective-C/" style="font-size: 17.5px;">Objective-C</a> <a href="/tags/POST/" style="font-size: 10px;">POST</a> <a href="/tags/PagerAdapter/" style="font-size: 10px;">PagerAdapter</a> <a href="/tags/PagerTranformer/" style="font-size: 10px;">PagerTranformer</a> <a href="/tags/Paint/" style="font-size: 10px;">Paint</a> <a href="/tags/Parcelable/" style="font-size: 10px;">Parcelable</a> <a href="/tags/PerferenceScreencreen/" style="font-size: 10px;">PerferenceScreencreen</a> <a href="/tags/Post/" style="font-size: 10px;">Post</a> <a href="/tags/ProGuard/" style="font-size: 10px;">ProGuard</a> <a href="/tags/Prose/" style="font-size: 12.5px;">Prose</a> <a href="/tags/Python/" style="font-size: 18.33px;">Python</a> <a href="/tags/REST/" style="font-size: 10.83px;">REST</a> <a href="/tags/Random/" style="font-size: 10px;">Random</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/ReactNative/" style="font-size: 10px;">ReactNative</a> <a href="/tags/RecyclerView/" style="font-size: 10.83px;">RecyclerView</a> <a href="/tags/SDK/" style="font-size: 11.67px;">SDK</a> <a href="/tags/SD卡/" style="font-size: 10px;">SD卡</a> <a href="/tags/SE5/" style="font-size: 10px;">SE5</a> <a href="/tags/SE6/" style="font-size: 10px;">SE6</a> <a href="/tags/SaveInstance/" style="font-size: 10px;">SaveInstance</a> <a href="/tags/Serializable/" style="font-size: 10px;">Serializable</a> <a href="/tags/SharedPreferce/" style="font-size: 10px;">SharedPreferce</a> <a href="/tags/SizeClass/" style="font-size: 10px;">SizeClass</a> <a href="/tags/Spider/" style="font-size: 10px;">Spider</a> <a href="/tags/Sprite/" style="font-size: 10.83px;">Sprite</a> <a href="/tags/Style/" style="font-size: 10px;">Style</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Sublime-Text/" style="font-size: 10px;">Sublime Text</a> <a href="/tags/SublimeText/" style="font-size: 10px;">SublimeText</a> <a href="/tags/Swift/" style="font-size: 17.5px;">Swift</a> <a href="/tags/TextView/" style="font-size: 10.83px;">TextView</a> <a href="/tags/Thread/" style="font-size: 10px;">Thread</a> <a href="/tags/Tips/" style="font-size: 10px;">Tips</a> <a href="/tags/ToolBar/" style="font-size: 10px;">ToolBar</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/UIActionSheet/" style="font-size: 10px;">UIActionSheet.</a> <a href="/tags/UIAlertView/" style="font-size: 10px;">UIAlertView</a> <a href="/tags/UIImageView/" style="font-size: 10px;">UIImageView</a> <a href="/tags/UIL/" style="font-size: 10px;">UIL</a> <a href="/tags/UIScrollView/" style="font-size: 10px;">UIScrollView</a> <a href="/tags/Ui/" style="font-size: 10px;">Ui</a> <a href="/tags/View/" style="font-size: 10px;">View</a> <a href="/tags/Volley/" style="font-size: 10px;">Volley</a> <a href="/tags/WebStorm/" style="font-size: 10px;">WebStorm</a> <a href="/tags/WebStrom/" style="font-size: 10px;">WebStrom</a> <a href="/tags/XCode/" style="font-size: 10px;">XCode</a> <a href="/tags/adb/" style="font-size: 10px;">adb</a> <a href="/tags/app/" style="font-size: 10.83px;">app</a> <a href="/tags/async/" style="font-size: 10px;">async</a> <a href="/tags/blur/" style="font-size: 10px;">blur</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/console/" style="font-size: 10px;">console</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/curl/" style="font-size: 10px;">curl</a> <a href="/tags/eclipse/" style="font-size: 10px;">eclipse</a> <a href="/tags/emoji/" style="font-size: 10px;">emoji</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/fallthrough/" style="font-size: 10px;">fallthrough</a> <a href="/tags/findViewById/" style="font-size: 10px;">findViewById</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/gradlew/" style="font-size: 10px;">gradlew</a> <a href="/tags/gravity/" style="font-size: 10px;">gravity</a> <a href="/tags/host/" style="font-size: 10px;">host</a> <a href="/tags/http/" style="font-size: 10.83px;">http</a> <a href="/tags/iOS/" style="font-size: 19.17px;">iOS</a> <a href="/tags/iPhone/" style="font-size: 10px;">iPhone</a> <a href="/tags/icon/" style="font-size: 10px;">icon</a> <a href="/tags/include/" style="font-size: 10px;">include</a> <a href="/tags/jQerry/" style="font-size: 11.67px;">jQerry</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/js/" style="font-size: 14.17px;">js</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/keymap/" style="font-size: 10px;">keymap</a> <a href="/tags/lambda/" style="font-size: 10px;">lambda</a> <a href="/tags/layout/" style="font-size: 11.67px;">layout</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/measure/" style="font-size: 10px;">measure</a> <a href="/tags/merge/" style="font-size: 10px;">merge</a> <a href="/tags/meteor/" style="font-size: 10.83px;">meteor</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/mongo/" style="font-size: 10px;">mongo</a> <a href="/tags/ndk/" style="font-size: 11.67px;">ndk</a> <a href="/tags/nil/" style="font-size: 10px;">nil</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/package/" style="font-size: 10px;">package</a> <a href="/tags/px/" style="font-size: 10px;">px</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/ripple/" style="font-size: 10px;">ripple</a> <a href="/tags/selector/" style="font-size: 10px;">selector</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/shape/" style="font-size: 10px;">shape</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/so/" style="font-size: 10px;">so</a> <a href="/tags/sp/" style="font-size: 10px;">sp</a> <a href="/tags/sqlite/" style="font-size: 10px;">sqlite</a> <a href="/tags/style/" style="font-size: 10px;">style</a> <a href="/tags/supervisor/" style="font-size: 10px;">supervisor</a> <a href="/tags/support/" style="font-size: 10px;">support</a> <a href="/tags/swfit/" style="font-size: 10px;">swfit</a> <a href="/tags/swift/" style="font-size: 10px;">swift</a> <a href="/tags/switch/" style="font-size: 10px;">switch</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web-app/" style="font-size: 10px;">web app</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/wifi/" style="font-size: 10px;">wifi</a> <a href="/tags/yield/" style="font-size: 10px;">yield</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/依赖管理/" style="font-size: 10px;">依赖管理</a> <a href="/tags/保存数据/" style="font-size: 10px;">保存数据</a> <a href="/tags/倒计时/" style="font-size: 10px;">倒计时</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/分支/" style="font-size: 10.83px;">分支</a> <a href="/tags/分辨率/" style="font-size: 10.83px;">分辨率</a> <a href="/tags/分配率/" style="font-size: 10px;">分配率</a> <a href="/tags/切换/" style="font-size: 10px;">切换</a> <a href="/tags/初始化/" style="font-size: 10px;">初始化</a> <a href="/tags/前端/" style="font-size: 11.67px;">前端</a> <a href="/tags/加密/" style="font-size: 10px;">加密</a> <a href="/tags/动态交互/" style="font-size: 10px;">动态交互</a> <a href="/tags/动态注入/" style="font-size: 10px;">动态注入</a> <a href="/tags/动画/" style="font-size: 13.33px;">动画</a> <a href="/tags/包/" style="font-size: 10px;">包</a> <a href="/tags/反编译/" style="font-size: 10.83px;">反编译</a> <a href="/tags/取色/" style="font-size: 10px;">取色</a> <a href="/tags/图片加载/" style="font-size: 10px;">图片加载</a> <a href="/tags/坐标系/" style="font-size: 10px;">坐标系</a> <a href="/tags/基础/" style="font-size: 11.67px;">基础</a> <a href="/tags/复用/" style="font-size: 10px;">复用</a> <a href="/tags/多分辨率/" style="font-size: 10px;">多分辨率</a> <a href="/tags/多屏幕/" style="font-size: 10px;">多屏幕</a> <a href="/tags/大不同/" style="font-size: 16.67px;">大不同</a> <a href="/tags/妈妈再也不用担心系列/" style="font-size: 10px;">妈妈再也不用担心系列</a> <a href="/tags/定位代码/" style="font-size: 10px;">定位代码</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/对象/" style="font-size: 10px;">对象</a> <a href="/tags/导航/" style="font-size: 10px;">导航</a> <a href="/tags/属性/" style="font-size: 10.83px;">属性</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/工具类/" style="font-size: 11.67px;">工具类</a> <a href="/tags/布局/" style="font-size: 10.83px;">布局</a> <a href="/tags/带标题的ListView/" style="font-size: 10px;">带标题的ListView</a> <a href="/tags/常用/" style="font-size: 10.83px;">常用</a> <a href="/tags/序列化/" style="font-size: 10px;">序列化</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/开源/" style="font-size: 10px;">开源</a> <a href="/tags/开源库/" style="font-size: 10px;">开源库</a> <a href="/tags/异步/" style="font-size: 10.83px;">异步</a> <a href="/tags/异步加载/" style="font-size: 10px;">异步加载</a> <a href="/tags/引导/" style="font-size: 10px;">引导</a> <a href="/tags/引用/" style="font-size: 10px;">引用</a> <a href="/tags/录屏/" style="font-size: 10px;">录屏</a> <a href="/tags/快捷键/" style="font-size: 10px;">快捷键</a> <a href="/tags/持久化/" style="font-size: 10px;">持久化</a> <a href="/tags/按钮/" style="font-size: 10px;">按钮</a> <a href="/tags/提示/" style="font-size: 10.83px;">提示</a> <a href="/tags/插件/" style="font-size: 11.67px;">插件</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/数学，宏/" style="font-size: 10px;">数学，宏</a> <a href="/tags/数据库/" style="font-size: 11.67px;">数据库</a> <a href="/tags/数据绑定/" style="font-size: 10.83px;">数据绑定</a> <a href="/tags/文本大小/" style="font-size: 10px;">文本大小</a> <a href="/tags/杂文/" style="font-size: 10.83px;">杂文</a> <a href="/tags/权限/" style="font-size: 10px;">权限</a> <a href="/tags/样式/" style="font-size: 10px;">样式</a> <a href="/tags/模块/" style="font-size: 10.83px;">模块</a> <a href="/tags/模拟/" style="font-size: 10px;">模拟</a> <a href="/tags/模糊/" style="font-size: 10.83px;">模糊</a> <a href="/tags/毛玻璃/" style="font-size: 10px;">毛玻璃</a> <a href="/tags/波纹/" style="font-size: 10px;">波纹</a> <a href="/tags/注入/" style="font-size: 10.83px;">注入</a> <a href="/tags/注解/" style="font-size: 10px;">注解</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/混淆/" style="font-size: 10px;">混淆</a> <a href="/tags/热启动/" style="font-size: 10px;">热启动</a> <a href="/tags/爬虫/" style="font-size: 10.83px;">爬虫</a> <a href="/tags/物理引擎/" style="font-size: 10px;">物理引擎</a> <a href="/tags/环信/" style="font-size: 10.83px;">环信</a> <a href="/tags/生命周期/" style="font-size: 11.67px;">生命周期</a> <a href="/tags/用时/" style="font-size: 10px;">用时</a> <a href="/tags/界面/" style="font-size: 10px;">界面</a> <a href="/tags/硬盘缓存/" style="font-size: 10px;">硬盘缓存</a> <a href="/tags/第一个项目/" style="font-size: 10px;">第一个项目</a> <a href="/tags/精灵/" style="font-size: 10px;">精灵</a> <a href="/tags/精灵帧/" style="font-size: 10px;">精灵帧</a> <a href="/tags/约束/" style="font-size: 10px;">约束</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/绘制/" style="font-size: 10px;">绘制</a> <a href="/tags/继承/" style="font-size: 10px;">继承</a> <a href="/tags/缓存/" style="font-size: 10px;">缓存</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a> <a href="/tags/网络请求/" style="font-size: 10.83px;">网络请求</a> <a href="/tags/翻墙/" style="font-size: 10.83px;">翻墙</a> <a href="/tags/自动布局/" style="font-size: 10px;">自动布局</a> <a href="/tags/自定义/" style="font-size: 10.83px;">自定义</a> <a href="/tags/自定义控件/" style="font-size: 10px;">自定义控件</a> <a href="/tags/自适应/" style="font-size: 10px;">自适应</a> <a href="/tags/虚拟键/" style="font-size: 10px;">虚拟键</a> <a href="/tags/角标/" style="font-size: 10px;">角标</a> <a href="/tags/设计/" style="font-size: 10px;">设计</a> <a href="/tags/设计缺陷/" style="font-size: 10px;">设计缺陷</a> <a href="/tags/访问/" style="font-size: 10px;">访问</a> <a href="/tags/调试/" style="font-size: 10.83px;">调试</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/资源文件/" style="font-size: 10px;">资源文件</a> <a href="/tags/路由/" style="font-size: 10px;">路由</a> <a href="/tags/转义/" style="font-size: 10px;">转义</a> <a href="/tags/轻量级/" style="font-size: 10px;">轻量级</a> <a href="/tags/连接/" style="font-size: 10px;">连接</a> <a href="/tags/适配/" style="font-size: 10.83px;">适配</a> <a href="/tags/遍历/" style="font-size: 10px;">遍历</a> <a href="/tags/配置/" style="font-size: 10px;">配置</a> <a href="/tags/镜像/" style="font-size: 10px;">镜像</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/随机/" style="font-size: 10px;">随机</a> <a href="/tags/隐藏/" style="font-size: 10px;">隐藏</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a> <a href="/tags/颜色/" style="font-size: 10.83px;">颜色</a> <a href="/tags/颜色选择器/" style="font-size: 10px;">颜色选择器</a> <a href="/tags/魅族/" style="font-size: 10px;">魅族</a> <a href="/tags/！/" style="font-size: 10px;">！</a> <a href="/tags/？/" style="font-size: 10px;">？</a>
+    </div>
+  </div>
+
+
+  
+  <div class="archiveslist">
+    <p class="asidetitle"><a href="/archives">归档</a></p>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">二月 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">九月 2014</a><span class="archive-list-count">36</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">八月 2014</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">七月 2014</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">五月 2014</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">四月 2014</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">三月 2014</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">二月 2014</a><span class="archive-list-count">24</span></li></ul>
+  </div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://daimajia.com/" target="_blank" title="DaiMaJia.Blog">DaiMaJia.Blog</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://macrotea.com/welcome/" target="_blank" title="Macrotea.Blog">Macrotea.Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello,I&#39;m Zoe,a Android and iOS developers. <br/>
+			This is my blog,I hope you will enjoy them.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2292032577" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/seniorzhai" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:developer.zhaitao@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="Zoe">Zoe</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"zt1991616"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-54646832-1', 'null');  
+ga('send', 'pageview');
+</script>
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>

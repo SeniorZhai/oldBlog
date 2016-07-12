@@ -1,0 +1,1191 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Zoe&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Zoe">
+    
+
+    
+    <meta name="description" content="专注于移动平台">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Zoe's blog">
+<meta property="og:url" content="http://seniorzhai.github.io/page/19/index.html">
+<meta property="og:site_name" content="Zoe's blog">
+<meta property="og:description" content="专注于移动平台">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Zoe's blog">
+<meta name="twitter:description" content="专注于移动平台">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Zoe&#39;s blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/logo.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/logo.png">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Zoe&#39;s blog" title="Zoe&#39;s blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Zoe&#39;s blog">Zoe&#39;s blog</a></h1>
+				<h2 class="blog-motto">宅学长的博客</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:seniorzhai.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main">
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/10/14/UIL图片异步加载库的使用/" title="UIL图片异步加载库的使用" itemprop="url">UIL图片异步加载库的使用</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
+		
+  <p class="article-time">
+    <time datetime="2014-10-14T03:14:42.000Z" itemprop="datePublished"> 发表于 2014-10-14</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <a id="more"></a>
+<p>##使用<br>作为图片加载库必须设置网络、SD卡权限<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.INTERNET"</span> /&gt;</span>  </div><div class="line"><span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.WRITE_EXTERNAL_STORAGE"</span> /&gt;</span></div></pre></td></tr></table></figure></p>
+<ul>
+<li>设置缓存目录<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">File cacheDir = StorageUtils.getOwnCacheDirectory(getApplicationContext(),<span class="string">"imageloader/Cache"</span>);</div><div class="line"><span class="comment">// 设置ImageLoaderConfiguration</span></div><div class="line">.discCache(<span class="keyword">new</span> UnlimitedDiscCache(cacheDir));</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>###配置ImageLoaderConfiguration<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">ImageLoaderConfiguration config = <span class="keyword">new</span> ImageLoaderConfiguration</div><div class="line">	.Builder(context)</div><div class="line">	.memoryCacheExtraOptions(<span class="number">480</span>,<span class="number">800</span>)	<span class="comment">// 保存的每个文件的最大长宽</span></div><div class="line">	.discCacheExtraOptions(<span class="number">480</span>,<span class="number">800</span>,CompressFormat.JPEG,<span class="number">75</span>,<span class="keyword">null</span>)	<span class="comment">// 设置详细信息，最好不要设置</span></div><div class="line">	.threadPoolSize(<span class="number">3</span>)	<span class="comment">// 线程池加载的数量</span></div><div class="line">	.threadPriority(Thread.NORM_PRIORITY - <span class="number">2</span>)</div><div class="line">	.denyCacheImageMultipleSizesInMemory()</div><div class="line">	.memoryCache(<span class="keyword">new</span> UsingFreqLimitedMemoryCache(<span class="number">2</span> * <span class="number">1024</span> * <span class="number">1024</span>))	<span class="comment">// 缓存，可以自己实现</span></div><div class="line">	.memoryCacheSize(<span class="number">2</span> * <span class="number">1024</span> * <span class="number">1024</span>)</div><div class="line">	.discCacheSize(<span class="number">50</span> * <span class="number">1024</span> * <span class="number">1024</span>)</div><div class="line">	.discCacheFileNameGenerator(<span class="keyword">new</span> Md5FileNameGenerator())	<span class="comment">// 保存URI名称用MD5加密 可以使用HashCodeFileNameGenerator</span></div><div class="line">	.tasksProcessingOrder(QueueProcessingType.LIFO)</div><div class="line">	.discCacheFileCount(<span class="number">100</span>)	<span class="comment">// 缓存文件数量</span></div><div class="line">	.discCache(<span class="keyword">new</span> UnlimitedDiscCache(cacheDir))	<span class="comment">// 自定义缓存路径</span></div><div class="line">	.defaultDisplayImageOptions(DisplayImageOptions.createSimple())	</div><div class="line">	.imageDownloader(<span class="keyword">new</span> BaseImageDownloader(context,<span class="number">5</span> * <span class="number">1000</span>,<span class="number">30</span> * <span class="number">1000</span>))	<span class="comment">// 连接超时5s，读取超时30s</span></div><div class="line">	.writeDebugLogs()</div><div class="line">	.build();	<span class="comment">// 开始构建</span></div><div class="line">ImageLoader.getInstance().init(config);</div></pre></td></tr></table></figure></p>
+<p>###加载<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 获取ImageLoader实例</span></div><div class="line">ImageLoader imageLoader = ImageLoader.getInstance();</div><div class="line"><span class="comment">// 设置配置</span></div><div class="line">DisplayImageOptions option;</div><div class="line">options = <span class="keyword">new</span> DisplayImageOptions.Builder()</div><div class="line">	.showImageOnLoading(R.drawable.ic_launcher)	<span class="comment">// 设置图片在下载期间显示的图片</span></div><div class="line">	.showImageForEmptyUri(R.drawable.ic_launcher)	<span class="comment">// 设置图片Uri为空或者是错误的时候显示的图片</span></div><div class="line">	.showImageOnFail(R.drawable.ic_laucher)	<span class="comment">// 设置图片加载、解码过程错误的时候显示的图片</span></div><div class="line">	.cacheInMemory(<span class="keyword">true</span>)	<span class="comment">// 设置下载的图片是否缓存在内存中</span></div><div class="line">	.cacheOnDisc(<span class="keyword">true</span>)	<span class="comment">// 设置下载的图片是否缓存在SD卡中</span></div><div class="line">	.considerExifParams(<span class="keyword">true</span>)	<span class="comment">// 是否考虑JPEG图像EXIF参数(旋转、翻转)</span></div><div class="line">	.imageScaleType(ImageScaleType.EXACTLY_STRETCHED)	<span class="comment">//设置图片以何种编码方式显示</span></div><div class="line">	.bitmapConfig(Bitmap.Config.RGB_565)	<span class="comment">// 设置图片的解码类型</span></div><div class="line">	.decodingOptions(android.graphics.BitmapFactory.Options decodingOptions)	<span class="comment">// 设置图片的解码配置</span></div><div class="line">	.delayBeforeLoading(<span class="keyword">int</span> delayInMillis)	<span class="comment">// 下载完的延迟时间</span></div><div class="line">	.preProcessor(BitmapProcessor preProcessor)	<span class="comment">// 设置图片加入缓存前，对bitmap进行设置</span></div><div class="line">	.resetViewBeforeLoading(<span class="keyword">true</span>)	<span class="comment">// 设置图片在下载前是否重置，复位</span></div><div class="line">	.displayer(<span class="keyword">new</span> RondedBitmapDisplayer(<span class="number">20</span>))	<span class="comment">// 是否设置为圆角</span></div><div class="line">	.displayer(<span class="keyword">new</span> FadeInBitmapDisplayer(<span class="number">100</span>))	<span class="comment">// 是否显示加载渐入动画</span></div><div class="line">	.build(); <span class="comment">// 构建完成</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>不需要的可以不做配置</p>
+</blockquote>
+<ol>
+<li>.imageScaleType(ImageScaleType imageScaleType)    设置图片的缩放方式<br> <code>EXACTLY</code>:图像将完全按比例缩小到目标大小<br> <code>EXACTLY_STRETCHED</code>:图片会缩放到目标大小<br> <code>IN_SAMPLE_INT</code>:图像将被二次采样的整数倍<br> <code>IN_SAMPLE_POWER_OF_2</code>:图片将降低2倍，直到下一减少步骤，使图像更小的目标大小<br> <code>NONE</code>:图片不会调整</li>
+<li>.displayer(BitmapDisplayer displayer)   是设置 图片的显示方式<br> RoundedBitmapDisplayer(int roundPixels) 设置圆角图片<br> FakeBitmapDisplayer() 这个类什么都没做<br> FadeInBitmapDisplayer(int durationMillis) 设置图片渐显的时间<br> SimpleBitmapDisplayer() 正常显示一张图片　　<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ImageLoader.getInstance().displayImage(imageUrl, imageView); <span class="comment">// imageUrl代表图片的URL地址，imageView代表承载图片的IMAGEVIEW控件  </span></div><div class="line">ImageLoader.getInstance().displayImage(imageUrl, imageView，options); <span class="comment">// imageUrl代表图片的URL地址，imageView代表承载图片的IMAGEVIEW控件 ， options代表DisplayImageOptions配置文件</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>###加载监听<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">imageLoader.displayImage(imageUrl, imageView, options, <span class="keyword">new</span> ImageLoadingListener() &#123;  </div><div class="line">    <span class="meta">@Override</span>  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onLoadingStarted</span><span class="params">()</span> </span>&#123;  </div><div class="line">       <span class="comment">//开始加载的时候执行  </span></div><div class="line">    &#125;  </div><div class="line">    <span class="meta">@Override</span>  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onLoadingFailed</span><span class="params">(FailReason failReason)</span> </span>&#123;        </div><div class="line">       <span class="comment">//加载失败的时候执行  </span></div><div class="line">    &#125;   </div><div class="line">    <span class="meta">@Override</span>   </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onLoadingComplete</span><span class="params">(Bitmap loadedImage)</span> </span>&#123;  </div><div class="line">       <span class="comment">//加载成功的时候执行  </span></div><div class="line">    &#125;   </div><div class="line">    <span class="meta">@Override</span>   </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onLoadingCancelled</span><span class="params">()</span> </span>&#123;  </div><div class="line">       <span class="comment">//加载取消的时候执行  </span></div><div class="line">  </div><div class="line">    &#125;&#125;);</div></pre></td></tr></table></figure></p>
+<p>###加载监听进度<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">imageLoader.displayImage(imageUrl, imageView, options, <span class="keyword">new</span> ImageLoadingListener() &#123;  </div><div class="line">    <span class="meta">@Override</span>  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onLoadingStarted</span><span class="params">()</span> </span>&#123;  </div><div class="line">       <span class="comment">//开始加载的时候执行  </span></div><div class="line">    &#125;  </div><div class="line">    <span class="meta">@Override</span>  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onLoadingFailed</span><span class="params">(FailReason failReason)</span> </span>&#123;        </div><div class="line">       <span class="comment">//加载失败的时候执行  </span></div><div class="line">    &#125;      </div><div class="line">    <span class="meta">@Override</span>      </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onLoadingComplete</span><span class="params">(Bitmap loadedImage)</span> </span>&#123;  </div><div class="line">       <span class="comment">//加载成功的时候执行  </span></div><div class="line">    &#125;      </div><div class="line">    <span class="meta">@Override</span>      </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onLoadingCancelled</span><span class="params">()</span> </span>&#123;  </div><div class="line">       <span class="comment">//加载取消的时候执行  </span></div><div class="line">    &#125;,<span class="keyword">new</span> ImageLoadingProgressListener() &#123;        </div><div class="line">      <span class="meta">@Override</span>  </div><div class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onProgressUpdate</span><span class="params">(String imageUri, View view, <span class="keyword">int</span> current,<span class="keyword">int</span> total)</span> </span>&#123;     </div><div class="line">      <span class="comment">//在这里更新 ProgressBar的进度信息  </span></div><div class="line">      &#125;  </div><div class="line">    &#125;);</div></pre></td></tr></table></figure></p>
+<p>##注意事项</p>
+<ol>
+<li>权限</li>
+<li>必须初始化ImageLoader.getInstance().init(config)</li>
+<li>ImageLoader是根据ImageView的height，width确定图片的宽高</li>
+<li>如果经常出现OOM<ul>
+<li>①减少配置之中线程池的大小，<code>.(.threadPoolSize)</code>推荐1-5；<ul>
+<li>②使用<code>.bitmapConfig(Bitmap.config.RGB_565)</code>代替ARGB_8888;</li>
+</ul>
+</li>
+<li>③使用<code>.imageScaleType(ImageScaleType.IN_SAMPLE_INT)</code>或者<code>try.imageScaleType(ImageScaleType.EXACTLY)</code>；<ul>
+<li>④避免使用<code>RoundedBitmapDisplayer.</code>他会创建新的<code>ARGB_8888</code>格式的Bitmap对象；</li>
+<li>⑤使用<code>.memoryCache(new WeakMemoryCache())</code>，不要使用<code>.cacheInMemory()</code>;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>##其他<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">String imageUri = <span class="string">"http://site.com/image.png"</span>; <span class="comment">// from Web  </span></div><div class="line">String imageUri = <span class="string">"file:///mnt/sdcard/image.png"</span>; <span class="comment">// from SD card  </span></div><div class="line">String imageUri = <span class="string">"content://media/external/audio/albumart/13"</span>; <span class="comment">// from content provider  </span></div><div class="line">String imageUri = <span class="string">"assets://image.png"</span>; <span class="comment">// from assets  </span></div><div class="line">String imageUri = <span class="string">"drawable://"</span> + R.drawable.image; <span class="comment">// from drawables (only images, non-9patch)</span></div></pre></td></tr></table></figure></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Android/">Android</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/UIL/">UIL</a><a href="/tags/异步加载/">异步加载</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2014/10/14/UIL图片异步加载库的使用/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/10/14/UIL图片异步加载库的使用/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/10/14/Android分辨率适配/" title="Android分辨率适配" itemprop="url">Android分辨率适配</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
+		
+  <p class="article-time">
+    <time datetime="2014-10-14T03:14:42.000Z" itemprop="datePublished"> 发表于 2014-10-14</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <a id="more"></a>
+<p>##基本概念</p>
+<ol>
+<li>分辨率：屏幕上显示的像素个数，单位尺寸内像素点越多，显示的图像就越清楚<br> 主流分辨率:<code>480*800</code>、<code>720*1280</code>、<code>1080*1920</code></li>
+<li>像素密度<br> 240dpi(<code>480*800</code>)、320dpi(<code>720*1280</code>)、480dpi(<code>1080*1920</code>)</li>
+<li>单位<br> px:像素<br> dp:设备独立像素(160dpi为标准)<pre><code>240dpi下，1dp=1.5px
+320dpi下，1dp=2px
+480dpi下，1dp=3px
+</code></pre> sp:等同于dp，用于描述字体大小<pre><code>240dpi下，1sp=1.5px    
+320dpi下，1sp=2px
+480dpi下，1sp=3px
+</code></pre></li>
+</ol>
+<p>##常见分辨率</p>
+<ul>
+<li>4:3<br>  VGA     <code>640*480</code><br>  QVGA    <code>320*240</code><br>  HVGA    <code>480*320</code><br>  SVGA    <code>800*600</code></li>
+<li>5:3<br>  WVGA    <code>800*480</code></li>
+<li>16:9<br>  FWVGA   <code>854*480</code><br>  HD      <code>1920*1080</code><br>  QHD     <code>960*540</code><br>  720p    <code>1280*720</code><br>  1080p   <code>1920*1080</code></li>
+<li>Apple<br>  iPhone4/4s      <code>960*640</code><br>  iPhone5/5s      <code>1136*640</code><br>  iPhone6         <code>1334*750</code><br>  iPhone6Plus     <code>1920*1080</code><br>  小米1           <code>854*480</code><br>  小米2           <code>1280*720</code><br>  红米1/1s/note   <code>1280*720</code>  </li>
+</ul>
+<p>###对应的DPI</p>
+<ul>
+<li>HVGA  mdpi</li>
+<li>WVGA  hdpi</li>
+<li>FWVGA hdpi</li>
+<li>QHD   hdpi</li>
+<li>720p  xhdpi</li>
+<li>1080p xxhdpi<br>##最佳方案</li>
+</ul>
+<ol>
+<li>选取320dpi下(720*1280)进行设计，此分辨率下1dp=2px</li>
+<li>对于一切切图资源特殊处理<br> 输出多套分辨率的切图，例如480p和720p，在设计的时候要注意好切图区域的大小能被2和1.5整除的大小，如<code>48p*48px</code>、<code>96*96px</code>等。</li>
+<li><p>使用相对于单位进行标注<br><img src="/img/14101401.png" alt=""></p>
+</li>
+<li><p>采用自适应布局</p>
+</li>
+<li>标注尽量采用相对关系</li>
+</ol>
+<p>##文字<br>中文字体：默认为Droid Sans Fallback,设计时可采用微软雅黑。<br>英文字体：Andriod4.x及以上采用Roboto，Andrio2.x和andriod3.x采用 Droid Sans。建议尽量采用系统默认字体。<br>Andriod规范建议，字号采用12sp、14sp、18sp、22sp等四个级别来设计。（实际设计时可以按实际情况调整）</p>
+<p>##总结</p>
+<ol>
+<li>采用<code>720*1280</code>分辨率来进行设计。（设计时，采用偶数值进行设计，方便dp和px的转换）</li>
+<li>开始标注了，标注尽量采用相对位置进行标注。</li>
+<li>切图了，在<code>720*1280</code>下进行切图，可以完全适配<code>720*1280</code>后放大缩小切图资源</li>
+<li>分别适配<code>480*800</code>、<code>1080*1920</code></li>
+<li>不要忘记了，开发完后要进行bug测试（视觉方面的）</li>
+</ol>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Android/">Android</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/分辨率/">分辨率</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2014/10/14/Android分辨率适配/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/10/14/Android分辨率适配/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/10/14/volley详解/" title="volley详解" itemprop="url">volley详解</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
+		
+  <p class="article-time">
+    <time datetime="2014-10-14T02:20:43.000Z" itemprop="datePublished"> 发表于 2014-10-14</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <a id="more"></a>
+<p>##基本请求<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">StringRequest stringRequest = <span class="keyword">new</span> StringRequest(<span class="string">"http://www.baidu.com"</span>,<span class="keyword">new</span> Response.Listener&lt;String&gt;()&#123;</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onResponse</span><span class="params">(String response)</span> </span>&#123;</div><div class="line">		<span class="comment">//</span></div><div class="line">	&#125;, <span class="keyword">new</span> Response.ErrorListener() &#123;</div><div class="line">		<span class="meta">@Override</span></div><div class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onErrorResopnse</span><span class="params">(VolleyError error)</span> </span>&#123;</div><div class="line">			<span class="comment">//</span></div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;);</div><div class="line"><span class="comment">// 添加请求道请求队列中</span></div><div class="line">mQueue.add(stringRequest);</div></pre></td></tr></table></figure></p>
+<p>三个参数分别是目标服务器的URL地址，服务器响应成功的回调，服务器响应失败的回调</p>
+<p>##Post<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">StringRequest stringRequest = <span class="keyword">new</span> StringRequest(Method.POST,url,listener,errorListenrer) &#123;</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">protected</span> Map&lt;String,String&gt; <span class="title">getParams</span><span class="params">()</span> <span class="keyword">throws</span> AuthFailureError </span>&#123;</div><div class="line">		Map&lt;String,String&gt; map = newHash&lt;String,String&gt;();</div><div class="line">		map.put(<span class="string">"params1"</span>,<span class="string">"value1"</span>);</div><div class="line">		map.put(<span class="string">"params2"</span>,<span class="string">"value2"</span>);</div><div class="line">		<span class="keyword">return</span> map;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>##JsonRequest<br>JsonRequest是一个抽象类，有两个直接子类，JsonObjectRequest和JsonArrayRequest，分别用于处理JSON数据和JSON数组<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">JsonObjectRequest jsonObjectRequest = <span class="keyword">new</span> JsonObjectRequest(<span class="string">"http://m.weather.com.cn/data/101010100.html"</span>,<span class="keyword">null</span>, <span class="keyword">new</span> Response.Listener&lt;JSONObject&gt;() &#123;  </div><div class="line">            <span class="meta">@Override</span>  </div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onResponse</span><span class="params">(JSONObject response)</span> </span>&#123;  </div><div class="line">                Log.d(<span class="string">"TAG"</span>, response.toString());  </div><div class="line">            &#125;  </div><div class="line">        &#125;, <span class="keyword">new</span> Response.ErrorListener() &#123;  </div><div class="line">            <span class="meta">@Override</span>  </div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onErrorResponse</span><span class="params">(VolleyError error)</span> </span>&#123;  </div><div class="line">                Log.e(<span class="string">"TAG"</span>, error.getMessage(), error);  </div><div class="line">            &#125;  </div><div class="line">        &#125;);</div></pre></td></tr></table></figure></p>
+<p>##ImageRequest<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">ImageRequest imageRequest = <span class="keyword">new</span> ImageRequest(</div><div class="line">	<span class="string">"https://avatars3.githubusercontent.com/u/5416585?v=2&amp;s=460"</span>,</div><div class="line">	<span class="keyword">new</span> Response.Listener&lt;Bitmap&gt;() &#123;</div><div class="line">		<span class="meta">@Override</span>  </div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onResponse</span><span class="params">(Bitmap response)</span> </span>&#123;  </div><div class="line">            imageView.setImageBitmap(response);  </div><div class="line">       	&#125;</div><div class="line">    &#125;,<span class="number">0</span>,<span class="number">0</span>,Config.RGB_565,<span class="keyword">new</span> Response.ErrorListener() &#123;  </div><div class="line">        <span class="meta">@Override</span>  </div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onErrorResponse</span><span class="params">(VolleyError error)</span> </span>&#123;  </div><div class="line">       	   imageView.setImageResource(R.drawable.default_image);  </div><div class="line">        &#125;  </div><div class="line">	&#125;);</div></pre></td></tr></table></figure></p>
+<p>第三第四个参数指定允许图片最大的宽度和高度，如果指定的网络图片的宽度或高度大于这里的最大值，则会对图片进行压缩，指定为0即表示不管图片多大都不压缩。</p>
+<p>##ImageLoader</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Android/">Android</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/网络/">网络</a><a href="/tags/Volley/">Volley</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2014/10/14/volley详解/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/10/14/volley详解/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/10/13/Python实现简单的Post请求/" title="Python实现简单的Post请求" itemprop="url">Python实现简单的Post请求</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
+		
+  <p class="article-time">
+    <time datetime="2014-10-13T07:19:52.000Z" itemprop="datePublished"> 发表于 2014-10-13</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <a id="more"></a>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib</div><div class="line"><span class="keyword">import</span> urllib2</div><div class="line"></div><div class="line">url = <span class="string">'http://ave.bolyartech.com/params.php'</span></div><div class="line">values = &#123;<span class="string">'param1'</span>:<span class="string">'2'</span>,<span class="string">'param2'</span>:<span class="string">'3'</span>&#125;</div><div class="line">data = urllib.urlencode(values)</div><div class="line"><span class="keyword">print</span> data</div><div class="line">req = urllib2.Request(url, data)	<span class="comment"># Post请求</span></div><div class="line">response = urllib2.urlopen(req)</div><div class="line">the_page = response.read()	<span class="comment"># 读取返回数据</span></div><div class="line"><span class="keyword">print</span> the_page</div></pre></td></tr></table></figure>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Python/">Python</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Python/">Python</a><a href="/tags/Post/">Post</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2014/10/13/Python实现简单的Post请求/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/10/13/Python实现简单的Post请求/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/10/13/Lambda/" title="Lambda" itemprop="url">Lambda</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
+		
+  <p class="article-time">
+    <time datetime="2014-10-13T03:17:22.000Z" itemprop="datePublished"> 发表于 2014-10-13</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>lambda函数也叫匿名函数即函数没有具体的名称<br>lambda语句用来创建新的函数对象，并且在运行时返回它们<br>
+        
+        
+        <p class="article-more-link">
+          
+            <a href="/2014/10/13/Lambda/#more">Read More</a>
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Python/">Python</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Python/">Python</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2014/10/13/Lambda/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/10/13/Lambda/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/10/13/Python-十---常用内建模块/" title="Python-十 - 常用内建模块" itemprop="url">Python-十 - 常用内建模块</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
+		
+  <p class="article-time">
+    <time datetime="2014-10-13T03:17:22.000Z" itemprop="datePublished"> 发表于 2014-10-13</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>collections是Python内建的一个集合模块，提供了许多有用的集合类。<br>
+        
+        
+        <p class="article-more-link">
+          
+            <a href="/2014/10/13/Python-十---常用内建模块/#more">Read More</a>
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Python/">Python</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Python/">Python</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2014/10/13/Python-十---常用内建模块/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/10/13/Python-十---常用内建模块/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/10/13/Python小技巧/" title="Python小技巧" itemprop="url">Python小技巧</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
+		
+  <p class="article-time">
+    <time datetime="2014-10-13T03:09:07.000Z" itemprop="datePublished"> 发表于 2014-10-13</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <a id="more"></a>
+<p>##交换变量<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">x = <span class="number">6</span></div><div class="line">y = <span class="number">5</span></div><div class="line">x,y = y,x</div></pre></td></tr></table></figure></p>
+<p>##行内if语句<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">print</span> <span class="string">"Hello"</span> <span class="keyword">if</span> <span class="keyword">True</span> <span class="keyword">else</span> <span class="string">"World"</span>	<span class="comment"># Hello</span></div></pre></td></tr></table></figure></p>
+<p>##连接<br>不同类型的对象连接<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">nfc = [<span class="string">"Packers"</span>, <span class="string">"49ers"</span>]</div><div class="line">afc = [<span class="string">"Ravens"</span>, <span class="string">"Patriots"</span>]</div><div class="line">nfc + afc <span class="comment"># ['Packers', '49ers', 'Ravens', 'Patriots']</span></div><div class="line"><span class="keyword">print</span> str(<span class="number">1</span>) + <span class="string">" world"</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span> world</div><div class="line"> </div><div class="line"><span class="keyword">print</span> `<span class="number">1</span>` + <span class="string">" world"</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span> world</div><div class="line"></div><div class="line"><span class="keyword">print</span> <span class="number">1</span>, <span class="string">"world"</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span> world</div><div class="line"><span class="keyword">print</span> nfc, <span class="number">1</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>[<span class="string">'Packers'</span>, <span class="string">'49ers'</span>] <span class="number">1</span></div></pre></td></tr></table></figure></p>
+<p>##数字技巧<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="number">5.0</span>//<span class="number">2</span> 	<span class="comment"># 向下取整 2</span></div><div class="line"><span class="number">2</span>**<span class="number">5</span> 	<span class="comment"># 2的5次方</span></div><div class="line"><span class="number">.3</span>/<span class="number">.1</span>	<span class="comment"># 2.9999999999999996</span></div><div class="line"><span class="number">.3</span>//<span class="number">.1</span>	<span class="comment"># 2.0</span></div></pre></td></tr></table></figure></p>
+<p>##数值比较<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">x = <span class="number">2</span></div><div class="line"><span class="keyword">if</span> <span class="number">3</span> &gt; x &gt; <span class="number">1</span></div><div class="line">	<span class="keyword">print</span> x</div><div class="line"><span class="keyword">if</span> <span class="number">1</span> &lt; x &gt; <span class="number">0</span></div><div class="line">	<span class="keyword">print</span> x</div></pre></td></tr></table></figure></p>
+<p>##同时迭代两个列表<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">nfc = [<span class="string">"Packers"</span>, <span class="string">"49ers"</span>]</div><div class="line">afc = [<span class="string">"Ravens"</span>, <span class="string">"Patriots"</span>]</div><div class="line"><span class="keyword">for</span> teama, teamb <span class="keyword">in</span> zip(nfc, afc):</div><div class="line">     <span class="keyword">print</span> teama + <span class="string">" vs. "</span> + teamb</div></pre></td></tr></table></figure></p>
+<p>##带索引的列表迭代<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">teams = [<span class="string">"Packers"</span>, <span class="string">"49ers"</span>, <span class="string">"Ravens"</span>, <span class="string">"Patriots"</span>]</div><div class="line"><span class="keyword">for</span> index, team <span class="keyword">in</span> enumerate(teams):</div><div class="line">    <span class="keyword">print</span> index, team</div></pre></td></tr></table></figure></p>
+<p>##列表推导式<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">numbers = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</div><div class="line">even = [number <span class="keyword">for</span> number <span class="keyword">in</span> numbers <span class="keyword">if</span> number%<span class="number">2</span> == <span class="number">0</span>] <span class="comment"># 取偶数</span></div></pre></td></tr></table></figure></p>
+<p>##字典推导<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">teams = [<span class="string">"Packers"</span>, <span class="string">"49ers"</span>, <span class="string">"Ravens"</span>, <span class="string">"Patriots"</span>]</div><div class="line"><span class="keyword">print</span> &#123;key: value <span class="keyword">for</span> value, key <span class="keyword">in</span> enumerate(teams)&#125;</div></pre></td></tr></table></figure></p>
+<p>##初始化列表<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">items = [<span class="number">0</span>]*<span class="number">3</span></div></pre></td></tr></table></figure></p>
+<p>##列表转换成字符串<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">teams = [<span class="string">"Packers"</span>, <span class="string">"49ers"</span>, <span class="string">"Ravens"</span>, <span class="string">"Patriots"</span>]</div><div class="line"><span class="keyword">print</span> <span class="string">", "</span>.join(teams)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'Packers, 49ers, Ravens, Patriots'</span></div></pre></td></tr></table></figure></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Python/">Python</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Python/">Python</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2014/10/13/Python小技巧/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/10/13/Python小技巧/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/10/11/Python-九---进程和线程/" title="Python 九 - 进程和线程" itemprop="url">Python 九 - 进程和线程</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
+		
+  <p class="article-time">
+    <time datetime="2014-10-11T08:09:07.000Z" itemprop="datePublished"> 发表于 2014-10-11</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>Unix/Linux操作系统提供了<code>fork()</code>系统调用，<code>fork()</code>调用一次，返回两次，因为操作系统自动把当前进程(父进程)复制一份(子进程)，分别在父进程和子进程返回。<br>
+        
+        
+        <p class="article-more-link">
+          
+            <a href="/2014/10/11/Python-九---进程和线程/#more">Read More</a>
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Python/">Python</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Python/">Python</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2014/10/11/Python-九---进程和线程/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/10/11/Python-九---进程和线程/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/10/11/Python-八---文件IO/" title="Python 八 - 文件IO" itemprop="url">Python 八 - 文件IO</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
+		
+  <p class="article-time">
+    <time datetime="2014-10-11T03:29:34.000Z" itemprop="datePublished"> 发表于 2014-10-11</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <a id="more"></a>
+<p>##文件读写<br>Python内置的<code>open()</code>函数可以传入文件名和标示符打开一个文件对象<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">f = open(<span class="string">'./test.txt'</span>,<span class="string">'r'</span>)</div></pre></td></tr></table></figure></p>
+<p><code>r</code>表示读，如果文件不存在<code>open()</code>函数会抛出一个<code>IOError</code>错误<br>如果文件打开成功，调用<code>read()</code>函数可以一次读取文件的全部内容，Python把内容读到内存，用一个<code>str</code>对象表示<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">str = f.read()</div></pre></td></tr></table></figure></p>
+<p>因为文件对象会占用系统资源，所以使用完毕需要调用<code>close()</code>函数关闭文件<br>Python引入<code>with</code>语句帮助我们自动调用<code>close</code>方法<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">with</span> open(<span class="string">'./file'</span>,<span class="string">'r'</span>) <span class="keyword">as</span> f:</div><div class="line">	f.read()</div></pre></td></tr></table></figure></p>
+<p><code>read</code>方法可以<code>read(size)</code>每次最多读取size个字节的内容，调用<code>readline()</code>可以每次读取一行内容，调用<code>readlines()</code>一次读取所有内容并按行返回<code>list</code><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> line <span class="keyword">in</span> f.readlines():</div><div class="line">	print(line.strip())	<span class="comment"># 把末尾的`\n`删掉</span></div></pre></td></tr></table></figure></p>
+<p>###二进制文件<br>读取二进制文件比如图片、视频等，用<code>rb</code>模式打开即可：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">f = open(<span class="string">'./test.jpg'</span>,<span class="string">'rd'</span>)</div></pre></td></tr></table></figure></p>
+<p>###字符编码<br>读取非ASCALL编码的文本文件，必须以二进制模式打开，再解码，比如GBK编码的文件<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">f = open(<span class="string">'./gbk.txt'</span>,<span class="string">'rb'</span>)</div><div class="line">u = f.read().decode(<span class="string">'gbk'</span>)</div><div class="line"><span class="keyword">print</span> u</div></pre></td></tr></table></figure></p>
+<p>##写文件<br>在<code>open</code>函数传入标识符<code>W</code>或者<code>wb</code>表示写文件或写二进制文件<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">f = open(<span class="string">'./test.txt'</span>,<span class="string">'w'</span>)</div><div class="line">f.write(<span class="string">'Hello,world!'</span>)</div><div class="line">f.close</div></pre></td></tr></table></figure></p>
+<p>也可以使用<code>with</code>语句<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">with</span> open(<span class="string">'./test.txt'</span>,<span class="string">'w'</span>) <span class="keyword">as</span> f:</div><div class="line">	f.write(<span class="string">'Hello,world!'</span>)</div></pre></td></tr></table></figure></p>
+<p>写入特定编码也需要转码</p>
+<p>##文件操作<br>要操作文件需要导入Python内置的<code>os</code>模块<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line">os.name <span class="comment"># 操作系统的名字</span></div></pre></td></tr></table></figure></p>
+<p>如果是<code>posix</code>说明系统是<code>Linux</code>、<code>Unix</code>或者<code>Mac OS X</code>，如果是<code>nt</code>就是<code>Windows</code>系统<br>获取系统详细信息可以调用<code>uname()</code>函数<br>通过<code>os.environ</code>可以看到系统环境变量的<code>dict</code><br>要获取环境变量的某个值可以调用<code>os.getenv()</code>函数</p>
+<p>###操作文件和目录</p>
+<ul>
+<li>os.path.abspath(‘.’)    # 当前目录的绝对路径</li>
+<li>os.path.join(‘/User/zoe’,’testDir’) # 合并路径</li>
+<li>os.path.split(‘/Users/zoe/testDir/file.txt’) # 拆分目录</li>
+<li>os.path.splitext(‘/path/file.txt’) # 拆分文件扩展名</li>
+<li>os.mkdir(‘./testdir’) # 创建目录</li>
+<li>os.rmdir(‘./testdir’) # 删除目录</li>
+<li>os.rename(‘test.txt’,’test.py’) # 重命名</li>
+<li>os.remove(‘test.txt’) # 删除文件<br>os模块中并没有复制文件可以使用<code>shutil</code>模块提供的<code>copyfile()</code>函数<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 列出当前目录下的所有子目录</span></div><div class="line">list1 = [x <span class="keyword">for</span> x <span class="keyword">in</span> os.listdir(<span class="string">'.'</span>) <span class="keyword">if</span> os.path.isdir(x)]</div><div class="line"><span class="comment"># 列出所有py文件</span></div><div class="line">list2 = [x <span class="keyword">for</span> x <span class="keyword">in</span> os.listdir(<span class="string">'.'</span>) <span class="keyword">if</span> os.path.isfile(x) <span class="keyword">and</span> os.path.splitext(x)[<span class="number">1</span>]==<span class="string">'.py'</span>]</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>##序列化<br>Python提供了<code>cPickle</code>和<code>pickle</code>两个模块来实现序列化，两个模块功能一致，区别在于<code>cPickle</code>是C语言写的，速度快，<code>pickle</code>是纯Python写的，速度慢，用的时候先尝试导入<code>cPickle</code>，如果失败了，再导入<code>pickle</code><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span>:</div><div class="line">	<span class="keyword">import</span> cPickle <span class="keyword">as</span> pickle</div><div class="line"><span class="keyword">except</span> ImportError:</div><div class="line">	<span class="keyword">import</span> pickle</div></pre></td></tr></table></figure></p>
+<p>使用<code>pickle.dumps()</code>方法把任意对象序列化成一个str，然后，把str写入文件<br>也可以使用<code>pickle.dump()</code>直接把对象序列化写入file<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">d = dict(name=<span class="string">'Bob'</span>,age=<span class="number">20</span>,score=<span class="number">88</span>)</div><div class="line">str = pickle.dumps(d)</div><div class="line">f = open(<span class="string">'dump.txt'</span>,<span class="string">'wb'</span>)</div><div class="line">pickle.dump(d,f)</div><div class="line">f.close()</div></pre></td></tr></table></figure></p>
+<p>反序列化是用<code>pickle.loads()</code>方法通过读取到字符串反序列化出对象，也可以直接用<code>pickle.load()</code>方法从file中直接反序列化出对象<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">f = open(<span class="string">'dump.txt'</span>,<span class="string">'rb'</span>)</div><div class="line">d = pickle.load(f)</div><div class="line">f.close()</div></pre></td></tr></table></figure></p>
+<p>Pickle的缺点很明显，只能用于Python并且可能不同版本的Python批次都不兼容</p>
+<p>###JSON<br>JSON表示的对象就是标准的JavaScript语言的对象，JSON和Python内置的数据类型对应如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">JSON类型</th>
+<th style="text-align:left">Python类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">{}</td>
+<td style="text-align:left">dict</td>
+</tr>
+<tr>
+<td style="text-align:left">[]</td>
+<td style="text-align:left">list</td>
+</tr>
+<tr>
+<td style="text-align:left">“string”</td>
+<td style="text-align:left">str或u”unicode”</td>
+</tr>
+<tr>
+<td style="text-align:left">1234.56</td>
+<td style="text-align:left">int或float</td>
+</tr>
+<tr>
+<td style="text-align:left">true/flase</td>
+<td style="text-align:left">True/False</td>
+</tr>
+<tr>
+<td style="text-align:left">null</td>
+<td style="text-align:left">None</td>
+</tr>
+</tbody>
+</table>
+<p>Python内置的<code>json</code>模块提供了完善的Python对象到JSON格式的转换<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> json</div><div class="line">d = dict(name=<span class="string">'Bob'</span>,age=<span class="number">20</span>,score=<span class="number">88</span>)</div><div class="line">json.dumps(d) <span class="comment"># '&#123;"age": 20, "score": 88, "name": "Bob"&#125;'</span></div></pre></td></tr></table></figure></p>
+<p>同样<code>dump()</code>方法可以直接把JSON写入文件，<code>loads()</code>或<code>load()</code>方法可以把反序列化</p>
+<p>###JSON进阶<br>对象序列化，需要实现一个转换函数<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> json</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Stundent</span><span class="params">(object)</span>:</span></div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name,age,score)</span>:</span></div><div class="line">		self.name = name</div><div class="line">		self.age = age</div><div class="line">		self.score = score</div><div class="line"></div><div class="line">s = Stundent(<span class="string">'Bob'</span>,<span class="number">20</span>,<span class="number">88</span>)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">student2dict</span><span class="params">(std)</span>:</span></div><div class="line">	<span class="keyword">return</span> &#123;</div><div class="line">		<span class="string">'name'</span>:std.name,</div><div class="line">		<span class="string">'age'</span>:std.age,</div><div class="line">		<span class="string">'score'</span>:std.score</div><div class="line">	&#125;</div><div class="line"></div><div class="line">json.dumps(s,default=student2dict) <span class="comment"># 先被student2dict转换成dict在顺利序列化为JSON</span></div></pre></td></tr></table></figure></p>
+<p>通常<code>class</code>实例都有一个<code>__dict__</code>属性，用来存储实例变量，所以也可以这么写：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">json.dumps(s,default=<span class="keyword">lambda</span> obj:obj.__dict__)</div></pre></td></tr></table></figure></p>
+<p>反序列化时<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">dict2student</span><span class="params">(d)</span>:</span></div><div class="line">	<span class="keyword">return</span> Student(d[<span class="string">'name'</span>],d[<span class="string">'age'</span>],d[<span class="string">'score'</span>])</div><div class="line"></div><div class="line">json.loads(json_str,object_hook=dict2student)</div></pre></td></tr></table></figure></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Python/">Python</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Python/">Python</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2014/10/11/Python-八---文件IO/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/10/11/Python-八---文件IO/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/10/11/Python-七---错误与调试/" title="Python 七 - 错误与调试" itemprop="url">Python 七 - 错误与调试</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
+		
+  <p class="article-time">
+    <time datetime="2014-10-11T03:28:31.000Z" itemprop="datePublished"> 发表于 2014-10-11</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <a id="more"></a>
+<p>##try错误<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span>:</div><div class="line">	r = <span class="number">10</span>/<span class="number">0</span></div><div class="line">	<span class="keyword">print</span> r</div><div class="line"><span class="keyword">except</span> ZeroDivisionError,e:</div><div class="line">	<span class="keyword">print</span> <span class="string">'except:'</span>,e</div><div class="line"><span class="keyword">finally</span>:</div><div class="line">	<span class="keyword">print</span> <span class="string">'finally'</span></div><div class="line"><span class="keyword">print</span> <span class="string">'END'</span></div></pre></td></tr></table></figure></p>
+<p>在某段代码可能会出错时，就可以用<code>try</code>来运行这段代码，如果执行出错，则后续代码不会继续执行，而是直接跳转至错误处理代码，即<code>except</code>语句块，执行完<code>except</code>后，如果有<code>finally</code>语句块，则执行<code>finally</code>语句块，至此执行完毕<br>如果没有发生错误发生，可以在<code>except</code>语句块后面加一个<code>else</code>，如果没有错误发生时，会自动执行<code>else</code>语句</p>
+<p>##记录错误<br>Python内置的<code>logging</code>模块可以非常容易地记录错误信息：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># err.py</span></div><div class="line"><span class="keyword">import</span> logging</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">(s)</span>:</span></div><div class="line">	<span class="keyword">return</span> <span class="number">10</span> / int(s)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">bar</span><span class="params">(s)</span>:</span></div><div class="line">	<span class="keyword">return</span> foo(s) * <span class="number">2</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></div><div class="line">	<span class="keyword">try</span>:</div><div class="line">		bar(<span class="string">'0'</span>)</div><div class="line">	<span class="keyword">except</span> StandardError,e:</div><div class="line">		logging.exception(e)</div><div class="line"></div><div class="line">main()</div><div class="line"><span class="keyword">print</span> <span class="string">'END'</span></div></pre></td></tr></table></figure></p>
+<p>同样是出错，但程序打印完错误后会继续执行，并正常退出</p>
+<p>##抛出错误<br>错误是class，捕获一个错误就是捕获到该class的一个实例，因此，错误不是凭空产生的，而是有意创建抛出的。Python内置函数会抛出很多类型的错误，可以使用<code>raise</code>语句抛出错误<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># err.py</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">FooError</span><span class="params">(StandarError)</span>:</span></div><div class="line">	<span class="keyword">pass</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">(s)</span>:</span></div><div class="line">	n = int(s)</div><div class="line">	<span class="keyword">if</span> n == <span class="number">0</span>:</div><div class="line">		<span class="keyword">raise</span> FooError(<span class="string">'invalid value:%s'</span> % s)</div><div class="line">	<span class="keyword">return</span> <span class="number">10</span>/n</div></pre></td></tr></table></figure></p>
+<p>##断言<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># err.py</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">(s)</span>:</span></div><div class="line">	n = int(s)</div><div class="line">	<span class="keyword">assert</span> n != <span class="number">0</span>,<span class="string">'n is zero!'</span></div><div class="line">	<span class="keyword">return</span> <span class="number">10</span> / n</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></div><div class="line">	foo(<span class="string">'0'</span>)</div></pre></td></tr></table></figure></p>
+<p><code>assert</code>的意思是，表达式<code>n != 0</code>应该是<code>True</code>，否则，后面的代码就会出错(AssertionError)<br>Python解释器可以用<code>-0</code>参数来关闭<code>assert</code></p>
+<p>##logging<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># err.py</span></div><div class="line"><span class="keyword">import</span> logging</div><div class="line"></div><div class="line">s = <span class="string">'0'</span></div><div class="line">n = int(s)</div><div class="line">logging.info(<span class="string">'n = %d'</span> % n)</div><div class="line"><span class="keyword">print</span> <span class="number">10</span> / n</div></pre></td></tr></table></figure></p>
+<p><code>logging.info()</code>可以输出一段文本，可以使用<code>logging.basicConfig(level=logging.INFO)</code>指定记录信息的级别，有<code>debug</code>、<code>info</code>、<code>warning</code>、<code>error</code>，当指定<code>level=INFO</code>时，其他级别都不起作用，其他同理。</p>
+<p>##pdb<br>调试器，可以让程序以单步方式运行，可以随时查看运行状态<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># err.py</span></div><div class="line">s = <span class="string">'0'</span></div><div class="line">n = int(s)</div><div class="line"><span class="keyword">print</span> <span class="number">10</span> / n</div></pre></td></tr></table></figure></p>
+<p>然后启动<br>    $ python -m pdb err.py<br>以参数<code>-m pdb</code>启动后，pdb定位到下一步要执行的代码<code>-&gt; s = &#39;0&#39;</code>输入命令<code>l</code>查看运行代码<br>输入<code>n</code>可以单步指定代码<br>也可以输入<code>p 变量名</code>来查看变量<br>输入<code>q</code>结束调试，退出程序</p>
+<p>##pdb.set_trace()<br>只需要<code>import pdb</code>然后在可能出错的地方放一个<code>pdb.set_trace()</code>就可以设置一个断点<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># err.py</span></div><div class="line"><span class="keyword">import</span> pdb</div><div class="line"></div><div class="line">s = <span class="string">'0'</span></div><div class="line">n = int(s)</div><div class="line">pdb.set_trace()</div><div class="line"><span class="keyword">print</span> <span class="number">10</span> / n</div></pre></td></tr></table></figure></p>
+<p>运行代码，程序自动在<code>pdb.set_trace()</code>暂停并进入pdb调试环境，可以用<code>c</code>继续运行</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Python/">Python</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Python/">Python</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2014/10/11/Python-七---错误与调试/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/10/11/Python-七---错误与调试/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+
+  <nav id="page-nav" class="clearfix">
+    <a class="extend prev" rel="prev" href="/page/18/"><span></span>Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/page/20/">20</a><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/39/">39</a><a class="extend next" rel="next" href="/page/20/">Next<span></span></a>
+  </nav>
+
+</div>
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/Android/" title="Android">Android<sup>185</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Camera/" title="Camera">Camera<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Cocos2d-X/" title="Cocos2d-X">Cocos2d-X<sup>11</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Prose/" title="Prose">Prose<sup>27</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Python/" title="Python">Python<sup>22</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/ReactNative/" title="ReactNative">ReactNative<sup>7</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/iOS/" title="iOS">iOS<sup>79</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/node-js/" title="node.js">node.js<sup>30</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/杂文/" title="杂文">杂文<sup>3</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+  <div class="tagcloudlist">
+    <p class="asidetitle">标签云</p>
+    <div class="tagcloudlist clearfix">
+       <a href="/tags/AFNetworking/" style="font-size: 10px;">AFNetworking</a> <a href="/tags/APK/" style="font-size: 10px;">APK</a> <a href="/tags/AS/" style="font-size: 10px;">AS</a> <a href="/tags/Adapter/" style="font-size: 10px;">Adapter</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Android-5-0/" style="font-size: 10px;">Android 5.0</a> <a href="/tags/Android-Studio/" style="font-size: 11.67px;">Android Studio</a> <a href="/tags/AndroidAninotations/" style="font-size: 10px;">AndroidAninotations</a> <a href="/tags/AndroidStudio/" style="font-size: 15.83px;">AndroidStudio</a> <a href="/tags/Animation/" style="font-size: 12.5px;">Animation</a> <a href="/tags/Api/" style="font-size: 11.67px;">Api</a> <a href="/tags/App/" style="font-size: 10px;">App</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Async/" style="font-size: 10px;">Async</a> <a href="/tags/Atom/" style="font-size: 10.83px;">Atom</a> <a href="/tags/AutoLayout/" style="font-size: 10px;">AutoLayout</a> <a href="/tags/BaseAdapter/" style="font-size: 10px;">BaseAdapter</a> <a href="/tags/Blur/" style="font-size: 10px;">Blur</a> <a href="/tags/Box2D/" style="font-size: 10px;">Box2D</a> <a href="/tags/Broadcast/" style="font-size: 10px;">Broadcast</a> <a href="/tags/CardView/" style="font-size: 10px;">CardView</a> <a href="/tags/CocoaPods/" style="font-size: 10px;">CocoaPods</a> <a href="/tags/Cocos2d-X/" style="font-size: 13.33px;">Cocos2d-X</a> <a href="/tags/CocosPods/" style="font-size: 10px;">CocosPods</a> <a href="/tags/ContentProvider/" style="font-size: 10px;">ContentProvider</a> <a href="/tags/Context/" style="font-size: 10px;">Context</a> <a href="/tags/Crouton/" style="font-size: 10px;">Crouton</a> <a href="/tags/CursorLoader/" style="font-size: 10px;">CursorLoader</a> <a href="/tags/Demo/" style="font-size: 10.83px;">Demo</a> <a href="/tags/Dialog/" style="font-size: 10px;">Dialog</a> <a href="/tags/EditView/" style="font-size: 10px;">EditView</a> <a href="/tags/EventBus/" style="font-size: 10px;">EventBus</a> <a href="/tags/Express/" style="font-size: 10px;">Express</a> <a href="/tags/Express学习笔记/" style="font-size: 10px;">Express学习笔记</a> <a href="/tags/Flex/" style="font-size: 10px;">Flex</a> <a href="/tags/Fragment/" style="font-size: 10.83px;">Fragment</a> <a href="/tags/GET/" style="font-size: 10px;">GET</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Gradle/" style="font-size: 10.83px;">Gradle</a> <a href="/tags/GridLayout/" style="font-size: 10px;">GridLayout</a> <a href="/tags/GridView/" style="font-size: 10.83px;">GridView</a> <a href="/tags/Gson/" style="font-size: 10px;">Gson</a> <a href="/tags/HTTP/" style="font-size: 10.83px;">HTTP</a> <a href="/tags/Handler/" style="font-size: 10px;">Handler</a> <a href="/tags/HeadersList/" style="font-size: 10px;">HeadersList</a> <a href="/tags/Hello-World/" style="font-size: 10px;">Hello World</a> <a href="/tags/Holo/" style="font-size: 10px;">Holo</a> <a href="/tags/IDE/" style="font-size: 10px;">IDE</a> <a href="/tags/IM/" style="font-size: 10.83px;">IM</a> <a href="/tags/Indicator/" style="font-size: 10px;">Indicator</a> <a href="/tags/IntentService/" style="font-size: 10px;">IntentService</a> <a href="/tags/JCenter/" style="font-size: 10px;">JCenter</a> <a href="/tags/JSON解析/" style="font-size: 10px;">JSON解析</a> <a href="/tags/Java/" style="font-size: 16.67px;">Java</a> <a href="/tags/Json/" style="font-size: 10.83px;">Json</a> <a href="/tags/KVO/" style="font-size: 10.83px;">KVO</a> <a href="/tags/Kotlin/" style="font-size: 10px;">Kotlin</a> <a href="/tags/Layout/" style="font-size: 10px;">Layout</a> <a href="/tags/Lint/" style="font-size: 10px;">Lint</a> <a href="/tags/ListView/" style="font-size: 10.83px;">ListView</a> <a href="/tags/Log/" style="font-size: 10px;">Log</a> <a href="/tags/MVVM/" style="font-size: 10.83px;">MVVM</a> <a href="/tags/Mac/" style="font-size: 10.83px;">Mac</a> <a href="/tags/Markdown/" style="font-size: 10.83px;">Markdown</a> <a href="/tags/Masonry/" style="font-size: 10px;">Masonry</a> <a href="/tags/Material/" style="font-size: 10.83px;">Material</a> <a href="/tags/Material-Design/" style="font-size: 10px;">Material Design</a> <a href="/tags/MaterialDesign/" style="font-size: 10px;">MaterialDesign</a> <a href="/tags/Meterial/" style="font-size: 10.83px;">Meterial</a> <a href="/tags/Meterial-Design/" style="font-size: 10px;">Meterial Design</a> <a href="/tags/Model/" style="font-size: 10px;">Model</a> <a href="/tags/MongoDB/" style="font-size: 10.83px;">MongoDB</a> <a href="/tags/Mongoose/" style="font-size: 10px;">Mongoose</a> <a href="/tags/NavBar/" style="font-size: 10px;">NavBar</a> <a href="/tags/Navigator/" style="font-size: 10px;">Navigator</a> <a href="/tags/NavtigationBar/" style="font-size: 10px;">NavtigationBar</a> <a href="/tags/NoSQL/" style="font-size: 10px;">NoSQL</a> <a href="/tags/OSX/" style="font-size: 10px;">OSX</a> <a href="/tags/Objective-C/" style="font-size: 17.5px;">Objective-C</a> <a href="/tags/POST/" style="font-size: 10px;">POST</a> <a href="/tags/PagerAdapter/" style="font-size: 10px;">PagerAdapter</a> <a href="/tags/PagerTranformer/" style="font-size: 10px;">PagerTranformer</a> <a href="/tags/Paint/" style="font-size: 10px;">Paint</a> <a href="/tags/Parcelable/" style="font-size: 10px;">Parcelable</a> <a href="/tags/PerferenceScreencreen/" style="font-size: 10px;">PerferenceScreencreen</a> <a href="/tags/Post/" style="font-size: 10px;">Post</a> <a href="/tags/ProGuard/" style="font-size: 10px;">ProGuard</a> <a href="/tags/Prose/" style="font-size: 12.5px;">Prose</a> <a href="/tags/Python/" style="font-size: 18.33px;">Python</a> <a href="/tags/REST/" style="font-size: 10.83px;">REST</a> <a href="/tags/Random/" style="font-size: 10px;">Random</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/ReactNative/" style="font-size: 10px;">ReactNative</a> <a href="/tags/RecyclerView/" style="font-size: 10.83px;">RecyclerView</a> <a href="/tags/SDK/" style="font-size: 11.67px;">SDK</a> <a href="/tags/SD卡/" style="font-size: 10px;">SD卡</a> <a href="/tags/SE5/" style="font-size: 10px;">SE5</a> <a href="/tags/SE6/" style="font-size: 10px;">SE6</a> <a href="/tags/SaveInstance/" style="font-size: 10px;">SaveInstance</a> <a href="/tags/Serializable/" style="font-size: 10px;">Serializable</a> <a href="/tags/SharedPreferce/" style="font-size: 10px;">SharedPreferce</a> <a href="/tags/SizeClass/" style="font-size: 10px;">SizeClass</a> <a href="/tags/Spider/" style="font-size: 10px;">Spider</a> <a href="/tags/Sprite/" style="font-size: 10.83px;">Sprite</a> <a href="/tags/Style/" style="font-size: 10px;">Style</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Sublime-Text/" style="font-size: 10px;">Sublime Text</a> <a href="/tags/SublimeText/" style="font-size: 10px;">SublimeText</a> <a href="/tags/Swift/" style="font-size: 17.5px;">Swift</a> <a href="/tags/TextView/" style="font-size: 10.83px;">TextView</a> <a href="/tags/Thread/" style="font-size: 10px;">Thread</a> <a href="/tags/Tips/" style="font-size: 10px;">Tips</a> <a href="/tags/ToolBar/" style="font-size: 10px;">ToolBar</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/UIActionSheet/" style="font-size: 10px;">UIActionSheet.</a> <a href="/tags/UIAlertView/" style="font-size: 10px;">UIAlertView</a> <a href="/tags/UIImageView/" style="font-size: 10px;">UIImageView</a> <a href="/tags/UIL/" style="font-size: 10px;">UIL</a> <a href="/tags/UIScrollView/" style="font-size: 10px;">UIScrollView</a> <a href="/tags/Ui/" style="font-size: 10px;">Ui</a> <a href="/tags/View/" style="font-size: 10px;">View</a> <a href="/tags/Volley/" style="font-size: 10px;">Volley</a> <a href="/tags/WebStorm/" style="font-size: 10px;">WebStorm</a> <a href="/tags/WebStrom/" style="font-size: 10px;">WebStrom</a> <a href="/tags/XCode/" style="font-size: 10px;">XCode</a> <a href="/tags/adb/" style="font-size: 10px;">adb</a> <a href="/tags/app/" style="font-size: 10.83px;">app</a> <a href="/tags/async/" style="font-size: 10px;">async</a> <a href="/tags/blur/" style="font-size: 10px;">blur</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/console/" style="font-size: 10px;">console</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/curl/" style="font-size: 10px;">curl</a> <a href="/tags/eclipse/" style="font-size: 10px;">eclipse</a> <a href="/tags/emoji/" style="font-size: 10px;">emoji</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/fallthrough/" style="font-size: 10px;">fallthrough</a> <a href="/tags/findViewById/" style="font-size: 10px;">findViewById</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/gradlew/" style="font-size: 10px;">gradlew</a> <a href="/tags/gravity/" style="font-size: 10px;">gravity</a> <a href="/tags/host/" style="font-size: 10px;">host</a> <a href="/tags/http/" style="font-size: 10.83px;">http</a> <a href="/tags/iOS/" style="font-size: 19.17px;">iOS</a> <a href="/tags/iPhone/" style="font-size: 10px;">iPhone</a> <a href="/tags/icon/" style="font-size: 10px;">icon</a> <a href="/tags/include/" style="font-size: 10px;">include</a> <a href="/tags/jQerry/" style="font-size: 11.67px;">jQerry</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/js/" style="font-size: 14.17px;">js</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/keymap/" style="font-size: 10px;">keymap</a> <a href="/tags/lambda/" style="font-size: 10px;">lambda</a> <a href="/tags/layout/" style="font-size: 11.67px;">layout</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/measure/" style="font-size: 10px;">measure</a> <a href="/tags/merge/" style="font-size: 10px;">merge</a> <a href="/tags/meteor/" style="font-size: 10.83px;">meteor</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/mongo/" style="font-size: 10px;">mongo</a> <a href="/tags/ndk/" style="font-size: 11.67px;">ndk</a> <a href="/tags/nil/" style="font-size: 10px;">nil</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/package/" style="font-size: 10px;">package</a> <a href="/tags/px/" style="font-size: 10px;">px</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/ripple/" style="font-size: 10px;">ripple</a> <a href="/tags/selector/" style="font-size: 10px;">selector</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/shape/" style="font-size: 10px;">shape</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/so/" style="font-size: 10px;">so</a> <a href="/tags/sp/" style="font-size: 10px;">sp</a> <a href="/tags/sqlite/" style="font-size: 10px;">sqlite</a> <a href="/tags/style/" style="font-size: 10px;">style</a> <a href="/tags/supervisor/" style="font-size: 10px;">supervisor</a> <a href="/tags/support/" style="font-size: 10px;">support</a> <a href="/tags/swfit/" style="font-size: 10px;">swfit</a> <a href="/tags/swift/" style="font-size: 10px;">swift</a> <a href="/tags/switch/" style="font-size: 10px;">switch</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web-app/" style="font-size: 10px;">web app</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/wifi/" style="font-size: 10px;">wifi</a> <a href="/tags/yield/" style="font-size: 10px;">yield</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/依赖管理/" style="font-size: 10px;">依赖管理</a> <a href="/tags/保存数据/" style="font-size: 10px;">保存数据</a> <a href="/tags/倒计时/" style="font-size: 10px;">倒计时</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/分支/" style="font-size: 10.83px;">分支</a> <a href="/tags/分辨率/" style="font-size: 10.83px;">分辨率</a> <a href="/tags/分配率/" style="font-size: 10px;">分配率</a> <a href="/tags/切换/" style="font-size: 10px;">切换</a> <a href="/tags/初始化/" style="font-size: 10px;">初始化</a> <a href="/tags/前端/" style="font-size: 11.67px;">前端</a> <a href="/tags/加密/" style="font-size: 10px;">加密</a> <a href="/tags/动态交互/" style="font-size: 10px;">动态交互</a> <a href="/tags/动态注入/" style="font-size: 10px;">动态注入</a> <a href="/tags/动画/" style="font-size: 13.33px;">动画</a> <a href="/tags/包/" style="font-size: 10px;">包</a> <a href="/tags/反编译/" style="font-size: 10.83px;">反编译</a> <a href="/tags/取色/" style="font-size: 10px;">取色</a> <a href="/tags/图片加载/" style="font-size: 10px;">图片加载</a> <a href="/tags/坐标系/" style="font-size: 10px;">坐标系</a> <a href="/tags/基础/" style="font-size: 11.67px;">基础</a> <a href="/tags/复用/" style="font-size: 10px;">复用</a> <a href="/tags/多分辨率/" style="font-size: 10px;">多分辨率</a> <a href="/tags/多屏幕/" style="font-size: 10px;">多屏幕</a> <a href="/tags/大不同/" style="font-size: 16.67px;">大不同</a> <a href="/tags/妈妈再也不用担心系列/" style="font-size: 10px;">妈妈再也不用担心系列</a> <a href="/tags/定位代码/" style="font-size: 10px;">定位代码</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/对象/" style="font-size: 10px;">对象</a> <a href="/tags/导航/" style="font-size: 10px;">导航</a> <a href="/tags/属性/" style="font-size: 10.83px;">属性</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/工具类/" style="font-size: 11.67px;">工具类</a> <a href="/tags/布局/" style="font-size: 10.83px;">布局</a> <a href="/tags/带标题的ListView/" style="font-size: 10px;">带标题的ListView</a> <a href="/tags/常用/" style="font-size: 10.83px;">常用</a> <a href="/tags/序列化/" style="font-size: 10px;">序列化</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/开源/" style="font-size: 10px;">开源</a> <a href="/tags/开源库/" style="font-size: 10px;">开源库</a> <a href="/tags/异步/" style="font-size: 10.83px;">异步</a> <a href="/tags/异步加载/" style="font-size: 10px;">异步加载</a> <a href="/tags/引导/" style="font-size: 10px;">引导</a> <a href="/tags/引用/" style="font-size: 10px;">引用</a> <a href="/tags/录屏/" style="font-size: 10px;">录屏</a> <a href="/tags/快捷键/" style="font-size: 10px;">快捷键</a> <a href="/tags/持久化/" style="font-size: 10px;">持久化</a> <a href="/tags/按钮/" style="font-size: 10px;">按钮</a> <a href="/tags/提示/" style="font-size: 10.83px;">提示</a> <a href="/tags/插件/" style="font-size: 11.67px;">插件</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/数学，宏/" style="font-size: 10px;">数学，宏</a> <a href="/tags/数据库/" style="font-size: 11.67px;">数据库</a> <a href="/tags/数据绑定/" style="font-size: 10.83px;">数据绑定</a> <a href="/tags/文本大小/" style="font-size: 10px;">文本大小</a> <a href="/tags/杂文/" style="font-size: 10.83px;">杂文</a> <a href="/tags/权限/" style="font-size: 10px;">权限</a> <a href="/tags/样式/" style="font-size: 10px;">样式</a> <a href="/tags/模块/" style="font-size: 10.83px;">模块</a> <a href="/tags/模拟/" style="font-size: 10px;">模拟</a> <a href="/tags/模糊/" style="font-size: 10.83px;">模糊</a> <a href="/tags/毛玻璃/" style="font-size: 10px;">毛玻璃</a> <a href="/tags/波纹/" style="font-size: 10px;">波纹</a> <a href="/tags/注入/" style="font-size: 10.83px;">注入</a> <a href="/tags/注解/" style="font-size: 10px;">注解</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/混淆/" style="font-size: 10px;">混淆</a> <a href="/tags/热启动/" style="font-size: 10px;">热启动</a> <a href="/tags/爬虫/" style="font-size: 10.83px;">爬虫</a> <a href="/tags/物理引擎/" style="font-size: 10px;">物理引擎</a> <a href="/tags/环信/" style="font-size: 10.83px;">环信</a> <a href="/tags/生命周期/" style="font-size: 11.67px;">生命周期</a> <a href="/tags/用时/" style="font-size: 10px;">用时</a> <a href="/tags/界面/" style="font-size: 10px;">界面</a> <a href="/tags/硬盘缓存/" style="font-size: 10px;">硬盘缓存</a> <a href="/tags/第一个项目/" style="font-size: 10px;">第一个项目</a> <a href="/tags/精灵/" style="font-size: 10px;">精灵</a> <a href="/tags/精灵帧/" style="font-size: 10px;">精灵帧</a> <a href="/tags/约束/" style="font-size: 10px;">约束</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/绘制/" style="font-size: 10px;">绘制</a> <a href="/tags/继承/" style="font-size: 10px;">继承</a> <a href="/tags/缓存/" style="font-size: 10px;">缓存</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a> <a href="/tags/网络请求/" style="font-size: 10.83px;">网络请求</a> <a href="/tags/翻墙/" style="font-size: 10.83px;">翻墙</a> <a href="/tags/自动布局/" style="font-size: 10px;">自动布局</a> <a href="/tags/自定义/" style="font-size: 10.83px;">自定义</a> <a href="/tags/自定义控件/" style="font-size: 10px;">自定义控件</a> <a href="/tags/自适应/" style="font-size: 10px;">自适应</a> <a href="/tags/虚拟键/" style="font-size: 10px;">虚拟键</a> <a href="/tags/角标/" style="font-size: 10px;">角标</a> <a href="/tags/设计/" style="font-size: 10px;">设计</a> <a href="/tags/设计缺陷/" style="font-size: 10px;">设计缺陷</a> <a href="/tags/访问/" style="font-size: 10px;">访问</a> <a href="/tags/调试/" style="font-size: 10.83px;">调试</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/资源文件/" style="font-size: 10px;">资源文件</a> <a href="/tags/路由/" style="font-size: 10px;">路由</a> <a href="/tags/转义/" style="font-size: 10px;">转义</a> <a href="/tags/轻量级/" style="font-size: 10px;">轻量级</a> <a href="/tags/连接/" style="font-size: 10px;">连接</a> <a href="/tags/适配/" style="font-size: 10.83px;">适配</a> <a href="/tags/遍历/" style="font-size: 10px;">遍历</a> <a href="/tags/配置/" style="font-size: 10px;">配置</a> <a href="/tags/镜像/" style="font-size: 10px;">镜像</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/随机/" style="font-size: 10px;">随机</a> <a href="/tags/隐藏/" style="font-size: 10px;">隐藏</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a> <a href="/tags/颜色/" style="font-size: 10.83px;">颜色</a> <a href="/tags/颜色选择器/" style="font-size: 10px;">颜色选择器</a> <a href="/tags/魅族/" style="font-size: 10px;">魅族</a> <a href="/tags/！/" style="font-size: 10px;">！</a> <a href="/tags/？/" style="font-size: 10px;">？</a>
+    </div>
+  </div>
+
+
+  
+  <div class="archiveslist">
+    <p class="asidetitle"><a href="/archives">归档</a></p>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">二月 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">九月 2014</a><span class="archive-list-count">36</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">八月 2014</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">七月 2014</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">五月 2014</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">四月 2014</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">三月 2014</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">二月 2014</a><span class="archive-list-count">24</span></li></ul>
+  </div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://daimajia.com/" target="_blank" title="DaiMaJia.Blog">DaiMaJia.Blog</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://macrotea.com/welcome/" target="_blank" title="Macrotea.Blog">Macrotea.Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello,I&#39;m Zoe,a Android and iOS developers. <br/>
+			This is my blog,I hope you will enjoy them.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2292032577" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/seniorzhai" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:developer.zhaitao@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="Zoe">Zoe</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-54646832-1', 'null');  
+ga('send', 'pageview');
+</script>
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+ </html>

@@ -1,0 +1,798 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Zoe&#39;s blog</title>
+  <subtitle>宅学长的博客</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://seniorzhai.github.io/"/>
+  <updated>2016-05-20T08:40:48.000Z</updated>
+  <id>http://seniorzhai.github.io/</id>
+  
+  <author>
+    <name>Zoe</name>
+    <email>developer.zhaitao@gmail.com</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GoogleIO第一份惊喜-ConstraintLayout</title>
+    <link href="http://seniorzhai.github.io/2016/05/19/GoogleIO%E7%AC%AC%E4%B8%80%E4%BB%BD%E6%83%8A%E5%96%9C-ConstraintLayout/"/>
+    <id>http://seniorzhai.github.io/2016/05/19/GoogleIO第一份惊喜-ConstraintLayout/</id>
+    <published>2016-05-19T06:03:07.000Z</published>
+    <updated>2016-05-20T08:40:48.000Z</updated>
+    
+    <content type="html">&lt;p&gt;了解iOS开发的童鞋应该知道，自iPhone6推出后，iOS也进入多屏适配时代，AutoLayout成为了适配的首选，Storyboard+AutoLayout成为了iOS布局的主要流派之一（代码适配也是不错的选择）。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;拖拽组件，设定约束，一个界面就基本完成了（当然，还有一堆高级的用法）。而Android开发工程师还在苦逼地将设计稿分割，这部分用一个RelativeLayout，这部分用LinearLayout……然后嵌套一下，或者再套一层。对于很多对几大布局不是很了解的同学，往往几个界面的组成就够头痛一阵了。&lt;br&gt;拯救你们的救星来了，ConstraintLayout将解决你的难言之隐，还在等待什么，赶快拿起电话*&amp;amp;……%￥(不好意思出戏了)&lt;/p&gt;
+&lt;p&gt;##开始&lt;br&gt;首先确保你的Android Studio是&lt;a href=&quot;http://tools.android.com/download/studio/canary&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;2.2 preview&lt;/a&gt;或者更高版本，预览拖拽设定约束需要新的布局编辑窗口，低版本AS应该可以用ConstraintLayout，但没用设置约束功能（光手写XML，为什么还用ConstraintLayout）&lt;/p&gt;
+&lt;p&gt;ConstraintLayout是一个单独的支持包，所以需要在gradle中添加引用&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;dependencies &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  ...&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  compile &amp;apos;com.android.support.constraint:constraint-layout:1.0.0-alpha&amp;apos;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;在Layout文件中引用&lt;br&gt;&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;android.support.constraint.ConstraintLayout&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;xmlns:android&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;xmlns:app&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;http://schemas.android.com/apk/res-auto&quot;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;android:layout_width&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;android:layout_height&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;android.support.constraint.ConstraintLayout&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;##使用&lt;br&gt;&lt;img src=&quot;/img/16051900.jpeg&quot; alt=&quot;&quot;&gt;&lt;br&gt;在布局编辑窗口中选择&lt;code&gt;Design&lt;/code&gt;(我几乎是第一次选择他，而不是直接去使用TextV去写XML)&lt;br&gt;&lt;img src=&quot;/img/16051901.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;###约束Constraints&lt;br&gt;约束可以帮助你设定不同组件之间的位置关系，比如，这个A组件在B组件右边25dp且位于C组件下方8dp的位置。&lt;/p&gt;
+&lt;p&gt;在布局编辑窗口中，当你选中一个组件可以看到以下情况&lt;br&gt;&lt;img src=&quot;/img/16051902.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;拖拽边角的方形，可以控制组件的大小&lt;br&gt;&lt;img src=&quot;/img/16051903.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;拖拽四边的圆形，可以设置组件相对四个方向上的距离约束&lt;br&gt;&lt;img src=&quot;/img/16051904.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;拖拽下方圆角矩形，可以设置组件间的基线对齐&lt;/p&gt;
+&lt;p&gt;##基本使用&lt;br&gt;当拖动大小约束时，大小会被改变&lt;br&gt;&lt;img src=&quot;/img/16051905.gif&quot; alt=&quot;&quot;&gt;&lt;br&gt;当拖动位置约束时，锚点变绿即建立约束成功&lt;br&gt;&lt;img src=&quot;/img/16051906.gif&quot; alt=&quot;&quot;&gt;&lt;br&gt;当约束建立成功后，再次点击锚点即可删除约束&lt;br&gt;&lt;img src=&quot;/img/16051907.gif&quot; alt=&quot;&quot;&gt;&lt;br&gt;设置基线约束，可以对齐文本&lt;br&gt;&lt;img src=&quot;/img/16052001.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;当然拖动并不能准确的设置约束，这个时候我们看看到右边的属性窗口&lt;br&gt;&lt;img src=&quot;/img/16051908.jpeg&quot; alt=&quot;&quot;&gt;&lt;br&gt;在这里你可以设置组件的相关约束和组件的相关属性&lt;br&gt;在属性窗口中，你可以看到约束的UI界面是这样的&lt;br&gt;&lt;img src=&quot;/img/16051909.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;每个约束是一个&lt;code&gt;I&lt;/code&gt;型的图标，点击可以切换如下三个状态&lt;br&gt;&lt;img src=&quot;/img/16051910.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;Fixed：固定尺寸约束，指定组件大小&lt;br&gt;&lt;img src=&quot;/img/16051911.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;AnySize：占用可用空间&lt;br&gt;&lt;img src=&quot;/img/16051912.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;Wrap Content：包含组件内容大小&lt;/p&gt;
+&lt;p&gt;以上可以在&lt;a href=&quot;https://github.com/googlecodelabs/constraint-layout&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官方示例&lt;/a&gt;中查看&lt;/p&gt;
+&lt;p&gt;##缺点&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;UI操作并不顺畅，控件经常点击不到&lt;/li&gt;
+&lt;li&gt;缺少等宽等约束，复杂的需求不一定能实现&lt;/li&gt;
+&lt;li&gt;当ConstraintLayout不是根布局时， UI操作基本不可用&lt;blockquote&gt;
+&lt;p&gt;注：以上可能是本人并不熟练或不够了解导致的&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;了解iOS开发的童鞋应该知道，自iPhone6推出后，iOS也进入多屏适配时代，AutoLayout成为了适配的首选，Storyboard+AutoLayout成为了iOS布局的主要流派之一（代码适配也是不错的选择）。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="http://seniorzhai.github.io/categories/Android/"/>
+    
+    
+      <category term="AutoLayout" scheme="http://seniorzhai.github.io/tags/AutoLayout/"/>
+    
+      <category term="约束" scheme="http://seniorzhai.github.io/tags/%E7%BA%A6%E6%9D%9F/"/>
+    
+      <category term="布局" scheme="http://seniorzhai.github.io/tags/%E5%B8%83%E5%B1%80/"/>
+    
+      <category term="Layout" scheme="http://seniorzhai.github.io/tags/Layout/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Weex初探</title>
+    <link href="http://seniorzhai.github.io/2016/05/10/Weex%E5%88%9D%E6%8E%A2/"/>
+    <id>http://seniorzhai.github.io/2016/05/10/Weex初探/</id>
+    <published>2016-05-10T09:53:42.000Z</published>
+    <updated>2016-05-12T11:26:28.000Z</updated>
+    
+    <content type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;目前weex还在内测阶段，还是一个github的私有项目&lt;/p&gt;
+&lt;p&gt;##基础环境&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Node.js 4.0+&lt;/li&gt;
+&lt;li&gt;Android SDK&lt;/li&gt;
+&lt;li&gt;Android Studio&lt;br&gt;##如何开始&lt;br&gt;clone项目，在项目目录下执行&lt;code&gt;npm install&lt;/code&gt;,&lt;code&gt;./start&lt;/code&gt;&lt;br&gt;将&lt;code&gt;android/playground/app/java/com/alibaba/weex/WXMainActivity&lt;/code&gt;修改&lt;code&gt;CURRENT_IP&lt;/code&gt;将本地IP&lt;br&gt;之后运行项目&lt;br&gt;##简单的使用&lt;br&gt;可以看到weex的写法和原生的html很像，简单的hello weex如下：&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;template&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;style&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;style-size:100px;&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;Hello weex!&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;text&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;template&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;目前weex还在内测阶段，还是一个github的私有项目&lt;/p&gt;
+&lt;p&gt;##基础环境&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Node.js 4.0+&lt;/li&gt;
+&lt;li&gt;Android SDK&lt;/li&gt;
+&lt;li&gt;Android Studio&lt;br&gt;##
+    
+    </summary>
+    
+      <category term="node.js" scheme="http://seniorzhai.github.io/categories/node-js/"/>
+    
+    
+      <category term="Android" scheme="http://seniorzhai.github.io/tags/Android/"/>
+    
+      <category term="weex" scheme="http://seniorzhai.github.io/tags/weex/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UIStackView的使用</title>
+    <link href="http://seniorzhai.github.io/2016/04/25/UIStackView%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>http://seniorzhai.github.io/2016/04/25/UIStackView的使用/</id>
+    <published>2016-04-25T06:28:56.000Z</published>
+    <updated>2016-04-29T05:52:30.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Stack View是一个方便垂直或水平排布subView，与Android中的LinearLayout非常相似。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;##布局&lt;br&gt;使用Stack View在Attributes Inspector中，Axis表示Stack View的SubView是水平排布还是垂直布局。Alignment控制SubView的对齐方式。Distribution定义SubView的分布方式。Spacing为SubView间的最小间距。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Stack View是一个方便垂直或水平排布subView，与Android中的LinearLayout非常相似。&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ProGuard详解</title>
+    <link href="http://seniorzhai.github.io/2016/04/11/ProGuard%E8%AF%A6%E8%A7%A3/"/>
+    <id>http://seniorzhai.github.io/2016/04/11/ProGuard详解/</id>
+    <published>2016-04-11T06:16:42.000Z</published>
+    <updated>2016-04-11T07:12:49.000Z</updated>
+    
+    <content type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;ProGuard包括4各功能：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;压缩(Shrink) 移除代码中无用的类、字段、方法、和特性&lt;/li&gt;
+&lt;li&gt;优化(Optimize) 对字节码进行优化，移除无用的指令&lt;/li&gt;
+&lt;li&gt;混淆(Obfuscate) 使用剪短无意义的名称对类、字段、方法重命名&lt;/li&gt;
+&lt;li&gt;预检(Preveirfy) 在Java平台上对处理后的代码进行预检&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;##ProGuard的工作原理&lt;br&gt;ProGuard由&lt;code&gt;Shrink&lt;/code&gt;,&lt;code&gt;Optimize&lt;/code&gt;,&lt;code&gt;Obfuscate&lt;/code&gt;,&lt;code&gt;Preveirfy&lt;/code&gt;四个步骤组成，其中每个步骤都是可选的&lt;/p&gt;
+&lt;p&gt;##编写ProGuard文件&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;基本指令&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;代码混淆压缩比，在0~7之间，默认为5，&lt;code&gt;-optimizationpasses 5&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;混淆时不使用大小写混合，混淆的类名为小写 &lt;code&gt;-dontusemixedcaseclassnames&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;指定不去忽略废公共的库的类 &lt;code&gt;-dontskipnonpubliclibaryclasses&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;指定不去忽略废公共的库的类的成员 &lt;code&gt;-dontskipnonpubliclibaryclassesmembers&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;不做预校验 &lt;code&gt;-dontpreverify&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;生成映射文件 &lt;code&gt;-verbose&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;使用printmapping指定映射文件的名称 &lt;code&gt;-printmapping proguardMapping.txt&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;指定混淆时采用的算法 &lt;code&gt;-optimizations ! code/ simplification/ arithmetic,!fiedld/*,class/merging/*&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;保护代码中的Annotation不被混淆 &lt;code&gt;-keepattributes *Annotation*&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;避免混淆泛型 &lt;code&gt;-keepattributes Signature&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;抛出异常时保留代码行数 &lt;code&gt;-keepattributes SourceFile,LineNumberTable&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;需要保留的&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;保留本地native方法不被混淆&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;- keepclasseswithmembernames class * &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  native &amp;lt;methods&amp;gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;保留某些子类不被混淆&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;- keep public class * extends android.app.Activity&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;保护在XML中设置onClick不被影响&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;- keepclassmembers class * extends android.app.Activity &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  public void *(android.view.View);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;保护Fragment &lt;code&gt;- keep public class android.support.v4.app.Fragment.** {*;}&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;保留枚举不被混淆&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;- keepclassmembers enum * &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  public static **&amp;#123;&amp;#125; values();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  public static ** valueOf(Java.lang.String);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;保留自定义控件不被混淆&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;- keep public class * extends android.view.View &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  *** get*();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  void set*(***);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  public &amp;lt;init&amp;gt;(android.content.Context);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  public &amp;lt;init&amp;gt;(android.content.Context,android.util.ArrtibuteSet);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  public &amp;lt;init&amp;gt;(android.content.Context,android.util.ArrtibuteSet,int);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;保留Parcelable序列化不被混淆&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;- keep class * implements android.os.Parcelable &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  public static final android.os.Parcelable$Creator *;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;保留Serializable序列化类不被混淆&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;- keepclassemembers class * implements java.io.Serializable &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  static final long serialVersionID;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  private static final java.io.ObjectStreamField[] serialPersistentFields;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  private void writeObject(java.io.ObjectOutputStream);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  private void readObject(java.io.ObjectInputStream);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  java.lang.Object writeReplace();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  java.lang.Object readResolve();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;保留R文件下的资源不被混淆&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;- keep class **.R$&amp;#123;*;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;保留内部类不被混淆&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;- keep class com.example.app.ui.MainActivity$*&amp;#123;*;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;对WebView的处理&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;- keepclassmembers class * extends android.webkit.webViewClient &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  public void *(android.webkit.WebView,java.lang.String,android.graphics.Bitmap);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  public boolean *(android.webkit.WebView,java.lang.String);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;- keepclassmembers class * extends android.webkit.webViewClient &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  public void *(android.webkit.webView,java.lang.String);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;对JavaScript&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;- keepclassemembers class com.example.app.MainActivity$JSInterface &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;lt;methods&amp;gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;针对第三方库的混淆保护&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;- libraryjas libs/android-support-v4.jar&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;- dontwarn android.support.v4.**&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;- keep class android.support.v4.**&amp;#123;*;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;- kepp interface android.support.v4.app.**&amp;#123;*;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;- kepp public class * extends android.support.v4.**&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;- keep public class * extends android.app.Fragment&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;ProGuard包括4各功能：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;压缩(Shrink) 移除代码中无用的类、字段、方法、和特性&lt;/li&gt;
+&lt;li&gt;优化(Optimize) 对字节码进行优化，移除无用的指令&lt;/li&gt;
+&lt;li&gt;混淆(Obfuscat
+    
+    </summary>
+    
+      <category term="Android" scheme="http://seniorzhai.github.io/categories/Android/"/>
+    
+    
+      <category term="ProGuard" scheme="http://seniorzhai.github.io/tags/ProGuard/"/>
+    
+      <category term="混淆" scheme="http://seniorzhai.github.io/tags/%E6%B7%B7%E6%B7%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在Drawable里指定ripple</title>
+    <link href="http://seniorzhai.github.io/2016/03/15/%E5%9C%A8Drawable%E9%87%8C%E6%8C%87%E5%AE%9Aripple/"/>
+    <id>http://seniorzhai.github.io/2016/03/15/在Drawable里指定ripple/</id>
+    <published>2016-03-15T03:05:29.000Z</published>
+    <updated>2016-03-15T03:26:41.000Z</updated>
+    
+    <content type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;在&lt;code&gt;drawable&lt;/code&gt;中&lt;br&gt;&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;selector&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;xmlns:android&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;android:state_pressed&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;true&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;shape&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;android:shape&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;rectangle&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;android:color&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;@android:color/darker_gray&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;shape&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;item&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;item&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;shape&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;android:shape&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;rectangle&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;android:color&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;@android:color/white&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;shape&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;item&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;selector&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;在&lt;code&gt;drawable-v21&lt;/code&gt;中&lt;br&gt;&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;ripple&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;xmlns:android&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;android:color&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;@android:color/darker_gray&quot;&lt;/span&gt;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;item&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;shape&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;android:shape&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;rectangle&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;android:color&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;@android:color/white&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;shape&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;item&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;ripple&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;在&lt;code&gt;drawable&lt;/code&gt;中&lt;br&gt;&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;d
+    
+    </summary>
+    
+      <category term="Android" scheme="http://seniorzhai.github.io/categories/Android/"/>
+    
+    
+      <category term="ripple" scheme="http://seniorzhai.github.io/tags/ripple/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用jadx</title>
+    <link href="http://seniorzhai.github.io/2016/03/10/%E4%BD%BF%E7%94%A8jadx/"/>
+    <id>http://seniorzhai.github.io/2016/03/10/使用jadx/</id>
+    <published>2016-03-10T06:11:00.000Z</published>
+    <updated>2016-03-10T09:44:19.000Z</updated>
+    
+    <content type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;#使用&lt;br&gt;将&lt;a href=&quot;https://github.com/skylot/jadx&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;jadx&lt;/a&gt;克隆到本地，进行编译&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git clone https://github.com/skylot/jadx&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;cd jadx&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;./gradlew dist&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;编译完成后可以在&lt;code&gt;build/jadx/bin&lt;/code&gt;中找到运行文件&lt;/p&gt;
+&lt;p&gt;##运行&lt;br&gt;GUI界面可以点击运行&lt;code&gt;jadx-gui&lt;/code&gt;文件&lt;br&gt;命令行可以使用&lt;code&gt;./jadx&lt;/code&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;jadx demo.apk&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;命令格式&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;jadx[-gui] [options] &amp;lt;input file&amp;gt; (.dex , .apk , .jar or .class)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;options:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  -d,--output-dir         指定输出文件夹&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  -j,--threads-count      执行线程数量&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  -f,--fallback&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  -r,--no-res             不解码资源文件&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  -s,--no-src             不反编代码&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;     --show-bad-code      显示不正确的反编译代码&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;     --cfg                &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;     --raw-cfg&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  -v,--verbose            详细输出&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;     --deobf              激活deofuscation&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;     --deobf-min&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;     --deobf-max&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;     --deobf-rewrite-cfg&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  -h,--help&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;–deobf –deobf-rewrite-cfg&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;#使用&lt;br&gt;将&lt;a href=&quot;https://github.com/skylot/jadx&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;jadx&lt;/a&gt;克隆到本地，进行编译&lt;br&gt;&lt;figure class=&quot;hi
+    
+    </summary>
+    
+      <category term="Android" scheme="http://seniorzhai.github.io/categories/Android/"/>
+    
+    
+      <category term="反编译" scheme="http://seniorzhai.github.io/tags/%E5%8F%8D%E7%BC%96%E8%AF%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Kotlin简单的开始</title>
+    <link href="http://seniorzhai.github.io/2016/02/18/Kotlin%E7%AE%80%E5%8D%95%E7%9A%84%E5%BC%80%E5%A7%8B/"/>
+    <id>http://seniorzhai.github.io/2016/02/18/Kotlin简单的开始/</id>
+    <published>2016-02-18T09:23:49.000Z</published>
+    <updated>2016-03-10T09:35:51.000Z</updated>
+    
+    <content type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;##安装Kotlin插件&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Kotlin 使Android Studio可以识别kotlin代码&lt;/li&gt;
+&lt;li&gt;Kotlin Android Extensions 使Android Studio可以自动地从XML中注入所有的View到Activity&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;##修改Gradle&lt;br&gt;&lt;figure class=&quot;highlight gradle&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;apply plugin: &lt;span class=&quot;string&quot;&gt;&#39;com.android.application&#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;apply plugin: &lt;span class=&quot;string&quot;&gt;&#39;kotlin-android&#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;android &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  ...&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;sourceSets&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    main.java.srcDirs += &lt;span class=&quot;string&quot;&gt;&#39;src/main/kotlin&#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;dependencies&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  ...    &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version&quot;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;buildscript&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ext.kotlin_version = &lt;span class=&quot;string&quot;&gt;&#39;1.0.0&#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;repositories&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        mavenCentral()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;dependencies&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;classpath&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version&quot;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;repositories&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    mavenCentral()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;PS：未修改处省略&lt;/p&gt;
+&lt;p&gt;##修改MainActivity&lt;br&gt;选择MainActivity.java-&amp;gt;Code-&amp;gt;Convert Java File to Kotlin File&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;##安装Kotlin插件&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Kotlin 使Android Studio可以识别kotlin代码&lt;/li&gt;
+&lt;li&gt;Kotlin Android Extensions 使Android Studio可以自动地从XM
+    
+    </summary>
+    
+      <category term="Android" scheme="http://seniorzhai.github.io/categories/Android/"/>
+    
+    
+      <category term="Kotlin" scheme="http://seniorzhai.github.io/tags/Kotlin/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(转)ReactNative-ES5 ES6写法对照</title>
+    <link href="http://seniorzhai.github.io/2016/01/25/-%E8%BD%AC-ReactNative-ES5-ES6%E5%86%99%E6%B3%95%E5%AF%B9%E7%85%A7/"/>
+    <id>http://seniorzhai.github.io/2016/01/25/-转-ReactNative-ES5-ES6写法对照/</id>
+    <published>2016-01-25T12:37:20.000Z</published>
+    <updated>2016-01-26T02:46:27.000Z</updated>
+    
+    <content type="html">&lt;p&gt;转至&lt;a href=&quot;http://bbs.reactnative.cn/topic/15/react-react-native-%E7%9A%84es5-es6%E5%86%99%E6%B3%95%E5%AF%B9%E7%85%A7%E8%A1%A8/2&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://bbs.reactnative.cn/topic/15/react-react-native-%E7%9A%84es5-es6%E5%86%99%E6%B3%95%E5%AF%B9%E7%85%A7%E8%A1%A8/2&lt;/a&gt;&lt;br&gt;很多&lt;code&gt;React/React Native&lt;/code&gt;的初学者都被ES6的问题迷惑：各路大神都建议我们直接学习ES6的语法(class Foo extends React.Component)，然而网上搜到的很多教程和例子都是ES5版本的，所以很多人在学习的时候连照猫画虎都不知道怎么做。今天在此整理了一些ES5和ES6的写法对照表，希望大家以后读到ES5的代码，也能通过对照，在ES6下实现相同的功能。&lt;/p&gt;
+&lt;p&gt;##模块&lt;/p&gt;
+&lt;p&gt;###引用&lt;br&gt;在ES5里，如果使用CommonJS标准，引入React包基本通过require进行，代码类似这样：&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//ES5&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; React = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;react-native&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    Image,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    Text,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    PropTypes&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125; = React;  &lt;span class=&quot;comment&quot;&gt;//引用不同的React Native组件&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;在ES6里，import写法更为标准&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//ES6&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; React, &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    Image,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    Text,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    PropTypes&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125; &lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;react-native&#39;&lt;/span&gt;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意在React Native里，import直到0.12+才能正常运作。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;###导出单个类&lt;br&gt;在ES5里，要导出一个类给别的模块用，一般通过module.exports来导出&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//ES5&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; MyComponent = React.createClass(&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ...&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;module&lt;/span&gt;.exports = MyComponent;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;在ES6里，通常用export default来实现相同的功能：&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//ES6&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;MyComponent&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;React&lt;/span&gt;.&lt;span class=&quot;title&quot;&gt;Component&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ...&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;引用的时候也类似：&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//ES5&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; MyComponent = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;./MyComponent.js&#39;&lt;/span&gt;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//ES6&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; MyComponent &lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;./MyComponent.js&#39;&lt;/span&gt;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;###定义组件&lt;br&gt;在ES5里，通常通过React.createClass来定义一个组件类，像这样：&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//ES5&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; Photo = React.createClass(&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    render: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; (&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;lt;Image source=&amp;#123;this.props.source&amp;#125; /&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        );&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;在ES6里，我们通过定义一个继承自React.Component的class来定义一个组件类，像这样：&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//ES6&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Photo&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;React&lt;/span&gt;.&lt;span class=&quot;title&quot;&gt;Component&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    render() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; (&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;lt;Image source=&amp;#123;this.props.source&amp;#125; /&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        );&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;###给组件定义方法&lt;br&gt;从上面的例子里可以看到，给组件定义方法不再用 名字: function()的写法，而是直接用名字()，在方法的最后也不能有逗号了。&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//ES5&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; Photo = React.createClass(&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    componentWillMount: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    render: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; (&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;lt;Image source=&amp;#123;this.props.source&amp;#125; /&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        );&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//ES6&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Photo&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;React&lt;/span&gt;.&lt;span class=&quot;title&quot;&gt;Component&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    componentWillMount() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    render() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; (&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;lt;Image source=&amp;#123;this.props.source&amp;#125; /&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        );&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;###定义组件的属性类型和默认属性&lt;br&gt;在ES5里，属性类型和默认属性分别通过propTypes成员和getDefaultProps方法来实现&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//ES5&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; Video = React.createClass(&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    getDefaultProps: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            autoPlay: &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            maxLoops: &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    propTypes: &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        autoPlay: React.PropTypes.bool.isRequired,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        maxLoops: React.PropTypes.number.isRequired,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        posterFrameSrc: React.PropTypes.string.isRequired,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        videoSrc: React.PropTypes.string.isRequired,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    render: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; (&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;lt;View /&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        );&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;在ES6里，可以统一使用static成员来实现&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//ES6&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Video&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;React&lt;/span&gt;.&lt;span class=&quot;title&quot;&gt;Component&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; defaultProps = &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        autoPlay: &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        maxLoops: &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;;  &lt;span class=&quot;comment&quot;&gt;// 注意这里有分号&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; propTypes = &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        autoPlay: React.PropTypes.bool.isRequired,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        maxLoops: React.PropTypes.number.isRequired,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        posterFrameSrc: React.PropTypes.string.isRequired,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        videoSrc: React.PropTypes.string.isRequired,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;;  &lt;span class=&quot;comment&quot;&gt;// 注意这里有分号&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    render() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; (&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;lt;View /&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        );&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125; // 注意这里既没有分号也没有逗号&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;也有人这么写，虽然不推荐，但读到代码的时候你应当能明白它的意思：&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//ES6&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Video&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;React&lt;/span&gt;.&lt;span class=&quot;title&quot;&gt;Component&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    render() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; (&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;lt;View /&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        );&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Video.defaultProps = &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    autoPlay: false,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    maxLoops: 10,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Video.propTypes = &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    autoPlay: React.PropTypes.bool.isRequired,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    maxLoops: React.PropTypes.number.isRequired,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    posterFrameSrc: React.PropTypes.string.isRequired,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    videoSrc: React.PropTypes.string.isRequired,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意: 对React开发者而言，static成员在IE10及之前版本不能被继承，而在IE11和其它浏览器上可以，这有时候会带来一些问题。React Native开发者可以不用担心这个问题。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;###初始化state&lt;br&gt;ES5下情况类似，&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//ES5&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; Video = React.createClass(&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    getInitialState: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            loopsRemaining: &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.props.maxLoops,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;ES6下，有两种写法：&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//ES6&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Video&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;React&lt;/span&gt;.&lt;span class=&quot;title&quot;&gt;Component&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    state = &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        loopsRemaining: &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.props.maxLoops,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;不过我们推荐更易理解的在构造函数中初始化（这样你还可以根据需要做一些计算）：&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//ES6&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Video&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;React&lt;/span&gt;.&lt;span class=&quot;title&quot;&gt;Component&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;constructor&lt;/span&gt;(props)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;super&lt;/span&gt;(props);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.state = &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            loopsRemaining: &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.props.maxLoops,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;把方法作为回调提供&lt;br&gt;很多习惯于ES6的用户反而不理解在ES5下可以这么做：&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//ES5&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; PostInfo = React.createClass(&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    handleOptionsButtonClick: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;e&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// Here, &#39;this&#39; refers to the component instance.&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.setState(&amp;#123;showOptionsModal: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;&amp;#125;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    render: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; (&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;lt;TouchableHighlight onPress=&amp;#123;this.handleOptionsButtonClick&amp;#125;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                &amp;lt;Text&amp;gt;&amp;#123;this.props.label&amp;#125;&amp;lt;/Text&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;lt;/TouchableHighlight&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        )&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;在ES5下，React.createClass会把所有的方法都bind一遍，这样可以提交到任意的地方作为回调函数，而this不会变化。但官方现在逐步认为这反而是不标准、不易理解的。&lt;/p&gt;
+&lt;p&gt;在ES6下，你需要通过bind来绑定this引用，或者使用箭头函数（它会绑定当前scope的this引用）来调用&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//ES6&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;PostInfo&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;React&lt;/span&gt;.&lt;span class=&quot;title&quot;&gt;Component&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    handleOptionsButtonClick(e)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.setState(&amp;#123;showOptionsModal: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;&amp;#125;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    render()&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; (&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;lt;TouchableHighlight&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                onPress=&amp;#123;this.handleOptionsButtonClick.bind(this)&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                onPress=&amp;#123;e=&amp;gt;this.handleOptionsButtonClick(e)&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                &amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                &amp;lt;Text&amp;gt;&amp;#123;this.props.label&amp;#125;&amp;lt;/Text&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;lt;/TouchableHighlight&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        )&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;箭头函数实际上是在这里定义了一个临时的函数，箭头函数的箭头=&amp;gt;之前是一个空括号、单个的参数名、或用括号括起的多个参数名，而箭头之后可以是一个表达式（作为函数的返回值），或者是用花括号括起的函数体（需要自行通过return来返回值，否则返回的是undefined）。&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 箭头函数的例子&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;()=&amp;gt;&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;v=&amp;gt;v+&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;(a,b)=&amp;gt;a+b&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;()=&amp;gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    alert(&lt;span class=&quot;string&quot;&gt;&quot;foo&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;e=&amp;gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (e == &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;1000&lt;/span&gt;/e;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;需要注意的是，不论是bind还是箭头函数，每次被执行都返回的是一个新的函数引用，因此如果你还需要函数的引用去做一些别的事情（譬如卸载监听器），那么你必须自己保存这个引用&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 错误的做法&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;PauseMenu&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;React&lt;/span&gt;.&lt;span class=&quot;title&quot;&gt;Component&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    componentWillMount()&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        AppStateIOS.addEventListener(&lt;span class=&quot;string&quot;&gt;&#39;change&#39;&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.onAppPaused.bind(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    componentDidUnmount()&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        AppStateIOS.removeEventListener(&lt;span class=&quot;string&quot;&gt;&#39;change&#39;&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.onAppPaused.bind(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    onAppPaused(event)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 正确的做法&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;PauseMenu&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;React&lt;/span&gt;.&lt;span class=&quot;title&quot;&gt;Component&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;constructor&lt;/span&gt;(props)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;super&lt;/span&gt;(props);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;._onAppPaused = &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.onAppPaused.bind(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    componentWillMount()&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        AppStateIOS.addEventListener(&lt;span class=&quot;string&quot;&gt;&#39;change&#39;&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;._onAppPaused);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    componentDidUnmount()&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        AppStateIOS.removeEventListener(&lt;span class=&quot;string&quot;&gt;&#39;change&#39;&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;._onAppPaused);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    onAppPaused(event)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;从这个帖子中我们还学习到一种新的做法：&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 正确的做法&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;PauseMenu&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;React&lt;/span&gt;.&lt;span class=&quot;title&quot;&gt;Component&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    componentWillMount()&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        AppStateIOS.addEventListener(&lt;span class=&quot;string&quot;&gt;&#39;change&#39;&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.onAppPaused);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    componentDidUnmount()&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        AppStateIOS.removeEventListener(&lt;span class=&quot;string&quot;&gt;&#39;change&#39;&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.onAppPaused);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    onAppPaused = (event) =&amp;gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;//把方法直接作为一个arrow function的属性来定义，初始化的时候就绑定好了this指针&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;###Mixins&lt;br&gt;在ES5下，我们经常使用mixin来为我们的类添加一些新的方法，譬如PureRenderMixin&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; PureRenderMixin = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;react-addons-pure-render-mixin&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;React.createClass(&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  mixins: [PureRenderMixin],&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  render: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &amp;lt;div className=&amp;#123;this.props.className&amp;#125;&amp;gt;foo&amp;lt;/div&amp;gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;然而现在官方已经不再打算在ES6里继续推行Mixin，他们说：Mixins Are Dead. Long Live Composition。&lt;/p&gt;
+&lt;p&gt;尽管如果要继续使用mixin，还是有一些第三方的方案可以用，譬如这个方案&lt;/p&gt;
+&lt;p&gt;不过官方推荐，对于库编写者而言，应当尽快放弃Mixin的编写方式，上文中提到Sebastian Markbåge的一段代码推荐了一种新的编码方式：&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//Enhance.js&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; &amp;#123; Component &amp;#125; &lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;React&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; Enhance = ComposedComponent =&amp;gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Component&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;constructor&lt;/span&gt;() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.state = &amp;#123; data: &lt;span class=&quot;literal&quot;&gt;null&lt;/span&gt; &amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    componentDidMount() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.setState(&amp;#123; data: &lt;span class=&quot;string&quot;&gt;&#39;Hello&#39;&lt;/span&gt; &amp;#125;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    render() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &amp;lt;ComposedComponent &amp;#123;...this.props&amp;#125; data=&amp;#123;this.state.data&amp;#125; /&amp;gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;//HigherOrderComponent.js&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;import &amp;#123; Enhance &amp;#125; from &quot;./Enhance&quot;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;class MyComponent &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    render() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        if (!this.data) return &amp;lt;div&amp;gt;Waiting...&amp;lt;/div&amp;gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        return &amp;lt;div&amp;gt;&amp;#123;this.data&amp;#125;&amp;lt;/div&amp;gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;export default Enhance(MyComponent); // Enhanced component&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;用一个“增强函数”，来某个类增加一些方法，并且返回一个新类，这无疑能实现mixin所实现的大部分需求。&lt;/p&gt;
+&lt;p&gt;##ES6+带来的其它好处&lt;/p&gt;
+&lt;p&gt;###解构&amp;amp;属性延展　&lt;br&gt;结合使用ES6+的解构和属性延展，我们给孩子传递一批属性更为方便了。这个例子把className以外的所有属性传递给div标签：&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;AutoloadingPostsGrid&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;React&lt;/span&gt;.&lt;span class=&quot;title&quot;&gt;Component&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    render() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            className,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            ...others,  &lt;span class=&quot;comment&quot;&gt;// contains all properties of this.props except for className&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125; = &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.props;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; (&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;lt;div className=&amp;#123;className&amp;#125;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                &amp;lt;PostsGrid &amp;#123;...others&amp;#125; /&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                &amp;lt;button onClick=&amp;#123;this.handleLoadMoreClick&amp;#125;&amp;gt;Load more&amp;lt;/button&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &amp;lt;/div&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        );&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;下面这种写法，则是传递所有属性的同时，用覆盖新的className值：&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;div &amp;#123;...this.props&amp;#125; className=&lt;span class=&quot;string&quot;&gt;&quot;override&quot;&lt;/span&gt;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    …&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;&lt;span class=&quot;regexp&quot;&gt;/div&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;这个例子则相反，如果属性中没有包含className，则提供默认的值，而如果属性中已经包含了，则使用属性中的值&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;div className=&lt;span class=&quot;string&quot;&gt;&quot;base&quot;&lt;/span&gt; &amp;#123;...this.props&amp;#125;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    …&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;&lt;span class=&quot;regexp&quot;&gt;/div&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;转至&lt;a href=&quot;http://bbs.reactnative.cn/topic/15/react-react-native-%E7%9A%84es5-es6%E5%86%99%E6%B3%95%E5%AF%B9%E7%85%A7%E8%A1%A8/2&quot; target=
+    
+    </summary>
+    
+      <category term="Android" scheme="http://seniorzhai.github.io/categories/Android/"/>
+    
+    
+      <category term="SE5" scheme="http://seniorzhai.github.io/tags/SE5/"/>
+    
+      <category term="SE6" scheme="http://seniorzhai.github.io/tags/SE6/"/>
+    
+      <category term="ReactNative" scheme="http://seniorzhai.github.io/tags/ReactNative/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ReactNative-Flex</title>
+    <link href="http://seniorzhai.github.io/2016/01/23/ReactNative-Flex/"/>
+    <id>http://seniorzhai.github.io/2016/01/23/ReactNative-Flex/</id>
+    <published>2016-01-22T18:29:50.000Z</published>
+    <updated>2016-01-24T13:48:41.000Z</updated>
+    
+    <content type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;&lt;img src=&quot;/img/16012301.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;/img/16012302.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/SeniorZhai/FlexDemo&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/SeniorZhai/FlexDemo&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;&lt;img src=&quot;/img/16012301.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;/img/16012302.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/SeniorZhai/
+    
+    </summary>
+    
+      <category term="ReactNative" scheme="http://seniorzhai.github.io/categories/ReactNative/"/>
+    
+    
+      <category term="Flex" scheme="http://seniorzhai.github.io/tags/Flex/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>简单配置</title>
+    <link href="http://seniorzhai.github.io/2016/01/22/%E7%AE%80%E5%8D%95%E9%85%8D%E7%BD%AE/"/>
+    <id>http://seniorzhai.github.io/2016/01/22/简单配置/</id>
+    <published>2016-01-22T04:10:49.000Z</published>
+    <updated>2016-01-22T09:54:37.000Z</updated>
+    
+    <content type="html">&lt;p&gt;用了一段时间Atom来写React，觉得还是不够好用，虽然漂亮&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;重回老路，配置下WebStrom，发现也还可以&lt;/p&gt;
+&lt;p&gt;最新的版本，是WebStrom 11，好像激活的方法有变更，不复述。&lt;br&gt;&lt;a href=&quot;http://www.oschina.net/question/1184821_2142539?fromerr=tlf5g1xd&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.oschina.net/question/1184821_2142539?fromerr=tlf5g1xd&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;关于Code Theme方面，这款&lt;a href=&quot;http://color-themes.com/?view=theme&amp;amp;id=563a1a6180b4acf11273ae3d&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Obsidian&lt;/a&gt;也是不错的选择。&lt;/p&gt;
+&lt;p&gt;为了方便开发，我还配置了一些Live Templeates，简单的处理下一个组件的初始化&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&#39;use strict&#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; React = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;react-native&#39;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    StyleSheet,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    View,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125; = React;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; $NAME$ = React.createClass(&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    render: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; (&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;View&lt;/span&gt;&amp;gt;&lt;/span&gt;$END$&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;View&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        );&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; styles = StyleSheet.create(&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;exports.module = $NAME$;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;用了一段时间Atom来写React，觉得还是不够好用，虽然漂亮&lt;br&gt;
+    
+    </summary>
+    
+      <category term="ReactNative" scheme="http://seniorzhai.github.io/categories/ReactNative/"/>
+    
+    
+      <category term="Atom" scheme="http://seniorzhai.github.io/tags/Atom/"/>
+    
+      <category term="配置" scheme="http://seniorzhai.github.io/tags/%E9%85%8D%E7%BD%AE/"/>
+    
+      <category term="WebStrom" scheme="http://seniorzhai.github.io/tags/WebStrom/"/>
+    
+      <category term="Sublime" scheme="http://seniorzhai.github.io/tags/Sublime/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SystemUI与FitsSystemWindows</title>
+    <link href="http://seniorzhai.github.io/2016/01/20/SystemUI%E4%B8%8EFitsSystemWindows/"/>
+    <id>http://seniorzhai.github.io/2016/01/20/SystemUI与FitsSystemWindows/</id>
+    <published>2016-01-20T04:30:17.000Z</published>
+    <updated>2016-01-21T09:25:51.000Z</updated>
+    
+    <content type="html">&lt;p&gt;在亘古时代(Android 2.+)的时候，全屏操作简单粗暴，但是切换显示、隐藏时丑陋之极。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;在theme中设置&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;application&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  android:theme=&quot;@android:style/Theme.Holo.NaoActionBar.Fullscreen&quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;...&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;/application&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在activity渲染之前&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;...&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;meta&quot;&gt;@Override&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(Bundle savedInstanceState)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;super&lt;/span&gt;.onCreate(savedInstanceState);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (Build.VERSION.SDK_INT &amp;lt; &lt;span class=&quot;number&quot;&gt;16&lt;/span&gt;) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    setContentView(...);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    ...&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;...&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因为设置了WindowManager的flag，想要切换只能重置flag，而且因为大小变了，activity的界面也会改变。&lt;/p&gt;
+&lt;p&gt;在改革春风吹满地的新时代(Android 4.0+)，SDK提供了我们新的选择，使用setSystemUiVisibility()来操控SystemUI，这里不只StatusBar还有NavigationBar&lt;/p&gt;
+&lt;p&gt;##4.0可使用的方法&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;View decorView = getWindow().getDecorView();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_FULLSCREEN;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;decorView.setSystemUiVisibilit(uiOptions);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;触摸屏幕任何位置都会使得导航、状态栏出现，且&lt;code&gt;SYSTEM_UI_FLAG_HIDE_NAVIGATION&lt;/code&gt;被清除&lt;/li&gt;
+&lt;li&gt;一旦标志位被清除，需要重新设置&lt;/li&gt;
+&lt;li&gt;在不用地方UI FLAG是不同的，所有最好在onReasume()和onWindowFocusChaned()中设置&lt;/li&gt;
+&lt;li&gt;被调用的View显示时才会生效&lt;br&gt;##4.1以后&lt;br&gt;上面的方法设置后，内容还是会因为场景的变化而变化，所以我们需要让我们的内容放在SystemUI的后面&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;View decorView = getWindow().getDecorView();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION |View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;decorView.setSystemUiVisibilit(uiOptions);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;值得注意的是，有些控件我们是不希望不覆盖住的，比如toolbar，这个时候需要给它加上FitsSystemWindows属性，保证不会被SystemUI遮住。&lt;br&gt;从示例上看，系统会为View设置上Padding，所以，如果要做切换时，可能要考虑还原View的Padding。&lt;/p&gt;
+&lt;p&gt;#示例&lt;br&gt;&lt;a href=&quot;https://github.com/SeniorZhai/SystemUI&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/SeniorZhai/SystemUI&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在亘古时代(Android 2.+)的时候，全屏操作简单粗暴，但是切换显示、隐藏时丑陋之极。&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>gradle下载地址</title>
+    <link href="http://seniorzhai.github.io/2016/01/18/gradle%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80/"/>
+    <id>http://seniorzhai.github.io/2016/01/18/gradle下载地址/</id>
+    <published>2016-01-18T14:19:42.000Z</published>
+    <updated>2016-01-23T20:13:11.000Z</updated>
+    
+    <content type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;&lt;a href=&quot;https://services.gradle.org/distributions/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://services.gradle.org/distributions/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;放到&lt;code&gt;~/.gradle/wrapper/dists&lt;/code&gt;目录下&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;不知道是不是我环境的问题，用P2P下载文件一直有问题，还是直接下载的好&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;&lt;a href=&quot;https://services.gradle.org/distributions/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://services.gradle.org/distrib
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ReactNative-ListView</title>
+    <link href="http://seniorzhai.github.io/2016/01/17/ReactNative-ListView/"/>
+    <id>http://seniorzhai.github.io/2016/01/17/ReactNative-ListView/</id>
+    <published>2016-01-17T15:26:29.000Z</published>
+    <updated>2016-01-17T15:26:29.000Z</updated>
+    
+    <content type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ReactNative-Navigator</title>
+    <link href="http://seniorzhai.github.io/2016/01/17/ReactNative-Navigator/"/>
+    <id>http://seniorzhai.github.io/2016/01/17/ReactNative-Navigator/</id>
+    <published>2016-01-17T15:22:02.000Z</published>
+    <updated>2016-01-17T15:23:39.000Z</updated>
+    
+    <content type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;#基本用法&lt;br&gt;Navigator可以切换不同场景，导航器通过路由来分辨不同的场景。&lt;br&gt;&lt;code&gt;renderScene&lt;/code&gt;方法用来指定渲染的场景，&lt;code&gt;configureScene&lt;/code&gt;属性指定路由对象的配置信息，可以指定进场动画或者手势。&lt;/p&gt;
+&lt;p&gt;#方法&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;getCurrentRoutes()&lt;/code&gt; 获取当前栈里的路由&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;jumpBack()&lt;/code&gt; 跳回之前的路由，当前场景保留&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;jumpForward()&lt;/code&gt; 跳回之后的路由&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;jumpTo(route)&lt;/code&gt; 跳转到已有的场景并且不卸载&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;push(route)&lt;/code&gt; 跳转到新的场景&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pop()&lt;/code&gt; 跳转出去并且卸载当前场景&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;replace(route)&lt;/code&gt; 用一个新的路由替换掉当前场景&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;replaceAtIndex(rote,index)&lt;/code&gt; 替换掉指定序列的场景&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;replacePrevious(route)&lt;/code&gt; 替换掉之前的场景&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;immediatelyResetRouteStack(routeStack)&lt;/code&gt;  用新的路由重置路由栈&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;popToRoute(route)&lt;/code&gt; pop到路由指定的场景，其他的场景将被卸载&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;popToTp()&lt;/code&gt; pop到栈中单第一个场景，卸载掉所有的其他场景&lt;br&gt;#属性&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;configureScene&lt;/code&gt; 可选函数，用来指定场景动画和手势&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;initialRoute&lt;/code&gt; 指定启动时加载的路由&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;initialRouteStack&lt;/code&gt; 指定一个路由集合来初始化&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;navigatorBar&lt;/code&gt; 可选参数，提供一个场景切换时保持的导航栏&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;navigator&lt;/code&gt; 可选参数，提供父类导航获取导航器对象&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;renderScene&lt;/code&gt; 必选参数，用来指定路由渲染的场景&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sceneStyle&lt;/code&gt; 指定每个场景的容器上的样式&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;#基本用法&lt;br&gt;Navigator可以切换不同场景，导航器通过路由来分辨不同的场景。&lt;br&gt;&lt;code&gt;renderScene&lt;/code&gt;方法用来指定渲染的场景，&lt;code&gt;configureScene&lt;/code&gt;属性指定路由对象的
+    
+    </summary>
+    
+      <category term="ReactNative" scheme="http://seniorzhai.github.io/categories/ReactNative/"/>
+    
+    
+      <category term="Navigator" scheme="http://seniorzhai.github.io/tags/Navigator/"/>
+    
+      <category term="路由" scheme="http://seniorzhai.github.io/tags/%E8%B7%AF%E7%94%B1/"/>
+    
+      <category term="切换" scheme="http://seniorzhai.github.io/tags/%E5%88%87%E6%8D%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AsyncStorage的使用</title>
+    <link href="http://seniorzhai.github.io/2016/01/17/AsyncStorage%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>http://seniorzhai.github.io/2016/01/17/AsyncStorage的使用/</id>
+    <published>2016-01-17T13:50:50.000Z</published>
+    <updated>2016-01-21T08:03:21.000Z</updated>
+    
+    <content type="html">&lt;p&gt;AsyncStorage是一个Key-Value存储系统，对于App是全局的。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;static getItem(key:string,callback?:?(error:?error,result:?string) =&amp;gt; void)&lt;ul&gt;
+&lt;li&gt;读取key字段，将结果作为参数，传递给callback&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;static setItem(key:string,value:string,callback?:?(error:?Error)=&amp;gt;void)&lt;ul&gt;
+&lt;li&gt;将key字段的值设置为value,结果调用callback&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;static removeItem(key:string,callback?:?(error:?Error)=&amp;gt;void)&lt;ul&gt;
+&lt;li&gt;删除一个字段&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;static mergeItem(key:string,value:string,callback?:?(error:?Error)=&amp;gt;)&lt;ul&gt;
+&lt;li&gt;假设已有的值和新的值都是字符串的JSON，将两个值合并&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;static clear(callback?:?(error:?Error)=&amp;gt;void)&lt;ul&gt;
+&lt;li&gt;删除所有数据&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;static getAllKeys(callback?:?(error:?Error,keys:?Array&lt;string&gt;)=&amp;gt;void)&lt;ul&gt;
+&lt;li&gt;获取所有key&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/string&gt;&lt;/li&gt;
+&lt;li&gt;static flushGetRequests()&lt;ul&gt;
+&lt;li&gt;清除所有进行中的查询操作&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;static multiGet(keys:Array&lt;string&gt;,callback?:?(errors: ?Array&lt;error&gt;, result: ?Array&lt;array&lt;string&gt;&amp;gt;) =&amp;gt; void)&lt;ul&gt;
+&lt;li&gt;获取keys所包含的所有字段的值，返回key-value数组&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/array&lt;string&gt;&lt;/error&gt;&lt;/string&gt;&lt;/li&gt;
+&lt;li&gt;static multiSet(keysValuePairs:Array&lt;array&lt;string&gt;&amp;gt;,callback?:?(errors:?Array&lt;error&gt;)=&amp;gt;void)&lt;ul&gt;
+&lt;li&gt;设置keys-values，multiSet([[‘k1’:’val1’],[‘k2’:’val2’]],cb)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/error&gt;&lt;/array&lt;string&gt;&lt;/li&gt;
+&lt;li&gt;static multiRemove(keys:Array&lt;string&gt;,callback?:?(error:?Array&lt;error&gt;)=&amp;gt;void)&lt;ul&gt;
+&lt;li&gt;删除所有keys的数据&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/error&gt;&lt;/string&gt;&lt;/li&gt;
+&lt;li&gt;static multiMerge(keyValuePairs: Array&lt;array&lt;string&gt;&amp;gt;, callback?: ?(errors: ?Array&lt;error&gt;) =&amp;gt; void)&lt;ul&gt;
+&lt;li&gt;将多个输入的值和已有的值合并，要求都是字符串化的JSON&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/error&gt;&lt;/array&lt;string&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;AsyncStorage是一个Key-Value存储系统，对于App是全局的。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="ReactNative" scheme="http://seniorzhai.github.io/categories/ReactNative/"/>
+    
+    
+      <category term="缓存" scheme="http://seniorzhai.github.io/tags/%E7%BC%93%E5%AD%98/"/>
+    
+      <category term="持久化" scheme="http://seniorzhai.github.io/tags/%E6%8C%81%E4%B9%85%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>@ViewDebug.ExportedProperty注解</title>
+    <link href="http://seniorzhai.github.io/2016/01/12/-ViewDebug-ExportedProperty%E6%B3%A8%E8%A7%A3/"/>
+    <id>http://seniorzhai.github.io/2016/01/12/-ViewDebug-ExportedProperty注解/</id>
+    <published>2016-01-12T13:16:27.000Z</published>
+    <updated>2016-01-12T10:44:33.000Z</updated>
+    
+    <content type="html">&lt;p&gt;使用&lt;code&gt;@ViewDebug.ExportedProperty&lt;/code&gt;注解，可以在Monitor的Hierarchy Viewer中的调试View属性，可以直接观察注解过的变量和方法的值，实时观察View的状态变化。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;##使用&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;category 指定属性的类别，比如&lt;code&gt;measurement&lt;/code&gt;,&lt;code&gt;layout&lt;/code&gt;,&lt;code&gt;drawing&lt;/code&gt;等。&lt;/li&gt;
+&lt;li&gt;resolveId 当resolveId为true时，变量或方法的值为int数据，那么这个值会被转换成Android对应的资源名称&lt;/li&gt;
+&lt;li&gt;mapping 可以将int值映射成指定的字符串&lt;/li&gt;
+&lt;li&gt;indexMapping 可以将数组的序号映射成指定的字符串&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;27&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;28&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;29&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;30&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;31&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;32&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;33&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;34&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;35&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@ViewDebug&lt;/span&gt;.ExportedProperty(category = &lt;span class=&quot;string&quot;&gt;&quot;seniorzhai&quot;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; x = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@Override&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@ViewDebug&lt;/span&gt;.ExportedProperty(category = &lt;span class=&quot;string&quot;&gt;&quot;seniorzhai&quot;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;isFocused&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@Override&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@ViewDebug&lt;/span&gt;.ExportedProperty(category = &lt;span class=&quot;string&quot;&gt;&quot;seniorzhai&quot;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;isFocused&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@ViewDebug&lt;/span&gt;.ExportedProperty(category = &lt;span class=&quot;string&quot;&gt;&quot;seniorzhai&quot;&lt;/span&gt;,resolveld = &lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; b = R.id.no;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@Override&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@ViewDebug&lt;/span&gt;.ExportedProperty(category = &lt;span class=&quot;string&quot;&gt;&quot;seniorzhai&quot;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    mapping = &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                  &lt;span class=&quot;meta&quot;&gt;@ViewDebug&lt;/span&gt;.IntToString(from = VISIBLE, to = &lt;span class=&quot;string&quot;&gt;&quot;SENIOR_VISIBLE&quot;&lt;/span&gt;),&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                  &lt;span class=&quot;meta&quot;&gt;@ViewDebug&lt;/span&gt;.IntToString(from = INVISIBLE, to = &lt;span class=&quot;string&quot;&gt;&quot;SENIOR_INVISIBLE&quot;&lt;/span&gt;),&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                  &lt;span class=&quot;meta&quot;&gt;@ViewDebug&lt;/span&gt;.IntToString(from = GONE, to = &lt;span class=&quot;string&quot;&gt;&quot;SENIOR_GONE&quot;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;              &amp;#125;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;getVisibility&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;super&lt;/span&gt;.getVisibility();    &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@ViewDebug&lt;/span&gt;.ExportedProperty(category = &lt;span class=&quot;string&quot;&gt;&quot;seniorzhai&quot;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;indexMapping = &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                  &lt;span class=&quot;meta&quot;&gt;@ViewDebug&lt;/span&gt;.IntToString(from = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, to = &lt;span class=&quot;string&quot;&gt;&quot;SENIOR_FIRST&quot;&lt;/span&gt;),            &lt;span class=&quot;meta&quot;&gt;@ViewDebug&lt;/span&gt;.IntToString(from = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, to = &lt;span class=&quot;string&quot;&gt;&quot;SENIOR_SECOND&quot;&lt;/span&gt;),&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                  &lt;span class=&quot;meta&quot;&gt;@ViewDebug&lt;/span&gt;.IntToString(from = &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, to = &lt;span class=&quot;string&quot;&gt;&quot;SENIOR_THIRD&quot;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                &amp;#125;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;[] elements = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;[] &amp;#123;&lt;span class=&quot;number&quot;&gt;123&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;223&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;323&lt;/span&gt;&amp;#125;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;使用&lt;code&gt;@ViewDebug.ExportedProperty&lt;/code&gt;注解，可以在Monitor的Hierarchy Viewer中的调试View属性，可以直接观察注解过的变量和方法的值，实时观察View的状态变化。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="http://seniorzhai.github.io/categories/Android/"/>
+    
+    
+      <category term="注解" scheme="http://seniorzhai.github.io/tags/%E6%B3%A8%E8%A7%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>View的一些重要方法</title>
+    <link href="http://seniorzhai.github.io/2016/01/10/View%E7%9A%84%E4%B8%80%E4%BA%9B%E9%87%8D%E8%A6%81%E6%96%B9%E6%B3%95/"/>
+    <id>http://seniorzhai.github.io/2016/01/10/View的一些重要方法/</id>
+    <published>2016-01-10T08:42:42.000Z</published>
+    <updated>2016-01-10T14:29:28.000Z</updated>
+    
+    <content type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;onFinishInflate()&lt;/code&gt;从XML加载组件后回调&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;onSizeChanged()&lt;/code&gt;组件大小改变时回调&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;onMeasure()&lt;/code&gt;测量大小&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;onLayout()&lt;/code&gt;确定显示位置&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;onTouchEvent&lt;/code&gt;监听触摸事件&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;onFinishInflate()&lt;/code&gt;从XML加载组件后回调&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;onSizeChanged()&lt;/code&gt;组件大小改变时回调&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;onMeasure
+    
+    </summary>
+    
+      <category term="Android" scheme="http://seniorzhai.github.io/categories/Android/"/>
+    
+    
+      <category term="自定义" scheme="http://seniorzhai.github.io/tags/%E8%87%AA%E5%AE%9A%E4%B9%89/"/>
+    
+      <category term="View" scheme="http://seniorzhai.github.io/tags/View/"/>
+    
+      <category term="绘制" scheme="http://seniorzhai.github.io/tags/%E7%BB%98%E5%88%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Xcode上的ActivatePowerMode也来了</title>
+    <link href="http://seniorzhai.github.io/2015/12/02/Xcode%E4%B8%8A%E7%9A%84ActivatePowerMode%E4%B9%9F%E6%9D%A5%E4%BA%86/"/>
+    <id>http://seniorzhai.github.io/2015/12/02/Xcode上的ActivatePowerMode也来了/</id>
+    <published>2015-12-02T07:10:09.000Z</published>
+    <updated>2015-12-02T07:13:55.000Z</updated>
+    
+    <content type="html">&lt;p&gt;前天介绍才&lt;a href=&quot;http://seniorzhai.github.io/2015/11/30/%E7%89%9B%E9%80%BC%E5%88%B0%E5%A4%A9%E4%B8%8A%E7%9A%84Atom%E6%8F%92%E4%BB%B6/&quot;&gt;ActivatePowerMode&lt;/a&gt;&lt;br&gt;很快的Xcode上的插件也来了&lt;a href=&quot;https://github.com/qfish/XActivatePowerMode&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/qfish/XActivatePowerMode&lt;/a&gt;&lt;br&gt;在&lt;a href=&quot;http://alcatraz.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Alcatraz&lt;/a&gt;搜索安装，&lt;code&gt;Edit&lt;/code&gt;-&amp;gt;&lt;code&gt;Activate Power Mode&lt;/code&gt;-&amp;gt;&lt;code&gt;Enable&lt;/code&gt;运行即可&lt;br&gt;&lt;img src=&quot;https://camo.githubusercontent.com/a25916ccc96abf4f949ae55a3fc8b0108ac578a8/687474703a2f2f3764396f30782e636f6d312e7a302e676c622e636c6f7564646e2e636f6d2f584163746976617465506f7765724d6f6465707265766965772e676966&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前天介绍才&lt;a href=&quot;http://seniorzhai.github.io/2015/11/30/%E7%89%9B%E9%80%BC%E5%88%B0%E5%A4%A9%E4%B8%8A%E7%9A%84Atom%E6%8F%92%E4%BB%B6/&quot;&gt;Activ
+    
+    </summary>
+    
+      <category term="Prose" scheme="http://seniorzhai.github.io/categories/Prose/"/>
+    
+    
+      <category term="插件" scheme="http://seniorzhai.github.io/tags/%E6%8F%92%E4%BB%B6/"/>
+    
+      <category term="XCode" scheme="http://seniorzhai.github.io/tags/XCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>牛逼到天上的Atom插件</title>
+    <link href="http://seniorzhai.github.io/2015/11/30/%E7%89%9B%E9%80%BC%E5%88%B0%E5%A4%A9%E4%B8%8A%E7%9A%84Atom%E6%8F%92%E4%BB%B6/"/>
+    <id>http://seniorzhai.github.io/2015/11/30/牛逼到天上的Atom插件/</id>
+    <published>2015-11-30T11:57:02.000Z</published>
+    <updated>2015-12-01T05:56:51.000Z</updated>
+    
+    <content type="html">&lt;p&gt;前几天为了学习&lt;code&gt;React Native&lt;/code&gt;开始使用Atom，默默的替代了Sublime Text在我Dock上的地位&lt;br&gt;但&lt;code&gt;activate-power-mode&lt;/code&gt;的出现让准备彻底走向Atom&lt;br&gt;&lt;img src=&quot;https://i.github-camo.com/c6db669d7886b25d9d9d85aecd5f351375886693/68747470733a2f2f636c6f75642e67697468756275736572636f6e74656e742e636f6d2f6173736574732f3638383431352f31313435333239372f62386632343965632d393630352d313165352d393738632d6562336262323165656364382e676966&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注:要使用时用option+control+o开启，插件只能作用在当前Tab页，如果不起效，选择View-&amp;gt;Reload重载页面&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前几天为了学习&lt;code&gt;React Native&lt;/code&gt;开始使用Atom，默默的替代了Sublime Text在我Dock上的地位&lt;br&gt;但&lt;code&gt;activate-power-mode&lt;/code&gt;的出现让准备彻底走向Atom&lt;br&gt;&lt;img src=&quot;htt
+    
+    </summary>
+    
+      <category term="Prose" scheme="http://seniorzhai.github.io/categories/Prose/"/>
+    
+    
+      <category term="插件" scheme="http://seniorzhai.github.io/tags/%E6%8F%92%E4%BB%B6/"/>
+    
+      <category term="Atom" scheme="http://seniorzhai.github.io/tags/Atom/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ReactNative-样式</title>
+    <link href="http://seniorzhai.github.io/2015/11/24/ReactNative-%E6%A0%B7%E5%BC%8F/"/>
+    <id>http://seniorzhai.github.io/2015/11/24/ReactNative-样式/</id>
+    <published>2015-11-24T11:57:26.000Z</published>
+    <updated>2016-01-23T20:15:40.000Z</updated>
+    
+    <content type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;##声明&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; styles = StyleSheet.create(&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	base: &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		width:&lt;span class=&quot;number&quot;&gt;38&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		height:&lt;span class=&quot;number&quot;&gt;38&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	background:&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		backgroundColor:&lt;span class=&quot;string&quot;&gt;&quot;#222222&quot;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;##使用&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;Text style=&amp;#123;styles.base&amp;#125; /&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;View style=&amp;#123;styles.background&amp;#125; /&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;View style=&amp;#123;[styles.base,style.background]&amp;#125; /&amp;gt; //可以接受多个style属性&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;##声明&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/d
+    
+    </summary>
+    
+      <category term="ReactNative" scheme="http://seniorzhai.github.io/categories/ReactNative/"/>
+    
+    
+      <category term="iOS" scheme="http://seniorzhai.github.io/tags/iOS/"/>
+    
+      <category term="Android" scheme="http://seniorzhai.github.io/tags/Android/"/>
+    
+      <category term="样式" scheme="http://seniorzhai.github.io/tags/%E6%A0%B7%E5%BC%8F/"/>
+    
+      <category term="Style" scheme="http://seniorzhai.github.io/tags/Style/"/>
+    
+  </entry>
+  
+</feed>

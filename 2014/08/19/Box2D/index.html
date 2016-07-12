@@ -1,0 +1,643 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Box2D | Zoe&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Zoe">
+    
+
+    
+    <meta name="description" content="一款功能强大、性能强劲的物理引擎。它能都维持在一个独立的运行空间。
+##概述Box2D引擎创建的物体都属于理想的刚体，即它内部之间的距离永不改变。Box2D创建的物理世界具备以下三个特点。
+
+物理世界存在一个重力（可以为0）
+物理世界可以是一个存在边界的范围
+在世界中加入静态和动态物体（具有质量和位置），它们被用来模拟现实的运动规律##概念
+物理世界（World)一个物理世界就是由各种刚体、框架、">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Box2D">
+<meta property="og:url" content="http://seniorzhai.github.io/2014/08/19/Box2D/index.html">
+<meta property="og:site_name" content="Zoe's blog">
+<meta property="og:description" content="一款功能强大、性能强劲的物理引擎。它能都维持在一个独立的运行空间。
+##概述Box2D引擎创建的物体都属于理想的刚体，即它内部之间的距离永不改变。Box2D创建的物理世界具备以下三个特点。
+
+物理世界存在一个重力（可以为0）
+物理世界可以是一个存在边界的范围
+在世界中加入静态和动态物体（具有质量和位置），它们被用来模拟现实的运动规律##概念
+物理世界（World)一个物理世界就是由各种刚体、框架、">
+<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Box2D">
+<meta name="twitter:description" content="一款功能强大、性能强劲的物理引擎。它能都维持在一个独立的运行空间。
+##概述Box2D引擎创建的物体都属于理想的刚体，即它内部之间的距离永不改变。Box2D创建的物理世界具备以下三个特点。
+
+物理世界存在一个重力（可以为0）
+物理世界可以是一个存在边界的范围
+在世界中加入静态和动态物体（具有质量和位置），它们被用来模拟现实的运动规律##概念
+物理世界（World)一个物理世界就是由各种刚体、框架、">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Zoe&#39;s blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/logo.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/logo.png">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Zoe&#39;s blog" title="Zoe&#39;s blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Zoe&#39;s blog">Zoe&#39;s blog</a></h1>
+				<h2 class="blog-motto">宅学长的博客</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:seniorzhai.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/08/19/Box2D/" title="Box2D" itemprop="url">Box2D</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
+		
+  <p class="article-time">
+    <time datetime="2014-08-19T03:31:33.000Z" itemprop="datePublished"> 发表于 2014-08-19</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			
+		
+		</div>
+		
+		<p>一款功能强大、性能强劲的物理引擎。它能都维持在一个独立的运行空间。</p>
+<p>##概述<br>Box2D引擎创建的物体都属于理想的刚体，即它内部之间的距离永不改变。Box2D创建的物理世界具备以下三个特点。</p>
+<ol>
+<li>物理世界存在一个重力（可以为0）</li>
+<li>物理世界可以是一个存在边界的范围</li>
+<li>在世界中加入静态和动态物体（具有质量和位置），它们被用来模拟现实的运动规律<br>##概念</li>
+<li>物理世界（World)<br>一个物理世界就是由各种刚体、框架、形状互相作用的集合。</li>
+<li>刚体(Rigid Bodies)<br>理想刚体是一个有限尺寸、可以忽略形变的物体。不论是否感受到作用力，在刚体内部，点与点之间的距离都不会改变，可以认为是一个连续质量分布体。 在Box2D物理世界中，所有物体都是刚体，这些物体一旦被创建出来后，其形状就不会改变。</li>
+<li>形状(Shapes)<br>2D平面几何结构，主要用于世界里的物理碰撞的检测。</li>
+<li>框架(Fixtures)<br>框架代表物理世界中物体的固定物质形态，是连接物体和形状之间的框架，一个物体可以有多个框架，没个框架可以连接一个形状、它本身存储着物体的质量、密度、摩擦系数，同时包含碰撞标志、用户数据和是否使用碰撞检测器的标志。他存在的目的主要是为了物理引擎的运算考虑。</li>
+<li>关节(Joins)<br>关节的作用是将两个有一定运动自由度(水平、数组、转动)的物体连接起来，同时约束连接的物体。Box2D引擎支持的关节类型有旋转、棱柱、距离等等，通常具备两个共同属性：限制(Limits)和马达(Motors)<br> (1) 关节限制(joint limit) 限定了一个关节的运动范围。<br> (2) 关节马达(joint motor) 能依照关节的自由度来驱动所连接的物体。<br>##模块<br>Box2D引擎由三个模块组成：公共(Common)、碰撞(Collision)和动态(Dynamics)。<br>(1) Common核心模块包含了内存分配、数学计算和配置<br>(2) Collision模块定义了形状(shape)、broad-phase检测盒碰撞功能/查询(collision functions/queries)<br>(3) Dynamics模块提供对世界(world)、刚体(bodies)、框架(fixtures)和关节(joint)模拟<br>##数据单位<br>Box2D引擎使用浮点数进行计算，所以为看保证它的正常工作，必须使用一些公差来保证它的正常工作。引擎能够良好的处理0.1~10米之间的移动物体。<br>##用户数据<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 创建一个精灵</span></div><div class="line">CCSprite* actor = CCSprite::node();</div><div class="line"><span class="comment">// 物体的定义</span></div><div class="line">b2BodyDef bodyDef;</div><div class="line"><span class="comment">// 指定数据</span></div><div class="line">bodyDef.userData = actor;</div><div class="line"><span class="comment">// 创建物体</span></div><div class="line">actor-&gt;body = box2Dworld-&gt;CreateBody(&amp;bodyDef);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>用户数据是可选的，并且能放入任何东西，为了保持一致性，通常保存精灵对象的指针。</p>
+<p>##物理世界World<br>创建一个世界<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">b2Vec2 gravity;	<span class="comment">// 重力</span></div><div class="line">gravity.Set(<span class="number">0.0f</span>,<span class="number">-10.0</span>f); </div><div class="line">world = <span class="keyword">new</span> b2World(gravity);</div><div class="line">world-&gt;SetAllowSleeping(<span class="literal">true</span>);	<span class="comment">// 设置允许物体进入休眠状态</span></div><div class="line">world-&gt;SetContinuonsPhysics(<span class="literal">true</span>); <span class="comment">// 设置使用连续物理检测</span></div></pre></td></tr></table></figure></p>
+<p>销毁世界<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">delete</span> world;</div><div class="line">world = <span class="literal">NULL</span>;</div></pre></td></tr></table></figure></p>
+<p>##世界运转起来<br>物理世界类中用于驱动模拟的函数为<code>Step</code>，调用它时，需要指定一个时间步和一个速度及位置的迭代次数。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">float32 timeStep = <span class="number">1.0f</span>/<span class="number">60.0f</span>;	<span class="comment">// 时间步，频率</span></div><div class="line">int32 velocityIterations = <span class="number">10</span>;	<span class="comment">// 速度迭代</span></div><div class="line">int32 positionIterations = <span class="number">8</span>;	<span class="comment">// 位置迭代次数</span></div><div class="line">myWorld-&gt;Step(timeStep,velocityIterations,positionIterations);	<span class="comment">// 驱动函数</span></div><div class="line">``` </div><div class="line">在物理引擎执行一次时间步之后，最好是清除任何施加在物体上的力。可以使用`b2World::ClearForces`完成，可以去除力的持续作用效果。</div><div class="line">##探索世界</div><div class="line">物理世界中存在创建工厂，工厂则会创建物体、框架和关节对象，同时世界也是容器，它会容纳工厂创建出来的所有对象。可以通过遍历的方式来获取世界中所有物体、框架和关节。</div><div class="line">```c++</div><div class="line"><span class="keyword">for</span> (b2Body* b = myWorld()-&gt;GetBodyList();b;b = b-&gt;GetNext())</div><div class="line">&#123;</div><div class="line">	b-&gt;WakeUp();	<span class="comment">// 唤醒物体</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>##AABB查询<br>Box2D引擎当中提供了AABB查询的方式，需要得出一个区域内所有对象时的解决方法。为此专门使用<code>broad-phase</code>的数据结构，它提供了一个log(N)复杂度的快速查询方法。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> MyQueryCallback : <span class="keyword">public</span> b2QueryCallback</div><div class="line">&#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">ReportFixture</span><span class="params">(b2Fixture* fixture)</span></span></div><div class="line">	&#123;</div><div class="line">		b2Body* body = fixture-&gt;GetBody();</div><div class="line">		body-&gt;WakeUp();</div><div class="line">		<span class="keyword">return</span> ture; <span class="comment">// 继续查询</span></div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">b2AABB aabb;</div><div class="line">aabb.lowerBound.Set(<span class="number">-1.0</span>f,<span class="number">-1.0</span>f);	<span class="comment">// 设置AABB的上边界</span></div><div class="line">aabb.upperBound.Set(<span class="number">1.0f</span>,<span class="number">1.0f</span>);		<span class="comment">// 设置AABB的下边界</span></div><div class="line">myWorld-&gt;Query(&amp;callback,aabb);</div></pre></td></tr></table></figure></p>
+<p>##光线投射(Ray Casts)<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> MyRayCastCallBack : <span class="keyword">public</span> b2RayCastCallback</div><div class="line">&#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">	MyRayCastCallback()</div><div class="line">	&#123;</div><div class="line">		m_fixture = <span class="literal">NULL</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="function">float32 <span class="title">ReportFixture</span><span class="params">(b2Fixture* fixture,<span class="keyword">const</span> b2Vec2&amp; point,<span class="keyword">const</span> b2Vec2&amp; normal,float32 fraction)</span></span></div><div class="line">	&#123;</div><div class="line">		<span class="comment">// 保存框架</span></div><div class="line">		m_fixture = fixture;</div><div class="line">		<span class="comment">// 保存交点</span></div><div class="line">		m_point = point;</div><div class="line">		<span class="comment">// 保存法向量</span></div><div class="line">		m_normal = normal;</div><div class="line">		<span class="comment">// 保存光线通过的分数距离</span></div><div class="line">		m_fraction = fraction;</div><div class="line">		<span class="keyword">return</span> fraction;</div><div class="line">	&#125;</div><div class="line">	b2xFixture* m_fixture;</div><div class="line">	b2Vec2 m_point;</div><div class="line">	b2Vec2 m_normal;</div><div class="line">	float32 m_fraction;</div><div class="line">&#125;;</div><div class="line"><span class="comment">// 回调函数</span></div><div class="line">MyRayCastCallback callback;</div><div class="line"><span class="comment">// 光线投射的起始点</span></div><div class="line"><span class="function">b2Vec2 <span class="title">point</span><span class="params">(<span class="number">-1.0</span>f,<span class="number">0.0f</span>)</span></span>;</div><div class="line"><span class="comment">// 光线投射的结束点</span></div><div class="line"><span class="function">b2Vec2 <span class="title">point</span><span class="params">(<span class="number">3.0f</span>,<span class="number">1.0f</span>)</span></span>;</div><div class="line"><span class="comment">// 开始光线的投射</span></div><div class="line">myWorld-&gt;RayCast(&amp;callback,point1,point2);</div></pre></td></tr></table></figure></p>
+<p>##形状Shapes<br>形状是物体的包围盒，描述了可相互碰撞的几何对象的外形，它通常会是一个几何图形。被Shape是形状的基类，Box2D引擎中各种形状类都是继承自这个基类。此基类定义了几个常用函数：</p>
+<ol>
+<li>判断一个点与形状是否有重叠</li>
+<li>在形状上执行光线投射</li>
+<li>计算形状的AABB</li>
+<li>计算形状的质量<br>所有形状都有两个成员变量：类型(type)和半径(radius)，引擎存在两种类型的形状：圆形和多边形。<br>###圆形(Circle Shapes)<br>圆形形状(b2CircleShape)是一个由位置和半径表示的集合图形。圆形形状都是实心的，主要的参数就是半径。<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">b2CircleShape circle;<span class="comment">// 创建圆形形状的对象</span></div><div class="line">circle.m_p.Set(<span class="number">1.0f</span>,<span class="number">2.0f</span>,<span class="number">3.0f</span>);<span class="comment">// 设置位置</span></div><div class="line">circle.m_radius = <span class="number">0.5f</span>;<span class="comment">// 设置半径</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>###多边形(Polygon Shape)<br>多边形(b2PolygonShape)是实现的凸(Convex)多边形。数学的定义：在多边形内部任意选择两点，作一线段，如果所有线段都跟多边形的边不想交，这个多边形就是凸多边形。在Box2D引擎中一个多边形形状是通过顶点来描述的。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">b2PolygonDef triangleDef;</div><div class="line">triangleDef.vertexCont = <span class="number">3</span>;</div><div class="line">triangleDef.vertices[<span class="number">0</span>].Set(<span class="number">-1.0</span>f,<span class="number">0.0f</span>);</div><div class="line">triangleDef.vertices[<span class="number">1</span>].Set(<span class="number">1.0f</span>,<span class="number">0.0f</span>);</div><div class="line">triangleDef.vertices[<span class="number">2</span>].Set(<span class="number">0.0f</span>,<span class="number">2.0f</span>);</div></pre></td></tr></table></figure></p>
+<p>在创建多边形时，顶点必须是逆时针排列。创建多边形时，顶点的数据可以通过数组来传递，数组中的顶点数最大值是核心模块中定义的b2maxPolygonVertices，默认情况下此数值是8。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">b2Vec2 vertices[<span class="number">4</span>];</div><div class="line">vertices[<span class="number">0</span>].Set(<span class="number">0.0f</span>,<span class="number">0.0f</span>);</div><div class="line">vertices[<span class="number">1</span>].Set(<span class="number">1.0f</span>,<span class="number">0.0f</span>);</div><div class="line">vertices[<span class="number">2</span>].Set(<span class="number">0.0f</span>,<span class="number">1.0f</span>);</div><div class="line">vertices[<span class="number">3</span>].Set(<span class="number">1.0f</span>,<span class="number">1.0f</span>);</div><div class="line"></div><div class="line">int32 count = <span class="number">4</span>;</div><div class="line">b2PolygonShape polygon;</div><div class="line">polygon.Set(vertices,count);</div></pre></td></tr></table></figure></p>
+<p>为了使用方便引擎还提供了一些定义好的初始化函数来创建固定的多边形形状：箱子(box)和边缘(edge，就是线段)<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">SetAsbox</span><span class="params">(float32 hx,float32 hy)</span></span>;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">SetAsBox</span><span class="params">(float32 hx,float32 hy,<span class="keyword">const</span> b2Vec2&amp; center,float32 angle)</span></span>;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">SetAsEdge</span><span class="params">(<span class="keyword">const</span> b2Vec2&amp; v1,<span class="keyword">const</span> b2Vec&amp; v2)</span></span>;</div></pre></td></tr></table></figure></p>
+<p>##框架Fixtures<br>Fixture是动态模块中重要的概念，用来物理模拟。<br>动态模块包含的内容：</p>
+<ul>
+<li>框架(Fixtures)</li>
+<li>物体(Bodies)</li>
+<li>接触(Contacts)</li>
+<li>关节(Joints)</li>
+<li>世界(World)</li>
+<li>监听器(Listener)<br>框架主要用于建立形状与物体之间的连接和进行物理模拟。<br>###密度(Density)<br>框架的密度用来计算物体的质量属性，密度可以为零或者其他整数。<br>###摩擦(Friction)<br>Box2D支持静态摩擦和动态摩擦，两者都使用的相同的摩擦系数作为参数。摩擦的强度与正交力成正比。摩擦系数经常会设置为0到1之间，0意味着没有摩擦，1会产生强摩擦。当计算两个形状之间的摩擦时，引擎必须计算两个形状的摩擦参数。<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">float32 friction;</div><div class="line">friction = sqrtf(shape1-&gt;friction * shape2-&gt;friction);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>###恢复(Resitution)<br>为反弹的参数，它可以使对象弹起。恢复的值通常设置在0到1之间。恢复就是一个物体碰撞后反弹大小的参数，其值为0表示小球不会弹起，这称为非弹性碰撞。值为1表示小球的速度大小一样，只是方向相反，这称为完全弹性碰撞。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">float32 resitution;</div><div class="line">restitution = b2Max(shape1-&gt;resitution,shape2-&gt;resitution);</div></pre></td></tr></table></figure></p>
+<p>###帅选(Filtering)<br>用来设置某些游戏对象相互碰撞的关系。Box2D支持最多十六个种群进行筛选。在引擎中碰撞筛选是通过掩码来完成的。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">playerFixtureDef.filter.categoryBits = <span class="number">0x0002</span>;</div><div class="line">playerFixtureDef.filter.maskBits = <span class="number">0x0004</span>;</div><div class="line">monsterFixturDef.filter.categoryBits = <span class="number">0x0004</span>;</div><div class="line">monsterFixturDef.filter.maskBits = <span class="number">0x0002</span>;</div></pre></td></tr></table></figure></p>
+<p>还可以进行分组，可以让同一组内的所有框架总是互相碰撞(正索引)或者永不碰撞(负索引)<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">fixture1Def.filter.groupIndex = <span class="number">2</span>;</div><div class="line">fixture2Def.filter.groupIndex = <span class="number">2</span>;</div><div class="line">fixture3Def.filter.groupIndex = <span class="number">-8</span>;</div><div class="line">fixture4Def.filter.groupIndex = <span class="number">-8</span>;</div></pre></td></tr></table></figure></p>
+<ol>
+<li>静态物体上的框架永远不会与两一个静态物体上的框架发生碰撞，因为静态物体根本不会移动</li>
+<li>同一个物体上的框架永远不会相互碰撞</li>
+<li>如果物体用关节连接起来了，物体上的框架可以选择启用或禁止它们之间相互碰撞。<br>###感应器(Sensors)<br>感应器是用来检测两个框架是否相交的对象。可以将任何一个框架对象设置为感应器，感应器可以是静态或者动态的。感应器发生碰撞时，是不会生成接触点的。<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">b2Contact::IsTouching	<span class="comment">// 这个函数可以得到感应器是否接触</span></div><div class="line">b2ContactListener::BeginContact和EndContact <span class="comment">// 开始接触点和结束接触点</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>##物体Bodies<br>Box2D的物体均为刚体，它具有质量和惯性，运动状态由重心和受力决定，动态速度由线速度和角速度控制，可分为三类</p>
+<ol>
+<li>静态物体(b2_staticBody)质量为0，在模拟时，静态不可移动，不过可以手动设置移动。速度为零。另外它不会和其他静态、平台物体碰撞。</li>
+<li>平台物体(b2_kinematicBody)<br>是按照固定轨迹在运动的物体，其质量也为零，可以预设一个速度，它也不会和其他的静态或平台物体相互碰撞。</li>
+<li>动态物体(b2_dynamicBody)<br>具有质量、速度、摩擦等，它将会参与引擎中的碰撞检测与物理模拟。可以与物理世界中任何对象发生碰撞。<br>上述物体都可以被施加外力(forces)、扭矩(torques)、冲量(impulses)<br>###位置和角度(Position and Angle)<br>是物体的最基本的属性，也就是物理世界都不会缺少这两个属性。<br>物体的两个主要有两个属性是最最主要的：</li>
+<li>第一个是物体的原点</li>
+<li>第二个是物体的知心，可以显式地通过<code>b2MassData</code>来设置。<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">bodyDef.position.Set(<span class="number">0.0f</span>,<span class="number">2.0f</span>); 	<span class="comment">// body的原点</span></div><div class="line">bodyDef.angle = <span class="number">0.25f</span> * b2_pi;		<span class="comment">// 弧度制下body的角</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>在引擎运转过程中，物体的位置和角度也会随时地改变。也可以通过物体类中的函数来改变。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">SetTransform</span><span class="params">(<span class="keyword">const</span> b2Vec2&amp; position,float32 angle)</span></span>;</div></pre></td></tr></table></figure></p>
+<p>###阻尼(Damping)<br>用于表示减小物体的世界中的速度的数值。阻尼和摩擦有所不同，摩擦仅在物体有接触的时候才会发生，而阻尼却时时刻刻阻碍着物体运动，比如空气阻力。阻尼参数的数值范围可以是从零到无穷大。通常来说阻尼的值应该在0~0.1之间。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">bodyDef.linearDamping = <span class="number">0.0f</span>;</div><div class="line">bodyDef.angularDamping = <span class="number">0.01f</span>;</div></pre></td></tr></table></figure></p>
+<p>###休眠参数(Sleep Parameters)<br>确定一个物体已经停止了移动时，物体就会进入休眠状态，休眠物体只消耗很小的CPU开销。接触到一个醒着的物体，物体就会被唤醒，物体上艹关节或触点被销毁的时候，也会醒来。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">bodyDef.allowSleep = <span class="literal">true</span>;	<span class="comment">// 可以休眠</span></div><div class="line">bodyDef.awake = ture;	<span class="comment">// 休眠物体</span></div></pre></td></tr></table></figure></p>
+<p>###固定旋转(Fixed Rotation)<br>通过<code>bodyDef.fixedRotation = ture</code>物体的转动惯量设置成零，物体会保持初始化的角度，而不会发生旋转。</p>
+<p>###子弹(Bullets)<br>子弹通常指一类速度很快而尺寸较小的物体，容易击穿其他物体。<code>bodyDef.bullet = true</code></p>
+<p>###活动状态(Activation)<br>一个非活动状态的物体，将完全地与世隔绝，不会参与物理模拟和碰撞检测，关节也不会被迷你。<code>bodyDef.active = true</code></p>
+<p>###用户数据(User Data)<br>一个存放用户数据的void指针，通常保存精灵对象<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">b2BodyDef bodyDef;</div><div class="line">bodyDef.userData = &amp;myActor;</div></pre></td></tr></table></figure></p>
+<p>##关节(Joints)<br>关节是将两个或两个以上物体连接在一起的对象，主要有三个作用</p>
+<ol>
+<li>用于连接物体</li>
+<li>用于限制物体的移动，是一种约束</li>
+<li>它本身是一个能够活动的对象<br>###关节的定义(JointDef)<br>关节包含一个用户数据的void指针，可以指定游戏元素，希望关节上的两个物体也能够发生碰撞，可以设置<code>collideConnected</code>布尔值来允许连接的物体之间进行碰撞。</li>
+</ol>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Cocos2d-X/">Cocos2d-X</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Box2D/">Box2D</a><a href="/tags/物理引擎/">物理引擎</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://seniorzhai.github.io/2014/08/19/Box2D/" data-title="Box2D | Zoe&#39;s blog" data-tsina="seniorszhai" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2014/08/19/Android-Activity-Fragment生命周期/" title="Android Activity Fragment生命周期">
+  <strong>上一篇：</strong><br/>
+  <span>
+  Android Activity Fragment生命周期</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2014/08/18/AndroidStudio使用指南/"  title="AndroidStudio使用指南">
+ <strong>下一篇：</strong><br/> 
+ <span>AndroidStudio使用指南
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2014/08/19/Box2D/" data-title="Box2D" data-url="http://seniorzhai.github.io/2014/08/19/Box2D/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ 
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/Android/" title="Android">Android<sup>185</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Camera/" title="Camera">Camera<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Cocos2d-X/" title="Cocos2d-X">Cocos2d-X<sup>11</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Prose/" title="Prose">Prose<sup>27</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Python/" title="Python">Python<sup>22</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/ReactNative/" title="ReactNative">ReactNative<sup>7</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/iOS/" title="iOS">iOS<sup>79</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/node-js/" title="node.js">node.js<sup>30</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/杂文/" title="杂文">杂文<sup>3</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+  <div class="tagcloudlist">
+    <p class="asidetitle">标签云</p>
+    <div class="tagcloudlist clearfix">
+       <a href="/tags/AFNetworking/" style="font-size: 10px;">AFNetworking</a> <a href="/tags/APK/" style="font-size: 10px;">APK</a> <a href="/tags/AS/" style="font-size: 10px;">AS</a> <a href="/tags/Adapter/" style="font-size: 10px;">Adapter</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Android-5-0/" style="font-size: 10px;">Android 5.0</a> <a href="/tags/Android-Studio/" style="font-size: 11.67px;">Android Studio</a> <a href="/tags/AndroidAninotations/" style="font-size: 10px;">AndroidAninotations</a> <a href="/tags/AndroidStudio/" style="font-size: 15.83px;">AndroidStudio</a> <a href="/tags/Animation/" style="font-size: 12.5px;">Animation</a> <a href="/tags/Api/" style="font-size: 11.67px;">Api</a> <a href="/tags/App/" style="font-size: 10px;">App</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Async/" style="font-size: 10px;">Async</a> <a href="/tags/Atom/" style="font-size: 10.83px;">Atom</a> <a href="/tags/AutoLayout/" style="font-size: 10px;">AutoLayout</a> <a href="/tags/BaseAdapter/" style="font-size: 10px;">BaseAdapter</a> <a href="/tags/Blur/" style="font-size: 10px;">Blur</a> <a href="/tags/Box2D/" style="font-size: 10px;">Box2D</a> <a href="/tags/Broadcast/" style="font-size: 10px;">Broadcast</a> <a href="/tags/CardView/" style="font-size: 10px;">CardView</a> <a href="/tags/CocoaPods/" style="font-size: 10px;">CocoaPods</a> <a href="/tags/Cocos2d-X/" style="font-size: 13.33px;">Cocos2d-X</a> <a href="/tags/CocosPods/" style="font-size: 10px;">CocosPods</a> <a href="/tags/ContentProvider/" style="font-size: 10px;">ContentProvider</a> <a href="/tags/Context/" style="font-size: 10px;">Context</a> <a href="/tags/Crouton/" style="font-size: 10px;">Crouton</a> <a href="/tags/CursorLoader/" style="font-size: 10px;">CursorLoader</a> <a href="/tags/Demo/" style="font-size: 10.83px;">Demo</a> <a href="/tags/Dialog/" style="font-size: 10px;">Dialog</a> <a href="/tags/EditView/" style="font-size: 10px;">EditView</a> <a href="/tags/EventBus/" style="font-size: 10px;">EventBus</a> <a href="/tags/Express/" style="font-size: 10px;">Express</a> <a href="/tags/Express学习笔记/" style="font-size: 10px;">Express学习笔记</a> <a href="/tags/Flex/" style="font-size: 10px;">Flex</a> <a href="/tags/Fragment/" style="font-size: 10.83px;">Fragment</a> <a href="/tags/GET/" style="font-size: 10px;">GET</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Gradle/" style="font-size: 10.83px;">Gradle</a> <a href="/tags/GridLayout/" style="font-size: 10px;">GridLayout</a> <a href="/tags/GridView/" style="font-size: 10.83px;">GridView</a> <a href="/tags/Gson/" style="font-size: 10px;">Gson</a> <a href="/tags/HTTP/" style="font-size: 10.83px;">HTTP</a> <a href="/tags/Handler/" style="font-size: 10px;">Handler</a> <a href="/tags/HeadersList/" style="font-size: 10px;">HeadersList</a> <a href="/tags/Hello-World/" style="font-size: 10px;">Hello World</a> <a href="/tags/Holo/" style="font-size: 10px;">Holo</a> <a href="/tags/IDE/" style="font-size: 10px;">IDE</a> <a href="/tags/IM/" style="font-size: 10.83px;">IM</a> <a href="/tags/Indicator/" style="font-size: 10px;">Indicator</a> <a href="/tags/IntentService/" style="font-size: 10px;">IntentService</a> <a href="/tags/JCenter/" style="font-size: 10px;">JCenter</a> <a href="/tags/JSON解析/" style="font-size: 10px;">JSON解析</a> <a href="/tags/Java/" style="font-size: 16.67px;">Java</a> <a href="/tags/Json/" style="font-size: 10.83px;">Json</a> <a href="/tags/KVO/" style="font-size: 10.83px;">KVO</a> <a href="/tags/Kotlin/" style="font-size: 10px;">Kotlin</a> <a href="/tags/Layout/" style="font-size: 10px;">Layout</a> <a href="/tags/Lint/" style="font-size: 10px;">Lint</a> <a href="/tags/ListView/" style="font-size: 10.83px;">ListView</a> <a href="/tags/Log/" style="font-size: 10px;">Log</a> <a href="/tags/MVVM/" style="font-size: 10.83px;">MVVM</a> <a href="/tags/Mac/" style="font-size: 10.83px;">Mac</a> <a href="/tags/Markdown/" style="font-size: 10.83px;">Markdown</a> <a href="/tags/Masonry/" style="font-size: 10px;">Masonry</a> <a href="/tags/Material/" style="font-size: 10.83px;">Material</a> <a href="/tags/Material-Design/" style="font-size: 10px;">Material Design</a> <a href="/tags/MaterialDesign/" style="font-size: 10px;">MaterialDesign</a> <a href="/tags/Meterial/" style="font-size: 10.83px;">Meterial</a> <a href="/tags/Meterial-Design/" style="font-size: 10px;">Meterial Design</a> <a href="/tags/Model/" style="font-size: 10px;">Model</a> <a href="/tags/MongoDB/" style="font-size: 10.83px;">MongoDB</a> <a href="/tags/Mongoose/" style="font-size: 10px;">Mongoose</a> <a href="/tags/NavBar/" style="font-size: 10px;">NavBar</a> <a href="/tags/Navigator/" style="font-size: 10px;">Navigator</a> <a href="/tags/NavtigationBar/" style="font-size: 10px;">NavtigationBar</a> <a href="/tags/NoSQL/" style="font-size: 10px;">NoSQL</a> <a href="/tags/OSX/" style="font-size: 10px;">OSX</a> <a href="/tags/Objective-C/" style="font-size: 17.5px;">Objective-C</a> <a href="/tags/POST/" style="font-size: 10px;">POST</a> <a href="/tags/PagerAdapter/" style="font-size: 10px;">PagerAdapter</a> <a href="/tags/PagerTranformer/" style="font-size: 10px;">PagerTranformer</a> <a href="/tags/Paint/" style="font-size: 10px;">Paint</a> <a href="/tags/Parcelable/" style="font-size: 10px;">Parcelable</a> <a href="/tags/PerferenceScreencreen/" style="font-size: 10px;">PerferenceScreencreen</a> <a href="/tags/Post/" style="font-size: 10px;">Post</a> <a href="/tags/ProGuard/" style="font-size: 10px;">ProGuard</a> <a href="/tags/Prose/" style="font-size: 12.5px;">Prose</a> <a href="/tags/Python/" style="font-size: 18.33px;">Python</a> <a href="/tags/REST/" style="font-size: 10.83px;">REST</a> <a href="/tags/Random/" style="font-size: 10px;">Random</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/ReactNative/" style="font-size: 10px;">ReactNative</a> <a href="/tags/RecyclerView/" style="font-size: 10.83px;">RecyclerView</a> <a href="/tags/SDK/" style="font-size: 11.67px;">SDK</a> <a href="/tags/SD卡/" style="font-size: 10px;">SD卡</a> <a href="/tags/SE5/" style="font-size: 10px;">SE5</a> <a href="/tags/SE6/" style="font-size: 10px;">SE6</a> <a href="/tags/SaveInstance/" style="font-size: 10px;">SaveInstance</a> <a href="/tags/Serializable/" style="font-size: 10px;">Serializable</a> <a href="/tags/SharedPreferce/" style="font-size: 10px;">SharedPreferce</a> <a href="/tags/SizeClass/" style="font-size: 10px;">SizeClass</a> <a href="/tags/Spider/" style="font-size: 10px;">Spider</a> <a href="/tags/Sprite/" style="font-size: 10.83px;">Sprite</a> <a href="/tags/Style/" style="font-size: 10px;">Style</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Sublime-Text/" style="font-size: 10px;">Sublime Text</a> <a href="/tags/SublimeText/" style="font-size: 10px;">SublimeText</a> <a href="/tags/Swift/" style="font-size: 17.5px;">Swift</a> <a href="/tags/TextView/" style="font-size: 10.83px;">TextView</a> <a href="/tags/Thread/" style="font-size: 10px;">Thread</a> <a href="/tags/Tips/" style="font-size: 10px;">Tips</a> <a href="/tags/ToolBar/" style="font-size: 10px;">ToolBar</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/UIActionSheet/" style="font-size: 10px;">UIActionSheet.</a> <a href="/tags/UIAlertView/" style="font-size: 10px;">UIAlertView</a> <a href="/tags/UIImageView/" style="font-size: 10px;">UIImageView</a> <a href="/tags/UIL/" style="font-size: 10px;">UIL</a> <a href="/tags/UIScrollView/" style="font-size: 10px;">UIScrollView</a> <a href="/tags/Ui/" style="font-size: 10px;">Ui</a> <a href="/tags/View/" style="font-size: 10px;">View</a> <a href="/tags/Volley/" style="font-size: 10px;">Volley</a> <a href="/tags/WebStorm/" style="font-size: 10px;">WebStorm</a> <a href="/tags/WebStrom/" style="font-size: 10px;">WebStrom</a> <a href="/tags/XCode/" style="font-size: 10px;">XCode</a> <a href="/tags/adb/" style="font-size: 10px;">adb</a> <a href="/tags/app/" style="font-size: 10.83px;">app</a> <a href="/tags/async/" style="font-size: 10px;">async</a> <a href="/tags/blur/" style="font-size: 10px;">blur</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/console/" style="font-size: 10px;">console</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/curl/" style="font-size: 10px;">curl</a> <a href="/tags/eclipse/" style="font-size: 10px;">eclipse</a> <a href="/tags/emoji/" style="font-size: 10px;">emoji</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/fallthrough/" style="font-size: 10px;">fallthrough</a> <a href="/tags/findViewById/" style="font-size: 10px;">findViewById</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/gradlew/" style="font-size: 10px;">gradlew</a> <a href="/tags/gravity/" style="font-size: 10px;">gravity</a> <a href="/tags/host/" style="font-size: 10px;">host</a> <a href="/tags/http/" style="font-size: 10.83px;">http</a> <a href="/tags/iOS/" style="font-size: 19.17px;">iOS</a> <a href="/tags/iPhone/" style="font-size: 10px;">iPhone</a> <a href="/tags/icon/" style="font-size: 10px;">icon</a> <a href="/tags/include/" style="font-size: 10px;">include</a> <a href="/tags/jQerry/" style="font-size: 11.67px;">jQerry</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/js/" style="font-size: 14.17px;">js</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/keymap/" style="font-size: 10px;">keymap</a> <a href="/tags/lambda/" style="font-size: 10px;">lambda</a> <a href="/tags/layout/" style="font-size: 11.67px;">layout</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/measure/" style="font-size: 10px;">measure</a> <a href="/tags/merge/" style="font-size: 10px;">merge</a> <a href="/tags/meteor/" style="font-size: 10.83px;">meteor</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/mongo/" style="font-size: 10px;">mongo</a> <a href="/tags/ndk/" style="font-size: 11.67px;">ndk</a> <a href="/tags/nil/" style="font-size: 10px;">nil</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/package/" style="font-size: 10px;">package</a> <a href="/tags/px/" style="font-size: 10px;">px</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/ripple/" style="font-size: 10px;">ripple</a> <a href="/tags/selector/" style="font-size: 10px;">selector</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/shape/" style="font-size: 10px;">shape</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/so/" style="font-size: 10px;">so</a> <a href="/tags/sp/" style="font-size: 10px;">sp</a> <a href="/tags/sqlite/" style="font-size: 10px;">sqlite</a> <a href="/tags/style/" style="font-size: 10px;">style</a> <a href="/tags/supervisor/" style="font-size: 10px;">supervisor</a> <a href="/tags/support/" style="font-size: 10px;">support</a> <a href="/tags/swfit/" style="font-size: 10px;">swfit</a> <a href="/tags/swift/" style="font-size: 10px;">swift</a> <a href="/tags/switch/" style="font-size: 10px;">switch</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web-app/" style="font-size: 10px;">web app</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/wifi/" style="font-size: 10px;">wifi</a> <a href="/tags/yield/" style="font-size: 10px;">yield</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/依赖管理/" style="font-size: 10px;">依赖管理</a> <a href="/tags/保存数据/" style="font-size: 10px;">保存数据</a> <a href="/tags/倒计时/" style="font-size: 10px;">倒计时</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/分支/" style="font-size: 10.83px;">分支</a> <a href="/tags/分辨率/" style="font-size: 10.83px;">分辨率</a> <a href="/tags/分配率/" style="font-size: 10px;">分配率</a> <a href="/tags/切换/" style="font-size: 10px;">切换</a> <a href="/tags/初始化/" style="font-size: 10px;">初始化</a> <a href="/tags/前端/" style="font-size: 11.67px;">前端</a> <a href="/tags/加密/" style="font-size: 10px;">加密</a> <a href="/tags/动态交互/" style="font-size: 10px;">动态交互</a> <a href="/tags/动态注入/" style="font-size: 10px;">动态注入</a> <a href="/tags/动画/" style="font-size: 13.33px;">动画</a> <a href="/tags/包/" style="font-size: 10px;">包</a> <a href="/tags/反编译/" style="font-size: 10.83px;">反编译</a> <a href="/tags/取色/" style="font-size: 10px;">取色</a> <a href="/tags/图片加载/" style="font-size: 10px;">图片加载</a> <a href="/tags/坐标系/" style="font-size: 10px;">坐标系</a> <a href="/tags/基础/" style="font-size: 11.67px;">基础</a> <a href="/tags/复用/" style="font-size: 10px;">复用</a> <a href="/tags/多分辨率/" style="font-size: 10px;">多分辨率</a> <a href="/tags/多屏幕/" style="font-size: 10px;">多屏幕</a> <a href="/tags/大不同/" style="font-size: 16.67px;">大不同</a> <a href="/tags/妈妈再也不用担心系列/" style="font-size: 10px;">妈妈再也不用担心系列</a> <a href="/tags/定位代码/" style="font-size: 10px;">定位代码</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/对象/" style="font-size: 10px;">对象</a> <a href="/tags/导航/" style="font-size: 10px;">导航</a> <a href="/tags/属性/" style="font-size: 10.83px;">属性</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/工具类/" style="font-size: 11.67px;">工具类</a> <a href="/tags/布局/" style="font-size: 10.83px;">布局</a> <a href="/tags/带标题的ListView/" style="font-size: 10px;">带标题的ListView</a> <a href="/tags/常用/" style="font-size: 10.83px;">常用</a> <a href="/tags/序列化/" style="font-size: 10px;">序列化</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/开源/" style="font-size: 10px;">开源</a> <a href="/tags/开源库/" style="font-size: 10px;">开源库</a> <a href="/tags/异步/" style="font-size: 10.83px;">异步</a> <a href="/tags/异步加载/" style="font-size: 10px;">异步加载</a> <a href="/tags/引导/" style="font-size: 10px;">引导</a> <a href="/tags/引用/" style="font-size: 10px;">引用</a> <a href="/tags/录屏/" style="font-size: 10px;">录屏</a> <a href="/tags/快捷键/" style="font-size: 10px;">快捷键</a> <a href="/tags/持久化/" style="font-size: 10px;">持久化</a> <a href="/tags/按钮/" style="font-size: 10px;">按钮</a> <a href="/tags/提示/" style="font-size: 10.83px;">提示</a> <a href="/tags/插件/" style="font-size: 11.67px;">插件</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/数学，宏/" style="font-size: 10px;">数学，宏</a> <a href="/tags/数据库/" style="font-size: 11.67px;">数据库</a> <a href="/tags/数据绑定/" style="font-size: 10.83px;">数据绑定</a> <a href="/tags/文本大小/" style="font-size: 10px;">文本大小</a> <a href="/tags/杂文/" style="font-size: 10.83px;">杂文</a> <a href="/tags/权限/" style="font-size: 10px;">权限</a> <a href="/tags/样式/" style="font-size: 10px;">样式</a> <a href="/tags/模块/" style="font-size: 10.83px;">模块</a> <a href="/tags/模拟/" style="font-size: 10px;">模拟</a> <a href="/tags/模糊/" style="font-size: 10.83px;">模糊</a> <a href="/tags/毛玻璃/" style="font-size: 10px;">毛玻璃</a> <a href="/tags/波纹/" style="font-size: 10px;">波纹</a> <a href="/tags/注入/" style="font-size: 10.83px;">注入</a> <a href="/tags/注解/" style="font-size: 10px;">注解</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/混淆/" style="font-size: 10px;">混淆</a> <a href="/tags/热启动/" style="font-size: 10px;">热启动</a> <a href="/tags/爬虫/" style="font-size: 10.83px;">爬虫</a> <a href="/tags/物理引擎/" style="font-size: 10px;">物理引擎</a> <a href="/tags/环信/" style="font-size: 10.83px;">环信</a> <a href="/tags/生命周期/" style="font-size: 11.67px;">生命周期</a> <a href="/tags/用时/" style="font-size: 10px;">用时</a> <a href="/tags/界面/" style="font-size: 10px;">界面</a> <a href="/tags/硬盘缓存/" style="font-size: 10px;">硬盘缓存</a> <a href="/tags/第一个项目/" style="font-size: 10px;">第一个项目</a> <a href="/tags/精灵/" style="font-size: 10px;">精灵</a> <a href="/tags/精灵帧/" style="font-size: 10px;">精灵帧</a> <a href="/tags/约束/" style="font-size: 10px;">约束</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/绘制/" style="font-size: 10px;">绘制</a> <a href="/tags/继承/" style="font-size: 10px;">继承</a> <a href="/tags/缓存/" style="font-size: 10px;">缓存</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a> <a href="/tags/网络请求/" style="font-size: 10.83px;">网络请求</a> <a href="/tags/翻墙/" style="font-size: 10.83px;">翻墙</a> <a href="/tags/自动布局/" style="font-size: 10px;">自动布局</a> <a href="/tags/自定义/" style="font-size: 10.83px;">自定义</a> <a href="/tags/自定义控件/" style="font-size: 10px;">自定义控件</a> <a href="/tags/自适应/" style="font-size: 10px;">自适应</a> <a href="/tags/虚拟键/" style="font-size: 10px;">虚拟键</a> <a href="/tags/角标/" style="font-size: 10px;">角标</a> <a href="/tags/设计/" style="font-size: 10px;">设计</a> <a href="/tags/设计缺陷/" style="font-size: 10px;">设计缺陷</a> <a href="/tags/访问/" style="font-size: 10px;">访问</a> <a href="/tags/调试/" style="font-size: 10.83px;">调试</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/资源文件/" style="font-size: 10px;">资源文件</a> <a href="/tags/路由/" style="font-size: 10px;">路由</a> <a href="/tags/转义/" style="font-size: 10px;">转义</a> <a href="/tags/轻量级/" style="font-size: 10px;">轻量级</a> <a href="/tags/连接/" style="font-size: 10px;">连接</a> <a href="/tags/适配/" style="font-size: 10.83px;">适配</a> <a href="/tags/遍历/" style="font-size: 10px;">遍历</a> <a href="/tags/配置/" style="font-size: 10px;">配置</a> <a href="/tags/镜像/" style="font-size: 10px;">镜像</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/随机/" style="font-size: 10px;">随机</a> <a href="/tags/隐藏/" style="font-size: 10px;">隐藏</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a> <a href="/tags/颜色/" style="font-size: 10.83px;">颜色</a> <a href="/tags/颜色选择器/" style="font-size: 10px;">颜色选择器</a> <a href="/tags/魅族/" style="font-size: 10px;">魅族</a> <a href="/tags/！/" style="font-size: 10px;">！</a> <a href="/tags/？/" style="font-size: 10px;">？</a>
+    </div>
+  </div>
+
+
+  
+  <div class="archiveslist">
+    <p class="asidetitle"><a href="/archives">归档</a></p>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">二月 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">九月 2014</a><span class="archive-list-count">36</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">八月 2014</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">七月 2014</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">五月 2014</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">四月 2014</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">三月 2014</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">二月 2014</a><span class="archive-list-count">24</span></li></ul>
+  </div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://daimajia.com/" target="_blank" title="DaiMaJia.Blog">DaiMaJia.Blog</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://macrotea.com/welcome/" target="_blank" title="Macrotea.Blog">Macrotea.Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello,I&#39;m Zoe,a Android and iOS developers. <br/>
+			This is my blog,I hope you will enjoy them.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2292032577" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/seniorzhai" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:developer.zhaitao@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="Zoe">Zoe</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"zt1991616"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-54646832-1', 'null');  
+ga('send', 'pageview');
+</script>
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
