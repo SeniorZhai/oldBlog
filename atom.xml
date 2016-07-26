@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://seniorzhai.github.io/"/>
-  <updated>2016-05-20T08:40:48.000Z</updated>
+  <updated>2016-07-26T07:23:12.000Z</updated>
   <id>http://seniorzhai.github.io/</id>
   
   <author>
@@ -16,11 +16,71 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>CALayer</title>
+    <link href="http://seniorzhai.github.io/2016/07/25/CALayer/"/>
+    <id>http://seniorzhai.github.io/2016/07/25/CALayer/</id>
+    <published>2016-07-25T12:29:25.000Z</published>
+    <updated>2016-07-26T07:23:12.000Z</updated>
+    
+    <content type="html">&lt;p&gt;在iOS当中，所有的视图都从&lt;code&gt;UIView&lt;/code&gt;的基类派生二来，UIView  可以处理触摸时间，可以支持基于&lt;code&gt;Core Graphics绘图&lt;/code&gt;，可以做旋转或者缩放。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;##CALayer&lt;br&gt;&lt;code&gt;CALayer&lt;/code&gt;类在概念上和&lt;code&gt;UIView&lt;/code&gt;类似，同样也是一些被层级关系树管理的矩形块，同样也可以包含一些内容，管理子图层的位置。和&lt;code&gt;UIView&lt;/code&gt;不同的是&lt;code&gt;CALayer&lt;/code&gt;不处理用户交互。&lt;br&gt;每一个&lt;code&gt;UIView&lt;/code&gt;都有一个&lt;code&gt;CALayer&lt;/code&gt;实例的图层属性，也就是所谓的&lt;code&gt;backing layer&lt;/code&gt;，视图的职责就是创建并管理这个图层。&lt;br&gt;UIView没有暴露出一些CALayer的功能：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;阴影、圆角、带颜色的边框&lt;/li&gt;
+&lt;li&gt;3D变换&lt;/li&gt;
+&lt;li&gt;非矩形范围&lt;/li&gt;
+&lt;li&gt;透明遮罩&lt;/li&gt;
+&lt;li&gt;多级非线性动画&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight swift&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;viewDidLoad&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;super&lt;/span&gt;.viewDidLoad()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  contentView.backgroundColor = &lt;span class=&quot;type&quot;&gt;UIColor&lt;/span&gt;.grayColor()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; layer = &lt;span class=&quot;type&quot;&gt;CALayer&lt;/span&gt;()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  layer.frame = &lt;span class=&quot;type&quot;&gt;CGRectMake&lt;/span&gt;(&lt;span class=&quot;number&quot;&gt;50&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;50&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  layer.backgroundColor = &lt;span class=&quot;type&quot;&gt;UIColor&lt;/span&gt;.blueColor().&lt;span class=&quot;type&quot;&gt;CGColor&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  contentView.layer.addSublayer(layer)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;一个视图只有一个相关联的图层(自动创建)，同时也可以支持添加无数个子图层，并且把它直接添加视图关联图层的子图层&lt;/p&gt;
+&lt;p&gt;使用图层关联的视图而不是CALayer的好处在于，能在使用所有CALayer底层特性的同时，也可以使用UIView的高级API&lt;br&gt;当满足以下条件的时候，使用CALayer更为合适&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;开发同时在Mac OS上运行的跨平台应用&lt;/li&gt;
+&lt;li&gt;使用多种CALayer的子类，并且不想创建额外的UIView去包装它们所有&lt;/li&gt;
+&lt;li&gt;做一些对性能特别挑剔的工作，比如对UIView一些可忽略不计的操作都会引起显著的不同&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;##contents属性&lt;br&gt;CALayer有一个&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在iOS当中，所有的视图都从&lt;code&gt;UIView&lt;/code&gt;的基类派生二来，UIView  可以处理触摸时间，可以支持基于&lt;code&gt;Core Graphics绘图&lt;/code&gt;，可以做旋转或者缩放。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="iOS" scheme="http://seniorzhai.github.io/categories/iOS/"/>
+    
+    
+      <category term="动画" scheme="http://seniorzhai.github.io/tags/%E5%8A%A8%E7%94%BB/"/>
+    
+      <category term="view" scheme="http://seniorzhai.github.io/tags/view/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>矫色方法</title>
+    <link href="http://seniorzhai.github.io/2016/07/21/%E7%9F%AB%E8%89%B2%E6%96%B9%E6%B3%95/"/>
+    <id>http://seniorzhai.github.io/2016/07/21/矫色方法/</id>
+    <published>2016-07-21T02:58:05.000Z</published>
+    <updated>2016-07-21T02:58:05.000Z</updated>
+    
+    <content type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>GoogleIO第一份惊喜-ConstraintLayout</title>
     <link href="http://seniorzhai.github.io/2016/05/19/GoogleIO%E7%AC%AC%E4%B8%80%E4%BB%BD%E6%83%8A%E5%96%9C-ConstraintLayout/"/>
     <id>http://seniorzhai.github.io/2016/05/19/GoogleIO第一份惊喜-ConstraintLayout/</id>
     <published>2016-05-19T06:03:07.000Z</published>
-    <updated>2016-05-20T08:40:48.000Z</updated>
+    <updated>2016-07-12T10:38:25.000Z</updated>
     
     <content type="html">&lt;p&gt;了解iOS开发的童鞋应该知道，自iPhone6推出后，iOS也进入多屏适配时代，AutoLayout成为了适配的首选，Storyboard+AutoLayout成为了iOS布局的主要流派之一（代码适配也是不错的选择）。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;拖拽组件，设定约束，一个界面就基本完成了（当然，还有一堆高级的用法）。而Android开发工程师还在苦逼地将设计稿分割，这部分用一个RelativeLayout，这部分用LinearLayout……然后嵌套一下，或者再套一层。对于很多对几大布局不是很了解的同学，往往几个界面的组成就够头痛一阵了。&lt;br&gt;拯救你们的救星来了，ConstraintLayout将解决你的难言之隐，还在等待什么，赶快拿起电话*&amp;amp;……%￥(不好意思出戏了)&lt;/p&gt;
 &lt;p&gt;##开始&lt;br&gt;首先确保你的Android Studio是&lt;a href=&quot;http://tools.android.com/download/studio/canary&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;2.2 preview&lt;/a&gt;或者更高版本，预览拖拽设定约束需要新的布局编辑窗口，低版本AS应该可以用ConstraintLayout，但没用设置约束功能（光手写XML，为什么还用ConstraintLayout）&lt;/p&gt;
@@ -732,66 +792,6 @@
       <category term="插件" scheme="http://seniorzhai.github.io/tags/%E6%8F%92%E4%BB%B6/"/>
     
       <category term="XCode" scheme="http://seniorzhai.github.io/tags/XCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>牛逼到天上的Atom插件</title>
-    <link href="http://seniorzhai.github.io/2015/11/30/%E7%89%9B%E9%80%BC%E5%88%B0%E5%A4%A9%E4%B8%8A%E7%9A%84Atom%E6%8F%92%E4%BB%B6/"/>
-    <id>http://seniorzhai.github.io/2015/11/30/牛逼到天上的Atom插件/</id>
-    <published>2015-11-30T11:57:02.000Z</published>
-    <updated>2015-12-01T05:56:51.000Z</updated>
-    
-    <content type="html">&lt;p&gt;前几天为了学习&lt;code&gt;React Native&lt;/code&gt;开始使用Atom，默默的替代了Sublime Text在我Dock上的地位&lt;br&gt;但&lt;code&gt;activate-power-mode&lt;/code&gt;的出现让准备彻底走向Atom&lt;br&gt;&lt;img src=&quot;https://i.github-camo.com/c6db669d7886b25d9d9d85aecd5f351375886693/68747470733a2f2f636c6f75642e67697468756275736572636f6e74656e742e636f6d2f6173736574732f3638383431352f31313435333239372f62386632343965632d393630352d313165352d393738632d6562336262323165656364382e676966&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;注:要使用时用option+control+o开启，插件只能作用在当前Tab页，如果不起效，选择View-&amp;gt;Reload重载页面&lt;/p&gt;
-&lt;/blockquote&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;前几天为了学习&lt;code&gt;React Native&lt;/code&gt;开始使用Atom，默默的替代了Sublime Text在我Dock上的地位&lt;br&gt;但&lt;code&gt;activate-power-mode&lt;/code&gt;的出现让准备彻底走向Atom&lt;br&gt;&lt;img src=&quot;htt
-    
-    </summary>
-    
-      <category term="Prose" scheme="http://seniorzhai.github.io/categories/Prose/"/>
-    
-    
-      <category term="插件" scheme="http://seniorzhai.github.io/tags/%E6%8F%92%E4%BB%B6/"/>
-    
-      <category term="Atom" scheme="http://seniorzhai.github.io/tags/Atom/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ReactNative-样式</title>
-    <link href="http://seniorzhai.github.io/2015/11/24/ReactNative-%E6%A0%B7%E5%BC%8F/"/>
-    <id>http://seniorzhai.github.io/2015/11/24/ReactNative-样式/</id>
-    <published>2015-11-24T11:57:26.000Z</published>
-    <updated>2016-01-23T20:15:40.000Z</updated>
-    
-    <content type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;##声明&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; styles = StyleSheet.create(&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	base: &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		width:&lt;span class=&quot;number&quot;&gt;38&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		height:&lt;span class=&quot;number&quot;&gt;38&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	background:&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;		backgroundColor:&lt;span class=&quot;string&quot;&gt;&quot;#222222&quot;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	&amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;##使用&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;Text style=&amp;#123;styles.base&amp;#125; /&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;View style=&amp;#123;styles.background&amp;#125; /&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;View style=&amp;#123;[styles.base,style.background]&amp;#125; /&amp;gt; //可以接受多个style属性&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;##声明&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/d
-    
-    </summary>
-    
-      <category term="ReactNative" scheme="http://seniorzhai.github.io/categories/ReactNative/"/>
-    
-    
-      <category term="iOS" scheme="http://seniorzhai.github.io/tags/iOS/"/>
-    
-      <category term="Android" scheme="http://seniorzhai.github.io/tags/Android/"/>
-    
-      <category term="样式" scheme="http://seniorzhai.github.io/tags/%E6%A0%B7%E5%BC%8F/"/>
-    
-      <category term="Style" scheme="http://seniorzhai.github.io/tags/Style/"/>
     
   </entry>
   
