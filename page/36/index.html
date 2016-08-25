@@ -81,6 +81,236 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2014/03/20/KVO/" title="KVO" itemprop="url">KVO</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
+		
+  <p class="article-time">
+    <time datetime="2014-03-20T04:57:05.000Z" itemprop="datePublished"> 发表于 2014-03-20</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>KVO(Key-Value Observing)，Objective-C提供的一种机制，当制定的对象被修改时，对象就会接受到通知。</p>
+<p>##使用捕捉</p>
+<ol>
+<li>注册，制定被观察者的属性</li>
+<li>实现回调方法</li>
+<li>移除观察</li>
+</ol>
+<p>KVO涉及到的主要方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//	三个参数分别是监听对象、监听属性、监听选项</div><div class="line">- (void)addObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options context:(void *)context;</div><div class="line">//	删除监听器，监听的对象、监听的属性</div><div class="line">- (void)removeObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div></pre></td><td class="code"><pre><div class="line">@implementation ViewController</div><div class="line">&#123;</div><div class="line">    UILabel *_name;</div><div class="line">    UILabel *_age;</div><div class="line">    UIButton *_b1;</div><div class="line">    UIButton *_b2;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)viewDidLoad</div><div class="line">&#123;</div><div class="line">    [super viewDidLoad];</div><div class="line">	_myData= [[MyData alloc] init];</div><div class="line">    [_myData setValue:@&quot;name&quot; forKey:@&quot;name&quot;];</div><div class="line">    [_myData setValue:@&quot;22&quot; forKey:@&quot;age&quot;];</div><div class="line">    [_myData addObserver:self forKeyPath:@&quot;age&quot; options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:NULL];</div><div class="line">    [_myData addObserver:self forKeyPath:@&quot;name&quot; options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:NULL];</div><div class="line"></div><div class="line">    CGSize size = self.view.bounds.size;</div><div class="line"></div><div class="line">    _name = [[UILabel alloc]initWithFrame:CGRectMake(size.width/2 - 75, 100, 150, 30 )];</div><div class="line">    _name.textColor = [UIColor redColor];</div><div class="line">    _name.text = [_myData valueForKey:@&quot;name&quot;];</div><div class="line">    _name.textAlignment = NSTextAlignmentCenter;</div><div class="line">    [self.view addSubview:_name];</div><div class="line"></div><div class="line">    _age = [[UILabel alloc]initWithFrame:CGRectMake(size.width/2 - 50, 140, 100, 30 )];</div><div class="line">    _age.textColor = [UIColor redColor];</div><div class="line">    _age.text = [[NSString alloc]initWithFormat:@&quot;%@&quot;,[_myData valueForKey:@&quot;age&quot;]];</div><div class="line">    _age.textAlignment = NSTextAlignmentCenter;</div><div class="line">    [self.view addSubview:_age];</div><div class="line">    </div><div class="line">    _b1 = [UIButton buttonWithType:UIButtonTypeRoundedRect];</div><div class="line">    [_b1 setTitle:@&quot;Push&quot; forState:UIControlStateNormal];</div><div class="line">    _b1.frame = CGRectMake(size.width/2 - 50, size.height/2 + 100, 100, 30);</div><div class="line">    [_b1 addTarget:self action:@selector(buttonAction1) forControlEvents:UIControlEventTouchUpInside];</div><div class="line">    [self.view addSubview:_b1];</div><div class="line">    </div><div class="line">    _b2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];</div><div class="line">    [_b2 setTitle:@&quot;Push&quot; forState:UIControlStateNormal];</div><div class="line">    _b2.frame = CGRectMake(size.width/2 - 50, size.height/2 + 140, 100, 30);</div><div class="line">    [_b2 addTarget:self action:@selector(buttonAction2) forControlEvents:UIControlEventTouchUpInside];</div><div class="line">    [self.view addSubview:_b2];</div><div class="line">&#125;</div><div class="line">-(void) buttonAction1</div><div class="line">&#123;</div><div class="line">    unsigned int random = arc4random_uniform(999);</div><div class="line">    _myData.name = [[NSString alloc]initWithFormat:@&quot;随机数字:%d&quot;,random];</div><div class="line">&#125;</div><div class="line">-(void) buttonAction2</div><div class="line">&#123;</div><div class="line">    unsigned int age = arc4random_uniform(100);</div><div class="line">    _myData.age = age;</div><div class="line">&#125;</div><div class="line">-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context</div><div class="line">&#123;</div><div class="line">    if([keyPath isEqualToString:@&quot;age&quot;])</div><div class="line">    &#123;</div><div class="line">        _age.text = [[NSString alloc]initWithFormat:@&quot;%@&quot;,[_myData valueForKey:@&quot;age&quot;]];</div><div class="line">    &#125; else if([keyPath isEqualToString:@&quot;name&quot;])</div><div class="line">    &#123;</div><div class="line">        _name.text = _myData.name;</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/iOS/">iOS</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/iOS/">iOS</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2014/03/20/KVO/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/03/20/KVO/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/03/20/Objective-C中随机数的用法/" title="Objective-C中随机数的用法" itemprop="url">Objective-C中随机数的用法</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
+		
+  <p class="article-time">
+    <time datetime="2014-03-20T04:55:07.000Z" itemprop="datePublished"> 发表于 2014-03-20</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <ol>
+<li><p>arcrandom()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 获取1到x之间的整数的代码如下:</div><div class="line">int value = (arc4random() % x) + 1;</div></pre></td></tr></table></figure>
+</li>
+<li><p>random()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 需要初始化时设置种子</div><div class="line">srandom((unsigned int)time(time_t *)NULL); //初始化时，设置下种子就好了。</div></pre></td></tr></table></figure>
+</li>
+<li><p>CCRANDOM_0_1()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">// cocos2d中使用 ，范围是[0,1]</div><div class="line">// [0,5]   CCRANDOM_0_1() 取值范围是[0,1]</div><div class="line">float random = CCRANDOM_0_1() * 5;</div></pre></td></tr></table></figure>
+</li>
+<li><p>arc4random_uniform</p>
+</li>
+</ol>
+<ul>
+<li>推介使用<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 返回一个小于number的均匀分布的整数</div><div class="line">arc4random_uniform(number)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>还存在其他一些arc4随机函数，详情查看<a href="https://developer.apple.com/library/mac/documentation/Darwin/Reference/Manpages/man3/arc4random_uniform.3.html" target="_blank" rel="external"></a></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/iOS/">iOS</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/iOS/">iOS</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2014/03/20/Objective-C中随机数的用法/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/03/20/Objective-C中随机数的用法/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/03/20/Shimmer/" title="Shimmer" itemprop="url">Shimmer</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
+		
+  <p class="article-time">
+    <time datetime="2014-03-20T04:54:24.000Z" itemprop="datePublished"> 发表于 2014-03-20</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p><a href="https://github.com/facebook/Shimmer" target="_blank" rel="external">shimmer</a>是Facebook旗下应用Paper开源的加载效果，显示为一个闪闪发光的Label。</p>
+<p><img src="https://raw.github.com/zt1991616/blog/master/Image/14032002.gif" alt=""></p>
+<p>##安装<br>使用Cocoapods来安装FBShimmering库</p>
+<ol>
+<li>命令行里运行<code>pod search Shimmer</code></li>
+</ol>
+<p><img src="https://raw.github.com/zt1991616/blog/master/Image/14032003.png" alt=""></p>
+<ol>
+<li><p>将上面的<code>pod &#39;Shimmer&#39;, &#39;~&gt; 1.0.1&#39;</code>copy，在你的工程下创建<code>Podfile</code>文件，并写入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">platform :ios, &apos;7.0&apos;</div><div class="line"></div><div class="line">pod &apos;Shimmer&apos;, &apos;~&gt; 1.0.1&apos;</div></pre></td></tr></table></figure>
+</li>
+<li><p>在命令行切换到你的工程目录，运行<code>pod install</code></p>
+</li>
+</ol>
+<p><img src="https://raw.github.com/zt1991616/blog/master/Image/14032001.png" alt=""></p>
+<p>##用法<br>创建一个<code>FBShimmeringView</code>或<code>FBShimmeringLayer</code>，添加您的内容。要开启闪烁，就设置<code>shimmering</code>属性为YES。<br>例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">FBShimmeringView  * shimmeringView  =  [[ FBShimmeringView  alloc ]  initWithFrame : self.view.bounds ]; </div><div class="line">[ self.view  addSubview : shimmeringView ];</div><div class="line"></div><div class="line">UILabel  * loadingLabel  =  [[ UILabel  alloc ]  initWithFrame : shimmeringView.bounds ]; </div><div class="line">loadingLabel.textAlignment  =  NSTextAlignmentCenter ; </div><div class="line">loadingLabel.text  =  NSLocalizedString ( @&quot;Shimmer&quot; ,  nil ); </div><div class="line">shimmeringView.contentView  =  loadingLabel ;</div><div class="line"></div><div class="line">/ /开始闪闪发光</div><div class="line">shimmeringView.shimmering =  YES ;</div></pre></td></tr></table></figure></p>
+<p>##示例链接<br><a href="https://github.com/zt1991616/ShimmerDemo" target="_blank" rel="external">示例</a>：</p>
+<p><img src="https://raw.github.com/zt1991616/blog/master/Image/14032004.gif" alt=""></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/iOS/">iOS</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/iOS/">iOS</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2014/03/20/Shimmer/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/03/20/Shimmer/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2014/03/19/使用Cocosd-console创建运行工程/" title="使用Cocosd-console创建运行工程" itemprop="url">使用Cocosd-console创建运行工程</a>
   </h1>
   <p class="article-author">By
@@ -662,268 +892,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2014/03/04/ReactiveCocoa框架/" title="ReactiveCocoa框架" itemprop="url">ReactiveCocoa框架</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
-		
-  <p class="article-time">
-    <time datetime="2014-03-04T04:50:30.000Z" itemprop="datePublished"> 发表于 2014-03-04</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <ul>
-<li>ReactiveCocoa是一款FRP（Functional Reactive Programming，响应式编程）框架，简称RAC。可以在GitHub上找到<a href="https://github.com/ReactiveCocoa/ReactiveCocoa" target="_blank" rel="external">他</a>。</li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/iOS/">iOS</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/iOS/">iOS</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2014/03/04/ReactiveCocoa框架/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/03/04/ReactiveCocoa框架/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2014/03/04/Foundation框架(二)/" title="Foundation框架(二)" itemprop="url">Foundation框架(二)</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
-		
-  <p class="article-time">
-    <time datetime="2014-03-04T04:49:18.000Z" itemprop="datePublished"> 发表于 2014-03-04</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>##Objective-C集合</p>
-<ul>
-<li>大致可分为：NSArray、NSSet、NSDictionary三种体系，NSAarray代表有序、可重复的集合，NSSet代表无序、不可重复的集合，NSDictionary代表具有映射关系的集合。<br>##数组（NSArray和NSMutableArray）</li>
-<li>NSArray代表元素有序、可重复的一个集合，集合中每一个元素都有对应的顺序索引。<br>-常用方法<ul>
-<li>array:创建一个不包含任何元素的空NSArray</li>
-<li>arrayWithContentsOfFile:/initWithContentsOfFile:读取文件内容来创建NSArray</li>
-<li>arrayWithObject:/initWithObject:创建只包含指定元素的NSArray</li>
-<li>arrayWithObjects:/initWithObjects:创建包含指定N个元素的NSArray</li>
-<li>objectAtIndex:根据索引返回元素</li>
-<li>lastObject:最后一个元素</li>
-<li>objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRnnge:NSMakeRange(2,3)] 从索引中2~5的元素组成新集合</li>
-<li>indexOfObject:查找元素的位置</li>
-<li>indexOfObject: inRange:查找指定范围内元素的位置</li>
-<li>arrayByAddingObject: 追加元素</li>
-<li>arrayByAddingObjectsFormArray:追加数组集合</li>
-<li>writeToFile:写入文件</li>
-</ul>
-</li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/iOS/">iOS</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/iOS/">iOS</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2014/03/04/Foundation框架(二)/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/03/04/Foundation框架(二)/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2014/03/03/Android安全(一)/" title="Android安全" itemprop="url">Android安全</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
-		
-  <p class="article-time">
-    <time datetime="2014-03-03T11:15:47.000Z" itemprop="datePublished"> 发表于 2014-03-03</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>##Android安全概述</p>
-<ul>
-<li>安全主要解决4类需求：<ul>
-<li>保密(Security/Confidentiality</li>
-<li>鉴别/认证(Authentication)</li>
-<li>完整性(Integrity)</li>
-<li>不可否认性(non-repudiation)</li>
-</ul>
-</li>
-<li>好的密码术应该是<strong>算法公开</strong>，<strong>密钥保密</strong>的。</li>
-</ul>
-<p>###对称加密概述</p>
-<ul>
-<li>典型的加密模型<ul>
-<li>秘钥：分为加密秘钥和解密秘钥。</li>
-<li>明文：文友进行机密，能够直接表带原文含义的信息。</li>
-<li>密文：经过加密处理处理之后，隐藏原文含义的信息。</li>
-<li>加密：将明文转换成密文的实施过程。</li>
-<li>解密：将密文转换成明文的实施过程。<br><img src="https://github.com/zt1991616/blog/raw/master/Image/14030201.png" alt=""></li>
-</ul>
-</li>
-<li>对称的含义（Symmetric）<ul>
-<li>加密和解密用同一套Key</li>
-</ul>
-</li>
-<li>置换加密、转置加密和乘积加密<ul>
-<li>置换加密,又称换位密码,是一个简单的换位，每个置换都可以用一个置换矩阵Ek来表示。每个置换都有一个与之对应的逆置换Dk。</li>
-</ul>
-</li>
-<li>DES</li>
-<li>AES</li>
-<li>优点和缺点<ul>
-<li>高效</li>
-<li>秘钥交换的问题</li>
-<li>不如RSA的加密安全程度高，但当选择256bit的AES仍然能胜任大多数安全领域。</li>
-</ul>
-</li>
-</ul>
-<p>###非对称加密</p>
-<ul>
-<li>非对称加密的模型<br><img src="https://github.com/zt1991616/blog/raw/master/Image/14030202.png" alt=""></li>
-<li>公钥和私钥</li>
-<li>RSA<ul>
-<li>建立在分解大树的困难度上，公钥/私钥长度至少1024bit</li>
-</ul>
-</li>
-<li>优点和缺点<ul>
-<li>安全性足够高</li>
-<li>没有密钥交换的问题</li>
-<li>效率低，对于大数据加密很慢<br>###常见场景</li>
-</ul>
-</li>
-<li>保密会话<br><img src="https://github.com/zt1991616/blog/raw/master/Image/14030203.png" alt=""></li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Android/">Android</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Android/">Android</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2014/03/03/Android安全(一)/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/03/03/Android安全(一)/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <a class="extend prev" rel="prev" href="/page/35/"><span></span>Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/34/">34</a><a class="page-number" href="/page/35/">35</a><span class="page-number current">36</span><a class="page-number" href="/page/37/">37</a><a class="page-number" href="/page/38/">38</a><a class="page-number" href="/page/39/">39</a><a class="extend next" rel="next" href="/page/37/">Next<span></span></a>
@@ -966,7 +934,7 @@
 		  
 		
 		  
-			<li><a href="/categories/iOS/" title="iOS">iOS<sup>80</sup></a></li>
+			<li><a href="/categories/iOS/" title="iOS">iOS<sup>83</sup></a></li>
 		  
 		
 		  
@@ -985,7 +953,7 @@
   <div class="tagcloudlist">
     <p class="asidetitle">标签云</p>
     <div class="tagcloudlist clearfix">
-       <a href="/tags/AFNetworking/" style="font-size: 10px;">AFNetworking</a> <a href="/tags/APK/" style="font-size: 10px;">APK</a> <a href="/tags/AS/" style="font-size: 10px;">AS</a> <a href="/tags/Adapter/" style="font-size: 10px;">Adapter</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Android-5-0/" style="font-size: 10px;">Android 5.0</a> <a href="/tags/Android-Studio/" style="font-size: 11.67px;">Android Studio</a> <a href="/tags/AndroidAninotations/" style="font-size: 10px;">AndroidAninotations</a> <a href="/tags/AndroidStudio/" style="font-size: 15.83px;">AndroidStudio</a> <a href="/tags/Animation/" style="font-size: 12.5px;">Animation</a> <a href="/tags/Api/" style="font-size: 11.67px;">Api</a> <a href="/tags/App/" style="font-size: 10px;">App</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Async/" style="font-size: 10px;">Async</a> <a href="/tags/Atom/" style="font-size: 10.83px;">Atom</a> <a href="/tags/AutoLayout/" style="font-size: 10px;">AutoLayout</a> <a href="/tags/BaseAdapter/" style="font-size: 10px;">BaseAdapter</a> <a href="/tags/Blur/" style="font-size: 10px;">Blur</a> <a href="/tags/Box2D/" style="font-size: 10px;">Box2D</a> <a href="/tags/Broadcast/" style="font-size: 10px;">Broadcast</a> <a href="/tags/CardView/" style="font-size: 10px;">CardView</a> <a href="/tags/CocoaPods/" style="font-size: 10px;">CocoaPods</a> <a href="/tags/Cocos2d-X/" style="font-size: 13.33px;">Cocos2d-X</a> <a href="/tags/CocosPods/" style="font-size: 10px;">CocosPods</a> <a href="/tags/ContentProvider/" style="font-size: 10px;">ContentProvider</a> <a href="/tags/Context/" style="font-size: 10px;">Context</a> <a href="/tags/Crouton/" style="font-size: 10px;">Crouton</a> <a href="/tags/CursorLoader/" style="font-size: 10px;">CursorLoader</a> <a href="/tags/Demo/" style="font-size: 10.83px;">Demo</a> <a href="/tags/Dialog/" style="font-size: 10px;">Dialog</a> <a href="/tags/EditView/" style="font-size: 10px;">EditView</a> <a href="/tags/EventBus/" style="font-size: 10px;">EventBus</a> <a href="/tags/Express/" style="font-size: 10px;">Express</a> <a href="/tags/Express学习笔记/" style="font-size: 10px;">Express学习笔记</a> <a href="/tags/Flex/" style="font-size: 10px;">Flex</a> <a href="/tags/Fragment/" style="font-size: 10.83px;">Fragment</a> <a href="/tags/GET/" style="font-size: 10px;">GET</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Gradle/" style="font-size: 10.83px;">Gradle</a> <a href="/tags/GridLayout/" style="font-size: 10px;">GridLayout</a> <a href="/tags/GridView/" style="font-size: 10.83px;">GridView</a> <a href="/tags/Gson/" style="font-size: 10px;">Gson</a> <a href="/tags/HTTP/" style="font-size: 10.83px;">HTTP</a> <a href="/tags/Handler/" style="font-size: 10px;">Handler</a> <a href="/tags/HeadersList/" style="font-size: 10px;">HeadersList</a> <a href="/tags/Hello-World/" style="font-size: 10px;">Hello World</a> <a href="/tags/Holo/" style="font-size: 10px;">Holo</a> <a href="/tags/IDE/" style="font-size: 10px;">IDE</a> <a href="/tags/IM/" style="font-size: 10.83px;">IM</a> <a href="/tags/Indicator/" style="font-size: 10px;">Indicator</a> <a href="/tags/IntentService/" style="font-size: 10px;">IntentService</a> <a href="/tags/JCenter/" style="font-size: 10px;">JCenter</a> <a href="/tags/JSON解析/" style="font-size: 10px;">JSON解析</a> <a href="/tags/Java/" style="font-size: 16.67px;">Java</a> <a href="/tags/Json/" style="font-size: 10.83px;">Json</a> <a href="/tags/KVO/" style="font-size: 10.83px;">KVO</a> <a href="/tags/Kotlin/" style="font-size: 10px;">Kotlin</a> <a href="/tags/Layout/" style="font-size: 10px;">Layout</a> <a href="/tags/Lint/" style="font-size: 10px;">Lint</a> <a href="/tags/ListView/" style="font-size: 10.83px;">ListView</a> <a href="/tags/Log/" style="font-size: 10px;">Log</a> <a href="/tags/MVVM/" style="font-size: 10.83px;">MVVM</a> <a href="/tags/Mac/" style="font-size: 10.83px;">Mac</a> <a href="/tags/Markdown/" style="font-size: 10.83px;">Markdown</a> <a href="/tags/Masonry/" style="font-size: 10px;">Masonry</a> <a href="/tags/Material/" style="font-size: 10.83px;">Material</a> <a href="/tags/Material-Design/" style="font-size: 10px;">Material Design</a> <a href="/tags/MaterialDesign/" style="font-size: 10px;">MaterialDesign</a> <a href="/tags/Meterial/" style="font-size: 10.83px;">Meterial</a> <a href="/tags/Meterial-Design/" style="font-size: 10px;">Meterial Design</a> <a href="/tags/Model/" style="font-size: 10px;">Model</a> <a href="/tags/MongoDB/" style="font-size: 10.83px;">MongoDB</a> <a href="/tags/Mongoose/" style="font-size: 10px;">Mongoose</a> <a href="/tags/NavBar/" style="font-size: 10px;">NavBar</a> <a href="/tags/Navigator/" style="font-size: 10px;">Navigator</a> <a href="/tags/NavtigationBar/" style="font-size: 10px;">NavtigationBar</a> <a href="/tags/NoSQL/" style="font-size: 10px;">NoSQL</a> <a href="/tags/OSX/" style="font-size: 10px;">OSX</a> <a href="/tags/Objective-C/" style="font-size: 17.5px;">Objective-C</a> <a href="/tags/POST/" style="font-size: 10px;">POST</a> <a href="/tags/PagerAdapter/" style="font-size: 10px;">PagerAdapter</a> <a href="/tags/PagerTranformer/" style="font-size: 10px;">PagerTranformer</a> <a href="/tags/Paint/" style="font-size: 10px;">Paint</a> <a href="/tags/Parcelable/" style="font-size: 10px;">Parcelable</a> <a href="/tags/PerferenceScreencreen/" style="font-size: 10px;">PerferenceScreencreen</a> <a href="/tags/Post/" style="font-size: 10px;">Post</a> <a href="/tags/ProGuard/" style="font-size: 10px;">ProGuard</a> <a href="/tags/Prose/" style="font-size: 12.5px;">Prose</a> <a href="/tags/Python/" style="font-size: 18.33px;">Python</a> <a href="/tags/REST/" style="font-size: 10.83px;">REST</a> <a href="/tags/Random/" style="font-size: 10px;">Random</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/ReactNative/" style="font-size: 10px;">ReactNative</a> <a href="/tags/RecyclerView/" style="font-size: 10.83px;">RecyclerView</a> <a href="/tags/SDK/" style="font-size: 11.67px;">SDK</a> <a href="/tags/SD卡/" style="font-size: 10px;">SD卡</a> <a href="/tags/SE5/" style="font-size: 10px;">SE5</a> <a href="/tags/SE6/" style="font-size: 10px;">SE6</a> <a href="/tags/SaveInstance/" style="font-size: 10px;">SaveInstance</a> <a href="/tags/Serializable/" style="font-size: 10px;">Serializable</a> <a href="/tags/SharedPreferce/" style="font-size: 10px;">SharedPreferce</a> <a href="/tags/SizeClass/" style="font-size: 10px;">SizeClass</a> <a href="/tags/Spider/" style="font-size: 10px;">Spider</a> <a href="/tags/Sprite/" style="font-size: 10.83px;">Sprite</a> <a href="/tags/Style/" style="font-size: 10px;">Style</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Sublime-Text/" style="font-size: 10px;">Sublime Text</a> <a href="/tags/SublimeText/" style="font-size: 10px;">SublimeText</a> <a href="/tags/Swift/" style="font-size: 17.5px;">Swift</a> <a href="/tags/TextView/" style="font-size: 10.83px;">TextView</a> <a href="/tags/Thread/" style="font-size: 10px;">Thread</a> <a href="/tags/Tips/" style="font-size: 10px;">Tips</a> <a href="/tags/ToolBar/" style="font-size: 10px;">ToolBar</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/UIActionSheet/" style="font-size: 10px;">UIActionSheet.</a> <a href="/tags/UIAlertView/" style="font-size: 10px;">UIAlertView</a> <a href="/tags/UIImageView/" style="font-size: 10px;">UIImageView</a> <a href="/tags/UIL/" style="font-size: 10px;">UIL</a> <a href="/tags/UIScrollView/" style="font-size: 10px;">UIScrollView</a> <a href="/tags/Ui/" style="font-size: 10px;">Ui</a> <a href="/tags/View/" style="font-size: 10px;">View</a> <a href="/tags/Volley/" style="font-size: 10px;">Volley</a> <a href="/tags/WebStorm/" style="font-size: 10px;">WebStorm</a> <a href="/tags/WebStrom/" style="font-size: 10px;">WebStrom</a> <a href="/tags/XCode/" style="font-size: 10px;">XCode</a> <a href="/tags/adb/" style="font-size: 10px;">adb</a> <a href="/tags/app/" style="font-size: 10.83px;">app</a> <a href="/tags/async/" style="font-size: 10px;">async</a> <a href="/tags/blur/" style="font-size: 10px;">blur</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/console/" style="font-size: 10px;">console</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/curl/" style="font-size: 10px;">curl</a> <a href="/tags/eclipse/" style="font-size: 10px;">eclipse</a> <a href="/tags/emoji/" style="font-size: 10px;">emoji</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/fallthrough/" style="font-size: 10px;">fallthrough</a> <a href="/tags/findViewById/" style="font-size: 10px;">findViewById</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/gradlew/" style="font-size: 10px;">gradlew</a> <a href="/tags/gravity/" style="font-size: 10px;">gravity</a> <a href="/tags/host/" style="font-size: 10px;">host</a> <a href="/tags/http/" style="font-size: 10.83px;">http</a> <a href="/tags/iOS/" style="font-size: 19.17px;">iOS</a> <a href="/tags/iPhone/" style="font-size: 10px;">iPhone</a> <a href="/tags/icon/" style="font-size: 10px;">icon</a> <a href="/tags/include/" style="font-size: 10px;">include</a> <a href="/tags/jQerry/" style="font-size: 11.67px;">jQerry</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/js/" style="font-size: 14.17px;">js</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/keymap/" style="font-size: 10px;">keymap</a> <a href="/tags/lambda/" style="font-size: 10px;">lambda</a> <a href="/tags/layout/" style="font-size: 11.67px;">layout</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/measure/" style="font-size: 10px;">measure</a> <a href="/tags/merge/" style="font-size: 10px;">merge</a> <a href="/tags/meteor/" style="font-size: 10.83px;">meteor</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/mongo/" style="font-size: 10px;">mongo</a> <a href="/tags/ndk/" style="font-size: 11.67px;">ndk</a> <a href="/tags/nil/" style="font-size: 10px;">nil</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/package/" style="font-size: 10px;">package</a> <a href="/tags/px/" style="font-size: 10px;">px</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/ripple/" style="font-size: 10px;">ripple</a> <a href="/tags/selector/" style="font-size: 10px;">selector</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/shape/" style="font-size: 10px;">shape</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/so/" style="font-size: 10px;">so</a> <a href="/tags/sp/" style="font-size: 10px;">sp</a> <a href="/tags/sqlite/" style="font-size: 10px;">sqlite</a> <a href="/tags/style/" style="font-size: 10px;">style</a> <a href="/tags/supervisor/" style="font-size: 10px;">supervisor</a> <a href="/tags/support/" style="font-size: 10px;">support</a> <a href="/tags/swfit/" style="font-size: 10px;">swfit</a> <a href="/tags/swift/" style="font-size: 10px;">swift</a> <a href="/tags/switch/" style="font-size: 10px;">switch</a> <a href="/tags/view/" style="font-size: 10px;">view</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web-app/" style="font-size: 10px;">web app</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/wifi/" style="font-size: 10px;">wifi</a> <a href="/tags/yield/" style="font-size: 10px;">yield</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/依赖管理/" style="font-size: 10px;">依赖管理</a> <a href="/tags/保存数据/" style="font-size: 10px;">保存数据</a> <a href="/tags/倒计时/" style="font-size: 10px;">倒计时</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/分支/" style="font-size: 10.83px;">分支</a> <a href="/tags/分辨率/" style="font-size: 10.83px;">分辨率</a> <a href="/tags/分配率/" style="font-size: 10px;">分配率</a> <a href="/tags/切换/" style="font-size: 10px;">切换</a> <a href="/tags/初始化/" style="font-size: 10px;">初始化</a> <a href="/tags/前端/" style="font-size: 11.67px;">前端</a> <a href="/tags/加密/" style="font-size: 10px;">加密</a> <a href="/tags/动态交互/" style="font-size: 10px;">动态交互</a> <a href="/tags/动态注入/" style="font-size: 10px;">动态注入</a> <a href="/tags/动画/" style="font-size: 14.17px;">动画</a> <a href="/tags/包/" style="font-size: 10px;">包</a> <a href="/tags/反编译/" style="font-size: 10.83px;">反编译</a> <a href="/tags/取色/" style="font-size: 10px;">取色</a> <a href="/tags/图片加载/" style="font-size: 10px;">图片加载</a> <a href="/tags/坐标系/" style="font-size: 10px;">坐标系</a> <a href="/tags/基础/" style="font-size: 11.67px;">基础</a> <a href="/tags/复用/" style="font-size: 10px;">复用</a> <a href="/tags/多分辨率/" style="font-size: 10px;">多分辨率</a> <a href="/tags/多屏幕/" style="font-size: 10px;">多屏幕</a> <a href="/tags/大不同/" style="font-size: 16.67px;">大不同</a> <a href="/tags/妈妈再也不用担心系列/" style="font-size: 10px;">妈妈再也不用担心系列</a> <a href="/tags/定位代码/" style="font-size: 10px;">定位代码</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/对象/" style="font-size: 10px;">对象</a> <a href="/tags/导航/" style="font-size: 10px;">导航</a> <a href="/tags/属性/" style="font-size: 10.83px;">属性</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/工具类/" style="font-size: 11.67px;">工具类</a> <a href="/tags/布局/" style="font-size: 10.83px;">布局</a> <a href="/tags/带标题的ListView/" style="font-size: 10px;">带标题的ListView</a> <a href="/tags/常用/" style="font-size: 10.83px;">常用</a> <a href="/tags/序列化/" style="font-size: 10px;">序列化</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/开源/" style="font-size: 10px;">开源</a> <a href="/tags/开源库/" style="font-size: 10px;">开源库</a> <a href="/tags/异步/" style="font-size: 10.83px;">异步</a> <a href="/tags/异步加载/" style="font-size: 10px;">异步加载</a> <a href="/tags/引导/" style="font-size: 10px;">引导</a> <a href="/tags/引用/" style="font-size: 10px;">引用</a> <a href="/tags/录屏/" style="font-size: 10px;">录屏</a> <a href="/tags/快捷键/" style="font-size: 10px;">快捷键</a> <a href="/tags/持久化/" style="font-size: 10px;">持久化</a> <a href="/tags/按钮/" style="font-size: 10px;">按钮</a> <a href="/tags/提示/" style="font-size: 10.83px;">提示</a> <a href="/tags/插件/" style="font-size: 11.67px;">插件</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/数学，宏/" style="font-size: 10px;">数学，宏</a> <a href="/tags/数据库/" style="font-size: 11.67px;">数据库</a> <a href="/tags/数据绑定/" style="font-size: 10.83px;">数据绑定</a> <a href="/tags/文本大小/" style="font-size: 10px;">文本大小</a> <a href="/tags/杂文/" style="font-size: 10.83px;">杂文</a> <a href="/tags/权限/" style="font-size: 10px;">权限</a> <a href="/tags/样式/" style="font-size: 10px;">样式</a> <a href="/tags/模块/" style="font-size: 10.83px;">模块</a> <a href="/tags/模拟/" style="font-size: 10px;">模拟</a> <a href="/tags/模糊/" style="font-size: 10.83px;">模糊</a> <a href="/tags/毛玻璃/" style="font-size: 10px;">毛玻璃</a> <a href="/tags/波纹/" style="font-size: 10px;">波纹</a> <a href="/tags/注入/" style="font-size: 10.83px;">注入</a> <a href="/tags/注解/" style="font-size: 10px;">注解</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/混淆/" style="font-size: 10px;">混淆</a> <a href="/tags/热启动/" style="font-size: 10px;">热启动</a> <a href="/tags/爬虫/" style="font-size: 10.83px;">爬虫</a> <a href="/tags/物理引擎/" style="font-size: 10px;">物理引擎</a> <a href="/tags/环信/" style="font-size: 10.83px;">环信</a> <a href="/tags/生命周期/" style="font-size: 11.67px;">生命周期</a> <a href="/tags/用时/" style="font-size: 10px;">用时</a> <a href="/tags/界面/" style="font-size: 10px;">界面</a> <a href="/tags/硬盘缓存/" style="font-size: 10px;">硬盘缓存</a> <a href="/tags/第一个项目/" style="font-size: 10px;">第一个项目</a> <a href="/tags/精灵/" style="font-size: 10px;">精灵</a> <a href="/tags/精灵帧/" style="font-size: 10px;">精灵帧</a> <a href="/tags/约束/" style="font-size: 10px;">约束</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/绘制/" style="font-size: 10px;">绘制</a> <a href="/tags/继承/" style="font-size: 10px;">继承</a> <a href="/tags/缓存/" style="font-size: 10px;">缓存</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a> <a href="/tags/网络请求/" style="font-size: 10.83px;">网络请求</a> <a href="/tags/翻墙/" style="font-size: 10.83px;">翻墙</a> <a href="/tags/自动布局/" style="font-size: 10px;">自动布局</a> <a href="/tags/自定义/" style="font-size: 10.83px;">自定义</a> <a href="/tags/自定义控件/" style="font-size: 10px;">自定义控件</a> <a href="/tags/自适应/" style="font-size: 10px;">自适应</a> <a href="/tags/虚拟键/" style="font-size: 10px;">虚拟键</a> <a href="/tags/角标/" style="font-size: 10px;">角标</a> <a href="/tags/设计/" style="font-size: 10px;">设计</a> <a href="/tags/设计缺陷/" style="font-size: 10px;">设计缺陷</a> <a href="/tags/访问/" style="font-size: 10px;">访问</a> <a href="/tags/调试/" style="font-size: 10.83px;">调试</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/资源文件/" style="font-size: 10px;">资源文件</a> <a href="/tags/路由/" style="font-size: 10px;">路由</a> <a href="/tags/转义/" style="font-size: 10px;">转义</a> <a href="/tags/轻量级/" style="font-size: 10px;">轻量级</a> <a href="/tags/连接/" style="font-size: 10px;">连接</a> <a href="/tags/适配/" style="font-size: 10.83px;">适配</a> <a href="/tags/遍历/" style="font-size: 10px;">遍历</a> <a href="/tags/配置/" style="font-size: 10px;">配置</a> <a href="/tags/镜像/" style="font-size: 10px;">镜像</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/随机/" style="font-size: 10px;">随机</a> <a href="/tags/隐藏/" style="font-size: 10px;">隐藏</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a> <a href="/tags/颜色/" style="font-size: 10.83px;">颜色</a> <a href="/tags/颜色选择器/" style="font-size: 10px;">颜色选择器</a> <a href="/tags/魅族/" style="font-size: 10px;">魅族</a> <a href="/tags/！/" style="font-size: 10px;">！</a> <a href="/tags/？/" style="font-size: 10px;">？</a>
+       <a href="/tags/2/" style="font-size: 10px;">2</a> <a href="/tags/AFNetworking/" style="font-size: 10px;">AFNetworking</a> <a href="/tags/APK/" style="font-size: 10px;">APK</a> <a href="/tags/AS/" style="font-size: 10px;">AS</a> <a href="/tags/Adapter/" style="font-size: 10px;">Adapter</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Android-5-0/" style="font-size: 10px;">Android 5.0</a> <a href="/tags/Android-Studio/" style="font-size: 11.67px;">Android Studio</a> <a href="/tags/AndroidAninotations/" style="font-size: 10px;">AndroidAninotations</a> <a href="/tags/AndroidStudio/" style="font-size: 15.83px;">AndroidStudio</a> <a href="/tags/Animation/" style="font-size: 12.5px;">Animation</a> <a href="/tags/Api/" style="font-size: 11.67px;">Api</a> <a href="/tags/App/" style="font-size: 10px;">App</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Async/" style="font-size: 10px;">Async</a> <a href="/tags/Atom/" style="font-size: 10.83px;">Atom</a> <a href="/tags/AutoLayout/" style="font-size: 10px;">AutoLayout</a> <a href="/tags/BaseAdapter/" style="font-size: 10px;">BaseAdapter</a> <a href="/tags/Blur/" style="font-size: 10px;">Blur</a> <a href="/tags/Box2D/" style="font-size: 10px;">Box2D</a> <a href="/tags/Broadcast/" style="font-size: 10px;">Broadcast</a> <a href="/tags/CardView/" style="font-size: 10px;">CardView</a> <a href="/tags/CocoaPods/" style="font-size: 10px;">CocoaPods</a> <a href="/tags/Cocos2d-X/" style="font-size: 13.33px;">Cocos2d-X</a> <a href="/tags/CocosPods/" style="font-size: 10px;">CocosPods</a> <a href="/tags/ContentProvider/" style="font-size: 10px;">ContentProvider</a> <a href="/tags/Context/" style="font-size: 10px;">Context</a> <a href="/tags/Crouton/" style="font-size: 10px;">Crouton</a> <a href="/tags/CursorLoader/" style="font-size: 10px;">CursorLoader</a> <a href="/tags/Demo/" style="font-size: 10.83px;">Demo</a> <a href="/tags/Dialog/" style="font-size: 10px;">Dialog</a> <a href="/tags/EditView/" style="font-size: 10px;">EditView</a> <a href="/tags/EventBus/" style="font-size: 10px;">EventBus</a> <a href="/tags/Express/" style="font-size: 10px;">Express</a> <a href="/tags/Express学习笔记/" style="font-size: 10px;">Express学习笔记</a> <a href="/tags/Flex/" style="font-size: 10px;">Flex</a> <a href="/tags/Fragment/" style="font-size: 10.83px;">Fragment</a> <a href="/tags/GET/" style="font-size: 10px;">GET</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Gradle/" style="font-size: 10.83px;">Gradle</a> <a href="/tags/GridLayout/" style="font-size: 10px;">GridLayout</a> <a href="/tags/GridView/" style="font-size: 10.83px;">GridView</a> <a href="/tags/Gson/" style="font-size: 10px;">Gson</a> <a href="/tags/HTTP/" style="font-size: 10.83px;">HTTP</a> <a href="/tags/Handler/" style="font-size: 10px;">Handler</a> <a href="/tags/HeadersList/" style="font-size: 10px;">HeadersList</a> <a href="/tags/Hello-World/" style="font-size: 10px;">Hello World</a> <a href="/tags/Holo/" style="font-size: 10px;">Holo</a> <a href="/tags/IDE/" style="font-size: 10px;">IDE</a> <a href="/tags/IM/" style="font-size: 10.83px;">IM</a> <a href="/tags/Indicator/" style="font-size: 10px;">Indicator</a> <a href="/tags/IntentService/" style="font-size: 10px;">IntentService</a> <a href="/tags/JCenter/" style="font-size: 10px;">JCenter</a> <a href="/tags/JSON解析/" style="font-size: 10px;">JSON解析</a> <a href="/tags/Java/" style="font-size: 16.67px;">Java</a> <a href="/tags/Json/" style="font-size: 10.83px;">Json</a> <a href="/tags/KVO/" style="font-size: 10.83px;">KVO</a> <a href="/tags/Kotlin/" style="font-size: 10px;">Kotlin</a> <a href="/tags/Layout/" style="font-size: 10px;">Layout</a> <a href="/tags/Lint/" style="font-size: 10px;">Lint</a> <a href="/tags/ListView/" style="font-size: 10.83px;">ListView</a> <a href="/tags/Log/" style="font-size: 10px;">Log</a> <a href="/tags/MVVM/" style="font-size: 10.83px;">MVVM</a> <a href="/tags/Mac/" style="font-size: 10.83px;">Mac</a> <a href="/tags/Markdown/" style="font-size: 10.83px;">Markdown</a> <a href="/tags/Masonry/" style="font-size: 10px;">Masonry</a> <a href="/tags/Material/" style="font-size: 10.83px;">Material</a> <a href="/tags/Material-Design/" style="font-size: 10px;">Material Design</a> <a href="/tags/MaterialDesign/" style="font-size: 10px;">MaterialDesign</a> <a href="/tags/Meterial/" style="font-size: 10.83px;">Meterial</a> <a href="/tags/Meterial-Design/" style="font-size: 10px;">Meterial Design</a> <a href="/tags/Model/" style="font-size: 10px;">Model</a> <a href="/tags/MongoDB/" style="font-size: 10.83px;">MongoDB</a> <a href="/tags/Mongoose/" style="font-size: 10px;">Mongoose</a> <a href="/tags/NavBar/" style="font-size: 10px;">NavBar</a> <a href="/tags/Navigator/" style="font-size: 10px;">Navigator</a> <a href="/tags/NavtigationBar/" style="font-size: 10px;">NavtigationBar</a> <a href="/tags/NoSQL/" style="font-size: 10px;">NoSQL</a> <a href="/tags/OSX/" style="font-size: 10px;">OSX</a> <a href="/tags/Objective-C/" style="font-size: 17.5px;">Objective-C</a> <a href="/tags/POST/" style="font-size: 10px;">POST</a> <a href="/tags/PagerAdapter/" style="font-size: 10px;">PagerAdapter</a> <a href="/tags/PagerTranformer/" style="font-size: 10px;">PagerTranformer</a> <a href="/tags/Paint/" style="font-size: 10px;">Paint</a> <a href="/tags/Parcelable/" style="font-size: 10px;">Parcelable</a> <a href="/tags/PerferenceScreencreen/" style="font-size: 10px;">PerferenceScreencreen</a> <a href="/tags/Post/" style="font-size: 10px;">Post</a> <a href="/tags/ProGuard/" style="font-size: 10px;">ProGuard</a> <a href="/tags/Prose/" style="font-size: 12.5px;">Prose</a> <a href="/tags/Python/" style="font-size: 18.33px;">Python</a> <a href="/tags/REST/" style="font-size: 10.83px;">REST</a> <a href="/tags/Random/" style="font-size: 10px;">Random</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/ReactNative/" style="font-size: 10px;">ReactNative</a> <a href="/tags/RecyclerView/" style="font-size: 10.83px;">RecyclerView</a> <a href="/tags/SDK/" style="font-size: 11.67px;">SDK</a> <a href="/tags/SD卡/" style="font-size: 10px;">SD卡</a> <a href="/tags/SE5/" style="font-size: 10px;">SE5</a> <a href="/tags/SE6/" style="font-size: 10px;">SE6</a> <a href="/tags/SaveInstance/" style="font-size: 10px;">SaveInstance</a> <a href="/tags/Serializable/" style="font-size: 10px;">Serializable</a> <a href="/tags/SharedPreferce/" style="font-size: 10px;">SharedPreferce</a> <a href="/tags/SizeClass/" style="font-size: 10px;">SizeClass</a> <a href="/tags/Spider/" style="font-size: 10px;">Spider</a> <a href="/tags/Sprite/" style="font-size: 10.83px;">Sprite</a> <a href="/tags/Style/" style="font-size: 10px;">Style</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Sublime-Text/" style="font-size: 10px;">Sublime Text</a> <a href="/tags/SublimeText/" style="font-size: 10px;">SublimeText</a> <a href="/tags/Swift/" style="font-size: 17.5px;">Swift</a> <a href="/tags/TextView/" style="font-size: 10.83px;">TextView</a> <a href="/tags/Thread/" style="font-size: 10px;">Thread</a> <a href="/tags/Tips/" style="font-size: 10px;">Tips</a> <a href="/tags/ToolBar/" style="font-size: 10px;">ToolBar</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/UIActionSheet/" style="font-size: 10px;">UIActionSheet.</a> <a href="/tags/UIAlertView/" style="font-size: 10px;">UIAlertView</a> <a href="/tags/UIImageView/" style="font-size: 10px;">UIImageView</a> <a href="/tags/UIL/" style="font-size: 10px;">UIL</a> <a href="/tags/UIScrollView/" style="font-size: 10px;">UIScrollView</a> <a href="/tags/Ui/" style="font-size: 10px;">Ui</a> <a href="/tags/View/" style="font-size: 10px;">View</a> <a href="/tags/Volley/" style="font-size: 10px;">Volley</a> <a href="/tags/WebStorm/" style="font-size: 10px;">WebStorm</a> <a href="/tags/WebStrom/" style="font-size: 10px;">WebStrom</a> <a href="/tags/XCode/" style="font-size: 10px;">XCode</a> <a href="/tags/adb/" style="font-size: 10px;">adb</a> <a href="/tags/app/" style="font-size: 10.83px;">app</a> <a href="/tags/async/" style="font-size: 10px;">async</a> <a href="/tags/blur/" style="font-size: 10px;">blur</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/console/" style="font-size: 10px;">console</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/curl/" style="font-size: 10px;">curl</a> <a href="/tags/eclipse/" style="font-size: 10px;">eclipse</a> <a href="/tags/emoji/" style="font-size: 10px;">emoji</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/fallthrough/" style="font-size: 10px;">fallthrough</a> <a href="/tags/findViewById/" style="font-size: 10px;">findViewById</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/gradlew/" style="font-size: 10px;">gradlew</a> <a href="/tags/gravity/" style="font-size: 10px;">gravity</a> <a href="/tags/host/" style="font-size: 10px;">host</a> <a href="/tags/http/" style="font-size: 10.83px;">http</a> <a href="/tags/iOS/" style="font-size: 19.17px;">iOS</a> <a href="/tags/iPhone/" style="font-size: 10px;">iPhone</a> <a href="/tags/icon/" style="font-size: 10px;">icon</a> <a href="/tags/include/" style="font-size: 10px;">include</a> <a href="/tags/jQerry/" style="font-size: 11.67px;">jQerry</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/js/" style="font-size: 14.17px;">js</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/keymap/" style="font-size: 10px;">keymap</a> <a href="/tags/lambda/" style="font-size: 10px;">lambda</a> <a href="/tags/layout/" style="font-size: 11.67px;">layout</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/measure/" style="font-size: 10px;">measure</a> <a href="/tags/merge/" style="font-size: 10px;">merge</a> <a href="/tags/meteor/" style="font-size: 10.83px;">meteor</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/mongo/" style="font-size: 10px;">mongo</a> <a href="/tags/ndk/" style="font-size: 11.67px;">ndk</a> <a href="/tags/nil/" style="font-size: 10px;">nil</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/package/" style="font-size: 10px;">package</a> <a href="/tags/px/" style="font-size: 10px;">px</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/ripple/" style="font-size: 10px;">ripple</a> <a href="/tags/selector/" style="font-size: 10px;">selector</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/shape/" style="font-size: 10px;">shape</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/so/" style="font-size: 10px;">so</a> <a href="/tags/sp/" style="font-size: 10px;">sp</a> <a href="/tags/sqlite/" style="font-size: 10px;">sqlite</a> <a href="/tags/style/" style="font-size: 10px;">style</a> <a href="/tags/supervisor/" style="font-size: 10px;">supervisor</a> <a href="/tags/support/" style="font-size: 10px;">support</a> <a href="/tags/swfit/" style="font-size: 10px;">swfit</a> <a href="/tags/swift/" style="font-size: 10.83px;">swift</a> <a href="/tags/switch/" style="font-size: 10px;">switch</a> <a href="/tags/view/" style="font-size: 10px;">view</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web-app/" style="font-size: 10px;">web app</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/wifi/" style="font-size: 10px;">wifi</a> <a href="/tags/yield/" style="font-size: 10px;">yield</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/依赖管理/" style="font-size: 10px;">依赖管理</a> <a href="/tags/保存数据/" style="font-size: 10px;">保存数据</a> <a href="/tags/倒计时/" style="font-size: 10px;">倒计时</a> <a href="/tags/关键字/" style="font-size: 10px;">关键字</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/分支/" style="font-size: 10.83px;">分支</a> <a href="/tags/分辨率/" style="font-size: 10.83px;">分辨率</a> <a href="/tags/分配率/" style="font-size: 10px;">分配率</a> <a href="/tags/切换/" style="font-size: 10px;">切换</a> <a href="/tags/初始化/" style="font-size: 10px;">初始化</a> <a href="/tags/前端/" style="font-size: 11.67px;">前端</a> <a href="/tags/加密/" style="font-size: 10px;">加密</a> <a href="/tags/动态交互/" style="font-size: 10px;">动态交互</a> <a href="/tags/动态注入/" style="font-size: 10px;">动态注入</a> <a href="/tags/动画/" style="font-size: 14.17px;">动画</a> <a href="/tags/包/" style="font-size: 10px;">包</a> <a href="/tags/反编译/" style="font-size: 10.83px;">反编译</a> <a href="/tags/取色/" style="font-size: 10px;">取色</a> <a href="/tags/图片加载/" style="font-size: 10px;">图片加载</a> <a href="/tags/坐标系/" style="font-size: 10px;">坐标系</a> <a href="/tags/基础/" style="font-size: 11.67px;">基础</a> <a href="/tags/复用/" style="font-size: 10px;">复用</a> <a href="/tags/多分辨率/" style="font-size: 10px;">多分辨率</a> <a href="/tags/多屏幕/" style="font-size: 10px;">多屏幕</a> <a href="/tags/大不同/" style="font-size: 16.67px;">大不同</a> <a href="/tags/妈妈再也不用担心系列/" style="font-size: 10px;">妈妈再也不用担心系列</a> <a href="/tags/定位代码/" style="font-size: 10px;">定位代码</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/对象/" style="font-size: 10px;">对象</a> <a href="/tags/导航/" style="font-size: 10px;">导航</a> <a href="/tags/属性/" style="font-size: 10.83px;">属性</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/工具类/" style="font-size: 11.67px;">工具类</a> <a href="/tags/布局/" style="font-size: 12.5px;">布局</a> <a href="/tags/带标题的ListView/" style="font-size: 10px;">带标题的ListView</a> <a href="/tags/常用/" style="font-size: 10.83px;">常用</a> <a href="/tags/序列化/" style="font-size: 10px;">序列化</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/开源/" style="font-size: 10px;">开源</a> <a href="/tags/开源库/" style="font-size: 10px;">开源库</a> <a href="/tags/异步/" style="font-size: 10.83px;">异步</a> <a href="/tags/异步加载/" style="font-size: 10px;">异步加载</a> <a href="/tags/引导/" style="font-size: 10px;">引导</a> <a href="/tags/引用/" style="font-size: 10px;">引用</a> <a href="/tags/录屏/" style="font-size: 10px;">录屏</a> <a href="/tags/快捷键/" style="font-size: 10px;">快捷键</a> <a href="/tags/持久化/" style="font-size: 10px;">持久化</a> <a href="/tags/按钮/" style="font-size: 10px;">按钮</a> <a href="/tags/提示/" style="font-size: 10.83px;">提示</a> <a href="/tags/插件/" style="font-size: 11.67px;">插件</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/数学，宏/" style="font-size: 10px;">数学，宏</a> <a href="/tags/数据库/" style="font-size: 11.67px;">数据库</a> <a href="/tags/数据绑定/" style="font-size: 10.83px;">数据绑定</a> <a href="/tags/文本大小/" style="font-size: 10px;">文本大小</a> <a href="/tags/杂文/" style="font-size: 10.83px;">杂文</a> <a href="/tags/权限/" style="font-size: 10px;">权限</a> <a href="/tags/样式/" style="font-size: 10px;">样式</a> <a href="/tags/模块/" style="font-size: 10.83px;">模块</a> <a href="/tags/模拟/" style="font-size: 10px;">模拟</a> <a href="/tags/模糊/" style="font-size: 10.83px;">模糊</a> <a href="/tags/毛玻璃/" style="font-size: 10px;">毛玻璃</a> <a href="/tags/波纹/" style="font-size: 10px;">波纹</a> <a href="/tags/注入/" style="font-size: 10.83px;">注入</a> <a href="/tags/注解/" style="font-size: 10px;">注解</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/混淆/" style="font-size: 10px;">混淆</a> <a href="/tags/热启动/" style="font-size: 10px;">热启动</a> <a href="/tags/爬虫/" style="font-size: 10.83px;">爬虫</a> <a href="/tags/物理引擎/" style="font-size: 10px;">物理引擎</a> <a href="/tags/环信/" style="font-size: 10.83px;">环信</a> <a href="/tags/生命周期/" style="font-size: 11.67px;">生命周期</a> <a href="/tags/用时/" style="font-size: 10px;">用时</a> <a href="/tags/界面/" style="font-size: 10px;">界面</a> <a href="/tags/硬盘缓存/" style="font-size: 10px;">硬盘缓存</a> <a href="/tags/第一个项目/" style="font-size: 10px;">第一个项目</a> <a href="/tags/精灵/" style="font-size: 10px;">精灵</a> <a href="/tags/精灵帧/" style="font-size: 10px;">精灵帧</a> <a href="/tags/约束/" style="font-size: 10px;">约束</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/绘制/" style="font-size: 10px;">绘制</a> <a href="/tags/继承/" style="font-size: 10px;">继承</a> <a href="/tags/缓存/" style="font-size: 10px;">缓存</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a> <a href="/tags/网络请求/" style="font-size: 10.83px;">网络请求</a> <a href="/tags/翻墙/" style="font-size: 10.83px;">翻墙</a> <a href="/tags/自动布局/" style="font-size: 10px;">自动布局</a> <a href="/tags/自定义/" style="font-size: 10.83px;">自定义</a> <a href="/tags/自定义控件/" style="font-size: 10px;">自定义控件</a> <a href="/tags/自适应/" style="font-size: 10px;">自适应</a> <a href="/tags/虚拟键/" style="font-size: 10px;">虚拟键</a> <a href="/tags/角标/" style="font-size: 10px;">角标</a> <a href="/tags/设计/" style="font-size: 10px;">设计</a> <a href="/tags/设计缺陷/" style="font-size: 10px;">设计缺陷</a> <a href="/tags/访问/" style="font-size: 10px;">访问</a> <a href="/tags/调试/" style="font-size: 10.83px;">调试</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/资源文件/" style="font-size: 10px;">资源文件</a> <a href="/tags/路由/" style="font-size: 10px;">路由</a> <a href="/tags/转义/" style="font-size: 10px;">转义</a> <a href="/tags/轻量级/" style="font-size: 10px;">轻量级</a> <a href="/tags/连接/" style="font-size: 10px;">连接</a> <a href="/tags/适配/" style="font-size: 10.83px;">适配</a> <a href="/tags/遍历/" style="font-size: 10px;">遍历</a> <a href="/tags/配置/" style="font-size: 10px;">配置</a> <a href="/tags/镜像/" style="font-size: 10px;">镜像</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/随机/" style="font-size: 10px;">随机</a> <a href="/tags/隐藏/" style="font-size: 10px;">隐藏</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a> <a href="/tags/颜色/" style="font-size: 10.83px;">颜色</a> <a href="/tags/颜色选择器/" style="font-size: 10px;">颜色选择器</a> <a href="/tags/魅族/" style="font-size: 10px;">魅族</a> <a href="/tags/！/" style="font-size: 10px;">！</a> <a href="/tags/？/" style="font-size: 10px;">？</a>
     </div>
   </div>
 
@@ -993,7 +961,7 @@
   
   <div class="archiveslist">
     <p class="asidetitle"><a href="/archives">归档</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">二月 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">九月 2014</a><span class="archive-list-count">36</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">八月 2014</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">七月 2014</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">五月 2014</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">四月 2014</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">三月 2014</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">二月 2014</a><span class="archive-list-count">24</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">二月 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">九月 2014</a><span class="archive-list-count">36</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">八月 2014</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">七月 2014</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">五月 2014</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">四月 2014</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">三月 2014</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">二月 2014</a><span class="archive-list-count">24</span></li></ul>
   </div>
 
 

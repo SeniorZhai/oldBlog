@@ -81,6 +81,251 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2016/03/10/使用jadx/" title="使用jadx" itemprop="url">使用jadx</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
+		
+  <p class="article-time">
+    <time datetime="2016-03-10T06:11:00.000Z" itemprop="datePublished"> 发表于 2016-03-10</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <a id="more"></a>
+<p>#使用<br>将<a href="https://github.com/skylot/jadx" target="_blank" rel="external">jadx</a>克隆到本地，进行编译<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/skylot/jadx</div><div class="line">cd jadx</div><div class="line">./gradlew dist</div></pre></td></tr></table></figure></p>
+<p>编译完成后可以在<code>build/jadx/bin</code>中找到运行文件</p>
+<p>##运行<br>GUI界面可以点击运行<code>jadx-gui</code>文件<br>命令行可以使用<code>./jadx</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jadx demo.apk</div></pre></td></tr></table></figure></p>
+<ul>
+<li>命令格式<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">jadx[-gui] [options] &lt;input file&gt; (.dex , .apk , .jar or .class)</div><div class="line">options:</div><div class="line">  -d,--output-dir         指定输出文件夹</div><div class="line">  -j,--threads-count      执行线程数量</div><div class="line">  -f,--fallback</div><div class="line">  -r,--no-res             不解码资源文件</div><div class="line">  -s,--no-src             不反编代码</div><div class="line">     --show-bad-code      显示不正确的反编译代码</div><div class="line">     --cfg                </div><div class="line">     --raw-cfg</div><div class="line">  -v,--verbose            详细输出</div><div class="line">     --deobf              激活deofuscation</div><div class="line">     --deobf-min</div><div class="line">     --deobf-max</div><div class="line">     --deobf-rewrite-cfg</div><div class="line">  -h,--help</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>–deobf –deobf-rewrite-cfg</p>
+</blockquote>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Android/">Android</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/反编译/">反编译</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/03/10/使用jadx/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/03/10/使用jadx/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/02/18/Kotlin简单的开始/" title="Kotlin简单的开始" itemprop="url">Kotlin简单的开始</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
+		
+  <p class="article-time">
+    <time datetime="2016-02-18T09:23:49.000Z" itemprop="datePublished"> 发表于 2016-02-18</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <a id="more"></a>
+<p>##安装Kotlin插件</p>
+<ul>
+<li>Kotlin 使Android Studio可以识别kotlin代码</li>
+<li>Kotlin Android Extensions 使Android Studio可以自动地从XML中注入所有的View到Activity</li>
+</ul>
+<p>##修改Gradle<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">apply plugin: <span class="string">'com.android.application'</span></div><div class="line">apply plugin: <span class="string">'kotlin-android'</span></div><div class="line">android &#123;</div><div class="line">  ...</div><div class="line">  <span class="keyword">sourceSets</span> &#123;</div><div class="line">    main.java.srcDirs += <span class="string">'src/main/kotlin'</span></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">dependencies</span> &#123;</div><div class="line">  ...    </div><div class="line">  <span class="keyword">compile</span> <span class="string">"org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">buildscript</span> &#123;</div><div class="line">    ext.kotlin_version = <span class="string">'1.0.0'</span></div><div class="line">    <span class="keyword">repositories</span> &#123;</div><div class="line">        mavenCentral()</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">dependencies</span> &#123;</div><div class="line">        <span class="keyword">classpath</span> <span class="string">"org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">repositories</span> &#123;</div><div class="line">    mavenCentral()</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>PS：未修改处省略</p>
+<p>##修改MainActivity<br>选择MainActivity.java-&gt;Code-&gt;Convert Java File to Kotlin File</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Android/">Android</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Kotlin/">Kotlin</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/02/18/Kotlin简单的开始/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/02/18/Kotlin简单的开始/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/01/25/-转-ReactNative-ES5-ES6写法对照/" title="(转)ReactNative-ES5 ES6写法对照" itemprop="url">(转)ReactNative-ES5 ES6写法对照</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
+		
+  <p class="article-time">
+    <time datetime="2016-01-25T12:37:20.000Z" itemprop="datePublished"> 发表于 2016-01-25</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>转至<a href="http://bbs.reactnative.cn/topic/15/react-react-native-%E7%9A%84es5-es6%E5%86%99%E6%B3%95%E5%AF%B9%E7%85%A7%E8%A1%A8/2" target="_blank" rel="external">http://bbs.reactnative.cn/topic/15/react-react-native-%E7%9A%84es5-es6%E5%86%99%E6%B3%95%E5%AF%B9%E7%85%A7%E8%A1%A8/2</a><br>很多<code>React/React Native</code>的初学者都被ES6的问题迷惑：各路大神都建议我们直接学习ES6的语法(class Foo extends React.Component)，然而网上搜到的很多教程和例子都是ES5版本的，所以很多人在学习的时候连照猫画虎都不知道怎么做。今天在此整理了一些ES5和ES6的写法对照表，希望大家以后读到ES5的代码，也能通过对照，在ES6下实现相同的功能。</p>
+<p>##模块</p>
+<p>###引用<br>在ES5里，如果使用CommonJS标准，引入React包基本通过require进行，代码类似这样：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//ES5</span></div><div class="line"><span class="keyword">var</span> React = <span class="built_in">require</span>(<span class="string">"react-native"</span>);</div><div class="line"><span class="keyword">var</span> &#123;</div><div class="line">    Image,</div><div class="line">    Text,</div><div class="line">    PropTypes</div><div class="line">&#125; = React;  <span class="comment">//引用不同的React Native组件</span></div></pre></td></tr></table></figure></p>
+<p>在ES6里，import写法更为标准<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//ES6</span></div><div class="line"><span class="keyword">import</span> React, &#123;</div><div class="line">    Image,</div><div class="line">    Text,</div><div class="line">    PropTypes</div><div class="line">&#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>注意在React Native里，import直到0.12+才能正常运作。</p>
+</blockquote>
+<p>###导出单个类<br>在ES5里，要导出一个类给别的模块用，一般通过module.exports来导出<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//ES5</span></div><div class="line"><span class="keyword">var</span> MyComponent = React.createClass(&#123;</div><div class="line">    ...</div><div class="line">&#125;);</div><div class="line"><span class="built_in">module</span>.exports = MyComponent;</div></pre></td></tr></table></figure></p>
+<p>在ES6里，通常用export default来实现相同的功能：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//ES6</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">MyComponent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>引用的时候也类似：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//ES5</span></div><div class="line"><span class="keyword">var</span> MyComponent = <span class="built_in">require</span>(<span class="string">'./MyComponent.js'</span>);</div></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//ES6</span></div><div class="line"><span class="keyword">import</span> MyComponent <span class="keyword">from</span> <span class="string">'./MyComponent.js'</span>;</div></pre></td></tr></table></figure>
+<p>###定义组件<br>在ES5里，通常通过React.createClass来定义一个组件类，像这样：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//ES5</span></div><div class="line"><span class="keyword">var</span> Photo = React.createClass(&#123;</div><div class="line">    render: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> (</div><div class="line">            &lt;Image source=&#123;this.props.source&#125; /&gt;</div><div class="line">        );</div><div class="line">    &#125;,</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>在ES6里，我们通过定义一个继承自React.Component的class来定义一个组件类，像这样：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//ES6</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Photo</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">    render() &#123;</div><div class="line">        <span class="keyword">return</span> (</div><div class="line">            &lt;Image source=&#123;this.props.source&#125; /&gt;</div><div class="line">        );</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>###给组件定义方法<br>从上面的例子里可以看到，给组件定义方法不再用 名字: function()的写法，而是直接用名字()，在方法的最后也不能有逗号了。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//ES5</span></div><div class="line"><span class="keyword">var</span> Photo = React.createClass(&#123;</div><div class="line">    componentWillMount: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">    &#125;,</div><div class="line">    render: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> (</div><div class="line">            &lt;Image source=&#123;this.props.source&#125; /&gt;</div><div class="line">        );</div><div class="line">    &#125;,</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//ES6</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Photo</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">    componentWillMount() &#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    render() &#123;</div><div class="line">        <span class="keyword">return</span> (</div><div class="line">            &lt;Image source=&#123;this.props.source&#125; /&gt;</div><div class="line">        );</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>###定义组件的属性类型和默认属性<br>在ES5里，属性类型和默认属性分别通过propTypes成员和getDefaultProps方法来实现<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//ES5</span></div><div class="line"><span class="keyword">var</span> Video = React.createClass(&#123;</div><div class="line">    getDefaultProps: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> &#123;</div><div class="line">            autoPlay: <span class="literal">false</span>,</div><div class="line">            maxLoops: <span class="number">10</span>,</div><div class="line">        &#125;;</div><div class="line">    &#125;,</div><div class="line">    propTypes: &#123;</div><div class="line">        autoPlay: React.PropTypes.bool.isRequired,</div><div class="line">        maxLoops: React.PropTypes.number.isRequired,</div><div class="line">        posterFrameSrc: React.PropTypes.string.isRequired,</div><div class="line">        videoSrc: React.PropTypes.string.isRequired,</div><div class="line">    &#125;,</div><div class="line">    render: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> (</div><div class="line">            &lt;View /&gt;</div><div class="line">        );</div><div class="line">    &#125;,</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>在ES6里，可以统一使用static成员来实现<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//ES6</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Video</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">    <span class="keyword">static</span> defaultProps = &#123;</div><div class="line">        autoPlay: <span class="literal">false</span>,</div><div class="line">        maxLoops: <span class="number">10</span>,</div><div class="line">    &#125;;  <span class="comment">// 注意这里有分号</span></div><div class="line">    <span class="keyword">static</span> propTypes = &#123;</div><div class="line">        autoPlay: React.PropTypes.bool.isRequired,</div><div class="line">        maxLoops: React.PropTypes.number.isRequired,</div><div class="line">        posterFrameSrc: React.PropTypes.string.isRequired,</div><div class="line">        videoSrc: React.PropTypes.string.isRequired,</div><div class="line">    &#125;;  <span class="comment">// 注意这里有分号</span></div><div class="line">    render() &#123;</div><div class="line">        <span class="keyword">return</span> (</div><div class="line">            &lt;View /&gt;</div><div class="line">        );</div><div class="line">    &#125; // 注意这里既没有分号也没有逗号</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>也有人这么写，虽然不推荐，但读到代码的时候你应当能明白它的意思：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//ES6</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Video</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">    render() &#123;</div><div class="line">        <span class="keyword">return</span> (</div><div class="line">            &lt;View /&gt;</div><div class="line">        );</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">Video.defaultProps = &#123;</div><div class="line">    autoPlay: false,</div><div class="line">    maxLoops: 10,</div><div class="line">&#125;;</div><div class="line">Video.propTypes = &#123;</div><div class="line">    autoPlay: React.PropTypes.bool.isRequired,</div><div class="line">    maxLoops: React.PropTypes.number.isRequired,</div><div class="line">    posterFrameSrc: React.PropTypes.string.isRequired,</div><div class="line">    videoSrc: React.PropTypes.string.isRequired,</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>注意: 对React开发者而言，static成员在IE10及之前版本不能被继承，而在IE11和其它浏览器上可以，这有时候会带来一些问题。React Native开发者可以不用担心这个问题。</p>
+</blockquote>
+<p>###初始化state<br>ES5下情况类似，<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//ES5</span></div><div class="line"><span class="keyword">var</span> Video = React.createClass(&#123;</div><div class="line">    getInitialState: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> &#123;</div><div class="line">            loopsRemaining: <span class="keyword">this</span>.props.maxLoops,</div><div class="line">        &#125;;</div><div class="line">    &#125;,</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>ES6下，有两种写法：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//ES6</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Video</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">    state = &#123;</div><div class="line">        loopsRemaining: <span class="keyword">this</span>.props.maxLoops,</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>不过我们推荐更易理解的在构造函数中初始化（这样你还可以根据需要做一些计算）：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//ES6</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Video</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>(props)&#123;</div><div class="line">        <span class="keyword">super</span>(props);</div><div class="line">        <span class="keyword">this</span>.state = &#123;</div><div class="line">            loopsRemaining: <span class="keyword">this</span>.props.maxLoops,</div><div class="line">        &#125;;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>把方法作为回调提供<br>很多习惯于ES6的用户反而不理解在ES5下可以这么做：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//ES5</span></div><div class="line"><span class="keyword">var</span> PostInfo = React.createClass(&#123;</div><div class="line">    handleOptionsButtonClick: <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">        <span class="comment">// Here, 'this' refers to the component instance.</span></div><div class="line">        <span class="keyword">this</span>.setState(&#123;showOptionsModal: <span class="literal">true</span>&#125;);</div><div class="line">    &#125;,</div><div class="line">    render: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> (</div><div class="line">            &lt;TouchableHighlight onPress=&#123;this.handleOptionsButtonClick&#125;&gt;</div><div class="line">                &lt;Text&gt;&#123;this.props.label&#125;&lt;/Text&gt;</div><div class="line">            &lt;/TouchableHighlight&gt;</div><div class="line">        )</div><div class="line">    &#125;,</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>在ES5下，React.createClass会把所有的方法都bind一遍，这样可以提交到任意的地方作为回调函数，而this不会变化。但官方现在逐步认为这反而是不标准、不易理解的。</p>
+<p>在ES6下，你需要通过bind来绑定this引用，或者使用箭头函数（它会绑定当前scope的this引用）来调用<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//ES6</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">PostInfo</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span></div><div class="line">&#123;</div><div class="line">    handleOptionsButtonClick(e)&#123;</div><div class="line">        <span class="keyword">this</span>.setState(&#123;showOptionsModal: <span class="literal">true</span>&#125;);</div><div class="line">    &#125;</div><div class="line">    render()&#123;</div><div class="line">        <span class="keyword">return</span> (</div><div class="line">            &lt;TouchableHighlight</div><div class="line">                onPress=&#123;this.handleOptionsButtonClick.bind(this)&#125;</div><div class="line">                onPress=&#123;e=&gt;this.handleOptionsButtonClick(e)&#125;</div><div class="line">                &gt;</div><div class="line">                &lt;Text&gt;&#123;this.props.label&#125;&lt;/Text&gt;</div><div class="line">            &lt;/TouchableHighlight&gt;</div><div class="line">        )</div><div class="line">    &#125;,</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>箭头函数实际上是在这里定义了一个临时的函数，箭头函数的箭头=&gt;之前是一个空括号、单个的参数名、或用括号括起的多个参数名，而箭头之后可以是一个表达式（作为函数的返回值），或者是用花括号括起的函数体（需要自行通过return来返回值，否则返回的是undefined）。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 箭头函数的例子</span></div><div class="line">()=&gt;<span class="number">1</span></div><div class="line">v=&gt;v+<span class="number">1</span></div><div class="line">(a,b)=&gt;a+b</div><div class="line">()=&gt;&#123;</div><div class="line">    alert(<span class="string">"foo"</span>);</div><div class="line">&#125;</div><div class="line">e=&gt;&#123;</div><div class="line">    <span class="keyword">if</span> (e == <span class="number">0</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">1000</span>/e;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>需要注意的是，不论是bind还是箭头函数，每次被执行都返回的是一个新的函数引用，因此如果你还需要函数的引用去做一些别的事情（譬如卸载监听器），那么你必须自己保存这个引用<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 错误的做法</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">PauseMenu</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</div><div class="line">    componentWillMount()&#123;</div><div class="line">        AppStateIOS.addEventListener(<span class="string">'change'</span>, <span class="keyword">this</span>.onAppPaused.bind(<span class="keyword">this</span>));</div><div class="line">    &#125;</div><div class="line">    componentDidUnmount()&#123;</div><div class="line">        AppStateIOS.removeEventListener(<span class="string">'change'</span>, <span class="keyword">this</span>.onAppPaused.bind(<span class="keyword">this</span>));</div><div class="line">    &#125;</div><div class="line">    onAppPaused(event)&#123;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">// 正确的做法</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">PauseMenu</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</div><div class="line">    <span class="keyword">constructor</span>(props)&#123;</div><div class="line">        <span class="keyword">super</span>(props);</div><div class="line">        <span class="keyword">this</span>._onAppPaused = <span class="keyword">this</span>.onAppPaused.bind(<span class="keyword">this</span>);</div><div class="line">    &#125;</div><div class="line">    componentWillMount()&#123;</div><div class="line">        AppStateIOS.addEventListener(<span class="string">'change'</span>, <span class="keyword">this</span>._onAppPaused);</div><div class="line">    &#125;</div><div class="line">    componentDidUnmount()&#123;</div><div class="line">        AppStateIOS.removeEventListener(<span class="string">'change'</span>, <span class="keyword">this</span>._onAppPaused);</div><div class="line">    &#125;</div><div class="line">    onAppPaused(event)&#123;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>从这个帖子中我们还学习到一种新的做法：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 正确的做法</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">PauseMenu</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</div><div class="line">    componentWillMount()&#123;</div><div class="line">        AppStateIOS.addEventListener(<span class="string">'change'</span>, <span class="keyword">this</span>.onAppPaused);</div><div class="line">    &#125;</div><div class="line">    componentDidUnmount()&#123;</div><div class="line">        AppStateIOS.removeEventListener(<span class="string">'change'</span>, <span class="keyword">this</span>.onAppPaused);</div><div class="line">    &#125;</div><div class="line">    onAppPaused = (event) =&gt; &#123;</div><div class="line">        <span class="comment">//把方法直接作为一个arrow function的属性来定义，初始化的时候就绑定好了this指针</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>###Mixins<br>在ES5下，我们经常使用mixin来为我们的类添加一些新的方法，譬如PureRenderMixin<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> PureRenderMixin = <span class="built_in">require</span>(<span class="string">'react-addons-pure-render-mixin'</span>);</div><div class="line">React.createClass(&#123;</div><div class="line">  mixins: [PureRenderMixin],</div><div class="line"></div><div class="line">  render: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> &lt;div className=&#123;this.props.className&#125;&gt;foo&lt;/div&gt;;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>然而现在官方已经不再打算在ES6里继续推行Mixin，他们说：Mixins Are Dead. Long Live Composition。</p>
+<p>尽管如果要继续使用mixin，还是有一些第三方的方案可以用，譬如这个方案</p>
+<p>不过官方推荐，对于库编写者而言，应当尽快放弃Mixin的编写方式，上文中提到Sebastian Markbåge的一段代码推荐了一种新的编码方式：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//Enhance.js</span></div><div class="line"><span class="keyword">import</span> &#123; Component &#125; <span class="keyword">from</span> <span class="string">"React"</span>;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">var</span> Enhance = ComposedComponent =&gt; <span class="class"><span class="keyword">class</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>() &#123;</div><div class="line">        <span class="keyword">this</span>.state = &#123; data: <span class="literal">null</span> &#125;;</div><div class="line">    &#125;</div><div class="line">    componentDidMount() &#123;</div><div class="line">        <span class="keyword">this</span>.setState(&#123; data: <span class="string">'Hello'</span> &#125;);</div><div class="line">    &#125;</div><div class="line">    render() &#123;</div><div class="line">        <span class="keyword">return</span> &lt;ComposedComponent &#123;...this.props&#125; data=&#123;this.state.data&#125; /&gt;;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">//HigherOrderComponent.js</div><div class="line">import &#123; Enhance &#125; from "./Enhance";</div><div class="line"></div><div class="line">class MyComponent &#123;</div><div class="line">    render() &#123;</div><div class="line">        if (!this.data) return &lt;div&gt;Waiting...&lt;/div&gt;;</div><div class="line">        return &lt;div&gt;&#123;this.data&#125;&lt;/div&gt;;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default Enhance(MyComponent); // Enhanced component</div></pre></td></tr></table></figure></p>
+<p>用一个“增强函数”，来某个类增加一些方法，并且返回一个新类，这无疑能实现mixin所实现的大部分需求。</p>
+<p>##ES6+带来的其它好处</p>
+<p>###解构&amp;属性延展　<br>结合使用ES6+的解构和属性延展，我们给孩子传递一批属性更为方便了。这个例子把className以外的所有属性传递给div标签：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">AutoloadingPostsGrid</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">    render() &#123;</div><div class="line">        <span class="keyword">var</span> &#123;</div><div class="line">            className,</div><div class="line">            ...others,  <span class="comment">// contains all properties of this.props except for className</span></div><div class="line">        &#125; = <span class="keyword">this</span>.props;</div><div class="line">        <span class="keyword">return</span> (</div><div class="line">            &lt;div className=&#123;className&#125;&gt;</div><div class="line">                &lt;PostsGrid &#123;...others&#125; /&gt;</div><div class="line">                &lt;button onClick=&#123;this.handleLoadMoreClick&#125;&gt;Load more&lt;/button&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">        );</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>下面这种写法，则是传递所有属性的同时，用覆盖新的className值：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div &#123;...this.props&#125; className=<span class="string">"override"</span>&gt;</div><div class="line">    …</div><div class="line">&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure></p>
+<p>这个例子则相反，如果属性中没有包含className，则提供默认的值，而如果属性中已经包含了，则使用属性中的值<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div className=<span class="string">"base"</span> &#123;...this.props&#125;&gt;</div><div class="line">    …</div><div class="line">&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Android/">Android</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/SE5/">SE5</a><a href="/tags/SE6/">SE6</a><a href="/tags/ReactNative/">ReactNative</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/01/25/-转-ReactNative-ES5-ES6写法对照/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/01/25/-转-ReactNative-ES5-ES6写法对照/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2016/01/23/ReactNative-Flex/" title="ReactNative-Flex" itemprop="url">ReactNative-Flex</a>
   </h1>
   <p class="article-author">By
@@ -517,203 +762,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/01/12/-ViewDebug-ExportedProperty注解/" title="@ViewDebug.ExportedProperty注解" itemprop="url">@ViewDebug.ExportedProperty注解</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
-		
-  <p class="article-time">
-    <time datetime="2016-01-12T13:16:27.000Z" itemprop="datePublished"> 发表于 2016-01-12</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>使用<code>@ViewDebug.ExportedProperty</code>注解，可以在Monitor的Hierarchy Viewer中的调试View属性，可以直接观察注解过的变量和方法的值，实时观察View的状态变化。<br>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2016/01/12/-ViewDebug-ExportedProperty注解/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Android/">Android</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/注解/">注解</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2016/01/12/-ViewDebug-ExportedProperty注解/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/01/12/-ViewDebug-ExportedProperty注解/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2016/01/10/View的一些重要方法/" title="View的一些重要方法" itemprop="url">View的一些重要方法</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
-		
-  <p class="article-time">
-    <time datetime="2016-01-10T08:42:42.000Z" itemprop="datePublished"> 发表于 2016-01-10</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <a id="more"></a>
-<ul>
-<li><code>onFinishInflate()</code>从XML加载组件后回调</li>
-<li><code>onSizeChanged()</code>组件大小改变时回调</li>
-<li><code>onMeasure()</code>测量大小</li>
-<li><code>onLayout()</code>确定显示位置</li>
-<li><code>onTouchEvent</code>监听触摸事件</li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Android/">Android</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/自定义/">自定义</a><a href="/tags/View/">View</a><a href="/tags/绘制/">绘制</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2016/01/10/View的一些重要方法/#comments" class="ds-thread-count comments-count-link" data-thread-key="2016/01/10/View的一些重要方法/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/12/02/Xcode上的ActivatePowerMode也来了/" title="Xcode上的ActivatePowerMode也来了" itemprop="url">Xcode上的ActivatePowerMode也来了</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
-		
-  <p class="article-time">
-    <time datetime="2015-12-02T07:10:09.000Z" itemprop="datePublished"> 发表于 2015-12-02</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>前天介绍才<a href="http://seniorzhai.github.io/2015/11/30/%E7%89%9B%E9%80%BC%E5%88%B0%E5%A4%A9%E4%B8%8A%E7%9A%84Atom%E6%8F%92%E4%BB%B6/">ActivatePowerMode</a><br>很快的Xcode上的插件也来了<a href="https://github.com/qfish/XActivatePowerMode" target="_blank" rel="external">https://github.com/qfish/XActivatePowerMode</a><br>在<a href="http://alcatraz.io/" target="_blank" rel="external">Alcatraz</a>搜索安装，<code>Edit</code>-&gt;<code>Activate Power Mode</code>-&gt;<code>Enable</code>运行即可<br><img src="https://camo.githubusercontent.com/a25916ccc96abf4f949ae55a3fc8b0108ac578a8/687474703a2f2f3764396f30782e636f6d312e7a302e676c622e636c6f7564646e2e636f6d2f584163746976617465506f7765724d6f6465707265766965772e676966" alt=""></p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Prose/">Prose</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/插件/">插件</a><a href="/tags/XCode/">XCode</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/12/02/Xcode上的ActivatePowerMode也来了/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/12/02/Xcode上的ActivatePowerMode也来了/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <a class="extend prev" rel="prev" href="/"><span></span>Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/39/">39</a><a class="extend next" rel="next" href="/page/3/">Next<span></span></a>
@@ -756,7 +804,7 @@
 		  
 		
 		  
-			<li><a href="/categories/iOS/" title="iOS">iOS<sup>80</sup></a></li>
+			<li><a href="/categories/iOS/" title="iOS">iOS<sup>83</sup></a></li>
 		  
 		
 		  
@@ -775,7 +823,7 @@
   <div class="tagcloudlist">
     <p class="asidetitle">标签云</p>
     <div class="tagcloudlist clearfix">
-       <a href="/tags/AFNetworking/" style="font-size: 10px;">AFNetworking</a> <a href="/tags/APK/" style="font-size: 10px;">APK</a> <a href="/tags/AS/" style="font-size: 10px;">AS</a> <a href="/tags/Adapter/" style="font-size: 10px;">Adapter</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Android-5-0/" style="font-size: 10px;">Android 5.0</a> <a href="/tags/Android-Studio/" style="font-size: 11.67px;">Android Studio</a> <a href="/tags/AndroidAninotations/" style="font-size: 10px;">AndroidAninotations</a> <a href="/tags/AndroidStudio/" style="font-size: 15.83px;">AndroidStudio</a> <a href="/tags/Animation/" style="font-size: 12.5px;">Animation</a> <a href="/tags/Api/" style="font-size: 11.67px;">Api</a> <a href="/tags/App/" style="font-size: 10px;">App</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Async/" style="font-size: 10px;">Async</a> <a href="/tags/Atom/" style="font-size: 10.83px;">Atom</a> <a href="/tags/AutoLayout/" style="font-size: 10px;">AutoLayout</a> <a href="/tags/BaseAdapter/" style="font-size: 10px;">BaseAdapter</a> <a href="/tags/Blur/" style="font-size: 10px;">Blur</a> <a href="/tags/Box2D/" style="font-size: 10px;">Box2D</a> <a href="/tags/Broadcast/" style="font-size: 10px;">Broadcast</a> <a href="/tags/CardView/" style="font-size: 10px;">CardView</a> <a href="/tags/CocoaPods/" style="font-size: 10px;">CocoaPods</a> <a href="/tags/Cocos2d-X/" style="font-size: 13.33px;">Cocos2d-X</a> <a href="/tags/CocosPods/" style="font-size: 10px;">CocosPods</a> <a href="/tags/ContentProvider/" style="font-size: 10px;">ContentProvider</a> <a href="/tags/Context/" style="font-size: 10px;">Context</a> <a href="/tags/Crouton/" style="font-size: 10px;">Crouton</a> <a href="/tags/CursorLoader/" style="font-size: 10px;">CursorLoader</a> <a href="/tags/Demo/" style="font-size: 10.83px;">Demo</a> <a href="/tags/Dialog/" style="font-size: 10px;">Dialog</a> <a href="/tags/EditView/" style="font-size: 10px;">EditView</a> <a href="/tags/EventBus/" style="font-size: 10px;">EventBus</a> <a href="/tags/Express/" style="font-size: 10px;">Express</a> <a href="/tags/Express学习笔记/" style="font-size: 10px;">Express学习笔记</a> <a href="/tags/Flex/" style="font-size: 10px;">Flex</a> <a href="/tags/Fragment/" style="font-size: 10.83px;">Fragment</a> <a href="/tags/GET/" style="font-size: 10px;">GET</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Gradle/" style="font-size: 10.83px;">Gradle</a> <a href="/tags/GridLayout/" style="font-size: 10px;">GridLayout</a> <a href="/tags/GridView/" style="font-size: 10.83px;">GridView</a> <a href="/tags/Gson/" style="font-size: 10px;">Gson</a> <a href="/tags/HTTP/" style="font-size: 10.83px;">HTTP</a> <a href="/tags/Handler/" style="font-size: 10px;">Handler</a> <a href="/tags/HeadersList/" style="font-size: 10px;">HeadersList</a> <a href="/tags/Hello-World/" style="font-size: 10px;">Hello World</a> <a href="/tags/Holo/" style="font-size: 10px;">Holo</a> <a href="/tags/IDE/" style="font-size: 10px;">IDE</a> <a href="/tags/IM/" style="font-size: 10.83px;">IM</a> <a href="/tags/Indicator/" style="font-size: 10px;">Indicator</a> <a href="/tags/IntentService/" style="font-size: 10px;">IntentService</a> <a href="/tags/JCenter/" style="font-size: 10px;">JCenter</a> <a href="/tags/JSON解析/" style="font-size: 10px;">JSON解析</a> <a href="/tags/Java/" style="font-size: 16.67px;">Java</a> <a href="/tags/Json/" style="font-size: 10.83px;">Json</a> <a href="/tags/KVO/" style="font-size: 10.83px;">KVO</a> <a href="/tags/Kotlin/" style="font-size: 10px;">Kotlin</a> <a href="/tags/Layout/" style="font-size: 10px;">Layout</a> <a href="/tags/Lint/" style="font-size: 10px;">Lint</a> <a href="/tags/ListView/" style="font-size: 10.83px;">ListView</a> <a href="/tags/Log/" style="font-size: 10px;">Log</a> <a href="/tags/MVVM/" style="font-size: 10.83px;">MVVM</a> <a href="/tags/Mac/" style="font-size: 10.83px;">Mac</a> <a href="/tags/Markdown/" style="font-size: 10.83px;">Markdown</a> <a href="/tags/Masonry/" style="font-size: 10px;">Masonry</a> <a href="/tags/Material/" style="font-size: 10.83px;">Material</a> <a href="/tags/Material-Design/" style="font-size: 10px;">Material Design</a> <a href="/tags/MaterialDesign/" style="font-size: 10px;">MaterialDesign</a> <a href="/tags/Meterial/" style="font-size: 10.83px;">Meterial</a> <a href="/tags/Meterial-Design/" style="font-size: 10px;">Meterial Design</a> <a href="/tags/Model/" style="font-size: 10px;">Model</a> <a href="/tags/MongoDB/" style="font-size: 10.83px;">MongoDB</a> <a href="/tags/Mongoose/" style="font-size: 10px;">Mongoose</a> <a href="/tags/NavBar/" style="font-size: 10px;">NavBar</a> <a href="/tags/Navigator/" style="font-size: 10px;">Navigator</a> <a href="/tags/NavtigationBar/" style="font-size: 10px;">NavtigationBar</a> <a href="/tags/NoSQL/" style="font-size: 10px;">NoSQL</a> <a href="/tags/OSX/" style="font-size: 10px;">OSX</a> <a href="/tags/Objective-C/" style="font-size: 17.5px;">Objective-C</a> <a href="/tags/POST/" style="font-size: 10px;">POST</a> <a href="/tags/PagerAdapter/" style="font-size: 10px;">PagerAdapter</a> <a href="/tags/PagerTranformer/" style="font-size: 10px;">PagerTranformer</a> <a href="/tags/Paint/" style="font-size: 10px;">Paint</a> <a href="/tags/Parcelable/" style="font-size: 10px;">Parcelable</a> <a href="/tags/PerferenceScreencreen/" style="font-size: 10px;">PerferenceScreencreen</a> <a href="/tags/Post/" style="font-size: 10px;">Post</a> <a href="/tags/ProGuard/" style="font-size: 10px;">ProGuard</a> <a href="/tags/Prose/" style="font-size: 12.5px;">Prose</a> <a href="/tags/Python/" style="font-size: 18.33px;">Python</a> <a href="/tags/REST/" style="font-size: 10.83px;">REST</a> <a href="/tags/Random/" style="font-size: 10px;">Random</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/ReactNative/" style="font-size: 10px;">ReactNative</a> <a href="/tags/RecyclerView/" style="font-size: 10.83px;">RecyclerView</a> <a href="/tags/SDK/" style="font-size: 11.67px;">SDK</a> <a href="/tags/SD卡/" style="font-size: 10px;">SD卡</a> <a href="/tags/SE5/" style="font-size: 10px;">SE5</a> <a href="/tags/SE6/" style="font-size: 10px;">SE6</a> <a href="/tags/SaveInstance/" style="font-size: 10px;">SaveInstance</a> <a href="/tags/Serializable/" style="font-size: 10px;">Serializable</a> <a href="/tags/SharedPreferce/" style="font-size: 10px;">SharedPreferce</a> <a href="/tags/SizeClass/" style="font-size: 10px;">SizeClass</a> <a href="/tags/Spider/" style="font-size: 10px;">Spider</a> <a href="/tags/Sprite/" style="font-size: 10.83px;">Sprite</a> <a href="/tags/Style/" style="font-size: 10px;">Style</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Sublime-Text/" style="font-size: 10px;">Sublime Text</a> <a href="/tags/SublimeText/" style="font-size: 10px;">SublimeText</a> <a href="/tags/Swift/" style="font-size: 17.5px;">Swift</a> <a href="/tags/TextView/" style="font-size: 10.83px;">TextView</a> <a href="/tags/Thread/" style="font-size: 10px;">Thread</a> <a href="/tags/Tips/" style="font-size: 10px;">Tips</a> <a href="/tags/ToolBar/" style="font-size: 10px;">ToolBar</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/UIActionSheet/" style="font-size: 10px;">UIActionSheet.</a> <a href="/tags/UIAlertView/" style="font-size: 10px;">UIAlertView</a> <a href="/tags/UIImageView/" style="font-size: 10px;">UIImageView</a> <a href="/tags/UIL/" style="font-size: 10px;">UIL</a> <a href="/tags/UIScrollView/" style="font-size: 10px;">UIScrollView</a> <a href="/tags/Ui/" style="font-size: 10px;">Ui</a> <a href="/tags/View/" style="font-size: 10px;">View</a> <a href="/tags/Volley/" style="font-size: 10px;">Volley</a> <a href="/tags/WebStorm/" style="font-size: 10px;">WebStorm</a> <a href="/tags/WebStrom/" style="font-size: 10px;">WebStrom</a> <a href="/tags/XCode/" style="font-size: 10px;">XCode</a> <a href="/tags/adb/" style="font-size: 10px;">adb</a> <a href="/tags/app/" style="font-size: 10.83px;">app</a> <a href="/tags/async/" style="font-size: 10px;">async</a> <a href="/tags/blur/" style="font-size: 10px;">blur</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/console/" style="font-size: 10px;">console</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/curl/" style="font-size: 10px;">curl</a> <a href="/tags/eclipse/" style="font-size: 10px;">eclipse</a> <a href="/tags/emoji/" style="font-size: 10px;">emoji</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/fallthrough/" style="font-size: 10px;">fallthrough</a> <a href="/tags/findViewById/" style="font-size: 10px;">findViewById</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/gradlew/" style="font-size: 10px;">gradlew</a> <a href="/tags/gravity/" style="font-size: 10px;">gravity</a> <a href="/tags/host/" style="font-size: 10px;">host</a> <a href="/tags/http/" style="font-size: 10.83px;">http</a> <a href="/tags/iOS/" style="font-size: 19.17px;">iOS</a> <a href="/tags/iPhone/" style="font-size: 10px;">iPhone</a> <a href="/tags/icon/" style="font-size: 10px;">icon</a> <a href="/tags/include/" style="font-size: 10px;">include</a> <a href="/tags/jQerry/" style="font-size: 11.67px;">jQerry</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/js/" style="font-size: 14.17px;">js</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/keymap/" style="font-size: 10px;">keymap</a> <a href="/tags/lambda/" style="font-size: 10px;">lambda</a> <a href="/tags/layout/" style="font-size: 11.67px;">layout</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/measure/" style="font-size: 10px;">measure</a> <a href="/tags/merge/" style="font-size: 10px;">merge</a> <a href="/tags/meteor/" style="font-size: 10.83px;">meteor</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/mongo/" style="font-size: 10px;">mongo</a> <a href="/tags/ndk/" style="font-size: 11.67px;">ndk</a> <a href="/tags/nil/" style="font-size: 10px;">nil</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/package/" style="font-size: 10px;">package</a> <a href="/tags/px/" style="font-size: 10px;">px</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/ripple/" style="font-size: 10px;">ripple</a> <a href="/tags/selector/" style="font-size: 10px;">selector</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/shape/" style="font-size: 10px;">shape</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/so/" style="font-size: 10px;">so</a> <a href="/tags/sp/" style="font-size: 10px;">sp</a> <a href="/tags/sqlite/" style="font-size: 10px;">sqlite</a> <a href="/tags/style/" style="font-size: 10px;">style</a> <a href="/tags/supervisor/" style="font-size: 10px;">supervisor</a> <a href="/tags/support/" style="font-size: 10px;">support</a> <a href="/tags/swfit/" style="font-size: 10px;">swfit</a> <a href="/tags/swift/" style="font-size: 10px;">swift</a> <a href="/tags/switch/" style="font-size: 10px;">switch</a> <a href="/tags/view/" style="font-size: 10px;">view</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web-app/" style="font-size: 10px;">web app</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/wifi/" style="font-size: 10px;">wifi</a> <a href="/tags/yield/" style="font-size: 10px;">yield</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/依赖管理/" style="font-size: 10px;">依赖管理</a> <a href="/tags/保存数据/" style="font-size: 10px;">保存数据</a> <a href="/tags/倒计时/" style="font-size: 10px;">倒计时</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/分支/" style="font-size: 10.83px;">分支</a> <a href="/tags/分辨率/" style="font-size: 10.83px;">分辨率</a> <a href="/tags/分配率/" style="font-size: 10px;">分配率</a> <a href="/tags/切换/" style="font-size: 10px;">切换</a> <a href="/tags/初始化/" style="font-size: 10px;">初始化</a> <a href="/tags/前端/" style="font-size: 11.67px;">前端</a> <a href="/tags/加密/" style="font-size: 10px;">加密</a> <a href="/tags/动态交互/" style="font-size: 10px;">动态交互</a> <a href="/tags/动态注入/" style="font-size: 10px;">动态注入</a> <a href="/tags/动画/" style="font-size: 14.17px;">动画</a> <a href="/tags/包/" style="font-size: 10px;">包</a> <a href="/tags/反编译/" style="font-size: 10.83px;">反编译</a> <a href="/tags/取色/" style="font-size: 10px;">取色</a> <a href="/tags/图片加载/" style="font-size: 10px;">图片加载</a> <a href="/tags/坐标系/" style="font-size: 10px;">坐标系</a> <a href="/tags/基础/" style="font-size: 11.67px;">基础</a> <a href="/tags/复用/" style="font-size: 10px;">复用</a> <a href="/tags/多分辨率/" style="font-size: 10px;">多分辨率</a> <a href="/tags/多屏幕/" style="font-size: 10px;">多屏幕</a> <a href="/tags/大不同/" style="font-size: 16.67px;">大不同</a> <a href="/tags/妈妈再也不用担心系列/" style="font-size: 10px;">妈妈再也不用担心系列</a> <a href="/tags/定位代码/" style="font-size: 10px;">定位代码</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/对象/" style="font-size: 10px;">对象</a> <a href="/tags/导航/" style="font-size: 10px;">导航</a> <a href="/tags/属性/" style="font-size: 10.83px;">属性</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/工具类/" style="font-size: 11.67px;">工具类</a> <a href="/tags/布局/" style="font-size: 10.83px;">布局</a> <a href="/tags/带标题的ListView/" style="font-size: 10px;">带标题的ListView</a> <a href="/tags/常用/" style="font-size: 10.83px;">常用</a> <a href="/tags/序列化/" style="font-size: 10px;">序列化</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/开源/" style="font-size: 10px;">开源</a> <a href="/tags/开源库/" style="font-size: 10px;">开源库</a> <a href="/tags/异步/" style="font-size: 10.83px;">异步</a> <a href="/tags/异步加载/" style="font-size: 10px;">异步加载</a> <a href="/tags/引导/" style="font-size: 10px;">引导</a> <a href="/tags/引用/" style="font-size: 10px;">引用</a> <a href="/tags/录屏/" style="font-size: 10px;">录屏</a> <a href="/tags/快捷键/" style="font-size: 10px;">快捷键</a> <a href="/tags/持久化/" style="font-size: 10px;">持久化</a> <a href="/tags/按钮/" style="font-size: 10px;">按钮</a> <a href="/tags/提示/" style="font-size: 10.83px;">提示</a> <a href="/tags/插件/" style="font-size: 11.67px;">插件</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/数学，宏/" style="font-size: 10px;">数学，宏</a> <a href="/tags/数据库/" style="font-size: 11.67px;">数据库</a> <a href="/tags/数据绑定/" style="font-size: 10.83px;">数据绑定</a> <a href="/tags/文本大小/" style="font-size: 10px;">文本大小</a> <a href="/tags/杂文/" style="font-size: 10.83px;">杂文</a> <a href="/tags/权限/" style="font-size: 10px;">权限</a> <a href="/tags/样式/" style="font-size: 10px;">样式</a> <a href="/tags/模块/" style="font-size: 10.83px;">模块</a> <a href="/tags/模拟/" style="font-size: 10px;">模拟</a> <a href="/tags/模糊/" style="font-size: 10.83px;">模糊</a> <a href="/tags/毛玻璃/" style="font-size: 10px;">毛玻璃</a> <a href="/tags/波纹/" style="font-size: 10px;">波纹</a> <a href="/tags/注入/" style="font-size: 10.83px;">注入</a> <a href="/tags/注解/" style="font-size: 10px;">注解</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/混淆/" style="font-size: 10px;">混淆</a> <a href="/tags/热启动/" style="font-size: 10px;">热启动</a> <a href="/tags/爬虫/" style="font-size: 10.83px;">爬虫</a> <a href="/tags/物理引擎/" style="font-size: 10px;">物理引擎</a> <a href="/tags/环信/" style="font-size: 10.83px;">环信</a> <a href="/tags/生命周期/" style="font-size: 11.67px;">生命周期</a> <a href="/tags/用时/" style="font-size: 10px;">用时</a> <a href="/tags/界面/" style="font-size: 10px;">界面</a> <a href="/tags/硬盘缓存/" style="font-size: 10px;">硬盘缓存</a> <a href="/tags/第一个项目/" style="font-size: 10px;">第一个项目</a> <a href="/tags/精灵/" style="font-size: 10px;">精灵</a> <a href="/tags/精灵帧/" style="font-size: 10px;">精灵帧</a> <a href="/tags/约束/" style="font-size: 10px;">约束</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/绘制/" style="font-size: 10px;">绘制</a> <a href="/tags/继承/" style="font-size: 10px;">继承</a> <a href="/tags/缓存/" style="font-size: 10px;">缓存</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a> <a href="/tags/网络请求/" style="font-size: 10.83px;">网络请求</a> <a href="/tags/翻墙/" style="font-size: 10.83px;">翻墙</a> <a href="/tags/自动布局/" style="font-size: 10px;">自动布局</a> <a href="/tags/自定义/" style="font-size: 10.83px;">自定义</a> <a href="/tags/自定义控件/" style="font-size: 10px;">自定义控件</a> <a href="/tags/自适应/" style="font-size: 10px;">自适应</a> <a href="/tags/虚拟键/" style="font-size: 10px;">虚拟键</a> <a href="/tags/角标/" style="font-size: 10px;">角标</a> <a href="/tags/设计/" style="font-size: 10px;">设计</a> <a href="/tags/设计缺陷/" style="font-size: 10px;">设计缺陷</a> <a href="/tags/访问/" style="font-size: 10px;">访问</a> <a href="/tags/调试/" style="font-size: 10.83px;">调试</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/资源文件/" style="font-size: 10px;">资源文件</a> <a href="/tags/路由/" style="font-size: 10px;">路由</a> <a href="/tags/转义/" style="font-size: 10px;">转义</a> <a href="/tags/轻量级/" style="font-size: 10px;">轻量级</a> <a href="/tags/连接/" style="font-size: 10px;">连接</a> <a href="/tags/适配/" style="font-size: 10.83px;">适配</a> <a href="/tags/遍历/" style="font-size: 10px;">遍历</a> <a href="/tags/配置/" style="font-size: 10px;">配置</a> <a href="/tags/镜像/" style="font-size: 10px;">镜像</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/随机/" style="font-size: 10px;">随机</a> <a href="/tags/隐藏/" style="font-size: 10px;">隐藏</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a> <a href="/tags/颜色/" style="font-size: 10.83px;">颜色</a> <a href="/tags/颜色选择器/" style="font-size: 10px;">颜色选择器</a> <a href="/tags/魅族/" style="font-size: 10px;">魅族</a> <a href="/tags/！/" style="font-size: 10px;">！</a> <a href="/tags/？/" style="font-size: 10px;">？</a>
+       <a href="/tags/2/" style="font-size: 10px;">2</a> <a href="/tags/AFNetworking/" style="font-size: 10px;">AFNetworking</a> <a href="/tags/APK/" style="font-size: 10px;">APK</a> <a href="/tags/AS/" style="font-size: 10px;">AS</a> <a href="/tags/Adapter/" style="font-size: 10px;">Adapter</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Android-5-0/" style="font-size: 10px;">Android 5.0</a> <a href="/tags/Android-Studio/" style="font-size: 11.67px;">Android Studio</a> <a href="/tags/AndroidAninotations/" style="font-size: 10px;">AndroidAninotations</a> <a href="/tags/AndroidStudio/" style="font-size: 15.83px;">AndroidStudio</a> <a href="/tags/Animation/" style="font-size: 12.5px;">Animation</a> <a href="/tags/Api/" style="font-size: 11.67px;">Api</a> <a href="/tags/App/" style="font-size: 10px;">App</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Async/" style="font-size: 10px;">Async</a> <a href="/tags/Atom/" style="font-size: 10.83px;">Atom</a> <a href="/tags/AutoLayout/" style="font-size: 10px;">AutoLayout</a> <a href="/tags/BaseAdapter/" style="font-size: 10px;">BaseAdapter</a> <a href="/tags/Blur/" style="font-size: 10px;">Blur</a> <a href="/tags/Box2D/" style="font-size: 10px;">Box2D</a> <a href="/tags/Broadcast/" style="font-size: 10px;">Broadcast</a> <a href="/tags/CardView/" style="font-size: 10px;">CardView</a> <a href="/tags/CocoaPods/" style="font-size: 10px;">CocoaPods</a> <a href="/tags/Cocos2d-X/" style="font-size: 13.33px;">Cocos2d-X</a> <a href="/tags/CocosPods/" style="font-size: 10px;">CocosPods</a> <a href="/tags/ContentProvider/" style="font-size: 10px;">ContentProvider</a> <a href="/tags/Context/" style="font-size: 10px;">Context</a> <a href="/tags/Crouton/" style="font-size: 10px;">Crouton</a> <a href="/tags/CursorLoader/" style="font-size: 10px;">CursorLoader</a> <a href="/tags/Demo/" style="font-size: 10.83px;">Demo</a> <a href="/tags/Dialog/" style="font-size: 10px;">Dialog</a> <a href="/tags/EditView/" style="font-size: 10px;">EditView</a> <a href="/tags/EventBus/" style="font-size: 10px;">EventBus</a> <a href="/tags/Express/" style="font-size: 10px;">Express</a> <a href="/tags/Express学习笔记/" style="font-size: 10px;">Express学习笔记</a> <a href="/tags/Flex/" style="font-size: 10px;">Flex</a> <a href="/tags/Fragment/" style="font-size: 10.83px;">Fragment</a> <a href="/tags/GET/" style="font-size: 10px;">GET</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Gradle/" style="font-size: 10.83px;">Gradle</a> <a href="/tags/GridLayout/" style="font-size: 10px;">GridLayout</a> <a href="/tags/GridView/" style="font-size: 10.83px;">GridView</a> <a href="/tags/Gson/" style="font-size: 10px;">Gson</a> <a href="/tags/HTTP/" style="font-size: 10.83px;">HTTP</a> <a href="/tags/Handler/" style="font-size: 10px;">Handler</a> <a href="/tags/HeadersList/" style="font-size: 10px;">HeadersList</a> <a href="/tags/Hello-World/" style="font-size: 10px;">Hello World</a> <a href="/tags/Holo/" style="font-size: 10px;">Holo</a> <a href="/tags/IDE/" style="font-size: 10px;">IDE</a> <a href="/tags/IM/" style="font-size: 10.83px;">IM</a> <a href="/tags/Indicator/" style="font-size: 10px;">Indicator</a> <a href="/tags/IntentService/" style="font-size: 10px;">IntentService</a> <a href="/tags/JCenter/" style="font-size: 10px;">JCenter</a> <a href="/tags/JSON解析/" style="font-size: 10px;">JSON解析</a> <a href="/tags/Java/" style="font-size: 16.67px;">Java</a> <a href="/tags/Json/" style="font-size: 10.83px;">Json</a> <a href="/tags/KVO/" style="font-size: 10.83px;">KVO</a> <a href="/tags/Kotlin/" style="font-size: 10px;">Kotlin</a> <a href="/tags/Layout/" style="font-size: 10px;">Layout</a> <a href="/tags/Lint/" style="font-size: 10px;">Lint</a> <a href="/tags/ListView/" style="font-size: 10.83px;">ListView</a> <a href="/tags/Log/" style="font-size: 10px;">Log</a> <a href="/tags/MVVM/" style="font-size: 10.83px;">MVVM</a> <a href="/tags/Mac/" style="font-size: 10.83px;">Mac</a> <a href="/tags/Markdown/" style="font-size: 10.83px;">Markdown</a> <a href="/tags/Masonry/" style="font-size: 10px;">Masonry</a> <a href="/tags/Material/" style="font-size: 10.83px;">Material</a> <a href="/tags/Material-Design/" style="font-size: 10px;">Material Design</a> <a href="/tags/MaterialDesign/" style="font-size: 10px;">MaterialDesign</a> <a href="/tags/Meterial/" style="font-size: 10.83px;">Meterial</a> <a href="/tags/Meterial-Design/" style="font-size: 10px;">Meterial Design</a> <a href="/tags/Model/" style="font-size: 10px;">Model</a> <a href="/tags/MongoDB/" style="font-size: 10.83px;">MongoDB</a> <a href="/tags/Mongoose/" style="font-size: 10px;">Mongoose</a> <a href="/tags/NavBar/" style="font-size: 10px;">NavBar</a> <a href="/tags/Navigator/" style="font-size: 10px;">Navigator</a> <a href="/tags/NavtigationBar/" style="font-size: 10px;">NavtigationBar</a> <a href="/tags/NoSQL/" style="font-size: 10px;">NoSQL</a> <a href="/tags/OSX/" style="font-size: 10px;">OSX</a> <a href="/tags/Objective-C/" style="font-size: 17.5px;">Objective-C</a> <a href="/tags/POST/" style="font-size: 10px;">POST</a> <a href="/tags/PagerAdapter/" style="font-size: 10px;">PagerAdapter</a> <a href="/tags/PagerTranformer/" style="font-size: 10px;">PagerTranformer</a> <a href="/tags/Paint/" style="font-size: 10px;">Paint</a> <a href="/tags/Parcelable/" style="font-size: 10px;">Parcelable</a> <a href="/tags/PerferenceScreencreen/" style="font-size: 10px;">PerferenceScreencreen</a> <a href="/tags/Post/" style="font-size: 10px;">Post</a> <a href="/tags/ProGuard/" style="font-size: 10px;">ProGuard</a> <a href="/tags/Prose/" style="font-size: 12.5px;">Prose</a> <a href="/tags/Python/" style="font-size: 18.33px;">Python</a> <a href="/tags/REST/" style="font-size: 10.83px;">REST</a> <a href="/tags/Random/" style="font-size: 10px;">Random</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/ReactNative/" style="font-size: 10px;">ReactNative</a> <a href="/tags/RecyclerView/" style="font-size: 10.83px;">RecyclerView</a> <a href="/tags/SDK/" style="font-size: 11.67px;">SDK</a> <a href="/tags/SD卡/" style="font-size: 10px;">SD卡</a> <a href="/tags/SE5/" style="font-size: 10px;">SE5</a> <a href="/tags/SE6/" style="font-size: 10px;">SE6</a> <a href="/tags/SaveInstance/" style="font-size: 10px;">SaveInstance</a> <a href="/tags/Serializable/" style="font-size: 10px;">Serializable</a> <a href="/tags/SharedPreferce/" style="font-size: 10px;">SharedPreferce</a> <a href="/tags/SizeClass/" style="font-size: 10px;">SizeClass</a> <a href="/tags/Spider/" style="font-size: 10px;">Spider</a> <a href="/tags/Sprite/" style="font-size: 10.83px;">Sprite</a> <a href="/tags/Style/" style="font-size: 10px;">Style</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Sublime-Text/" style="font-size: 10px;">Sublime Text</a> <a href="/tags/SublimeText/" style="font-size: 10px;">SublimeText</a> <a href="/tags/Swift/" style="font-size: 17.5px;">Swift</a> <a href="/tags/TextView/" style="font-size: 10.83px;">TextView</a> <a href="/tags/Thread/" style="font-size: 10px;">Thread</a> <a href="/tags/Tips/" style="font-size: 10px;">Tips</a> <a href="/tags/ToolBar/" style="font-size: 10px;">ToolBar</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/UIActionSheet/" style="font-size: 10px;">UIActionSheet.</a> <a href="/tags/UIAlertView/" style="font-size: 10px;">UIAlertView</a> <a href="/tags/UIImageView/" style="font-size: 10px;">UIImageView</a> <a href="/tags/UIL/" style="font-size: 10px;">UIL</a> <a href="/tags/UIScrollView/" style="font-size: 10px;">UIScrollView</a> <a href="/tags/Ui/" style="font-size: 10px;">Ui</a> <a href="/tags/View/" style="font-size: 10px;">View</a> <a href="/tags/Volley/" style="font-size: 10px;">Volley</a> <a href="/tags/WebStorm/" style="font-size: 10px;">WebStorm</a> <a href="/tags/WebStrom/" style="font-size: 10px;">WebStrom</a> <a href="/tags/XCode/" style="font-size: 10px;">XCode</a> <a href="/tags/adb/" style="font-size: 10px;">adb</a> <a href="/tags/app/" style="font-size: 10.83px;">app</a> <a href="/tags/async/" style="font-size: 10px;">async</a> <a href="/tags/blur/" style="font-size: 10px;">blur</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/console/" style="font-size: 10px;">console</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/curl/" style="font-size: 10px;">curl</a> <a href="/tags/eclipse/" style="font-size: 10px;">eclipse</a> <a href="/tags/emoji/" style="font-size: 10px;">emoji</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/fallthrough/" style="font-size: 10px;">fallthrough</a> <a href="/tags/findViewById/" style="font-size: 10px;">findViewById</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/gradlew/" style="font-size: 10px;">gradlew</a> <a href="/tags/gravity/" style="font-size: 10px;">gravity</a> <a href="/tags/host/" style="font-size: 10px;">host</a> <a href="/tags/http/" style="font-size: 10.83px;">http</a> <a href="/tags/iOS/" style="font-size: 19.17px;">iOS</a> <a href="/tags/iPhone/" style="font-size: 10px;">iPhone</a> <a href="/tags/icon/" style="font-size: 10px;">icon</a> <a href="/tags/include/" style="font-size: 10px;">include</a> <a href="/tags/jQerry/" style="font-size: 11.67px;">jQerry</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/js/" style="font-size: 14.17px;">js</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/keymap/" style="font-size: 10px;">keymap</a> <a href="/tags/lambda/" style="font-size: 10px;">lambda</a> <a href="/tags/layout/" style="font-size: 11.67px;">layout</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/measure/" style="font-size: 10px;">measure</a> <a href="/tags/merge/" style="font-size: 10px;">merge</a> <a href="/tags/meteor/" style="font-size: 10.83px;">meteor</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/mongo/" style="font-size: 10px;">mongo</a> <a href="/tags/ndk/" style="font-size: 11.67px;">ndk</a> <a href="/tags/nil/" style="font-size: 10px;">nil</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/package/" style="font-size: 10px;">package</a> <a href="/tags/px/" style="font-size: 10px;">px</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/ripple/" style="font-size: 10px;">ripple</a> <a href="/tags/selector/" style="font-size: 10px;">selector</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/shape/" style="font-size: 10px;">shape</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/so/" style="font-size: 10px;">so</a> <a href="/tags/sp/" style="font-size: 10px;">sp</a> <a href="/tags/sqlite/" style="font-size: 10px;">sqlite</a> <a href="/tags/style/" style="font-size: 10px;">style</a> <a href="/tags/supervisor/" style="font-size: 10px;">supervisor</a> <a href="/tags/support/" style="font-size: 10px;">support</a> <a href="/tags/swfit/" style="font-size: 10px;">swfit</a> <a href="/tags/swift/" style="font-size: 10.83px;">swift</a> <a href="/tags/switch/" style="font-size: 10px;">switch</a> <a href="/tags/view/" style="font-size: 10px;">view</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web-app/" style="font-size: 10px;">web app</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/wifi/" style="font-size: 10px;">wifi</a> <a href="/tags/yield/" style="font-size: 10px;">yield</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/依赖管理/" style="font-size: 10px;">依赖管理</a> <a href="/tags/保存数据/" style="font-size: 10px;">保存数据</a> <a href="/tags/倒计时/" style="font-size: 10px;">倒计时</a> <a href="/tags/关键字/" style="font-size: 10px;">关键字</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/分支/" style="font-size: 10.83px;">分支</a> <a href="/tags/分辨率/" style="font-size: 10.83px;">分辨率</a> <a href="/tags/分配率/" style="font-size: 10px;">分配率</a> <a href="/tags/切换/" style="font-size: 10px;">切换</a> <a href="/tags/初始化/" style="font-size: 10px;">初始化</a> <a href="/tags/前端/" style="font-size: 11.67px;">前端</a> <a href="/tags/加密/" style="font-size: 10px;">加密</a> <a href="/tags/动态交互/" style="font-size: 10px;">动态交互</a> <a href="/tags/动态注入/" style="font-size: 10px;">动态注入</a> <a href="/tags/动画/" style="font-size: 14.17px;">动画</a> <a href="/tags/包/" style="font-size: 10px;">包</a> <a href="/tags/反编译/" style="font-size: 10.83px;">反编译</a> <a href="/tags/取色/" style="font-size: 10px;">取色</a> <a href="/tags/图片加载/" style="font-size: 10px;">图片加载</a> <a href="/tags/坐标系/" style="font-size: 10px;">坐标系</a> <a href="/tags/基础/" style="font-size: 11.67px;">基础</a> <a href="/tags/复用/" style="font-size: 10px;">复用</a> <a href="/tags/多分辨率/" style="font-size: 10px;">多分辨率</a> <a href="/tags/多屏幕/" style="font-size: 10px;">多屏幕</a> <a href="/tags/大不同/" style="font-size: 16.67px;">大不同</a> <a href="/tags/妈妈再也不用担心系列/" style="font-size: 10px;">妈妈再也不用担心系列</a> <a href="/tags/定位代码/" style="font-size: 10px;">定位代码</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/对象/" style="font-size: 10px;">对象</a> <a href="/tags/导航/" style="font-size: 10px;">导航</a> <a href="/tags/属性/" style="font-size: 10.83px;">属性</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/工具类/" style="font-size: 11.67px;">工具类</a> <a href="/tags/布局/" style="font-size: 12.5px;">布局</a> <a href="/tags/带标题的ListView/" style="font-size: 10px;">带标题的ListView</a> <a href="/tags/常用/" style="font-size: 10.83px;">常用</a> <a href="/tags/序列化/" style="font-size: 10px;">序列化</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/开源/" style="font-size: 10px;">开源</a> <a href="/tags/开源库/" style="font-size: 10px;">开源库</a> <a href="/tags/异步/" style="font-size: 10.83px;">异步</a> <a href="/tags/异步加载/" style="font-size: 10px;">异步加载</a> <a href="/tags/引导/" style="font-size: 10px;">引导</a> <a href="/tags/引用/" style="font-size: 10px;">引用</a> <a href="/tags/录屏/" style="font-size: 10px;">录屏</a> <a href="/tags/快捷键/" style="font-size: 10px;">快捷键</a> <a href="/tags/持久化/" style="font-size: 10px;">持久化</a> <a href="/tags/按钮/" style="font-size: 10px;">按钮</a> <a href="/tags/提示/" style="font-size: 10.83px;">提示</a> <a href="/tags/插件/" style="font-size: 11.67px;">插件</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/数学，宏/" style="font-size: 10px;">数学，宏</a> <a href="/tags/数据库/" style="font-size: 11.67px;">数据库</a> <a href="/tags/数据绑定/" style="font-size: 10.83px;">数据绑定</a> <a href="/tags/文本大小/" style="font-size: 10px;">文本大小</a> <a href="/tags/杂文/" style="font-size: 10.83px;">杂文</a> <a href="/tags/权限/" style="font-size: 10px;">权限</a> <a href="/tags/样式/" style="font-size: 10px;">样式</a> <a href="/tags/模块/" style="font-size: 10.83px;">模块</a> <a href="/tags/模拟/" style="font-size: 10px;">模拟</a> <a href="/tags/模糊/" style="font-size: 10.83px;">模糊</a> <a href="/tags/毛玻璃/" style="font-size: 10px;">毛玻璃</a> <a href="/tags/波纹/" style="font-size: 10px;">波纹</a> <a href="/tags/注入/" style="font-size: 10.83px;">注入</a> <a href="/tags/注解/" style="font-size: 10px;">注解</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/混淆/" style="font-size: 10px;">混淆</a> <a href="/tags/热启动/" style="font-size: 10px;">热启动</a> <a href="/tags/爬虫/" style="font-size: 10.83px;">爬虫</a> <a href="/tags/物理引擎/" style="font-size: 10px;">物理引擎</a> <a href="/tags/环信/" style="font-size: 10.83px;">环信</a> <a href="/tags/生命周期/" style="font-size: 11.67px;">生命周期</a> <a href="/tags/用时/" style="font-size: 10px;">用时</a> <a href="/tags/界面/" style="font-size: 10px;">界面</a> <a href="/tags/硬盘缓存/" style="font-size: 10px;">硬盘缓存</a> <a href="/tags/第一个项目/" style="font-size: 10px;">第一个项目</a> <a href="/tags/精灵/" style="font-size: 10px;">精灵</a> <a href="/tags/精灵帧/" style="font-size: 10px;">精灵帧</a> <a href="/tags/约束/" style="font-size: 10px;">约束</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/绘制/" style="font-size: 10px;">绘制</a> <a href="/tags/继承/" style="font-size: 10px;">继承</a> <a href="/tags/缓存/" style="font-size: 10px;">缓存</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a> <a href="/tags/网络请求/" style="font-size: 10.83px;">网络请求</a> <a href="/tags/翻墙/" style="font-size: 10.83px;">翻墙</a> <a href="/tags/自动布局/" style="font-size: 10px;">自动布局</a> <a href="/tags/自定义/" style="font-size: 10.83px;">自定义</a> <a href="/tags/自定义控件/" style="font-size: 10px;">自定义控件</a> <a href="/tags/自适应/" style="font-size: 10px;">自适应</a> <a href="/tags/虚拟键/" style="font-size: 10px;">虚拟键</a> <a href="/tags/角标/" style="font-size: 10px;">角标</a> <a href="/tags/设计/" style="font-size: 10px;">设计</a> <a href="/tags/设计缺陷/" style="font-size: 10px;">设计缺陷</a> <a href="/tags/访问/" style="font-size: 10px;">访问</a> <a href="/tags/调试/" style="font-size: 10.83px;">调试</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/资源文件/" style="font-size: 10px;">资源文件</a> <a href="/tags/路由/" style="font-size: 10px;">路由</a> <a href="/tags/转义/" style="font-size: 10px;">转义</a> <a href="/tags/轻量级/" style="font-size: 10px;">轻量级</a> <a href="/tags/连接/" style="font-size: 10px;">连接</a> <a href="/tags/适配/" style="font-size: 10.83px;">适配</a> <a href="/tags/遍历/" style="font-size: 10px;">遍历</a> <a href="/tags/配置/" style="font-size: 10px;">配置</a> <a href="/tags/镜像/" style="font-size: 10px;">镜像</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/随机/" style="font-size: 10px;">随机</a> <a href="/tags/隐藏/" style="font-size: 10px;">隐藏</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a> <a href="/tags/颜色/" style="font-size: 10.83px;">颜色</a> <a href="/tags/颜色选择器/" style="font-size: 10px;">颜色选择器</a> <a href="/tags/魅族/" style="font-size: 10px;">魅族</a> <a href="/tags/！/" style="font-size: 10px;">！</a> <a href="/tags/？/" style="font-size: 10px;">？</a>
     </div>
   </div>
 
@@ -783,7 +831,7 @@
   
   <div class="archiveslist">
     <p class="asidetitle"><a href="/archives">归档</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">二月 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">九月 2014</a><span class="archive-list-count">36</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">八月 2014</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">七月 2014</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">五月 2014</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">四月 2014</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">三月 2014</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">二月 2014</a><span class="archive-list-count">24</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">二月 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">九月 2014</a><span class="archive-list-count">36</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">八月 2014</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">七月 2014</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">五月 2014</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">四月 2014</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">三月 2014</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">二月 2014</a><span class="archive-list-count">24</span></li></ul>
   </div>
 
 

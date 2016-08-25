@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://seniorzhai.github.io/"/>
-  <updated>2016-07-26T07:23:12.000Z</updated>
+  <updated>2016-08-25T11:13:57.000Z</updated>
   <id>http://seniorzhai.github.io/</id>
   
   <author>
@@ -16,11 +16,135 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>guard和defer</title>
+    <link href="http://seniorzhai.github.io/2016/08/25/guard%E5%92%8Cdefer/"/>
+    <id>http://seniorzhai.github.io/2016/08/25/guard和defer/</id>
+    <published>2016-08-25T11:01:12.000Z</published>
+    <updated>2016-08-25T11:13:57.000Z</updated>
+    
+    <content type="html">&lt;p&gt;在看swift的代码的时候，遇见两个新的关键字，语法特性很特别&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;#guard&lt;br&gt;guard有点像断言&lt;br&gt;&lt;figure class=&quot;highlight swift&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; age &amp;lt; &lt;span class=&quot;number&quot;&gt;13&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 与上面代码等价&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;guard&lt;/span&gt; age &amp;gt;= &lt;span class=&quot;number&quot;&gt;13&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;guard起来保证的作用，age大于13否则return&lt;br&gt;在&lt;code&gt;if-let&lt;/code&gt;解包的时候使用，会使得代码看清来更简洁&lt;br&gt;&lt;figure class=&quot;highlight swift&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;guard&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; name = user.name &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/* 逻辑 */&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; name = user.name &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;/* 处理逻辑 */&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;#defer&lt;br&gt;defer是使代码延后处理的新特性&lt;br&gt;&lt;figure class=&quot;highlight swift&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// ...&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;openDirectory()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;defer&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  closeDirectory()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;opeFile()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;defer&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  closeFile()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// ...&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;defer会在将代码块以入栈出栈的方式延后运行，比如上面的代码会先执行打开文件夹(openDirectory)后打开文件(openFile)，在所有处理完成后，执行关闭文件(closeFile)，再关闭文件夹(closeDirectory)的操作&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在看swift的代码的时候，遇见两个新的关键字，语法特性很特别&lt;br&gt;
+    
+    </summary>
+    
+      <category term="iOS" scheme="http://seniorzhai.github.io/categories/iOS/"/>
+    
+    
+      <category term="swift" scheme="http://seniorzhai.github.io/tags/swift/"/>
+    
+      <category term="2" scheme="http://seniorzhai.github.io/tags/2/"/>
+    
+      <category term="关键字" scheme="http://seniorzhai.github.io/tags/%E5%85%B3%E9%94%AE%E5%AD%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>专用图层</title>
+    <link href="http://seniorzhai.github.io/2016/08/03/%E4%B8%93%E7%94%A8%E5%9B%BE%E5%B1%82/"/>
+    <id>http://seniorzhai.github.io/2016/08/03/专用图层/</id>
+    <published>2016-08-03T06:05:38.000Z</published>
+    <updated>2016-08-05T06:05:13.000Z</updated>
+    
+    <content type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;##CATextLayer&lt;br&gt;&lt;figure class=&quot;highlight swift&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; textLayer = &lt;span class=&quot;type&quot;&gt;CATextLayer&lt;/span&gt;()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;textLayer.frame = &lt;span class=&quot;keyword&quot;&gt;self&lt;/span&gt;.view.bounds&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;self&lt;/span&gt;.view.layer.addSublayer(textLayer)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;textLayer.foregroundColor = &lt;span class=&quot;type&quot;&gt;UIColor&lt;/span&gt;.blueColor().&lt;span class=&quot;type&quot;&gt;CGColor&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;textLayer.alignmentMode = kCAAlignmentJustified&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;textLayer.wrapped = &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; font = &lt;span class=&quot;type&quot;&gt;UIFont&lt;/span&gt;.systemFontOfSize(&lt;span class=&quot;number&quot;&gt;15&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; fontRef = &lt;span class=&quot;type&quot;&gt;CGFontCreateWithFontName&lt;/span&gt;(font.fontName)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;textLayer.font = fontRef&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;textLayer.fontSize = font.pointSize&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;type&quot;&gt;CFRelease&lt;/span&gt;(fontRef)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;textLayer.string = &lt;span class=&quot;string&quot;&gt;&quot;示例文字\n示例文字&quot;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注: 需要指定contentScale才能按设备放大系数准确渲染&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;CATextLayer&lt;/code&gt;的&lt;code&gt;font&lt;/code&gt;属性不是一个&lt;code&gt;UIFont&lt;/code&gt;类型，二是一个&lt;code&gt;CFTypeRef&lt;/code&gt;类型，这样可以根据需要来使用CGFontRef还是CTFontRef&lt;/p&gt;
+&lt;p&gt;###富文本&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;##CATextLayer&lt;br&gt;&lt;figure class=&quot;highlight swift&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>图层几何学</title>
+    <link href="http://seniorzhai.github.io/2016/06/26/Hit-Testing/"/>
+    <id>http://seniorzhai.github.io/2016/06/26/Hit-Testing/</id>
+    <published>2016-06-26T13:10:50.000Z</published>
+    <updated>2016-08-05T06:21:32.000Z</updated>
+    
+    <content type="html">&lt;p&gt;UIView有三个比较重要的布局属性：&lt;code&gt;frame&lt;/code&gt;，&lt;code&gt;bounds&lt;/code&gt;，&lt;code&gt;center&lt;/code&gt;，对应到CALayer叫做&lt;code&gt;frame&lt;/code&gt;，&lt;code&gt;bounds&lt;/code&gt;，&lt;code&gt;position&lt;/code&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;frame&lt;/code&gt;代表图层的外部坐标，也就是父图层上占据的空间&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bounds&lt;/code&gt;内部坐标，{0，0}是图层的左上角&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;center&lt;/code&gt;、&lt;code&gt;position&lt;/code&gt;都代表了相对父图层的&lt;code&gt;anchorPoint&lt;/code&gt;所在的位置&lt;br&gt;&lt;img src=&quot;/img/16072501.jpeg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;##锚点&lt;br&gt;默认的anchorPoint位于图层的中点，所以图层将会以这个点为中心放置，anchorPoint属性并没有暴露个UIView接口暴露出来，这也就是视图position属性被叫做&lt;code&gt;center&lt;/code&gt;，但是图层的&lt;code&gt;anchorPoint&lt;/code&gt;可以被移动&lt;br&gt;&lt;img src=&quot;/img/16072601.jpeg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;code&gt;anchorPoint&lt;/code&gt;用单位坐标来描述，图层左上角是{0,0}，右下角是{1,1}，默认坐标是{0.5,0.5}，&lt;code&gt;anchorPoint&lt;/code&gt;也可以通过指定x和y值小于或大于1，使它放置在图层范围之外。&lt;/p&gt;
+&lt;p&gt;##坐标系&lt;br&gt;一个图层的&lt;code&gt;position&lt;/code&gt;依赖于它父图层的&lt;code&gt;bounds&lt;/code&gt;，如果父图层发生了移动，它的所有子图层也会跟着移动&lt;br&gt;定义一个图层坐标系下的点或者矩形转换成另一个图层坐标系下的点或者矩形&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;convertPoint(p: CGPoint, toLayer:CALayer)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;convertPoint(p: CGPoint,toLayer:CALayer)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;convertRect(rect: CGRect,fromLayer: CALayer)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;convertRect(rect: CGRect,toLayer: CALayer)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;###翻转几何结构&lt;br&gt;通常iOS一个图层的position位于父图层的左上角，Mac OS则位于左下角，Core Animation可以通过&lt;code&gt;geometryFlipped&lt;/code&gt;属性来适配这两种情况，它决定了一个图层的坐标系是否相对父图层垂直翻转。&lt;/p&gt;
+&lt;p&gt;###Z坐标轴&lt;br&gt;CALayer存在一个三维空间，除了&lt;code&gt;posistion&lt;/code&gt;和&lt;code&gt;anchorPoint&lt;/code&gt;属性外，CALayer还有另外两个属性，&lt;code&gt;zPosition&lt;/code&gt;和&lt;code&gt;anchorPointZ&lt;/code&gt;两者都是在Z轴上描述图层位置的浮点类型。&lt;br&gt;&lt;code&gt;zPosition&lt;/code&gt;决定图层显示顺序，图层根据子图层的&lt;code&gt;sublayers&lt;/code&gt;出现的顺序来类绘制。&lt;br&gt;&lt;figure class=&quot;highlight swift&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;self&lt;/span&gt;.greenView.layer.zPosition = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;.0f&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;UIView有三个比较重要的布局属性：&lt;code&gt;frame&lt;/code&gt;，&lt;code&gt;bounds&lt;/code&gt;，&lt;code&gt;center&lt;/code&gt;，对应到CALayer叫做&lt;code&gt;frame&lt;/code&gt;，&lt;code&gt;bounds&lt;/code&gt;，&lt;code&gt;position&lt;/code&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="iOS" scheme="http://seniorzhai.github.io/categories/iOS/"/>
+    
+    
+      <category term="布局" scheme="http://seniorzhai.github.io/tags/%E5%B8%83%E5%B1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>图层几何学</title>
+    <link href="http://seniorzhai.github.io/2016/06/26/%E5%9B%BE%E5%B1%82%E5%87%A0%E4%BD%95%E5%AD%A6/"/>
+    <id>http://seniorzhai.github.io/2016/06/26/图层几何学/</id>
+    <published>2016-06-26T13:10:50.000Z</published>
+    <updated>2016-07-27T09:20:55.000Z</updated>
+    
+    <content type="html">&lt;p&gt;UIView有三个比较重要的布局属性：&lt;code&gt;frame&lt;/code&gt;，&lt;code&gt;bounds&lt;/code&gt;，&lt;code&gt;center&lt;/code&gt;，对应到CALayer叫做&lt;code&gt;frame&lt;/code&gt;，&lt;code&gt;bounds&lt;/code&gt;，&lt;code&gt;position&lt;/code&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;frame&lt;/code&gt;代表图层的外部坐标，也就是父图层上占据的空间&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bounds&lt;/code&gt;内部坐标，{0，0}是图层的左上角&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;center&lt;/code&gt;、&lt;code&gt;position&lt;/code&gt;都代表了相对父图层的&lt;code&gt;anchorPoint&lt;/code&gt;所在的位置&lt;br&gt;&lt;img src=&quot;/img/16072501.jpeg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;##锚点&lt;br&gt;默认的anchorPoint位于图层的中点，所以图层将会以这个点为中心放置，anchorPoint属性并没有暴露个UIView接口暴露出来，这也就是视图position属性被叫做&lt;code&gt;center&lt;/code&gt;，但是图层的&lt;code&gt;anchorPoint&lt;/code&gt;可以被移动&lt;br&gt;&lt;img src=&quot;/img/16072601.jpeg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;code&gt;anchorPoint&lt;/code&gt;用单位坐标来描述，图层左上角是{0,0}，右下角是{1,1}，默认坐标是{0.5,0.5}，&lt;code&gt;anchorPoint&lt;/code&gt;也可以通过指定x和y值小于或大于1，使它放置在图层范围之外。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;UIView有三个比较重要的布局属性：&lt;code&gt;frame&lt;/code&gt;，&lt;code&gt;bounds&lt;/code&gt;，&lt;code&gt;center&lt;/code&gt;，对应到CALayer叫做&lt;code&gt;frame&lt;/code&gt;，&lt;code&gt;bounds&lt;/code&gt;，&lt;code&gt;position&lt;/code&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="iOS" scheme="http://seniorzhai.github.io/categories/iOS/"/>
+    
+    
+      <category term="布局" scheme="http://seniorzhai.github.io/tags/%E5%B8%83%E5%B1%80/"/>
+    
+  </entry>
+  
+  <entry>
     <title>CALayer</title>
-    <link href="http://seniorzhai.github.io/2016/07/25/CALayer/"/>
-    <id>http://seniorzhai.github.io/2016/07/25/CALayer/</id>
-    <published>2016-07-25T12:29:25.000Z</published>
-    <updated>2016-07-26T07:23:12.000Z</updated>
+    <link href="http://seniorzhai.github.io/2016/06/25/CALayer/"/>
+    <id>http://seniorzhai.github.io/2016/06/25/CALayer/</id>
+    <published>2016-06-25T12:29:25.000Z</published>
+    <updated>2016-07-26T08:18:21.000Z</updated>
     
     <content type="html">&lt;p&gt;在iOS当中，所有的视图都从&lt;code&gt;UIView&lt;/code&gt;的基类派生二来，UIView  可以处理触摸时间，可以支持基于&lt;code&gt;Core Graphics绘图&lt;/code&gt;，可以做旋转或者缩放。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;##CALayer&lt;br&gt;&lt;code&gt;CALayer&lt;/code&gt;类在概念上和&lt;code&gt;UIView&lt;/code&gt;类似，同样也是一些被层级关系树管理的矩形块，同样也可以包含一些内容，管理子图层的位置。和&lt;code&gt;UIView&lt;/code&gt;不同的是&lt;code&gt;CALayer&lt;/code&gt;不处理用户交互。&lt;br&gt;每一个&lt;code&gt;UIView&lt;/code&gt;都有一个&lt;code&gt;CALayer&lt;/code&gt;实例的图层属性，也就是所谓的&lt;code&gt;backing layer&lt;/code&gt;，视图的职责就是创建并管理这个图层。&lt;br&gt;UIView没有暴露出一些CALayer的功能：&lt;/p&gt;
@@ -39,7 +163,24 @@
 &lt;li&gt;使用多种CALayer的子类，并且不想创建额外的UIView去包装它们所有&lt;/li&gt;
 &lt;li&gt;做一些对性能特别挑剔的工作，比如对UIView一些可忽略不计的操作都会引起显著的不同&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;##contents属性&lt;br&gt;CALayer有一个&lt;/p&gt;
+&lt;p&gt;##contents属性&lt;br&gt;CALayer有一个属性&lt;code&gt;contents&lt;/code&gt;，这个属性的类型是id，意味着它可以是任何类的对象，给contents赋任何值，都可以编译通过，但是contents不是CGImage，那么得到的图层将是空白。&lt;br&gt;&lt;figure class=&quot;highlight swift&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;viewDidLoad&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;     &lt;span class=&quot;keyword&quot;&gt;super&lt;/span&gt;.viewDidLoad()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;     contentView.backgroundColor = &lt;span class=&quot;type&quot;&gt;UIColor&lt;/span&gt;.grayColor()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;     &lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; layer = &lt;span class=&quot;type&quot;&gt;CALayer&lt;/span&gt;()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;     layer.frame = &lt;span class=&quot;type&quot;&gt;CGRectMake&lt;/span&gt;(&lt;span class=&quot;number&quot;&gt;50&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;50&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;     layer.contents = &lt;span class=&quot;type&quot;&gt;UIImage&lt;/span&gt;(named: &lt;span class=&quot;string&quot;&gt;&quot;icon&quot;&lt;/span&gt;)?.&lt;span class=&quot;type&quot;&gt;CGImage&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;     contentView.layer.addSublayer(layer)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; &amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;简单的添加就可以显示在UIView中显示图片&lt;/p&gt;
+&lt;p&gt;###contentGravity&lt;br&gt;和UIView的contentMode一样，contentGravity可以指定内容在同层边界中对齐方式&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;kCAGravityCenter&lt;/li&gt;
+&lt;li&gt;kCAGravityTop&lt;/li&gt;
+&lt;li&gt;kCAGravityBottom&lt;/li&gt;
+&lt;li&gt;kCAGravityLeft&lt;/li&gt;
+&lt;li&gt;kCAGravityRight&lt;/li&gt;
+&lt;li&gt;kCAGravityTopLeft&lt;/li&gt;
+&lt;li&gt;kCAGravityTopRight&lt;/li&gt;
+&lt;li&gt;kCAGravityBottomLeft&lt;/li&gt;
+&lt;li&gt;kCAGravityBottomRight&lt;/li&gt;
+&lt;li&gt;kCAGravityResize&lt;/li&gt;
+&lt;li&gt;kCAGravityResizeAspect&lt;/li&gt;
+&lt;li&gt;kCAGravityResizeAspectFill&lt;br&gt;###contentsScale&lt;br&gt;&lt;code&gt;contentsScale&lt;/code&gt;属性定义了寄宿图的像素尺寸和视图大小的比例，默认情况下它是一个值为1.0的浮点数&lt;br&gt;如果&lt;code&gt;contentsScale&lt;/code&gt;设置为1.0，将会每个点1一个像素绘制1个像素绘制图片，如果设置为2.0，则会每两个点像素绘制图片&lt;br&gt;###maskToBounds&lt;br&gt;UIView有一个&lt;code&gt;clipsToBounds&lt;/code&gt;的属性用来指定是否显示超出边界的内容，CALayer对应的属性叫做&lt;code&gt;maskToBounds&lt;/code&gt;&lt;br&gt;###contentsCenter&lt;br&gt;contentsCenter定义了一个固定的边框和一个图层上可拉伸的区域。改变contentsCenter的值并不会影响到寄宿图的显示。&lt;br&gt;默认情况下，contentsCenter是{0,0,1,1}，这意味着如果大小改变了，那么寄宿图将会均匀地拉伸开。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;##自定义绘制&lt;br&gt;给&lt;code&gt;contents&lt;/code&gt;赋CGImage并不是唯一设置寄宿图的方法，也可以直接用&lt;code&gt;Core Graphics&lt;/code&gt;直接绘制寄宿图，也能够继承UIView并实现&lt;code&gt;drawRect&lt;/code&gt;方法来绘制&lt;br&gt;当视图在屏幕上显示的时候，drawRect方法会被调用，在方法里可以使用Graphics去绘制一个寄宿图。然后内容就会被缓存起来直到它需要更新（通常因为开发者调用了setNeedsDisplay方法）&lt;br&gt;CALayer有一个可选的delegate属性，实现了CALayerDelegate协议，当CALayer需要一个内容 特定的信息时，就会从协议中请求&lt;code&gt;drawLayer&lt;/code&gt;方法，CALayerDelegate是非正式协议&lt;br&gt;&lt;figure class=&quot;highlight swift&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;viewDidLoad&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;super&lt;/span&gt;.viewDidLoad()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    contentView.layer.delegate = &lt;span class=&quot;keyword&quot;&gt;self&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    contentView.layer.display()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;drawLayer&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(layer: CALayer, inContext ctx: CGContext)&lt;/span&gt;&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;type&quot;&gt;CGContextSetLineWidth&lt;/span&gt;(ctx, &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;type&quot;&gt;CGContextSetStrokeColorWithColor&lt;/span&gt;(ctx, &lt;span class=&quot;type&quot;&gt;UIColor&lt;/span&gt;.redColor().&lt;span class=&quot;type&quot;&gt;CGColor&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;type&quot;&gt;CGContextStrokeEllipseInRect&lt;/span&gt;(ctx, layer.bounds)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
@@ -54,24 +195,6 @@
       <category term="动画" scheme="http://seniorzhai.github.io/tags/%E5%8A%A8%E7%94%BB/"/>
     
       <category term="view" scheme="http://seniorzhai.github.io/tags/view/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>矫色方法</title>
-    <link href="http://seniorzhai.github.io/2016/07/21/%E7%9F%AB%E8%89%B2%E6%96%B9%E6%B3%95/"/>
-    <id>http://seniorzhai.github.io/2016/07/21/矫色方法/</id>
-    <published>2016-07-21T02:58:05.000Z</published>
-    <updated>2016-07-21T02:58:05.000Z</updated>
-    
-    <content type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;</content>
-    
-    <summary type="html">
-    
-      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-    
-    </summary>
-    
     
   </entry>
   
@@ -698,100 +821,6 @@
       <category term="缓存" scheme="http://seniorzhai.github.io/tags/%E7%BC%93%E5%AD%98/"/>
     
       <category term="持久化" scheme="http://seniorzhai.github.io/tags/%E6%8C%81%E4%B9%85%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>@ViewDebug.ExportedProperty注解</title>
-    <link href="http://seniorzhai.github.io/2016/01/12/-ViewDebug-ExportedProperty%E6%B3%A8%E8%A7%A3/"/>
-    <id>http://seniorzhai.github.io/2016/01/12/-ViewDebug-ExportedProperty注解/</id>
-    <published>2016-01-12T13:16:27.000Z</published>
-    <updated>2016-01-12T10:44:33.000Z</updated>
-    
-    <content type="html">&lt;p&gt;使用&lt;code&gt;@ViewDebug.ExportedProperty&lt;/code&gt;注解，可以在Monitor的Hierarchy Viewer中的调试View属性，可以直接观察注解过的变量和方法的值，实时观察View的状态变化。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;##使用&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;category 指定属性的类别，比如&lt;code&gt;measurement&lt;/code&gt;,&lt;code&gt;layout&lt;/code&gt;,&lt;code&gt;drawing&lt;/code&gt;等。&lt;/li&gt;
-&lt;li&gt;resolveId 当resolveId为true时，变量或方法的值为int数据，那么这个值会被转换成Android对应的资源名称&lt;/li&gt;
-&lt;li&gt;mapping 可以将int值映射成指定的字符串&lt;/li&gt;
-&lt;li&gt;indexMapping 可以将数组的序号映射成指定的字符串&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;27&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;28&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;29&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;30&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;31&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;32&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;33&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;34&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;35&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@ViewDebug&lt;/span&gt;.ExportedProperty(category = &lt;span class=&quot;string&quot;&gt;&quot;seniorzhai&quot;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; x = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@Override&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@ViewDebug&lt;/span&gt;.ExportedProperty(category = &lt;span class=&quot;string&quot;&gt;&quot;seniorzhai&quot;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;isFocused&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@Override&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@ViewDebug&lt;/span&gt;.ExportedProperty(category = &lt;span class=&quot;string&quot;&gt;&quot;seniorzhai&quot;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;isFocused&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@ViewDebug&lt;/span&gt;.ExportedProperty(category = &lt;span class=&quot;string&quot;&gt;&quot;seniorzhai&quot;&lt;/span&gt;,resolveld = &lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; b = R.id.no;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@Override&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@ViewDebug&lt;/span&gt;.ExportedProperty(category = &lt;span class=&quot;string&quot;&gt;&quot;seniorzhai&quot;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    mapping = &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                  &lt;span class=&quot;meta&quot;&gt;@ViewDebug&lt;/span&gt;.IntToString(from = VISIBLE, to = &lt;span class=&quot;string&quot;&gt;&quot;SENIOR_VISIBLE&quot;&lt;/span&gt;),&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                  &lt;span class=&quot;meta&quot;&gt;@ViewDebug&lt;/span&gt;.IntToString(from = INVISIBLE, to = &lt;span class=&quot;string&quot;&gt;&quot;SENIOR_INVISIBLE&quot;&lt;/span&gt;),&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                  &lt;span class=&quot;meta&quot;&gt;@ViewDebug&lt;/span&gt;.IntToString(from = GONE, to = &lt;span class=&quot;string&quot;&gt;&quot;SENIOR_GONE&quot;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;              &amp;#125;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;getVisibility&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;super&lt;/span&gt;.getVisibility();    &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@ViewDebug&lt;/span&gt;.ExportedProperty(category = &lt;span class=&quot;string&quot;&gt;&quot;seniorzhai&quot;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;indexMapping = &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                  &lt;span class=&quot;meta&quot;&gt;@ViewDebug&lt;/span&gt;.IntToString(from = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, to = &lt;span class=&quot;string&quot;&gt;&quot;SENIOR_FIRST&quot;&lt;/span&gt;),            &lt;span class=&quot;meta&quot;&gt;@ViewDebug&lt;/span&gt;.IntToString(from = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, to = &lt;span class=&quot;string&quot;&gt;&quot;SENIOR_SECOND&quot;&lt;/span&gt;),&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                  &lt;span class=&quot;meta&quot;&gt;@ViewDebug&lt;/span&gt;.IntToString(from = &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, to = &lt;span class=&quot;string&quot;&gt;&quot;SENIOR_THIRD&quot;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                &amp;#125;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;[] elements = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;[] &amp;#123;&lt;span class=&quot;number&quot;&gt;123&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;223&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;323&lt;/span&gt;&amp;#125;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;使用&lt;code&gt;@ViewDebug.ExportedProperty&lt;/code&gt;注解，可以在Monitor的Hierarchy Viewer中的调试View属性，可以直接观察注解过的变量和方法的值，实时观察View的状态变化。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="Android" scheme="http://seniorzhai.github.io/categories/Android/"/>
-    
-    
-      <category term="注解" scheme="http://seniorzhai.github.io/tags/%E6%B3%A8%E8%A7%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>View的一些重要方法</title>
-    <link href="http://seniorzhai.github.io/2016/01/10/View%E7%9A%84%E4%B8%80%E4%BA%9B%E9%87%8D%E8%A6%81%E6%96%B9%E6%B3%95/"/>
-    <id>http://seniorzhai.github.io/2016/01/10/View的一些重要方法/</id>
-    <published>2016-01-10T08:42:42.000Z</published>
-    <updated>2016-01-10T14:29:28.000Z</updated>
-    
-    <content type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;onFinishInflate()&lt;/code&gt;从XML加载组件后回调&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;onSizeChanged()&lt;/code&gt;组件大小改变时回调&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;onMeasure()&lt;/code&gt;测量大小&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;onLayout()&lt;/code&gt;确定显示位置&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;onTouchEvent&lt;/code&gt;监听触摸事件&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;onFinishInflate()&lt;/code&gt;从XML加载组件后回调&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;onSizeChanged()&lt;/code&gt;组件大小改变时回调&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;onMeasure
-    
-    </summary>
-    
-      <category term="Android" scheme="http://seniorzhai.github.io/categories/Android/"/>
-    
-    
-      <category term="自定义" scheme="http://seniorzhai.github.io/tags/%E8%87%AA%E5%AE%9A%E4%B9%89/"/>
-    
-      <category term="View" scheme="http://seniorzhai.github.io/tags/View/"/>
-    
-      <category term="绘制" scheme="http://seniorzhai.github.io/tags/%E7%BB%98%E5%88%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Xcode上的ActivatePowerMode也来了</title>
-    <link href="http://seniorzhai.github.io/2015/12/02/Xcode%E4%B8%8A%E7%9A%84ActivatePowerMode%E4%B9%9F%E6%9D%A5%E4%BA%86/"/>
-    <id>http://seniorzhai.github.io/2015/12/02/Xcode上的ActivatePowerMode也来了/</id>
-    <published>2015-12-02T07:10:09.000Z</published>
-    <updated>2015-12-02T07:13:55.000Z</updated>
-    
-    <content type="html">&lt;p&gt;前天介绍才&lt;a href=&quot;http://seniorzhai.github.io/2015/11/30/%E7%89%9B%E9%80%BC%E5%88%B0%E5%A4%A9%E4%B8%8A%E7%9A%84Atom%E6%8F%92%E4%BB%B6/&quot;&gt;ActivatePowerMode&lt;/a&gt;&lt;br&gt;很快的Xcode上的插件也来了&lt;a href=&quot;https://github.com/qfish/XActivatePowerMode&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/qfish/XActivatePowerMode&lt;/a&gt;&lt;br&gt;在&lt;a href=&quot;http://alcatraz.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Alcatraz&lt;/a&gt;搜索安装，&lt;code&gt;Edit&lt;/code&gt;-&amp;gt;&lt;code&gt;Activate Power Mode&lt;/code&gt;-&amp;gt;&lt;code&gt;Enable&lt;/code&gt;运行即可&lt;br&gt;&lt;img src=&quot;https://camo.githubusercontent.com/a25916ccc96abf4f949ae55a3fc8b0108ac578a8/687474703a2f2f3764396f30782e636f6d312e7a302e676c622e636c6f7564646e2e636f6d2f584163746976617465506f7765724d6f6465707265766965772e676966&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;前天介绍才&lt;a href=&quot;http://seniorzhai.github.io/2015/11/30/%E7%89%9B%E9%80%BC%E5%88%B0%E5%A4%A9%E4%B8%8A%E7%9A%84Atom%E6%8F%92%E4%BB%B6/&quot;&gt;Activ
-    
-    </summary>
-    
-      <category term="Prose" scheme="http://seniorzhai.github.io/categories/Prose/"/>
-    
-    
-      <category term="插件" scheme="http://seniorzhai.github.io/tags/%E6%8F%92%E4%BB%B6/"/>
-    
-      <category term="XCode" scheme="http://seniorzhai.github.io/tags/XCode/"/>
     
   </entry>
   

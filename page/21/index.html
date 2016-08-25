@@ -81,6 +81,238 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2014/09/29/Android-Studio导入Jar包及第三方开源库的方法/" title="Android Studio导入Jar包及第三方开源库的方法" itemprop="url">Android Studio导入Jar包及第三方开源库的方法</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
+		
+  <p class="article-time">
+    <time datetime="2014-09-29T06:48:52.000Z" itemprop="datePublished"> 发表于 2014-09-29</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <a id="more"></a>
+<p>##Jar包<br>Jar包的处理相对简单，将Jar包复制到lib文件夹中，然后右击Jar包选择<code>add as a library</code>即可导入。<br>删除时，需要先删除<code>build.gradle</code>中的语句，再删除Jar包<br><img src="/img/14092902.png" alt=""></p>
+<p>##添加远程开源库<br><img src="/img/14092903.png" alt=""><br>一般新的开源库在其README.md中都会有相应连接，比如<a href="https://github.com/eluleci/FlatUI" target="_blank" rel="external">FlatUI</a>，在其GitHub页面可以得到以下内容<br><img src="/img/14092904.png" alt=""><br>要将上面内容添加到项目中的<code>build.gradle</code>中，切勿添加到全局的build.gradle文件中去</p>
+<p>##添加本地开源库<br>下载开源库后，放置在<code>app</code>目录同级的目录下，编辑<code>setting.gradle</code>文件加入<code>:开源库文件名</code>，例如在app同级目录下放置了volley的开源文件夹，编辑setting.gradle的内容为<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">include</span> <span class="string">':app'</span>,<span class="string">":volley"</span></div></pre></td></tr></table></figure></p>
+<p>之后再app目录下的<code>build.gradle</code>文件下，在<code>dependencies{}</code>节点下加入:<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">compile</span> <span class="keyword">project</span>(<span class="string">':volley'</span>)</div></pre></td></tr></table></figure></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Android/">Android</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Android-Studio/">Android Studio</a><a href="/tags/IDE/">IDE</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2014/09/29/Android-Studio导入Jar包及第三方开源库的方法/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/09/29/Android-Studio导入Jar包及第三方开源库的方法/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/09/29/晃动动画/" title="晃动动画" itemprop="url">晃动动画</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
+		
+  <p class="article-time">
+    <time datetime="2014-09-29T02:51:28.000Z" itemprop="datePublished"> 发表于 2014-09-29</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <a id="more"></a>
+<p>效果<br><img src="/img/14092901.gif" alt=""><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AnimationUtils</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ObjectAnimator <span class="title">tada</span><span class="params">(View view)</span> </span>&#123;</div><div class="line">	    <span class="keyword">return</span> tada(view, <span class="number">1f</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ObjectAnimator <span class="title">tada</span><span class="params">(View view, <span class="keyword">float</span> shakeFactor)</span> </span>&#123;</div><div class="line"></div><div class="line">	    PropertyValuesHolder pvhScaleX = PropertyValuesHolder.ofKeyframe(View.SCALE_X,</div><div class="line">	            Keyframe.ofFloat(<span class="number">0f</span>, <span class="number">1f</span>),</div><div class="line">	            Keyframe.ofFloat(.<span class="number">1f</span>, .<span class="number">9f</span>),</div><div class="line">	            Keyframe.ofFloat(.<span class="number">2f</span>, .<span class="number">9f</span>),</div><div class="line">	            Keyframe.ofFloat(.<span class="number">3f</span>, <span class="number">1.1f</span>),</div><div class="line">	            Keyframe.ofFloat(.<span class="number">4f</span>, <span class="number">1.1f</span>),</div><div class="line">	            Keyframe.ofFloat(.<span class="number">5f</span>, <span class="number">1.1f</span>),</div><div class="line">	            Keyframe.ofFloat(.<span class="number">6f</span>, <span class="number">1.1f</span>),</div><div class="line">	            Keyframe.ofFloat(.<span class="number">7f</span>, <span class="number">1.1f</span>),</div><div class="line">	            Keyframe.ofFloat(.<span class="number">8f</span>, <span class="number">1.1f</span>),</div><div class="line">	            Keyframe.ofFloat(.<span class="number">9f</span>, <span class="number">1.1f</span>),</div><div class="line">	            Keyframe.ofFloat(<span class="number">1f</span>, <span class="number">1f</span>)</div><div class="line">	    );</div><div class="line"></div><div class="line">	    PropertyValuesHolder pvhScaleY = PropertyValuesHolder.ofKeyframe(View.SCALE_Y,</div><div class="line">	            Keyframe.ofFloat(<span class="number">0f</span>, <span class="number">1f</span>),</div><div class="line">	            Keyframe.ofFloat(.<span class="number">1f</span>, .<span class="number">9f</span>),</div><div class="line">	            Keyframe.ofFloat(.<span class="number">2f</span>, .<span class="number">9f</span>),</div><div class="line">	            Keyframe.ofFloat(.<span class="number">3f</span>, <span class="number">1.1f</span>),</div><div class="line">	            Keyframe.ofFloat(.<span class="number">4f</span>, <span class="number">1.1f</span>),</div><div class="line">	            Keyframe.ofFloat(.<span class="number">5f</span>, <span class="number">1.1f</span>),</div><div class="line">	            Keyframe.ofFloat(.<span class="number">6f</span>, <span class="number">1.1f</span>),</div><div class="line">	            Keyframe.ofFloat(.<span class="number">7f</span>, <span class="number">1.1f</span>),</div><div class="line">	            Keyframe.ofFloat(.<span class="number">8f</span>, <span class="number">1.1f</span>),</div><div class="line">	            Keyframe.ofFloat(.<span class="number">9f</span>, <span class="number">1.1f</span>),</div><div class="line">	            Keyframe.ofFloat(<span class="number">1f</span>, <span class="number">1f</span>)</div><div class="line">	    );</div><div class="line"></div><div class="line">	    PropertyValuesHolder pvhRotate = PropertyValuesHolder.ofKeyframe(View.ROTATION,</div><div class="line">	            Keyframe.ofFloat(<span class="number">0f</span>, <span class="number">0f</span>),</div><div class="line">	            Keyframe.ofFloat(.<span class="number">1f</span>, -<span class="number">3f</span> * shakeFactor),</div><div class="line">	            Keyframe.ofFloat(.<span class="number">2f</span>, -<span class="number">3f</span> * shakeFactor),</div><div class="line">	            Keyframe.ofFloat(.<span class="number">3f</span>, <span class="number">3f</span> * shakeFactor),</div><div class="line">	            Keyframe.ofFloat(.<span class="number">4f</span>, -<span class="number">3f</span> * shakeFactor),</div><div class="line">	            Keyframe.ofFloat(.<span class="number">5f</span>, <span class="number">3f</span> * shakeFactor),</div><div class="line">	            Keyframe.ofFloat(.<span class="number">6f</span>, -<span class="number">3f</span> * shakeFactor),</div><div class="line">	            Keyframe.ofFloat(.<span class="number">7f</span>, <span class="number">3f</span> * shakeFactor),</div><div class="line">	            Keyframe.ofFloat(.<span class="number">8f</span>, -<span class="number">3f</span> * shakeFactor),</div><div class="line">	            Keyframe.ofFloat(.<span class="number">9f</span>, <span class="number">3f</span> * shakeFactor),</div><div class="line">	            Keyframe.ofFloat(<span class="number">1f</span>, <span class="number">0</span>)</div><div class="line">	    );</div><div class="line"></div><div class="line">	    <span class="keyword">return</span> ObjectAnimator.ofPropertyValuesHolder(view, pvhScaleX, pvhScaleY, pvhRotate).</div><div class="line">	            setDuration(<span class="number">1000</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ObjectAnimator <span class="title">nope</span><span class="params">(View view)</span> </span>&#123;</div><div class="line">	    <span class="keyword">int</span> delta = view.getResources().getDimensionPixelOffset(R.dimen.spacing_medium);</div><div class="line"></div><div class="line">	    PropertyValuesHolder pvhTranslateX = PropertyValuesHolder.ofKeyframe(View.TRANSLATION_X,</div><div class="line">	            Keyframe.ofFloat(<span class="number">0f</span>, <span class="number">0</span>),</div><div class="line">	            Keyframe.ofFloat(.<span class="number">10f</span>, -delta),</div><div class="line">	            Keyframe.ofFloat(.<span class="number">26f</span>, delta),</div><div class="line">	            Keyframe.ofFloat(.<span class="number">42f</span>, -delta),</div><div class="line">	            Keyframe.ofFloat(.<span class="number">58f</span>, delta),</div><div class="line">	            Keyframe.ofFloat(.<span class="number">74f</span>, -delta),</div><div class="line">	            Keyframe.ofFloat(.<span class="number">90f</span>, delta),</div><div class="line">	            Keyframe.ofFloat(<span class="number">1f</span>, <span class="number">0f</span>)</div><div class="line">	    );</div><div class="line"></div><div class="line">	    <span class="keyword">return</span> ObjectAnimator.ofPropertyValuesHolder(view, pvhTranslateX).</div><div class="line">	            setDuration(<span class="number">500</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Android/">Android</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/动画/">动画</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2014/09/29/晃动动画/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/09/29/晃动动画/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/09/28/Sublime-Text使用指南/" title="Sublime Text使用指南" itemprop="url">Sublime Text使用指南</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
+		
+  <p class="article-time">
+    <time datetime="2014-09-28T06:33:22.000Z" itemprop="datePublished"> 发表于 2014-09-28</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <a id="more"></a>
+<p>##安装Package Control<br>Sublime Text支持大量插件，Package Control能够帮助我们管理这些插件，它可以方便的浏览、安装和卸载Sublime Text中的插件</p>
+<ul>
+<li>使用Ctrl+`打开Sublime Text控制台</li>
+<li><p>输入下面命令道控制台</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import urllib.request,os,hashlib; h = &apos;7183a2d3e96f11eeadd761d777e62404&apos; + &apos;e330c659d4bb41d3bdf022e94cab3cd0&apos;; pf = &apos;Package Control.sublime-package&apos;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( &apos;http://sublime.wbond.net/&apos; + pf.replace(&apos; &apos;, &apos;%20&apos;)).read(); dh = hashlib.sha256(by).hexdigest(); print(&apos;Error validating download (got %s instead of %s), please try manual install&apos; % (dh, h)) if dh != h else open(os.path.join( ipp, pf), &apos;wb&apos; ).write(by)</div></pre></td></tr></table></figure>
+</li>
+<li><p>等待Package Control安装完成，使用<code>Ctrl + Shift + P</code>打开命令板<br>##基本操作</p>
+</li>
+<li><code>Ctrl + Enter</code>在当前行下面增加一行并跳至该行</li>
+<li><code>Ctrl + Shift + Enter</code>在当前行上增加一行并跳至该行</li>
+<li><code>Ctrl + ←/→</code>逐词移动</li>
+<li><code>Ctrl + Shift + ←/→</code>逐词选择</li>
+<li><code>Ctrl + ↑/↓</code>移动显示区域</li>
+<li><code>Ctrl + Shift + ↑/↓</code>移动当前行<br>##选择</li>
+<li><code>Ctrl + D</code>选择当前光标所在的词并高亮该词出现的位置，再次按下选择该词下次出现的位置</li>
+<li><code>Ctrl + K</code>在多重选词的过程中进行跳过，使用<code>Ctrl + U</code>进行回退，使用<code>Esc</code>退出多重编辑<br><img src="/img/14092801.gif" alt=""></li>
+<li><code>Ctrl + Shift + L</code>将当前选中区域打散，然后进行同时编辑<br><img src="/img/14092802.gif" alt=""></li>
+<li><code>Ctrl + J</code>将当前选中的区域合并成一行<br><img src="/img/14092803.gif" alt=""><br>##查找&amp;替换<br>Sublime Text的查找功能可以分为<strong>快速查找</strong>、<strong>标准查找</strong>、<strong>多文件查找</strong><br>###快速查找<br>使用<code>Shift + ←/→</code>或者<code>Ctrl + D</code>选中关键字，然后使用<code>F3</code>跳到其下一个出现的位置，<code>Shift + F3</code>跳到其上一个出现的位置，<code>Alt + F3</code>可以选中其出现的所有位置<br><img src="/img/14092804.gif" alt=""><br>###标准查找&amp;替换<br>使用<code>Ctrl + F</code>调出搜索框进行搜索<br><img src="/img/14092805.jpg" alt=""><br>使用<code>Ctrl + H</code>调出替换框，<code>Ctrl +_Shift + H</code>替换当前关键字，<code>Ctrl + Alt + H</code>替换所有匹配关键字<br><img src="/img/14092806.jpg" alt=""><br>####关键字查找&amp;替换</li>
+<li><code>Alt + C</code>切换大小写敏感模式</li>
+<li><code>Alt + W</code>切换整字匹配模式<br>###多文件搜索<br><code>Ctrl + Shift + F</code>开启多文件搜索&amp;替换<br><img src="/img/14092807.jpg" alt=""><br>##跳转</li>
+<li><code>Ctrl + P</code>会列出当前打开的文件（或者是当前文件夹的文件），输入文件名然后Enter跳转至该文件。<br><img src="/img/14092808.gif" alt=""></li>
+<li><code>Ctrl + R</code>会列出当前文件中的符号（例如类名和函数名，但无法深入到变量名），输入符号名称Enter即可以跳转到该处。此外，还可以使用F12快速跳转到当前光标所在符号的定义处（Jump to Definition）。<br><img src="/img/14092809.gif" alt=""></li>
+<li><code>Ctrl + G</code>然后输入行号以跳转到指定行。<br><img src="/img/14092810.gif" alt=""><br>###组合跳跃<br>在<code>Ctrl + P</code>匹配文件后，可以进行后续输入以跳转到更精确的位置</li>
+<li><code>@</code>符号跳转：输入<code>@demo</code>跳转到<code>demo</code>符号所在的位置</li>
+<li><code>#</code>关键字跳转：输入<code>#keyword</code>跳转到<code>keyword</code>所在的位置</li>
+<li><code>:</code>行号跳转：输入:12跳转到文件的第12行。<br><img src="/img/14092811.gif" alt=""><br>##文件夹<br>用<code>Ctrl + K</code>, <code>Ctrl + B</code>显示或隐藏侧栏，使用<code>Ctrl + P</code>快速跳转到文件夹里的文件。<br><img src="/img/14092814.jpg" alt=""></li>
+<li>使用<code>Ctrl + Shift + N</code>创建一个新窗口</li>
+<li><code>Ctrl + N</code>在当前窗口创建一个新标签，<code>Ctrl + W</code>关闭当前标签，<code>Ctrl + Shift + T</code>恢复刚刚关闭的标签。</li>
+<li>分屏：<code>Alt + Shift + 2</code>进行左右分屏，<code>Alt + Shift + 8</code>进行上下分屏，<code>Alt + Shift + 5</code>进行上下左右分屏（即分为四屏）。<ul>
+<li>分屏下，使用<code>Ctrl + 数字</code>键跳转到指定屏，使用<code>Ctrl + Shift + 数字键</code>将当前屏移动到指定屏</li>
+</ul>
+</li>
+<li><code>F11</code> 全屏</li>
+<li><code>Shift + F11</code> 切换无干扰全屏<br>##格式化<br>手动格式化使用<code>Ctrl + [</code>向左缩进，<code>Ctrl + ]</code>向右缩进，<code>Ctrl + Shift + V</code>以当前缩进粘贴代码<br>此外也可以使用插件实现自动缩进和智能对齐</li>
+<li><a href="https://sublime.wbond.net/packages/HTMLBeautify" target="_blank" rel="external">HTMLBeautify</a>：格式化HTML。</li>
+<li><a href="https://sublime.wbond.net/packages/AutoPEP8" target="_blank" rel="external">AutoPEP8</a>：格式化Python代码。</li>
+<li><a href="https://sublime.wbond.net/packages/Alignment" target="_blank" rel="external">Alignment</a>：进行智能对齐。<br>##中文输入法Bug<br>Sublime Text一直存在一个Bug：中文输入框不跟随。<br><img src="/img/14092812.jpg" alt=""><br>解决方法是安装<code>IMESupport</code>插件，之后重启Sublime Text问题就解决了。<br><img src="/img/14092813.jpg" alt=""></li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Prose/">Prose</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Sublime-Text/">Sublime Text</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2014/09/28/Sublime-Text使用指南/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/09/28/Sublime-Text使用指南/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2014/09/27/Python遍历/" title="Python遍历" itemprop="url">Python遍历</a>
   </h1>
   <p class="article-author">By
@@ -578,198 +810,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2014/09/23/穿越封锁线/" title="穿越封锁线" itemprop="url">穿越封锁线</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
-		
-  <p class="article-time">
-    <time datetime="2014-09-23T02:27:58.000Z" itemprop="datePublished"> 发表于 2014-09-23</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>对于广大码农来说，翻墙的主要目的就是Google一下，广大的Android Dev们更是需要SDK(为什么天朝连SDK都不让下)，下面推介一个简单易用的好办法。<br>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2014/09/23/穿越封锁线/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Prose/">Prose</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/host/">host</a><a href="/tags/google/">google</a><a href="/tags/翻墙/">翻墙</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2014/09/23/穿越封锁线/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/09/23/穿越封锁线/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2014/09/22/iOS网络请求/" title="iOS网络请求" itemprop="url">iOS网络请求</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
-		
-  <p class="article-time">
-    <time datetime="2014-09-22T07:14:26.000Z" itemprop="datePublished"> 发表于 2014-09-22</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>iOS中的基本网络请求如下<br>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2014/09/22/iOS网络请求/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/iOS/">iOS</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/网络请求/">网络请求</a><a href="/tags/POST/">POST</a><a href="/tags/GET/">GET</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2014/09/22/iOS网络请求/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/09/22/iOS网络请求/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2014/09/19/Git分支与协作/" title="Git分支与协作" itemprop="url">Git分支与协作</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
-		
-  <p class="article-time">
-    <time datetime="2014-09-19T08:59:13.000Z" itemprop="datePublished"> 发表于 2014-09-19</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>分支功能是git最为强大的功能之一<br>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2014/09/19/Git分支与协作/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Prose/">Prose</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/分支/">分支</a><a href="/tags/branch/">branch</a><a href="/tags/git/">git</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2014/09/19/Git分支与协作/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/09/19/Git分支与协作/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <a class="extend prev" rel="prev" href="/page/20/"><span></span>Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="page-number current">21</span><a class="page-number" href="/page/22/">22</a><a class="page-number" href="/page/23/">23</a><span class="space">&hellip;</span><a class="page-number" href="/page/39/">39</a><a class="extend next" rel="next" href="/page/22/">Next<span></span></a>
@@ -812,7 +852,7 @@
 		  
 		
 		  
-			<li><a href="/categories/iOS/" title="iOS">iOS<sup>80</sup></a></li>
+			<li><a href="/categories/iOS/" title="iOS">iOS<sup>83</sup></a></li>
 		  
 		
 		  
@@ -831,7 +871,7 @@
   <div class="tagcloudlist">
     <p class="asidetitle">标签云</p>
     <div class="tagcloudlist clearfix">
-       <a href="/tags/AFNetworking/" style="font-size: 10px;">AFNetworking</a> <a href="/tags/APK/" style="font-size: 10px;">APK</a> <a href="/tags/AS/" style="font-size: 10px;">AS</a> <a href="/tags/Adapter/" style="font-size: 10px;">Adapter</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Android-5-0/" style="font-size: 10px;">Android 5.0</a> <a href="/tags/Android-Studio/" style="font-size: 11.67px;">Android Studio</a> <a href="/tags/AndroidAninotations/" style="font-size: 10px;">AndroidAninotations</a> <a href="/tags/AndroidStudio/" style="font-size: 15.83px;">AndroidStudio</a> <a href="/tags/Animation/" style="font-size: 12.5px;">Animation</a> <a href="/tags/Api/" style="font-size: 11.67px;">Api</a> <a href="/tags/App/" style="font-size: 10px;">App</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Async/" style="font-size: 10px;">Async</a> <a href="/tags/Atom/" style="font-size: 10.83px;">Atom</a> <a href="/tags/AutoLayout/" style="font-size: 10px;">AutoLayout</a> <a href="/tags/BaseAdapter/" style="font-size: 10px;">BaseAdapter</a> <a href="/tags/Blur/" style="font-size: 10px;">Blur</a> <a href="/tags/Box2D/" style="font-size: 10px;">Box2D</a> <a href="/tags/Broadcast/" style="font-size: 10px;">Broadcast</a> <a href="/tags/CardView/" style="font-size: 10px;">CardView</a> <a href="/tags/CocoaPods/" style="font-size: 10px;">CocoaPods</a> <a href="/tags/Cocos2d-X/" style="font-size: 13.33px;">Cocos2d-X</a> <a href="/tags/CocosPods/" style="font-size: 10px;">CocosPods</a> <a href="/tags/ContentProvider/" style="font-size: 10px;">ContentProvider</a> <a href="/tags/Context/" style="font-size: 10px;">Context</a> <a href="/tags/Crouton/" style="font-size: 10px;">Crouton</a> <a href="/tags/CursorLoader/" style="font-size: 10px;">CursorLoader</a> <a href="/tags/Demo/" style="font-size: 10.83px;">Demo</a> <a href="/tags/Dialog/" style="font-size: 10px;">Dialog</a> <a href="/tags/EditView/" style="font-size: 10px;">EditView</a> <a href="/tags/EventBus/" style="font-size: 10px;">EventBus</a> <a href="/tags/Express/" style="font-size: 10px;">Express</a> <a href="/tags/Express学习笔记/" style="font-size: 10px;">Express学习笔记</a> <a href="/tags/Flex/" style="font-size: 10px;">Flex</a> <a href="/tags/Fragment/" style="font-size: 10.83px;">Fragment</a> <a href="/tags/GET/" style="font-size: 10px;">GET</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Gradle/" style="font-size: 10.83px;">Gradle</a> <a href="/tags/GridLayout/" style="font-size: 10px;">GridLayout</a> <a href="/tags/GridView/" style="font-size: 10.83px;">GridView</a> <a href="/tags/Gson/" style="font-size: 10px;">Gson</a> <a href="/tags/HTTP/" style="font-size: 10.83px;">HTTP</a> <a href="/tags/Handler/" style="font-size: 10px;">Handler</a> <a href="/tags/HeadersList/" style="font-size: 10px;">HeadersList</a> <a href="/tags/Hello-World/" style="font-size: 10px;">Hello World</a> <a href="/tags/Holo/" style="font-size: 10px;">Holo</a> <a href="/tags/IDE/" style="font-size: 10px;">IDE</a> <a href="/tags/IM/" style="font-size: 10.83px;">IM</a> <a href="/tags/Indicator/" style="font-size: 10px;">Indicator</a> <a href="/tags/IntentService/" style="font-size: 10px;">IntentService</a> <a href="/tags/JCenter/" style="font-size: 10px;">JCenter</a> <a href="/tags/JSON解析/" style="font-size: 10px;">JSON解析</a> <a href="/tags/Java/" style="font-size: 16.67px;">Java</a> <a href="/tags/Json/" style="font-size: 10.83px;">Json</a> <a href="/tags/KVO/" style="font-size: 10.83px;">KVO</a> <a href="/tags/Kotlin/" style="font-size: 10px;">Kotlin</a> <a href="/tags/Layout/" style="font-size: 10px;">Layout</a> <a href="/tags/Lint/" style="font-size: 10px;">Lint</a> <a href="/tags/ListView/" style="font-size: 10.83px;">ListView</a> <a href="/tags/Log/" style="font-size: 10px;">Log</a> <a href="/tags/MVVM/" style="font-size: 10.83px;">MVVM</a> <a href="/tags/Mac/" style="font-size: 10.83px;">Mac</a> <a href="/tags/Markdown/" style="font-size: 10.83px;">Markdown</a> <a href="/tags/Masonry/" style="font-size: 10px;">Masonry</a> <a href="/tags/Material/" style="font-size: 10.83px;">Material</a> <a href="/tags/Material-Design/" style="font-size: 10px;">Material Design</a> <a href="/tags/MaterialDesign/" style="font-size: 10px;">MaterialDesign</a> <a href="/tags/Meterial/" style="font-size: 10.83px;">Meterial</a> <a href="/tags/Meterial-Design/" style="font-size: 10px;">Meterial Design</a> <a href="/tags/Model/" style="font-size: 10px;">Model</a> <a href="/tags/MongoDB/" style="font-size: 10.83px;">MongoDB</a> <a href="/tags/Mongoose/" style="font-size: 10px;">Mongoose</a> <a href="/tags/NavBar/" style="font-size: 10px;">NavBar</a> <a href="/tags/Navigator/" style="font-size: 10px;">Navigator</a> <a href="/tags/NavtigationBar/" style="font-size: 10px;">NavtigationBar</a> <a href="/tags/NoSQL/" style="font-size: 10px;">NoSQL</a> <a href="/tags/OSX/" style="font-size: 10px;">OSX</a> <a href="/tags/Objective-C/" style="font-size: 17.5px;">Objective-C</a> <a href="/tags/POST/" style="font-size: 10px;">POST</a> <a href="/tags/PagerAdapter/" style="font-size: 10px;">PagerAdapter</a> <a href="/tags/PagerTranformer/" style="font-size: 10px;">PagerTranformer</a> <a href="/tags/Paint/" style="font-size: 10px;">Paint</a> <a href="/tags/Parcelable/" style="font-size: 10px;">Parcelable</a> <a href="/tags/PerferenceScreencreen/" style="font-size: 10px;">PerferenceScreencreen</a> <a href="/tags/Post/" style="font-size: 10px;">Post</a> <a href="/tags/ProGuard/" style="font-size: 10px;">ProGuard</a> <a href="/tags/Prose/" style="font-size: 12.5px;">Prose</a> <a href="/tags/Python/" style="font-size: 18.33px;">Python</a> <a href="/tags/REST/" style="font-size: 10.83px;">REST</a> <a href="/tags/Random/" style="font-size: 10px;">Random</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/ReactNative/" style="font-size: 10px;">ReactNative</a> <a href="/tags/RecyclerView/" style="font-size: 10.83px;">RecyclerView</a> <a href="/tags/SDK/" style="font-size: 11.67px;">SDK</a> <a href="/tags/SD卡/" style="font-size: 10px;">SD卡</a> <a href="/tags/SE5/" style="font-size: 10px;">SE5</a> <a href="/tags/SE6/" style="font-size: 10px;">SE6</a> <a href="/tags/SaveInstance/" style="font-size: 10px;">SaveInstance</a> <a href="/tags/Serializable/" style="font-size: 10px;">Serializable</a> <a href="/tags/SharedPreferce/" style="font-size: 10px;">SharedPreferce</a> <a href="/tags/SizeClass/" style="font-size: 10px;">SizeClass</a> <a href="/tags/Spider/" style="font-size: 10px;">Spider</a> <a href="/tags/Sprite/" style="font-size: 10.83px;">Sprite</a> <a href="/tags/Style/" style="font-size: 10px;">Style</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Sublime-Text/" style="font-size: 10px;">Sublime Text</a> <a href="/tags/SublimeText/" style="font-size: 10px;">SublimeText</a> <a href="/tags/Swift/" style="font-size: 17.5px;">Swift</a> <a href="/tags/TextView/" style="font-size: 10.83px;">TextView</a> <a href="/tags/Thread/" style="font-size: 10px;">Thread</a> <a href="/tags/Tips/" style="font-size: 10px;">Tips</a> <a href="/tags/ToolBar/" style="font-size: 10px;">ToolBar</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/UIActionSheet/" style="font-size: 10px;">UIActionSheet.</a> <a href="/tags/UIAlertView/" style="font-size: 10px;">UIAlertView</a> <a href="/tags/UIImageView/" style="font-size: 10px;">UIImageView</a> <a href="/tags/UIL/" style="font-size: 10px;">UIL</a> <a href="/tags/UIScrollView/" style="font-size: 10px;">UIScrollView</a> <a href="/tags/Ui/" style="font-size: 10px;">Ui</a> <a href="/tags/View/" style="font-size: 10px;">View</a> <a href="/tags/Volley/" style="font-size: 10px;">Volley</a> <a href="/tags/WebStorm/" style="font-size: 10px;">WebStorm</a> <a href="/tags/WebStrom/" style="font-size: 10px;">WebStrom</a> <a href="/tags/XCode/" style="font-size: 10px;">XCode</a> <a href="/tags/adb/" style="font-size: 10px;">adb</a> <a href="/tags/app/" style="font-size: 10.83px;">app</a> <a href="/tags/async/" style="font-size: 10px;">async</a> <a href="/tags/blur/" style="font-size: 10px;">blur</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/console/" style="font-size: 10px;">console</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/curl/" style="font-size: 10px;">curl</a> <a href="/tags/eclipse/" style="font-size: 10px;">eclipse</a> <a href="/tags/emoji/" style="font-size: 10px;">emoji</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/fallthrough/" style="font-size: 10px;">fallthrough</a> <a href="/tags/findViewById/" style="font-size: 10px;">findViewById</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/gradlew/" style="font-size: 10px;">gradlew</a> <a href="/tags/gravity/" style="font-size: 10px;">gravity</a> <a href="/tags/host/" style="font-size: 10px;">host</a> <a href="/tags/http/" style="font-size: 10.83px;">http</a> <a href="/tags/iOS/" style="font-size: 19.17px;">iOS</a> <a href="/tags/iPhone/" style="font-size: 10px;">iPhone</a> <a href="/tags/icon/" style="font-size: 10px;">icon</a> <a href="/tags/include/" style="font-size: 10px;">include</a> <a href="/tags/jQerry/" style="font-size: 11.67px;">jQerry</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/js/" style="font-size: 14.17px;">js</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/keymap/" style="font-size: 10px;">keymap</a> <a href="/tags/lambda/" style="font-size: 10px;">lambda</a> <a href="/tags/layout/" style="font-size: 11.67px;">layout</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/measure/" style="font-size: 10px;">measure</a> <a href="/tags/merge/" style="font-size: 10px;">merge</a> <a href="/tags/meteor/" style="font-size: 10.83px;">meteor</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/mongo/" style="font-size: 10px;">mongo</a> <a href="/tags/ndk/" style="font-size: 11.67px;">ndk</a> <a href="/tags/nil/" style="font-size: 10px;">nil</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/package/" style="font-size: 10px;">package</a> <a href="/tags/px/" style="font-size: 10px;">px</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/ripple/" style="font-size: 10px;">ripple</a> <a href="/tags/selector/" style="font-size: 10px;">selector</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/shape/" style="font-size: 10px;">shape</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/so/" style="font-size: 10px;">so</a> <a href="/tags/sp/" style="font-size: 10px;">sp</a> <a href="/tags/sqlite/" style="font-size: 10px;">sqlite</a> <a href="/tags/style/" style="font-size: 10px;">style</a> <a href="/tags/supervisor/" style="font-size: 10px;">supervisor</a> <a href="/tags/support/" style="font-size: 10px;">support</a> <a href="/tags/swfit/" style="font-size: 10px;">swfit</a> <a href="/tags/swift/" style="font-size: 10px;">swift</a> <a href="/tags/switch/" style="font-size: 10px;">switch</a> <a href="/tags/view/" style="font-size: 10px;">view</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web-app/" style="font-size: 10px;">web app</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/wifi/" style="font-size: 10px;">wifi</a> <a href="/tags/yield/" style="font-size: 10px;">yield</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/依赖管理/" style="font-size: 10px;">依赖管理</a> <a href="/tags/保存数据/" style="font-size: 10px;">保存数据</a> <a href="/tags/倒计时/" style="font-size: 10px;">倒计时</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/分支/" style="font-size: 10.83px;">分支</a> <a href="/tags/分辨率/" style="font-size: 10.83px;">分辨率</a> <a href="/tags/分配率/" style="font-size: 10px;">分配率</a> <a href="/tags/切换/" style="font-size: 10px;">切换</a> <a href="/tags/初始化/" style="font-size: 10px;">初始化</a> <a href="/tags/前端/" style="font-size: 11.67px;">前端</a> <a href="/tags/加密/" style="font-size: 10px;">加密</a> <a href="/tags/动态交互/" style="font-size: 10px;">动态交互</a> <a href="/tags/动态注入/" style="font-size: 10px;">动态注入</a> <a href="/tags/动画/" style="font-size: 14.17px;">动画</a> <a href="/tags/包/" style="font-size: 10px;">包</a> <a href="/tags/反编译/" style="font-size: 10.83px;">反编译</a> <a href="/tags/取色/" style="font-size: 10px;">取色</a> <a href="/tags/图片加载/" style="font-size: 10px;">图片加载</a> <a href="/tags/坐标系/" style="font-size: 10px;">坐标系</a> <a href="/tags/基础/" style="font-size: 11.67px;">基础</a> <a href="/tags/复用/" style="font-size: 10px;">复用</a> <a href="/tags/多分辨率/" style="font-size: 10px;">多分辨率</a> <a href="/tags/多屏幕/" style="font-size: 10px;">多屏幕</a> <a href="/tags/大不同/" style="font-size: 16.67px;">大不同</a> <a href="/tags/妈妈再也不用担心系列/" style="font-size: 10px;">妈妈再也不用担心系列</a> <a href="/tags/定位代码/" style="font-size: 10px;">定位代码</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/对象/" style="font-size: 10px;">对象</a> <a href="/tags/导航/" style="font-size: 10px;">导航</a> <a href="/tags/属性/" style="font-size: 10.83px;">属性</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/工具类/" style="font-size: 11.67px;">工具类</a> <a href="/tags/布局/" style="font-size: 10.83px;">布局</a> <a href="/tags/带标题的ListView/" style="font-size: 10px;">带标题的ListView</a> <a href="/tags/常用/" style="font-size: 10.83px;">常用</a> <a href="/tags/序列化/" style="font-size: 10px;">序列化</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/开源/" style="font-size: 10px;">开源</a> <a href="/tags/开源库/" style="font-size: 10px;">开源库</a> <a href="/tags/异步/" style="font-size: 10.83px;">异步</a> <a href="/tags/异步加载/" style="font-size: 10px;">异步加载</a> <a href="/tags/引导/" style="font-size: 10px;">引导</a> <a href="/tags/引用/" style="font-size: 10px;">引用</a> <a href="/tags/录屏/" style="font-size: 10px;">录屏</a> <a href="/tags/快捷键/" style="font-size: 10px;">快捷键</a> <a href="/tags/持久化/" style="font-size: 10px;">持久化</a> <a href="/tags/按钮/" style="font-size: 10px;">按钮</a> <a href="/tags/提示/" style="font-size: 10.83px;">提示</a> <a href="/tags/插件/" style="font-size: 11.67px;">插件</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/数学，宏/" style="font-size: 10px;">数学，宏</a> <a href="/tags/数据库/" style="font-size: 11.67px;">数据库</a> <a href="/tags/数据绑定/" style="font-size: 10.83px;">数据绑定</a> <a href="/tags/文本大小/" style="font-size: 10px;">文本大小</a> <a href="/tags/杂文/" style="font-size: 10.83px;">杂文</a> <a href="/tags/权限/" style="font-size: 10px;">权限</a> <a href="/tags/样式/" style="font-size: 10px;">样式</a> <a href="/tags/模块/" style="font-size: 10.83px;">模块</a> <a href="/tags/模拟/" style="font-size: 10px;">模拟</a> <a href="/tags/模糊/" style="font-size: 10.83px;">模糊</a> <a href="/tags/毛玻璃/" style="font-size: 10px;">毛玻璃</a> <a href="/tags/波纹/" style="font-size: 10px;">波纹</a> <a href="/tags/注入/" style="font-size: 10.83px;">注入</a> <a href="/tags/注解/" style="font-size: 10px;">注解</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/混淆/" style="font-size: 10px;">混淆</a> <a href="/tags/热启动/" style="font-size: 10px;">热启动</a> <a href="/tags/爬虫/" style="font-size: 10.83px;">爬虫</a> <a href="/tags/物理引擎/" style="font-size: 10px;">物理引擎</a> <a href="/tags/环信/" style="font-size: 10.83px;">环信</a> <a href="/tags/生命周期/" style="font-size: 11.67px;">生命周期</a> <a href="/tags/用时/" style="font-size: 10px;">用时</a> <a href="/tags/界面/" style="font-size: 10px;">界面</a> <a href="/tags/硬盘缓存/" style="font-size: 10px;">硬盘缓存</a> <a href="/tags/第一个项目/" style="font-size: 10px;">第一个项目</a> <a href="/tags/精灵/" style="font-size: 10px;">精灵</a> <a href="/tags/精灵帧/" style="font-size: 10px;">精灵帧</a> <a href="/tags/约束/" style="font-size: 10px;">约束</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/绘制/" style="font-size: 10px;">绘制</a> <a href="/tags/继承/" style="font-size: 10px;">继承</a> <a href="/tags/缓存/" style="font-size: 10px;">缓存</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a> <a href="/tags/网络请求/" style="font-size: 10.83px;">网络请求</a> <a href="/tags/翻墙/" style="font-size: 10.83px;">翻墙</a> <a href="/tags/自动布局/" style="font-size: 10px;">自动布局</a> <a href="/tags/自定义/" style="font-size: 10.83px;">自定义</a> <a href="/tags/自定义控件/" style="font-size: 10px;">自定义控件</a> <a href="/tags/自适应/" style="font-size: 10px;">自适应</a> <a href="/tags/虚拟键/" style="font-size: 10px;">虚拟键</a> <a href="/tags/角标/" style="font-size: 10px;">角标</a> <a href="/tags/设计/" style="font-size: 10px;">设计</a> <a href="/tags/设计缺陷/" style="font-size: 10px;">设计缺陷</a> <a href="/tags/访问/" style="font-size: 10px;">访问</a> <a href="/tags/调试/" style="font-size: 10.83px;">调试</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/资源文件/" style="font-size: 10px;">资源文件</a> <a href="/tags/路由/" style="font-size: 10px;">路由</a> <a href="/tags/转义/" style="font-size: 10px;">转义</a> <a href="/tags/轻量级/" style="font-size: 10px;">轻量级</a> <a href="/tags/连接/" style="font-size: 10px;">连接</a> <a href="/tags/适配/" style="font-size: 10.83px;">适配</a> <a href="/tags/遍历/" style="font-size: 10px;">遍历</a> <a href="/tags/配置/" style="font-size: 10px;">配置</a> <a href="/tags/镜像/" style="font-size: 10px;">镜像</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/随机/" style="font-size: 10px;">随机</a> <a href="/tags/隐藏/" style="font-size: 10px;">隐藏</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a> <a href="/tags/颜色/" style="font-size: 10.83px;">颜色</a> <a href="/tags/颜色选择器/" style="font-size: 10px;">颜色选择器</a> <a href="/tags/魅族/" style="font-size: 10px;">魅族</a> <a href="/tags/！/" style="font-size: 10px;">！</a> <a href="/tags/？/" style="font-size: 10px;">？</a>
+       <a href="/tags/2/" style="font-size: 10px;">2</a> <a href="/tags/AFNetworking/" style="font-size: 10px;">AFNetworking</a> <a href="/tags/APK/" style="font-size: 10px;">APK</a> <a href="/tags/AS/" style="font-size: 10px;">AS</a> <a href="/tags/Adapter/" style="font-size: 10px;">Adapter</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Android-5-0/" style="font-size: 10px;">Android 5.0</a> <a href="/tags/Android-Studio/" style="font-size: 11.67px;">Android Studio</a> <a href="/tags/AndroidAninotations/" style="font-size: 10px;">AndroidAninotations</a> <a href="/tags/AndroidStudio/" style="font-size: 15.83px;">AndroidStudio</a> <a href="/tags/Animation/" style="font-size: 12.5px;">Animation</a> <a href="/tags/Api/" style="font-size: 11.67px;">Api</a> <a href="/tags/App/" style="font-size: 10px;">App</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Async/" style="font-size: 10px;">Async</a> <a href="/tags/Atom/" style="font-size: 10.83px;">Atom</a> <a href="/tags/AutoLayout/" style="font-size: 10px;">AutoLayout</a> <a href="/tags/BaseAdapter/" style="font-size: 10px;">BaseAdapter</a> <a href="/tags/Blur/" style="font-size: 10px;">Blur</a> <a href="/tags/Box2D/" style="font-size: 10px;">Box2D</a> <a href="/tags/Broadcast/" style="font-size: 10px;">Broadcast</a> <a href="/tags/CardView/" style="font-size: 10px;">CardView</a> <a href="/tags/CocoaPods/" style="font-size: 10px;">CocoaPods</a> <a href="/tags/Cocos2d-X/" style="font-size: 13.33px;">Cocos2d-X</a> <a href="/tags/CocosPods/" style="font-size: 10px;">CocosPods</a> <a href="/tags/ContentProvider/" style="font-size: 10px;">ContentProvider</a> <a href="/tags/Context/" style="font-size: 10px;">Context</a> <a href="/tags/Crouton/" style="font-size: 10px;">Crouton</a> <a href="/tags/CursorLoader/" style="font-size: 10px;">CursorLoader</a> <a href="/tags/Demo/" style="font-size: 10.83px;">Demo</a> <a href="/tags/Dialog/" style="font-size: 10px;">Dialog</a> <a href="/tags/EditView/" style="font-size: 10px;">EditView</a> <a href="/tags/EventBus/" style="font-size: 10px;">EventBus</a> <a href="/tags/Express/" style="font-size: 10px;">Express</a> <a href="/tags/Express学习笔记/" style="font-size: 10px;">Express学习笔记</a> <a href="/tags/Flex/" style="font-size: 10px;">Flex</a> <a href="/tags/Fragment/" style="font-size: 10.83px;">Fragment</a> <a href="/tags/GET/" style="font-size: 10px;">GET</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Gradle/" style="font-size: 10.83px;">Gradle</a> <a href="/tags/GridLayout/" style="font-size: 10px;">GridLayout</a> <a href="/tags/GridView/" style="font-size: 10.83px;">GridView</a> <a href="/tags/Gson/" style="font-size: 10px;">Gson</a> <a href="/tags/HTTP/" style="font-size: 10.83px;">HTTP</a> <a href="/tags/Handler/" style="font-size: 10px;">Handler</a> <a href="/tags/HeadersList/" style="font-size: 10px;">HeadersList</a> <a href="/tags/Hello-World/" style="font-size: 10px;">Hello World</a> <a href="/tags/Holo/" style="font-size: 10px;">Holo</a> <a href="/tags/IDE/" style="font-size: 10px;">IDE</a> <a href="/tags/IM/" style="font-size: 10.83px;">IM</a> <a href="/tags/Indicator/" style="font-size: 10px;">Indicator</a> <a href="/tags/IntentService/" style="font-size: 10px;">IntentService</a> <a href="/tags/JCenter/" style="font-size: 10px;">JCenter</a> <a href="/tags/JSON解析/" style="font-size: 10px;">JSON解析</a> <a href="/tags/Java/" style="font-size: 16.67px;">Java</a> <a href="/tags/Json/" style="font-size: 10.83px;">Json</a> <a href="/tags/KVO/" style="font-size: 10.83px;">KVO</a> <a href="/tags/Kotlin/" style="font-size: 10px;">Kotlin</a> <a href="/tags/Layout/" style="font-size: 10px;">Layout</a> <a href="/tags/Lint/" style="font-size: 10px;">Lint</a> <a href="/tags/ListView/" style="font-size: 10.83px;">ListView</a> <a href="/tags/Log/" style="font-size: 10px;">Log</a> <a href="/tags/MVVM/" style="font-size: 10.83px;">MVVM</a> <a href="/tags/Mac/" style="font-size: 10.83px;">Mac</a> <a href="/tags/Markdown/" style="font-size: 10.83px;">Markdown</a> <a href="/tags/Masonry/" style="font-size: 10px;">Masonry</a> <a href="/tags/Material/" style="font-size: 10.83px;">Material</a> <a href="/tags/Material-Design/" style="font-size: 10px;">Material Design</a> <a href="/tags/MaterialDesign/" style="font-size: 10px;">MaterialDesign</a> <a href="/tags/Meterial/" style="font-size: 10.83px;">Meterial</a> <a href="/tags/Meterial-Design/" style="font-size: 10px;">Meterial Design</a> <a href="/tags/Model/" style="font-size: 10px;">Model</a> <a href="/tags/MongoDB/" style="font-size: 10.83px;">MongoDB</a> <a href="/tags/Mongoose/" style="font-size: 10px;">Mongoose</a> <a href="/tags/NavBar/" style="font-size: 10px;">NavBar</a> <a href="/tags/Navigator/" style="font-size: 10px;">Navigator</a> <a href="/tags/NavtigationBar/" style="font-size: 10px;">NavtigationBar</a> <a href="/tags/NoSQL/" style="font-size: 10px;">NoSQL</a> <a href="/tags/OSX/" style="font-size: 10px;">OSX</a> <a href="/tags/Objective-C/" style="font-size: 17.5px;">Objective-C</a> <a href="/tags/POST/" style="font-size: 10px;">POST</a> <a href="/tags/PagerAdapter/" style="font-size: 10px;">PagerAdapter</a> <a href="/tags/PagerTranformer/" style="font-size: 10px;">PagerTranformer</a> <a href="/tags/Paint/" style="font-size: 10px;">Paint</a> <a href="/tags/Parcelable/" style="font-size: 10px;">Parcelable</a> <a href="/tags/PerferenceScreencreen/" style="font-size: 10px;">PerferenceScreencreen</a> <a href="/tags/Post/" style="font-size: 10px;">Post</a> <a href="/tags/ProGuard/" style="font-size: 10px;">ProGuard</a> <a href="/tags/Prose/" style="font-size: 12.5px;">Prose</a> <a href="/tags/Python/" style="font-size: 18.33px;">Python</a> <a href="/tags/REST/" style="font-size: 10.83px;">REST</a> <a href="/tags/Random/" style="font-size: 10px;">Random</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/ReactNative/" style="font-size: 10px;">ReactNative</a> <a href="/tags/RecyclerView/" style="font-size: 10.83px;">RecyclerView</a> <a href="/tags/SDK/" style="font-size: 11.67px;">SDK</a> <a href="/tags/SD卡/" style="font-size: 10px;">SD卡</a> <a href="/tags/SE5/" style="font-size: 10px;">SE5</a> <a href="/tags/SE6/" style="font-size: 10px;">SE6</a> <a href="/tags/SaveInstance/" style="font-size: 10px;">SaveInstance</a> <a href="/tags/Serializable/" style="font-size: 10px;">Serializable</a> <a href="/tags/SharedPreferce/" style="font-size: 10px;">SharedPreferce</a> <a href="/tags/SizeClass/" style="font-size: 10px;">SizeClass</a> <a href="/tags/Spider/" style="font-size: 10px;">Spider</a> <a href="/tags/Sprite/" style="font-size: 10.83px;">Sprite</a> <a href="/tags/Style/" style="font-size: 10px;">Style</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Sublime-Text/" style="font-size: 10px;">Sublime Text</a> <a href="/tags/SublimeText/" style="font-size: 10px;">SublimeText</a> <a href="/tags/Swift/" style="font-size: 17.5px;">Swift</a> <a href="/tags/TextView/" style="font-size: 10.83px;">TextView</a> <a href="/tags/Thread/" style="font-size: 10px;">Thread</a> <a href="/tags/Tips/" style="font-size: 10px;">Tips</a> <a href="/tags/ToolBar/" style="font-size: 10px;">ToolBar</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/UIActionSheet/" style="font-size: 10px;">UIActionSheet.</a> <a href="/tags/UIAlertView/" style="font-size: 10px;">UIAlertView</a> <a href="/tags/UIImageView/" style="font-size: 10px;">UIImageView</a> <a href="/tags/UIL/" style="font-size: 10px;">UIL</a> <a href="/tags/UIScrollView/" style="font-size: 10px;">UIScrollView</a> <a href="/tags/Ui/" style="font-size: 10px;">Ui</a> <a href="/tags/View/" style="font-size: 10px;">View</a> <a href="/tags/Volley/" style="font-size: 10px;">Volley</a> <a href="/tags/WebStorm/" style="font-size: 10px;">WebStorm</a> <a href="/tags/WebStrom/" style="font-size: 10px;">WebStrom</a> <a href="/tags/XCode/" style="font-size: 10px;">XCode</a> <a href="/tags/adb/" style="font-size: 10px;">adb</a> <a href="/tags/app/" style="font-size: 10.83px;">app</a> <a href="/tags/async/" style="font-size: 10px;">async</a> <a href="/tags/blur/" style="font-size: 10px;">blur</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/console/" style="font-size: 10px;">console</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/curl/" style="font-size: 10px;">curl</a> <a href="/tags/eclipse/" style="font-size: 10px;">eclipse</a> <a href="/tags/emoji/" style="font-size: 10px;">emoji</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/fallthrough/" style="font-size: 10px;">fallthrough</a> <a href="/tags/findViewById/" style="font-size: 10px;">findViewById</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/gradlew/" style="font-size: 10px;">gradlew</a> <a href="/tags/gravity/" style="font-size: 10px;">gravity</a> <a href="/tags/host/" style="font-size: 10px;">host</a> <a href="/tags/http/" style="font-size: 10.83px;">http</a> <a href="/tags/iOS/" style="font-size: 19.17px;">iOS</a> <a href="/tags/iPhone/" style="font-size: 10px;">iPhone</a> <a href="/tags/icon/" style="font-size: 10px;">icon</a> <a href="/tags/include/" style="font-size: 10px;">include</a> <a href="/tags/jQerry/" style="font-size: 11.67px;">jQerry</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/js/" style="font-size: 14.17px;">js</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/keymap/" style="font-size: 10px;">keymap</a> <a href="/tags/lambda/" style="font-size: 10px;">lambda</a> <a href="/tags/layout/" style="font-size: 11.67px;">layout</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/measure/" style="font-size: 10px;">measure</a> <a href="/tags/merge/" style="font-size: 10px;">merge</a> <a href="/tags/meteor/" style="font-size: 10.83px;">meteor</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/mongo/" style="font-size: 10px;">mongo</a> <a href="/tags/ndk/" style="font-size: 11.67px;">ndk</a> <a href="/tags/nil/" style="font-size: 10px;">nil</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/package/" style="font-size: 10px;">package</a> <a href="/tags/px/" style="font-size: 10px;">px</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/ripple/" style="font-size: 10px;">ripple</a> <a href="/tags/selector/" style="font-size: 10px;">selector</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/shape/" style="font-size: 10px;">shape</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/so/" style="font-size: 10px;">so</a> <a href="/tags/sp/" style="font-size: 10px;">sp</a> <a href="/tags/sqlite/" style="font-size: 10px;">sqlite</a> <a href="/tags/style/" style="font-size: 10px;">style</a> <a href="/tags/supervisor/" style="font-size: 10px;">supervisor</a> <a href="/tags/support/" style="font-size: 10px;">support</a> <a href="/tags/swfit/" style="font-size: 10px;">swfit</a> <a href="/tags/swift/" style="font-size: 10.83px;">swift</a> <a href="/tags/switch/" style="font-size: 10px;">switch</a> <a href="/tags/view/" style="font-size: 10px;">view</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web-app/" style="font-size: 10px;">web app</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/wifi/" style="font-size: 10px;">wifi</a> <a href="/tags/yield/" style="font-size: 10px;">yield</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/依赖管理/" style="font-size: 10px;">依赖管理</a> <a href="/tags/保存数据/" style="font-size: 10px;">保存数据</a> <a href="/tags/倒计时/" style="font-size: 10px;">倒计时</a> <a href="/tags/关键字/" style="font-size: 10px;">关键字</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/分支/" style="font-size: 10.83px;">分支</a> <a href="/tags/分辨率/" style="font-size: 10.83px;">分辨率</a> <a href="/tags/分配率/" style="font-size: 10px;">分配率</a> <a href="/tags/切换/" style="font-size: 10px;">切换</a> <a href="/tags/初始化/" style="font-size: 10px;">初始化</a> <a href="/tags/前端/" style="font-size: 11.67px;">前端</a> <a href="/tags/加密/" style="font-size: 10px;">加密</a> <a href="/tags/动态交互/" style="font-size: 10px;">动态交互</a> <a href="/tags/动态注入/" style="font-size: 10px;">动态注入</a> <a href="/tags/动画/" style="font-size: 14.17px;">动画</a> <a href="/tags/包/" style="font-size: 10px;">包</a> <a href="/tags/反编译/" style="font-size: 10.83px;">反编译</a> <a href="/tags/取色/" style="font-size: 10px;">取色</a> <a href="/tags/图片加载/" style="font-size: 10px;">图片加载</a> <a href="/tags/坐标系/" style="font-size: 10px;">坐标系</a> <a href="/tags/基础/" style="font-size: 11.67px;">基础</a> <a href="/tags/复用/" style="font-size: 10px;">复用</a> <a href="/tags/多分辨率/" style="font-size: 10px;">多分辨率</a> <a href="/tags/多屏幕/" style="font-size: 10px;">多屏幕</a> <a href="/tags/大不同/" style="font-size: 16.67px;">大不同</a> <a href="/tags/妈妈再也不用担心系列/" style="font-size: 10px;">妈妈再也不用担心系列</a> <a href="/tags/定位代码/" style="font-size: 10px;">定位代码</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/对象/" style="font-size: 10px;">对象</a> <a href="/tags/导航/" style="font-size: 10px;">导航</a> <a href="/tags/属性/" style="font-size: 10.83px;">属性</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/工具类/" style="font-size: 11.67px;">工具类</a> <a href="/tags/布局/" style="font-size: 12.5px;">布局</a> <a href="/tags/带标题的ListView/" style="font-size: 10px;">带标题的ListView</a> <a href="/tags/常用/" style="font-size: 10.83px;">常用</a> <a href="/tags/序列化/" style="font-size: 10px;">序列化</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/开源/" style="font-size: 10px;">开源</a> <a href="/tags/开源库/" style="font-size: 10px;">开源库</a> <a href="/tags/异步/" style="font-size: 10.83px;">异步</a> <a href="/tags/异步加载/" style="font-size: 10px;">异步加载</a> <a href="/tags/引导/" style="font-size: 10px;">引导</a> <a href="/tags/引用/" style="font-size: 10px;">引用</a> <a href="/tags/录屏/" style="font-size: 10px;">录屏</a> <a href="/tags/快捷键/" style="font-size: 10px;">快捷键</a> <a href="/tags/持久化/" style="font-size: 10px;">持久化</a> <a href="/tags/按钮/" style="font-size: 10px;">按钮</a> <a href="/tags/提示/" style="font-size: 10.83px;">提示</a> <a href="/tags/插件/" style="font-size: 11.67px;">插件</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/数学，宏/" style="font-size: 10px;">数学，宏</a> <a href="/tags/数据库/" style="font-size: 11.67px;">数据库</a> <a href="/tags/数据绑定/" style="font-size: 10.83px;">数据绑定</a> <a href="/tags/文本大小/" style="font-size: 10px;">文本大小</a> <a href="/tags/杂文/" style="font-size: 10.83px;">杂文</a> <a href="/tags/权限/" style="font-size: 10px;">权限</a> <a href="/tags/样式/" style="font-size: 10px;">样式</a> <a href="/tags/模块/" style="font-size: 10.83px;">模块</a> <a href="/tags/模拟/" style="font-size: 10px;">模拟</a> <a href="/tags/模糊/" style="font-size: 10.83px;">模糊</a> <a href="/tags/毛玻璃/" style="font-size: 10px;">毛玻璃</a> <a href="/tags/波纹/" style="font-size: 10px;">波纹</a> <a href="/tags/注入/" style="font-size: 10.83px;">注入</a> <a href="/tags/注解/" style="font-size: 10px;">注解</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/混淆/" style="font-size: 10px;">混淆</a> <a href="/tags/热启动/" style="font-size: 10px;">热启动</a> <a href="/tags/爬虫/" style="font-size: 10.83px;">爬虫</a> <a href="/tags/物理引擎/" style="font-size: 10px;">物理引擎</a> <a href="/tags/环信/" style="font-size: 10.83px;">环信</a> <a href="/tags/生命周期/" style="font-size: 11.67px;">生命周期</a> <a href="/tags/用时/" style="font-size: 10px;">用时</a> <a href="/tags/界面/" style="font-size: 10px;">界面</a> <a href="/tags/硬盘缓存/" style="font-size: 10px;">硬盘缓存</a> <a href="/tags/第一个项目/" style="font-size: 10px;">第一个项目</a> <a href="/tags/精灵/" style="font-size: 10px;">精灵</a> <a href="/tags/精灵帧/" style="font-size: 10px;">精灵帧</a> <a href="/tags/约束/" style="font-size: 10px;">约束</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/绘制/" style="font-size: 10px;">绘制</a> <a href="/tags/继承/" style="font-size: 10px;">继承</a> <a href="/tags/缓存/" style="font-size: 10px;">缓存</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a> <a href="/tags/网络请求/" style="font-size: 10.83px;">网络请求</a> <a href="/tags/翻墙/" style="font-size: 10.83px;">翻墙</a> <a href="/tags/自动布局/" style="font-size: 10px;">自动布局</a> <a href="/tags/自定义/" style="font-size: 10.83px;">自定义</a> <a href="/tags/自定义控件/" style="font-size: 10px;">自定义控件</a> <a href="/tags/自适应/" style="font-size: 10px;">自适应</a> <a href="/tags/虚拟键/" style="font-size: 10px;">虚拟键</a> <a href="/tags/角标/" style="font-size: 10px;">角标</a> <a href="/tags/设计/" style="font-size: 10px;">设计</a> <a href="/tags/设计缺陷/" style="font-size: 10px;">设计缺陷</a> <a href="/tags/访问/" style="font-size: 10px;">访问</a> <a href="/tags/调试/" style="font-size: 10.83px;">调试</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/资源文件/" style="font-size: 10px;">资源文件</a> <a href="/tags/路由/" style="font-size: 10px;">路由</a> <a href="/tags/转义/" style="font-size: 10px;">转义</a> <a href="/tags/轻量级/" style="font-size: 10px;">轻量级</a> <a href="/tags/连接/" style="font-size: 10px;">连接</a> <a href="/tags/适配/" style="font-size: 10.83px;">适配</a> <a href="/tags/遍历/" style="font-size: 10px;">遍历</a> <a href="/tags/配置/" style="font-size: 10px;">配置</a> <a href="/tags/镜像/" style="font-size: 10px;">镜像</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/随机/" style="font-size: 10px;">随机</a> <a href="/tags/隐藏/" style="font-size: 10px;">隐藏</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a> <a href="/tags/颜色/" style="font-size: 10.83px;">颜色</a> <a href="/tags/颜色选择器/" style="font-size: 10px;">颜色选择器</a> <a href="/tags/魅族/" style="font-size: 10px;">魅族</a> <a href="/tags/！/" style="font-size: 10px;">！</a> <a href="/tags/？/" style="font-size: 10px;">？</a>
     </div>
   </div>
 
@@ -839,7 +879,7 @@
   
   <div class="archiveslist">
     <p class="asidetitle"><a href="/archives">归档</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">二月 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">九月 2014</a><span class="archive-list-count">36</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">八月 2014</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">七月 2014</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">五月 2014</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">四月 2014</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">三月 2014</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">二月 2014</a><span class="archive-list-count">24</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">二月 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">九月 2014</a><span class="archive-list-count">36</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">八月 2014</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">七月 2014</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">五月 2014</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">四月 2014</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">三月 2014</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">二月 2014</a><span class="archive-list-count">24</span></li></ul>
   </div>
 
 
