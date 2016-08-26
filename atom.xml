@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://seniorzhai.github.io/"/>
-  <updated>2016-08-25T11:13:57.000Z</updated>
+  <updated>2016-08-26T05:43:11.000Z</updated>
   <id>http://seniorzhai.github.io/</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>API可用性检测</title>
+    <link href="http://seniorzhai.github.io/2016/08/26/API%E5%8F%AF%E7%94%A8%E6%80%A7%E6%A3%80%E6%B5%8B/"/>
+    <id>http://seniorzhai.github.io/2016/08/26/API可用性检测/</id>
+    <published>2016-08-26T05:37:00.000Z</published>
+    <updated>2016-08-26T05:43:11.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Swift有检查API可用性的内置支持，确保我们在使用时不会不小心使用当前不可用的API&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;figure class=&quot;highlight swift&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; #available(platform name version, ..., *) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  statements&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  statements&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;可用性条件获取了一系列平台的名字和版本，平台名可以是&lt;code&gt;iOS&lt;/code&gt;、&lt;code&gt;OSX&lt;/code&gt;、&lt;code&gt;watchOS&lt;/code&gt;，版本号可以是主版本号或者小版本，比如&lt;br&gt;&lt;figure class=&quot;highlight swift&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;#available(iOS &lt;span class=&quot;number&quot;&gt;9&lt;/span&gt;, &lt;span class=&quot;type&quot;&gt;OSX10&lt;/span&gt;.&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;, *)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;最后一个参数&lt;code&gt;*&lt;/code&gt;是必须写的，用于处理未来潜在的平台&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Swift有检查API可用性的内置支持，确保我们在使用时不会不小心使用当前不可用的API&lt;br&gt;
+    
+    </summary>
+    
+      <category term="iOS" scheme="http://seniorzhai.github.io/categories/iOS/"/>
+    
+    
+      <category term="Swift" scheme="http://seniorzhai.github.io/tags/Swift/"/>
+    
+  </entry>
   
   <entry>
     <title>guard和defer</title>
@@ -750,77 +775,6 @@
       <category term="路由" scheme="http://seniorzhai.github.io/tags/%E8%B7%AF%E7%94%B1/"/>
     
       <category term="切换" scheme="http://seniorzhai.github.io/tags/%E5%88%87%E6%8D%A2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>AsyncStorage的使用</title>
-    <link href="http://seniorzhai.github.io/2016/01/17/AsyncStorage%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-    <id>http://seniorzhai.github.io/2016/01/17/AsyncStorage的使用/</id>
-    <published>2016-01-17T13:50:50.000Z</published>
-    <updated>2016-01-21T08:03:21.000Z</updated>
-    
-    <content type="html">&lt;p&gt;AsyncStorage是一个Key-Value存储系统，对于App是全局的。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;static getItem(key:string,callback?:?(error:?error,result:?string) =&amp;gt; void)&lt;ul&gt;
-&lt;li&gt;读取key字段，将结果作为参数，传递给callback&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;static setItem(key:string,value:string,callback?:?(error:?Error)=&amp;gt;void)&lt;ul&gt;
-&lt;li&gt;将key字段的值设置为value,结果调用callback&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;static removeItem(key:string,callback?:?(error:?Error)=&amp;gt;void)&lt;ul&gt;
-&lt;li&gt;删除一个字段&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;static mergeItem(key:string,value:string,callback?:?(error:?Error)=&amp;gt;)&lt;ul&gt;
-&lt;li&gt;假设已有的值和新的值都是字符串的JSON，将两个值合并&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;static clear(callback?:?(error:?Error)=&amp;gt;void)&lt;ul&gt;
-&lt;li&gt;删除所有数据&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;static getAllKeys(callback?:?(error:?Error,keys:?Array&lt;string&gt;)=&amp;gt;void)&lt;ul&gt;
-&lt;li&gt;获取所有key&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/string&gt;&lt;/li&gt;
-&lt;li&gt;static flushGetRequests()&lt;ul&gt;
-&lt;li&gt;清除所有进行中的查询操作&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;static multiGet(keys:Array&lt;string&gt;,callback?:?(errors: ?Array&lt;error&gt;, result: ?Array&lt;array&lt;string&gt;&amp;gt;) =&amp;gt; void)&lt;ul&gt;
-&lt;li&gt;获取keys所包含的所有字段的值，返回key-value数组&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/array&lt;string&gt;&lt;/error&gt;&lt;/string&gt;&lt;/li&gt;
-&lt;li&gt;static multiSet(keysValuePairs:Array&lt;array&lt;string&gt;&amp;gt;,callback?:?(errors:?Array&lt;error&gt;)=&amp;gt;void)&lt;ul&gt;
-&lt;li&gt;设置keys-values，multiSet([[‘k1’:’val1’],[‘k2’:’val2’]],cb)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/error&gt;&lt;/array&lt;string&gt;&lt;/li&gt;
-&lt;li&gt;static multiRemove(keys:Array&lt;string&gt;,callback?:?(error:?Array&lt;error&gt;)=&amp;gt;void)&lt;ul&gt;
-&lt;li&gt;删除所有keys的数据&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/error&gt;&lt;/string&gt;&lt;/li&gt;
-&lt;li&gt;static multiMerge(keyValuePairs: Array&lt;array&lt;string&gt;&amp;gt;, callback?: ?(errors: ?Array&lt;error&gt;) =&amp;gt; void)&lt;ul&gt;
-&lt;li&gt;将多个输入的值和已有的值合并，要求都是字符串化的JSON&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/error&gt;&lt;/array&lt;string&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;AsyncStorage是一个Key-Value存储系统，对于App是全局的。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="ReactNative" scheme="http://seniorzhai.github.io/categories/ReactNative/"/>
-    
-    
-      <category term="缓存" scheme="http://seniorzhai.github.io/tags/%E7%BC%93%E5%AD%98/"/>
-    
-      <category term="持久化" scheme="http://seniorzhai.github.io/tags/%E6%8C%81%E4%B9%85%E5%8C%96/"/>
     
   </entry>
   
