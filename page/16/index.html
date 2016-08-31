@@ -1,17 +1,16 @@
-
- <!DOCTYPE HTML>
-<html lang="zh-CN">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   
-    <title>Zoe&#39;s blog</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
-    
-    <meta name="author" content="Zoe">
-    
-
-    
-    <meta name="description" content="专注于移动平台">
+  <title>Zoe&#39;s blog | Dear宅学长的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="theme-color" content="#3F51B5">
+  
+  
+  <meta name="keywords" content="undefined">
+  <meta name="description" content="专注于移动平台">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Zoe's blog">
 <meta property="og:url" content="http://seniorzhai.github.io/page/16/index.html">
@@ -20,1101 +19,696 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Zoe's blog">
 <meta name="twitter:description" content="专注于移动平台">
-
-    
+  
     <link rel="alternative" href="/atom.xml" title="Zoe&#39;s blog" type="application/atom+xml">
-    
-    
-    <link rel="icon" href="/img/favicon.ico">
-    
-    
-    <link rel="apple-touch-icon" href="/img/logo.png">
-    <link rel="apple-touch-icon-precomposed" href="/img/logo.png">
-    
-    <link rel="stylesheet" href="/css/style.css">
+  
+  <meta name="summary" content="专注于移动平台">
+  <link rel="shortcut icon" href="/img/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
-  <body>
-    <header>
-      
-<div>
-		
-			<div id="imglogo">
-				<a href="/"><img src="/img/logo.png" alt="Zoe&#39;s blog" title="Zoe&#39;s blog"/></a>
-			</div>
-			
-			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Zoe&#39;s blog">Zoe&#39;s blog</a></h1>
-				<h2 class="blog-motto">宅学长的博客</h2>
-			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
-			</a></div>
-			<nav class="animated">
-				<ul>
-					<ul>
-					 
-						<li><a href="/">首页</a></li>
-					
-						<li><a href="/archives">归档</a></li>
-					
-						<li><a href="/about">关于</a></li>
-					
-					<li>
- 					
-					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
-						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
-						<input type="hidden" name="q" value="site:seniorzhai.github.io">
-					</form>
-					
-					</li>
-				</ul>
-			</nav>			
-</div>
-    </header>
-    <div id="container">
-      <div id="main">
+<body>
+  <div id="loading" class="active"></div>
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2014/12/04/Python标识符、保留字符/" title="Python标识符、保留字符" itemprop="url">Python标识符、保留字符</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
-		
-  <p class="article-time">
-    <time datetime="2014-12-04T12:44:40.000Z" itemprop="datePublished"> 发表于 2014-12-04</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <a id="more"></a>
-<p>##标识符<br>在Python中标识符由字母、数字、下划线组成，但不能以数字开头<br>标识符区分大小写<br>以下划线开头的标识符是有特殊意义的，以单下划线开头(<code>_foo</code>)表示不能直接访问的类属性，需要通过类提供的借口进行访问<br>以双下划线开头的(<code>__foo</code>)代表类的私有成员，以双下划线开头和结尾的(<code>__foo__</code>)表示Python里特殊方法，如<code>__init__()</code>表示类的构造函数</p>
-<p>##保留字符<br>|||||<br>|:–|:–|:–|<br>|and|exec|not|<br>|assert|finally|or|<br>|break|for|pass|<br>|class|from|print|<br>|continue|global|raise|<br>|def|if|return|<br>|del|import|try|<br>|elif|in|while|<br>|else|is|with|<br>|except|lambda|yield|<br>|and|exec|not|<br>|assert|finally|or|<br>|break|for|pass|<br>|class|from|print|<br>|continue|global|raise|<br>|def|if|return|<br>|del|import|try|<br>|elif|in|while|<br>|else|is|with|<br>|except|lambda|yield|</p>
-<p>##变量类型</p>
-<ul>
-<li>Numbers(数字)<ul>
-<li>int(有符号整形)</li>
-<li>long(长整型)</li>
-<li>float(浮点数)</li>
-<li>comples(复数) a+bj或者comples(a,b)表示</li>
-</ul>
-</li>
-<li>String(字符串)</li>
-<li>List(列表)</li>
-<li>Tuple(元组)</li>
-<li>Dictionary(字典)</li>
-</ul>
-<p>###类型转换<br>|函数|描述|<br>|:–|:–|<br>|int(x[,base])|将x转换为一个整数|<br>|long(x[,base])|将x装换成一个长整型|<br>|float(x)|将x转换到一个浮点数|<br>|complex(real [,imag])|创建一个复数|<br>|str(x)|将对象 x 转换为字符串|<br>|repr(x)|将对象 x 转换为表达式字符串|<br>|eval(str)|用来计算在字符串中的有效Python表达式,并返回一个对象|<br>|tuple(s)|将序列 s 转换为一个元组|<br>|list(s)|将序列 s 转换为一个列表|<br>|set(s)|转换为可变集合|<br>|dict(d)|创建一个字典。d 必须是一个序列 (key,value)元组|<br>|frozenset(s)|转换为不可变集合|<br>|chr(x)|将一个整数转换为一个字符|<br>|unichr(x)|将一个整数转换为Unicode字符|<br>|ord(x)|将一个字符转换为它的整数值|<br>|hex(x)|将一个整数转换为一个十六进制字符串|<br>|oct(x)|将一个整数转换为一个八进制字符串|</p>
-<p>##算术运算符<br>|运算符|描述|<br>|:–|:–|<br>|+|加|<br>|-|减|<br>|<em>|乘|<br>|/|除|<br>|%|取模|<br>|*</em>|幂|<br>|//|取整除|</p>
-<p>##比较运算符<br>|运算符|描述|<br>|:–|:–|<br>|==|等于|<br>|!=|不等于|<br>|&lt;&gt;|不等于|<br>|&gt;|大于|<br>|&lt;|小于|<br>|&gt;=|大于等于|<br>|&lt;=|小于等于|</p>
-<p>##成员运算符<br>|运算符|描述|<br>|:–|:–|<br>|in|是否在指定序列中|<br>|not in|是否不再指定序列中|</p>
-<p>##身份运算符<br>|运算符|描述|<br>|:–|:–|<br>|is|判断两个变量是不是引用自一个对象|<br>|is not|判断两个变量是不是引用不同的对象|</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
+  <nav id="menu"  >
+   <div class="inner flex-row-vertical">
+  <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+      <i class="icon icon-lg icon-close"></i>
+  </a>
+  <div class="brand-wrap">
+    <div class="brand">
+      <a href="/" class="avatar"><img src="/img/logo.jpg"></a>
+      <hgroup class="introduce">
+        <h5 class="nickname">Dear宅学长</h5>
+        <a href="mailto:370985116@qq.com" title="370985116@qq.com" class="mail">370985116@qq.com</a>
+      </hgroup>
     </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Python/">Python</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/基础/">基础</a>
   </div>
+  <ul class="nav flex-col">
+    
+        <li class="waves-block waves-effect">
+          <a href="/"  >
+            <i class="icon icon-lg icon-home"></i>
+            Home
+          </a>
+        </li>
+    
+        <li class="waves-block waves-effect">
+          <a href="/archives"  >
+            <i class="icon icon-lg icon-archives"></i>
+            Archives
+          </a>
+        </li>
+    
+        <li class="waves-block waves-effect">
+          <a href="/tags"  >
+            <i class="icon icon-lg icon-tags"></i>
+            Tags
+          </a>
+        </li>
+    
+        <li class="waves-block waves-effect">
+          <a href="https://github.com/seniorzhai" target="_blank" >
+            <i class="icon icon-lg icon-github"></i>
+            Github
+          </a>
+        </li>
+    
+        <li class="waves-block waves-effect">
+          <a href="http://weibo.com/seniorszhai/home" target="_blank" >
+            <i class="icon icon-lg icon-weibo"></i>
+            Weibo
+          </a>
+        </li>
+    
+        <li class="waves-block waves-effect">
+          <a href="/about"  >
+            <i class="icon icon-lg icon-link"></i>
+            About
+          </a>
+        </li>
+    
+  </ul>
 
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2014/12/04/Python标识符、保留字符/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/12/04/Python标识符、保留字符/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
+  <footer class="footer">
+  <p><a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0;vertical-align:middle;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAPCAMAAABEF7i9AAAAllBMVEUAAAD///+rsapERER3d3eIiIjMzMzu7u4iIiKUmZO6v7rKzsoODg4RERFVVVUNDQ0NDg0PEA8zMzNLTEtbXltmZmZydnF9gn2AgICPkI+ZmZmqqqq7u7vFxsXIzMgNDQwZGRkgICAhISEkJSMnKCcuMC4xMzE5Ozk7PTtBQkFCQkJDQ0Nna2eGhoaHh4ezuLLGysbd3d1wVGpAAAAA4UlEQVR42q2T1xqCMAyFk7QsBQeKA9x7j/d/OSm22CpX0nzcpA1/T05aAOuBVkMAScQFHLnEwoCo2f1TnQIGoVMewjZEjVFN4GH1Ue1Cn2jWqwfsOOj6wDwGvotsl/c8lv7KIq1eLOsT0HMFHMIE/RZyHnlphryT9zyV+8WH5e8yQw3wnQvgAFxPTKUVi555SHR/lOfLMgVTeDlSfN+TaoUsiTyeIm+bCkHvCA2FUKG48LDtYBZBknsYP/G8NTw0gaaHyuQf4H5pecrB/FYCT2sL9zAfy1Xyjou6L8X2W7YcLyBZCRtnq/zfAAAAAElFTkSuQmCC" /></a></p>
+  <p>Zoe&#39;s blog &copy; 2016</p>
+  <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
+  <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
+  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
 </footer>
 
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2014/11/27/android-async-http/" title="android-async-http" itemprop="url">android-async-http</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
-		
-  <p class="article-time">
-    <time datetime="2014-11-27T02:36:00.000Z" itemprop="datePublished"> 发表于 2014-11-27</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p><a href="https://github.com/loopj/android-async-http">android-async-http</a><br>封装了 http 请求，直接支持 json，gzip 压缩，相当省事<br>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2014/11/27/android-async-http/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Android/">Android</a>
 </div>
 
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/异步/">异步</a><a href="/tags/async/">async</a><a href="/tags/网络请求/">网络请求</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2014/11/27/android-async-http/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/11/27/android-async-http/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2014/11/26/RecyclerView/" title="RecyvlerView" itemprop="url">RecyvlerView</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
-		
-  <p class="article-time">
-    <time datetime="2014-11-26T13:41:12.000Z" itemprop="datePublished"> 发表于 2014-11-26</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>RecyclerView是android-support-v7-21中新增的一个Widgets，是ListView的升级版，更加先进和灵活。<br>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2014/11/26/RecyclerView/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Android/">Android</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Meterial-Design/">Meterial Design</a><a href="/tags/RecyclerView/">RecyclerView</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2014/11/26/RecyclerView/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/11/26/RecyclerView/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2014/11/24/Paint类/" title="Paint类" itemprop="url">Paint类</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
-		
-  <p class="article-time">
-    <time datetime="2014-11-24T09:33:01.000Z" itemprop="datePublished"> 发表于 2014-11-24</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>Paint即画笔，在绘图过程中起到了极其重要的作用，画笔主要保存了颜色，样式等绘制信息，指定了如何绘制文本和图形，画笔对象有很多设置方法，大体上可以分为两类，一类与图形绘制相关，一类与文本绘制相关。<br>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2014/11/24/Paint类/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Android/">Android</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Paint/">Paint</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2014/11/24/Paint类/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/11/24/Paint类/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2014/11/24/十大Material-Design项目/" title="十大Material Design项目" itemprop="url">十大Material Design项目</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
-		
-  <p class="article-time">
-    <time datetime="2014-11-24T03:05:41.000Z" itemprop="datePublished"> 发表于 2014-11-24</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <a id="more"></a>
-<ol>
-<li><a href="https://github.com/navasmdc/MaterialDesignLibrary" target="_blank" rel="external">MaterialDesignLibrary</a><br>MaterialDesignLibrary可以说是颇受开发者瞩目的一个控件效果库，能够让开发者在Android 2.2系统上使用Android 5.0才支持的控件效果，比如扁平、矩形、浮动按钮，复选框以及各式各样的进度指示器等。<br>MaterialDesignLibrary还拥有SnackBar、Dialog、Color selector组件，可非常便捷地对应用界面进行设置。<br><img src="https://github.com/navasmdc/MaterialDesignLibrary/raw/master/images/logo.png" alt=""><br>进度指示器样式效果设置：<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">com.gc.materialdesign.views.ProgressBarCircularIndetermininate</span>    </span></div><div class="line">                <span class="attr">android:id</span>=<span class="string">"@+id/progressBarCircularIndetermininate"</span>    </div><div class="line">                <span class="attr">android:layout_width</span>=<span class="string">"32dp"</span>    </div><div class="line">                <span class="attr">android:layout_height</span>=<span class="string">"32dp"</span>    </div><div class="line">                <span class="attr">android:background</span>=<span class="string">"#1E88E5"</span> /&gt;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>Dialog<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Dialog dialog = <span class="keyword">new</span> Dialog(Context context,String title, String message);  </div><div class="line">dialog.show();</div></pre></td></tr></table></figure></p>
-<ol>
-<li><p><a href="https://github.com/traex/RippleEffect" target="_blank" rel="external">RippleEffect</a><br>来自法兰西的Robin Chutaux开发的RippleEffect基于MIT许可协议开源，能够在Android API 9+上实现Material Design，为开发者提供了一种极为简易的方式来创建带有可扩展视图的header视图，并且允许最大程度上的自定制。<br><img src="https://github.com/traex/RippleEffect/raw/master/demo.gif" alt=""><br>用法（在XML文件中声明一个RippleView）：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">com.andexert.library.RippleView</span>  </span></div><div class="line">  <span class="attr">android:id</span>=<span class="string">"@+id/more"</span>  </div><div class="line">  <span class="attr">android:layout_width</span>=<span class="string">"?android:actionBarSize"</span>  </div><div class="line">  <span class="attr">android:layout_height</span>=<span class="string">"?android:actionBarSize"</span>  </div><div class="line">  <span class="attr">android:layout_toLeftOf</span>=<span class="string">"@+id/more2"</span>  </div><div class="line">  <span class="attr">android:layout_margin</span>=<span class="string">"5dp"</span>  </div><div class="line">  <span class="attr">ripple:rv_centered</span>=<span class="string">"true"</span>&gt;  </div><div class="line">  </div><div class="line">  <span class="tag">&lt;<span class="name">ImageView</span>  </span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"?android:actionBarSize"</span>  </div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"?android:actionBarSize"</span>  </div><div class="line">    <span class="attr">android:src</span>=<span class="string">"@android:drawable/ic_menu_edit"</span>  </div><div class="line">    <span class="attr">android:layout_centerInParent</span>=<span class="string">"true"</span>  </div><div class="line">    <span class="attr">android:padding</span>=<span class="string">"10dp"</span>  </div><div class="line">    <span class="attr">android:background</span>=<span class="string">"@android:color/holo_blue_dark"</span>/&gt;  </div><div class="line">  </div><div class="line"><span class="tag">&lt;/<span class="name">com.andexert.library.RippleView</span>&gt;</span></div></pre></td></tr></table></figure>
-</li>
-<li><p><a href="https://github.com/rengwuxian/MaterialEditText" target="_blank" rel="external">MaterialEditText</a><br>AppCompat v21也为开发者提供了Material Design的控件外观支持，其中就包括EditText，但却并不好用，没有设置颜色的API，也没有任何Google Material Design Spec中提到的特性。于是，来自国内的开发者“扔物线”开发了MaterialEditText库，直接继承EditText，无需修改Java文件即能实现自定义控件颜色。<br><img src="https://github.com/rengwuxian/MaterialEditText/raw/master/images/material_edittext.png" alt=""><br>自定义Base Color：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">app:baseColor="#0056d3"</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>自定义Error Color：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">app:maxCharacters="10"  </div><div class="line">app:errorColor="#ddaa00"</div></pre></td></tr></table></figure></p>
-<ol>
-<li><a href="https://github.com/mikepenz/Android-LollipopShowcase" target="_blank" rel="external">Android-LollipopShowcase</a><br>Android-LollipopShowcase是由来自奥地利的移动、后端及Web开发者Mike Penz所开发的演示应用，集中演示了新Material Design中所有的UI效果，以及Android Lollipop中其他非常酷炫的特性元素，比如Toolbar、RecyclerView、ActionBarDrawerToggle、Floating Action Button（FAB）、Android Compat Theme等。<br><img src="https://raw.githubusercontent.com/mikepenz/Android-LollipopShowcase/master/DEV/screenshots/screenshot_1_small.jpg" alt=""></li>
-<li><p><a href="https://github.com/dexafree/MaterialList" target="_blank" rel="external">MaterialList</a><br>MaterialList是一个能够帮助所有Android开发者获取谷歌UI设计规范中新增的CardView（卡片视图）的开源库，支持Android 2.3+系统。作为ListView的扩展，MaterialList可以接收、存储卡片列表，并根据它们的Android风格和设计模式进行展示。此外，开发者还可以创建专属于自己的卡片布局，并轻松将其添加到CardList中。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>  </span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span>  </div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span>  </div><div class="line">    <span class="attr">android:paddingLeft</span>=<span class="string">"@dimen/activity_horizontal_margin"</span>  </div><div class="line">    <span class="attr">android:paddingRight</span>=<span class="string">"@dimen/activity_horizontal_margin"</span>  </div><div class="line">    <span class="attr">android:paddingTop</span>=<span class="string">"@dimen/activity_vertical_margin"</span>  </div><div class="line">    <span class="attr">android:paddingBottom</span>=<span class="string">"@dimen/activity_vertical_margin"</span>&gt;  </div><div class="line">  </div><div class="line">    <span class="tag">&lt;<span class="name">com.dexafree.materiallistviewexample.view.MaterialListView</span>  </span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"fill_parent"</span>  </div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"fill_parent"</span>  </div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/material_listview"</span>/&gt;  </div><div class="line">  </div><div class="line"><span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></div></pre></td></tr></table></figure>
-</li>
-<li><p><a href="https://github.com/futuresimple/android-floating-action-button" target="_blank" rel="external">android-floating-action-button</a><br>Floating Action Button（FAB）是众多专家大牛针对Material Design讨论比较细化的一个点，通过圆形元素与分割线、卡片、各种Bar的直线形成鲜明对比，并使用色彩设定中鲜艳的辅色，带来更具突破性的视觉效果。也正因如此，在Github上，有着许多与FAB相关的开源项目，基于Material Design规范的开源Android浮动Action Button控件android-floating-action-button便是其中之一。<br><img src="https://github.com/futuresimple/android-floating-action-button/raw/master/screenshots/menu.gif" alt=""><br>其主要特性如下：</p>
-</li>
-</ol>
-<ul>
-<li>支持常规56dp和最小40dp的按钮；</li>
-<li>支持自定义正常、Press状态以及可拖拽图标的按钮背景颜色；</li>
-<li>AddFloatingActionButton类能够让开发者非常方便地直接在代码中写入加号图标；</li>
-<li>FloatingActionsMenu类支持展开/折叠显示动作。</li>
-</ul>
-<ol>
-<li><a href="https://github.com/markushi/android-ui" target="_blank" rel="external">android-ui</a><br>android-ui是Android UI组件类库，支持Android API 14+，包含了ActionView、RevealColorView等UI组件。其中，ActionView可使Action动作显示动画效果，而RevealColorView则带来了Android 5.0中的圆形显示/隐藏动画体验。<br><img src="https://raw.githubusercontent.com/markushi/android-ui/master/example-action.gif" alt=""></li>
-<li><p><a href="https://github.com/balysv/material-menu" target="_blank" rel="external">Material Menu</a><br>Material Menu为开发者带来了非常酷炫的Android菜单、返回、删除以及检查按钮变形，完全控制动画，并为开发者提供了两种MaterialMenuDrawable包装。<br><img src="https://camo.githubusercontent.com/642bd91749dce58abfba00fe1cefdf2cf4213fd3/68747470733a2f2f7261772e6769746875622e636f6d2f62616c7973762f6d6174657269616c2d6d656e752f6d61737465722f6172742f64656d6f2e676966" alt=""><br>自定义颜色等操作：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// change color  </span></div><div class="line">MaterialMenu.setColor(<span class="keyword">int</span> color)  </div><div class="line">  </div><div class="line"><span class="comment">// change transformation animation duration  </span></div><div class="line">MaterialMenu.setTransformationDuration(<span class="keyword">int</span> duration)  </div><div class="line">  </div><div class="line"><span class="comment">// change pressed animation duration  </span></div><div class="line">MaterialMenu.setPressedDuration(<span class="keyword">int</span> duration)  </div><div class="line">  </div><div class="line"><span class="comment">// change transformation interpolator  </span></div><div class="line">MaterialMenu.setInterpolator(Interpolator interpolator)  </div><div class="line">  </div><div class="line"><span class="comment">// set RTL layout support  </span></div><div class="line">MaterialMenu.setRTLEnabled(<span class="keyword">boolean</span> enabled)</div></pre></td></tr></table></figure>
-</li>
-<li><p><a href="https://github.com/ksoichiro/Android-ObservableScrollView" target="_blank" rel="external">Android-ObservableScrollView</a><br>Android-ObservableScrollView是一款用于在滚动视图中观测滚动事件的Android库。它能够轻而易举地与Android 5.0 Lollipop引进的工具栏（Toolbar）进行交互，还可以帮助开发者实现拥有Material Design应用视觉体验的界面外观，支持ListView、ScrollView、WebView、RecyclerView、GridView组件。<br><img src="https://github.com/ksoichiro/Android-ObservableScrollView/raw/master/observablescrollview-samples/demo12.gif" alt=""><br>交互代码回调：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span>  </div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onUpOrCancelMotionEvent</span><span class="params">(ScrollState scrollState)</span> </span>&#123;  </div><div class="line">    ActionBar ab = getSupportActionBar();  </div><div class="line">	<span class="keyword">if</span> (scrollState == ScrollState.UP) &#123;  </div><div class="line">        <span class="keyword">if</span> (ab.isShowing()) &#123;  </div><div class="line">            ab.hide();  </div><div class="line">        &#125;  </div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (scrollState == ScrollState.DOWN) &#123;    </div><div class="line">        <span class="keyword">if</span> (!ab.isShowing()) &#123;  </div><div class="line">                ab.show();  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p><a href="https://github.com/google/material-design-icons" target="_blank" rel="external">Material Design Icons</a><br>最后，再来介绍一下Google Material Design规范的官方开源图标集Material Design Icons。良心Google开源了包括Material Design系统图标包在内的750个字形，涵盖动作、音视频、通信、内容、编辑器、文件、硬件、图像、地图、导航、通知、社交等各个方面，适用于Web、Android和iOS应用开发，绝对是开发者及设计师必备的资源。<br>图标格式主要包括： </p>
-</li>
-</ol>
-<ul>
-<li>SVG格式，24px和48px；</li>
-<li>SVG和CSS Sprites；</li>
-<li>适用于Web平台的1x、2x PNG格式图标；</li>
-<li>适用于iOS的1x、2x、3x PNG图标；</li>
-<li>所有图标的Hi-dpi版本（hdpi、mdpi、xhdpi、xxhdpi、xxxhdpi）。</li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Android/">Android</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Material-Design/">Material Design</a><a href="/tags/Android-5-0/">Android 5.0</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2014/11/24/十大Material-Design项目/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/11/24/十大Material-Design项目/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2014/11/20/ListView嵌套GridView/" title="ListView嵌套GridView" itemprop="url">ListView嵌套GridView</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
-		
-  <p class="article-time">
-    <time datetime="2014-11-20T13:20:25.000Z" itemprop="datePublished"> 发表于 2014-11-20</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>ListView和GridView都是可滑动控件，需要自定义GridView重写其onMeadure()<br>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2014/11/20/ListView嵌套GridView/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Android/">Android</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/layout/">layout</a><a href="/tags/GridView/">GridView</a><a href="/tags/ListView/">ListView</a><a href="/tags/嵌套/">嵌套</a><a href="/tags/measure/">measure</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2014/11/20/ListView嵌套GridView/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/11/20/ListView嵌套GridView/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2014/11/20/GridLayout/" title="GridLayout" itemprop="url">GridLayout</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
-		
-  <p class="article-time">
-    <time datetime="2014-11-20T10:14:48.000Z" itemprop="datePublished"> 发表于 2014-11-20</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <a id="more"></a>
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Android/">Android</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/GridLayout/">GridLayout</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2014/11/20/GridLayout/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/11/20/GridLayout/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2014/11/20/StickyListHeadersListView/" title="StickyListHeadersListView" itemprop="url">StickyListHeadersListView</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
-		
-  <p class="article-time">
-    <time datetime="2014-11-20T05:43:07.000Z" itemprop="datePublished"> 发表于 2014-11-20</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p><a href="https://github.com/emilsjolander/StickyListHeaders">StickyListHeaders</a>是一个带标题的ListView的带三方库<br>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2014/11/20/StickyListHeadersListView/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Android/">Android</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/HeadersList/">HeadersList</a><a href="/tags/带标题的ListView/">带标题的ListView</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2014/11/20/StickyListHeadersListView/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/11/20/StickyListHeadersListView/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2014/11/19/sp与px的换算/" title="sp与px的换算" itemprop="url">sp与px的换算</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
-		
-  <p class="article-time">
-    <time datetime="2014-11-19T05:07:53.000Z" itemprop="datePublished"> 发表于 2014-11-19</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>sp:Scale-independent pixels，Android的字体单位，以160PPI的屏幕为标准，默认设置字体大小为100%时，1sp=1px<br>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2014/11/19/sp与px的换算/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Android/">Android</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/文本大小/">文本大小</a><a href="/tags/sp/">sp</a><a href="/tags/px/">px</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2014/11/19/sp与px的换算/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/11/19/sp与px的换算/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2014/11/19/WebSpider/" title="WebSpider" itemprop="url">WebSpider</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
-		
-  <p class="article-time">
-    <time datetime="2014-11-19T01:56:54.000Z" itemprop="datePublished"> 发表于 2014-11-19</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <a id="more"></a>
-<p>##URI和URL</p>
-<p>###URI(Universal Resource Identifier)是通用资源标志符<br>通常由三部分组成：</p>
-<ol>
-<li>访问资源的命名机制</li>
-<li>存放资源的主机名</li>
-<li>资源自身的名称<br><code>http://www.baidu.com/img/bdlogo.png</code>可以解释为</li>
-<li>一个可以通过HTTP协议访问的资源</li>
-<li>位于主机<code>www.baidu.com</code>上</li>
-<li>通过<code>/img/bdlogo.png</code>访问</li>
-</ol>
-<p>###URL<br>URL是URI的一个子集，是Uniform Resource Locator的缩写，译为<strong>统一资源定位符</strong>，简而言之URL是Internet上描述信息资源的字符串。<br>URL的一般格式为(带方括号[]为可选项)<br><code>protocol://hostname[:port]/path/[parameters][?query]#fragment</code></p>
-<ol>
-<li>第一部分是协议</li>
-<li>第二部分为存有资源的主机IP也可能包括端口号</li>
-<li>第三部分是主机资源的具体地址，如目录和文件名等</li>
-</ol>
-<p>###区别<br>URI属于URL更低级层次的抽象，一种字符串文本标准<br>URI表示请求服务器的路径定义一个资源，而URL同时说明要如何访问这个资源</p>
-<p>##抓取网页内容<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib2</div><div class="line">response = urllib2.urlopen(<span class="string">'http://www.baidu.com'</span>)</div><div class="line">html = response.read()</div><div class="line"><span class="keyword">print</span> html</div></pre></td></tr></table></figure></p>
-<p>使用请求<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib2</div><div class="line">req = urllib2.Request(<span class="string">'http://www.baidu.com'</span>)</div><div class="line">response = urllib2.urlopen(req)</div><div class="line">the_page = respense.read()</div><div class="line"><span class="keyword">print</span> the_page</div></pre></td></tr></table></figure></p>
-<p>Post请求<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib</div><div class="line"><span class="keyword">import</span> urllib2</div><div class="line"></div><div class="line">url = <span class="string">'http://www.someserver.com/register.cgi'</span></div><div class="line"></div><div class="line">values = &#123;<span class="string">'name'</span>:<span class="string">'WHY'</span>,</div><div class="line">			<span class="string">'location'</span>:<span class="string">'SDU'</span>,</div><div class="line">			<span class="string">'language'</span>,<span class="string">'Python'</span>&#125;</div><div class="line"></div><div class="line">data = urllib.urlencode(values)</div><div class="line">req = urllib2.Request(url,data)</div><div class="line">response = urllib2.urlopen(req)</div><div class="line">the_page = response.read()</div></pre></td></tr></table></figure></p>
-<p>GET请求<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib2</div><div class="line"><span class="keyword">import</span> urllib</div><div class="line"></div><div class="line">data = &#123;&#125;</div><div class="line"></div><div class="line">data[<span class="string">'name'</span>] = <span class="string">'WHY'</span></div><div class="line">data[<span class="string">'location'</span>] = <span class="string">'SDU'</span></div><div class="line">data[<span class="string">'language'</span>] = <span class="string">'Python'</span></div><div class="line"></div><div class="line">url_values = urllib.urlencode(data)</div><div class="line"><span class="keyword">print</span> url_values</div><div class="line"></div><div class="line">name = Somebody + Here&amp;language=Python&amp;location=Northampton</div><div class="line">url = <span class="string">'http://www.example.com/example.cgi'</span></div><div class="line">full_url = url + <span class="string">'?'</span> + url_values</div><div class="line"></div><div class="line">data = urllib2.open(full_url)</div></pre></td></tr></table></figure></p>
-<p>设置Headers<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib</div><div class="line"><span class="keyword">import</span> urllib2</div><div class="line"></div><div class="line">url = <span class="string">'http://www.someserver.com/cgi-bn/register.cgi'</span></div><div class="line"></div><div class="line">user_agent = <span class="string">'Mozilla/4.0 (compatible; MSIE 5.5;Windows NT)'</span></div><div class="line">values = &#123;<span class="string">'name'</span>:<span class="string">'WHY'</span>,</div><div class="line">		<span class="string">'location'</span>:<span class="string">'SDU'</span>,</div><div class="line">		<span class="string">'language'</span>:<span class="string">'Python'</span>&#125;</div><div class="line">headers = &#123;<span class="string">'User-Agent'</span>:user_agent&#125;</div><div class="line">data = urllib.urlencode(values)</div><div class="line">req = urllib2.Request(url,data,headers)</div><div class="line">response = urllib.urlopen(req)</div><div class="line">the_page = response.read()</div></pre></td></tr></table></figure></p>
-<p>##异常</p>
-<p>###URLError<br>通常，URLError在没用网络连接(没有路由到特定服务器)或者服务器不存在产生<br>这种情况下，异常同样会带有<code>reason</code>属性，他是一个tuple<br>包含了一个错误号和一个错误信息<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib2</div><div class="line"></div><div class="line">req = urllib2.Request(<span class="string">'http://www.baibai.com'</span>)</div><div class="line"></div><div class="line"><span class="keyword">try</span>: urllib2.urlopen(req)</div><div class="line"></div><div class="line"><span class="keyword">except</span> urllib2.URLError,e:</div><div class="line">	<span class="keyword">print</span> e.reason</div></pre></td></tr></table></figure></p>
-<p>###HTTPError<br>服务器上每个HTTP应答对象response包含一个数字”状态码”<br>有时状态码服务器无法完成请求，默认的处理器会为你处理一部分应答<br>HTTP状态码分别以1~5开头由3位整数组成：</p>
-<ul>
-<li>200:请求成功，处理方式：获得相应的内容，进行处理</li>
-<li>201:请求完成，结果是创建了新资源，心创建资源的URI可再响应的实体中得到</li>
-<li>202:请求被接受，处理尚未完成 处理方式：阻塞等待</li>
-<li>204:服务器已经实现了请求，但没有返回心的信息，如果客户是用户代理，则无须为此更新自身的文档视图，处理方式 丢弃</li>
-<li>300: 作为3XX类型回应的默认解释，存在多个可用的被请求资源。处理方式：若程序中能够处理，则进行进一步处理，如果程序不能处理，则丢弃</li>
-<li>301:请求到飞资源都会被分配一个永久的URL，这个就可以在将来通过URL来访问此资源，处理方式：重定向到分配的URL</li>
-<li>302:请求到的资源在一个不同的URL处临时保存，处理方式：重新向到临时的URL</li>
-<li>400:非法请求 处理方式 丢弃</li>
-<li>401:未授权 处理方式 丢弃</li>
-<li>403:禁止 处理方式 丢弃</li>
-<li>404:没有找到 处理方式 丢弃</li>
-<li><h1 id="5XX-服务器错误，处理方式-丢弃"><a href="#5XX-服务器错误，处理方式-丢弃" class="headerlink" title="5XX:服务器错误，处理方式 丢弃"></a>5XX:服务器错误，处理方式 丢弃</h1>HTTPError产生后会有一个整形<code>code</code>属性，是服务器发送的行管错误<br>BaseHTTPServer.BaseHTTPRequestHandler.reponse是一个很有用的应答号码字典，显示HTTP协议使用所有的应答号<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib2</div><div class="line">req = urllib2.Request(<span class="string">'http://bbs.csdn.net/callmewhy'</span>)</div><div class="line"></div><div class="line"><span class="keyword">try</span>:</div><div class="line">	urllb2.urlopen(req)</div><div class="line"><span class="keyword">except</span> urllib2.URLError, e:</div><div class="line">	<span class="keyword">print</span> e.code</div></pre></td></tr></table></figure>
-</li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Python/">Python</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/爬虫/">爬虫</a><a href="/tags/Spider/">Spider</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2014/11/19/WebSpider/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/11/19/WebSpider/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-
-  <nav id="page-nav" class="clearfix">
-    <a class="extend prev" rel="prev" href="/page/15/"><span></span>Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/page/39/">39</a><a class="extend next" rel="next" href="/page/17/">Next<span></span></a>
   </nav>
-
-</div>
-      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
-
-<div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
-<aside class="clearfix">
-
-  
-<div class="categorieslist">
-	<p class="asidetitle">分类</p>
-		<ul>
-		
-		  
-			<li><a href="/categories/Android/" title="Android">Android<sup>185</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/Cocos2d-X/" title="Cocos2d-X">Cocos2d-X<sup>11</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/Photography/" title="Photography">Photography<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/Prose/" title="Prose">Prose<sup>27</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/Python/" title="Python">Python<sup>22</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/ReactNative/" title="ReactNative">ReactNative<sup>7</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/iOS/" title="iOS">iOS<sup>84</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/node-js/" title="node.js">node.js<sup>30</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/杂文/" title="杂文">杂文<sup>3</sup></a></li>
-		  
-		
-		</ul>
-</div>
-
-
-  
-  <div class="tagcloudlist">
-    <p class="asidetitle">标签云</p>
-    <div class="tagcloudlist clearfix">
-       <a href="/tags/2/" style="font-size: 10px;">2</a> <a href="/tags/AFNetworking/" style="font-size: 10px;">AFNetworking</a> <a href="/tags/APK/" style="font-size: 10px;">APK</a> <a href="/tags/AS/" style="font-size: 10px;">AS</a> <a href="/tags/Adapter/" style="font-size: 10px;">Adapter</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Android-5-0/" style="font-size: 10px;">Android 5.0</a> <a href="/tags/Android-Studio/" style="font-size: 11.54px;">Android Studio</a> <a href="/tags/AndroidAninotations/" style="font-size: 10px;">AndroidAninotations</a> <a href="/tags/AndroidStudio/" style="font-size: 15.38px;">AndroidStudio</a> <a href="/tags/Animation/" style="font-size: 12.31px;">Animation</a> <a href="/tags/Api/" style="font-size: 11.54px;">Api</a> <a href="/tags/App/" style="font-size: 10px;">App</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Async/" style="font-size: 10px;">Async</a> <a href="/tags/Atom/" style="font-size: 10.77px;">Atom</a> <a href="/tags/AutoLayout/" style="font-size: 10px;">AutoLayout</a> <a href="/tags/BaseAdapter/" style="font-size: 10px;">BaseAdapter</a> <a href="/tags/Blur/" style="font-size: 10px;">Blur</a> <a href="/tags/Box2D/" style="font-size: 10px;">Box2D</a> <a href="/tags/Broadcast/" style="font-size: 10px;">Broadcast</a> <a href="/tags/CardView/" style="font-size: 10px;">CardView</a> <a href="/tags/CocoaPods/" style="font-size: 10px;">CocoaPods</a> <a href="/tags/Cocos2d-X/" style="font-size: 13.08px;">Cocos2d-X</a> <a href="/tags/CocosPods/" style="font-size: 10px;">CocosPods</a> <a href="/tags/ContentProvider/" style="font-size: 10px;">ContentProvider</a> <a href="/tags/Context/" style="font-size: 10px;">Context</a> <a href="/tags/Crouton/" style="font-size: 10px;">Crouton</a> <a href="/tags/CursorLoader/" style="font-size: 10px;">CursorLoader</a> <a href="/tags/Demo/" style="font-size: 10.77px;">Demo</a> <a href="/tags/Dialog/" style="font-size: 10px;">Dialog</a> <a href="/tags/EditView/" style="font-size: 10px;">EditView</a> <a href="/tags/EventBus/" style="font-size: 10px;">EventBus</a> <a href="/tags/Express/" style="font-size: 10px;">Express</a> <a href="/tags/Express学习笔记/" style="font-size: 10px;">Express学习笔记</a> <a href="/tags/Flex/" style="font-size: 10px;">Flex</a> <a href="/tags/Fragment/" style="font-size: 10.77px;">Fragment</a> <a href="/tags/GET/" style="font-size: 10px;">GET</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Gradle/" style="font-size: 10.77px;">Gradle</a> <a href="/tags/GridLayout/" style="font-size: 10px;">GridLayout</a> <a href="/tags/GridView/" style="font-size: 10.77px;">GridView</a> <a href="/tags/Gson/" style="font-size: 10px;">Gson</a> <a href="/tags/HTTP/" style="font-size: 10.77px;">HTTP</a> <a href="/tags/Handler/" style="font-size: 10px;">Handler</a> <a href="/tags/HeadersList/" style="font-size: 10px;">HeadersList</a> <a href="/tags/Hello-World/" style="font-size: 10px;">Hello World</a> <a href="/tags/Holo/" style="font-size: 10px;">Holo</a> <a href="/tags/IDE/" style="font-size: 10px;">IDE</a> <a href="/tags/IM/" style="font-size: 10.77px;">IM</a> <a href="/tags/Indicator/" style="font-size: 10px;">Indicator</a> <a href="/tags/IntentService/" style="font-size: 10px;">IntentService</a> <a href="/tags/JCenter/" style="font-size: 10px;">JCenter</a> <a href="/tags/JSON解析/" style="font-size: 10px;">JSON解析</a> <a href="/tags/Java/" style="font-size: 16.15px;">Java</a> <a href="/tags/Json/" style="font-size: 10.77px;">Json</a> <a href="/tags/KVO/" style="font-size: 10.77px;">KVO</a> <a href="/tags/Kotlin/" style="font-size: 10px;">Kotlin</a> <a href="/tags/Layout/" style="font-size: 10px;">Layout</a> <a href="/tags/Lint/" style="font-size: 10px;">Lint</a> <a href="/tags/ListView/" style="font-size: 10.77px;">ListView</a> <a href="/tags/Log/" style="font-size: 10px;">Log</a> <a href="/tags/MVVM/" style="font-size: 10.77px;">MVVM</a> <a href="/tags/Mac/" style="font-size: 10.77px;">Mac</a> <a href="/tags/Markdown/" style="font-size: 10.77px;">Markdown</a> <a href="/tags/Masonry/" style="font-size: 10px;">Masonry</a> <a href="/tags/Material/" style="font-size: 10.77px;">Material</a> <a href="/tags/Material-Design/" style="font-size: 10px;">Material Design</a> <a href="/tags/MaterialDesign/" style="font-size: 10px;">MaterialDesign</a> <a href="/tags/Meterial/" style="font-size: 10.77px;">Meterial</a> <a href="/tags/Meterial-Design/" style="font-size: 10px;">Meterial Design</a> <a href="/tags/Model/" style="font-size: 10px;">Model</a> <a href="/tags/MongoDB/" style="font-size: 10.77px;">MongoDB</a> <a href="/tags/Mongoose/" style="font-size: 10px;">Mongoose</a> <a href="/tags/NavBar/" style="font-size: 10px;">NavBar</a> <a href="/tags/Navigator/" style="font-size: 10px;">Navigator</a> <a href="/tags/NavtigationBar/" style="font-size: 10px;">NavtigationBar</a> <a href="/tags/NoSQL/" style="font-size: 10px;">NoSQL</a> <a href="/tags/OSX/" style="font-size: 10px;">OSX</a> <a href="/tags/Objective-C/" style="font-size: 16.92px;">Objective-C</a> <a href="/tags/POST/" style="font-size: 10px;">POST</a> <a href="/tags/PagerAdapter/" style="font-size: 10px;">PagerAdapter</a> <a href="/tags/PagerTranformer/" style="font-size: 10px;">PagerTranformer</a> <a href="/tags/Paint/" style="font-size: 10px;">Paint</a> <a href="/tags/Parcelable/" style="font-size: 10px;">Parcelable</a> <a href="/tags/PerferenceScreencreen/" style="font-size: 10px;">PerferenceScreencreen</a> <a href="/tags/Post/" style="font-size: 10px;">Post</a> <a href="/tags/ProGuard/" style="font-size: 10px;">ProGuard</a> <a href="/tags/Prose/" style="font-size: 12.31px;">Prose</a> <a href="/tags/Python/" style="font-size: 18.46px;">Python</a> <a href="/tags/REST/" style="font-size: 10.77px;">REST</a> <a href="/tags/Random/" style="font-size: 10px;">Random</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/ReactNative/" style="font-size: 10px;">ReactNative</a> <a href="/tags/RecyclerView/" style="font-size: 10.77px;">RecyclerView</a> <a href="/tags/SDK/" style="font-size: 11.54px;">SDK</a> <a href="/tags/SD卡/" style="font-size: 10px;">SD卡</a> <a href="/tags/SE5/" style="font-size: 10px;">SE5</a> <a href="/tags/SE6/" style="font-size: 10px;">SE6</a> <a href="/tags/SaveInstance/" style="font-size: 10px;">SaveInstance</a> <a href="/tags/Serializable/" style="font-size: 10px;">Serializable</a> <a href="/tags/SharedPreferce/" style="font-size: 10px;">SharedPreferce</a> <a href="/tags/SizeClass/" style="font-size: 10px;">SizeClass</a> <a href="/tags/Spider/" style="font-size: 10px;">Spider</a> <a href="/tags/Sprite/" style="font-size: 10.77px;">Sprite</a> <a href="/tags/Style/" style="font-size: 10px;">Style</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Sublime-Text/" style="font-size: 10px;">Sublime Text</a> <a href="/tags/SublimeText/" style="font-size: 10px;">SublimeText</a> <a href="/tags/Swift/" style="font-size: 17.69px;">Swift</a> <a href="/tags/TextView/" style="font-size: 10.77px;">TextView</a> <a href="/tags/Thread/" style="font-size: 10px;">Thread</a> <a href="/tags/Tips/" style="font-size: 10px;">Tips</a> <a href="/tags/ToolBar/" style="font-size: 10px;">ToolBar</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/UIActionSheet/" style="font-size: 10px;">UIActionSheet.</a> <a href="/tags/UIAlertView/" style="font-size: 10px;">UIAlertView</a> <a href="/tags/UIImageView/" style="font-size: 10px;">UIImageView</a> <a href="/tags/UIL/" style="font-size: 10px;">UIL</a> <a href="/tags/UIScrollView/" style="font-size: 10px;">UIScrollView</a> <a href="/tags/Ui/" style="font-size: 10px;">Ui</a> <a href="/tags/View/" style="font-size: 10px;">View</a> <a href="/tags/Volley/" style="font-size: 10px;">Volley</a> <a href="/tags/WebStorm/" style="font-size: 10px;">WebStorm</a> <a href="/tags/WebStrom/" style="font-size: 10px;">WebStrom</a> <a href="/tags/XCode/" style="font-size: 10px;">XCode</a> <a href="/tags/adb/" style="font-size: 10px;">adb</a> <a href="/tags/app/" style="font-size: 10.77px;">app</a> <a href="/tags/async/" style="font-size: 10px;">async</a> <a href="/tags/blur/" style="font-size: 10px;">blur</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/console/" style="font-size: 10px;">console</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/curl/" style="font-size: 10px;">curl</a> <a href="/tags/eclipse/" style="font-size: 10px;">eclipse</a> <a href="/tags/emoji/" style="font-size: 10px;">emoji</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/fallthrough/" style="font-size: 10px;">fallthrough</a> <a href="/tags/findViewById/" style="font-size: 10px;">findViewById</a> <a href="/tags/git/" style="font-size: 13.08px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/gradlew/" style="font-size: 10px;">gradlew</a> <a href="/tags/gravity/" style="font-size: 10px;">gravity</a> <a href="/tags/host/" style="font-size: 10px;">host</a> <a href="/tags/http/" style="font-size: 10.77px;">http</a> <a href="/tags/iOS/" style="font-size: 19.23px;">iOS</a> <a href="/tags/iPhone/" style="font-size: 10px;">iPhone</a> <a href="/tags/icon/" style="font-size: 10px;">icon</a> <a href="/tags/include/" style="font-size: 10px;">include</a> <a href="/tags/jQerry/" style="font-size: 11.54px;">jQerry</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/js/" style="font-size: 13.85px;">js</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/keymap/" style="font-size: 10px;">keymap</a> <a href="/tags/lambda/" style="font-size: 10px;">lambda</a> <a href="/tags/layout/" style="font-size: 11.54px;">layout</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/measure/" style="font-size: 10px;">measure</a> <a href="/tags/merge/" style="font-size: 10px;">merge</a> <a href="/tags/meteor/" style="font-size: 10.77px;">meteor</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/mongo/" style="font-size: 10px;">mongo</a> <a href="/tags/ndk/" style="font-size: 11.54px;">ndk</a> <a href="/tags/nil/" style="font-size: 10px;">nil</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/node-js/" style="font-size: 14.62px;">node.js</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/package/" style="font-size: 10px;">package</a> <a href="/tags/px/" style="font-size: 10px;">px</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/ripple/" style="font-size: 10px;">ripple</a> <a href="/tags/selector/" style="font-size: 10px;">selector</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/shape/" style="font-size: 10px;">shape</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/so/" style="font-size: 10px;">so</a> <a href="/tags/sp/" style="font-size: 10px;">sp</a> <a href="/tags/sqlite/" style="font-size: 10px;">sqlite</a> <a href="/tags/style/" style="font-size: 10px;">style</a> <a href="/tags/supervisor/" style="font-size: 10px;">supervisor</a> <a href="/tags/support/" style="font-size: 10px;">support</a> <a href="/tags/swfit/" style="font-size: 10px;">swfit</a> <a href="/tags/swift/" style="font-size: 10.77px;">swift</a> <a href="/tags/switch/" style="font-size: 10px;">switch</a> <a href="/tags/view/" style="font-size: 10px;">view</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web-app/" style="font-size: 10px;">web app</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/wifi/" style="font-size: 10px;">wifi</a> <a href="/tags/yield/" style="font-size: 10px;">yield</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/依赖管理/" style="font-size: 10px;">依赖管理</a> <a href="/tags/保存数据/" style="font-size: 10px;">保存数据</a> <a href="/tags/倒计时/" style="font-size: 10px;">倒计时</a> <a href="/tags/关键字/" style="font-size: 10px;">关键字</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/分支/" style="font-size: 10.77px;">分支</a> <a href="/tags/分辨率/" style="font-size: 10.77px;">分辨率</a> <a href="/tags/分配率/" style="font-size: 10px;">分配率</a> <a href="/tags/切换/" style="font-size: 10px;">切换</a> <a href="/tags/初始化/" style="font-size: 10px;">初始化</a> <a href="/tags/前端/" style="font-size: 11.54px;">前端</a> <a href="/tags/加密/" style="font-size: 10px;">加密</a> <a href="/tags/动态交互/" style="font-size: 10px;">动态交互</a> <a href="/tags/动态注入/" style="font-size: 10px;">动态注入</a> <a href="/tags/动画/" style="font-size: 13.85px;">动画</a> <a href="/tags/包/" style="font-size: 10px;">包</a> <a href="/tags/反编译/" style="font-size: 10.77px;">反编译</a> <a href="/tags/取色/" style="font-size: 10px;">取色</a> <a href="/tags/图片加载/" style="font-size: 10px;">图片加载</a> <a href="/tags/坐标系/" style="font-size: 10px;">坐标系</a> <a href="/tags/基础/" style="font-size: 11.54px;">基础</a> <a href="/tags/复用/" style="font-size: 10px;">复用</a> <a href="/tags/多分辨率/" style="font-size: 10px;">多分辨率</a> <a href="/tags/多屏幕/" style="font-size: 10px;">多屏幕</a> <a href="/tags/大不同/" style="font-size: 16.15px;">大不同</a> <a href="/tags/妈妈再也不用担心系列/" style="font-size: 10px;">妈妈再也不用担心系列</a> <a href="/tags/定位代码/" style="font-size: 10px;">定位代码</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/对象/" style="font-size: 10px;">对象</a> <a href="/tags/导航/" style="font-size: 10px;">导航</a> <a href="/tags/属性/" style="font-size: 10.77px;">属性</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/工具类/" style="font-size: 11.54px;">工具类</a> <a href="/tags/布局/" style="font-size: 12.31px;">布局</a> <a href="/tags/带标题的ListView/" style="font-size: 10px;">带标题的ListView</a> <a href="/tags/常用/" style="font-size: 10.77px;">常用</a> <a href="/tags/序列化/" style="font-size: 10px;">序列化</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/开源/" style="font-size: 10px;">开源</a> <a href="/tags/开源库/" style="font-size: 10px;">开源库</a> <a href="/tags/异步/" style="font-size: 10.77px;">异步</a> <a href="/tags/异步加载/" style="font-size: 10px;">异步加载</a> <a href="/tags/引导/" style="font-size: 10px;">引导</a> <a href="/tags/引用/" style="font-size: 10px;">引用</a> <a href="/tags/录屏/" style="font-size: 10px;">录屏</a> <a href="/tags/快捷键/" style="font-size: 10px;">快捷键</a> <a href="/tags/持久化/" style="font-size: 10px;">持久化</a> <a href="/tags/按钮/" style="font-size: 10px;">按钮</a> <a href="/tags/提示/" style="font-size: 10.77px;">提示</a> <a href="/tags/插件/" style="font-size: 11.54px;">插件</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/数学，宏/" style="font-size: 10px;">数学，宏</a> <a href="/tags/数据库/" style="font-size: 11.54px;">数据库</a> <a href="/tags/数据绑定/" style="font-size: 10.77px;">数据绑定</a> <a href="/tags/文本大小/" style="font-size: 10px;">文本大小</a> <a href="/tags/杂文/" style="font-size: 10.77px;">杂文</a> <a href="/tags/权限/" style="font-size: 10px;">权限</a> <a href="/tags/样式/" style="font-size: 10px;">样式</a> <a href="/tags/模块/" style="font-size: 10.77px;">模块</a> <a href="/tags/模拟/" style="font-size: 10px;">模拟</a> <a href="/tags/模糊/" style="font-size: 10.77px;">模糊</a> <a href="/tags/毛玻璃/" style="font-size: 10px;">毛玻璃</a> <a href="/tags/波纹/" style="font-size: 10px;">波纹</a> <a href="/tags/注入/" style="font-size: 10.77px;">注入</a> <a href="/tags/注解/" style="font-size: 10px;">注解</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/混淆/" style="font-size: 10px;">混淆</a> <a href="/tags/热启动/" style="font-size: 10px;">热启动</a> <a href="/tags/爬虫/" style="font-size: 10.77px;">爬虫</a> <a href="/tags/物理引擎/" style="font-size: 10px;">物理引擎</a> <a href="/tags/环信/" style="font-size: 10.77px;">环信</a> <a href="/tags/生命周期/" style="font-size: 11.54px;">生命周期</a> <a href="/tags/用时/" style="font-size: 10px;">用时</a> <a href="/tags/界面/" style="font-size: 10px;">界面</a> <a href="/tags/硬盘缓存/" style="font-size: 10px;">硬盘缓存</a> <a href="/tags/第一个项目/" style="font-size: 10px;">第一个项目</a> <a href="/tags/精灵/" style="font-size: 10px;">精灵</a> <a href="/tags/精灵帧/" style="font-size: 10px;">精灵帧</a> <a href="/tags/约束/" style="font-size: 10px;">约束</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/绘制/" style="font-size: 10px;">绘制</a> <a href="/tags/继承/" style="font-size: 10px;">继承</a> <a href="/tags/缓存/" style="font-size: 10px;">缓存</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a> <a href="/tags/网络请求/" style="font-size: 10.77px;">网络请求</a> <a href="/tags/翻墙/" style="font-size: 10.77px;">翻墙</a> <a href="/tags/自动布局/" style="font-size: 10px;">自动布局</a> <a href="/tags/自定义/" style="font-size: 10.77px;">自定义</a> <a href="/tags/自定义控件/" style="font-size: 10px;">自定义控件</a> <a href="/tags/自适应/" style="font-size: 10px;">自适应</a> <a href="/tags/虚拟键/" style="font-size: 10px;">虚拟键</a> <a href="/tags/角标/" style="font-size: 10px;">角标</a> <a href="/tags/设计/" style="font-size: 10px;">设计</a> <a href="/tags/设计缺陷/" style="font-size: 10px;">设计缺陷</a> <a href="/tags/访问/" style="font-size: 10px;">访问</a> <a href="/tags/调试/" style="font-size: 10.77px;">调试</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/资源文件/" style="font-size: 10px;">资源文件</a> <a href="/tags/路由/" style="font-size: 10px;">路由</a> <a href="/tags/转义/" style="font-size: 10px;">转义</a> <a href="/tags/轻量级/" style="font-size: 10px;">轻量级</a> <a href="/tags/连接/" style="font-size: 10px;">连接</a> <a href="/tags/适配/" style="font-size: 10.77px;">适配</a> <a href="/tags/遍历/" style="font-size: 10px;">遍历</a> <a href="/tags/配置/" style="font-size: 10px;">配置</a> <a href="/tags/镜像/" style="font-size: 10px;">镜像</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/随机/" style="font-size: 10px;">随机</a> <a href="/tags/隐藏/" style="font-size: 10px;">隐藏</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a> <a href="/tags/颜色/" style="font-size: 10.77px;">颜色</a> <a href="/tags/颜色选择器/" style="font-size: 10px;">颜色选择器</a> <a href="/tags/魅族/" style="font-size: 10px;">魅族</a> <a href="/tags/！/" style="font-size: 10px;">！</a> <a href="/tags/？/" style="font-size: 10px;">？</a>
+  <main id="main">
+    <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Zoe&#39;s blog</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
     </div>
+</header>
+<header class="content-header">
+  <div class="container">
+    <h1 class="author">Zoe&#39;s blog</h1>
+    <h5 class="subtitle">
+        
+        Dear宅学长的博客
+        
+    </h5>
   </div>
+</header>
+
+    <div class="container body-wrap">
+      <ul class="post-list">
+  
+    <li class="post-list-item">
+        <article id="post-Python标识符、保留字符"
+  class="article article-type-post" itemprop="blogPost">
+     
 
 
   
-  <div class="archiveslist">
-    <p class="asidetitle"><a href="/archives">归档</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">二月 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">九月 2014</a><span class="archive-list-count">36</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">八月 2014</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">七月 2014</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">五月 2014</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">四月 2014</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">三月 2014</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">二月 2014</a><span class="archive-list-count">24</span></li></ul>
-  </div>
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2014/12/04/Python标识符、保留字符/">Python标识符、保留字符</a>
+    </h3>
+  
 
 
-  <div class="linkslist">
-  <p class="asidetitle">友情链接</p>
-    <ul>
+
+    <div class="post-meta">
+        <time datetime="2014-12-04T12:44:40.000Z" itemprop="datePublished" class="post-time">
+  2014-12-04
+</time>
+
         
-          <li>
-            
-            	<a href="http://daimajia.com/" target="_blank" title="DaiMaJia.Blog">DaiMaJia.Blog</a>
-            
-          </li>
-        
-          <li>
-            
-            	<a href="http://macrotea.com/welcome/" target="_blank" title="Macrotea.Blog">Macrotea.Blog</a>
-            
-          </li>
-        
-    </ul>
-</div>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Python/">Python</a></li></ul>
 
-  <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
-</div>
 
-</aside>
-</div>
+
     </div>
-    <footer><div id="footer" >
-	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> Hello,I&#39;m Zoe,a Android and iOS developers. <br/>
-			This is my blog,I hope you will enjoy them.</p>
-	</section>
-	 
-	<div class="social-font" class="clearfix">
-		
-		<a href="http://weibo.com/2292032577" target="_blank" class="icon-weibo" title="微博"></a>
-		
-		
-		<a href="https://github.com/seniorzhai" target="_blank" class="icon-github" title="github"></a>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		<a href="mailto:developer.zhaitao@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
-		
-	</div>
-			
-		
 
-		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
-		
-		<a href="/about" target="_blank" title="Zoe">Zoe</a>
-		
-		
-		</p>
-</div>
-</footer>
-    <script src="/js/jquery-2.0.3.min.js"></script>
-<script src="/js/jquery.imagesloaded.min.js"></script>
-<script src="/js/gallery.js"></script>
-<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+    <div class="post-content" id="post-content" itemprop="postContent" >
 
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.navbar').click(function(){
-    $('header nav').toggleClass('shownav');
-  });
-  var myWidth = 0;
-  function getSize(){
-    if( typeof( window.innerWidth ) == 'number' ) {
-      myWidth = window.innerWidth;
-    } else if( document.documentElement && document.documentElement.clientWidth) {
-      myWidth = document.documentElement.clientWidth;
-    };
-  };
-  var m = $('#main'),
-      a = $('#asidepart'),
-      c = $('.closeaside'),
-      o = $('.openaside');
-  c.click(function(){
-    a.addClass('fadeOut').css('display', 'none');
-    o.css('display', 'block').addClass('fadeIn');
-    m.addClass('moveMain');
-  });
-  o.click(function(){
-    o.css('display', 'none').removeClass('beforeFadeIn');
-    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
-    m.removeClass('moveMain');
-  });
-  $(window).scroll(function(){
-    o.css("top",Math.max(80,260-$(this).scrollTop()));
-  });
+    
+          
+ ##标识符 在Python中标识符由字母、数字、下划线组成，但不能以数字开头 标识符区分大小写 以下划线开头的标识符是有特殊意义的，以单下划线开头( _foo )表示不能直接访问的类属性，需要通过类提供的借口进行访问 以双下划线开头的( __foo )代表类的私有成员，以双下划线开头和结尾的( __foo__ )表示Python里特殊方法，如 __init__() 表示类的构造函数 
+ #
+    
+    
+        <a href="/2014/12/04/Python标识符、保留字符/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/基础/">基础</a></li></ul>
+
+</article>
+
+    </li>
   
-  $(window).resize(function(){
-    getSize(); 
-    if (myWidth >= 1024) {
-      $('header nav').removeClass('shownav');
-    }else{
-      m.removeClass('moveMain');
-      a.css('display', 'block').removeClass('fadeOut');
-      o.css('display', 'none');
+    <li class="post-list-item">
+        <article id="post-android-async-http"
+  class="article article-type-post" itemprop="blogPost">
+     
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2014/11/27/android-async-http/">android-async-http</a>
+    </h3>
+  
+
+
+
+    <div class="post-meta">
+        <time datetime="2014-11-27T02:36:00.000Z" itemprop="datePublished" class="post-time">
+  2014-11-27
+</time>
+
         
-    }
-  });
-});
-</script>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
 
 
 
+    </div>
+
+    <div class="post-content" id="post-content" itemprop="postContent" >
+
+    
+          android-async-http  封装了 http 请求，直接支持 json，gzip 压缩，相当省事 
+    
+    
+        <a href="/2014/11/27/android-async-http/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/async/">async</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/异步/">异步</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络请求/">网络请求</a></li></ul>
+
+</article>
+
+    </li>
+  
+    <li class="post-list-item">
+        <article id="post-RecyclerView"
+  class="article article-type-post" itemprop="blogPost">
+     
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2014/11/26/RecyclerView/">RecyvlerView</a>
+    </h3>
+  
 
 
 
+    <div class="post-meta">
+        <time datetime="2014-11-26T13:41:12.000Z" itemprop="datePublished" class="post-time">
+  2014-11-26
+</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
 
 
 
+    </div>
 
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.article-content').each(function(i){
-    $(this).find('img').each(function(){
-      if ($(this).parent().hasClass('fancybox')) return;
-      var alt = this.alt;
-      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
-      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
-    });
-    $(this).find('.fancybox').each(function(){
-      $(this).attr('rel', 'article' + i);
-    });
-  });
-  if($.fancybox){
-    $('.fancybox').fancybox();
-  }
-}); 
-</script>
+    <div class="post-content" id="post-content" itemprop="postContent" >
 
+    
+         RecyclerView是android-support-v7-21中新增的一个Widgets，是ListView的升级版，更加先进和灵活。 
+    
+    
+        <a href="/2014/11/26/RecyclerView/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Meterial-Design/">Meterial Design</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RecyclerView/">RecyclerView</a></li></ul>
 
+</article>
 
-<!-- Analytics Begin -->
-
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-ga('create', 'UA-54646832-1', 'null');  
-ga('send', 'pageview');
-</script>
+    </li>
+  
+    <li class="post-list-item">
+        <article id="post-Paint类"
+  class="article article-type-post" itemprop="blogPost">
+     
 
 
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2014/11/24/Paint类/">Paint类</a>
+    </h3>
+  
+
+
+
+    <div class="post-meta">
+        <time datetime="2014-11-24T09:33:01.000Z" itemprop="datePublished" class="post-time">
+  2014-11-24
+</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+
+
+    </div>
+
+    <div class="post-content" id="post-content" itemprop="postContent" >
+
+    
+         Paint即画笔，在绘图过程中起到了极其重要的作用，画笔主要保存了颜色，样式等绘制信息，指定了如何绘制文本和图形，画笔对象有很多设置方法，大体上可以分为两类，一类与图形绘制相关，一类与文本绘制相关。 
+    
+    
+        <a href="/2014/11/24/Paint类/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Paint/">Paint</a></li></ul>
+
+</article>
+
+    </li>
+  
+    <li class="post-list-item">
+        <article id="post-十大Material-Design项目"
+  class="article article-type-post" itemprop="blogPost">
+     
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2014/11/24/十大Material-Design项目/">十大Material Design项目</a>
+    </h3>
+  
+
+
+
+    <div class="post-meta">
+        <time datetime="2014-11-24T03:05:41.000Z" itemprop="datePublished" class="post-time">
+  2014-11-24
+</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+
+
+    </div>
+
+    <div class="post-content" id="post-content" itemprop="postContent" >
+
+    
+          
+ 
+  MaterialDesignLibrary  MaterialDesignLibrary可以说是颇受开发者瞩目的一个控件效果库，能够让开发者在Android 2.2系统上使用Android 5.0才支持的控件效果，比如扁平、矩形、浮动按钮，复选框以及各式各样的进度指示器等。 MaterialDesignLibrary还拥有SnackBar、Dialog、Color selector组
+    
+    
+        <a href="/2014/11/24/十大Material-Design项目/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android-5-0/">Android 5.0</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Material-Design/">Material Design</a></li></ul>
+
+</article>
+
+    </li>
+  
+    <li class="post-list-item">
+        <article id="post-ListView嵌套GridView"
+  class="article article-type-post" itemprop="blogPost">
+     
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2014/11/20/ListView嵌套GridView/">ListView嵌套GridView</a>
+    </h3>
+  
+
+
+
+    <div class="post-meta">
+        <time datetime="2014-11-20T13:20:25.000Z" itemprop="datePublished" class="post-time">
+  2014-11-20
+</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+
+
+    </div>
+
+    <div class="post-content" id="post-content" itemprop="postContent" >
+
+    
+         ListView和GridView都是可滑动控件，需要自定义GridView重写其onMeadure() 
+    
+    
+        <a href="/2014/11/20/ListView嵌套GridView/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GridView/">GridView</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ListView/">ListView</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/layout/">layout</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/measure/">measure</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/嵌套/">嵌套</a></li></ul>
+
+</article>
+
+    </li>
+  
+    <li class="post-list-item">
+        <article id="post-GridLayout"
+  class="article article-type-post" itemprop="blogPost">
+     
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2014/11/20/GridLayout/">GridLayout</a>
+    </h3>
+  
+
+
+
+    <div class="post-meta">
+        <time datetime="2014-11-20T10:14:48.000Z" itemprop="datePublished" class="post-time">
+  2014-11-20
+</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+
+
+    </div>
+
+    <div class="post-content" id="post-content" itemprop="postContent" >
+
+    
+          
+    
+    
+        <a href="/2014/11/20/GridLayout/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GridLayout/">GridLayout</a></li></ul>
+
+</article>
+
+    </li>
+  
+    <li class="post-list-item">
+        <article id="post-StickyListHeadersListView"
+  class="article article-type-post" itemprop="blogPost">
+     
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2014/11/20/StickyListHeadersListView/">StickyListHeadersListView</a>
+    </h3>
+  
+
+
+
+    <div class="post-meta">
+        <time datetime="2014-11-20T05:43:07.000Z" itemprop="datePublished" class="post-time">
+  2014-11-20
+</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+
+
+    </div>
+
+    <div class="post-content" id="post-content" itemprop="postContent" >
+
+    
+          StickyListHeaders 是一个带标题的ListView的带三方库 
+    
+    
+        <a href="/2014/11/20/StickyListHeadersListView/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HeadersList/">HeadersList</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/带标题的ListView/">带标题的ListView</a></li></ul>
+
+</article>
+
+    </li>
+  
+    <li class="post-list-item">
+        <article id="post-sp与px的换算"
+  class="article article-type-post" itemprop="blogPost">
+     
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2014/11/19/sp与px的换算/">sp与px的换算</a>
+    </h3>
+  
+
+
+
+    <div class="post-meta">
+        <time datetime="2014-11-19T05:07:53.000Z" itemprop="datePublished" class="post-time">
+  2014-11-19
+</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+
+
+    </div>
+
+    <div class="post-content" id="post-content" itemprop="postContent" >
+
+    
+         sp:Scale-independent pixels，Android的字体单位，以160PPI的屏幕为标准，默认设置字体大小为100%时，1sp=1px 
+    
+    
+        <a href="/2014/11/19/sp与px的换算/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/px/">px</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sp/">sp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/文本大小/">文本大小</a></li></ul>
+
+</article>
+
+    </li>
+  
+    <li class="post-list-item">
+        <article id="post-WebSpider"
+  class="article article-type-post" itemprop="blogPost">
+     
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2014/11/19/WebSpider/">WebSpider</a>
+    </h3>
+  
+
+
+
+    <div class="post-meta">
+        <time datetime="2014-11-19T01:56:54.000Z" itemprop="datePublished" class="post-time">
+  2014-11-19
+</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Python/">Python</a></li></ul>
+
+
+
+    </div>
+
+    <div class="post-content" id="post-content" itemprop="postContent" >
+
+    
+          
+ ##URI和URL 
+ ###URI(Universal Resource Identifier)是通用资源标志符 通常由三部分组成： 
+ 
+ 访问资源的命名机制 
+ 存放资源的主机名 
+ 资源自身的名称  http://www.baidu.com/img/bdlogo.png 可以解释为 
+ 一个可以通过HTTP协议访问的资源 
+ 位于主机 www.baidu.com 上 
+ 通过 /i
+    
+    
+        <a href="/2014/11/19/WebSpider/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spider/">Spider</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
+
+</article>
+
+    </li>
+  
+</ul>
+
+<nav id="page-nav">
+    <div class="inner">
+    <a class="extend prev" rel="prev" href="/page/15/">上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/page/39/">39</a><a class="extend next" rel="next" href="/page/17/">下一页</a>
+    </div>
+</nav>
+
+    </div>
+  </main>
+<div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
 <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
+var BLOG_SHARE = {
+    title: "Zoe's blog",
+    pic: "/img/logo.jpg",
+    summary: document.getElementsByName('summary')[0].content,
+    url: "http://seniorzhai.github.io/page/16/index.html"
+};
+</script>
+<div class="global-share" id="global-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<script type="text/template" id="search-tpl">
+<li class="item">
+    <a href="/{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
 </script>
 
+<script src="/js/search.js"></script>
 
 
-<!-- Analytics End -->
 
-<!-- Totop Begin -->
-
-	<div id="totop">
-	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
-	</div>
-	<script src="/js/totop.js"></script>
-
-<!-- Totop End -->
-
-<!-- MathJax Begin -->
 <!-- mathjax config similar to math.stackexchange -->
 
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
+MathJax.Hub.Config({
     tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true
-    }
-  });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
         skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      }
-    });
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
 </script>
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
+<script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-54646832-1', 'auto');
+ga('send', 'pageview');
+
 </script>
-
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+<!-- End Google Analytics -->
 
 
-<!-- MathJax End -->
 
-<!-- Tiny_search Begin -->
-
-<!-- Tiny_search End -->
-
-  </body>
- </html>
+</body>
+</html>

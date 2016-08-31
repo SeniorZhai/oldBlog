@@ -1,17 +1,16 @@
-
- <!DOCTYPE HTML>
-<html lang="zh-CN">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   
-    <title>Zoe&#39;s blog</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
-    
-    <meta name="author" content="Zoe">
-    
-
-    
-    <meta name="description" content="专注于移动平台">
+  <title>Zoe&#39;s blog | Dear宅学长的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="theme-color" content="#3F51B5">
+  
+  
+  <meta name="keywords" content="undefined">
+  <meta name="description" content="专注于移动平台">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Zoe's blog">
 <meta property="og:url" content="http://seniorzhai.github.io/page/25/index.html">
@@ -20,1096 +19,706 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Zoe's blog">
 <meta name="twitter:description" content="专注于移动平台">
-
-    
+  
     <link rel="alternative" href="/atom.xml" title="Zoe&#39;s blog" type="application/atom+xml">
-    
-    
-    <link rel="icon" href="/img/favicon.ico">
-    
-    
-    <link rel="apple-touch-icon" href="/img/logo.png">
-    <link rel="apple-touch-icon-precomposed" href="/img/logo.png">
-    
-    <link rel="stylesheet" href="/css/style.css">
+  
+  <meta name="summary" content="专注于移动平台">
+  <link rel="shortcut icon" href="/img/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
-  <body>
-    <header>
-      
-<div>
-		
-			<div id="imglogo">
-				<a href="/"><img src="/img/logo.png" alt="Zoe&#39;s blog" title="Zoe&#39;s blog"/></a>
-			</div>
-			
-			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Zoe&#39;s blog">Zoe&#39;s blog</a></h1>
-				<h2 class="blog-motto">宅学长的博客</h2>
-			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
-			</a></div>
-			<nav class="animated">
-				<ul>
-					<ul>
-					 
-						<li><a href="/">首页</a></li>
-					
-						<li><a href="/archives">归档</a></li>
-					
-						<li><a href="/about">关于</a></li>
-					
-					<li>
- 					
-					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
-						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
-						<input type="hidden" name="q" value="site:seniorzhai.github.io">
-					</form>
-					
-					</li>
-				</ul>
-			</nav>			
-</div>
-    </header>
-    <div id="container">
-      <div id="main">
+<body>
+  <div id="loading" class="active"></div>
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2014/08/27/常用git命令/" title="常用git命令" itemprop="url">常用git命令</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
-		
-  <p class="article-time">
-    <time datetime="2014-08-27T00:36:56.000Z" itemprop="datePublished"> 发表于 2014-08-27</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <a id="more"></a>
-<p>##常用配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">--- system #系统级别</div><div class="line">--- global #用户全局</div><div class="line">--local #单独一个项目</div><div class="line">git config --global user.name &quot;xxx&quot; #用户名</div><div class="line">git config --global user.email &quot;xxx@xxx.com&quot; #邮箱</div><div class="line">git config --global core.editor vim #编辑器</div><div class="line"></div><div class="line">git config --global alias.st status #配置别名</div><div class="line">git config -l 列举所有配置</div></pre></td></tr></table></figure></p>
-<p>##Git中3中状态的一些操作<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line">#将工作区的修改提交到暂存区</div><div class="line">git add &lt;file&gt;</div><div class="line">git add . </div><div class="line">#------------------------------------------</div><div class="line"></div><div class="line">#将暂存区的内容提交到版本库</div><div class="line">git commit &lt;file&gt;</div><div class="line">git commit .</div><div class="line">git commit -a #包括git add/ git rm /git commint 这三个操作，所有一般在操作工作区的时候，直接删除了文件，而不是使用git rm的，最后提交是可以用这个，如下</div><div class="line">              #git commit -am &quot;提交信息&quot;</div><div class="line">git commit -amend #修改最后一次提交的信息</div><div class="line"></div><div class="line"># 抛弃工作区修改(使用当前暂存区的内容状态去覆盖工作区，从而达到抛弃工作区修改的作用)</div><div class="line">git checkout &lt;file&gt;  </div><div class="line">git checkout .  </div><div class="line"></div><div class="line">#------------------------------------------</div><div class="line"></div><div class="line">#改变暂存区的修改（其实是重置HEAD，将指定版本库的内容状态去覆盖暂存区，从而达到暂存区的改变）</div><div class="line">git reset &lt;file&gt;  #从暂存区恢复到工作区（不指定版本id，则默认为最后一次提交的版本id）</div><div class="line">git reset .  #从暂存区恢复到工作区</div><div class="line">git reset $id # 恢复到指定的提交版本，该$id之后的版本提交都恢复到工作区</div><div class="line">git reset --hard $id #恢复到指定的提交版本，该$id之后的版本提交全部会被抛弃，将不出现在工作区</div><div class="line"></div><div class="line">#注：如果不小心使用了错误的HEAD重置，会发现HEAD指向了重置的版本id，该版本之后的版本提交都不见了，使用git log也无法找到，需要使用下面的命令</div><div class="line">git reflog show master | head #会显示所有版本纪录</div><div class="line">git reset --hard $id #重新重置，至于--hard，根据将改变的内容放到工作区还是直接抛弃进行选择</div><div class="line"></div><div class="line">#------------------------------------------</div><div class="line">#恢复某次提交（某次提交的回滚操作，不影响其他的提交，所产生的效果创建一个新的版本提交去回滚指定的提交）</div><div class="line">git revert &lt;$id&gt;</div><div class="line">git revert HEAD</div><div class="line">#revert和reset的差异：git reset是把HEAD向后移动了以下，而git revert是HEAD继续前进，只是新的内容和revert的内容正好相反</div><div class="line"></div><div class="line">#------------------------------------------</div><div class="line">#删除文件</div><div class="line">#1.在工作区删除</div><div class="line">rm your_file #直接在工作区删除文件</div><div class="line">git add -u . #将有改动的都提交到暂存区（包括修改的，删除的等操作）。git 2.0后不加-u也可以</div><div class="line">git commit -m &quot;message&quot; #提交到版本库</div><div class="line"></div><div class="line">#2.同样在工作区删除</div><div class="line">rm your_file</div><div class="line">git commit -am &quot;message&quot; #-a包括了 git add/git rm/git commit三个操作</div><div class="line"></div><div class="line">#3.使用git rm</div><div class="line">git rm &lt;file&gt; #不仅在工作区删除文件，同时将删除操作提交到暂存区</div><div class="line">git commit -m &quot;message&quot; #提交到版本库</div><div class="line"></div><div class="line">#git rm其他补充</div><div class="line">git rm --cached &lt;file&gt; #从暂存区中去除该文件，git将不再跟踪该文件的变更，但仍然在工作区内</div></pre></td></tr></table></figure></p>
-<p>##文件直接比较差异Diff<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">git diff</div><div class="line">git diff &lt;file&gt; #比较工作区与暂存区文件的差异</div><div class="line">git diff --cached #比较暂存区和版本库差异</div><div class="line"></div><div class="line">git diff &lt;$id2&gt;&lt;$id2&gt; #比较两次提交之间的差异</div><div class="line">git diff &lt;branch1&gt;..&lt;branch2&gt; #比较两个分支之间的差异</div></pre></td></tr></table></figure></p>
-<p>##分支<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">git branch -r #查看远程分支</div><div class="line">git branch new_branch_name #新建一个分支</div><div class="line">git branch --merged #查看未被合并到当前分支的分支</div><div class="line"></div><div class="line">git checkout branch_name #切换分支</div><div class="line">git checkout -b branch_name #创建分支并切换</div><div class="line"></div><div class="line">git branch -d branch_name #删除分支</div><div class="line">git branch -D branch_name #强制删除分支</div><div class="line">git push origin :branch_name #删除远程分支（现在本地删除该分支），原理是把一个空分支push到server上，相对于删除该分支</div><div class="line"></div><div class="line">#从远程clone项目，虽然远程上项目有分支，但是clone下来只有master分支，解决</div><div class="line">git checkout -b not_master_branch origin/not_master_branch #本地创建一个分支，指向对应的远程分支</div><div class="line">git pull origin not_master_branch #将远程的not_master_branch分支pull下来</div><div class="line">git push origin not_master_branch #将修改后的not_master_branch分支push到远程的not_master_branch分支</div></pre></td></tr></table></figure></p>
-<p>##远程<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git remote -v 			#查看远程服务器地址和仓库名称</div><div class="line">git remote show origin	#查看远程服务器仓库状态</div><div class="line">git remote add origin git@github:robbin/robbin_site.git 	#添加远程仓库地址</div><div class="line">git remote set-url origin git@github.com:robin/robbin 		#修改远程仓库地址</div><div class="line">git remote rm #删除远程仓库地址</div></pre></td></tr></table></figure></p>
-<p>##从远程拉取内容、提交内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">git fetch #拉取</div><div class="line">git merge #合并</div><div class="line">git pull #git fetch + git merge</div><div class="line"></div><div class="line">git push #push所有分支</div><div class="line">git push origin master #将本地主分支推到远程主分支</div><div class="line">git push -u origin master #将本地主分支推到远程（如果远程无主分支则创建，用于初始化远程仓库）</div><div class="line">git push origin &lt;local_brabch&gt; #创建远程分支，origin是远程仓库名</div><div class="line">git push origin &lt;local_brabch&gt;:&lt;remote_branch&gt; #创建远程分支</div><div class="line">git push origin :&lt;remote_branch&gt; #先删除本地分支，然后再push删除远程分支</div></pre></td></tr></table></figure></p>
-<p>##暂存管理<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git stash #将工作区做的修改暂存到一个git栈中</div><div class="line">git stash list #查看栈中所有暂存</div><div class="line">git stach apply &lt;暂存编号&gt; #恢复对应编号暂存到工作区，如果不指定编号为栈顶，操作中这些暂缓还在栈中</div><div class="line">git stach pop #将栈顶的暂存恢复到工作区，并从栈中弹出</div><div class="line">git stach clear #清空暂存区</div></pre></td></tr></table></figure></p>
-<p>##创建远程库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git clone --bare git_url_path #clone的时候，将其创建成远程仓库</div><div class="line">git --bare init #初始化项目的时候，创建成远程仓库</div></pre></td></tr></table></figure></p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
+  <nav id="menu"  >
+   <div class="inner flex-row-vertical">
+  <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+      <i class="icon icon-lg icon-close"></i>
+  </a>
+  <div class="brand-wrap">
+    <div class="brand">
+      <a href="/" class="avatar"><img src="/img/logo.jpg"></a>
+      <hgroup class="introduce">
+        <h5 class="nickname">Dear宅学长</h5>
+        <a href="mailto:370985116@qq.com" title="370985116@qq.com" class="mail">370985116@qq.com</a>
+      </hgroup>
     </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Prose/">Prose</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/git/">git</a>
   </div>
+  <ul class="nav flex-col">
+    
+        <li class="waves-block waves-effect">
+          <a href="/"  >
+            <i class="icon icon-lg icon-home"></i>
+            Home
+          </a>
+        </li>
+    
+        <li class="waves-block waves-effect">
+          <a href="/archives"  >
+            <i class="icon icon-lg icon-archives"></i>
+            Archives
+          </a>
+        </li>
+    
+        <li class="waves-block waves-effect">
+          <a href="/tags"  >
+            <i class="icon icon-lg icon-tags"></i>
+            Tags
+          </a>
+        </li>
+    
+        <li class="waves-block waves-effect">
+          <a href="https://github.com/seniorzhai" target="_blank" >
+            <i class="icon icon-lg icon-github"></i>
+            Github
+          </a>
+        </li>
+    
+        <li class="waves-block waves-effect">
+          <a href="http://weibo.com/seniorszhai/home" target="_blank" >
+            <i class="icon icon-lg icon-weibo"></i>
+            Weibo
+          </a>
+        </li>
+    
+        <li class="waves-block waves-effect">
+          <a href="/about"  >
+            <i class="icon icon-lg icon-link"></i>
+            About
+          </a>
+        </li>
+    
+  </ul>
 
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2014/08/27/常用git命令/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/08/27/常用git命令/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
+  <footer class="footer">
+  <p><a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0;vertical-align:middle;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAPCAMAAABEF7i9AAAAllBMVEUAAAD///+rsapERER3d3eIiIjMzMzu7u4iIiKUmZO6v7rKzsoODg4RERFVVVUNDQ0NDg0PEA8zMzNLTEtbXltmZmZydnF9gn2AgICPkI+ZmZmqqqq7u7vFxsXIzMgNDQwZGRkgICAhISEkJSMnKCcuMC4xMzE5Ozk7PTtBQkFCQkJDQ0Nna2eGhoaHh4ezuLLGysbd3d1wVGpAAAAA4UlEQVR42q2T1xqCMAyFk7QsBQeKA9x7j/d/OSm22CpX0nzcpA1/T05aAOuBVkMAScQFHLnEwoCo2f1TnQIGoVMewjZEjVFN4GH1Ue1Cn2jWqwfsOOj6wDwGvotsl/c8lv7KIq1eLOsT0HMFHMIE/RZyHnlphryT9zyV+8WH5e8yQw3wnQvgAFxPTKUVi555SHR/lOfLMgVTeDlSfN+TaoUsiTyeIm+bCkHvCA2FUKG48LDtYBZBknsYP/G8NTw0gaaHyuQf4H5pecrB/FYCT2sL9zAfy1Xyjou6L8X2W7YcLyBZCRtnq/zfAAAAAElFTkSuQmCC" /></a></p>
+  <p>Zoe&#39;s blog &copy; 2016</p>
+  <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
+  <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
+  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
 </footer>
 
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2014/08/26/Android-ViewFinder/" title="Android ViewFinder" itemprop="url">Android ViewFinder</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
-		
-  <p class="article-time">
-    <time datetime="2014-08-26T06:09:32.000Z" itemprop="datePublished"> 发表于 2014-08-26</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <a id="more"></a>
-<p>在基类BaseActivity中加入如下函数<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">final</span> &lt;E extends View&gt; <span class="function">E <span class="title">getView</span> <span class="params">(<span class="keyword">int</span> id)</span> </span>&#123;</div><div class="line">	<span class="keyword">try</span> &#123;</div><div class="line">		<span class="keyword">return</span> (E) findViewById(id);</div><div class="line">	&#125; <span class="keyword">catch</span> (ClassCastException ex) &#123;</div><div class="line">		Log.e(TAG,<span class="string">"Could not cast View to concrete class."</span>,ex);</div><div class="line">		<span class="keyword">throw</span> ex;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>使用ViewFinder类，封装了常用的方法。可以在Activity或View中调用。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ViewFinder</span> </span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">interface</span> <span class="title">FindWrapper</span> </span>&#123;</div><div class="line">		<span class="function">View <span class="title">findViewById</span><span class="params">(<span class="keyword">int</span> id)</span></span>;</div><div class="line">		<span class="function">Resources <span class="title">getResources</span><span class="params">()</span></span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">WindowWrapper</span> <span class="keyword">implements</span> <span class="title">FindWapper</span> </span>&#123;</div><div class="line">		<span class="keyword">private</span> <span class="keyword">final</span> Window window;</div><div class="line"></div><div class="line">		WidowWrapper(<span class="keyword">final</span> Window window) &#123;</div><div class="line">			<span class="keyword">this</span>.window = window;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="function"><span class="keyword">public</span> View <span class="title">findViewById</span><span class="params">(<span class="keyword">final</span> <span class="keyword">int</span> id)</span> </span>&#123;</div><div class="line">			<span class="keyword">return</span> window.findViewById(id);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="function"><span class="keyword">public</span> Resources <span class="title">getResources</span><span class="params">()</span> </span>&#123;</div><div class="line">			<span class="keyword">return</span> window.getContext().getResouces();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">ViewWrapper</span> <span class="keyword">implements</span> <span class="title">FindWrapper</span> </span>&#123;</div><div class="line">		<span class="keyword">private</span> <span class="keyword">final</span> View view;</div><div class="line"></div><div class="line">		ViewWrapper(<span class="keyword">final</span> View view) &#123;</div><div class="line">			<span class="keyword">this</span>.view = view;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="function"><span class="keyword">public</span> View <span class="title">findViewById</span><span class="params">(<span class="keyword">int</span> id)</span> </span>&#123;</div><div class="line">			<span class="keyword">return</span> view.findViewById(id);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="function"><span class="keyword">public</span> Resources <span class="title">getResources</span><span class="params">()</span> </span>&#123;</div><div class="line">			<span class="keyword">return</span> view.getResources();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">private</span> <span class="keyword">final</span> FindWrapper wrapper;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">ViewFinder</span><span class="params">(<span class="keyword">final</span> View view)</span> </span>&#123;</div><div class="line">		wrapper = <span class="keyword">new</span> ViewWrapper(view);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">ViewFinder</span><span class="params">(<span class="keyword">final</span> Window window)</span> </span>&#123;</div><div class="line">		wrapper = <span class="keyword">new</span> WindowWrapper(window);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">ViewFinder</span><span class="params">(<span class="keyword">final</span> Activity activity)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>(activity.getWindow());</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">public</span> &lt;V extends View&gt; <span class="function">V <span class="title">find</span> <span class="params">(<span class="keyword">final</span> <span class="keyword">int</span> id)</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> (V) wrapper.findViewById(id);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> ImageView <span class="title">imageView</span><span class="params">(<span class="keyword">final</span> <span class="keyword">int</span> id)</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> find(id);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> CompoundButton <span class="title">commpoudButton</span><span class="params">(<span class="keyword">final</span> <span class="keyword">int</span> id)</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> find(id);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> TextView <span class="title">textView</span><span class="params">(<span class="keyword">final</span> <span class="keyword">int</span> id)</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> find(id);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> TextView <span class="title">setText</span><span class="params">(<span class="keyword">final</span> <span class="keyword">int</span> id, <span class="keyword">final</span> CharSequence content)</span> </span>&#123;</div><div class="line">		<span class="keyword">final</span> TextView text = find(id);</div><div class="line">		text.setText(content);</div><div class="line">		<span class="keyword">return</span> text;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> TextView <span class="title">setText</span><span class="params">(<span class="keyword">final</span> <span class="keyword">int</span> id, <span class="keyword">final</span> <span class="keyword">int</span> content)</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> setText(id, wrapper.getResources().getString(content));</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> View <span class="title">onClick</span><span class="params">(<span class="keyword">final</span> <span class="keyword">int</span> id, <span class="keyword">final</span> Runnable runnable)</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> onClick(id, <span class="keyword">new</span> OnClickListener() &#123;</div><div class="line"> </div><div class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">				runnable.run();</div><div class="line">			&#125;</div><div class="line">		&#125;);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(<span class="keyword">final</span> OnClickListener listener, <span class="keyword">final</span> <span class="keyword">int</span>... ids)</span> </span>&#123;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> id : ids)</div><div class="line">			find(id).setOnClickListener(listener);</div><div class="line">	&#125;</div><div class="line"></div><div class="line"> 	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(<span class="keyword">final</span> Runnable runnable, <span class="keyword">final</span> <span class="keyword">int</span>... ids)</span> </span>&#123;</div><div class="line">		onClick(<span class="keyword">new</span> OnClickListener() &#123;</div><div class="line"> </div><div class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">				runnable.run();</div><div class="line">			&#125;</div><div class="line">		&#125;, ids);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> ImageView <span class="title">setDrawable</span><span class="params">(<span class="keyword">final</span> <span class="keyword">int</span> id, <span class="keyword">final</span> <span class="keyword">int</span> drawable)</span> </span>&#123;</div><div class="line">		ImageView image = imageView(id);</div><div class="line">		image.setImageDrawable(image.getResources().getDrawable(drawable));</div><div class="line">		<span class="keyword">return</span> image;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> CompoundButton <span class="title">onCheck</span><span class="params">(<span class="keyword">final</span> <span class="keyword">int</span> id, <span class="keyword">final</span> OnCheckedChangeListener listener)</span> </span>&#123;</div><div class="line">		CompoundButton checkable = find(id);</div><div class="line">		checkable.setOnCheckedChangeListener(listener);</div><div class="line">		<span class="keyword">return</span> checkable;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> CompoundButton <span class="title">onCheck</span><span class="params">(<span class="keyword">final</span> <span class="keyword">int</span> id, <span class="keyword">final</span> Runnable runnable)</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> onCheck(id, <span class="keyword">new</span> OnCheckedChangeListener() &#123;</div><div class="line"> </div><div class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCheckedChanged</span><span class="params">(CompoundButton buttonView, <span class="keyword">boolean</span> isChecked)</span> </span>&#123;</div><div class="line">				runnable.run();</div><div class="line">			&#125;</div><div class="line">		&#125;);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCheck</span><span class="params">(<span class="keyword">final</span> OnCheckedChangeListener listener, <span class="keyword">final</span> <span class="keyword">int</span>... ids)</span> </span>&#123;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> id : ids)</div><div class="line">			compoundButton(id).setOnCheckedChangeListener(listener);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCheck</span><span class="params">(<span class="keyword">final</span> Runnable runnable, <span class="keyword">final</span> <span class="keyword">int</span>... ids)</span> </span>&#123;</div><div class="line">		onCheck(<span class="keyword">new</span> OnCheckedChangeListener() &#123;</div><div class="line"> </div><div class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCheckedChanged</span><span class="params">(CompoundButton buttonView, <span class="keyword">boolean</span> isChecked)</span> </span>&#123;</div><div class="line">				runnable.run();</div><div class="line">			&#125;</div><div class="line">		&#125;, ids);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Android/">Android</a>
 </div>
 
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Android/">Android</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2014/08/26/Android-ViewFinder/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/08/26/Android-ViewFinder/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2014/08/26/Eclipse一些设置/" title="Eclipse一些设置" itemprop="url">Eclipse一些设置</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
-		
-  <p class="article-time">
-    <time datetime="2014-08-26T05:53:22.000Z" itemprop="datePublished"> 发表于 2014-08-26</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <a id="more"></a>
-<p>##显示行号<br>General -&gt; Editors -&gt; Text Editors -&gt; Show line numbers</p>
-<p>##使用快捷键新建Android工程<br>General -&gt; Keys -&gt; Command 在其中找到New(Android Application Project) 设置为 Ctrl+Alt+A </p>
-<p>##默认编码设置为UTF-8<br>General -&gt; Workspace -&gt; Text file encoding</p>
-<p>##XML代码保存后自动格式化<br>Android –&gt; Editors –&gt; Always remove empty lines between elements：不要勾选，以确保个元素之间都有一个空行；Format on Save：勾选。</p>
-<p>##Java代码保存时自动格式化：<br>Java –&gt; Editor –&gt; Save Actions –&gt; Perform the selected actions on save<br>–&gt; 勾选 Format source code（如果是一个人写代码，可以勾选Format all lines；如果需要通过SVN/Git等与他人合作，一定不能勾选Format all lines而是勾选Format edited lines）</p>
-<p>##Java代码中键入分号“;”、花括号“}”时自动调整位置：<br>Java –&gt; Editor –&gt; Typing –&gt; Automatically insert at correct position 勾选Semicolons(分号)，Braces(花括号)</p>
-<p>##安装color theme<br>Help→Install New Software -&gt; Add 添加 <a href="http://eclipse-color-theme.github.com/update" target="_blank" rel="external">http://eclipse-color-theme.github.com/update</a> 然后下一步下一步就好<br>安装完成 Window→Preferences→General→Appereance→Color Theme 选择自己喜欢的theme换上即可</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Android/">Android</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Android/">Android</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2014/08/26/Eclipse一些设置/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/08/26/Eclipse一些设置/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2014/08/26/悲剧的开始/" title="悲剧的开始" itemprop="url">悲剧的开始</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
-		
-  <p class="article-time">
-    <time datetime="2014-08-26T02:01:30.000Z" itemprop="datePublished"> 发表于 2014-08-26</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <a id="more"></a>
-<p>之前的<a href="http://blog.zt1991616.gitpress.org/" target="_blank" rel="external">blog</a>是使用<a href="http://www.gitpress.org/" target="_blank" rel="external">gitpress</a>，方便简单，只需要维护本地的一个工程就好。但是连续跪了两次了，毕竟是个小众的blog，个人开发者维护跟不上，决定转移到hexo上了。<br>GitHub page + hexo 确实是个不错的方案，模板也比较多，遂，投奔。</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/杂文/">杂文</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/杂文/">杂文</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2014/08/26/悲剧的开始/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/08/26/悲剧的开始/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2014/08/23/Anroid-Studio开发工具新特性[Google-IO-2014-Session]/" title="Anroid Studio开发工具新特性[Google IO 2014 Session]" itemprop="url">Anroid Studio开发工具新特性[Google IO 2014 Session]</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
-		
-  <p class="article-time">
-    <time datetime="2014-08-23T06:09:03.000Z" itemprop="datePublished"> 发表于 2014-08-23</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <embed src="http://player.youku.com/player.php/sid/XNzYwMTU0ODUy/v.swf" allowfullscreen="true" quality="high" width="480" height="400" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Android/">Android</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Android/">Android</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2014/08/23/Anroid-Studio开发工具新特性[Google-IO-2014-Session]/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/08/23/Anroid-Studio开发工具新特性[Google-IO-2014-Session]/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2014/08/21/android-imageview-scaletype属性/" title="android imageview scaletype属性" itemprop="url">android imageview scaletype属性</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
-		
-  <p class="article-time">
-    <time datetime="2014-08-21T06:07:47.000Z" itemprop="datePublished"> 发表于 2014-08-21</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <a id="more"></a>
-<p>scaletype决定了图片在View上显示的方式，可以通过xml中定义<code>android:scale=</code>或者代码中调用<code>imageView.setScaleType()</code></p>
-<p>示例的原图<br>128*128</p>
-<p><img src="https://github.com/zt1991616/blog/raw/master/Image/14082111.gif" alt=""><br>640*428</p>
-<p><img src="https://github.com/zt1991616/blog/raw/master/Image/14082112.gif" alt=""></p>
-<ol>
-<li>CENTER<br>按图片的原来size居中显示，当图片长/宽超过View的长/宽，则截取图片的居中部分显示<br><img src="https://github.com/zt1991616/blog/raw/master/Image/14082101.gif" alt=""><br><img src="https://github.com/zt1991616/blog/raw/master/Image/14082102.gif" alt=""></li>
-<li>CENTER_CROP<br>按比例扩大图片的size居中显示，使得图片长(宽)等于或大于view的长(宽)<br><img src="https://github.com/zt1991616/blog/raw/master/Image/14082103.gif" alt=""><br><img src="https://github.com/zt1991616/blog/raw/master/Image/14082104.gif" alt=""></li>
-<li>CENTER_INSIDE<br>将图片的内容完整居中显示，通过按比例缩小或原来的size使得图片长/宽等于或小于View的长/宽<br><img src="https://github.com/zt1991616/blog/raw/master/Image/14082105.gif" alt=""><br><img src="https://github.com/zt1991616/blog/raw/master/Image/14082106.gif" alt=""></li>
-<li>FIT_CENTER<br>把图片按比例扩大/缩小到View的宽度，居中显示<br><img src="https://github.com/zt1991616/blog/raw/master/Image/14082107.gif" alt=""><br><img src="https://github.com/zt1991616/blog/raw/master/Image/14082108.gif" alt=""></li>
-<li>FIT_START, FIT_END<br>图片缩放效果上与FIT_CENTER一样，只是显示的位置不同，FIT_START是置于顶部，FIT_CENTER居中，FIT_END置于底部。</li>
-<li>FIT_XY<br>不按比例缩放图片，目标是把图片塞满整个View。<br><img src="https://github.com/zt1991616/blog/raw/master/Image/14082109.gif" alt=""><br><img src="https://github.com/zt1991616/blog/raw/master/Image/14082110.gif" alt=""></li>
-</ol>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Android/">Android</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Android/">Android</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2014/08/21/android-imageview-scaletype属性/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/08/21/android-imageview-scaletype属性/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2014/08/21/注释头/" title="注释头" itemprop="url">注释头</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
-		
-  <p class="article-time">
-    <time datetime="2014-08-21T02:37:19.000Z" itemprop="datePublished"> 发表于 2014-08-21</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <a id="more"></a>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//</span></div><div class="line"><span class="comment">//                       _oo0oo_</span></div><div class="line"><span class="comment">//                      o8888888o</span></div><div class="line"><span class="comment">//                      88" . "88</span></div><div class="line"><span class="comment">//                      (| -_- |)</span></div><div class="line"><span class="comment">//                      0\  =  /0</span></div><div class="line"><span class="comment">//                    ___/`---'\___</span></div><div class="line"><span class="comment">//                  .' \\|     |// '.</span></div><div class="line"><span class="comment">//                 / \\|||  :  |||// \</span></div><div class="line"><span class="comment">//                / _||||| -:- |||||- \</span></div><div class="line"><span class="comment">//               |   | \\\  -  /// |   |</span></div><div class="line"><span class="comment">//               | \_|  ''\---/''  |_/ |</span></div><div class="line"><span class="comment">//               \  .-\__  '-'  ___/-. /</span></div><div class="line"><span class="comment">//             ___'. .'  /--.--\  `. .'___</span></div><div class="line"><span class="comment">//          ."" '&lt;  `.___\_&lt;|&gt;_/___.' &gt;' "".</span></div><div class="line"><span class="comment">//         | | :  `- \`.;`\ _ /`;.`/ - ` : | |</span></div><div class="line"><span class="comment">//         \  \ `_.   \_ __\ /__ _/   .-` /  /</span></div><div class="line"><span class="comment">//     =====`-.____`.___ \_____/___.-`___.-'=====</span></div><div class="line"><span class="comment">//                       `=---='</span></div><div class="line"><span class="comment">//</span></div><div class="line"><span class="comment">//</span></div><div class="line"><span class="comment">//     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span></div><div class="line"><span class="comment">//</span></div><div class="line"><span class="comment">//               佛祖保佑         永无BUG</span></div><div class="line"><span class="comment">//</span></div><div class="line"><span class="comment">//</span></div><div class="line"><span class="comment">//</span></div></pre></td></tr></table></figure>
-<p>神兽<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*code is far away from bug with the animal protecting</span></div><div class="line">    *  ┏┓　　　┏┓</div><div class="line">    *┏┛┻━━━┛┻┓</div><div class="line">    *┃　　　　　　　┃ 　</div><div class="line">    *┃　　　━　　　┃</div><div class="line">    *┃　┳┛　┗┳　┃</div><div class="line">    *┃　　　　　　　┃</div><div class="line">    *┃　　　┻　　　┃</div><div class="line">    *┃　　　　　　　┃</div><div class="line">    *┗━┓　　　┏━┛</div><div class="line">    *　　┃　　　┃神兽保佑</div><div class="line">    *　　┃　　　┃代码无BUG！</div><div class="line">    *　　┃　　　┗━━━┓</div><div class="line">    *　　┃　　　　　　　┣┓</div><div class="line">    *　　┃　　　　　　　┏┛</div><div class="line">    *　　┗┓┓┏━┳┓┏┛</div><div class="line">    *　　　┃┫┫　┃┫┫</div><div class="line">    *　　　┗┻┛　┗┻┛ </div><div class="line">    *　　　</div><div class="line">    */</div></pre></td></tr></table></figure></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//</span></div><div class="line"><span class="comment">//   █████▒█    ██  ▄████▄   ██ ▄█▀       ██████╗ ██╗   ██╗ ██████╗</span></div><div class="line"><span class="comment">// ▓██   ▒ ██  ▓██▒▒██▀ ▀█   ██▄█▒        ██╔══██╗██║   ██║██╔════╝</span></div><div class="line"><span class="comment">// ▒████ ░▓██  ▒██░▒▓█    ▄ ▓███▄░        ██████╔╝██║   ██║██║  ███╗</span></div><div class="line"><span class="comment">// ░▓█▒  ░▓▓█  ░██░▒▓▓▄ ▄██▒▓██ █▄        ██╔══██╗██║   ██║██║   ██║</span></div><div class="line"><span class="comment">// ░▒█░   ▒▒█████▓ ▒ ▓███▀ ░▒██▒ █▄       ██████╔╝╚██████╔╝╚██████╔╝</span></div><div class="line"><span class="comment">//  ▒ ░   ░▒▓▒ ▒ ▒ ░ ░▒ ▒  ░▒ ▒▒ ▓▒       ╚═════╝  ╚═════╝  ╚═════╝</span></div><div class="line"><span class="comment">//  ░     ░░▒░ ░ ░   ░  ▒   ░ ░▒ ▒░</span></div><div class="line"><span class="comment">//  ░ ░    ░░░ ░ ░ ░        ░ ░░ ░</span></div><div class="line"><span class="comment">//           ░     ░ ░      ░  ░</span></div><div class="line"><span class="comment">//                 ░</span></div></pre></td></tr></table></figure>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"> <span class="comment">//</span></div><div class="line"><span class="comment">//                       .::::.</span></div><div class="line"><span class="comment">//                     .::::::::.</span></div><div class="line"><span class="comment">//                    :::::::::::</span></div><div class="line"><span class="comment">//                 ..:::::::::::'</span></div><div class="line"><span class="comment">//              '::::::::::::'</span></div><div class="line"><span class="comment">//                .::::::::::</span></div><div class="line"><span class="comment">//           '::::::::::::::..</span></div><div class="line"><span class="comment">//                ..::::::::::::.</span></div><div class="line"><span class="comment">//              ``::::::::::::::::</span></div><div class="line"><span class="comment">//               ::::``:::::::::'        .:::.</span></div><div class="line"><span class="comment">//              ::::'   ':::::'       .::::::::.</span></div><div class="line"><span class="comment">//            .::::'      ::::     .:::::::'::::.</span></div><div class="line"><span class="comment">//           .:::'       :::::  .:::::::::' ':::::.</span></div><div class="line"><span class="comment">//          .::'        :::::.:::::::::'      ':::::.</span></div><div class="line"><span class="comment">//         .::'         ::::::::::::::'         ``::::.</span></div><div class="line"><span class="comment">//     ...:::           ::::::::::::'              ``::.</span></div><div class="line"><span class="comment">//    ```` ':.          ':::::::::'                  ::::..</span></div><div class="line"><span class="comment">//                       '.:::::'                    ':'````..</span></div></pre></td></tr></table></figure>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Prose/">Prose</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Prose/">Prose</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2014/08/21/注释头/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/08/21/注释头/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2014/08/20/SwipeView/" title="SwipeView" itemprop="url">SwipeView</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
-		
-  <p class="article-time">
-    <time datetime="2014-08-20T06:06:59.000Z" itemprop="datePublished"> 发表于 2014-08-20</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <a id="more"></a>
-<p>SwipeView提供了同级屏幕中的横向导航。<br>适配器<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoCollectionPagerAdapter</span> <span class="keyword">extends</span> <span class="title">FragmentStatePagerAdapter</span></span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">DemoCollectionPagerAdapter</span><span class="params">(FragmentManager fm)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(fm);</div><div class="line">    &#125;</div><div class="line">	<span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Fragment <span class="title">getItem</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;</div><div class="line">        Fragment fragment = <span class="keyword">new</span> DemoObjectFragment();</div><div class="line">        Bundle args = <span class="keyword">new</span> Bundle();</div><div class="line">        <span class="comment">// 我们的对象只是一个整数 :-P</span></div><div class="line">        args.putInt(DemoObjectFragment.ARG_OBJECT, i + <span class="number">1</span>);</div><div class="line">        fragment.setArguments(args);</div><div class="line">        <span class="keyword">return</span> fragment;</div><div class="line">    &#125;</div><div class="line">	<span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getCount</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">100</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> CharSequence <span class="title">getPageTitle</span><span class="params">(<span class="keyword">int</span> position)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">"OBJECT "</span> + (position + <span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>布局文件<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">android.support.v4.view.ViewPager</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span> </div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></div><div class="line">    <span class="attr">android:id</span>=<span class="string">"@+id/pager"</span>&gt;</div><div class="line">    <span class="tag">&lt;<span class="name">android.support.v4.view.PagerTabStrip</span></span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/pager_title_strip"</span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:layout_gravity</span>=<span class="string">"top"</span></div><div class="line">        <span class="attr">android:background</span>=<span class="string">"#33b5e5"</span></div><div class="line">        <span class="attr">android:textColor</span>=<span class="string">"#fff"</span></div><div class="line">        <span class="attr">android:paddingTop</span>=<span class="string">"4dp"</span></div><div class="line">        <span class="attr">android:paddingBottom</span>=<span class="string">"4dp"</span> /&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">android.support.v4.view.ViewPager</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>Fragment<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoObjectFragment</span> <span class="keyword">extends</span> <span class="title">Fragment</span> </span>&#123;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String ARG_OBJECT = <span class="string">"object"</span>;</div><div class="line"></div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> View <span class="title">onCreateView</span><span class="params">(LayoutInflater inflater, ViewGroup container,</span></span></div><div class="line">			Bundle savedInstanceState) &#123;</div><div class="line">		<span class="comment">// 最后两个参数保证LayoutParam能被正确填充</span></div><div class="line">		View rootView = inflater.inflate(R.layout.fragment_collection_object,</div><div class="line">				container, <span class="keyword">false</span>);</div><div class="line">		Bundle args = getArguments();</div><div class="line">		((TextView) rootView.findViewById(R.id.textView1)).setText(Integer</div><div class="line">				.toString(args.getInt(ARG_OBJECT)));</div><div class="line">		<span class="keyword">return</span> rootView;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><img src="https://github.com/zt1991616/blog/raw/master/Image/14082001.png" alt=""></p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Android/">Android</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Android/">Android</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2014/08/20/SwipeView/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/08/20/SwipeView/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2014/08/19/Android-Activity-Fragment生命周期/" title="Android Activity Fragment生命周期" itemprop="url">Android Activity Fragment生命周期</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
-		
-  <p class="article-time">
-    <time datetime="2014-08-19T06:06:38.000Z" itemprop="datePublished"> 发表于 2014-08-19</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p><img src="https://github.com/zt1991616/blog/raw/master/Image/14081901.png" alt=""></p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Android/">Android</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Android/">Android</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2014/08/19/Android-Activity-Fragment生命周期/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/08/19/Android-Activity-Fragment生命周期/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2014/08/19/Box2D/" title="Box2D" itemprop="url">Box2D</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Zoe" target="_blank" itemprop="author">Zoe</a>
-		
-  <p class="article-time">
-    <time datetime="2014-08-19T03:31:33.000Z" itemprop="datePublished"> 发表于 2014-08-19</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>一款功能强大、性能强劲的物理引擎。它能都维持在一个独立的运行空间。</p>
-<p>##概述<br>Box2D引擎创建的物体都属于理想的刚体，即它内部之间的距离永不改变。Box2D创建的物理世界具备以下三个特点。</p>
-<ol>
-<li>物理世界存在一个重力（可以为0）</li>
-<li>物理世界可以是一个存在边界的范围</li>
-<li>在世界中加入静态和动态物体（具有质量和位置），它们被用来模拟现实的运动规律<br>##概念</li>
-<li>物理世界（World)<br>一个物理世界就是由各种刚体、框架、形状互相作用的集合。</li>
-<li>刚体(Rigid Bodies)<br>理想刚体是一个有限尺寸、可以忽略形变的物体。不论是否感受到作用力，在刚体内部，点与点之间的距离都不会改变，可以认为是一个连续质量分布体。 在Box2D物理世界中，所有物体都是刚体，这些物体一旦被创建出来后，其形状就不会改变。</li>
-<li>形状(Shapes)<br>2D平面几何结构，主要用于世界里的物理碰撞的检测。</li>
-<li>框架(Fixtures)<br>框架代表物理世界中物体的固定物质形态，是连接物体和形状之间的框架，一个物体可以有多个框架，没个框架可以连接一个形状、它本身存储着物体的质量、密度、摩擦系数，同时包含碰撞标志、用户数据和是否使用碰撞检测器的标志。他存在的目的主要是为了物理引擎的运算考虑。</li>
-<li>关节(Joins)<br>关节的作用是将两个有一定运动自由度(水平、数组、转动)的物体连接起来，同时约束连接的物体。Box2D引擎支持的关节类型有旋转、棱柱、距离等等，通常具备两个共同属性：限制(Limits)和马达(Motors)<br> (1) 关节限制(joint limit) 限定了一个关节的运动范围。<br> (2) 关节马达(joint motor) 能依照关节的自由度来驱动所连接的物体。<br>##模块<br>Box2D引擎由三个模块组成：公共(Common)、碰撞(Collision)和动态(Dynamics)。<br>(1) Common核心模块包含了内存分配、数学计算和配置<br>(2) Collision模块定义了形状(shape)、broad-phase检测盒碰撞功能/查询(collision functions/queries)<br>(3) Dynamics模块提供对世界(world)、刚体(bodies)、框架(fixtures)和关节(joint)模拟<br>##数据单位<br>Box2D引擎使用浮点数进行计算，所以为看保证它的正常工作，必须使用一些公差来保证它的正常工作。引擎能够良好的处理0.1~10米之间的移动物体。<br>##用户数据<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 创建一个精灵</span></div><div class="line">CCSprite* actor = CCSprite::node();</div><div class="line"><span class="comment">// 物体的定义</span></div><div class="line">b2BodyDef bodyDef;</div><div class="line"><span class="comment">// 指定数据</span></div><div class="line">bodyDef.userData = actor;</div><div class="line"><span class="comment">// 创建物体</span></div><div class="line">actor-&gt;body = box2Dworld-&gt;CreateBody(&amp;bodyDef);</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>用户数据是可选的，并且能放入任何东西，为了保持一致性，通常保存精灵对象的指针。</p>
-<p>##物理世界World<br>创建一个世界<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">b2Vec2 gravity;	<span class="comment">// 重力</span></div><div class="line">gravity.Set(<span class="number">0.0f</span>,<span class="number">-10.0</span>f); </div><div class="line">world = <span class="keyword">new</span> b2World(gravity);</div><div class="line">world-&gt;SetAllowSleeping(<span class="literal">true</span>);	<span class="comment">// 设置允许物体进入休眠状态</span></div><div class="line">world-&gt;SetContinuonsPhysics(<span class="literal">true</span>); <span class="comment">// 设置使用连续物理检测</span></div></pre></td></tr></table></figure></p>
-<p>销毁世界<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">delete</span> world;</div><div class="line">world = <span class="literal">NULL</span>;</div></pre></td></tr></table></figure></p>
-<p>##世界运转起来<br>物理世界类中用于驱动模拟的函数为<code>Step</code>，调用它时，需要指定一个时间步和一个速度及位置的迭代次数。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">float32 timeStep = <span class="number">1.0f</span>/<span class="number">60.0f</span>;	<span class="comment">// 时间步，频率</span></div><div class="line">int32 velocityIterations = <span class="number">10</span>;	<span class="comment">// 速度迭代</span></div><div class="line">int32 positionIterations = <span class="number">8</span>;	<span class="comment">// 位置迭代次数</span></div><div class="line">myWorld-&gt;Step(timeStep,velocityIterations,positionIterations);	<span class="comment">// 驱动函数</span></div><div class="line">``` </div><div class="line">在物理引擎执行一次时间步之后，最好是清除任何施加在物体上的力。可以使用`b2World::ClearForces`完成，可以去除力的持续作用效果。</div><div class="line">##探索世界</div><div class="line">物理世界中存在创建工厂，工厂则会创建物体、框架和关节对象，同时世界也是容器，它会容纳工厂创建出来的所有对象。可以通过遍历的方式来获取世界中所有物体、框架和关节。</div><div class="line">```c++</div><div class="line"><span class="keyword">for</span> (b2Body* b = myWorld()-&gt;GetBodyList();b;b = b-&gt;GetNext())</div><div class="line">&#123;</div><div class="line">	b-&gt;WakeUp();	<span class="comment">// 唤醒物体</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>##AABB查询<br>Box2D引擎当中提供了AABB查询的方式，需要得出一个区域内所有对象时的解决方法。为此专门使用<code>broad-phase</code>的数据结构，它提供了一个log(N)复杂度的快速查询方法。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> MyQueryCallback : <span class="keyword">public</span> b2QueryCallback</div><div class="line">&#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">ReportFixture</span><span class="params">(b2Fixture* fixture)</span></span></div><div class="line">	&#123;</div><div class="line">		b2Body* body = fixture-&gt;GetBody();</div><div class="line">		body-&gt;WakeUp();</div><div class="line">		<span class="keyword">return</span> ture; <span class="comment">// 继续查询</span></div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">b2AABB aabb;</div><div class="line">aabb.lowerBound.Set(<span class="number">-1.0</span>f,<span class="number">-1.0</span>f);	<span class="comment">// 设置AABB的上边界</span></div><div class="line">aabb.upperBound.Set(<span class="number">1.0f</span>,<span class="number">1.0f</span>);		<span class="comment">// 设置AABB的下边界</span></div><div class="line">myWorld-&gt;Query(&amp;callback,aabb);</div></pre></td></tr></table></figure></p>
-<p>##光线投射(Ray Casts)<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> MyRayCastCallBack : <span class="keyword">public</span> b2RayCastCallback</div><div class="line">&#123;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">	MyRayCastCallback()</div><div class="line">	&#123;</div><div class="line">		m_fixture = <span class="literal">NULL</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="function">float32 <span class="title">ReportFixture</span><span class="params">(b2Fixture* fixture,<span class="keyword">const</span> b2Vec2&amp; point,<span class="keyword">const</span> b2Vec2&amp; normal,float32 fraction)</span></span></div><div class="line">	&#123;</div><div class="line">		<span class="comment">// 保存框架</span></div><div class="line">		m_fixture = fixture;</div><div class="line">		<span class="comment">// 保存交点</span></div><div class="line">		m_point = point;</div><div class="line">		<span class="comment">// 保存法向量</span></div><div class="line">		m_normal = normal;</div><div class="line">		<span class="comment">// 保存光线通过的分数距离</span></div><div class="line">		m_fraction = fraction;</div><div class="line">		<span class="keyword">return</span> fraction;</div><div class="line">	&#125;</div><div class="line">	b2xFixture* m_fixture;</div><div class="line">	b2Vec2 m_point;</div><div class="line">	b2Vec2 m_normal;</div><div class="line">	float32 m_fraction;</div><div class="line">&#125;;</div><div class="line"><span class="comment">// 回调函数</span></div><div class="line">MyRayCastCallback callback;</div><div class="line"><span class="comment">// 光线投射的起始点</span></div><div class="line"><span class="function">b2Vec2 <span class="title">point</span><span class="params">(<span class="number">-1.0</span>f,<span class="number">0.0f</span>)</span></span>;</div><div class="line"><span class="comment">// 光线投射的结束点</span></div><div class="line"><span class="function">b2Vec2 <span class="title">point</span><span class="params">(<span class="number">3.0f</span>,<span class="number">1.0f</span>)</span></span>;</div><div class="line"><span class="comment">// 开始光线的投射</span></div><div class="line">myWorld-&gt;RayCast(&amp;callback,point1,point2);</div></pre></td></tr></table></figure></p>
-<p>##形状Shapes<br>形状是物体的包围盒，描述了可相互碰撞的几何对象的外形，它通常会是一个几何图形。被Shape是形状的基类，Box2D引擎中各种形状类都是继承自这个基类。此基类定义了几个常用函数：</p>
-<ol>
-<li>判断一个点与形状是否有重叠</li>
-<li>在形状上执行光线投射</li>
-<li>计算形状的AABB</li>
-<li>计算形状的质量<br>所有形状都有两个成员变量：类型(type)和半径(radius)，引擎存在两种类型的形状：圆形和多边形。<br>###圆形(Circle Shapes)<br>圆形形状(b2CircleShape)是一个由位置和半径表示的集合图形。圆形形状都是实心的，主要的参数就是半径。<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">b2CircleShape circle;<span class="comment">// 创建圆形形状的对象</span></div><div class="line">circle.m_p.Set(<span class="number">1.0f</span>,<span class="number">2.0f</span>,<span class="number">3.0f</span>);<span class="comment">// 设置位置</span></div><div class="line">circle.m_radius = <span class="number">0.5f</span>;<span class="comment">// 设置半径</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>###多边形(Polygon Shape)<br>多边形(b2PolygonShape)是实现的凸(Convex)多边形。数学的定义：在多边形内部任意选择两点，作一线段，如果所有线段都跟多边形的边不想交，这个多边形就是凸多边形。在Box2D引擎中一个多边形形状是通过顶点来描述的。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">b2PolygonDef triangleDef;</div><div class="line">triangleDef.vertexCont = <span class="number">3</span>;</div><div class="line">triangleDef.vertices[<span class="number">0</span>].Set(<span class="number">-1.0</span>f,<span class="number">0.0f</span>);</div><div class="line">triangleDef.vertices[<span class="number">1</span>].Set(<span class="number">1.0f</span>,<span class="number">0.0f</span>);</div><div class="line">triangleDef.vertices[<span class="number">2</span>].Set(<span class="number">0.0f</span>,<span class="number">2.0f</span>);</div></pre></td></tr></table></figure></p>
-<p>在创建多边形时，顶点必须是逆时针排列。创建多边形时，顶点的数据可以通过数组来传递，数组中的顶点数最大值是核心模块中定义的b2maxPolygonVertices，默认情况下此数值是8。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">b2Vec2 vertices[<span class="number">4</span>];</div><div class="line">vertices[<span class="number">0</span>].Set(<span class="number">0.0f</span>,<span class="number">0.0f</span>);</div><div class="line">vertices[<span class="number">1</span>].Set(<span class="number">1.0f</span>,<span class="number">0.0f</span>);</div><div class="line">vertices[<span class="number">2</span>].Set(<span class="number">0.0f</span>,<span class="number">1.0f</span>);</div><div class="line">vertices[<span class="number">3</span>].Set(<span class="number">1.0f</span>,<span class="number">1.0f</span>);</div><div class="line"></div><div class="line">int32 count = <span class="number">4</span>;</div><div class="line">b2PolygonShape polygon;</div><div class="line">polygon.Set(vertices,count);</div></pre></td></tr></table></figure></p>
-<p>为了使用方便引擎还提供了一些定义好的初始化函数来创建固定的多边形形状：箱子(box)和边缘(edge，就是线段)<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">SetAsbox</span><span class="params">(float32 hx,float32 hy)</span></span>;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">SetAsBox</span><span class="params">(float32 hx,float32 hy,<span class="keyword">const</span> b2Vec2&amp; center,float32 angle)</span></span>;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">SetAsEdge</span><span class="params">(<span class="keyword">const</span> b2Vec2&amp; v1,<span class="keyword">const</span> b2Vec&amp; v2)</span></span>;</div></pre></td></tr></table></figure></p>
-<p>##框架Fixtures<br>Fixture是动态模块中重要的概念，用来物理模拟。<br>动态模块包含的内容：</p>
-<ul>
-<li>框架(Fixtures)</li>
-<li>物体(Bodies)</li>
-<li>接触(Contacts)</li>
-<li>关节(Joints)</li>
-<li>世界(World)</li>
-<li>监听器(Listener)<br>框架主要用于建立形状与物体之间的连接和进行物理模拟。<br>###密度(Density)<br>框架的密度用来计算物体的质量属性，密度可以为零或者其他整数。<br>###摩擦(Friction)<br>Box2D支持静态摩擦和动态摩擦，两者都使用的相同的摩擦系数作为参数。摩擦的强度与正交力成正比。摩擦系数经常会设置为0到1之间，0意味着没有摩擦，1会产生强摩擦。当计算两个形状之间的摩擦时，引擎必须计算两个形状的摩擦参数。<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">float32 friction;</div><div class="line">friction = sqrtf(shape1-&gt;friction * shape2-&gt;friction);</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>###恢复(Resitution)<br>为反弹的参数，它可以使对象弹起。恢复的值通常设置在0到1之间。恢复就是一个物体碰撞后反弹大小的参数，其值为0表示小球不会弹起，这称为非弹性碰撞。值为1表示小球的速度大小一样，只是方向相反，这称为完全弹性碰撞。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">float32 resitution;</div><div class="line">restitution = b2Max(shape1-&gt;resitution,shape2-&gt;resitution);</div></pre></td></tr></table></figure></p>
-<p>###帅选(Filtering)<br>用来设置某些游戏对象相互碰撞的关系。Box2D支持最多十六个种群进行筛选。在引擎中碰撞筛选是通过掩码来完成的。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">playerFixtureDef.filter.categoryBits = <span class="number">0x0002</span>;</div><div class="line">playerFixtureDef.filter.maskBits = <span class="number">0x0004</span>;</div><div class="line">monsterFixturDef.filter.categoryBits = <span class="number">0x0004</span>;</div><div class="line">monsterFixturDef.filter.maskBits = <span class="number">0x0002</span>;</div></pre></td></tr></table></figure></p>
-<p>还可以进行分组，可以让同一组内的所有框架总是互相碰撞(正索引)或者永不碰撞(负索引)<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">fixture1Def.filter.groupIndex = <span class="number">2</span>;</div><div class="line">fixture2Def.filter.groupIndex = <span class="number">2</span>;</div><div class="line">fixture3Def.filter.groupIndex = <span class="number">-8</span>;</div><div class="line">fixture4Def.filter.groupIndex = <span class="number">-8</span>;</div></pre></td></tr></table></figure></p>
-<ol>
-<li>静态物体上的框架永远不会与两一个静态物体上的框架发生碰撞，因为静态物体根本不会移动</li>
-<li>同一个物体上的框架永远不会相互碰撞</li>
-<li>如果物体用关节连接起来了，物体上的框架可以选择启用或禁止它们之间相互碰撞。<br>###感应器(Sensors)<br>感应器是用来检测两个框架是否相交的对象。可以将任何一个框架对象设置为感应器，感应器可以是静态或者动态的。感应器发生碰撞时，是不会生成接触点的。<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">b2Contact::IsTouching	<span class="comment">// 这个函数可以得到感应器是否接触</span></div><div class="line">b2ContactListener::BeginContact和EndContact <span class="comment">// 开始接触点和结束接触点</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>##物体Bodies<br>Box2D的物体均为刚体，它具有质量和惯性，运动状态由重心和受力决定，动态速度由线速度和角速度控制，可分为三类</p>
-<ol>
-<li>静态物体(b2_staticBody)质量为0，在模拟时，静态不可移动，不过可以手动设置移动。速度为零。另外它不会和其他静态、平台物体碰撞。</li>
-<li>平台物体(b2_kinematicBody)<br>是按照固定轨迹在运动的物体，其质量也为零，可以预设一个速度，它也不会和其他的静态或平台物体相互碰撞。</li>
-<li>动态物体(b2_dynamicBody)<br>具有质量、速度、摩擦等，它将会参与引擎中的碰撞检测与物理模拟。可以与物理世界中任何对象发生碰撞。<br>上述物体都可以被施加外力(forces)、扭矩(torques)、冲量(impulses)<br>###位置和角度(Position and Angle)<br>是物体的最基本的属性，也就是物理世界都不会缺少这两个属性。<br>物体的两个主要有两个属性是最最主要的：</li>
-<li>第一个是物体的原点</li>
-<li>第二个是物体的知心，可以显式地通过<code>b2MassData</code>来设置。<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">bodyDef.position.Set(<span class="number">0.0f</span>,<span class="number">2.0f</span>); 	<span class="comment">// body的原点</span></div><div class="line">bodyDef.angle = <span class="number">0.25f</span> * b2_pi;		<span class="comment">// 弧度制下body的角</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>在引擎运转过程中，物体的位置和角度也会随时地改变。也可以通过物体类中的函数来改变。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">SetTransform</span><span class="params">(<span class="keyword">const</span> b2Vec2&amp; position,float32 angle)</span></span>;</div></pre></td></tr></table></figure></p>
-<p>###阻尼(Damping)<br>用于表示减小物体的世界中的速度的数值。阻尼和摩擦有所不同，摩擦仅在物体有接触的时候才会发生，而阻尼却时时刻刻阻碍着物体运动，比如空气阻力。阻尼参数的数值范围可以是从零到无穷大。通常来说阻尼的值应该在0~0.1之间。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">bodyDef.linearDamping = <span class="number">0.0f</span>;</div><div class="line">bodyDef.angularDamping = <span class="number">0.01f</span>;</div></pre></td></tr></table></figure></p>
-<p>###休眠参数(Sleep Parameters)<br>确定一个物体已经停止了移动时，物体就会进入休眠状态，休眠物体只消耗很小的CPU开销。接触到一个醒着的物体，物体就会被唤醒，物体上艹关节或触点被销毁的时候，也会醒来。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">bodyDef.allowSleep = <span class="literal">true</span>;	<span class="comment">// 可以休眠</span></div><div class="line">bodyDef.awake = ture;	<span class="comment">// 休眠物体</span></div></pre></td></tr></table></figure></p>
-<p>###固定旋转(Fixed Rotation)<br>通过<code>bodyDef.fixedRotation = ture</code>物体的转动惯量设置成零，物体会保持初始化的角度，而不会发生旋转。</p>
-<p>###子弹(Bullets)<br>子弹通常指一类速度很快而尺寸较小的物体，容易击穿其他物体。<code>bodyDef.bullet = true</code></p>
-<p>###活动状态(Activation)<br>一个非活动状态的物体，将完全地与世隔绝，不会参与物理模拟和碰撞检测，关节也不会被迷你。<code>bodyDef.active = true</code></p>
-<p>###用户数据(User Data)<br>一个存放用户数据的void指针，通常保存精灵对象<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">b2BodyDef bodyDef;</div><div class="line">bodyDef.userData = &amp;myActor;</div></pre></td></tr></table></figure></p>
-<p>##关节(Joints)<br>关节是将两个或两个以上物体连接在一起的对象，主要有三个作用</p>
-<ol>
-<li>用于连接物体</li>
-<li>用于限制物体的移动，是一种约束</li>
-<li>它本身是一个能够活动的对象<br>###关节的定义(JointDef)<br>关节包含一个用户数据的void指针，可以指定游戏元素，希望关节上的两个物体也能够发生碰撞，可以设置<code>collideConnected</code>布尔值来允许连接的物体之间进行碰撞。</li>
-</ol>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Cocos2d-X/">Cocos2d-X</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Box2D/">Box2D</a><a href="/tags/物理引擎/">物理引擎</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2014/08/19/Box2D/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/08/19/Box2D/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-
-  <nav id="page-nav" class="clearfix">
-    <a class="extend prev" rel="prev" href="/page/24/"><span></span>Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="page-number" href="/page/24/">24</a><span class="page-number current">25</span><a class="page-number" href="/page/26/">26</a><a class="page-number" href="/page/27/">27</a><span class="space">&hellip;</span><a class="page-number" href="/page/39/">39</a><a class="extend next" rel="next" href="/page/26/">Next<span></span></a>
   </nav>
-
-</div>
-      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
-
-<div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
-<aside class="clearfix">
-
-  
-<div class="categorieslist">
-	<p class="asidetitle">分类</p>
-		<ul>
-		
-		  
-			<li><a href="/categories/Android/" title="Android">Android<sup>185</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/Cocos2d-X/" title="Cocos2d-X">Cocos2d-X<sup>11</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/Photography/" title="Photography">Photography<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/Prose/" title="Prose">Prose<sup>27</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/Python/" title="Python">Python<sup>22</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/ReactNative/" title="ReactNative">ReactNative<sup>7</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/iOS/" title="iOS">iOS<sup>84</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/node-js/" title="node.js">node.js<sup>30</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/杂文/" title="杂文">杂文<sup>3</sup></a></li>
-		  
-		
-		</ul>
-</div>
-
-
-  
-  <div class="tagcloudlist">
-    <p class="asidetitle">标签云</p>
-    <div class="tagcloudlist clearfix">
-       <a href="/tags/2/" style="font-size: 10px;">2</a> <a href="/tags/AFNetworking/" style="font-size: 10px;">AFNetworking</a> <a href="/tags/APK/" style="font-size: 10px;">APK</a> <a href="/tags/AS/" style="font-size: 10px;">AS</a> <a href="/tags/Adapter/" style="font-size: 10px;">Adapter</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Android-5-0/" style="font-size: 10px;">Android 5.0</a> <a href="/tags/Android-Studio/" style="font-size: 11.54px;">Android Studio</a> <a href="/tags/AndroidAninotations/" style="font-size: 10px;">AndroidAninotations</a> <a href="/tags/AndroidStudio/" style="font-size: 15.38px;">AndroidStudio</a> <a href="/tags/Animation/" style="font-size: 12.31px;">Animation</a> <a href="/tags/Api/" style="font-size: 11.54px;">Api</a> <a href="/tags/App/" style="font-size: 10px;">App</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Async/" style="font-size: 10px;">Async</a> <a href="/tags/Atom/" style="font-size: 10.77px;">Atom</a> <a href="/tags/AutoLayout/" style="font-size: 10px;">AutoLayout</a> <a href="/tags/BaseAdapter/" style="font-size: 10px;">BaseAdapter</a> <a href="/tags/Blur/" style="font-size: 10px;">Blur</a> <a href="/tags/Box2D/" style="font-size: 10px;">Box2D</a> <a href="/tags/Broadcast/" style="font-size: 10px;">Broadcast</a> <a href="/tags/CardView/" style="font-size: 10px;">CardView</a> <a href="/tags/CocoaPods/" style="font-size: 10px;">CocoaPods</a> <a href="/tags/Cocos2d-X/" style="font-size: 13.08px;">Cocos2d-X</a> <a href="/tags/CocosPods/" style="font-size: 10px;">CocosPods</a> <a href="/tags/ContentProvider/" style="font-size: 10px;">ContentProvider</a> <a href="/tags/Context/" style="font-size: 10px;">Context</a> <a href="/tags/Crouton/" style="font-size: 10px;">Crouton</a> <a href="/tags/CursorLoader/" style="font-size: 10px;">CursorLoader</a> <a href="/tags/Demo/" style="font-size: 10.77px;">Demo</a> <a href="/tags/Dialog/" style="font-size: 10px;">Dialog</a> <a href="/tags/EditView/" style="font-size: 10px;">EditView</a> <a href="/tags/EventBus/" style="font-size: 10px;">EventBus</a> <a href="/tags/Express/" style="font-size: 10px;">Express</a> <a href="/tags/Express学习笔记/" style="font-size: 10px;">Express学习笔记</a> <a href="/tags/Flex/" style="font-size: 10px;">Flex</a> <a href="/tags/Fragment/" style="font-size: 10.77px;">Fragment</a> <a href="/tags/GET/" style="font-size: 10px;">GET</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Gradle/" style="font-size: 10.77px;">Gradle</a> <a href="/tags/GridLayout/" style="font-size: 10px;">GridLayout</a> <a href="/tags/GridView/" style="font-size: 10.77px;">GridView</a> <a href="/tags/Gson/" style="font-size: 10px;">Gson</a> <a href="/tags/HTTP/" style="font-size: 10.77px;">HTTP</a> <a href="/tags/Handler/" style="font-size: 10px;">Handler</a> <a href="/tags/HeadersList/" style="font-size: 10px;">HeadersList</a> <a href="/tags/Hello-World/" style="font-size: 10px;">Hello World</a> <a href="/tags/Holo/" style="font-size: 10px;">Holo</a> <a href="/tags/IDE/" style="font-size: 10px;">IDE</a> <a href="/tags/IM/" style="font-size: 10.77px;">IM</a> <a href="/tags/Indicator/" style="font-size: 10px;">Indicator</a> <a href="/tags/IntentService/" style="font-size: 10px;">IntentService</a> <a href="/tags/JCenter/" style="font-size: 10px;">JCenter</a> <a href="/tags/JSON解析/" style="font-size: 10px;">JSON解析</a> <a href="/tags/Java/" style="font-size: 16.15px;">Java</a> <a href="/tags/Json/" style="font-size: 10.77px;">Json</a> <a href="/tags/KVO/" style="font-size: 10.77px;">KVO</a> <a href="/tags/Kotlin/" style="font-size: 10px;">Kotlin</a> <a href="/tags/Layout/" style="font-size: 10px;">Layout</a> <a href="/tags/Lint/" style="font-size: 10px;">Lint</a> <a href="/tags/ListView/" style="font-size: 10.77px;">ListView</a> <a href="/tags/Log/" style="font-size: 10px;">Log</a> <a href="/tags/MVVM/" style="font-size: 10.77px;">MVVM</a> <a href="/tags/Mac/" style="font-size: 10.77px;">Mac</a> <a href="/tags/Markdown/" style="font-size: 10.77px;">Markdown</a> <a href="/tags/Masonry/" style="font-size: 10px;">Masonry</a> <a href="/tags/Material/" style="font-size: 10.77px;">Material</a> <a href="/tags/Material-Design/" style="font-size: 10px;">Material Design</a> <a href="/tags/MaterialDesign/" style="font-size: 10px;">MaterialDesign</a> <a href="/tags/Meterial/" style="font-size: 10.77px;">Meterial</a> <a href="/tags/Meterial-Design/" style="font-size: 10px;">Meterial Design</a> <a href="/tags/Model/" style="font-size: 10px;">Model</a> <a href="/tags/MongoDB/" style="font-size: 10.77px;">MongoDB</a> <a href="/tags/Mongoose/" style="font-size: 10px;">Mongoose</a> <a href="/tags/NavBar/" style="font-size: 10px;">NavBar</a> <a href="/tags/Navigator/" style="font-size: 10px;">Navigator</a> <a href="/tags/NavtigationBar/" style="font-size: 10px;">NavtigationBar</a> <a href="/tags/NoSQL/" style="font-size: 10px;">NoSQL</a> <a href="/tags/OSX/" style="font-size: 10px;">OSX</a> <a href="/tags/Objective-C/" style="font-size: 16.92px;">Objective-C</a> <a href="/tags/POST/" style="font-size: 10px;">POST</a> <a href="/tags/PagerAdapter/" style="font-size: 10px;">PagerAdapter</a> <a href="/tags/PagerTranformer/" style="font-size: 10px;">PagerTranformer</a> <a href="/tags/Paint/" style="font-size: 10px;">Paint</a> <a href="/tags/Parcelable/" style="font-size: 10px;">Parcelable</a> <a href="/tags/PerferenceScreencreen/" style="font-size: 10px;">PerferenceScreencreen</a> <a href="/tags/Post/" style="font-size: 10px;">Post</a> <a href="/tags/ProGuard/" style="font-size: 10px;">ProGuard</a> <a href="/tags/Prose/" style="font-size: 12.31px;">Prose</a> <a href="/tags/Python/" style="font-size: 18.46px;">Python</a> <a href="/tags/REST/" style="font-size: 10.77px;">REST</a> <a href="/tags/Random/" style="font-size: 10px;">Random</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/ReactNative/" style="font-size: 10px;">ReactNative</a> <a href="/tags/RecyclerView/" style="font-size: 10.77px;">RecyclerView</a> <a href="/tags/SDK/" style="font-size: 11.54px;">SDK</a> <a href="/tags/SD卡/" style="font-size: 10px;">SD卡</a> <a href="/tags/SE5/" style="font-size: 10px;">SE5</a> <a href="/tags/SE6/" style="font-size: 10px;">SE6</a> <a href="/tags/SaveInstance/" style="font-size: 10px;">SaveInstance</a> <a href="/tags/Serializable/" style="font-size: 10px;">Serializable</a> <a href="/tags/SharedPreferce/" style="font-size: 10px;">SharedPreferce</a> <a href="/tags/SizeClass/" style="font-size: 10px;">SizeClass</a> <a href="/tags/Spider/" style="font-size: 10px;">Spider</a> <a href="/tags/Sprite/" style="font-size: 10.77px;">Sprite</a> <a href="/tags/Style/" style="font-size: 10px;">Style</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Sublime-Text/" style="font-size: 10px;">Sublime Text</a> <a href="/tags/SublimeText/" style="font-size: 10px;">SublimeText</a> <a href="/tags/Swift/" style="font-size: 17.69px;">Swift</a> <a href="/tags/TextView/" style="font-size: 10.77px;">TextView</a> <a href="/tags/Thread/" style="font-size: 10px;">Thread</a> <a href="/tags/Tips/" style="font-size: 10px;">Tips</a> <a href="/tags/ToolBar/" style="font-size: 10px;">ToolBar</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/UIActionSheet/" style="font-size: 10px;">UIActionSheet.</a> <a href="/tags/UIAlertView/" style="font-size: 10px;">UIAlertView</a> <a href="/tags/UIImageView/" style="font-size: 10px;">UIImageView</a> <a href="/tags/UIL/" style="font-size: 10px;">UIL</a> <a href="/tags/UIScrollView/" style="font-size: 10px;">UIScrollView</a> <a href="/tags/Ui/" style="font-size: 10px;">Ui</a> <a href="/tags/View/" style="font-size: 10px;">View</a> <a href="/tags/Volley/" style="font-size: 10px;">Volley</a> <a href="/tags/WebStorm/" style="font-size: 10px;">WebStorm</a> <a href="/tags/WebStrom/" style="font-size: 10px;">WebStrom</a> <a href="/tags/XCode/" style="font-size: 10px;">XCode</a> <a href="/tags/adb/" style="font-size: 10px;">adb</a> <a href="/tags/app/" style="font-size: 10.77px;">app</a> <a href="/tags/async/" style="font-size: 10px;">async</a> <a href="/tags/blur/" style="font-size: 10px;">blur</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/console/" style="font-size: 10px;">console</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/curl/" style="font-size: 10px;">curl</a> <a href="/tags/eclipse/" style="font-size: 10px;">eclipse</a> <a href="/tags/emoji/" style="font-size: 10px;">emoji</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/fallthrough/" style="font-size: 10px;">fallthrough</a> <a href="/tags/findViewById/" style="font-size: 10px;">findViewById</a> <a href="/tags/git/" style="font-size: 13.08px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/gradlew/" style="font-size: 10px;">gradlew</a> <a href="/tags/gravity/" style="font-size: 10px;">gravity</a> <a href="/tags/host/" style="font-size: 10px;">host</a> <a href="/tags/http/" style="font-size: 10.77px;">http</a> <a href="/tags/iOS/" style="font-size: 19.23px;">iOS</a> <a href="/tags/iPhone/" style="font-size: 10px;">iPhone</a> <a href="/tags/icon/" style="font-size: 10px;">icon</a> <a href="/tags/include/" style="font-size: 10px;">include</a> <a href="/tags/jQerry/" style="font-size: 11.54px;">jQerry</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/js/" style="font-size: 13.85px;">js</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/keymap/" style="font-size: 10px;">keymap</a> <a href="/tags/lambda/" style="font-size: 10px;">lambda</a> <a href="/tags/layout/" style="font-size: 11.54px;">layout</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/measure/" style="font-size: 10px;">measure</a> <a href="/tags/merge/" style="font-size: 10px;">merge</a> <a href="/tags/meteor/" style="font-size: 10.77px;">meteor</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/mongo/" style="font-size: 10px;">mongo</a> <a href="/tags/ndk/" style="font-size: 11.54px;">ndk</a> <a href="/tags/nil/" style="font-size: 10px;">nil</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/node-js/" style="font-size: 14.62px;">node.js</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/package/" style="font-size: 10px;">package</a> <a href="/tags/px/" style="font-size: 10px;">px</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/ripple/" style="font-size: 10px;">ripple</a> <a href="/tags/selector/" style="font-size: 10px;">selector</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/shape/" style="font-size: 10px;">shape</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/so/" style="font-size: 10px;">so</a> <a href="/tags/sp/" style="font-size: 10px;">sp</a> <a href="/tags/sqlite/" style="font-size: 10px;">sqlite</a> <a href="/tags/style/" style="font-size: 10px;">style</a> <a href="/tags/supervisor/" style="font-size: 10px;">supervisor</a> <a href="/tags/support/" style="font-size: 10px;">support</a> <a href="/tags/swfit/" style="font-size: 10px;">swfit</a> <a href="/tags/swift/" style="font-size: 10.77px;">swift</a> <a href="/tags/switch/" style="font-size: 10px;">switch</a> <a href="/tags/view/" style="font-size: 10px;">view</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web-app/" style="font-size: 10px;">web app</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/wifi/" style="font-size: 10px;">wifi</a> <a href="/tags/yield/" style="font-size: 10px;">yield</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/依赖管理/" style="font-size: 10px;">依赖管理</a> <a href="/tags/保存数据/" style="font-size: 10px;">保存数据</a> <a href="/tags/倒计时/" style="font-size: 10px;">倒计时</a> <a href="/tags/关键字/" style="font-size: 10px;">关键字</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/分支/" style="font-size: 10.77px;">分支</a> <a href="/tags/分辨率/" style="font-size: 10.77px;">分辨率</a> <a href="/tags/分配率/" style="font-size: 10px;">分配率</a> <a href="/tags/切换/" style="font-size: 10px;">切换</a> <a href="/tags/初始化/" style="font-size: 10px;">初始化</a> <a href="/tags/前端/" style="font-size: 11.54px;">前端</a> <a href="/tags/加密/" style="font-size: 10px;">加密</a> <a href="/tags/动态交互/" style="font-size: 10px;">动态交互</a> <a href="/tags/动态注入/" style="font-size: 10px;">动态注入</a> <a href="/tags/动画/" style="font-size: 13.85px;">动画</a> <a href="/tags/包/" style="font-size: 10px;">包</a> <a href="/tags/反编译/" style="font-size: 10.77px;">反编译</a> <a href="/tags/取色/" style="font-size: 10px;">取色</a> <a href="/tags/图片加载/" style="font-size: 10px;">图片加载</a> <a href="/tags/坐标系/" style="font-size: 10px;">坐标系</a> <a href="/tags/基础/" style="font-size: 11.54px;">基础</a> <a href="/tags/复用/" style="font-size: 10px;">复用</a> <a href="/tags/多分辨率/" style="font-size: 10px;">多分辨率</a> <a href="/tags/多屏幕/" style="font-size: 10px;">多屏幕</a> <a href="/tags/大不同/" style="font-size: 16.15px;">大不同</a> <a href="/tags/妈妈再也不用担心系列/" style="font-size: 10px;">妈妈再也不用担心系列</a> <a href="/tags/定位代码/" style="font-size: 10px;">定位代码</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/对象/" style="font-size: 10px;">对象</a> <a href="/tags/导航/" style="font-size: 10px;">导航</a> <a href="/tags/属性/" style="font-size: 10.77px;">属性</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/工具类/" style="font-size: 11.54px;">工具类</a> <a href="/tags/布局/" style="font-size: 12.31px;">布局</a> <a href="/tags/带标题的ListView/" style="font-size: 10px;">带标题的ListView</a> <a href="/tags/常用/" style="font-size: 10.77px;">常用</a> <a href="/tags/序列化/" style="font-size: 10px;">序列化</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/开源/" style="font-size: 10px;">开源</a> <a href="/tags/开源库/" style="font-size: 10px;">开源库</a> <a href="/tags/异步/" style="font-size: 10.77px;">异步</a> <a href="/tags/异步加载/" style="font-size: 10px;">异步加载</a> <a href="/tags/引导/" style="font-size: 10px;">引导</a> <a href="/tags/引用/" style="font-size: 10px;">引用</a> <a href="/tags/录屏/" style="font-size: 10px;">录屏</a> <a href="/tags/快捷键/" style="font-size: 10px;">快捷键</a> <a href="/tags/持久化/" style="font-size: 10px;">持久化</a> <a href="/tags/按钮/" style="font-size: 10px;">按钮</a> <a href="/tags/提示/" style="font-size: 10.77px;">提示</a> <a href="/tags/插件/" style="font-size: 11.54px;">插件</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/数学，宏/" style="font-size: 10px;">数学，宏</a> <a href="/tags/数据库/" style="font-size: 11.54px;">数据库</a> <a href="/tags/数据绑定/" style="font-size: 10.77px;">数据绑定</a> <a href="/tags/文本大小/" style="font-size: 10px;">文本大小</a> <a href="/tags/杂文/" style="font-size: 10.77px;">杂文</a> <a href="/tags/权限/" style="font-size: 10px;">权限</a> <a href="/tags/样式/" style="font-size: 10px;">样式</a> <a href="/tags/模块/" style="font-size: 10.77px;">模块</a> <a href="/tags/模拟/" style="font-size: 10px;">模拟</a> <a href="/tags/模糊/" style="font-size: 10.77px;">模糊</a> <a href="/tags/毛玻璃/" style="font-size: 10px;">毛玻璃</a> <a href="/tags/波纹/" style="font-size: 10px;">波纹</a> <a href="/tags/注入/" style="font-size: 10.77px;">注入</a> <a href="/tags/注解/" style="font-size: 10px;">注解</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/混淆/" style="font-size: 10px;">混淆</a> <a href="/tags/热启动/" style="font-size: 10px;">热启动</a> <a href="/tags/爬虫/" style="font-size: 10.77px;">爬虫</a> <a href="/tags/物理引擎/" style="font-size: 10px;">物理引擎</a> <a href="/tags/环信/" style="font-size: 10.77px;">环信</a> <a href="/tags/生命周期/" style="font-size: 11.54px;">生命周期</a> <a href="/tags/用时/" style="font-size: 10px;">用时</a> <a href="/tags/界面/" style="font-size: 10px;">界面</a> <a href="/tags/硬盘缓存/" style="font-size: 10px;">硬盘缓存</a> <a href="/tags/第一个项目/" style="font-size: 10px;">第一个项目</a> <a href="/tags/精灵/" style="font-size: 10px;">精灵</a> <a href="/tags/精灵帧/" style="font-size: 10px;">精灵帧</a> <a href="/tags/约束/" style="font-size: 10px;">约束</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/绘制/" style="font-size: 10px;">绘制</a> <a href="/tags/继承/" style="font-size: 10px;">继承</a> <a href="/tags/缓存/" style="font-size: 10px;">缓存</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a> <a href="/tags/网络请求/" style="font-size: 10.77px;">网络请求</a> <a href="/tags/翻墙/" style="font-size: 10.77px;">翻墙</a> <a href="/tags/自动布局/" style="font-size: 10px;">自动布局</a> <a href="/tags/自定义/" style="font-size: 10.77px;">自定义</a> <a href="/tags/自定义控件/" style="font-size: 10px;">自定义控件</a> <a href="/tags/自适应/" style="font-size: 10px;">自适应</a> <a href="/tags/虚拟键/" style="font-size: 10px;">虚拟键</a> <a href="/tags/角标/" style="font-size: 10px;">角标</a> <a href="/tags/设计/" style="font-size: 10px;">设计</a> <a href="/tags/设计缺陷/" style="font-size: 10px;">设计缺陷</a> <a href="/tags/访问/" style="font-size: 10px;">访问</a> <a href="/tags/调试/" style="font-size: 10.77px;">调试</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/资源文件/" style="font-size: 10px;">资源文件</a> <a href="/tags/路由/" style="font-size: 10px;">路由</a> <a href="/tags/转义/" style="font-size: 10px;">转义</a> <a href="/tags/轻量级/" style="font-size: 10px;">轻量级</a> <a href="/tags/连接/" style="font-size: 10px;">连接</a> <a href="/tags/适配/" style="font-size: 10.77px;">适配</a> <a href="/tags/遍历/" style="font-size: 10px;">遍历</a> <a href="/tags/配置/" style="font-size: 10px;">配置</a> <a href="/tags/镜像/" style="font-size: 10px;">镜像</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/随机/" style="font-size: 10px;">随机</a> <a href="/tags/隐藏/" style="font-size: 10px;">隐藏</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a> <a href="/tags/颜色/" style="font-size: 10.77px;">颜色</a> <a href="/tags/颜色选择器/" style="font-size: 10px;">颜色选择器</a> <a href="/tags/魅族/" style="font-size: 10px;">魅族</a> <a href="/tags/！/" style="font-size: 10px;">！</a> <a href="/tags/？/" style="font-size: 10px;">？</a>
+  <main id="main">
+    <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Zoe&#39;s blog</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
     </div>
+</header>
+<header class="content-header">
+  <div class="container">
+    <h1 class="author">Zoe&#39;s blog</h1>
+    <h5 class="subtitle">
+        
+        Dear宅学长的博客
+        
+    </h5>
   </div>
+</header>
+
+    <div class="container body-wrap">
+      <ul class="post-list">
+  
+    <li class="post-list-item">
+        <article id="post-常用git命令"
+  class="article article-type-post" itemprop="blogPost">
+     
 
 
   
-  <div class="archiveslist">
-    <p class="asidetitle"><a href="/archives">归档</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">二月 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">九月 2014</a><span class="archive-list-count">36</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">八月 2014</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">七月 2014</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">五月 2014</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">四月 2014</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">三月 2014</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">二月 2014</a><span class="archive-list-count">24</span></li></ul>
-  </div>
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2014/08/27/常用git命令/">常用git命令</a>
+    </h3>
+  
 
 
-  <div class="linkslist">
-  <p class="asidetitle">友情链接</p>
-    <ul>
+
+    <div class="post-meta">
+        <time datetime="2014-08-27T00:36:56.000Z" itemprop="datePublished" class="post-time">
+  2014-08-27
+</time>
+
         
-          <li>
-            
-            	<a href="http://daimajia.com/" target="_blank" title="DaiMaJia.Blog">DaiMaJia.Blog</a>
-            
-          </li>
-        
-          <li>
-            
-            	<a href="http://macrotea.com/welcome/" target="_blank" title="Macrotea.Blog">Macrotea.Blog</a>
-            
-          </li>
-        
-    </ul>
-</div>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Prose/">Prose</a></li></ul>
 
-  <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
-</div>
 
-</aside>
-</div>
+
     </div>
-    <footer><div id="footer" >
-	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> Hello,I&#39;m Zoe,a Android and iOS developers. <br/>
-			This is my blog,I hope you will enjoy them.</p>
-	</section>
-	 
-	<div class="social-font" class="clearfix">
-		
-		<a href="http://weibo.com/2292032577" target="_blank" class="icon-weibo" title="微博"></a>
-		
-		
-		<a href="https://github.com/seniorzhai" target="_blank" class="icon-github" title="github"></a>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		<a href="mailto:developer.zhaitao@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
-		
-	</div>
-			
-		
 
-		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
-		
-		<a href="/about" target="_blank" title="Zoe">Zoe</a>
-		
-		
-		</p>
-</div>
-</footer>
-    <script src="/js/jquery-2.0.3.min.js"></script>
-<script src="/js/jquery.imagesloaded.min.js"></script>
-<script src="/js/gallery.js"></script>
-<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+    <div class="post-content" id="post-content" itemprop="postContent" >
 
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.navbar').click(function(){
-    $('header nav').toggleClass('shownav');
-  });
-  var myWidth = 0;
-  function getSize(){
-    if( typeof( window.innerWidth ) == 'number' ) {
-      myWidth = window.innerWidth;
-    } else if( document.documentElement && document.documentElement.clientWidth) {
-      myWidth = document.documentElement.clientWidth;
-    };
-  };
-  var m = $('#main'),
-      a = $('#asidepart'),
-      c = $('.closeaside'),
-      o = $('.openaside');
-  c.click(function(){
-    a.addClass('fadeOut').css('display', 'none');
-    o.css('display', 'block').addClass('fadeIn');
-    m.addClass('moveMain');
-  });
-  o.click(function(){
-    o.css('display', 'none').removeClass('beforeFadeIn');
-    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
-    m.removeClass('moveMain');
-  });
-  $(window).scroll(function(){
-    o.css("top",Math.max(80,260-$(this).scrollTop()));
-  });
+    
+          
+ ##常用配置       1  2  3  4  5  6  7  8  9      --- system #系统级别  --- global #用户全局  --local #单独一个项目  git config --global user.name &quot;xxx&quot; #用户名  git config --global user.email &quot;xxx@xxx.co
+    
+    
+        <a href="/2014/08/27/常用git命令/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+
+</article>
+
+    </li>
   
-  $(window).resize(function(){
-    getSize(); 
-    if (myWidth >= 1024) {
-      $('header nav').removeClass('shownav');
-    }else{
-      m.removeClass('moveMain');
-      a.css('display', 'block').removeClass('fadeOut');
-      o.css('display', 'none');
+    <li class="post-list-item">
+        <article id="post-Android-ViewFinder"
+  class="article article-type-post" itemprop="blogPost">
+     
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2014/08/26/Android-ViewFinder/">Android ViewFinder</a>
+    </h3>
+  
+
+
+
+    <div class="post-meta">
+        <time datetime="2014-08-26T06:09:32.000Z" itemprop="datePublished" class="post-time">
+  2014-08-26
+</time>
+
         
-    }
-  });
-});
-</script>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
 
 
 
+    </div>
+
+    <div class="post-content" id="post-content" itemprop="postContent" >
+
+    
+          
+ 在基类BaseActivity中加入如下函数       1  2  3  4  5  6  7  8       public   final  &lt;E extends View&gt;  E  getView   ( int  id)   &#123;  	 try  &#123;  		 return  (E) findViewById(id);  	&#125;  catch 
+    
+    
+        <a href="/2014/08/26/Android-ViewFinder/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+</article>
+
+    </li>
+  
+    <li class="post-list-item">
+        <article id="post-Eclipse一些设置"
+  class="article article-type-post" itemprop="blogPost">
+     
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2014/08/26/Eclipse一些设置/">Eclipse一些设置</a>
+    </h3>
+  
 
 
 
+    <div class="post-meta">
+        <time datetime="2014-08-26T05:53:22.000Z" itemprop="datePublished" class="post-time">
+  2014-08-26
+</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
 
 
 
+    </div>
 
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.article-content').each(function(i){
-    $(this).find('img').each(function(){
-      if ($(this).parent().hasClass('fancybox')) return;
-      var alt = this.alt;
-      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
-      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
-    });
-    $(this).find('.fancybox').each(function(){
-      $(this).attr('rel', 'article' + i);
-    });
-  });
-  if($.fancybox){
-    $('.fancybox').fancybox();
-  }
-}); 
-</script>
+    <div class="post-content" id="post-content" itemprop="postContent" >
 
+    
+          
+ ##显示行号 General -&gt; Editors -&gt; Text Editors -&gt; Show line numbers 
+ ##使用快捷键新建Android工程 General -&gt; Keys -&gt; Command 在其中找到New(Android Application Project) 设置为 Ctrl+Alt+A  
+ ##默认编码设置为UTF-8
+    
+    
+        <a href="/2014/08/26/Eclipse一些设置/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
 
+</article>
 
-<!-- Analytics Begin -->
-
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-ga('create', 'UA-54646832-1', 'null');  
-ga('send', 'pageview');
-</script>
+    </li>
+  
+    <li class="post-list-item">
+        <article id="post-悲剧的开始"
+  class="article article-type-post" itemprop="blogPost">
+     
 
 
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2014/08/26/悲剧的开始/">悲剧的开始</a>
+    </h3>
+  
+
+
+
+    <div class="post-meta">
+        <time datetime="2014-08-26T02:01:30.000Z" itemprop="datePublished" class="post-time">
+  2014-08-26
+</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/杂文/">杂文</a></li></ul>
+
+
+
+    </div>
+
+    <div class="post-content" id="post-content" itemprop="postContent" >
+
+    
+          
+ 之前的 blog 是使用 gitpress ，方便简单，只需要维护本地的一个工程就好。但是连续跪了两次了，毕竟是个小众的blog，个人开发者维护跟不上，决定转移到hexo上了。 GitHub page + hexo 确实是个不错的方案，模板也比较多，遂，投奔。 
+
+    
+    
+        <a href="/2014/08/26/悲剧的开始/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/杂文/">杂文</a></li></ul>
+
+</article>
+
+    </li>
+  
+    <li class="post-list-item">
+        <article id="post-Anroid-Studio开发工具新特性[Google-IO-2014-Session]"
+  class="article article-type-post" itemprop="blogPost">
+     
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2014/08/23/Anroid-Studio开发工具新特性[Google-IO-2014-Session]/">Anroid Studio开发工具新特性[Google IO 2014 Session]</a>
+    </h3>
+  
+
+
+
+    <div class="post-meta">
+        <time datetime="2014-08-23T06:09:03.000Z" itemprop="datePublished" class="post-time">
+  2014-08-23
+</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+
+
+    </div>
+
+    <div class="post-content" id="post-content" itemprop="postContent" >
+
+    
+         
+    
+    
+        <a href="/2014/08/23/Anroid-Studio开发工具新特性[Google-IO-2014-Session]/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+</article>
+
+    </li>
+  
+    <li class="post-list-item">
+        <article id="post-android-imageview-scaletype属性"
+  class="article article-type-post" itemprop="blogPost">
+     
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2014/08/21/android-imageview-scaletype属性/">android imageview scaletype属性</a>
+    </h3>
+  
+
+
+
+    <div class="post-meta">
+        <time datetime="2014-08-21T06:07:47.000Z" itemprop="datePublished" class="post-time">
+  2014-08-21
+</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+
+
+    </div>
+
+    <div class="post-content" id="post-content" itemprop="postContent" >
+
+    
+          
+ scaletype决定了图片在View上显示的方式，可以通过xml中定义 android:scale= 或者代码中调用 imageView.setScaleType()  
+ 示例的原图 128*128 
+   640*428 
+   
+ 
+ CENTER 按图片的原来size居中显示，当图片长/宽超过View的长/宽，则截取图片的居中部分显示     
+ CENTER_CROP 按比例扩
+    
+    
+        <a href="/2014/08/21/android-imageview-scaletype属性/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+</article>
+
+    </li>
+  
+    <li class="post-list-item">
+        <article id="post-注释头"
+  class="article article-type-post" itemprop="blogPost">
+     
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2014/08/21/注释头/">注释头</a>
+    </h3>
+  
+
+
+
+    <div class="post-meta">
+        <time datetime="2014-08-21T02:37:19.000Z" itemprop="datePublished" class="post-time">
+  2014-08-21
+</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Prose/">Prose</a></li></ul>
+
+
+
+    </div>
+
+    <div class="post-content" id="post-content" itemprop="postContent" >
+
+    
+          
+      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27       //    //                       _oo0oo_    //                      o8888888o    //      
+    
+    
+        <a href="/2014/08/21/注释头/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Prose/">Prose</a></li></ul>
+
+</article>
+
+    </li>
+  
+    <li class="post-list-item">
+        <article id="post-SwipeView"
+  class="article article-type-post" itemprop="blogPost">
+     
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2014/08/20/SwipeView/">SwipeView</a>
+    </h3>
+  
+
+
+
+    <div class="post-meta">
+        <time datetime="2014-08-20T06:06:59.000Z" itemprop="datePublished" class="post-time">
+  2014-08-20
+</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+
+
+    </div>
+
+    <div class="post-content" id="post-content" itemprop="postContent" >
+
+    
+          
+ SwipeView提供了同级屏幕中的横向导航。 适配器       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23       public    class   DemoCollectionPagerAdapter   extends   FragmentStatePage
+    
+    
+        <a href="/2014/08/20/SwipeView/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+</article>
+
+    </li>
+  
+    <li class="post-list-item">
+        <article id="post-Android-Activity-Fragment生命周期"
+  class="article article-type-post" itemprop="blogPost">
+     
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2014/08/19/Android-Activity-Fragment生命周期/">Android Activity Fragment生命周期</a>
+    </h3>
+  
+
+
+
+    <div class="post-meta">
+        <time datetime="2014-08-19T06:06:38.000Z" itemprop="datePublished" class="post-time">
+  2014-08-19
+</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+
+
+    </div>
+
+    <div class="post-content" id="post-content" itemprop="postContent" >
+
+    
+           
+
+    
+    
+        <a href="/2014/08/19/Android-Activity-Fragment生命周期/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+</article>
+
+    </li>
+  
+    <li class="post-list-item">
+        <article id="post-Box2D"
+  class="article article-type-post" itemprop="blogPost">
+     
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2014/08/19/Box2D/">Box2D</a>
+    </h3>
+  
+
+
+
+    <div class="post-meta">
+        <time datetime="2014-08-19T03:31:33.000Z" itemprop="datePublished" class="post-time">
+  2014-08-19
+</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Cocos2d-X/">Cocos2d-X</a></li></ul>
+
+
+
+    </div>
+
+    <div class="post-content" id="post-content" itemprop="postContent" >
+
+    
+         一款功能强大、性能强劲的物理引擎。它能都维持在一个独立的运行空间。 
+ ##概述 Box2D引擎创建的物体都属于理想的刚体，即它内部之间的距离永不改变。Box2D创建的物理世界具备以下三个特点。 
+ 
+ 物理世界存在一个重力（可以为0） 
+ 物理世界可以是一个存在边界的范围 
+ 在世界中加入静态和动态物体（具有质量和位置），它们被用来模拟现实的运动规律 ##概念 
+ 物理世界（World) 一个
+    
+    
+        <a href="/2014/08/19/Box2D/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Box2D/">Box2D</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/物理引擎/">物理引擎</a></li></ul>
+
+</article>
+
+    </li>
+  
+</ul>
+
+<nav id="page-nav">
+    <div class="inner">
+    <a class="extend prev" rel="prev" href="/page/24/">上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="page-number" href="/page/24/">24</a><span class="page-number current">25</span><a class="page-number" href="/page/26/">26</a><a class="page-number" href="/page/27/">27</a><span class="space">&hellip;</span><a class="page-number" href="/page/39/">39</a><a class="extend next" rel="next" href="/page/26/">下一页</a>
+    </div>
+</nav>
+
+    </div>
+  </main>
+<div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
 <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
+var BLOG_SHARE = {
+    title: "Zoe's blog",
+    pic: "/img/logo.jpg",
+    summary: document.getElementsByName('summary')[0].content,
+    url: "http://seniorzhai.github.io/page/25/index.html"
+};
+</script>
+<div class="global-share" id="global-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<script type="text/template" id="search-tpl">
+<li class="item">
+    <a href="/{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
 </script>
 
+<script src="/js/search.js"></script>
 
 
-<!-- Analytics End -->
 
-<!-- Totop Begin -->
-
-	<div id="totop">
-	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
-	</div>
-	<script src="/js/totop.js"></script>
-
-<!-- Totop End -->
-
-<!-- MathJax Begin -->
 <!-- mathjax config similar to math.stackexchange -->
 
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
+MathJax.Hub.Config({
     tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true
-    }
-  });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
         skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      }
-    });
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
 </script>
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
+<script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-54646832-1', 'auto');
+ga('send', 'pageview');
+
 </script>
-
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+<!-- End Google Analytics -->
 
 
-<!-- MathJax End -->
 
-<!-- Tiny_search Begin -->
-
-<!-- Tiny_search End -->
-
-  </body>
- </html>
+</body>
+</html>
