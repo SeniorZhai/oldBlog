@@ -174,7 +174,8 @@
          ##UIImageView 
  
  一个显示图片控件，直接继承了UIView基类，没有继承UIControl，不能接受用户输入，不能与用户交互。 
- 常用属性  image :访问或设置该控件显示的
+ 常用属性  image :访问或设置该控件显示的图片  highlighteImage :访问或设置该控件出于高亮状态时显示的图片 
+ UIImage还可以使用动画显示一组图片  animationImages :访问或者设置该UIImageVie
     
     
         <a href="/2014/02/21/UIImageView-UIAlertView-UIActionSheet/" class="post-more waves-effect waves-button">
@@ -222,7 +223,7 @@
  到Google的官网下载 Andorid NDK  
  解压到你要存放的位置 
  开启终端，输入命令pico .bash_profile   
-  添加NDK的绝对路径  ex
+  添加NDK的绝对路径  export PATH=${PATH}:/Users/userName/Documents/android-ndk-r9c   A_NDK_ROOT=/Users/userName/Documents/a
     
     
         <a href="/2014/02/20/Anroid-NDK的安装与配置/" class="post-more waves-effect waves-button">
@@ -267,7 +268,13 @@
     
          
  UINavigationBar 
- 一个导航栏一般包括四个对象：UINavigationController、UINavigationBar、UIViewControllerUINavigati
+ 一个导航栏一般包括四个对象：UINavigationController、UINavigationBar、UIViewControllerUINavigationItem;其中UINavigationItem存放在UINavigationBar上。   
+ 
+ 
+ 导航栏结构剖析图     
+  定制标题视图 
+ 
+ 通过NavigationItem的ti
     
     
         <a href="/2014/02/20/导航栏/" class="post-more waves-effect waves-button">
@@ -317,7 +324,7 @@
  
  
   常用方法 
-      1  2      -(void)addTarg
+      1  2      -(void)addTarget:(id)taget action:(SEL)action forControlEvent:(UIControlEvents)controlEvents //添加一个事件  -(void)remo
     
     
         <a href="/2014/02/20/UIControl/" class="post-more waves-effect waves-button">
@@ -367,7 +374,12 @@
  1.Type 
   + Custom:选择此属性外观主要依靠自定义实现。
 + System:系统能够默认风格。
-+ Detail Disclosure
++ Detail Disclosure:详情标示。
++ Info Light:显示“i”图标的图形按钮。
++ IndoDark:显示“i”图标的图形按钮。
++ Add Contact:显示黑色“+”图标图形按钮。
+   
+ State C
     
     
         <a href="/2014/02/18/常用UIView组件/" class="post-more waves-effect waves-button">
@@ -411,7 +423,7 @@
 
     
          
- 代理是一种简单而功能强大的设计模式，这种模式用于一个对象“代表”另外一个对象和程序中其他的对象进行交互。 主对象（这里指的是delegating object）中维护一个代理（delegate）
+ 代理是一种简单而功能强大的设计模式，这种模式用于一个对象“代表”另外一个对象和程序中其他的对象进行交互。 主对象（这里指的是delegating object）中维护一个代理（delegate）的引用并且在合适的时候向这个代理发送消息。这个消息通知“代理”主对象即将处理或是已经处理完了某一个事件。这个代理可以通过更新自己或是其它对象的UI界面或是其它状态来响应主对象所发送过来的这个事件的消息
     
     
         <a href="/2014/02/18/利用代理/" class="post-more waves-effect waves-button">
@@ -457,7 +469,11 @@
          
  视图，表示屏幕上的一块矩形区域，同时处理该区域的绘制和触屏事件。 
  一个视图也可以作为其他视图的父视图，同时决定着这些子视图的位置和大小. 
- UIView类做了大量的工作去管理这些内部视图的
+ UIView类做了大量的工作去管理这些内部视图的关系。 
+ 视图同时也是App中MVC的View部分 
+ iPhone的视图以左上角为原点 
+ 每个View的frame所使用的坐标系以它的父视图的左上角为坐 关函数 
+ 视图结构和相      1 
     
     
         <a href="/2014/02/17/UIView/" class="post-more waves-effect waves-button">
@@ -504,7 +520,7 @@
  
  视图控制器是数据和视图之间的桥梁，视图供职器提供了一个基本的框架来构建应用程序。 
  UIViewController是所有视图控制器的父类 
- iOS
+ iOS提供了许多内置的视图控制器，以支持标准的用户界面部分，比如导航控制器 UINavigationController ，标签栏控制器 UITabBarController ,表视图控制器 UITable
     
     
         <a href="/2014/02/17/视图控制器与通知/" class="post-more waves-effect waves-button">
@@ -551,7 +567,7 @@
  UIView是视图的基类 
  UIViewController视图控制器的基类 
  UIResponder表示一个可以接受触摸屏上触摸事件的对象 
- UIWin（窗口）是视图的一个子类，窗口的主
+ UIWin（窗口）是视图的一个子类，窗口的主要功能：1、提供一个区域来显示视图，2、将事件（event）分发给视图。      1  2  3      self.window = [[UIWindow alloc] initWithFrame
     
     
         <a href="/2014/02/17/UIKIT框架/" class="post-more waves-effect waves-button">

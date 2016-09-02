@@ -187,7 +187,15 @@
  水平居中 
  
  
- an
+ android:layout_centerVertical 
+ 垂直居中 
+ 
+ 
+ android:layout_centerInparent 
+ 相对于父元素完全居中 
+ 
+ 
+ android:la
     
     
         <a href="/2014/07/17/RelativeLayout常见属性介绍/" class="post-more waves-effect waves-button">
@@ -230,7 +238,12 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-         Handler直接继承Object，一个Handler允许发送和处理一个Message或者Runnable对象，并且会关联到主线程的MessageQueue中。没个Handler具有一个单独的线程，
+         Handler直接继承Object，一个Handler允许发送和处理一个Message或者Runnable对象，并且会关联到主线程的MessageQueue中。没个Handler具有一个单独的线程，并且关联到一个消息对象的线程，就是说一个Handler有一个固定的消息队列。 Handler主要有两个作用： 
+ 
+ 在工作线程中发送消息 
+ 在UI线程中获取、处理消息 
+ 
+ Handler把压入
     
     
         <a href="/2014/07/17/Handler/" class="post-more waves-effect waves-button">
@@ -278,7 +291,11 @@
  
  控件定义时 
  
-      1  2  3  4 
+      1  2  3  4       &lt; Button     	 android:id  =  "@id/button_ok"   	 ...   	/&gt;      
+ 
+ 在ids文件中添加 
+ 
+      
     
     
         <a href="/2014/07/17/非常见Android项目文件/" class="post-more waves-effect waves-button">
@@ -324,7 +341,7 @@
          
  anim 
  
-      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  
+      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  
     
     
         <a href="/2014/07/14/自定义ProgressBar/" class="post-more waves-effect waves-button">
@@ -372,7 +389,15 @@
  
  avoscloud- 版本号.jar 
  android-async-http-1.4.4-fix.jar 
- fastjso
+ fastjson.jar 
+ httpmime-4.2.4.jar 
+ 
+ ###AVOS Cloud 推送模块 
+ 
+ AVOS Cloud 基础存储模块 
+ avospush- 版本号.jar 
+ 
+ ###A
     
     
         <a href="/2014/07/10/AVOS-Cloud-Android开发指南/" class="post-more waves-effect waves-button">
@@ -415,7 +440,10 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-         ##字符串和字符（String and Character） Swift的String类型和Foundation的NSString类进行了无缝桥接，所有NSString API都可以调用Swift的
+         ##字符串和字符（String and Character） Swift的String类型和Foundation的NSString类进行了无缝桥接，所有NSString API都可以调用Swift的String类型的值 
+ ###字符串字面量(String Literals) 字符串字面量是由双引号(“”)包裹的具有固定顺序的文本字符集 字符串字面量可以包含以下特殊字符： 
+ 
+ 转义字符\0(
     
     
         <a href="/2014/07/10/Swift笔记(三)/" class="post-more waves-effect waves-button">
@@ -458,7 +486,8 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-         Swift可以再类型后面加一个 ? 来将变量声明为 optional (随意的)。如果不是Optional的变量，那么它就必须有值，而没有值发话，我们使用Optional并且将它设置为 nil 来表
+         Swift可以再类型后面加一个 ? 来将变量声明为 optional (随意的)。如果不是Optional的变量，那么它就必须有值，而没有值发话，我们使用Optional并且将它设置为 nil 来表示没有值。       1  2  3       var  num: Int ?  num =  nil   num =  3        
+ Optional Value就像一个盒子，盒子可能装
     
     
         <a href="/2014/07/10/理解Optional/" class="post-more waves-effect waves-button">
@@ -508,7 +537,7 @@
  保存在数据库中 
  保存在cookie或会话中 
  
- ##将数据写入文件       1  2  3  4  5  6
+ ##将数据写入文件       1  2  3  4  5  6  7  8  9  10       // weite.js    var  fs =  require ( 'fs' ),  	data =  "Some data I want to write
     
     
         <a href="/2014/07/10/数据持久化/" class="post-more waves-effect waves-button">
@@ -553,7 +582,7 @@
     
          ##数据类 
  
- Bimp      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  
+ Bimp      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31       public    class   Bimp   &#123;       public   static   int
     
     
         <a href="/2014/07/09/图片选取/" class="post-more waves-effect waves-button">
@@ -597,7 +626,7 @@
 
     
            
- 除了揭幕战，今天又真真的熬完了整整一场比赛的直播。开赛前就冥冥感觉，这场不一般，当然我不是马后炮的证明我猜到了大胜，赛前我的预想只是净胜2球，德意志已经超过我的想象。其实比，大胜更让我欣喜的
+ 除了揭幕战，今天又真真的熬完了整整一场比赛的直播。开赛前就冥冥感觉，这场不一般，当然我不是马后炮的证明我猜到了大胜，赛前我的预想只是净胜2球，德意志已经超过我的想象。其实比，大胜更让我欣喜的是，米洛进球了。那一刻，真的想流泪，即使段暄还在感叹节奏的突变，与接二连三的进球，人们视乎忘了，这个德国人破纪录了。 没有欢呼，没有庆贺，没有空翻，一切平平淡淡。就像克洛泽一样，一个平凡的不能再平凡的
     
     
         <a href="/2014/07/09/写在决赛之前/" class="post-more waves-effect waves-button">

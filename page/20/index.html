@@ -259,7 +259,8 @@
     
           
  ##交换变量       1  2  3      x =  6   y =  5   x,y = y,x       
- ##行内if语句       1       print   "He
+ ##行内if语句       1       print   "Hello"   if   True   else   "World" 	 # Hello        
+ ##连接 不同类型的对象连接       1  2  3  4  5  6  7  8  9 
     
     
         <a href="/2014/10/13/Python小技巧/" class="post-more waves-effect waves-button">
@@ -347,6 +348,7 @@
     
           
  ##文件读写 Python内置的 open() 函数可以传入文件名和标示符打开一个文件对象       1      f = open( './test.txt' , 'r' )       
+  r 表示读，如果文件不存在 open() 函数会抛出一个 IOError 错误 如果文件打开成功，调用 read() 函数可以一次读取文件的全部内容，Python把内容读到内存，用一个 str 
     
     
         <a href="/2014/10/11/Python-八---文件IO/" class="post-more waves-effect waves-button">
@@ -390,7 +392,8 @@
 
     
           
- ##try错误       1  2  3  4  5  6  7  8       try :  	r =  10 / 0   	 print  r   except  ZeroDivisi
+ ##try错误       1  2  3  4  5  6  7  8       try :  	r =  10 / 0   	 print  r   except  ZeroDivisionError,e:  	 print   'except:' ,e   finally :  	 print   'finally'    print   'END'        
+ 在某段代码可
     
     
         <a href="/2014/10/11/Python-七---错误与调试/" class="post-more waves-effect waves-button">
@@ -434,7 +437,7 @@
 
     
           
- 如果函数中包含 yield 关键字，那么这个函数就不再是一个普通函数，而是一个generator。而变成generator的函数在每次调用 next() 的时候执行遇到 yield 语句返回，
+ 如果函数中包含 yield 关键字，那么这个函数就不再是一个普通函数，而是一个generator。而变成generator的函数在每次调用 next() 的时候执行遇到 yield 语句返回，再次执行时从上一次返回的 yield 语句继续执行       1  2  3  4  5        def   fib  (max) :   	a,b,c =  0 , 1 , 0   	 wh
     
     
         <a href="/2014/10/10/Python中的yield/" class="post-more waves-effect waves-button">

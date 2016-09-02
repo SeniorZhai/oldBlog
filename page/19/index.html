@@ -219,7 +219,9 @@
           
  
  android:gravity 用于设置View中内容相对于View组件的对齐方式 
- android:layout_gravity 用于设置View组件相对于Container的对齐方式
+ android:layout_gravity 用于设置View组件相对于Container的对齐方式 
+ 
+
     
     
         <a href="/2014/10/22/gravity属性/" class="post-more waves-effect waves-button">
@@ -264,7 +266,7 @@
     
           
  
- httplib.HTTPConnection(host,[,port,[,strict,[,timeout]]])   表示一次与服务器的交互，即请求/响应。host表示服务器主机，por
+ httplib.HTTPConnection(host,[,port,[,strict,[,timeout]]])   表示一次与服务器的交互，即请求/响应。host表示服务器主机，port表示端口号(默认值是80)，参数strict默认值为false，表示在无法解析服务器返回的状态行时(status line)是否剖出BadStatusLine异常，可选参数timeout表示超时时间
     
     
         <a href="/2014/10/16/httplib模块/" class="post-more waves-effect waves-button">
@@ -313,7 +315,11 @@
   Ctrl + 上下键 移动行 
   Ctrl + shift + r 搜索文件 
   Ctrl + m 最大化编辑窗口 
-  Ctr
+  Ctrl + shift + o 导入包 
+  Ctrl + 1 快速修复 
+  Ctrl + pageup/pagedown 选项卡切换 
+  Ctrl + W 关闭当前编辑框 
+  Ctrl + d 删
     
     
         <a href="/2014/10/15/Eclipse实用快捷键/" class="post-more waves-effect waves-button">
@@ -322,53 +328,6 @@
     </div>
     
 	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eclipse/">eclipse</a></li></ul>
-
-</article>
-
-    </li>
-  
-    <li class="post-list-item">
-        <article id="post-Android主题和样式"
-  class="article article-type-post" itemprop="blogPost">
-     
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2014/10/14/Android主题和样式/">Android主题和样式</a>
-    </h3>
-  
-
-
-
-    <div class="post-meta">
-        <time datetime="2014-10-14T05:14:42.000Z" itemprop="datePublished" class="post-time">
-  2014-10-14
-</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
-
-
-
-    </div>
-
-    <div class="post-content" id="post-content" itemprop="postContent" >
-
-    
-          
- ##位置 在Android Frameworks/base/core/res/res/values目录下 
- 
-  themes.xml  
-  themes_device_defaults.
-    
-    
-        <a href="/2014/10/14/Android主题和样式/" class="post-more waves-effect waves-button">
-            阅读全文...
-        </a>
-    </div>
-    
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Holo/">Holo</a></li></ul>
 
 </article>
 
@@ -408,7 +367,10 @@
    Material Theme的定义如下 
  
  @android:style/Theme.Material 
- @android:style/Them
+ @android:style/Theme.Material.Light 
+ @android:style/Theme.Material.DarkActionBar 
+ 
+ ###自定义主题的基础颜色       1  2  3  4  5
     
     
         <a href="/2014/10/14/Material/" class="post-more waves-effect waves-button">
@@ -417,6 +379,57 @@
     </div>
     
 	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Material/">Material</a></li></ul>
+
+</article>
+
+    </li>
+  
+    <li class="post-list-item">
+        <article id="post-Android主题和样式"
+  class="article article-type-post" itemprop="blogPost">
+     
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2014/10/14/Android主题和样式/">Android主题和样式</a>
+    </h3>
+  
+
+
+
+    <div class="post-meta">
+        <time datetime="2014-10-14T05:14:42.000Z" itemprop="datePublished" class="post-time">
+  2014-10-14
+</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+
+
+    </div>
+
+    <div class="post-content" id="post-content" itemprop="postContent" >
+
+    
+          
+ ##位置 在Android Frameworks/base/core/res/res/values目录下 
+ 
+  themes.xml  
+  themes_device_defaults.xml  
+  styles.xml  
+  styles_device_defaults.xml  
+ 
+ ##主题Theme  theme.xml 定义了Android低版本的theme和Holo
+    
+    
+        <a href="/2014/10/14/Android主题和样式/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Holo/">Holo</a></li></ul>
 
 </article>
 
@@ -455,7 +468,8 @@
  ##基本概念 
  
  分辨率：屏幕上显示的像素个数，单位尺寸内像素点越多，显示的图像就越清楚  主流分辨率: 480*800 、 720*1280 、 1080*1920  
- 像素密度  2
+ 像素密度  240dpi( 480*800 )、320dpi( 720*1280 )、480dpi( 1080*1920 ) 
+ 单位  px:像素  dp:设备独立像素(160dpi为标准)  240dpi下，1
     
     
         <a href="/2014/10/14/Android分辨率适配/" class="post-more waves-effect waves-button">
@@ -499,7 +513,7 @@
 
     
           
- ##使用 作为图片加载库必须设置网络、SD卡权限       1  2       &lt; uses-permission   android:name = "android.permiss
+ ##使用 作为图片加载库必须设置网络、SD卡权限       1  2       &lt; uses-permission   android:name = "android.permission.INTERNET"  /&gt;      &lt; uses-permission   android:name = "android.permission.WRITE_EXTERNAL_S
     
     
         <a href="/2014/10/14/UIL图片异步加载库的使用/" class="post-more waves-effect waves-button">
@@ -543,7 +557,7 @@
 
     
           
- ##基本请求       1  2  3  4  5  6  7  8  9  10  11  12  13      StringRequest stringRequest =  new  
+ ##基本请求       1  2  3  4  5  6  7  8  9  10  11  12  13      StringRequest stringRequest =  new  StringRequest( "http://www.baidu.com" , new  Response.Listener&lt;String&gt;()&#123;  	 @Override   
     
     
         <a href="/2014/10/14/volley详解/" class="post-more waves-effect waves-button">
@@ -587,7 +601,7 @@
 
     
           
-      1  2  3  4  5  6  7  8  9  10  11       import  urllib   import  urllib2    url =  'http://
+      1  2  3  4  5  6  7  8  9  10  11       import  urllib   import  urllib2    url =  'http://ave.bolyartech.com/params.php'   values = &#123; 'param1' : '2' , 'param2' : '3' &#125;  data = urll
     
     
         <a href="/2014/10/13/Python实现简单的Post请求/" class="post-more waves-effect waves-button">

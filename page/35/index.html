@@ -171,7 +171,7 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-         在 UIView 中有一个autoresizingMask的属性，它对应的是一个枚举的值（如下），属性的意思就是自动调整子控件与父控件中间的位置，宽高。       1  2  3  4  5  6
+         在 UIView 中有一个autoresizingMask的属性，它对应的是一个枚举的值（如下），属性的意思就是自动调整子控件与父控件中间的位置，宽高。       1  2  3  4  5  6  7  8  9      enum &#123;     UIViewAutoresizingNone                 = 0,     UIViewAutoresizingFle
     
     
         <a href="/2014/04/08/autoresizingMask/" class="post-more waves-effect waves-button">
@@ -215,7 +215,7 @@
 
     
           PendulemView    
-      1  2  3      pendulum = [[PendulumView alloc] initWithFrame:self.view.bound
+      1  2  3      pendulum = [[PendulumView alloc] initWithFrame:self.view.bounds ballColor:ballColor ballDiameter:35];    pendulum.hidesWhenStopped = NO;    [self.view addSubview:
     
     
         <a href="/2014/04/08/PendulemView/" class="post-more waves-effect waves-button">
@@ -259,7 +259,7 @@
 
     
           SONFillAnimation 是将一个UIView以指定网格动画显示的类。 
- ##用法       1  2  3  4  5  6      SONFillAnimation *anima
+ ##用法       1  2  3  4  5  6      SONFillAnimation *animation = [[SONFillAnimation alloc] initWithNumberOfRows:3 columns:3 animationType:SONFillAnimationType
     
     
         <a href="/2014/04/01/SONFillAnimation/" class="post-more waves-effect waves-button">
@@ -303,7 +303,9 @@
 
     
          在Podfile中添加       1      pod &apos;AVOSCloud&apos;       
- 使用UI相关的相关功能，就添加       1      pod &apos;A
+ 使用UI相关的相关功能，就添加       1      pod &apos;AVOSCloundUI&apos;       
+ SNS组件的相关功能，就添加       1      pod &apos;AVOSCloundSNS&apos;       
+ 在 AppDel
     
     
         <a href="/2014/04/01/AVOS-Cloud/" class="post-more waves-effect waves-button">
@@ -349,7 +351,10 @@
          setDesignResolutionSize(with,height,resolutionPolicy) 适配模式： 
  
  EXACT_FIT 游戏所有内容全部拉伸，内容铺满 
- NO_BORD
+ NO_BORDER 一个方向上铺满屏幕 
+ SHOW_ALL 保证设计区域全部显示，但是可能会有黑边 
+ FIXED_WIDTH 保证设计分辨率的宽度不变，根据屏幕分辨率修正设计分辨率的高度 
+ FIXED_HEI
     
     
         <a href="/2014/04/01/分辨率适配/" class="post-more waves-effect waves-button">
@@ -394,7 +399,8 @@
     
          NSUserDefaults类提供了一个与默认系统进行交互的编程接口。 
  ##使用 
- 创建一个user defaults       1      NSUserDefaults *userDef
+ 创建一个user defaults       1      NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];       
+ 添加数据       1      [userDefaults setObject:nam
     
     
         <a href="/2014/03/31/NSUserDefaults/" class="post-more waves-effect waves-button">
@@ -439,7 +445,9 @@
     
          Cocos2d-x坐标系和Open GL坐标系相同，都是起源于笛卡尔坐标系。 
  ##笛卡尔坐标系 笛卡尔坐标系中定义右手系原点在左下角，x向右，y向上，z向外   
- ##屏幕坐标系和Cocos2
+ ##屏幕坐标系和Cocos2d坐标系 iOS、Android、Windows Phone在开发应用时使用的是标准屏幕坐标系，原点为屏幕左上角，x向右，y向下。 
+   
+ ##世界坐标系(World Coordinate)和本地
     
     
         <a href="/2014/03/31/Cocos2d-X-坐标系详解/" class="post-more waves-effect waves-button">
@@ -484,6 +492,7 @@
     
            AFNetworking是一个非常流行的网络库，适用于iOS以及Mac OS X，具有良好的架构，丰富的api，以及模块化化构建方式，使得使用起来非常轻松。 
  ##使用CocoaPods安装 
+ ###Podfile       1  2      platform :ios, &apos;7.0&apos;  pod &quot;AFNetworking&quot;, &quot;~&g
     
     
         <a href="/2014/03/26/AFNetworking/" class="post-more waves-effect waves-button">
@@ -526,7 +535,7 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-         这个类只有三个类方法 + (void) resetCache 、 + (void) setObject:(NSData *)data forKey:(NSString *)key 、 + (id) 
+         这个类只有三个类方法 + (void) resetCache 、 + (void) setObject:(NSData *)data forKey:(NSString *)key 、 + (id) objectForKey:(NSString *)key   resetCache ：清空当前的缓存  setObject:(NSData *)data forKey:(NSString *)key 
     
     
         <a href="/2014/03/24/一个简单的数据缓存类/" class="post-more waves-effect waves-button">
@@ -571,7 +580,8 @@
     
          ##查看已连接的设备       1      adb devices       
  会列出连接设备的ID，使用adb -s DEVICE_ID可以指定特定的设备 
- ##安装应用 使用insta
+ ##安装应用 使用install命令来安装apk，如果设备上已经安装了应用，可以使用可选参数-r重新进行安装并保留所有数据       1      adb install -r APK_FILE       
+ ##卸载应用 
     
     
         <a href="/2014/03/21/Android-ADB常用命令/" class="post-more waves-effect waves-button">

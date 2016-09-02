@@ -215,7 +215,7 @@
 
     
           
- #创建应用       1  2  3  4  5  6  7       var  express =  require ( 'express' );   var  app = expres
+ #创建应用       1  2  3  4  5  6  7       var  express =  require ( 'express' );   var  app = express();  app.get( '/' ,  function ( req,res ) &#123;  	res.send( 'hello world' );  &#125;)    app.liste
     
     
         <a href="/2015/01/19/Express基础使用/" class="post-more waves-effect waves-button">
@@ -261,7 +261,10 @@
           
  
  打开设置选择 Node.js and NPM ，选择 node 命令行路径(已安装会自动检测)，再选择下载或导入node的源码   
- 之后可以在下面的Packages中管理模块，可以选择
+ 之后可以在下面的Packages中管理模块，可以选择安装各个模块，包括 express  
+  之后在 Libraies 中选择Node.js的支撑   
+ 
+  运行Express项目 由于Express 4.0采用了scripts的启动方式，所以 
     
     
         <a href="/2015/01/19/配置WebStorm支持node-js和Express/" class="post-more waves-effect waves-button">
@@ -306,7 +309,11 @@
     
           
  ##全局对象 Node.js中的全局对象是 global ，所有全局变量都是 global 的属性 
- ###process process是一个全局变量，用于描述当前Node.js进程状态，
+ ###process process是一个全局变量，用于描述当前Node.js进程状态，提供了一个与操作系统的简单接口 
+ 
+ process.argv是命令行参数的数组 
+ process.studout 标准输出流 
+  process.stdin 标准输入流，初始化时它使被暂停的，
     
     
         <a href="/2015/01/17/node核心模块（一）/" class="post-more waves-effect waves-button">
@@ -480,7 +487,11 @@
     
           
  #JavaScript基础 
- ##变量 变量可以存放值(x=1)和表达式(y=x+1) 变量名字母、数字、少量字符($、_)组成，必须使用字母、字符(但是不建议这么做)开头，变量名对大小写敏
+ ##变量 变量可以存放值(x=1)和表达式(y=x+1) 变量名字母、数字、少量字符($、_)组成，必须使用字母、字符(但是不建议这么做)开头，变量名对大小写敏感 
+ ###声明 JavaScript使用 var 声明变量，声明后，默认是没有值(undefined) 
+ 
+ JavaScript支持重新声明，之前赋的值不会丢失 ###数据类型 
+ 字符串，使
     
     
         <a href="/2015/01/16/JavaScript基础/" class="post-more waves-effect waves-button">

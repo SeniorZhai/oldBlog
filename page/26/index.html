@@ -173,7 +173,9 @@
     
          ##界面 
  ###界面简介   
- ###菜单和工具条   管理Android Studio的显示窗口 按下 ctrl+shift+a （mac为command+shift+a）会触发一个命令提示
+ ###菜单和工具条   管理Android Studio的显示窗口 按下 ctrl+shift+a （mac为command+shift+a）会触发一个命令提示框，输入想要执行的命令的前缀，可以找到自己的命令   
+ ##更改常用操作的快捷键 在设置中烧到keymap，可以选择为eclipse的快捷键   
+
     
     
         <a href="/2014/08/18/AndroidStudio使用指南/" class="post-more waves-effect waves-button">
@@ -216,7 +218,7 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-         常用创建方法       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24 
+         常用创建方法       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33       bool  MyScene::init()  &#123;  	Size size = Director::getI
     
     
         <a href="/2014/08/18/Sprite精灵类/" class="post-more waves-effect waves-button">
@@ -262,7 +264,9 @@
           
  
  ui_print(msg1,…,msgN) 用于在Recovery界面输出字符串，不定参数。 
- run_program(prog,arg1,…,argN) 用于执行程序，其中prog参数
+ run_program(prog,arg1,…,argN) 用于执行程序，其中prog参数表示执行的程序文件(要写完整路径)，arg1,…argN表示执行程序的参数，prog是必须的，arg是可选的 
+ delete(file1,…fileN) 用于删除一个或多个文件 
+ package)
     
     
         <a href="/2014/08/17/Edify语言/" class="post-more waves-effect waves-button">
@@ -306,7 +310,7 @@
 
     
          仿Path带动画效果的扇形菜单 
-      ##用法       1  2  3  4  5  6  7  8  9      ArcMenu menu = (ArcMenu) findViewB
+      ##用法       1  2  3  4  5  6  7  8  9      ArcMenu menu = (ArcMenu) findViewById(R.id.arc_menu);   final   int  itemCount = ITEM_DRAWABLES.length;   for  ( int  i =  0 ; i &lt; 
     
     
         <a href="/2014/08/15/ArcMenu/" class="post-more waves-effect waves-button">
@@ -352,7 +356,7 @@
          一个拥有丰富动画的对话框 
    
    
- ##使用       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19
+ ##使用       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27       // 获取一个对话框对象   NiftyDialogBuilder dialogBuilder = NiftyDialog
     
     
         <a href="/2014/08/15/NiftyDialogEffects/" class="post-more waves-effect waves-button">
@@ -395,7 +399,7 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-              ##使用       1  2  3  4  5  6  7  8  9  10  11      LayoutInflater inflator = (LayoutInflater)  
+              ##使用       1  2  3  4  5  6  7  8  9  10  11      LayoutInflater inflator = (LayoutInflater)  this .getSystemService(Context.LAYOUT_INFLATER_SERVICE);  View v = inflator.inflate(R.layout.custom_
     
     
         <a href="/2014/08/14/TabBarView/" class="post-more waves-effect waves-button">
@@ -438,7 +442,7 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-         ##测光与聚焦区域 如果设备支持自动对焦，可以使用 setFocusMode 方法传入一个 Camera.Parameters.FOCUS_MODE_* 常量来指定对焦模式。根据不同设备的支持，使用
+         ##测光与聚焦区域 如果设备支持自动对焦，可以使用 setFocusMode 方法传入一个 Camera.Parameters.FOCUS_MODE_* 常量来指定对焦模式。根据不同设备的支持，使用 getSupportedFocusMode 方法找到可用的对焦模式。使用自动对焦可以使用 AutoFocusCallback 回调。       1  2  3  4  5  6  7  8  9 
     
     
         <a href="/2014/08/14/相机功能/" class="post-more waves-effect waves-button">
@@ -482,7 +486,7 @@
 
     
           
-      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  
+      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  
     
     
         <a href="/2014/08/13/控制相机硬件/" class="post-more waves-effect waves-button">
@@ -529,7 +533,10 @@
   ccp(x,y)  创建一个向量 
   ccpFromSize(s)  以size s的width为x，height为y创建一个向量 
   ccpAdd(v1,v2)  向量之间的加法 
-  
+  ccpSub(v1,v2)  向量之间的减法 
+  ccpNeg(v)  向量取反 
+  ccpMult(v,s)  数乘，等价于ccp(v.x s,v.y s) s是一个浮点数 
+  ccpMidp
     
     
         <a href="/2014/08/12/Cocos2d-X-常用的数学函数、常用宏/" class="post-more waves-effect waves-button">
@@ -577,7 +584,11 @@
  
  GRAPEFRUIT  #ED5565 , #DA4453  
  BITTERSWEET  #FC6E51 , #E9573F  
- SUNFLOWER  #FFCE54 , #F
+ SUNFLOWER  #FFCE54 , #F6BB42  
+ GRASS  #A0D468 , #8CC152  
+ MINT  #48CFAD , #37BC9B  
+ AQUA  #4FC1E9 , #3BAFDA  
+ BLUE JEAN
     
     
         <a href="/2014/08/11/看着舒服发12种界面颜色/" class="post-more waves-effect waves-button">

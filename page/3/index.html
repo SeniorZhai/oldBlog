@@ -262,7 +262,10 @@
   onFinishInflate() 从XML加载组件后回调 
   onSizeChanged() 组件大小改变时回调 
   onMeasure() 测量大小 
-  onLayout() 
+  onLayout() 确定显示位置 
+  onTouchEvent 监听触摸事件 
+ 
+
     
     
         <a href="/2016/01/10/View的一些重要方法/" class="post-more waves-effect waves-button">
@@ -305,7 +308,8 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-         前天介绍才 ActivatePowerMode  很快的Xcode上的插件也来了 https://github.com/qfish/XActivatePowerMode  在 Alcatraz 搜索
+         前天介绍才 ActivatePowerMode  很快的Xcode上的插件也来了 https://github.com/qfish/XActivatePowerMode  在 Alcatraz 搜索安装， Edit -&gt; Activate Power Mode -&gt; Enable 运行即可   
+
     
     
         <a href="/2015/12/02/Xcode上的ActivatePowerMode也来了/" class="post-more waves-effect waves-button">
@@ -349,6 +353,9 @@
 
     
          前几天为了学习 React Native 开始使用Atom，默默的替代了Sublime Text在我Dock上的地位 但 activate-power-mode 的出现让准备彻底走向Atom   
+ 
+ 注:要使用时用option+control+o开启，插件只能作用在当前Tab页，如果不起效，选择View-&gt;Reload重载页面 
+ 
 
     
     
@@ -393,7 +400,7 @@
 
     
           
- ##声明       1  2  3  4  5  6  7  8  9       var  styles = StyleSheet.create(&#123;  	base: &#123;
+ ##声明       1  2  3  4  5  6  7  8  9       var  styles = StyleSheet.create(&#123;  	base: &#123;  		width: 38 ,  		height: 38 ,  	&#125;,  	background:&#123;  		backgroundColor: "#222222" ,  	&#12
     
     
         <a href="/2015/11/24/ReactNative-样式/" class="post-more waves-effect waves-button">
@@ -441,7 +448,7 @@
  iOS 
  在项目中运行Debug Server 
  根据电脑的IP，修改AppDelegate.m中的jsCodeLocation的host改为电脑的IP 
- 或者使用 jsCodeLo
+ 或者使用 jsCodeLocation = [[NSBundle mainBundle] URLForResource:@&quot;main&quot; withExtension:@&quot;jsbundle&quot;
     
     
         <a href="/2015/11/12/ReactNative-第一个项目/" class="post-more waves-effect waves-button">
@@ -528,7 +535,8 @@
 
     
           
- #SD卡的种类 SD卡包括SD、SDHC和SDXC卡，这三种卡的区别在存储容量：SD卡≤2GB，SDHC卡4-32GB，SDXC卡式64-2048GB。 SD卡的版本是向下兼容的，比如支持SD
+ #SD卡的种类 SD卡包括SD、SDHC和SDXC卡，这三种卡的区别在存储容量：SD卡≤2GB，SDHC卡4-32GB，SDXC卡式64-2048GB。 SD卡的版本是向下兼容的，比如支持SDXC卡的相机，也支持SD卡和SDHC卡。 值得注意的是 SDXC存储卡由于采用了恶心FAT格式，WinXP SP2或者更低版本系统式无法识别的  
+ #存储卡的速度 SD卡上通常会标注速度，有倍速(如
     
     
         <a href="/2015/10/04/SD的种类/" class="post-more waves-effect waves-button">
@@ -578,7 +586,10 @@
  Node.js 4.0 
  Xcode 6.3以上版本 
  Android SDK 
- watchman和flow ##安装      1      
+ watchman和flow ##安装      1      npm install -g react-native-cli      
+ 
+ 
+ ##初始化       1      react-native init AwesomeProject      
     
     
         <a href="/2015/09/24/ReactNative-如何开始/" class="post-more waves-effect waves-button">

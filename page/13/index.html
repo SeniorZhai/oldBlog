@@ -215,7 +215,7 @@
 
     
           
-      1  2  3  4  5  6       // 在Activity的基类中定义    protected  &lt;T extends View&gt; T $ ( int  i
+      1  2  3  4  5  6       // 在Activity的基类中定义    protected  &lt;T extends View&gt; T $ ( int  id) &#123;  	 return  (T) findViewById(id);  &#125;    // 使用很简单   bn = $(R.id.bn1);      
     
     
         <a href="/2015/01/07/偷懒的findViewById/" class="post-more waves-effect waves-button">
@@ -304,7 +304,7 @@
  
  再发布的产品包含源代码，源代码中必须带有原来代码的BSD协议 
  如果发布的只是二进制库或者软件，在文档和版权声明中包含原有代码中的BSD协议 
- 不可以用开源代码的作者/
+ 不可以用开源代码的作者/机构名字和原来产品的名字做市场推广 BSD 代码鼓励代码共享，但需要尊重代码作者的著作权。BSD由于允许使用者修改和重新发布代码，也允许使用或在BSD代码上开发商业软件发布和销售，因此是对 商业集成很
     
     
         <a href="/2015/01/06/常见的开源协议/" class="post-more waves-effect waves-button">
@@ -473,7 +473,10 @@
           
  ##使用Shell命令 Android中自带一个input工具，使用方法如下 
  
- 模拟按键操作      1  2  3      adb shell # 进入系统  input keye
+ 模拟按键操作      1  2  3      adb shell # 进入系统  input keyevent KEYCODE_BACK # 模拟返回键  input keyevent keyevent 3 # 模拟返回键      
+ 
+ 
+ 常见的按键可以在 http://developer.an
     
     
         <a href="/2015/01/05/Android模拟事件/" class="post-more waves-effect waves-button">
@@ -521,7 +524,8 @@
  
  onAttach() 关联Activity时调用 
  onCreate() 创建Fragment时调用，在这里必须初始化Fragment的基础组件 
- onCreateView()
+ onCreateView() Fragment要绘制自己的界面时调用，这个方法必须返回Fragment的layout，也可以返回null(表示没有界面) 
+ onActivityCreated() 当Activity对象完成自己
     
     
         <a href="/2015/01/05/Fragment生命周期详解/" class="post-more waves-effect waves-button">

@@ -175,7 +175,10 @@
  ##启动MongoDB 指定数据库路径启动       1      mongod --dbpath       
  添加 --port 也可以指定端口 
    ##数据库操作  
- 切换、创
+ 切换、创建数据库     use yourDB  
+ 查询所有数据库     show dbs  
+ 删除当前使用数据库     db.dropDatabase()  
+ 从指定主机上克隆数据库     db
     
     
         <a href="/2015/03/05/MongoDB常用命令/" class="post-more waves-effect waves-button">
@@ -565,7 +568,8 @@
 
     
           
- ##单个对象       1  2  3  4  5  6       var  obj = &#123;  	name:  'Zoe' ,  	describe:   function ( 
+ ##单个对象       1  2  3  4  5  6       var  obj = &#123;  	name:  'Zoe' ,  	describe:   function (  )  &#123;  		 return   'Person named '  +  this .name;  	&#125;  &#125;;       
+ 使用时       1  2  3 
     
     
         <a href="/2015/02/25/JS中对象的处理/" class="post-more waves-effect waves-button">

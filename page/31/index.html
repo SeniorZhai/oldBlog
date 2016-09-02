@@ -171,7 +171,7 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-         ##概述 ContentProvider是Android应用对外开放的数据接口，只要符合它所定义的Uri格式的请求，均可以正常访问执行操作。其他的Android应用可以使用ContentResolv
+         ##概述 ContentProvider是Android应用对外开放的数据接口，只要符合它所定义的Uri格式的请求，均可以正常访问执行操作。其他的Android应用可以使用ContentResolver对象通过与ContentProvider同名的方法请求执行，被执行的就是ContentProvider中的同名的方法。所以ContentProvider很多对外可以访问的方法，在ContentRe
     
     
         <a href="/2014/06/25/ContentProvider/" class="post-more waves-effect waves-button">
@@ -215,7 +215,7 @@
 
     
          
- 基础部分 数据类型基于C和Objective-C的基础上提出， Int 是整形， Double 和 Float 是浮点型， Bool 是布尔型， String 是字符串。Swift还有两个集合类
+ 基础部分 数据类型基于C和Objective-C的基础上提出， Int 是整形， Double 和 Float 是浮点型， Bool 是布尔型， String 是字符串。Swift还有两个集合类型 Array 和 Dictionary  除了我们熟悉的类型，Swift 还增加了 Objective-C 中没有的类型比如元组（Tuple）。元组可以让你创建或者传递一组数据，比如作为函数的返回值
     
     
         <a href="/2014/06/25/Swift笔记(二)/" class="post-more waves-effect waves-button">
@@ -260,7 +260,12 @@
     
          ##Gradle 
  
- 什么是Gradle？ Gradle 是以 Groovy 语言为基础，面向Java应用为主，基于DSL语法的自动化构建工具。说到Java的自动化构建工具。 使用Gradle构
+ 什么是Gradle？ Gradle 是以 Groovy 语言为基础，面向Java应用为主，基于DSL语法的自动化构建工具。说到Java的自动化构建工具。 使用Gradle构建Android项目的优点： 
+ 在IDE环境和命令行下使用同一个构建系统 
+ 改进的依赖关系管理 
+ 更容易地集成到自动构建系统 
+ 
+ ##Gradle 基本概念 如果你用Android Stud
     
     
         <a href="/2014/06/24/Gradle/" class="post-more waves-effect waves-button">
@@ -303,7 +308,7 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-         创建SQLite数据库推荐继承SQLiteOpenHelper类，然后重写其中的onCreate()方法，在onCreate()方法中，执行数据库创建的SQL语句。而SQLiteOpenHelper
+         创建SQLite数据库推荐继承SQLiteOpenHelper类，然后重写其中的onCreate()方法，在onCreate()方法中，执行数据库创建的SQL语句。而SQLiteOpenHelper不仅仅用于SQLite的创建，也可以对其进行维护，以及获得SQLiteDatabase这个数据库操作对象。 SQLiteOpenHelper提供了两个构造器，用于传递当前上下文对象以及SQLite数据
     
     
         <a href="/2014/06/23/SQLite/" class="post-more waves-effect waves-button">
@@ -347,7 +352,7 @@
 
     
          ##AppDelegate.h与AppDelegate.cpp文件 这两个文件时Cocos2d-x游戏的入口文件，控制着游戏的生命周期,除去构造函数和析构函数外，共有 3 个方法。 
-      1
+      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20       // 应用程序启动后将调用这个方法。默认的实现中已
     
     
         <a href="/2014/06/23/Cocos2d-X-30-Hello-World-分析/" class="post-more waves-effect waves-button">
@@ -393,6 +398,9 @@
          
   abs(singedNumber):返回给定的有符号数字的绝对值 
       1  2       abs (- 1 ) ==  1    abs (- 42 ) ==  42       
+ 
+  contains(sequence,element):判断给定的序列（如数组）是否包含特定的元素 
+      1  2  3  4       var  languages = [ "Sw
     
     
         <a href="/2014/06/20/Swift内建函数/" class="post-more waves-effect waves-button">
@@ -437,7 +445,7 @@
     
          程序执行需要读取到安全敏感项必需在androidmanifest.xml中声明相关权限请求, 完整列表如下: 
  
-  android.permission.ACCESS_CHECKIN_PROPE
+  android.permission.ACCESS_CHECKIN_PROPERTIES 允许读写访问”properties”表在 checkin数据库中，改值可以修改上传( Allows read/write access to the “properties” table 
     
     
         <a href="/2014/06/19/Android-permission访问权限大全/" class="post-more waves-effect waves-button">
@@ -481,7 +489,9 @@
 
     
           - void onCreate():当Service第一次被创建后将立即回调该方法。
-- void onStartCommand(Intent intent,int flag,int startI
+- void onStartCommand(Intent intent,int flag,int startId):每次通过startService()方法启动Service时都会被回调
+- void onDestroy():当Service被关闭前会被回调
+- abstract IBinder onBind
     
     
         <a href="/2014/06/19/Service/" class="post-more waves-effect waves-button">
@@ -525,7 +535,8 @@
 
     
          面向对象编程————Object Oriented Programming，简称OOP，是一种程序设计思想。OOP吧对象作为程序的基本单元，一个对象包含了数据和操作数据的函数。 
- 面向过程的程序设
+ 面向过程的程序设计把计算机程序视为一系列的命令集合，即一组函数的顺序执行，为了简化程序设计，面向过程吧函数继续切分成为子函数，即把大块的函数通过切割成小块函数降低系统的复杂度。 
+ 而面向对象的程序设计吧计算机程序视
     
     
         <a href="/2014/06/18/Python-六---面向对象编程/" class="post-more waves-effect waves-button">
@@ -568,7 +579,7 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-         针对Activity而言，Android存在一个回退栈维护界面体验。当一个应用程序图标被点击时，应用的Task就会来到前台，并把应用的主Activity压入BackStack的栈顶，并获得焦点，这个
+         针对Activity而言，Android存在一个回退栈维护界面体验。当一个应用程序图标被点击时，应用的Task就会来到前台，并把应用的主Activity压入BackStack的栈顶，并获得焦点，这个Activity称之为根Activity，而BackStack中的Activity可以通过点击回退键弹出栈并销毁，使上一个Activity获得焦点，直到用户返回到Home页，而当BackStack中的
     
     
         <a href="/2014/06/18/Activity启动模式/" class="post-more waves-effect waves-button">

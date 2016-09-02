@@ -383,7 +383,7 @@
 
     
           
- ##判断应用是否有某个权限       1  2      PackageManager pm = getPackageManager();   boolean  permission = (
+ ##判断应用是否有某个权限       1  2      PackageManager pm = getPackageManager();   boolean  permission = (PackageManager.PERMISSION_GRANTED == pm.checkPermission( "android.permission.RECORD_AUIO" , "package
     
     
         <a href="/2015/04/10/Android应用权限判断/" class="post-more waves-effect waves-button">
@@ -430,7 +430,10 @@
  #@ 
  
   引入自定义资源，格式为 @[package:]type/name    最常见的资源引用 
-      1      android:text="@string/hello" 
+      1      android:text="@string/hello"      
+ 
+  引入系统资源，格式为 @android:type/name  
+      1      android:textColor="@android:color/opaque_red"
     
     
         <a href="/2015/04/10/Android-Xml资源中小Tips/" class="post-more waves-effect waves-button">
@@ -475,7 +478,12 @@
     
           
  ##jQuery DOM操作 DOM = Document Object Model(文档对象模型) jQuery提供了一系列与DOM相关的方法，这使访问和操作元素和属性变得容易 
- ##获取
+ ##获取HTML元素 
+ ###获得内容 
+ 
+ text() 设置或返回所选元素的文本内容 
+ html() 设置或返回所选元素的内容(包括HTML标记) 
+ val() 设置或返回表单字段的值 以上的三个
     
     
         <a href="/2015/03/31/jQuery二识/" class="post-more waves-effect waves-button">
@@ -523,7 +531,8 @@
  ###祖先 通过jQuery能够向上遍历DOM数，以查找元素的祖先 
  
  parent()     返回所选元素的直接父类 
- parents() 返回所选元素的所有祖先
+ parents() 返回所选元素的所有祖先元素，知道根元素( )  
+ parentsUntil() 返回介于两个元素之间的所有祖先元素      1  2  3      $(  function (  ) &#123;  	$( "spa
     
     
         <a href="/2015/03/31/jQuery三识/" class="post-more waves-effect waves-button">
@@ -567,7 +576,11 @@
 
     
           
- ##开始       1  2  3       dependencies  &#123;     compile   'com.facebook.fresco:fresco:0.1.0+' 
+ ##开始       1  2  3       dependencies  &#123;     compile   'com.facebook.fresco:fresco:0.1.0+'   &#125;       
+ ##使用 简单的下载网络图片 
+ 
+ 在Application中初始化      1      Fresco.initialize(context);      
+ 
     
     
         <a href="/2015/03/31/掉渣天的图片加载库Fresco/" class="post-more waves-effect waves-button">

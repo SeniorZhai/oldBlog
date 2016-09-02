@@ -220,7 +220,9 @@
   &lt;   &amp;lt  
   &gt;   &amp;gt  
   &quot;   &amp;quot  
-  &#39;   &am
+  &#39;   &amp;apos  
+ 
+
     
     
         <a href="/2014/12/29/XML转义字符/" class="post-more waves-effect waves-button">
@@ -309,7 +311,9 @@
           
  
  animator 存放 property animations 文件 
- anim 存放帧动画、属性动画xml文件，property animations可以存放在anim里，但是anim
+ anim 存放帧动画、属性动画xml文件，property animations可以存放在anim里，但是animator的目录下的xml较高的优先级 
+ color 颜色xml 
+ drawable 图片，格式包括Bitmap files(.png，9.png，.jpg，.gif)或者XML(State lis
     
     
         <a href="/2014/12/25/资源文件详解/" class="post-more waves-effect waves-button">
@@ -396,7 +400,8 @@
 
     
           
- ##方法一 打开这个网站 http://www.androiddevtools.cn/ ，网站上基本上有你需要的SDK或者其他全部工具（如果没有请fork一下吧，把你知道添加进去！），具体安装
+ ##方法一 打开这个网站 http://www.androiddevtools.cn/ ，网站上基本上有你需要的SDK或者其他全部工具（如果没有请fork一下吧，把你知道添加进去！），具体安装下载请仔细阅读相关说明，正确配置即可。由于资源基本上都在百度云盘，下载速度必然刚刚的。 
+ ##方法二 在Android Studio中打开SDK Manager如下：   在mac上可以直接使用快捷
     
     
         <a href="/2014/12/22/让AndroidSDK飞/" class="post-more waves-effect waves-button">
@@ -525,7 +530,7 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-         POP动画极为流畅，秘密就在于POP通过 CADisplayLink 高达60FPS的特性，打造了一个游戏级的动画引擎。  CADisplayLink 是一个类似 NSTimer 的定时器，不同之处
+         POP动画极为流畅，秘密就在于POP通过 CADisplayLink 高达60FPS的特性，打造了一个游戏级的动画引擎。  CADisplayLink 是一个类似 NSTimer 的定时器，不同之处在于， NSTimer 用于定义任务的执行周期，它的执行收到了CPU阻塞影响，而 CADisplayLink 则用于定义画面的重绘，动画的演变，基于帧(frames)的间隔。通过 CADisplayL
     
     
         <a href="/2014/12/17/POP动画引擎/" class="post-more waves-effect waves-button">

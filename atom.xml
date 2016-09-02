@@ -96,6 +96,35 @@
   
   <entry>
     <title>图层几何学</title>
+    <link href="http://seniorzhai.github.io/2016/06/26/%E5%9B%BE%E5%B1%82%E5%87%A0%E4%BD%95%E5%AD%A6/"/>
+    <id>http://seniorzhai.github.io/2016/06/26/图层几何学/</id>
+    <published>2016-06-26T13:10:50.000Z</published>
+    <updated>2016-07-27T09:20:55.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>UIView有三个比较重要的布局属性：<code>frame</code>，<code>bounds</code>，<code>center</code>，对应到CALayer叫做<code>frame</code>，<code>bounds</code>，<code>position</code><br><a id="more"></a></p>
+<ul>
+<li><code>frame</code>代表图层的外部坐标，也就是父图层上占据的空间</li>
+<li><code>bounds</code>内部坐标，{0，0}是图层的左上角</li>
+<li><code>center</code>、<code>position</code>都代表了相对父图层的<code>anchorPoint</code>所在的位置<br><img src="/img/16072501.jpeg" alt=""></li>
+</ul>
+<p>##锚点<br>默认的anchorPoint位于图层的中点，所以图层将会以这个点为中心放置，anchorPoint属性并没有暴露个UIView接口暴露出来，这也就是视图position属性被叫做<code>center</code>，但是图层的<code>anchorPoint</code>可以被移动<br><img src="/img/16072601.jpeg" alt=""><br><code>anchorPoint</code>用单位坐标来描述，图层左上角是{0,0}，右下角是{1,1}，默认坐标是{0.5,0.5}，<code>anchorPoint</code>也可以通过指定x和y值小于或大于1，使它放置在图层范围之外。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;UIView有三个比较重要的布局属性：&lt;code&gt;frame&lt;/code&gt;，&lt;code&gt;bounds&lt;/code&gt;，&lt;code&gt;center&lt;/code&gt;，对应到CALayer叫做&lt;code&gt;frame&lt;/code&gt;，&lt;code&gt;bounds&lt;/code&gt;，&lt;code&gt;position&lt;/code&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="iOS" scheme="http://seniorzhai.github.io/categories/iOS/"/>
+    
+    
+      <category term="布局" scheme="http://seniorzhai.github.io/tags/%E5%B8%83%E5%B1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>图层几何学</title>
     <link href="http://seniorzhai.github.io/2016/06/26/Hit-Testing/"/>
     <id>http://seniorzhai.github.io/2016/06/26/Hit-Testing/</id>
     <published>2016-06-26T13:10:50.000Z</published>
@@ -117,35 +146,6 @@
 </ul>
 <p>###翻转几何结构<br>通常iOS一个图层的position位于父图层的左上角，Mac OS则位于左下角，Core Animation可以通过<code>geometryFlipped</code>属性来适配这两种情况，它决定了一个图层的坐标系是否相对父图层垂直翻转。</p>
 <p>###Z坐标轴<br>CALayer存在一个三维空间，除了<code>posistion</code>和<code>anchorPoint</code>属性外，CALayer还有另外两个属性，<code>zPosition</code>和<code>anchorPointZ</code>两者都是在Z轴上描述图层位置的浮点类型。<br><code>zPosition</code>决定图层显示顺序，图层根据子图层的<code>sublayers</code>出现的顺序来类绘制。<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">self</span>.greenView.layer.zPosition = <span class="number">1</span>.0f</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;UIView有三个比较重要的布局属性：&lt;code&gt;frame&lt;/code&gt;，&lt;code&gt;bounds&lt;/code&gt;，&lt;code&gt;center&lt;/code&gt;，对应到CALayer叫做&lt;code&gt;frame&lt;/code&gt;，&lt;code&gt;bounds&lt;/code&gt;，&lt;code&gt;position&lt;/code&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="iOS" scheme="http://seniorzhai.github.io/categories/iOS/"/>
-    
-    
-      <category term="布局" scheme="http://seniorzhai.github.io/tags/%E5%B8%83%E5%B1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>图层几何学</title>
-    <link href="http://seniorzhai.github.io/2016/06/26/%E5%9B%BE%E5%B1%82%E5%87%A0%E4%BD%95%E5%AD%A6/"/>
-    <id>http://seniorzhai.github.io/2016/06/26/图层几何学/</id>
-    <published>2016-06-26T13:10:50.000Z</published>
-    <updated>2016-07-27T09:20:55.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>UIView有三个比较重要的布局属性：<code>frame</code>，<code>bounds</code>，<code>center</code>，对应到CALayer叫做<code>frame</code>，<code>bounds</code>，<code>position</code><br><a id="more"></a></p>
-<ul>
-<li><code>frame</code>代表图层的外部坐标，也就是父图层上占据的空间</li>
-<li><code>bounds</code>内部坐标，{0，0}是图层的左上角</li>
-<li><code>center</code>、<code>position</code>都代表了相对父图层的<code>anchorPoint</code>所在的位置<br><img src="/img/16072501.jpeg" alt=""></li>
-</ul>
-<p>##锚点<br>默认的anchorPoint位于图层的中点，所以图层将会以这个点为中心放置，anchorPoint属性并没有暴露个UIView接口暴露出来，这也就是视图position属性被叫做<code>center</code>，但是图层的<code>anchorPoint</code>可以被移动<br><img src="/img/16072601.jpeg" alt=""><br><code>anchorPoint</code>用单位坐标来描述，图层左上角是{0,0}，右下角是{1,1}，默认坐标是{0.5,0.5}，<code>anchorPoint</code>也可以通过指定x和y值小于或大于1，使它放置在图层范围之外。</p>
 ]]></content>
     
     <summary type="html">

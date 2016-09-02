@@ -218,7 +218,7 @@
  
  android:numColumns=”auto_fit”    列数设置为自动 
  android:columnWitdh    列的宽度 
- android:stretchMode=”
+ android:stretchMode=”columnWidth”    缩放模式，如何填满空余位置，columnWitdh分摊给item宽度，SpacingWidth分摊给间隔，none无，spacingWidthUniform每一列间隔均
     
     
         <a href="/2014/11/17/GridView属性/" class="post-more waves-effect waves-button">
@@ -307,7 +307,7 @@
           
  
  android:autoLink 设置是否当文本为URL链接/email/电话号码/map时，显示为可点击的链接，可选值(none/web/email/phone/map/all) 
- a
+ android:bufferType 指定 getTexy() 方式取得的文本类型，选项editable类似StringBuilder可追加字符，也就是说getText后可调用append方法设置文本内
     
     
         <a href="/2014/11/16/TextView属性详解/" class="post-more waves-effect waves-button">
@@ -449,7 +449,7 @@
 
     
           
-         1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16       &lt; com.andexert.library.Ri
+         1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16       &lt; com.andexert.library.RippleView             android:id = "@+id/more"            ripple:rv_centered = "true"            andr
     
     
         <a href="/2014/11/08/RippleEffect/" class="post-more waves-effect waves-button">
@@ -493,7 +493,7 @@
 
     
           
- ##提示   创建代码       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19        prote
+ ##提示   创建代码       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19        protected   void   dialog  ()  &#123;  	AlertDialog.Builder builder =  new  Builder(mContext);  	builder.
     
     
         <a href="/2014/11/06/AndroidDialog/" class="post-more waves-effect waves-button">
