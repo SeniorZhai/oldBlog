@@ -16,7 +16,7 @@
 <meta property="og:url" content="http://seniorzhai.github.io/2014/11/17/CocoaPods/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
 <meta property="og:description" content="CocoaPods是一个objc的依赖管理工具，本身利用ruby的依赖管理gem进行构建">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CocoaPods">
 <meta name="twitter:description" content="CocoaPods是一个objc的依赖管理工具，本身利用ruby的依赖管理gem进行构建">
@@ -203,10 +203,10 @@
 
             <div class="post-content" id="post-content" itemprop="postContent">
             <p>CocoaPods是一个objc的依赖管理工具，本身利用ruby的依赖管理gem进行构建<br><a id="more"></a></p>
-<p>##下载及安装<br>本地安装好Ruby环境，在Terminator中输入以下命令</p>
+<h2 id="下载及安装"><a href="#下载及安装" class="headerlink" title="下载及安装"></a>下载及安装</h2><p>本地安装好Ruby环境，在Terminator中输入以下命令</p>
 <pre><code>sudo gem install cocoapods
-</code></pre><p>由于cocoapods.org会被<code>墙</code>，所以需要使用淘宝镜像来访问<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ gem sources --remove https://rubygems.org/</div><div class="line">$ gem sources -a http://ruby.taobao.org/</div><div class="line">$ gem sources -l #查看</div></pre></td></tr></table></figure></p>
-<p>##使用CocoaPods<br>示例导入<a href="https://github.com/AFNetworking/AFNetworking" target="_blank" rel="external">AFNetworking</a><br>为了确定<code>AFNetworking</code>是否支持CocoaPods可以先使用CocoaPods的搜索功能验证以下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pod search AFNetworking</div></pre></td></tr></table></figure></p>
+</code></pre><p>由于cocoapods.org会被<code>墙</code>，所以需要使用淘宝镜像来访问<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ gem sources --remove https://rubygems.org/</div><div class="line">$ gem sources -a http://ruby.taobao.org/</div><div class="line">$ gem sources -l # 查看</div></pre></td></tr></table></figure></p>
+<h2 id="使用CocoaPods"><a href="#使用CocoaPods" class="headerlink" title="使用CocoaPods"></a>使用CocoaPods</h2><p>示例导入<a href="https://github.com/AFNetworking/AFNetworking" target="_blank" rel="external">AFNetworking</a><br>为了确定<code>AFNetworking</code>是否支持CocoaPods可以先使用CocoaPods的搜索功能验证以下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pod search AFNetworking</div></pre></td></tr></table></figure></p>
 <p>如果可以在终端中看到关于AFNetworking类库的一些信息，说明AFNetworking支持CocoaPods</p>
 <ol>
 <li>首先用XCode建立一个工程，然后关闭XCode</li>

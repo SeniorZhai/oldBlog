@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="SeniorZhai's blog">
 <meta property="og:description" content="LabelView是一款极其方便的角标视图，可以很容易地加载其他View上。">
 <meta property="og:image" content="http://seniorzhai.github.io/img/15041501.png">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LabelView角标不用愁">
 <meta name="twitter:description" content="LabelView是一款极其方便的角标视图，可以很容易地加载其他View上。">
@@ -205,8 +205,8 @@
 
             <div class="post-content" id="post-content" itemprop="postContent">
             <p><a href="https://github.com/linger1216/labelview" target="_blank" rel="external">LabelView</a>是一款极其方便的角标视图，可以很容易地加载其他View上。<br><a id="more"></a></p>
-<p>##导入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">dependencies &#123;</div><div class="line">    compile &apos;com.lid.labelview:lib:0.1.1&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>##使用<br><code>LabelView</code>继承至<code>TextView</code>，可以使用所有<code>TextView</code>的属性<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">LabelView label = <span class="keyword">new</span> LabelView(<span class="keyword">this</span>);</div><div class="line">label.setText(<span class="string">"Text"</span>);</div><div class="line">label.setBackgroundColor(<span class="number">0xff03a9f4</span>);</div><div class="line">label.setTargetView(mTv,<span class="number">10</span>,LabelView.Gravity.LEFT_TOP);	<span class="comment">// 指定在左上角</span></div></pre></td></tr></table></figure></p>
+<h2 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">dependencies &#123;</div><div class="line">    compile &apos;com.lid.labelview:lib:0.1.1&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><code>LabelView</code>继承至<code>TextView</code>，可以使用所有<code>TextView</code>的属性<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">LabelView label = <span class="keyword">new</span> LabelView(<span class="keyword">this</span>);</div><div class="line">label.setText(<span class="string">"Text"</span>);</div><div class="line">label.setBackgroundColor(<span class="number">0xff03a9f4</span>);</div><div class="line">label.setTargetView(mTv,<span class="number">10</span>,LabelView.Gravity.LEFT_TOP);	<span class="comment">// 指定在左上角</span></div></pre></td></tr></table></figure></p>
 <p>setTargetView的第二个参数是角标距角的位置<br><img src="/img/15041501.png" alt=""></p>
 <ul>
 <li>删除使用<code>remove</code>方法即可</li>

@@ -19,7 +19,7 @@ HTML事件函数
 JavaScript特效和动画
 HTML DOM遍历和修改
 AJAX
-Utilties#jQuery安装1234&amp;lt;head&amp;gt;	&amp;lt;script src=&quot;jquery-1.10.2.min.js&quot; /&amp;gt;	&amp;lt;!-- &amp;lt;script sr">
+UtiltiesjQuery安装1234&amp;lt;head&amp;gt;	&amp;lt;script src=&quot;jquery-1.10.2.min.js&quot; /&amp;gt;	&amp;lt;!-- &amp;lt;script src">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jQuery初识">
 <meta property="og:url" content="http://seniorzhai.github.io/2015/03/30/jQuery初识/index.html">
@@ -33,8 +33,8 @@ HTML事件函数
 JavaScript特效和动画
 HTML DOM遍历和修改
 AJAX
-Utilties#jQuery安装1234&amp;lt;head&amp;gt;	&amp;lt;script src=&quot;jquery-1.10.2.min.js&quot; /&amp;gt;	&amp;lt;!-- &amp;lt;script sr">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+UtiltiesjQuery安装1234&amp;lt;head&amp;gt;	&amp;lt;script src=&quot;jquery-1.10.2.min.js&quot; /&amp;gt;	&amp;lt;!-- &amp;lt;script src">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery初识">
 <meta name="twitter:description" content="JQuery是一个JavaScript函数库，包含以下功能：
@@ -46,7 +46,7 @@ HTML事件函数
 JavaScript特效和动画
 HTML DOM遍历和修改
 AJAX
-Utilties#jQuery安装1234&amp;lt;head&amp;gt;	&amp;lt;script src=&quot;jquery-1.10.2.min.js&quot; /&amp;gt;	&amp;lt;!-- &amp;lt;script sr">
+UtiltiesjQuery安装1234&amp;lt;head&amp;gt;	&amp;lt;script src=&quot;jquery-1.10.2.min.js&quot; /&amp;gt;	&amp;lt;!-- &amp;lt;script src">
   
     <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
   
@@ -239,34 +239,125 @@ Utilties#jQuery安装1234&amp;lt;head&amp;gt;	&amp;lt;script src=&quot;jquery-1.
 <li>JavaScript特效和动画</li>
 <li>HTML DOM遍历和修改</li>
 <li>AJAX</li>
-<li>Utilties<br>#jQuery安装<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery-1.10.2.min.js"</span> /&gt;</span><span class="xml"></span></div><div class="line">	<span class="comment">&lt;!-- &lt;script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"&gt; --&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div></pre></td></tr></table></figure>
+<li>Utilties<h1 id="jQuery安装"><a href="#jQuery安装" class="headerlink" title="jQuery安装"></a>jQuery安装</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery-1.10.2.min.js"</span> /&gt;</span><span class="xml"></span></div><div class="line">	<span class="comment">&lt;!-- &lt;script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"&gt; --&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>#语法<br>jQuery语法是通过选取HTML元素，并对选取的元素执行某些操作</p>
-<p>##基础语法<br><code>$(selector).action()</code></p>
+<h1 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h1><p>jQuery语法是通过选取HTML元素，并对选取的元素执行某些操作</p>
+<h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><p><code>$(selector).action()</code></p>
 <ul>
 <li>美元符定义jQuery</li>
 <li>选取符(selector)查询和查找HTML元素</li>
-<li>jQuery的action()执行元素的操作<br>###文档就绪事件<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="comment">// 为了防止文档在完全加载就绪之前运行jQuery代码</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<li>jQuery的action()执行元素的操作<h3 id="文档就绪事件"><a href="#文档就绪事件" class="headerlink" title="文档就绪事件"></a>文档就绪事件</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="comment">// 为了防止文档在完全加载就绪之前运行jQuery代码</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>简洁的写法可以是这样的：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="comment">//</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>##选择器<br>jQuery选择器用于对HTML元素组或者单个元素进行操作<br>基于元素的id、类、类型、属性、属性值等”查找”HTML元素<br>所有选择器都以美元符开头：$()</p>
+<h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><p>jQuery选择器用于对HTML元素组或者单个元素进行操作<br>基于元素的id、类、类型、属性、属性值等”查找”HTML元素<br>所有选择器都以美元符开头：$()</p>
 <ul>
 <li><p>基于元素名选取元素</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		$(<span class="string">"p"</span>).hide();</div><div class="line">	&#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 </li>
 <li><p>基于id选择</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>))</span>&#123;</div><div class="line">		$(<span class="string">"#test"</span>).hide();</div><div class="line">	&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>))</span>&#123;</div><div class="line">		$(<span class="string">"# test"</span>).hide();</div><div class="line">	&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 </li>
 <li><p>基于class选择</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		$(<span class="string">".test"</span>).hide();</div><div class="line">	&#125;);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>###更多实例<br>|语法|描述|<br>|:–|:–|<br>|$(“*”)|所有元素|<br>|$(this)|当前元素|<br>|$(“p.intro”)|class为intro的<code>&lt;p&gt;</code>元素|<br>|$(“p:first”)|第一个<code>&lt;p&gt;</code>元素|<br>|$(“ul li:first”|<code>&lt;ul&gt;</code>元素的第一个<code>&lt;li&gt;</code>元素|<br>|$(“ul li:first-child”|每一个<code>&lt;ul&gt;</code>元素的第一个<code>&lt;li&gt;</code>元素|<br>|$(“[href]”)|选取所有带href属性的元素|<br>|$(“a[target=’_blank’]”)|所有target属性不等于<code>&quot;_blank&quot;</code>的<code>&lt;a&gt;</code>元素|<br>|$(“a[target!=’_blank’]”)|选取所有 target 属性值不等于 <code>&quot;_blank&quot;</code>的 <code>&lt;a&gt;</code>元素|<br>|$(“:button”)|选取所有 type=”button” 的<code>&lt;input&gt;</code>元素和<code>&lt;button&gt;</code>元素|<br>|$(“tr:even”)|选取偶数位置的<code>&lt;tr&gt;</code>元素|<br>|$(“tr:odd”)|选取奇数位置的<code>&lt;tr&gt;</code>元素|</p>
-<p>##jQuery事件<br>|鼠标事件|键盘事件|表单事件|文档/窗口事件|<br>|:—|:—|:—|:—|<br>|click|keypress|submit|load|<br>|dblclick|keydown|change|resize|<br>|mouseenter|keyup|focus|scroll|<br>|mouseleave||blur|unload|</p>
-<p>###常用事件</p>
-<ul>
+<h3 id="更多实例"><a href="#更多实例" class="headerlink" title="更多实例"></a>更多实例</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">语法</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">$(“*”)</td>
+<td style="text-align:left">所有元素</td>
+</tr>
+<tr>
+<td style="text-align:left">$(this)</td>
+<td style="text-align:left">当前元素</td>
+</tr>
+<tr>
+<td style="text-align:left">$(“p.intro”)</td>
+<td style="text-align:left">class为intro的<code>&lt;p&gt;</code>元素</td>
+</tr>
+<tr>
+<td style="text-align:left">$(“p:first”)</td>
+<td style="text-align:left">第一个<code>&lt;p&gt;</code>元素</td>
+</tr>
+<tr>
+<td style="text-align:left">$(“ul li:first”</td>
+<td style="text-align:left"><code>&lt;ul&gt;</code>元素的第一个<code>&lt;li&gt;</code>元素</td>
+</tr>
+<tr>
+<td style="text-align:left">$(“ul li:first-child”</td>
+<td style="text-align:left">每一个<code>&lt;ul&gt;</code>元素的第一个<code>&lt;li&gt;</code>元素</td>
+</tr>
+<tr>
+<td style="text-align:left">$(“[href]”)</td>
+<td style="text-align:left">选取所有带href属性的元素</td>
+</tr>
+<tr>
+<td style="text-align:left">$(“a[target=’_blank’]”)</td>
+<td style="text-align:left">所有target属性不等于<code>&quot;_blank&quot;</code>的<code>&lt;a&gt;</code>元素</td>
+</tr>
+<tr>
+<td style="text-align:left">$(“a[target!=’_blank’]”)</td>
+<td style="text-align:left">选取所有 target 属性值不等于 <code>&quot;_blank&quot;</code>的 <code>&lt;a&gt;</code>元素</td>
+</tr>
+<tr>
+<td style="text-align:left">$(“:button”)</td>
+<td style="text-align:left">选取所有 type=”button” 的<code>&lt;input&gt;</code>元素和<code>&lt;button&gt;</code>元素</td>
+</tr>
+<tr>
+<td style="text-align:left">$(“tr:even”)</td>
+<td style="text-align:left">选取偶数位置的<code>&lt;tr&gt;</code>元素</td>
+</tr>
+<tr>
+<td style="text-align:left">$(“tr:odd”)</td>
+<td style="text-align:left">选取奇数位置的<code>&lt;tr&gt;</code>元素</td>
+</tr>
+</tbody>
+</table>
+<h2 id="jQuery事件"><a href="#jQuery事件" class="headerlink" title="jQuery事件"></a>jQuery事件</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">鼠标事件</th>
+<th style="text-align:left">键盘事件</th>
+<th style="text-align:left">表单事件</th>
+<th style="text-align:left">文档/窗口事件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">click</td>
+<td style="text-align:left">keypress</td>
+<td style="text-align:left">submit</td>
+<td style="text-align:left">load</td>
+</tr>
+<tr>
+<td style="text-align:left">dblclick</td>
+<td style="text-align:left">keydown</td>
+<td style="text-align:left">change</td>
+<td style="text-align:left">resize</td>
+</tr>
+<tr>
+<td style="text-align:left">mouseenter</td>
+<td style="text-align:left">keyup</td>
+<td style="text-align:left">focus</td>
+<td style="text-align:left">scroll</td>
+</tr>
+<tr>
+<td style="text-align:left">mouseleave</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">blur</td>
+<td style="text-align:left">unload</td>
+</tr>
+</tbody>
+</table>
+<h3 id="常用事件"><a href="#常用事件" class="headerlink" title="常用事件"></a>常用事件</h3><ul>
 <li>$(document).ready() 文档准备完毕</li>
 <li>click() 按钮点击事件</li>
 <li>dblclick() 双击元素事件</li>
@@ -278,10 +369,9 @@ Utilties#jQuery安装1234&amp;lt;head&amp;gt;	&amp;lt;script src=&quot;jquery-1.
 <li>focus() 元素获得焦点事件</li>
 <li>blur() 元素失去焦点事件</li>
 </ul>
-<p>###hide()和show()<br>用于元素的隐藏和显示<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$(selector).hide(speed,callback)	<span class="comment">//speed 可以使slow fast或毫秒用于规定隐藏/显示的速度</span></div><div class="line">$(selector).show(speed,callback)</div></pre></td></tr></table></figure></p>
-<p>####toggle()<br>用于切换hide()和show()<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(selector).toggle(speed,callback)</div></pre></td></tr></table></figure></p>
-<p>###淡入淡出效果</p>
-<ul>
+<h3 id="hide-和show"><a href="#hide-和show" class="headerlink" title="hide()和show()"></a>hide()和show()</h3><p>用于元素的隐藏和显示<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$(selector).hide(speed,callback)	<span class="comment">//speed 可以使slow fast或毫秒用于规定隐藏/显示的速度</span></div><div class="line">$(selector).show(speed,callback)</div></pre></td></tr></table></figure></p>
+<h4 id="toggle"><a href="#toggle" class="headerlink" title="toggle()"></a>toggle()</h4><p>用于切换hide()和show()<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(selector).toggle(speed,callback)</div></pre></td></tr></table></figure></p>
+<h3 id="淡入淡出效果"><a href="#淡入淡出效果" class="headerlink" title="淡入淡出效果"></a>淡入淡出效果</h3><ul>
 <li>fadeIn()</li>
 <li>fadeOut()</li>
 <li>fadeToggle()</li>
@@ -289,14 +379,14 @@ Utilties#jQuery安装1234&amp;lt;head&amp;gt;	&amp;lt;script src=&quot;jquery-1.
 </li>
 </ul>
 <p>fadeIn为淡入，fadeOut为淡出，fadeToggle()为切换<br>fadeTo允许为给定的不透明度(值为0到1之间)<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(selector).fadeTo(speed,opacity,callback)</div></pre></td></tr></table></figure></p>
-<p>###滑动效果<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(selector).slideDown(speed,callback)	<span class="comment">// 用于向下滑动元素</span></div><div class="line">$(selector).slideUp(speed,callback)</div><div class="line">$(selector).slideToggle(speed,callback)</div></pre></td></tr></table></figure></p>
-<p>##自定义动画<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(selector).animate(&#123;params&#125;,speed,callback);</div></pre></td></tr></table></figure></p>
+<h3 id="滑动效果"><a href="#滑动效果" class="headerlink" title="滑动效果"></a>滑动效果</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(selector).slideDown(speed,callback)	<span class="comment">// 用于向下滑动元素</span></div><div class="line">$(selector).slideUp(speed,callback)</div><div class="line">$(selector).slideToggle(speed,callback)</div></pre></td></tr></table></figure>
+<h2 id="自定义动画"><a href="#自定义动画" class="headerlink" title="自定义动画"></a>自定义动画</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(selector).animate(&#123;params&#125;,speed,callback);</div></pre></td></tr></table></figure>
 <p>params为定义形成动画的CSS属性<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="string">"div"</span>).animate(&#123;left:<span class="string">'250px'</span>&#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 <p>也可以同时操作多个属性<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="string">"div"</span>).animate(&#123;</div><div class="line">    left:<span class="string">'250px'</span>,</div><div class="line">    opacity:<span class="string">'0.5'</span>,</div><div class="line">    height:<span class="string">'150px'</span>,</div><div class="line">    width:<span class="string">'150px'</span></div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 <p>使用相对值<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="string">"div"</span>).animate(&#123;</div><div class="line">    left:<span class="string">'250px'</span>,</div><div class="line">    height:<span class="string">'+=150px'</span>,</div><div class="line">    width:<span class="string">'+=150px'</span></div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 <p>使用预定值<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="string">"div"</span>).animate(&#123;</div><div class="line">    height:<span class="string">'toggle'</span></div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 <p>使用队列<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> div=$(<span class="string">"div"</span>);</div><div class="line">  div.animate(&#123;height:<span class="string">'300px'</span>,opacity:<span class="string">'0.4'</span>&#125;,<span class="string">"slow"</span>);</div><div class="line">  div.animate(&#123;width:<span class="string">'300px'</span>,opacity:<span class="string">'0.8'</span>&#125;,<span class="string">"slow"</span>);</div><div class="line">  div.animate(&#123;height:<span class="string">'100px'</span>,opacity:<span class="string">'0.4'</span>&#125;,<span class="string">"slow"</span>);</div><div class="line">  div.animate(&#123;width:<span class="string">'100px'</span>,opacity:<span class="string">'0.8'</span>&#125;,<span class="string">"slow"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>##停止动画<br>stop()方法用于停止动画或效果<br><code>$(selector).stop(stopAll,goToEnd)</code><br>可选的stopAll指定是否应该清除动画队列，默认是false，即仅停止活动的动画，允许任何排入队列的动画向后执行<br>可选的goToEnd参数指定是否立即完成当前动画，默认是false<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"#stop"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="string">"#pancel"</span>).stop();</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h2 id="停止动画"><a href="#停止动画" class="headerlink" title="停止动画"></a>停止动画</h2><p>stop()方法用于停止动画或效果<br><code>$(selector).stop(stopAll,goToEnd)</code><br>可选的stopAll指定是否应该清除动画队列，默认是false，即仅停止活动的动画，允许任何排入队列的动画向后执行<br>可选的goToEnd参数指定是否立即完成当前动画，默认是false<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"# stop"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="string">"# pancel"</span>).stop();</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 
             <blockquote>
                 <p>

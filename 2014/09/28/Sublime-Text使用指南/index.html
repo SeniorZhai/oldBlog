@@ -10,20 +10,20 @@
   
   
   <meta name="keywords" content="Sublime Text">
-  <meta name="description" content="##安装Package ControlSublime Text支持大量插件，Package Control能够帮助我们管理这些插件，它可以方便的浏览、安装和卸载Sublime Text中的插件
+  <meta name="description" content="安装Package ControlSublime Text支持大量插件，Package Control能够帮助我们管理这些插件，它可以方便的浏览、安装和卸载Sublime Text中的插件
 
 使用Ctrl+`打开Sublime Text控制台
 输入下面命令道控制台
-1import urllib.request,os,hashlib; h = &amp;apos;7183a2d3e96f11eeadd">
+1import urllib.request,os,hashlib; h = &amp;apos;7183a2d3e96f11eeadd76">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Sublime Text使用指南">
 <meta property="og:url" content="http://seniorzhai.github.io/2014/09/28/Sublime-Text使用指南/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
-<meta property="og:description" content="##安装Package ControlSublime Text支持大量插件，Package Control能够帮助我们管理这些插件，它可以方便的浏览、安装和卸载Sublime Text中的插件
+<meta property="og:description" content="安装Package ControlSublime Text支持大量插件，Package Control能够帮助我们管理这些插件，它可以方便的浏览、安装和卸载Sublime Text中的插件
 
 使用Ctrl+`打开Sublime Text控制台
 输入下面命令道控制台
-1import urllib.request,os,hashlib; h = &amp;apos;7183a2d3e96f11eeadd">
+1import urllib.request,os,hashlib; h = &amp;apos;7183a2d3e96f11eeadd76">
 <meta property="og:image" content="http://seniorzhai.github.io/img/14092801.gif">
 <meta property="og:image" content="http://seniorzhai.github.io/img/14092802.gif">
 <meta property="og:image" content="http://seniorzhai.github.io/img/14092803.gif">
@@ -38,14 +38,14 @@
 <meta property="og:image" content="http://seniorzhai.github.io/img/14092814.jpg">
 <meta property="og:image" content="http://seniorzhai.github.io/img/14092812.jpg">
 <meta property="og:image" content="http://seniorzhai.github.io/img/14092813.jpg">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sublime Text使用指南">
-<meta name="twitter:description" content="##安装Package ControlSublime Text支持大量插件，Package Control能够帮助我们管理这些插件，它可以方便的浏览、安装和卸载Sublime Text中的插件
+<meta name="twitter:description" content="安装Package ControlSublime Text支持大量插件，Package Control能够帮助我们管理这些插件，它可以方便的浏览、安装和卸载Sublime Text中的插件
 
 使用Ctrl+`打开Sublime Text控制台
 输入下面命令道控制台
-1import urllib.request,os,hashlib; h = &amp;apos;7183a2d3e96f11eeadd">
+1import urllib.request,os,hashlib; h = &amp;apos;7183a2d3e96f11eeadd76">
 <meta name="twitter:image" content="http://seniorzhai.github.io/img/14092801.gif">
   
     <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
@@ -230,32 +230,32 @@
 
             <div class="post-content" id="post-content" itemprop="postContent">
             <a id="more"></a>
-<p>##安装Package Control<br>Sublime Text支持大量插件，Package Control能够帮助我们管理这些插件，它可以方便的浏览、安装和卸载Sublime Text中的插件</p>
+<h2 id="安装Package-Control"><a href="#安装Package-Control" class="headerlink" title="安装Package Control"></a>安装Package Control</h2><p>Sublime Text支持大量插件，Package Control能够帮助我们管理这些插件，它可以方便的浏览、安装和卸载Sublime Text中的插件</p>
 <ul>
 <li>使用Ctrl+`打开Sublime Text控制台</li>
 <li><p>输入下面命令道控制台</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import urllib.request,os,hashlib; h = &apos;7183a2d3e96f11eeadd761d777e62404&apos; + &apos;e330c659d4bb41d3bdf022e94cab3cd0&apos;; pf = &apos;Package Control.sublime-package&apos;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( &apos;http://sublime.wbond.net/&apos; + pf.replace(&apos; &apos;, &apos;%20&apos;)).read(); dh = hashlib.sha256(by).hexdigest(); print(&apos;Error validating download (got %s instead of %s), please try manual install&apos; % (dh, h)) if dh != h else open(os.path.join( ipp, pf), &apos;wb&apos; ).write(by)</div></pre></td></tr></table></figure>
 </li>
-<li><p>等待Package Control安装完成，使用<code>Ctrl + Shift + P</code>打开命令板<br>##基本操作</p>
-</li>
+<li><p>等待Package Control安装完成，使用<code>Ctrl + Shift + P</code>打开命令板</p>
+<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2></li>
 <li><code>Ctrl + Enter</code>在当前行下面增加一行并跳至该行</li>
 <li><code>Ctrl + Shift + Enter</code>在当前行上增加一行并跳至该行</li>
 <li><code>Ctrl + ←/→</code>逐词移动</li>
 <li><code>Ctrl + Shift + ←/→</code>逐词选择</li>
 <li><code>Ctrl + ↑/↓</code>移动显示区域</li>
-<li><code>Ctrl + Shift + ↑/↓</code>移动当前行<br>##选择</li>
+<li><code>Ctrl + Shift + ↑/↓</code>移动当前行<h2 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h2></li>
 <li><code>Ctrl + D</code>选择当前光标所在的词并高亮该词出现的位置，再次按下选择该词下次出现的位置</li>
 <li><code>Ctrl + K</code>在多重选词的过程中进行跳过，使用<code>Ctrl + U</code>进行回退，使用<code>Esc</code>退出多重编辑<br><img src="/img/14092801.gif" alt=""></li>
 <li><code>Ctrl + Shift + L</code>将当前选中区域打散，然后进行同时编辑<br><img src="/img/14092802.gif" alt=""></li>
-<li><code>Ctrl + J</code>将当前选中的区域合并成一行<br><img src="/img/14092803.gif" alt=""><br>##查找&amp;替换<br>Sublime Text的查找功能可以分为<strong>快速查找</strong>、<strong>标准查找</strong>、<strong>多文件查找</strong><br>###快速查找<br>使用<code>Shift + ←/→</code>或者<code>Ctrl + D</code>选中关键字，然后使用<code>F3</code>跳到其下一个出现的位置，<code>Shift + F3</code>跳到其上一个出现的位置，<code>Alt + F3</code>可以选中其出现的所有位置<br><img src="/img/14092804.gif" alt=""><br>###标准查找&amp;替换<br>使用<code>Ctrl + F</code>调出搜索框进行搜索<br><img src="/img/14092805.jpg" alt=""><br>使用<code>Ctrl + H</code>调出替换框，<code>Ctrl +_Shift + H</code>替换当前关键字，<code>Ctrl + Alt + H</code>替换所有匹配关键字<br><img src="/img/14092806.jpg" alt=""><br>####关键字查找&amp;替换</li>
+<li><code>Ctrl + J</code>将当前选中的区域合并成一行<br><img src="/img/14092803.gif" alt=""><h2 id="查找-amp-替换"><a href="#查找-amp-替换" class="headerlink" title="查找&amp;替换"></a>查找&amp;替换</h2>Sublime Text的查找功能可以分为<strong>快速查找</strong>、<strong>标准查找</strong>、<strong>多文件查找</strong><h3 id="快速查找"><a href="#快速查找" class="headerlink" title="快速查找"></a>快速查找</h3>使用<code>Shift + ←/→</code>或者<code>Ctrl + D</code>选中关键字，然后使用<code>F3</code>跳到其下一个出现的位置，<code>Shift + F3</code>跳到其上一个出现的位置，<code>Alt + F3</code>可以选中其出现的所有位置<br><img src="/img/14092804.gif" alt=""><h3 id="标准查找-amp-替换"><a href="#标准查找-amp-替换" class="headerlink" title="标准查找&amp;替换"></a>标准查找&amp;替换</h3>使用<code>Ctrl + F</code>调出搜索框进行搜索<br><img src="/img/14092805.jpg" alt=""><br>使用<code>Ctrl + H</code>调出替换框，<code>Ctrl +_Shift + H</code>替换当前关键字，<code>Ctrl + Alt + H</code>替换所有匹配关键字<br><img src="/img/14092806.jpg" alt=""><h4 id="关键字查找-amp-替换"><a href="#关键字查找-amp-替换" class="headerlink" title="关键字查找&amp;替换"></a>关键字查找&amp;替换</h4></li>
 <li><code>Alt + C</code>切换大小写敏感模式</li>
-<li><code>Alt + W</code>切换整字匹配模式<br>###多文件搜索<br><code>Ctrl + Shift + F</code>开启多文件搜索&amp;替换<br><img src="/img/14092807.jpg" alt=""><br>##跳转</li>
+<li><code>Alt + W</code>切换整字匹配模式<h3 id="多文件搜索"><a href="#多文件搜索" class="headerlink" title="多文件搜索"></a>多文件搜索</h3><code>Ctrl + Shift + F</code>开启多文件搜索&amp;替换<br><img src="/img/14092807.jpg" alt=""><h2 id="跳转"><a href="#跳转" class="headerlink" title="跳转"></a>跳转</h2></li>
 <li><code>Ctrl + P</code>会列出当前打开的文件（或者是当前文件夹的文件），输入文件名然后Enter跳转至该文件。<br><img src="/img/14092808.gif" alt=""></li>
 <li><code>Ctrl + R</code>会列出当前文件中的符号（例如类名和函数名，但无法深入到变量名），输入符号名称Enter即可以跳转到该处。此外，还可以使用F12快速跳转到当前光标所在符号的定义处（Jump to Definition）。<br><img src="/img/14092809.gif" alt=""></li>
-<li><code>Ctrl + G</code>然后输入行号以跳转到指定行。<br><img src="/img/14092810.gif" alt=""><br>###组合跳跃<br>在<code>Ctrl + P</code>匹配文件后，可以进行后续输入以跳转到更精确的位置</li>
+<li><code>Ctrl + G</code>然后输入行号以跳转到指定行。<br><img src="/img/14092810.gif" alt=""><h3 id="组合跳跃"><a href="#组合跳跃" class="headerlink" title="组合跳跃"></a>组合跳跃</h3>在<code>Ctrl + P</code>匹配文件后，可以进行后续输入以跳转到更精确的位置</li>
 <li><code>@</code>符号跳转：输入<code>@demo</code>跳转到<code>demo</code>符号所在的位置</li>
-<li><code>#</code>关键字跳转：输入<code>#keyword</code>跳转到<code>keyword</code>所在的位置</li>
-<li><code>:</code>行号跳转：输入:12跳转到文件的第12行。<br><img src="/img/14092811.gif" alt=""><br>##文件夹<br>用<code>Ctrl + K</code>, <code>Ctrl + B</code>显示或隐藏侧栏，使用<code>Ctrl + P</code>快速跳转到文件夹里的文件。<br><img src="/img/14092814.jpg" alt=""></li>
+<li><code>#</code>关键字跳转：输入<code># keyword</code>跳转到<code>keyword</code>所在的位置</li>
+<li><code>:</code>行号跳转：输入:12跳转到文件的第12行。<br><img src="/img/14092811.gif" alt=""><h2 id="文件夹"><a href="#文件夹" class="headerlink" title="文件夹"></a>文件夹</h2>用<code>Ctrl + K</code>, <code>Ctrl + B</code>显示或隐藏侧栏，使用<code>Ctrl + P</code>快速跳转到文件夹里的文件。<br><img src="/img/14092814.jpg" alt=""></li>
 <li>使用<code>Ctrl + Shift + N</code>创建一个新窗口</li>
 <li><code>Ctrl + N</code>在当前窗口创建一个新标签，<code>Ctrl + W</code>关闭当前标签，<code>Ctrl + Shift + T</code>恢复刚刚关闭的标签。</li>
 <li>分屏：<code>Alt + Shift + 2</code>进行左右分屏，<code>Alt + Shift + 8</code>进行上下分屏，<code>Alt + Shift + 5</code>进行上下左右分屏（即分为四屏）。<ul>
@@ -263,10 +263,10 @@
 </ul>
 </li>
 <li><code>F11</code> 全屏</li>
-<li><code>Shift + F11</code> 切换无干扰全屏<br>##格式化<br>手动格式化使用<code>Ctrl + [</code>向左缩进，<code>Ctrl + ]</code>向右缩进，<code>Ctrl + Shift + V</code>以当前缩进粘贴代码<br>此外也可以使用插件实现自动缩进和智能对齐</li>
+<li><code>Shift + F11</code> 切换无干扰全屏<h2 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h2>手动格式化使用<code>Ctrl + [</code>向左缩进，<code>Ctrl + ]</code>向右缩进，<code>Ctrl + Shift + V</code>以当前缩进粘贴代码<br>此外也可以使用插件实现自动缩进和智能对齐</li>
 <li><a href="https://sublime.wbond.net/packages/HTMLBeautify" target="_blank" rel="external">HTMLBeautify</a>：格式化HTML。</li>
 <li><a href="https://sublime.wbond.net/packages/AutoPEP8" target="_blank" rel="external">AutoPEP8</a>：格式化Python代码。</li>
-<li><a href="https://sublime.wbond.net/packages/Alignment" target="_blank" rel="external">Alignment</a>：进行智能对齐。<br>##中文输入法Bug<br>Sublime Text一直存在一个Bug：中文输入框不跟随。<br><img src="/img/14092812.jpg" alt=""><br>解决方法是安装<code>IMESupport</code>插件，之后重启Sublime Text问题就解决了。<br><img src="/img/14092813.jpg" alt=""></li>
+<li><a href="https://sublime.wbond.net/packages/Alignment" target="_blank" rel="external">Alignment</a>：进行智能对齐。<h2 id="中文输入法Bug"><a href="#中文输入法Bug" class="headerlink" title="中文输入法Bug"></a>中文输入法Bug</h2>Sublime Text一直存在一个Bug：中文输入框不跟随。<br><img src="/img/14092812.jpg" alt=""><br>解决方法是安装<code>IMESupport</code>插件，之后重启Sublime Text问题就解决了。<br><img src="/img/14092813.jpg" alt=""></li>
 </ul>
 
             <blockquote>

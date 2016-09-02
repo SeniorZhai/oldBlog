@@ -6,6 +6,8 @@
   <title>SeniorZhai&#39;s blog | 苟利国家生死以，起因福祸趋避之</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
+  <meta name="theme-color" content="#ED5565">
+  
   
   <meta name="keywords" content="undefined">
   <meta name="description" content="专注于移动平台">
@@ -18,8 +20,10 @@
 <meta name="twitter:title" content="SeniorZhai's blog">
 <meta name="twitter:description" content="专注于移动平台">
   
+    <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
+  
   <meta name="summary" content="专注于移动平台">
-  <link rel="shortcut icon" href="/">
+  <link rel="shortcut icon" href="/img/favicon.ico">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -33,7 +37,7 @@
   </a>
   <div class="brand-wrap">
     <div class="brand">
-      <a href="/" class="avatar"><img src="undefined"></a>
+      <a href="/" class="avatar"><img src="/img/logo.jpg"></a>
       <hgroup class="introduce">
         <h5 class="nickname">Dear宅学长</h5>
         <a href="mailto:developer.zhaitao@gmail.com" title="developer.zhaitao@gmail.com" class="mail">developer.zhaitao@gmail.com</a>
@@ -43,6 +47,48 @@
   <div class="scroll-wrap flex-col">
     <ul class="nav">
       
+          <li class="waves-block waves-effect">
+            <a href="/"  >
+              <i class="icon icon-lg icon-home"></i>
+              主页
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/archives"  >
+              <i class="icon icon-lg icon-archives"></i>
+              Archives
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/tags"  >
+              <i class="icon icon-lg icon-tags"></i>
+              Tags
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://seniorzhai.github.io" target="_blank" >
+              <i class="icon icon-lg icon-github"></i>
+              Github
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="http://weibo.com/seniorszhai/" target="_blank" >
+              <i class="icon icon-lg icon-weibo"></i>
+              Weibo
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/about"  >
+              <i class="icon icon-lg icon-link"></i>
+              about
+            </a>
+          </li>
+      
     </ul>
 
     <footer class="footer">
@@ -50,7 +96,7 @@
   <p>SeniorZhai&#39;s blog &copy; 2016</p>
   <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
   <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
-  <a href="undefined" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
+  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
 </footer>
 
   </div>
@@ -65,6 +111,20 @@
         </a>
         <div class="flex-col header-title ellipsis">SeniorZhai&#39;s blog</div>
         
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
         
     </div>
 </header>
@@ -113,7 +173,7 @@
     
     
         <a href="/2015/04/16/视差View/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -154,7 +214,7 @@
     
     
         <a href="/2015/04/15/Masonry布局框架/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -197,7 +257,7 @@
     
     
         <a href="/2015/04/15/比较通用的适配器/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -240,7 +300,7 @@
     
     
         <a href="/2015/04/15/LabelView角标不用愁/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -283,7 +343,7 @@
     
     
         <a href="/2015/04/13/Application-mk文件说明/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -323,13 +383,11 @@
 
     
           
- ##判断应用是否有某个权限       1  2      PackageManager pm = getPackageManager();   boolean  permission = (PackageManager.PERMISSION_GRANTED == pm.checkPermission( "android.permission.RECORD_AUIO" , "packageName" )); // permission用于判断是否有该权限        
- ##获取某个应用的权限清单       1  2      PackageInfo pack = pm.getPackageInfo( "packageName" ,PackageManager.GET_PERMISSIONS);  String[] permissionStrings = pack.requestedPermissions;	 // 获取到应用权限的字符串数组        
-
+   判断应用是否有某个权限       1  2      PackageManager pm = getPackageManager();   boolean  permission = (PackageManager.PERMISSION_GRANTED == pm.checkPermission( "android.permission.RECORD_AUIO" , "package
     
     
         <a href="/2015/04/10/Android应用权限判断/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -369,27 +427,16 @@
 
     
           
- #@ 
- 
+   @  
   引入自定义资源，格式为 @[package:]type/name    最常见的资源引用 
       1      android:text="@string/hello"      
  
   引入系统资源，格式为 @android:type/name  
-      1      android:textColor="@android:color/opaque_red"      
- 
- 
- #@  引用系统非public资源`@ android:type/name` 
- 
- 系统资源纷纷public和非public，生命在 \platforms\android-8\data\res\values\public.xml  
- 
- 相比 @android:type/name ， @*android:type/name 能够使用所有Android系统资源，不过Google官方不推介使用 
- #?  ?[namespace:]type/name 这种方式用于引用当前主题中的属性值，这个属性值只能在style资源和XML属性中使用       1      android:textColor="?android:textDisabledColor"       
- #@+  @+type/name ， + 表示在type中添加一条记录通常用于定义资源 id        1      android:id="@+id/select"       
-
+      1      android:textColor="@android:color/opaque_red"
     
     
         <a href="/2015/04/10/Android-Xml资源中小Tips/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -429,40 +476,15 @@
 
     
           
- ##遍历DOM 
- ###祖先 通过jQuery能够向上遍历DOM数，以查找元素的祖先 
+   遍历DOM    祖先  通过jQuery能够向上遍历DOM数，以查找元素的祖先 
  
  parent()     返回所选元素的直接父类 
  parents() 返回所选元素的所有祖先元素，知道根元素( )  
- parentsUntil() 返回介于两个元素之间的所有祖先元素      1  2  3      $(  function (  ) &#123;  	$( "span" ).prantsUntil( "div" );  &#125;)      
- 
- 
- ###后代 jQuery能够向下遍历DOM树 
- 
- children() 返回被选元素的所有子元素 
- find() 返回被选元素的后代元素，一路向下指导最后一个后代 ###同胞 jQuery能够在DOM中遍历元素的同胞元素 
- siblings() 返回被选元素的所有同胞元素 
- next() 返回被选元素的下一个同胞元素 
- nextAll() 返回被选元素的所有跟随的同胞元素 
- nextUntil() 返回介于两个给定参数之间的所有跟随的同胞元素 
- prev() 与next方向相反 
- prevAll() 与nextAll方向相反 
- prevUntil() 与nextUntil方向相反 
- 
- ##jQuery Ajax AJAX = Asynchronous JavaScript and XML 简单的说在不重载整个页面的情况下，AJAX通过后台加载数据，并在网页上进行显示 
- ###AJAX load load()方法能够从服务器加载数据，并把返回的数据放入元素元素中       1      $(selector).load(URL,data,callback);       
- 必选参数URL为希望加载的URL，可选的data参数规定了请求一同发送的查询字符串的键/值对集合，可选的callback是load方法完成后所执行的函数 回调函数有不同的参数 
- 
- responseTxt 结果内容 
- statusTxt 调用的状态 
- xhr XMLHttpRequest对象      1  2  3  4  5  6  7  8      $( "button" ).click(  function (  ) &#123;    $( "#div1" ).load( "demo_test.txt" ,  function ( responseTxt,statusTxt,xhr ) &#123;       if (statusTxt== "success" )        alert( "External content loaded successfully!" );       if (statusTxt== "error" )        alert( "Error: " +xhr.status+ ": " +xhr.statusText);    &#125;);  &#125;);      
- 
- 
-
+ parentsUntil() 返回介于两个元素之间的所有祖先元素      1  2  3      $(  function (  ) &#123;  	$( "span
     
     
         <a href="/2015/03/31/jQuery三识/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -502,59 +524,15 @@
 
     
           
- ##jQuery DOM操作 DOM = Document Object Model(文档对象模型) jQuery提供了一系列与DOM相关的方法，这使访问和操作元素和属性变得容易 
- ##获取HTML元素 
- ###获得内容 
- 
+   jQuery DOM操作  DOM = Document Object Model(文档对象模型) jQuery提供了一系列与DOM相关的方法，这使访问和操作元素和属性变得容易 
+   获取HTML元素    获得内容  
  text() 设置或返回所选元素的文本内容 
  html() 设置或返回所选元素的内容(包括HTML标记) 
- val() 设置或返回表单字段的值 以上的三个都拥有回调函数，由两个参数：被选元素列表中当前元素的下标以及原始值 
- 
- ###获取属性 
- 
- attr() 获取属性值 设置属性      1  2  3      $( "button" ).click(  function (  ) &#123;  	$( "#w3s" ).attr( "href" , "http://www.baidu.com/" );  &#125;);      
- 
- 
- 同事设置多个属性       1  2  3  4  5  6      $( "button" ).click(  function (  ) &#123;  	$( "#w3s" ).attr(&#123;  		 "href" : "http://www.sina.com.cn" ,  		 "title" : "Sina"   	&#125;)  &#125;)       
- attr()也通过回调函数，包含两个参数：被选元素列表中当前元素的下标，以及原始值       1  2  3  4  5      $( "button" ).click(  function (  ) &#123;  	$( "#w3s" ).attr( "href" ,  function ( i,origValue ) &#123;  		 return  origValue +  "/jquery" ;  	&#125;);  &#125;)       
- ###添加元素 
- 
- append()    在被选元素的结尾插入内容 
- prepend()    在被选元素的开头插入内容 
- after()    在被选元素之后插入内容 
- before()    在被选元素之前插入内容      1      $( "p" ).addend( "Some appended text." )      
- 
- 
- ###删除元素 
- 
- remove()    删除被选元素(以及子元素) 
- empty()    从被选元素中删除子元素 remove()方法可以接受一个参数，允许对删除元素进行过滤      1      $( "p" ).remove( ".italic" );	 // 删除class="italic"的所有&lt;p&gt;元素       
- 
- 
- ##获取并设置CSS类 
- ###操作CSS 
- 
- addClass()    向所选元素添加一个或多个类 
- removeClass()    从被选元素删除一个或多个类 
- toggleClass()    对被选元素进行添加/删除类的切换操作 
- css()            设置或返回样式属性 
- 
-      1  2  3  4  5  6  7      $( "button" ).click(  function (  ) &#123;  	$( "h1,h2,p" ).addClass( "blue" );  	$( "div" ).addClass( "important" );  	 // $("div").addClass("important blue"); 添加多个类   	$( "div" ).removeClass( "blue" );  	$( "div" ).toggleClass();  &#125;)      
- ####css()方法  css(&quot;propertyname&quot;)        1  2  3      $( "p" ).css( "background-color" );  $( "p" ).css( "background-color" , "yellow" );  //设置属性   $( "p" ).css(&#123; "background-color" : "yellow" , "font-size" : "200%" &#125;);	 // 同时设置多个属性        
- ##尺寸   
- 
- width()        设置或返回元素的宽度(不包含内边距，边框或外框) 
- height()        设置或返回元素的高度(不包含内边距，边框或外框) 
- innerWidth()    设置或返回元素的宽度(包含内边距) 
- innerHeight()    设置或返回元素的高度(包含内边距) 
- outerWidth()    设置或返回元素的宽度(包含内边距和边框) 
- outerHeight()    设置或返回元素的高度(包含内边距和边框) 
- 
-
+ val() 设置或返回表单字段的值 以上的三个都拥
     
     
         <a href="/2015/03/31/jQuery二识/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -594,21 +572,15 @@
 
     
           
- ##开始       1  2  3       dependencies  &#123;     compile   'com.facebook.fresco:fresco:0.1.0+'   &#125;       
- ##使用 简单的下载网络图片 
+   开始       1  2  3       dependencies  &#123;     compile   'com.facebook.fresco:fresco:0.1.0+'   &#125;      
+   使用  简单的下载网络图片 
  
  在Application中初始化      1      Fresco.initialize(context);      
  
- 
- 在XML中使用 SimpleDraweeView ，需要键入命名空间 xmlns:fresco=&quot;http://schemas.android.com/apk/res-auto&quot;        1  2  3  4  5       &lt; com.facebook.drawee.view.SimpleDraweeView    	 android:id = "@+id/my_image_view"   	 android:layout_width = "20dp"        android:layout_height = "20dp"        fresco:placeholderImage = "@drawable/my_drawable"  /&gt;       
- 加载       1      draweeView.setImageURL("http://site.com/uri");       
- ###URLs Fresco不支持相对路径，所有URL必须是绝对路径 |类型|Scheme| |:—|:—–| |远程图片| http://,https://|  |本地文件|file://| |ContentProvider|content://| |asset目录下资源|asset://| |res目录下资源|res://| 
- 更多请见 http://fresco-cn.org/  
-
     
     
         <a href="/2015/03/31/掉渣天的图片加载库Fresco/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -631,6 +603,51 @@
 <div class="mask" id="mask"></div>
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
+<script>
+var BLOG_SHARE = {
+    title: "SeniorZhai's blog",
+    pic: "/img/logo.jpg",
+    summary: document.getElementsByName('summary')[0].content,
+    url: "http://seniorzhai.github.io/page/7/index.html"
+};
+</script>
+<div class="global-share" id="global-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
 
 <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 
@@ -638,10 +655,45 @@
 
 
 
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<script type="text/template" id="search-tpl">
+<li class="item">
+    <a href="/{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</script>
+
+<script src="/js/search.js"></script>
 
 
 
 
+
+<script src="//s95.cnzz.com/z_stat.php?id=true&web_id=true"></script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-54646832-1&#39;', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
 
 
 

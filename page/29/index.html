@@ -6,6 +6,8 @@
   <title>SeniorZhai&#39;s blog | 苟利国家生死以，起因福祸趋避之</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
+  <meta name="theme-color" content="#ED5565">
+  
   
   <meta name="keywords" content="undefined">
   <meta name="description" content="专注于移动平台">
@@ -18,8 +20,10 @@
 <meta name="twitter:title" content="SeniorZhai's blog">
 <meta name="twitter:description" content="专注于移动平台">
   
+    <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
+  
   <meta name="summary" content="专注于移动平台">
-  <link rel="shortcut icon" href="/">
+  <link rel="shortcut icon" href="/img/favicon.ico">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -33,7 +37,7 @@
   </a>
   <div class="brand-wrap">
     <div class="brand">
-      <a href="/" class="avatar"><img src="undefined"></a>
+      <a href="/" class="avatar"><img src="/img/logo.jpg"></a>
       <hgroup class="introduce">
         <h5 class="nickname">Dear宅学长</h5>
         <a href="mailto:developer.zhaitao@gmail.com" title="developer.zhaitao@gmail.com" class="mail">developer.zhaitao@gmail.com</a>
@@ -43,6 +47,48 @@
   <div class="scroll-wrap flex-col">
     <ul class="nav">
       
+          <li class="waves-block waves-effect">
+            <a href="/"  >
+              <i class="icon icon-lg icon-home"></i>
+              主页
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/archives"  >
+              <i class="icon icon-lg icon-archives"></i>
+              Archives
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/tags"  >
+              <i class="icon icon-lg icon-tags"></i>
+              Tags
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://seniorzhai.github.io" target="_blank" >
+              <i class="icon icon-lg icon-github"></i>
+              Github
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="http://weibo.com/seniorszhai/" target="_blank" >
+              <i class="icon icon-lg icon-weibo"></i>
+              Weibo
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/about"  >
+              <i class="icon icon-lg icon-link"></i>
+              about
+            </a>
+          </li>
+      
     </ul>
 
     <footer class="footer">
@@ -50,7 +96,7 @@
   <p>SeniorZhai&#39;s blog &copy; 2016</p>
   <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
   <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
-  <a href="undefined" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
+  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
 </footer>
 
   </div>
@@ -65,6 +111,20 @@
         </a>
         <div class="flex-col header-title ellipsis">SeniorZhai&#39;s blog</div>
         
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
         
     </div>
 </header>
@@ -135,106 +195,11 @@
  相对于父元素完全居中 
  
  
- android:layout_alignParentBottom 
- 贴紧父元素的下边缘 
- 
- 
- android:layout_alignParentLeft 
- 贴紧父元素的左边缘 
- 
- 
- android:layout_alignParentRight 
- 贴紧父元素的右边缘 
- 
- 
- android:layout_alignParentTop 
- 贴紧父元素的上边缘 
- 
- 
- android:layout_alignWithParentIfMissing 
- 如果对应的兄弟元素找不到的话就以父元素做参照物 
- 
- 
- 
- 
- 第二类：属性值必须为id的引用名 “@id/id-name”  
- 
- 
- 
- 
- 属性 
- 说明 
- 
- 
- 
- 
- android:layout_below 
- 在某元素的下方 
- 
- 
- android:layout_above 
- 在某元素的的上方 
- 
- 
- android:layout_toLeftOf 
- 在某元素的左边 
- 
- 
- android:layout_toRightOf 
- 在某元素的右边 
- 
- 
- android:layout_alignTop 
- 本元素的上边缘和某元素的的上边缘对齐 
- 
- 
- android:layout_alignLeft 
- 本元素的左边缘和某元素的的左边缘对齐 
- 
- 
- android:layout_alignBottom 
- 本元素的下边缘和某元素的的下边缘对齐 
- 
- 
- android:layout_alignRight 
- 本元素的右边缘和某元素的的右边缘对齐 
- 
- 
- 
- 
- 第三类：属性值为具体的像素值，如30dip，40px 
- 
- 
- 
- 
- 属性 
- 说明 
- 
- 
- 
- 
- android:layout_marginBottom 
- 离某元素底边缘的距离 
- 
- 
- android:layout_marginLeft 
- 离某元素左边缘的距离 
- 
- 
- android:layout_marginRight 
- 离某元素右边缘的距离 
- 
- 
- android:layout_marginTop 
- 离某元素上边缘的距离 
- 
- 
- 
-
+ android:la
     
     
         <a href="/2014/07/17/RelativeLayout常见属性介绍/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -278,43 +243,11 @@
  在工作线程中发送消息 
  在UI线程中获取、处理消息 
  
- Handler把压入消息队列分为Post和sendMessage: 
- 
- Post：Post运行把一个Runnable对象压入消息队列，它的方法有：post(Runnable)、postAtTime(Runnable,long)、postDelayed(Runnable,long)。 
- sendMessage:sendMessage允许把一个包含消息数据的Message对象压入到消息队列中，方法有sendEmptyMessage(int)、sendMessage(Message)、sendMessageAtTime(Message,long)、sendMessageDelayed(Message,long)。 
- 
- ##Post 对于Handler的Post方式来说，它会传递一个Runnable对象到消息队列中，在这个Runnable对象中，重写run()方法。一般在这个run()方法中写入需要在UI线程上的操作。 
- 在Handler中，关于Post方式的方法有： 
- 
- boolean post(Runnable r)：把一个Runnable入队到消息队列中，UI线程从消息队列中取出这个对象后，立即执行。 
- boolean postAtTime(Runnable r,long uptimeMillis)：把一个Runnable入队到消息队列中，UI线程从消息队列中取出这个对象后，在特定的时间执行。 
- boolean postDelayed(Runnable r,long delayMillis)：把一个Runnable入队到消息队列中，UI线程从消息队列中取出这个对象后，延迟delayMills秒执行 
- void removeCallbacks(Runnable r)：从消息队列中移除一个Runnable对象。 
- 
- ##Message Message是一个final类，所有不可继承，Message封装了线程中传递的消息，对于一般的数据Message提供了 getData() 和 setData() 方法来获取与设置数据，其中操作的数据是一个Bundle对象，这个Bundle对象提供了一系列的 getXxx() 和 setXxx() 方法用于传递基本数据类型的键值对。对于复杂的数据类型，Bundle提供了两个方法，专门用来传递对象，但是这两个方法也有相应的限制，需要实现特定的接口。 
- 
- putParcelable(String key,Parcelable value)：需要传递的对象类实现Parcelable接口。 
- pubSerializable(String key,Serializable value)：需要传递的对象类实现Serializable接口。 除此之外Message自带的obj属性也可以用于传值，它是一个Object类型，可以传递任何类型的对象，Message自带的如下几个属性： 
- int arg1:参数一，传递不复杂数据 
- int arg2：参数二，传递不复杂数据 
- Object obj：传递任意的对象 
- int what:定义消息码，一般用于消息的标志 
- 
- 对于Message对象，一般不推介直接使用构造方法创建，而是使用 Message.obtain() 这个静态方法或者 Handler.obtai() 获取，此两者都是从消息池中获取，消息的数量是有上限的，为10个。 
- 向Handler发送消息一般分两种：一种是根据Handler对象，使用handler.sendMessage()方法来发送消息，一种是根据Handle获取Message，如 handler.obtai() 或者 Message.obtain(handler) ，该Message会有一个属性Target，调用 sendToTarget() 方法，会发送到创建时的Handler中去。 Handler中，与Message发送消息相关的方法有： 
- 
- Message obtainMessage()：获取一个Message对象。 
- boolean sendMessage()：发送一个Message对象到消息队列中，并在UI线程取到消息后，立即执行。 
- boolean sendMessageDelayed()：发送一个Message对象到消息队列中，在UI线程取到消息后，延迟执行。 
- boolean sendEmptyMessage(int what)：发送一个空的Message对象到队列中，并在UI线程取到消息后，立即执行。 
- boolean sendEmptyMessageDelayed(int what,long delayMillis)：发送一个空Message对象到消息队列中，在UI线程取到消息后，延迟执行。 
- void removeMessage()：从消息队列中移除一个未响应的消息。 
- 
-
+ Handler把压入
     
     
         <a href="/2014/07/17/Handler/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -353,7 +286,7 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-         ##ids.xml /res/values/ids.xml 
+           ids.xml  /res/values/ids.xml 
   ids.xml 是区别于R文件的一种设置控件ID的方式。使用示例如下： 
  
  控件定义时 
@@ -362,36 +295,11 @@
  
  在ids文件中添加 
  
-      1  2  3  4       &lt; resources &gt;        &lt; item   type = "id"   name = "button_ok" &gt; false &lt;/ item &gt;       ...   &lt;/ resources &gt;       
- 3.在调用控件时 
-      1  2      Button bn =  new  Button(context);  bn.setId(R.id.button_ok);	 // 区别于 bn.setId(context.getResources().getInteger(R.id.button_ok));       
- 使用 ids.xml 的优点如下 
- 
- 命名方便，可以先将控件先命名好，在布局时直接命名 
- 使用代码布局时，不需要转换 
- 
- 
- 注意：在ids.xml中的每一项也会生成到R文件中 
- 
- ##arrays.xml 用于包装数组 // 在arrays.xml中定义       1  2  3  4  5  6  7  8  9  10  11       &lt; resources &gt;        &lt; string-array   name = "week" &gt;            &lt; item &gt; Sunday &lt;/ item &gt;            &lt; item &gt; Monday &lt;/ item &gt;            &lt; item &gt; Tuesday &lt;/ item &gt;            &lt; item &gt; Wednesday &lt;/ item &gt;            &lt; item &gt; Thursday &lt;/ item &gt;            &lt; item &gt; Friday &lt;/ item &gt;            &lt; item &gt; Saturday &lt;/ item &gt;        &lt;/ string-array &gt;    &lt;/ resource &gt;        
- 在Java中调用       1      CharSequence[] items =  this .getResources().getStringArray(R.array.reboot_item);       
- ##attrs.xml  attrs.xml 用于设定自定义属性 
- 
-  在 res/values 文件夹下定义一个 attrs.xml 文件 
-      1  2  3  4  5  6      &lt;?xml version="1.0" encoding="utf-8" ?&gt;   &lt; resources &gt;        &lt; declare-styleable   name = "MyView" &gt;            &lt; attr   name = "textColor"   format = "color"  /&gt;        &lt;/ declare-styleable &gt;    &lt;/ resource &gt;       
- 
-  在Java调用自定义属性 
-      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31       public    class   MyView   extends   View   &#123;       private  Paint mPaint;       private  Context mContext;              public   MyView  (Context context)   &#123;           super (context);          mPaint =  new  Paint();      &#125;              public   MyView  (Context context,AttributeteSet atts)  &#123;           super (context,attrs);          mPaint =  new  Paint();          TypedArray a = context.obtainStyledAttributes(attrs,R.styleable.MyView);　           // R.styleable.MyView_textColor是读取attrs中参数名，以"样式名_参数名"的形式            // 第二个参数为默认值，如果从xml中获取不到则使用默认值            int  textColor = a.getColor(R.styleable.MyView_textColor, 0XFFFFFFFF );          mPaint.setTextColor(textColor);          a.recycle();      &#125;       @Override 　　　　  　　  protected 　 void 　 onDraw  (Canvas　canvas) 　 &#123;　　　　          　 super .onDraw(canvas);　　　　　  　　　　　 //设置填充　　　　　   　　　　　mPaint.setStyle(Style.FILL);　　　　　　  　　　　　 //画一个矩形,前俩个是矩形左上角坐标，后面俩个是右下角坐标　　　　　   　　　　　canvas.drawRect( new 　Rect( 10 ,　 10 ,　 100 ,　 100 ),　mPaint);　　　　　　　　　  　　　　　mPaint.setColor(Color.BLUE);　　　　　  　　　　　 //绘制文字　　　　　   　　　　  canvas.drawText(mString,　 10 ,　 110 ,　mPaint);　　　　　　　　      　　&#125;  &#125;      
- 
-  布局时使用属性 
-      1  2  3  4  5  6  7      &lt;?xml version="1.0"　encoding="utf-8"?&gt;　　　   &lt; com.android.tutor.MyView 　　　   　　　　 android:layout_width = "fill_parent" 　　　　  　　　　 android:layout_height = "fill_parent" 　　　　  　　　　 test:textSize = "20px" 　　  　　　　 test:textColor = "#fff" 　　  /&gt;      
- 
- 
-
+     
     
     
         <a href="/2014/07/17/非常见Android项目文件/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -433,18 +341,11 @@
          
  anim 
  
-      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55  56  57  58  59  60  61  62  63      &lt;?xml version="1.0" encoding="utf-8"?&gt;   &lt;!-- oneshot="false" 循环播放 --&gt;    &lt; animation-list   xmlns:android = "http://schemas.android.com/apk/res/android"         android:oneshot = "false"  &gt;         &lt; item   android:duration = "60" &gt;            &lt; clip                 android:clipOrientation = "horizontal"                android:drawable = "@drawable/loading_1"                android:gravity = "left"  &gt;           &lt;/ clip &gt;        &lt;/ item &gt;        &lt; item   android:duration = "60" &gt;            &lt; clip                 android:clipOrientation = "horizontal"                android:drawable = "@drawable/loading_2"                android:gravity = "left"  &gt;           &lt;/ clip &gt;        &lt;/ item &gt;        &lt; item   android:duration = "60" &gt;            &lt; clip                 android:clipOrientation = "horizontal"                android:drawable = "@drawable/loading_3"                android:gravity = "left"  &gt;           &lt;/ clip &gt;        &lt;/ item &gt;        &lt; item   android:duration = "60" &gt;            &lt; clip                 android:clipOrientation = "horizontal"                android:drawable = "@drawable/loading_4"                android:gravity = "left"  &gt;           &lt;/ clip &gt;        &lt;/ item &gt;        &lt; item   android:duration = "60" &gt;            &lt; clip                 android:clipOrientation = "horizontal"                android:drawable = "@drawable/loading_5"                android:gravity = "left"  &gt;           &lt;/ clip &gt;        &lt;/ item &gt;        &lt; item   android:duration = "60" &gt;            &lt; clip                 android:clipOrientation = "horizontal"                android:drawable = "@drawable/loading_6"                android:gravity = "left"  &gt;           &lt;/ clip &gt;        &lt;/ item &gt;        &lt; item   android:duration = "60" &gt;            &lt; clip                 android:clipOrientation = "horizontal"                android:drawable = "@drawable/loading_7"                android:gravity = "left"  &gt;           &lt;/ clip &gt;        &lt;/ item &gt;        &lt; item   android:duration = "60" &gt;            &lt; clip                 android:clipOrientation = "horizontal"                android:drawable = "@drawable/loading_8"                android:gravity = "left"  &gt;           &lt;/ clip &gt;        &lt;/ item &gt;      &lt;/ animation-list &gt;       
- 
- layout 
- 
-      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17      &lt;?xml version="1.0" encoding="utf-8"?&gt;   &lt; FrameLayout   xmlns:android = "http://schemas.android.com/apk/res/android"         android:layout_width = "match_parent"        android:layout_height = "match_parent"      &gt;  	 &lt;!-- android:indeterminate="false" 不明确滚动的数值 --&gt;          &lt; ProgressBar             android:id = "@+id/progressBar"            android:layout_width = "63dp"            android:layout_height = "63dp"            android:layout_gravity = "center"            android:indeterminate = "false"            android:indeterminateDrawable = "@anim/progress_bar_anim"            android:scaleType = "centerInside"  /&gt;     &lt;/ FrameLayout &gt;       
-  例子  
-   
-
+      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  
     
     
         <a href="/2014/07/14/自定义ProgressBar/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -483,70 +384,21 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-         ##模块与SDK包 
- ###AVOS Cloud基本存储模块 
- 
+           模块与SDK包    AVOS Cloud基本存储模块  
  avoscloud- 版本号.jar 
  android-async-http-1.4.4-fix.jar 
  fastjson.jar 
  httpmime-4.2.4.jar 
  
- ###AVOS Cloud 推送模块 
- 
+   AVOS Cloud 推送模块  
  AVOS Cloud 基础存储模块 
  avospush- 版本号.jar 
  
- ###AVOS Cloud 统计模块 
- 
- AVOS Cloud 基础存储模块 
- avosstatistics- 版本号.jar 
- 
- ###AVOS Cloud SNS 模块 
- 
- AVOS Cloud 基础存储模块 
- weibo.sdk.android.sso.jar 
- qq.sdk.1.6.1.jar 
- 
- ##简介 AVOSCloud提供了一个完整的后端解决方案 
- ##应用程序 在 AVOS Cloud 平台注册后，您创建的每个应用程序都有其自己的应用程序 ID 和 Key, 在您的应用程序中将凭此 ID 和 Key 使用 AVOS Cloud SDK。您的账户可以创建容纳多个应用程序，这是非常方便和有用的。即使您只有一个应用程序，也可以使用不同的版本进行测试和生产。 
- ###对象 AVOS Cloud存储的数据是建立在 AVObject 基础上，每个 AVObject 包含键(key)-值(value)对的JSON兼容的数据。 键必须是字母、数字的字符串，值可以是字符串、数字、布尔值、JSON数组和AVObject对象等。每个 AVObject 有一个类名，你可以用它来区分各种不同的数据。 
- ####保存对象       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20         AVObject myObj =  new  AVObject( "MyObject" );  myObj.put( "value1" , 123 );     myObj.put( "value2" , true );  myObj.put( "value3" , "hello" );		   try &#123;  	    myObj.save();  &#125;       catch  (AVException e) &#123;  	    e.getMessage();  	&#125;     myObj.saveInBackground( new  SaveCallback() &#123;  	 @Override   	  public   void   done  (AVException e)   &#123;  		 if  (e ==  null ) &#123;  			 // 保存成功   		&#125;  else  &#123;  			 // 保存失败   		&#125;  	&#125;  &#125;);       
- ####检索对象 使用 AVQuery 通过 ObjectID 检索到一个完整的AVObject       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17      AVQuery&lt;AVObject&gt; query =  new  AVQuery&lt;AVObject&gt;( "MyObject" );  AVObject myObj;   try  &#123;  	myObj = query.get( "51c912bee4b012f89e344ae9" );  &#125;  catch  (AVException e) &#123;  	 // e.getMessage();	   &#125;  query.getInBackground( "51c912bee4b012f89e344ae9" ,  new  GetCallback&lt;AVObject&gt;() &#123;  	 @Override   	  public   void   done  (AVObject obj, AVException e)   &#123;  		 if  (e ==  null ) &#123;  			 // 获取成功   		&#125;  else  &#123;  			 // 获取失败   		&#125;  	&#125;  &#125;);       
- ####更新对象 获取AVObject对象，然后进行修改值后保存数据       1  2  3  4  5  6  7  8         AVQuery&lt;AVObject&gt; query =  new  AVQuery&lt;AVObject&gt;( "MyObject" );  AVObject myObj;   try  &#123;  	myObj = query.get( "51c912bee4b012f89e344ae9" );  	myObj.put( "value3" ,  "hello world" );  &#125;  catch  (AVException e) &#123;  	 // e.getMessage();   &#125;       
- ####计数器       1  2      myObj.increment( "value1" );   // myObj.increment(key,amount);方法可以递增递减任意幅度的数字        
- ####更新后获取最新值 设置 fetchWhenSave 属性为 true 会使更新后，AVObject获得最新值       1  2  3  4  5  6  7  8      myObj.setFetchWhenSave( true );  myObj.increment( "value1" );  myObj.saveInBackground( new  SavaCallback()&#123;       @Override         public   void   done  (AVException e)  &#123;           //       &#125;  &#125;);       
- ####删除对象 从服务器删除对象       1  2  3  4  5  6  7      myObj.deleteInBackground();   // 删除value3字段   myObj.remove( "value3" );  myObj.saveInBackground();   // 批量删除对象   List&lt;AVObject&gt; objects = ...  AVObject.deleteAll(objects);       
- ####关联数据 对象可以与其他对象相联系，就像数据库中的主外键关系一样，数据表A的某一个字段是数据表B的外键，只有表B中存在的数据才插入进A中的字段。       1  2  3  4  5  6  7  8      AVObject myWeibo =  new  AVObject( "Post" );  myWeibo.put( "content" ,  "正文" );  AVObject myConment =  new  AVObject( "Comment" );  myConment.put( "content" ,  "评论" );  myConment.put( "post" ,myWeibo);  myConment.saveInBackground();   // 通过objectId来关联已用对象   myComment.put( "post" ,AVObject.createWithoutData( "Post" ,  "1zEcyElZ80" ));       
- 默认情况下，获取一个对象的时候，关联的 AVObject 不会被获取，这些对象的值无法获取，直到调用 fetch        1  2  3  4  5  6      myConment.getAVObject( "post" ).fetchIfNeededInBackground( new  GetCallback&lt;AVObject&gt;() &#123;  	 @Override   	  public   void   done  (AVObject object, AVException e)   &#123;  		String content = object.getString( "content" );  	&#125;  &#125;);       
- 使用 AVRelation 来建模多对多关系。 比如一个 User 喜欢很多 Post ，可以用 getRelation 方法保存一个用户喜欢的用户的Post集合。      1  2  3  4  5  6      AVUser user = AVUser.getCurrentUser();  AVRelation&lt;AVObject&gt; relation = user.getRelation( "likes" );  relation.add(post);  user.saveInBackground();   // 从AVRelation中移除一个Post   relation.remove(post)       
- 默认情况，处于关系的对象集合不会被下载，可以通过 getQuery 方法返回的 AVQuery 对象，使用它的findInBackground方法来获取Post链表       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19      relation.getQuery().findInBackground( new  FindCallback&lt;AVObject&gt;()&#123;       void   done  (List&lt;AVObject&gt; result,AVException e)  &#123;          if (e ==  null )&#123;              //          &#125;  else  &#123;              //          &#125;     &#125;   &#125;);   // 获取链表的一个子集合，可以添加更多的约束条件到`getQuery`返回`AVQuery`对象   AVQuery&lt;AVObject&gt; query = relation.getQuery();   // 已持有一个post对象，想知道它被哪些User所喜欢，反查询   AVQuery&lt;AVObject&gt; userQuery = AVRelation.reverseQuery( "_User" , "likes" ,myPost);  userQuery.findInBackground( new  FindCallBack&lt;AVObject&gt;()&#123;      @Override        public   void   done  (List&lt;AVObject&gt; users,AVException e)  &#123;          //      &#125;  &#125;);       
- ####数据类型 支持的数据类型有 String 、 Int 、 Boolean 、 AVObject ，同时支持 java.util.Date 、 byte[] 、 JSONObject 、 JSONArray 数据类型。 
- ###查询 
- ####基本查询 先创建一个 AVQuery 对象，然后通过添加不同的条件，使用 findInBackground 方法结合 FindCallback 回调类来查询与条件匹配的AVObject数据，使用 whereEqualTo 方法来添加条件值       1  2  3  4  5  6  7  8  9  10  11      AVQuery&lt;AVObject&gt; query =  new  AVQuery&lt;AVObject&gt;( "MyObject" );  query.whereEqualTo( "value1" , "value2" );  query.findInBackgroud( new  FindCallback&lt;AVObject&gt;()&#123;       public   void   done  (List&lt;AVOject&gt; object,AVException e)  &#123;          if  (e ==  null ) &#123;              //          &#125;  else  &#123;              //          &#125;     &#125;   &#125;);       
- #####查询条件 
- 
- whereNotEqualTo() 不等于 
- setLimit() 限制结果的个数 
- setSkip() 忽略多少个 
- orderByAscending() 升序排列 
- orderByDescending() 降序排列 
- whereLessThan() 小于 
- whereLessThanOrEqualTo() 小于等于 
- whereGreaterThan() 大于 
- whereGreaterThanOrEqualTo() 大于等于 
- 
- 想查询匹配几个不同值的数据，如：要查询”steve”、”chard”、”jack”三个人的成绩，可以使用 whereContainedIn 方法来实现，排除可以使用 whereNotContainedIn 方法       1  2      String[] names = &#123; "steve" , "chard" , "jack" &#125;;  query.whereContainedIn( "playName" ,Arrays.asList(names));       
- 使用 whereMatches 方法可以使用任何正确的正则表达式来检索匹配的值       1  2  3  4  5  6  7  8  9       // 比较name字段的值是以大写字母和数字开头   AVQuery&lt;AVObject&gt; query =  new  AVQuery&lt;AVObject&gt;( "GameScore" );  query.whereMatches( "name" ,  "^[A-Z]\\d" );    query.findInBackground( new  FindCallback&lt;AVObject&gt;() &#123;        public   void   done  (List&lt;AVObject&gt; sauceList, AVException e)   &#123;        &#125;  &#125;);       
- 查询字符串中包含“XX“内容，可用如下方法：       1  2  3  4  5  6  7  8  9  10  11       // 查询playerName字段的值中包含“ste“字的数据   AVQuery query =  new  AVQuery( "GameSauce" );  query.whereContains( "playerName" ,  "ste" );     // 查询playerName字段的值是以“cha“字开头的数据   AVQuery query =  new  AVQuery( "GameSauce" );  query.whereStartsWith( "playerName" ,  "cha" );     // 查询playerName字段的值是以“vj“字结尾的数据   AVQuery query =  new  AVQuery( "GameSauce" );  query.whereEndsWith( "playerName" ,  "vj" );       
- #####数组查询 如果key对应的值是一个数组，可以查询key的数组包含了数字2的所有对象       1      query.whereEqualTo( "arrayKey" , 2 );       
- 同样，你可以查询出 Key 的数组同时包含了 2,3 和 4 的所有对象：       1  2  3  4  5  6       //查找出所有arrayKey对应的数组同时包含了数字2,3,4的所有对象。   ArrayList&lt;Integer&gt; numbers =  new  ArrayList&lt;Integer&gt;();  numbers.add( 2 );  numbers.add( 3 );  numbers.add( 4 );  query.whereContainsAll( "arrayKey" , numbers);       
- #####字符串的查询 使用 whereStartsWith 方法来限制字符串的值以另一个字符串开头。非常类似 MySQL 的 LIKE 查询，这样的查询会走索引，因此对于大数据集也一样高效：       1  2  3       //查找出所有username以avos开头的用户   AVQuery&lt;AVObject&gt; query = AVQuery.getQuery( "_User" );  query.whereStartsWith( "username" ,  "avos" );       
- #####查询对象个数 query使用count替代find可以统计多少个对象满足查询       1  2  3  4  5  6  7  8      query.countInBackgroud( new  CountCallback()&#123;      @Ovrride        public   void   done   ( int  count,AVException e)   &#123;          if (e ==  null )&#123;              // count 就是符合查询条件的个数          &#125;     &#125;  &#125;);       
-
+   AVOS Cl
     
     
         <a href="/2014/07/10/AVOS-Cloud-Android开发指南/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -585,130 +437,14 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-         ##字符串和字符（String and Character） Swift的String类型和Foundation的NSString类进行了无缝桥接，所有NSString API都可以调用Swift的String类型的值 
- ###字符串字面量(String Literals) 字符串字面量是由双引号(“”)包裹的具有固定顺序的文本字符集 字符串字面量可以包含以下特殊字符： 
+           字符串和字符（String and Character）  Swift的String类型和Foundation的NSString类进行了无缝桥接，所有NSString API都可以调用Swift的String类型的值 
+   字符串字面量(String Literals)  字符串字面量是由双引号(“”)包裹的具有固定顺序的文本字符集 字符串字面量可以包含以下特殊字符： 
  
- 转义字符\0(空字符)、\(反斜线)、\t(水平制表符)、\n(换行符)、\r(回车符)、\”(双引号)、\’(单引号) 
- 单字节 Unicode 标量，写成\xnn，其中nn为两位十六进制数 
- 双字节 Unicode 标量，写成\unnnn，其中nnnn为四位十六进制数 
- 四字节 Unicode 标量，写成\Unnnnnnnn，其中nnnnnnnn为八位十六进制数 ###初始化空字符串      1  2  3  4  5       var  emptyString =  ""    var  antherEmptyString =  String ()   if  emptyString.isEmpty &#123;       //   &#125;      
- 
- 
- ###字符串可变性(String Mutability) 可以通过分配一个变量来对字符串进行修改，或者分配一个常量保证其不被修改 
- ###字符串是值类型 String类型进行常量、变量赋值操作或在函数\方法中传递，会进行拷贝，是值传递 
- ###字符 Swift的String类型表示特定序列的character类型值的集合       1  2  3       for  character  in   "Hello world" &#125;       println (character)  &#125;       
- 可以表明 Character 类型来创建字符常量或者变量       1       let  a: Character  =  "1"        
- ###计算字符数量 通过调用全局的 countElement 函数，并将字符串作为参数传递，可以获取字符串的字符数量       1  2      let str = &quot;I have a word&quot;  pritln(\(coutElemnts(str)));       
- ###连接字符串和字符 使用 + 相加就可以连接字符串 使用 += 可以讲一个字符串加上另一个字符串存到原有的字符串上 
- ###字符串插值 字符串插值是一种构建新字符串的方式，可以在其中包含常量、变量、字面量和表达式       1      \( Double ( 3 ) *  2.5 )  // "7.5"        
- ###比较字符串 Swift 提供了三种方式来比较字符串的值：字符串相等、前缀相等和后缀相等。 
- ####字符串相等       1  2  3  4  5  6       let  str =  "一样样的"   str ==  "一样样的"   // true   ####前缀/后缀相等  调用字符串的`hasPrefix`/`hasSuffix`方法来检查字符串是否拥有特定前缀/后缀。  ```swift   "I am a boy" .hasPrefix( "I am" );  // true        
- ###大写和小写字符串 通过字符串的 uppercaseString 和 lowercaseString 属性来方位大写/小写版本的字符串 
- ###Unicode Unicode是一个国际标准，用于文本的编码和表示。 每一个字符都可以被Unicode解释成一个或多个unicode标量。字符的unicode标量是一个唯一的21位数字，例如 U+0061 表示小写的拉丁字母 a  当Unicode字符串被写进文本文件或其他存储结构当中，这些unicode标量将会按照Unicode定义的集中格式之一进行编码，其中包括 UTF-8 （以8位代码单元进行编码）和 UTF-16 （以16位代码单元进行编码） 
- ####字符串的Unicode表示 Swift提供了几种不同的方法来访问字符串的Unicode 
- 
- UTF-8 代码单元集合 (利用字符串的utf8属性进行访问) 
- UTF-16 代码单元集合 (利用字符串的utf16属性进行访问) 
- 21位的 Unicode 标量值集合 (利用字符串的unicodeScalars属性进行访问) utfb属性其为 UTF8View 类型的属性，是无符号8位(UInt)值的集合，同理utf16属性是 UTF16View 类型的属性      1  2  3  4  5  6  7       let  dogString  "Dog!"    for  codeUnit  in  dogString.utf8 &#123;      pritln( "\(codeUnit)" );  &#125;   for  code16Unit  in  dogString.utf16 &#123;       println ( "\(code16Unit)" );  &#125;      
- 
- 
- ####Unicode标量 unocodeScalars属性为 UnicodeScalarView 类型的属性，是 UnicodeScalar 的集合, UnicodeScalar 是21位的 Unicode 代码点。       1  2  3       for  scale  in  dogString.unicodeScalars &#123;       println ( "\(scale.value)" )  &#125;       
- 集合类型(Collection Types) 
- ##数组 数组使用有序列表存储同一类型的多个值，相同的值可以多次出现在一个数组的不同位置中 在Swift中。数据值在被存储进入某个数组之前类型必须明确，方法是通过显示的类型标注或类型推断，Swift的数组是类型安全的，并且它包含的类型必须明确，这点和NSArray和NSMutableArray很不同。 
- ###数组的简单语法 数组遵循 Array&lt;SomeType&gt; 这样的形式，其中 SomeType 是这个数组中唯一允许存在的数据类型。也可以使用像 SomeType[] 这样的简单语法。 
- ###数组构造语句 形如 [value1,value2,value3]        1       var  names: String [] = [ "joy" , "jack" ]       
- 变量被声明为 字符串类型的数组  由于Swift的类型推断机制，也可以这样写       1       var  names = [ "jay" , "jack" ]       
- ###访问和修改数组 可以通过数组的方法和属性来访问和修改数组，或者下表语法。还可以使用数组的只读属性 count 来获取数组中的数据数量，使用 isEmpty 属性可以检测数组是否为空，使用 append 方法在数组后面添加新的数据项，也可以使用(+=)添加单个数据项或者拥有相同数据类型的数组 也可以通过索引获取数组项       1  2  3  4  5  6  7  8      var names = [&quot;joy&quot;,&quot;jack&quot;]  names.count // 2  names.isEmpty // false  names.append(&quot;alisa&quot;)  names+=&quot;Demi&quot;  names+=[&quot;Carry&quot;,&quot;Carry&quot;]  names[0] //&quot;joy&quot;  names[2...3] // [&quot;alisa&quot;,&quot;Demi&quot;]       
- 调用 insert(atIndex:) 可以再在指定位置插入数据， removeAtIndex 方法可以移除数组中的某一项， removeLast 方法可以移除最后一项 
- ###数组的遍历 使用 for-in 循环来遍历所有数组中的数据项       1  2  3      for item in shoppingList&#123;     println(item)   &#125;       
- 也可以使用全局 enumerate 函数来进行数组遍历       1  2  3       for  (index,value)  in   enumerate (shoppingList) &#123;       println ( "Item \(index+1) : \(value)" )  &#125;       
- ###创建或构造一个数组       1  2  3       var  someInts =  Int []()   var  threeDoubles =  Double []( count : 3 ,repeatedValue: 0.0 )  // 指定大小，初始值    var  anotherThreeDoubles =  Array ( count : 3 ,repeatedValue: 2.5 )  // 类型推到        
- ##字典 字典是一种存储多个相同类型的值的容器，没个值都关联唯一的键，键作为字典中的这个值数据的标识符。字典的数据项没有具体的顺序，需要通过键访问数据。 与Objective-C中的 NSDictionary 和 NSMutableDictionary 类可以使用任何类型的对象做键和值不同，Swift在某个特定字典中可以存储的键和值必须提前定义，方法是通过显式标注或者类型推断 Swift的字典可以使用 Dictionary&lt;KeyType,ValueType&gt; 定义，其中 keyType 是键的数据类型， ValueType 是值的数据类型。 keyType 的唯一限制是可哈希的，这样可以保证它的唯一性，所有Swift的基本类型(String,Int,Double和Bool)都是可哈希的，未关联的枚举成员也是可哈希的。 
- ###字典字面量  [key1:value1,key2:value2,key3:value3] 可以创建字典       1  2       var  airports: Dictionary &lt; String , String &gt; = [ "TYO" : "Tokyo" , "DUB" : "Dublin" ]   var  airports = [ "TYO" : "Tokyo" , "DUB" : "Dubin" ]       
- ###读取和修改字典 使用下标语法或者字典的方法属性可以读取字典，只读属性 count 来获取字典的数据项的数量 也可以使用下标法添加新的数据项  updateValue(forkey:) 方法可以设置或更新特定键对应的值，根据键值是否存在判断。该函数会返回包含一个字典值类型的可选值       1  2  3  4  5      airports[&quot;LHR&quot;] = &quot;London Heathrow&quot; // 添加数据项  airports[&quot;LHR&quot;] = &quot;London&quot; // 修改  if let oldValue = airports.updateValue(&quot;Dublin Internation&quot;,forKey:&quot;DUB&quot;)&#123;      oldValue // 返回的是原值  &#125;       
- 使用下标法也可以访问对应键的值，如果不存在，返回 nil ，通过下标法设置某键的值为 nil ，也可以删除数据项，也可以使用 removeValueForKey 方法移除       1  2  3       if   let  removedValue = airports.removeValueForKey( "DUB" )&#123;       // removedValue为被移除的值，不存在的话返回nil   &#125;       
- ###字典遍历 使用 for-in 语法便可遍历，每一个字典的数据项都由 (key,value) 元组形式返回       1  2  3       for  (airportCode,airportName)  in  airport &#123;      prinln( "\(airportCode):\(airportName)" )  &#125;       
- 也可以访问它的 keys 和 values 属性检索一个字典的键或者值       1  2  3  4       for  airportCode  in  airports.keys &#123;       println ( "Airport code: \(airportCode)" )  &#125;   let  airportNames =  Array (airports.values)       
- ###创建字典 创建空字典       1  2       var  nameOfIntegers =  Dictionary &lt; Int , String &gt;()   var  nameOfIntegers = [:]       
- ##集合的可变性 如果数组或字典设置为变量，那么它的数据项是可变的，设置为常量，那么它的大小是不可变的，数据在首次设定之后便不能改变。不同的是，数组的大小不能改变，但是可以改变它的值。 控制流 
- ##For循环  for 循环用作按照指定的次数多次执行一系列语句。Swift提供了两种 for 循环形式： 
- 
-  for-in 用来遍历一个区间(range)，序列(sequence),集合(collection)，系列(progression)里面多有的元素 
- for条件递增( for-condition-increment )语句，用来重复执行一系列语句知道达到特定条件，一般通过在每次循环完成后增加计数器的值来实现。 ###For-In      1  2  3  4       // index不需要声明    for  index  in   1 ... 5 &#123;       println ( "\(index)" );  &#125;      
- 
- 
- 如果不需要知道区间每一项的值，可以使用下划线( _ )替代变量名忽略对值的访问       1  2  3      for _ in 1...9&#123;      //  &#125;       
- ###For条件递增（for-condition-increment）       1  2  3       for   var  index =  0 ; index &lt;  3 ;++index&#123;       //   &#125;       
- 下面是一般情况下这种循环方式的格式： 
- 
- for  initialization ;  condition ;  increment  {     statements } 
- 
- ##While循环  while 循环运行一系列语句直到条件变成 false 。这类循环适合使用在第一次迭代前迭代次数未知的情况下。 Swift  提供两种 while 循环形式： 
- 
- while循环，每次在循环开始时计算条件是否符合； 
- do-while循环，每次在循环结束时计算条件是否符合。 一般格式如下：      1  2  3  4  5  6       while  condition&#123;      statements  &#125;   do  &#123;      statements  &#125;  while  condition      
- 
- 
- ##条件语句 Swift提供两种类型的条件语句： if 语句和 switch 语句。通常，当条件较为简单且可能的情况很少时，使用 if 语句。而 switch 语句更适用于条件较复杂、可能情况较多且需要用到模式匹配（pattern-matching）的情境。 
- ###If if语句最简单的形式就是只包含一个条件，当且仅当该条件为true时，才执行相关代码：       1  2  3       if   true  &#123;       //   &#125;       
- ###Switch switch语句会尝试把某个值与若干个模式（pattern）进行匹配。根据第一个匹配成功的模式，switch语句会执行对应的代码。       1  2  3  4  5  6  7  8  9      witch some value to consider &#123;       case  value  1 :          respond to value  1        case  value  2 ,      value  3 :          respond to value  2  or  3        default :          otherwise,  do  something  else   &#125;       
- swift不存在隐藏的贯穿，即不需要break，执行完也会推出，同时swift还支持区间匹配       1  2  3  4  5  6       switch   count &#123;       case   0 :           //        case   1 ... 3 :           //   &#125;       
- 元组匹配       1  2  3  4  5       var   count  = ( 1 , 3 )   switch   count &#123;       case  ( 0 , 0 ):           //   &#125;       
- ####值绑定 case分支的模式允许将匹配的值绑定到一个临时的常量或变量，这些变量或常量在该case分支里就可以被引用————这种行为被称为值绑定       1  2  3  4  5  6  7  8  9       let  point = ( 2 , 0 )   switch  point &#123;   case  ( let  x, 0 ):       //    case  ( 0 ,  let  y):       //    case   let  (x,y):       //    &#125;       
- ####Where case分支模式可以使用 where 语句来判断额外的条件       1  2  3  4  5       let  point = ( 1 , 0 )   switch  point &#123;       case   let  (x,y)  where  x == y:           //   &#125;       
- ###控制转移语句（Control Transfer Statements） 控制转移语句改变你代码的执行顺序，通过它你可以实现代码的跳转。Swift有四种控制转移语句。- continue 
- 
- break 
- fallthrough 
- return ####Continue continue语句告诉一个循环体立刻停止本次循环迭代，重新开始下次循环迭代。 ####Break break语句会立刻结束整个控制流的执行。 ####贯穿（Fallthrough） Swift不存在C语言中switch语句的贯穿行为，要实现需要使用 fallthrouth       1  2  3  4  5  6  7       switch   count &#123;       case   1 :           //            fallthrough        default :           // 这里会被执行   &#125;      
- 
- 
- ###带标签的语句（Labeled Statements） 环体和switch代码块两者都可以使用break语句来提前结束整个方法体，通过 带标签的语句 可以指定想要终止哪个循环或者switch代码块，如果有许多嵌套的循环体，也可以实现 continue 指定跳转       1  2  3      label name: while  condition&#123;      statenments  &#125;       
-      1  2  3  4  5  6  7  8  9      loop: while   count  !=  100 &#123;       if   count  &lt;  100  &#123; count  +=  10 &#125;       switch   count  &#123;           case   1 .. 20  :               break  loop           case   21 ... 99 :               //       &#125;  &#125;      
- 函数(Functions) 
- ##函数的定义与调用(Defining and Calling Functions)       1  2  3  4  5        func   sayHello  (personName:String)   -&gt;  String &#123;  	 let  greeting =  "Hello,"  + personName +  "!"   	 return  greeting  &#125;   println ( "\(sayHeloo(" zoe "))" )       
- ##函数参数与返回值(Function Parameters and Return Values) 
- 
-  多个参数 
-      1  2  3        func   fun  (start: Int,end: Int)   -&gt;  Int  &#123;  	 return  end - start  &#125;      
- 
-  无参 
-      1  2  3        func   say  ()   -&gt;  String &#123;  	 return   "hello"   &#125;      
- 
-  无返回值 
-      1  2  3        func   sayGoodbye  (personName: String)  &#123;  	 println ( "Goodbye" ,\(personName)!)  &#125;      
- 
-  多返回值 // 计算一个字符串中元音、辅音和其他字母的个数 
-      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17        func   count  (str:String)   -&gt; (vowels:  Int , consonants:  Int ,others:  Int ) &#123;  	  var  vowels =  0 , consonants =  0 , others =  0        for  character  in  string &#123;           switch   String (character).lowercaseString &#123;           case   "a" ,  "e" ,  "i" ,  "o" ,  "u" :              ++vowels           case   "b" ,  "c" ,  "d" ,  "f" ,  "g" ,  "h" ,  "j" ,  "k" ,  "l" ,  "m" ,             "n" ,  "p" ,  "q" ,  "r" ,  "s" ,  "t" ,  "v" ,  "w" ,  "x" ,  "y" ,  "z" :              ++consonants           default :              ++others          &#125;      &#125;       return  (vowels, consonants, others)  &#125;   let  total =  count ( "some arbitrary string!" )   println ( "\(total.vowels) vowels and \(total.consonants) consonants" )      
- 
- 
- ###函数参数名称 在函数定义时定义的参数为 局部参数名 ，只能在函数体中使用 
- ####外部函数名 类似于Objective-C的函数命名       1  2  3  4        func   join  (string s1:String, toString  s2:String)   -&gt;  String &#123;  	 return  s1 + s2  &#125;   join (string: "hello" , toString : "world" )       
- ####简写外部参数名 上面的方法需要为参数提供外部参数名和内部参数名，可以通过 # 简写，将外部参数名和内部参数名等同起来       1  2  3  4        func   join  (#string:String,# toString :String)   -&gt;  String &#123;  	 return  string +  toString   &#125;   join (string: "hello" , toString : "world" )       
- ###默认参数值 为参数提供一个初始值，调用时，缺省可以忽略并使用默认值       1  2  3        func   join  (str1 String,str2 String =  "world" )   -&gt;  String &#123;  	 return  str1 + str2  &#125;       
- ###可变参数       1  2  3  4  5  6  7        func   add   (numbers: Double...)   -&gt;  Double  &#123;  	 var  total:  Double  =  0 ;  	 for  number  in  numbers &#123;  		total += number  	&#125;  	 return  total /  Double (numbers.cout)  &#125;       
- ###常量参数和变量参数 函数参数默认是常量，在函数体中更改参数值将会导致编译错误，如果参数定义为变量就可以当做参数的副本来使用       1  2  3  4  5  6  7  8       // 用来右对齐输入的字符串到一个长的输出字符串中。左侧空余的地方用指定的填充字符填充     func   alignRight  ( var  string: String,  count : Int, pad: Character)   -&gt;  String  &#123;       let  amountToPad =  count  -  countElements (string)       for   _   in   1 ...amountToPad &#123;          string = pad + string      &#125;       return  string  &#125;       
- ###输入输出参数 一个输入输出参数时，在参数定义前加 inout 关键字。一个输入输出参数有传入函数的值，这个值被函数修改，然后被传出函数，替换原来的值。当传入的参数作为输入输出参数时，需要在参数前加&amp;符，表示这个值可以被函数修改。       1  2  3  4  5  6  7        func   swap   ( inout  a:Int, inout  b:Int)  &#123;  	 let  temp = a  	a = b  	b = temp  &#125;   var  a =  3 ,b =  4    swap (&amp;a,&amp;b)       
- ###函数类型 每个函数都有种特定的函数类型，由函数的参数类型和返回类型组成。  () -&gt; () 表示没用参数，返回 Void ，在Swift中， Void 与空元组是一样的 
- ###使用函数类型 使用函数名来给另一个函数赋值       1       var  fun2:( Int , Int ) -&gt;  Int  = fun1       
- ####使用函数类型       1  2       var  mathFunction:( Int , Int ) -&gt;  Int  = addTwoInts   // 只要matchFunction和addTwoInts的类型相同，该赋值就是合法的        
- ####函数类型作为参数类型       1  2  3  4        func   printMathResult  (matchFunction: (Int,Int)    -&gt;  Int ,a: Int ,b: Int )&#123;  	 println ( "Result: \(mathFunction(a,b))" )  &#125;  printMathResult(addTwoInts, 3 , 5 )       
- ####函数类型作为返回类型       1  2  3        func   chooseStepFunction  (backwards:Bool)   -&gt; ( Int ) -&gt;  Int  &#123;  	 return  backwards ? stepBackward : stepForward  &#125;       
- 闭包 闭包之自包含的函数代码块，可以在代码中传递和使用，与Objective-C的blocks相似 闭包可以捕获和存储其所在上下文任意常量和变量的引用。 全局和嵌套函数也是特殊的闭包，闭包采取如下三种形式： 
- 
- 全局函数是一个有名字但不会捕获任何值的闭包 
- 嵌套函数是一个有名字并可以捕获其封闭函数内值的闭包 
- 闭包表达式是一个利用轻量级语法所写的可以捕获其上下文中变量或常量值的匿名闭包 
- 
- ##闭包表达式(Closure Expreessions) 闭包表达式是一种利用简洁语法构建内联闭包的方式，闭包表达式提供了一些语法优化，使得撰写闭包变得简单明了。 
- ###闭包表达式语法 闭包表带式语法一般形式：       1  2  3      &#123; (parameters) -&gt; returnType  in   	statemnts  &#125;       
- Swift标准库提供了 sort 函数，会根据基于输出类型排序的闭包函数将已知类型数组的值进行排序，返回一个与原数组大小相同的新数组，并排序完成。 
- ``` 
-
+ 转义字符\0
     
     
         <a href="/2014/07/10/Swift笔记(三)/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -748,13 +484,11 @@
 
     
          Swift可以再类型后面加一个 ? 来将变量声明为 optional (随意的)。如果不是Optional的变量，那么它就必须有值，而没有值发话，我们使用Optional并且将它设置为 nil 来表示没有值。       1  2  3       var  num: Int ?  num =  nil   num =  3        
- Optional Value就像一个盒子，盒子可能装着实际的值，可能声明都没装。       1  2  3  4  5  6       var  num: Int ?= 3 	 // 声明一个Int的Optianal，并将其设为3    if   let  n = num &#123;  	 // hava a num   &#125;  else  &#123;  	 // no num   &#125;       
- 使用场景       1      foo?.somemethod()       
-
+ Optional Value就像一个盒子，盒子可能装
     
     
         <a href="/2014/07/10/理解Optional/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -800,48 +534,11 @@
  保存在数据库中 
  保存在cookie或会话中 
  
- ##将数据写入文件       1  2  3  4  5  6  7  8  9  10       // weite.js    var  fs =  require ( 'fs' ),  	data =  "Some data I want to write to a file." ;  fs.writeFile( 'file.txt' ,data,  function ( err ) &#123;  	 if  (!err) &#123;  		 console .log( "Wrote data to file.txt." );  	&#125;  else  &#123;  		 throw  err;  	&#125;  &#125;);       
- 注意： 
- 
- 如果文件不存在，writeFile方法也创建文件 
- 文件默认写入脚本运行位置，也可以指定完整路径 
- 可能的错误包括文件不存在或者没有读取文件的权限 
- 
- ##从文件读取数据       1  2  3  4  5  6  7  8  9       // read.js    var  fs =  require ( 'fs' );  fs.readFile( 'file.txt' , 'utf8' ,  function ( err,data ) &#123;  	 if  (!err) &#123;  		 console .log(data);  	&#125; else &#123;  		 throw  err;  	&#125;  &#125;);       
- ##环境变量 设置环境变量 windows:       1      SET SOMETHING=&apos;12345678&apos;       
- UNIX:       1      var something = process.env.SOMETHING       
- 可以再node中访问 process.env.SOMETHING  
- ##使用数据库 
- ###NoSQL数据库 
- 
- Cassandra 
- Redis 
- Memcached 
- MongoDB 
- Hadoop 
- 
- ###在Node.js中使用MongoDB MongoDB是面向文档的数据库，它不遵照将关系数据连接在一起的关系模型，它可执行关系数据库的大多数功能并且旨在提供高度的可用性和可扩展性。 CRUD指Create、Read、Update、Delete 
- ####安装MongiDB 可以到 MongoDB官网 获得对应平台的安装文件。 MongoDB有很多GUI支持，OSX可以使用 MongoHub ；Windows，可以使用 Monogo VUE ,它是功能受限的免费版，同事需要.NET Framework支持；Linux上可以使用 JMongoBrowser ，它是基于Java客户端，需要Java运行环境。 
- ####连接MongoDB  Mongoose 是Node.js中一个功能齐备的第三方模块，用于处理MongoDB。将Mongoose模块加入到项目中，并在package.json文件中将其作为依赖模块包含进来：       1  2  3  4  5  6  7      &#123;       "name" : "your-application" ,       "version" : "0.0.1" ,       "dependcies" :&#123;           "mongoose" : "&gt;= 2.3.1"       &#125;  &#125;       
- 运行npm install 并在应用程序文件中请求它 var mongoose = require(&#39;mongoose&#39;);  之后连接并使用它 mongoose.connect(&#39;mongodb://localhost/your_database&#39;); . 
- ###定义文档 MongoDB中，没有关系数据库中表的概念，M哦你goDB围绕着文档的思想来组织数据。 通过Mongoose模块在MongoDB中定义一个文档：通过Mongoose提供的Schema接口定义，然后声明属性。Mongoose可声明的类型如下： 
- 
- String(字符串) 
- Number(数值) 
- Date(日期) 
- Boolean(布尔值) 
- Buffer(缓存) 
- ObjectID(对象ID) 
- Mixed(混合) 
- Array(数组) 对于task模型而言，只需要一个属性      1  2  3  4  5  6       var  Schema = mongoose.Schema,      ObjectId = Shema.ObjectId;   var  Task =  new  Schema(&#123;      task: String   &#125;);   var  Task = mongoose.model( 'Task' ,Task);      
- 
- 
- ###将Twitter Bootstrap包含进来 在 views/layout.jade 包含如下内容       1  2  3  4  5  6      html       head          title=title          link(rel=&apos;stylesheet&apos;,href=&apos;http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css&apos;)      body          section.container!=body       
-
+   将数据写入文件       1  2  3  4  5  6  7  8  9  10       // weite.js    var  fs =  require ( 'fs' ),  	data =  "Some data I want to write
     
     
         <a href="/2014/07/10/数据持久化/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -880,33 +577,12 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-         ##数据类 
- 
- Bimp      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31       public    class   Bimp   &#123;       public   static   int  max =  0 ;       public   static   boolean  act_bool =  true ;       public   static  List&lt;Bitmap&gt; bmp =  new  ArrayList&lt;Bitmap&gt;();       // 图片的存放地址        public   static  List&lt;String&gt; drr =  new  ArrayList&lt;String&gt;();       // 用于压缩图片         public   static  Bitmap  revitionImageSize  (String path)  throws  IOException  &#123;          BufferedInputStream in =  new  BufferedInputStream( new  FileInputStream(                   new  File(path)));          BitmapFactory.Options options =  new  BitmapFactory.Options();          options.inJustDecodeBounds =  true ;          BitmapFactory.decodeStream(in,  null , options);          in.close();           int  i =  0 ;          Bitmap bitmap =  null ;           while  ( true ) &#123;               if  ((options.outWidth &gt;&gt; i &lt;=  1000 )                      &amp;&amp; (options.outHeight &gt;&gt; i &lt;=  1000 )) &#123;                  in =  new  BufferedInputStream(                           new  FileInputStream( new  File(path)));                  options.inSampleSize = ( int ) Math.pow( 2.0 D, i);                  options.inJustDecodeBounds =  false ;                  bitmap = BitmapFactory.decodeStream(in,  null , options);                   break ;              &#125;              i++;          &#125;           return  bitmap;      &#125;  &#125;      
- 
- 
- ##工具类 
- 
-  BitmapCache类 
-      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90  91  92  93  94  95  96  97       public    class   BitmapCache   &#123;       public   final  String TAG = getClass().getSimpleName();       public  Handle h =  new  Handle();       private  HashMap&lt;String,SoftReference&lt;Bitmap&gt;&gt; imageCache =  new  HashMap&lt;String,SoftReference&lt;Bitmap&gt;&gt;();        public   void   put  (String path,Bitmap bmp)   &#123;           if (!TextUtils.isEmpty(path) &amp;&amp; bmp !=  null ) &#123;              imageCache.put(path,  new  SoftReference&lt;Bitmap&gt;(bmp));          &#125;      &#125;        public   void   displayBmp  ( final  ImageView iv,  final  String thumbPath,  final  String sourcePath,  final  ImageCallback call ballback)   &#123;           if  (TextUtils.isEmpty(thumbPath) &amp;&amp; TextUtils.isEmpty(sourcePath)) &#123;              Log.e(TAG,  "no paths pass in" );               return ;          &#125;           final  String path;           final   boolean  isThumbPath;           if  (!TextUtils.isEmpty(thumbPath)) &#123;              path = thumbPath;              isThumbPath =  true ;          &#125; else   if  (!TextUtils.isEmpty(sourcePath)) &#123;              path = sourcePath;              isThumbPath =  false ;          &#125; else  &#123;               return ;          &#125;           // 缓存中是否有该图片            if (imageCache.containsKey(path))&#123;              SoftReference&lt;Bitmap&gt; reference = imageCache.get(path);               if  (bmp !=  null ) &#123;                   if  (callback !=  null ) &#123;                      callback.imageLoad(iv, bmp ,sourcePath);                  &#125;                  iv.setImageBitmap(bmp);                  Log.d(TAG, "hit cache" );                   return ;              &#125;          &#125;          iv.setImageBitmap( null );           new  Thread() &#123;              Bitmap thumb;                public   void   run  ()  &#123;                   try  &#123;                       if  (isThumbPath) &#123;                          thumb = BitmapFactory.decodeFile(thumbPath);                           if  (thumb ==  null ) &#123;                              thumb = revitionImageSize(sourcePath);                          &#125;  else  &#123;                              thumb = revitionImageSize(thumbPath);                          &#125;                      &#125;  catch  (Exception e)&#123;                                                &#125;                       if  (thumb ==  null ) &#123;                          thumb = revitionImageSize(sourcePath);                      &#125;                      put(path,thumb);                       if (callback !=  null )&#123;                          h.post( new  Runnable()&#123;                               @Override                                 public   void   run  ()   &#123;                              callback.imageLoad(iv, thumb, sourcePath);                          &#125;                      &#125;);                  &#125;              &#125;          &#125;.strat();      &#125;          public  Bitmap  revitionImageSize  (String path)   throws  IOException  &#123;          BufferedInputStream in =  new  BufferedInputStream( new  FileInputStream(                   new  File(path)));          BitmapFactory.Options options =  new  BitmapFactory.Options();          options.inJustDecodeBounds =  true ;          BitmapFactory.decodeStream(in,  null , options);          in.close();           int  i =  0 ;          Bitmap bitmap =  null ;           while  ( true ) &#123;               if  ((options.outWidth &gt;&gt; i &lt;=  256 )                      &amp;&amp; (options.outHeight &gt;&gt; i &lt;=  256 )) &#123;                  in =  new  BufferedInputStream(                           new  FileInputStream( new  File(path)));                  options.inSampleSize = ( int ) Math.pow( 2.0 D, i);                  options.inJustDecodeBounds =  false ;                  bitmap = BitmapFactory.decodeStream(in,  null , options);                   break ;              &#125;              i +=  1 ;          &#125;           return  bitmap;      &#125;         public    interface   ImageCallback   &#123;            public   void   imageLoad  (ImageView imageView, Bitmap bitmap,                    Object... params);      &#125;  &#125;      
- 
-  AlbumHelper 
-      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90  91  92  93  94  95  96  97  98  99  100  101  102  103  104  105  106  107  108  109  110  111  112  113  114  115  116  117  118  119  120  121  122  123  124  125  126  127  128  129  130  131  132  133  134  135  136  137  138  139  140  141  142  143  144  145  146  147  148  149  150  151  152  153  154  155  156  157  158  159  160  161  162  163  164  165  166  167  168  169  170  171  172  173  174  175  176  177  178  179  180  181  182  183  184  185  186  187  188  189  190  191  192  193  194  195  196  197  198  199  200  201  202  203  204  205  206  207  208  209  210  211  212  213  214  215  216  217  218  219  220  221  222  223  224  225  226  227  228  229  230  231  232  233  234  235  236  237  238  239  240  241  242  243  244  245  246  247  248  249  250  251  252       public    class   AlbumHelper   &#123;       private   final  String TAG = getClass().getSimpleName();       private  Context context;       private  ContentResolver cr;         // 缩略图列表        public  HashMap&lt;String, String&gt; thumbnailList =  new  HashMap&lt;String, String&gt;();       // 专辑列表        private  List&lt;HashMap&lt;String, String&gt;&gt; albumList =  new  ArrayList&lt;HashMap&lt;String, String&gt;&gt;();       private  HashMap&lt;String, ImageBucket&gt; bucketList =  new  HashMap&lt;String, ImageBucket&gt;();         private   static  AlbumHelper instance;          private   AlbumHelper  ()   &#123;      &#125;          public   static  AlbumHelper  getHelper  ()   &#123;           if  (instance ==  null ) &#123;              instance =  new  AlbumHelper();          &#125;           return  instance;      &#125;         /**        * 初始化       *        *  @param  context       */        public   void   init  (Context context)   &#123;           if  ( this .context ==  null ) &#123;               this .context = context;              cr = context.getContentResolver();          &#125;      &#125;         /**        * 得到缩略图       */        private   void   getThumbnail  ()   &#123;          String[] projection = &#123; Thumbnails._ID, Thumbnails.IMAGE_ID,                  Thumbnails.DATA &#125;;          Cursor cursor = cr.query(Thumbnails.EXTERNAL_CONTENT_URI, projection,                   null ,  null ,  null );          getThumbnailColumnData(cursor);      &#125;         /**        * 从数据库中得到缩略图       *        *  @param  cur       */        private   void   getThumbnailColumnData  (Cursor cur)   &#123;           if  (cur.moveToFirst()) &#123;               int  _id;               int  image_id;              String image_path;               int  _idColumn = cur.getColumnIndex(Thumbnails._ID);               int  image_idColumn = cur.getColumnIndex(Thumbnails.IMAGE_ID);               int  dataColumn = cur.getColumnIndex(Thumbnails.DATA);                do &#123;                  _id = cur.getInt(_idColumn);                  image_id = cur.getInt(image_idColumn);                  image_path = cur.getString(dataColumn);                  thumbnailList.put( ""  + image_id, image_path);              &#125;  while  (cur.moveToNext());          &#125;      &#125;         /**        * 得到原图       */        private   void   getAlbum  ()   &#123;          String[] projection = &#123; Albums._ID, Albums.ALBUM, Albums.ALBUM_ART,                  Albums.ALBUM_KEY, Albums.ARTIST, Albums.NUMBER_OF_SONGS &#125;;          Cursor cursor = cr.query(Albums.EXTERNAL_CONTENT_URI, projection,  null ,                   null ,  null );          getAlbumColumnData(cursor);        &#125;         /**        * 从本地数据库中得到原图       *        *  @param  cur       */        private   void   getAlbumColumnData  (Cursor cur)   &#123;           if  (cur.moveToFirst()) &#123;               int  _id;              String album;              String albumArt;              String albumKey;              String artist;               int  numOfSongs;                 int  _idColumn = cur.getColumnIndex(Albums._ID);               int  albumColumn = cur.getColumnIndex(Albums.ALBUM);               int  albumArtColumn = cur.getColumnIndex(Albums.ALBUM_ART);               int  albumKeyColumn = cur.getColumnIndex(Albums.ALBUM_KEY);               int  artistColumn = cur.getColumnIndex(Albums.ARTIST);               int  numOfSongsColumn = cur.getColumnIndex(Albums.NUMBER_OF_SONGS);                do &#123;                  _id = cur.getInt(_idColumn);                  album = cur.getString(albumColumn);                  albumArt = cur.getString(albumArtColumn);                  albumKey = cur.getString(albumKeyColumn);                  artist = cur.getString(artistColumn);                  numOfSongs = cur.getInt(numOfSongsColumn);                    Log.i(TAG, _id +  " album:"  + album +  " albumArt:"  + albumArt                          +  "albumKey: "  + albumKey +  " artist: "  + artist                          +  " numOfSongs: "  + numOfSongs +  "---" );                  HashMap&lt;String, String&gt; hash =  new  HashMap&lt;String, String&gt;();                  hash.put( "_id" , _id +  "" );                  hash.put( "album" , album);                  hash.put( "albumArt" , albumArt);                  hash.put( "albumKey" , albumKey);                  hash.put( "artist" , artist);                  hash.put( "numOfSongs" , numOfSongs +  "" );                  albumList.add(hash);              &#125;  while  (cur.moveToNext());          &#125;      &#125;         /**        * 是否创建了图片集       */       private   boolean  hasBuildImagesBucketList =  false ;         /**        * 得到图片集       */        private   void   buildImagesBucketList  ()   &#123;           long  startTime = System.currentTimeMillis();             // 构造缩略图索引           getThumbnail();             // 构造相册索引           String columns[] =  new  String[] &#123; Media._ID, Media.BUCKET_ID,                  Media.PICASA_ID, Media.DATA, Media.DISPLAY_NAME, Media.TITLE,                  Media.SIZE, Media.BUCKET_DISPLAY_NAME &#125;;           // 得到一个游标           Cursor cur = cr.query(Media.EXTERNAL_CONTENT_URI, columns,  null ,  null ,                   null );           if  (cur.moveToFirst()) &#123;               // 获取指定列的索引                int  photoIDIndex = cur.getColumnIndexOrThrow(Media._ID);               int  photoPathIndex = cur.getColumnIndexOrThrow(Media.DATA);               int  photoNameIndex = cur.getColumnIndexOrThrow(Media.DISPLAY_NAME);               int  photoTitleIndex = cur.getColumnIndexOrThrow(Media.TITLE);               int  photoSizeIndex = cur.getColumnIndexOrThrow(Media.SIZE);               int  bucketDisplayNameIndex = cur                      .getColumnIndexOrThrow(Media.BUCKET_DISPLAY_NAME);               int  bucketIdIndex = cur.getColumnIndexOrThrow(Media.BUCKET_ID);               int  picasaIdIndex = cur.getColumnIndexOrThrow(Media.PICASA_ID);               // 获取图片总数                int  totalNum = cur.getCount();                do &#123;                  String _id = cur.getString(photoIDIndex);                  String name = cur.getString(photoNameIndex);                  String path = cur.getString(photoPathIndex);                  String title = cur.getString(photoTitleIndex);                  String size = cur.getString(photoSizeIndex);                  String bucketName = cur.getString(bucketDisplayNameIndex);                  String bucketId = cur.getString(bucketIdIndex);                  String picasaId = cur.getString(picasaIdIndex);                    Log.i(TAG, _id +  ", bucketId: "  + bucketId +  ", picasaId: "                           + picasaId +  " name:"  + name +  " path:"  + path                          +  " title: "  + title +  " size: "  + size +  " bucket: "                           + bucketName +  "---" );                    ImageBucket bucket = bucketList.get(bucketId);                   if  (bucket ==  null ) &#123;                      bucket =  new  ImageBucket();                      bucketList.put(bucketId, bucket);                      bucket.imageList =  new  ArrayList&lt;ImageItem&gt;();                      bucket.bucketName = bucketName;                  &#125;                  bucket.count++;                  ImageItem imageItem =  new  ImageItem();                  imageItem.imageId = _id;                  imageItem.imagePath = path;                  imageItem.thumbnailPath = thumbnailList.get(_id);                  bucket.imageList.add(imageItem);                &#125;  while  (cur.moveToNext());          &#125;           // Interator为迭代器，Entry为Map接口            // 遍历所有图片           Iterator&lt;Entry&lt;String, ImageBucket&gt;&gt; itr = bucketList.entrySet()                  .iterator();           while  (itr.hasNext()) &#123;              Map.Entry&lt;String, ImageBucket&gt; entry = (Map.Entry&lt;String, ImageBucket&gt;) itr                      .next();              ImageBucket bucket = entry.getValue();              Log.d(TAG, entry.getKey() +  ", "  + bucket.bucketName +  ", "                       + bucket.count +  " ---------- " );               for  ( int  i =  0 ; i &lt; bucket.imageList.size(); ++i) &#123;                  ImageItem image = bucket.imageList.get(i);                  Log.d(TAG,  "----- "  + image.imageId +  ", "  + image.imagePath                          +  ", "  + image.thumbnailPath);              &#125;          &#125;          hasBuildImagesBucketList =  true ;           long  endTime = System.currentTimeMillis();          Log.d(TAG,  "use time: "  + (endTime - startTime) +  " ms" );      &#125;         /**        * 得到图片集       *        *  @param  refresh       *  @return        */        public  List&lt;ImageBucket&gt;  getImagesBucketList  ( boolean  refresh)   &#123;           if  (refresh || (!refresh &amp;&amp; !hasBuildImagesBucketList)) &#123;              buildImagesBucketList();          &#125;          List&lt;ImageBucket&gt; tmpList =  new  ArrayList&lt;ImageBucket&gt;();          Iterator&lt;Entry&lt;String, ImageBucket&gt;&gt; itr = bucketList.entrySet()                  .iterator();           while  (itr.hasNext()) &#123;              Map.Entry&lt;String, ImageBucket&gt; entry = (Map.Entry&lt;String, ImageBucket&gt;) itr                      .next();              tmpList.add(entry.getValue());          &#125;           return  tmpList;      &#125;         /**        * 根据图片的_ID得到原始图像路径       *        *  @param  image_id       *  @return        */        public  String  getOriginalImagePath  (String image_id)   &#123;          String path =  null ;          Log.i(TAG,  "---(^o^)----"  + image_id);          String[] projection = &#123; Media._ID, Media.DATA &#125;;          Cursor cursor = cr.query(Media.EXTERNAL_CONTENT_URI, projection,                  Media._ID +  "="  + image_id,  null ,  null );           if  (cursor !=  null ) &#123;              cursor.moveToFirst();              path = cursor.getString(cursor.getColumnIndex(Media.DATA));          &#125;           return  path;      &#125;  &#125;      
- 
- 
- ##layout 相册选取layout       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39       &lt; LinearLayout   xmlns:android = "http://schemas.android.com/apk/res/android"         xmlns:tools = "http://schemas.android.com/tools"        android:layout_width = "match_parent"        android:layout_height = "match_parent"        android:background = "#f1eff5"        android:orientation = "vertical"  &gt;       &lt; RelativeLayout             android:layout_width = "match_parent"            android:layout_height = "60dp"            android:background = "#ff495a"  &gt;           &lt; TextView                 android:layout_width = "wrap_content"                android:layout_height = "wrap_content"                android:layout_centerInParent = "true"                android:text = "相册"                android:textColor = "#ffffff"                android:textSize = "20sp"  /&gt;           &lt; TextView                 android:layout_width = "wrap_content"                android:layout_height = "40dp"                android:gravity = "center"                android:layout_alignParentRight = "true"                android:layout_centerVertical = "true"                android:layout_marginRight = "8dp"                         android:textColor = "@drawable/text_while"                android:text = "取消"                android:textSize = "20sp"  /&gt;       &lt;/ RelativeLayout &gt;        &lt; GridView             android:id = "@+id/gridview"            android:layout_width = "match_parent"            android:layout_height = "match_parent"            android:layout_margin = "10dp"            android:horizontalSpacing = "20dp"            android:numColumns = "2"            android:scrollbars = "none"            android:verticalSpacing = "20dp"  &gt;       &lt;/ GridView &gt;    &lt;/ LinearLayout &gt;        
- 
-  图片选取layout 
-      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39       &lt; LinearLayout   xmlns:android = "http://schemas.android.com/apk/res/android"         xmlns:tools = "http://schemas.android.com/tools"        android:layout_width = "match_parent"        android:layout_height = "match_parent"        android:background = "#f1eff5"        android:orientation = "vertical"  &gt;       &lt; RelativeLayout             android:layout_width = "match_parent"            android:layout_height = "60dp"            android:background = "#ff495a"  &gt;           &lt; TextView                 android:layout_width = "wrap_content"                android:layout_height = "wrap_content"                android:layout_centerInParent = "true"                android:text = "相册"                android:textColor = "#ffffff"                android:textSize = "20sp"  /&gt;           &lt; TextView                 android:layout_width = "wrap_content"                android:layout_height = "40dp"                android:gravity = "center"                android:layout_alignParentRight = "true"                android:layout_centerVertical = "true"                android:layout_marginRight = "8dp"                         android:textColor = "@drawable/text_while"                android:text = "取消"                android:textSize = "20sp"  /&gt;       &lt;/ RelativeLayout &gt;        &lt; GridView             android:id = "@+id/gridview"            android:layout_width = "match_parent"            android:layout_height = "match_parent"            android:layout_margin = "10dp"            android:horizontalSpacing = "20dp"            android:numColumns = "2"            android:scrollbars = "none"            android:verticalSpacing = "20dp"  &gt;       &lt;/ GridView &gt;    &lt;/ LinearLayout &gt;       
- 
-  图片预览layout 
-      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37       &lt; RelativeLayout   xmlns:android = "http://schemas.android.com/apk/res/android"         xmlns:tools = "http://schemas.android.com/tools"        android:layout_width = "match_parent"        android:layout_height = "match_parent"        android:orientation = "vertical"  &gt;       &lt; android.support.v4.view.ViewPager             android:id = "@+id/viewpager"            android:layout_width = "match_parent"            android:layout_height = "match_parent"  &gt;       &lt;/ android.support.v4.view.ViewPager &gt;        &lt; RelativeLayout             android:id = "@+id/photo_relativeLayout"            android:layout_width = "match_parent"            android:layout_height = "60dp"            android:layout_alignParentBottom = "true"  &gt;            &lt; Button                 android:id = "@+id/photo_bt_exit"                  android:layout_width = "50dp"                android:layout_height = "50dp"                android:layout_alignParentLeft = "true"                android:layout_centerVertical = "true"                android:background = "@drawable/bt_quxiao"  /&gt;           &lt; Button                 android:id = "@+id/photo_bt_del"                android:layout_width = "50dp"                android:layout_height = "50dp"                android:layout_centerInParent = "true"                android:background = "@drawable/bt_shanchu"  /&gt;           &lt; Button                 android:id = "@+id/photo_bt_enter"                android:layout_width = "50dp"                android:layout_height = "50dp"                android:layout_alignParentRight = "true"                android:layout_centerVertical = "true"                android:background = "@drawable/bt_queding"  /&gt;       &lt;/ RelativeLayout &gt;    &lt;/ RelativeLayout &gt;        
- 
-
+           数据类  
+ Bimp      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31       public    class   Bimp   &#123;       public   static   int 
     
     
         <a href="/2014/07/09/图片选取/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -946,15 +622,11 @@
 
     
            
- 除了揭幕战，今天又真真的熬完了整整一场比赛的直播。开赛前就冥冥感觉，这场不一般，当然我不是马后炮的证明我猜到了大胜，赛前我的预想只是净胜2球，德意志已经超过我的想象。其实比，大胜更让我欣喜的是，米洛进球了。那一刻，真的想流泪，即使段暄还在感叹节奏的突变，与接二连三的进球，人们视乎忘了，这个德国人破纪录了。 没有欢呼，没有庆贺，没有空翻，一切平平淡淡。就像克洛泽一样，一个平凡的不能再平凡的球员，没错，在很多定义上他都算不上球星。他不张扬，个性内敛和谦逊，小时候优良的家境和艺术教育的烘托使得他跟一般的球员在性格上可以被归属为文艺派。 克洛泽从未在联赛中大杀四方，也没有在世界杯上君临天下，他总是在适当的时候，出现在适当的位置，做了适当的事情。这就是德国人的冷静、铁血、严谨，这是与生俱来的天性。他不是足球天才，23岁的时候甚至还是业余球球，这个岁数的梅西已经功成名就。 不是每个人都能成为字母罗、内马尔或者梅西，但每个人都可以成为克洛泽————或者说，成为这个时空中、这番命运下那个最好的自己。 
-   
- 02年世界杯的时候，那个时候我还懵懵懂懂，决赛日，我和老爸在电视前，我穿着我新买不久的巴西队服，看着除了巴西队不怎么熟悉的面孔，为罗纳尔多的进球欢呼雀跃，但是那场比赛，却让我喜欢上了，卡恩和金发碧眼的克洛泽，甚至我自己都不知道缘由。 06年，金色轰炸机克林斯曼职教德国，那届的德国打的真是漂亮，不知道那一届诞生了多少德国脑残粉。点球救主的莱曼，小猪施魏因斯泰格，已经屈居二线的卡恩，大着石膏扔界外球的拉姆，还有些青涩的波多尔斯基，还有巴拉克，还有克洛泽。那一届德国踢得那么好，那么漂亮，还是输给了亚平宁骑士，防守至上的意大利。至今，我还记恨那支冠军，马特拉齐的咒骂，齐祖的惨淡谢幕与大力神杯擦肩而过，更可恨的是他们淘汰了德国，那支最美的德国。 10年，德国新人辈出，诺伊尔、厄齐尔、巴阿滕、还有神奇小子穆勒。可惜巴拉克，赛前的伤退，让这个德国人永远的告别了世界杯。我这届德国一如既往的强，可惜既生瑜何生亮，如日中天的西班牙在那个时空，仿佛不可战胜。 02年，我们输给了天赋异禀的巴西，06年，我们输给了沉稳的意大利，10年，我们输给了不可战胜的西班牙。14年，我们离冠军只差一场胜利，加油，德意志。 
-   
-
+ 除了揭幕战，今天又真真的熬完了整整一场比赛的直播。开赛前就冥冥感觉，这场不一般，当然我不是马后炮的证明我猜到了大胜，赛前我的预想只是净胜2球，德意志已经超过我的想象。其实比，大胜更让我欣喜的是，米洛进球了。那一刻，真的想流泪，即使段暄还在感叹节奏的突变，与接二连三的进球，人们视乎忘了，这个德国人破纪录了。 没有欢呼，没有庆贺，没有空翻，一切平平淡淡。就像克洛泽一样，一个平凡的不能再平凡的
     
     
         <a href="/2014/07/09/写在决赛之前/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -977,6 +649,51 @@
 <div class="mask" id="mask"></div>
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
+<script>
+var BLOG_SHARE = {
+    title: "SeniorZhai's blog",
+    pic: "/img/logo.jpg",
+    summary: document.getElementsByName('summary')[0].content,
+    url: "http://seniorzhai.github.io/page/29/index.html"
+};
+</script>
+<div class="global-share" id="global-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
 
 <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 
@@ -984,10 +701,45 @@
 
 
 
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<script type="text/template" id="search-tpl">
+<li class="item">
+    <a href="/{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</script>
+
+<script src="/js/search.js"></script>
 
 
 
 
+
+<script src="//s95.cnzz.com/z_stat.php?id=true&web_id=true"></script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-54646832-1&#39;', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
 
 
 

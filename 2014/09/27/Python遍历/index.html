@@ -16,7 +16,7 @@
 <meta property="og:url" content="http://seniorzhai.github.io/2014/09/27/Python遍历/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
 <meta property="og:description" content="模块(module)可以更好的组织已有的程序">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python遍历">
 <meta name="twitter:description" content="模块(module)可以更好的组织已有的程序">
@@ -203,12 +203,11 @@
 
             <div class="post-content" id="post-content" itemprop="postContent">
             <p>模块(module)可以更好的组织已有的程序<br><a id="more"></a></p>
-<p>##引入模块<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> first	<span class="comment"># 引入first模块</span></div><div class="line"><span class="comment"># ...</span></div><div class="line"><span class="keyword">import</span> a <span class="keyword">as</span> b 	<span class="comment"># 引入a模块并重命名为b</span></div><div class="line"><span class="keyword">from</span> a <span class="keyword">import</span> function1	<span class="comment">#引入a模块中的function1对象</span></div><div class="line"><span class="keyword">from</span> a <span class="keyword">import</span> * <span class="comment"># 引入a模块中的所有对象</span></div></pre></td></tr></table></figure></p>
-<p>##搜索路径</p>
-<ol>
+<h2 id="引入模块"><a href="#引入模块" class="headerlink" title="引入模块"></a>引入模块</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> first	<span class="comment">#  引入first模块</span></div><div class="line"><span class="comment">#  ...</span></div><div class="line"><span class="keyword">import</span> a <span class="keyword">as</span> b 	<span class="comment">#  引入a模块并重命名为b</span></div><div class="line"><span class="keyword">from</span> a <span class="keyword">import</span> function1	<span class="comment"># 引入a模块中的function1对象</span></div><div class="line"><span class="keyword">from</span> a <span class="keyword">import</span> * <span class="comment">#  引入a模块中的所有对象</span></div></pre></td></tr></table></figure>
+<h2 id="搜索路径"><a href="#搜索路径" class="headerlink" title="搜索路径"></a>搜索路径</h2><ol>
 <li>程序所在的文件夹</li>
 <li>标准库的安装路径</li>
-<li>操作系统环境中PYTHONPATH所包含的路径<br>##模块包<br>可以把功能相似的模块放在同一个文件夹下，通过<code>import this_dir.module</code>引入thisdir文件夹下的module模块<br>该文件夹中必须包含一个<code>__init__.py</code>的文件来提醒Python该文件夹为一个模块包，<code>__init__.py</code>可以是一个空文件</li>
+<li>操作系统环境中PYTHONPATH所包含的路径<h2 id="模块包"><a href="#模块包" class="headerlink" title="模块包"></a>模块包</h2>可以把功能相似的模块放在同一个文件夹下，通过<code>import this_dir.module</code>引入thisdir文件夹下的module模块<br>该文件夹中必须包含一个<code>__init__.py</code>的文件来提醒Python该文件夹为一个模块包，<code>__init__.py</code>可以是一个空文件</li>
 </ol>
 
             <blockquote>

@@ -30,7 +30,7 @@
 
 创建位图获取CGContextRef&amp;gt;
 1234// 创建内存中的图片UIGraphicsBeginImageCon">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Quartz 2D绘图">
 <meta name="twitter:description" content="使用Quartz 2D绘图的关键步骤有两步：获取CGContextRef，调用CGContextRef的方法进行绘图。
@@ -234,8 +234,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 创建内存中的图片</div><div class="line">UIGraphicsBeginImageContext(CGSizeMake(320,480));</div><div class="line">// 获取想内存中图片执行绘制的CGContextRef</div><div class="line">CGContextRef ctx = UIGraphicsGetCurrentContext();</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>##Quart2D的绘图相关函数</p>
-<table>
+<h2 id="Quart2D的绘图相关函数"><a href="#Quart2D的绘图相关函数" class="headerlink" title="Quart2D的绘图相关函数"></a>Quart2D的绘图相关函数</h2><table>
 <thead>
 <tr>
 <th><strong>函数签名</strong></th>
@@ -297,13 +296,132 @@
 </tr>
 </tbody>
 </table>
-<p>##设置绘图属性的相关函数<br>|<strong>函数签名</strong>|<strong>简要说明</strong>|<br>|—|:—|<br>|void CGContextSavaGState(CGContextRef c);|保存CGContextRef当前的绘图状态，以便以后恢复该状态|<br>|void CGContextRestoreGState(CGContextRef c);|把CGContextRef的状态恢复到最近一次保存时的状态|<br>|CGInterpolationQuality CGContextGetInterpolationQuality(CGContextRef c);|获取当前CGContextRef在放大图片时差值质量|<br>|void CGContextSetInterpolationQuality(CGContextRef c,CGInterpolationQuality quality);|设置当前CGContextRef在放大图片时差值质量|<br>|void CGContextSetLineCap(CGContextRef c,CGLineCap cap);|设置线段端点的绘制形状，该属性支持如下三个值：kCGLineCapButt：该属性不会只端点，线条结尾处直接结束，此为默认值；kCGLineCapRound：该属性指定绘制原点端点，线条结尾处绘制一个直径为线条宽度的半圆；kCGLineCapSquare:该属性指定绘制方形端点。线条结尾处绘制半个边长为线条宽度的正方形。|<br>|void CGContextSetLineDash(CGContextRef c,CGFloat phase,const CGFloat lengths[],size_t count);|设置绘制边框时所用的点线模式|<br>|void CGContextSetLineJoin(CGContextRef c,CGLineJoin join);|设置线条连接点的风格支持以下三个值：kCGLineJoinMeter,kCGLineJoinRound,kCGLineJoinBevel|<br>|void CGContextSetLineWidth(CGContextRef c,CGFloat width);|设置绘制直线、边框时的线条宽度|<br>|void CGContextSetMiterLimit(CGContextRef c,CGFloat limit);|当把连接点风格设置为meter风格时，该方法用于控制锐角箭头的长度|<br>|void CGContextSetPatternPhase(CGContextRef c,CGSize phase);|设置该CGContextRef采用位图填充的相位|<br>|void CGContextSetFillPattern(CGContextRef c,CGPatternRef pattern,const CGFloat components[]);|设置该CGContextRef使用位图填充|<br>|void CGContextSetShouldAntialias(CGContextRef c,bool shouldAnitialias);|设置该CGContextRef是否应该抗锯齿|<br>|void CGContextSetStrokePattern(CGContextRef c,CGPatternRef pattern,const CGFloat components[]);|设置该CGContextRef使用位图绘制线条、边框|<br>|void CGContextSetBlendMode(CGContextRef context,CGBlendMode mode);|设置CGContextRef的叠加模式|<br>|void CGContextSetAllowsAntialiasing(CGContext context,bool allowsAntialiasing);|设置该CGContextRef是否允许抗锯齿|<br>|void CGContextSetAllowsFontSmoothing(CGContext context,bool allowsFontSmoothing);|设置该CGcontextRef是否允许光滑字体|<br>|void CGContextSetShouldSmoothFonts(CGContext c,bool shouldSmoothFonts);|设置该CGcontextRef是否允许光滑字体|<br>|void CGContextSetAlpha(CGContext c,CGFloat alpha);|设置全局透明度|<br>|void CGContextSetCMKYFillColor(CGContextRef c,CGFloat cyan,CGFloat magenta,CGFloat yellow,CGFloat black,CGFloat alpha);|使用CMYK颜色模式来设置该CGContextRef的填充颜色|<br>|void CGContextSetCMYKStrokeColor(CGContextRef c,CGFloat cyan,CGFloat magenta,CGFloat yellow,CGFloat black,CGFloat alpha)|使用CMYK颜色模式来设置该CGContextRef的线条颜色|<br>|void CGContextSetFillColorWithColor(CGContextRef c,CGColorRef color);|使用指定颜色来设置该CGContextRef的填充颜色|<br>|void CGContextSetStrokeColorWithColor(CGContextRef c,CGColorRef color);|使用指定颜色来设置该CGContextRef的线条颜色<br>|void CGContextSetGrayFillColor(CGContextRef c,CGFloat gray,CGFloat alpha);|使用灰色来设置该CGContextRef的填充颜色|<br>|void CGContextSetGrayStrokeColor(CGContextRef c,CGFloat gray,CGFloat alpha);|使用灰色来设置该CGContextRef的线条颜色|<br>|void CGContextSetRGBFillColor(CGContextRef c,CGFloat red,CGFloat green,CGFloat blue,CGFloat alpha);|使用RGB颜色模式来设置该CGContextRef的填充颜色|<br>|void CGContextSetRGBStoreColor(CGContextRef c,CGFloat red,CGFloat green,CGFloat blue,CGFloat alpha);|使用GRB颜色模式来设置该CGContextRef的线条颜色|<br>|void CGContextSetShadow(CGContext context,CGSize offset,CGFloat blur);|设置阴影在X,Y方向上的偏移，以及模糊度（blur值越大，阴影越模糊），默认模糊颜色为RGBA(0,0,0,1/3.0)|<br>|void CGContextSetShadowWithColor(CGContextRef context,CGSize offset,CGFloat blur,CGColorRef color);|设置阴影在X、Y方向上的偏移，以及模糊度和阴影颜色|</p>
-<p>##点线模式</p>
-<ul>
+<h2 id="设置绘图属性的相关函数"><a href="#设置绘图属性的相关函数" class="headerlink" title="设置绘图属性的相关函数"></a>设置绘图属性的相关函数</h2><table>
+<thead>
+<tr>
+<th><strong>函数签名</strong></th>
+<th style="text-align:left"><strong>简要说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>void CGContextSavaGState(CGContextRef c);</td>
+<td style="text-align:left">保存CGContextRef当前的绘图状态，以便以后恢复该状态</td>
+</tr>
+<tr>
+<td>void CGContextRestoreGState(CGContextRef c);</td>
+<td style="text-align:left">把CGContextRef的状态恢复到最近一次保存时的状态</td>
+</tr>
+<tr>
+<td>CGInterpolationQuality CGContextGetInterpolationQuality(CGContextRef c);</td>
+<td style="text-align:left">获取当前CGContextRef在放大图片时差值质量</td>
+</tr>
+<tr>
+<td>void CGContextSetInterpolationQuality(CGContextRef c,CGInterpolationQuality quality);</td>
+<td style="text-align:left">设置当前CGContextRef在放大图片时差值质量</td>
+</tr>
+<tr>
+<td>void CGContextSetLineCap(CGContextRef c,CGLineCap cap);</td>
+<td style="text-align:left">设置线段端点的绘制形状，该属性支持如下三个值：kCGLineCapButt：该属性不会只端点，线条结尾处直接结束，此为默认值；kCGLineCapRound：该属性指定绘制原点端点，线条结尾处绘制一个直径为线条宽度的半圆；kCGLineCapSquare:该属性指定绘制方形端点。线条结尾处绘制半个边长为线条宽度的正方形。</td>
+</tr>
+<tr>
+<td>void CGContextSetLineDash(CGContextRef c,CGFloat phase,const CGFloat lengths[],size_t count);</td>
+<td style="text-align:left">设置绘制边框时所用的点线模式</td>
+</tr>
+<tr>
+<td>void CGContextSetLineJoin(CGContextRef c,CGLineJoin join);</td>
+<td style="text-align:left">设置线条连接点的风格支持以下三个值：kCGLineJoinMeter,kCGLineJoinRound,kCGLineJoinBevel</td>
+</tr>
+<tr>
+<td>void CGContextSetLineWidth(CGContextRef c,CGFloat width);</td>
+<td style="text-align:left">设置绘制直线、边框时的线条宽度</td>
+</tr>
+<tr>
+<td>void CGContextSetMiterLimit(CGContextRef c,CGFloat limit);</td>
+<td style="text-align:left">当把连接点风格设置为meter风格时，该方法用于控制锐角箭头的长度</td>
+</tr>
+<tr>
+<td>void CGContextSetPatternPhase(CGContextRef c,CGSize phase);</td>
+<td style="text-align:left">设置该CGContextRef采用位图填充的相位</td>
+</tr>
+<tr>
+<td>void CGContextSetFillPattern(CGContextRef c,CGPatternRef pattern,const CGFloat components[]);</td>
+<td style="text-align:left">设置该CGContextRef使用位图填充</td>
+</tr>
+<tr>
+<td>void CGContextSetShouldAntialias(CGContextRef c,bool shouldAnitialias);</td>
+<td style="text-align:left">设置该CGContextRef是否应该抗锯齿</td>
+</tr>
+<tr>
+<td>void CGContextSetStrokePattern(CGContextRef c,CGPatternRef pattern,const CGFloat components[]);</td>
+<td style="text-align:left">设置该CGContextRef使用位图绘制线条、边框</td>
+</tr>
+<tr>
+<td>void CGContextSetBlendMode(CGContextRef context,CGBlendMode mode);</td>
+<td style="text-align:left">设置CGContextRef的叠加模式</td>
+</tr>
+<tr>
+<td>void CGContextSetAllowsAntialiasing(CGContext context,bool allowsAntialiasing);</td>
+<td style="text-align:left">设置该CGContextRef是否允许抗锯齿</td>
+</tr>
+<tr>
+<td>void CGContextSetAllowsFontSmoothing(CGContext context,bool allowsFontSmoothing);</td>
+<td style="text-align:left">设置该CGcontextRef是否允许光滑字体</td>
+</tr>
+<tr>
+<td>void CGContextSetShouldSmoothFonts(CGContext c,bool shouldSmoothFonts);</td>
+<td style="text-align:left">设置该CGcontextRef是否允许光滑字体</td>
+</tr>
+<tr>
+<td>void CGContextSetAlpha(CGContext c,CGFloat alpha);</td>
+<td style="text-align:left">设置全局透明度</td>
+</tr>
+<tr>
+<td>void CGContextSetCMKYFillColor(CGContextRef c,CGFloat cyan,CGFloat magenta,CGFloat yellow,CGFloat black,CGFloat alpha);</td>
+<td style="text-align:left">使用CMYK颜色模式来设置该CGContextRef的填充颜色</td>
+</tr>
+<tr>
+<td>void CGContextSetCMYKStrokeColor(CGContextRef c,CGFloat cyan,CGFloat magenta,CGFloat yellow,CGFloat black,CGFloat alpha)</td>
+<td style="text-align:left">使用CMYK颜色模式来设置该CGContextRef的线条颜色</td>
+</tr>
+<tr>
+<td>void CGContextSetFillColorWithColor(CGContextRef c,CGColorRef color);</td>
+<td style="text-align:left">使用指定颜色来设置该CGContextRef的填充颜色</td>
+</tr>
+<tr>
+<td>void CGContextSetStrokeColorWithColor(CGContextRef c,CGColorRef color);</td>
+<td style="text-align:left">使用指定颜色来设置该CGContextRef的线条颜色</td>
+</tr>
+<tr>
+<td>void CGContextSetGrayFillColor(CGContextRef c,CGFloat gray,CGFloat alpha);</td>
+<td style="text-align:left">使用灰色来设置该CGContextRef的填充颜色</td>
+</tr>
+<tr>
+<td>void CGContextSetGrayStrokeColor(CGContextRef c,CGFloat gray,CGFloat alpha);</td>
+<td style="text-align:left">使用灰色来设置该CGContextRef的线条颜色</td>
+</tr>
+<tr>
+<td>void CGContextSetRGBFillColor(CGContextRef c,CGFloat red,CGFloat green,CGFloat blue,CGFloat alpha);</td>
+<td style="text-align:left">使用RGB颜色模式来设置该CGContextRef的填充颜色</td>
+</tr>
+<tr>
+<td>void CGContextSetRGBStoreColor(CGContextRef c,CGFloat red,CGFloat green,CGFloat blue,CGFloat alpha);</td>
+<td style="text-align:left">使用GRB颜色模式来设置该CGContextRef的线条颜色</td>
+</tr>
+<tr>
+<td>void CGContextSetShadow(CGContext context,CGSize offset,CGFloat blur);</td>
+<td style="text-align:left">设置阴影在X,Y方向上的偏移，以及模糊度（blur值越大，阴影越模糊），默认模糊颜色为RGBA(0,0,0,1/3.0)</td>
+</tr>
+<tr>
+<td>void CGContextSetShadowWithColor(CGContextRef context,CGSize offset,CGFloat blur,CGColorRef color);</td>
+<td style="text-align:left">设置阴影在X、Y方向上的偏移，以及模糊度和阴影颜色</td>
+</tr>
+</tbody>
+</table>
+<h2 id="点线模式"><a href="#点线模式" class="headerlink" title="点线模式"></a>点线模式</h2><ul>
 <li>Quartz 2D绘制线段或边框时，默认总是使用实线，使用点线进行绘制，可调用CGContextRefLineDash(CGContextRef c,CGFloat phase,const CGFloat lengths[],size_t count)进行设置。</li>
 </ul>
-<p>##绘制文本</p>
-<ul>
+<h2 id="绘制文本"><a href="#绘制文本" class="headerlink" title="绘制文本"></a>绘制文本</h2><ul>
 <li>CGContextRef为绘制文字提供了如下函数<ul>
 <li><code>CGAffineTransform CGContextGetTextMartix(CGContextRef c):</code>：获取当前对文本执行变换的变换矩阵。</li>
 <li><code>CGPoint CGContextGetTextPosition(CGContextRef c):</code>：获取该CGContextRef中当前绘制文本的位置。</li>
@@ -325,7 +443,7 @@
 <li>设置绘制文本的相关属性</li>
 <li>如果只是绘制不需要进行变换的文本，直接调用NSString的drawAtPoint:withAttributes:、drawInAttrubutes:withFont:等方法绘制即可。如果需要绘制文本进行变换，则需要先调用CGContextSetTextMatrix()函数设置变换矩阵，再调用CGContextShowTextAtPoint()方法绘制文本。</li>
 </ol>
-<p>##使用路径<br>-绘制复杂的图形，需要使用路径</p>
+<h2 id="使用路径"><a href="#使用路径" class="headerlink" title="使用路径"></a>使用路径</h2><p>-绘制复杂的图形，需要使用路径</p>
 <ul>
 <li>创建路径的相关函数<br>|<strong>函数签名</strong>|<strong>简要说明</strong>|<br>|—|:—|<br>|void CGContextBeginPath(CGContextRef c);|开始定义路径|<br>|void CGContextClosePath(CGContextRef c);|关闭前面定义的路径|<br>|void CGContextAddArc(CGContextRef c,CGFloat x,CGFloat y,CGFloat radius,CGFloat startAngle,CGFloat endAngle,int clockwise);|向CGContextRef的当前路径添加一段弧|<br>|void CGContextAddArcToPoint(CGContextRef c,CGFloat x1,CGFloat y1,CGFloat x2,CGFloat y2,CGFloat radius);|向CGContextRef的当前路径添加一段贝塞尔曲线|<br>|void CGContextAddCurveToPoint(CGContextRef c,CGFloat cp1x,CGFloat cp1y,CGFloat cp2x,CGFloat cp2y,CGFloat x,CGFloat y);|向CGContextRef的当前路径添加一段贝塞尔曲线|<br>|void CGContextAddLines(CGContextRef c,const CGPoint points[],size_t count);|向CGContextRef的当前路径上添加多条线段。该方法需要传入N个CGPoint组成的数组，其中1、2点组成第一条线段，2、3点组成一条线段……|<br>|void CGContextAddLineToPoint(CGContextRef c,CGFloat x,CGFloat y);|把CGContextRef的当前路径从当前结束点连接到x、y对应的点|<br>|void CGContextAddQuadCurveToPoint(CGContextRef c,CGFloat cpx,CGFloat cpy,CGFloat x,CGFloat y);|向CGContextRef的当前路径从当前结束点连接到x、y对应的点|<br>|void CGContextAddRect(CGContextRef c,CGRect rect);|向CGContextRef的当前路径添加一个矩形|<br>|void CGContextAddRects(CGContextRef c,const CGRect rects[],size_t count);|向CGContextRef的当前路径添加多个矩形|<br>|void CGContextMoveToPoint(CGContextRef c,CGFloat x,CGFloat y);|向CGContextRef的当前结束点移动到x、y对应的点|<br>|void GCContextAddEllipseInRect(CGContextRef c,CGRect rect);|向CGContextRef的当前路径添加一个椭圆|<br>|CGPathRef CGContextCopyPath(CGContextRef context);|复制当前CGContextRef包含的路径，该函数返回的CGPathRef代表当前CGContextRef包含的路径|<br>|void CGContextAddPath(CGContextref context,CGPathRef path);|将已有的CGPathRef代表的路径添加到当前CGContextRef的路径中|</li>
 <li>获取CGContextRef所包含的路径信息的函数<ul>

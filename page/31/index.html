@@ -6,6 +6,8 @@
   <title>SeniorZhai&#39;s blog | 苟利国家生死以，起因福祸趋避之</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
+  <meta name="theme-color" content="#ED5565">
+  
   
   <meta name="keywords" content="undefined">
   <meta name="description" content="专注于移动平台">
@@ -18,8 +20,10 @@
 <meta name="twitter:title" content="SeniorZhai's blog">
 <meta name="twitter:description" content="专注于移动平台">
   
+    <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
+  
   <meta name="summary" content="专注于移动平台">
-  <link rel="shortcut icon" href="/">
+  <link rel="shortcut icon" href="/img/favicon.ico">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -33,7 +37,7 @@
   </a>
   <div class="brand-wrap">
     <div class="brand">
-      <a href="/" class="avatar"><img src="undefined"></a>
+      <a href="/" class="avatar"><img src="/img/logo.jpg"></a>
       <hgroup class="introduce">
         <h5 class="nickname">Dear宅学长</h5>
         <a href="mailto:developer.zhaitao@gmail.com" title="developer.zhaitao@gmail.com" class="mail">developer.zhaitao@gmail.com</a>
@@ -43,6 +47,48 @@
   <div class="scroll-wrap flex-col">
     <ul class="nav">
       
+          <li class="waves-block waves-effect">
+            <a href="/"  >
+              <i class="icon icon-lg icon-home"></i>
+              主页
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/archives"  >
+              <i class="icon icon-lg icon-archives"></i>
+              Archives
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/tags"  >
+              <i class="icon icon-lg icon-tags"></i>
+              Tags
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://seniorzhai.github.io" target="_blank" >
+              <i class="icon icon-lg icon-github"></i>
+              Github
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="http://weibo.com/seniorszhai/" target="_blank" >
+              <i class="icon icon-lg icon-weibo"></i>
+              Weibo
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/about"  >
+              <i class="icon icon-lg icon-link"></i>
+              about
+            </a>
+          </li>
+      
     </ul>
 
     <footer class="footer">
@@ -50,7 +96,7 @@
   <p>SeniorZhai&#39;s blog &copy; 2016</p>
   <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
   <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
-  <a href="undefined" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
+  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
 </footer>
 
   </div>
@@ -65,6 +111,20 @@
         </a>
         <div class="flex-col header-title ellipsis">SeniorZhai&#39;s blog</div>
         
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
         
     </div>
 </header>
@@ -111,61 +171,11 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-         ##概述 ContentProvider是Android应用对外开放的数据接口，只要符合它所定义的Uri格式的请求，均可以正常访问执行操作。其他的Android应用可以使用ContentResolver对象通过与ContentProvider同名的方法请求执行，被执行的就是ContentProvider中的同名的方法。所以ContentProvider很多对外可以访问的方法，在ContentResolver中均有同名的方法，是一一对应的，如图： 
-   
- ##Uri 在Android中，Uri是一种比较常见的资源访问方式，而对ContentProvider而言，Uri也是有固定格式的： 
-  :// / /      
- 
-  ：ContentProvider的srandard_prefix始终是content://  
-  ：ContentProvider的名称  
-  ：请求的数据类型  
-  ：指定请求的特定数据  
- 
- ##ContentProvider 　ContentProvider也是Android应用的四大组件之一，所以也需要在AndroidManifest.xml文件中进行配置。而且某个应用程序通过ContentProvider暴露了自己的数据操作接口，那么不管该应用程序是否启动，其他应用程序都可以通过这个接口来操作它的内部数据。 　Android附带了许多有用的ContentProvider，但是本篇博客不会涉及到这些内容的，以后有时间会再讲解。Android附带的ContentProvider包括： 
- 
- Browser：存储如浏览器的信息。 
- CallLog：存储通话记录等信息。 
- Contacts：存储联系人等信息。 
- MediaStore：存储媒体文件的信息。 
- Settings：存储设备的设置和首选项信息。 在Android中，如果要创建自己的内容提供者的时候，需要扩展抽象类ContentProvider，并重写其中定义的各种方法。然后在AndroidManifest.xml文件中注册该ContentProvider即可。 
- 
- ContentProvider是内容提供者，实现Android应用之间的数据交互，对于数据操作，无非也就是CRUD而已。下面是ContentProvider必须要实现的几个方法： 
- 
- onCreate()：初始化提供者。 
- query(Uri, String[], String, String[], String)：查询数据，返回一个数据Cursor对象。 
- insert(Uri, ContentValues)：插入一条数据。 
- update(Uri, ContentValues, String, String[])：根据条件更新数据。 
- delete(Uri, String, String[])：根据条件删除数据。 
- getType(Uri) 返回MIME类型对应内容的URI。 
- 
- 除了onCreate()和getType()方法外，其他的均为CRUD操作，这些方法中，Uri参数为与ContentProvider匹配的请求Uri，剩下的参数可以参见SQLite的CRUD操作，基本一致。 还有两个方法：call()和bulkInsert()方法，使用call，理论上可以在ContentResolver中执行ContentProvider暴露出来的任何方法，而bulkInsert()方法用于插入多条数据。 
- 在ContentProvider的CRUD操作，均会传递一个Uri对象，通过这个对象来匹配对应的请求，那么如何确定一个Uri执行哪项操作呢？需要用到一个UriMatcher对象，这个对象用来帮助内容提供者匹配Uri，它所提供的方法非常简单，仅有两个： 
- 
- void addURI(String authoity,String path,int code):添加一个Uri匹配项，authtity为AndroidManifest.xml中注册的ContentProvider的authority属性；path为一个路径，可以设置通配符，#表示任意数字，*表示任意字符；code为自定义的一个Uri代码 
- int match(Uri uri):匹配传递的Uri，返回addUri()传递的Code参数。 
- 
- 在创建好一个ContentProvider之后，还需要在AndroidManifest.xml文件中对ContentProvider进行配置，使用一个 节点，一般只需要设置两个属性即可访问，一些额外的属性就是为了设置访问权限而存在的  
- 
- android:name:provide的响应类 
- android:authorities:Provider的唯一标识，用于Uri匹配，一般为ContentProvider类的全名 
- 
- ##ContentResolver ContentResolver，内容访问者。可以通过ContentResolver来操作ContentProvider所暴露处理的接口。一般使用Content.getContentResolver()方法获取ContentResolver对象，上面已经提到ContentResolver的很多方法与ContentProvider————对应，所以它存在insert、query、update、delete等方法。 
- ###getType()中的MIME MIME类型就是设定某种扩展名的文件用一种应用程序来打开的方式类型。在ContentProvider中的getType方法，返回的就是一个MIME的字符串。如果支持需要使用ContentProvider来访问数据，getType()完全可以返回一个Null，并不影响效果，但是覆盖ContentProvider的getType方法对于用new Intent(String action,Uri uri)方法启动activity是很重要的，如果它返回的MIME type和activity在 中定义的data的MIME type不一致，将造成activity无法启动。 getType返回的字符串，如果URI针对的是单条数据，则返回的字符串以 vnd.android.cursor.item/ 开头；如果是多条数据，则以 vnd.android.cursor.dir/ 开头。  
- ###访问权限 对于ContentProvider暴露出来的数据，应该是储存在自己应用内存中的数据，对于一些储存在外部储存器上发数据，并不能限制访问权限，使用ContentProvider就没有意义了。对于ContentProvider而言，有很多权限控制，可以AndroidManifest.xml文件中对 节点的属性进行配置，一般使用如下一些属性设置：  
- 
- android:grantUriPermssions:临时许可标志。 
- android:permission:Provider读写权限。 
- android:readPermission:Provider的读权限。 
- android:writePermission:Provider的写权限。 
- android:enabled:标记允许系统启动Provider。 
- android:exported:标记允许其他应用程序使用这个Provider。 
- android:multiProcess:标记允许系统启动Provider相同的进程中调用客户端。 
- 
-
+           概述  ContentProvider是Android应用对外开放的数据接口，只要符合它所定义的Uri格式的请求，均可以正常访问执行操作。其他的Android应用可以使用ContentResolver对象通过与ContentProvider同名的方法请求执行，被执行的就是ContentProvider中的同名的方法。所以ContentProvider很多对外可以访问的方法，在ContentR
     
     
         <a href="/2014/06/25/ContentProvider/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -205,113 +215,11 @@
 
     
          
- 基础部分 数据类型基于C和Objective-C的基础上提出， Int 是整形， Double 和 Float 是浮点型， Bool 是布尔型， String 是字符串。Swift还有两个集合类型 Array 和 Dictionary  除了我们熟悉的类型，Swift 还增加了 Objective-C 中没有的类型比如元组（Tuple）。元组可以让你创建或者传递一组数据，比如作为函数的返回值时，你可以用一个元组可以返回多个值。 Swift 还增加了可选（Optional）类型，用于处理值缺失的情况。可选表示“那儿有一个值，并且它等于 x ”或者“那儿没有值”。可选有点像在 Objective-C 中使用nil，但是它可以用在任何类型上，不仅仅是类。可选类型比 Objective-C 中的nil指针更加安全也更具表现力，它是 Swift 许多强大特性的重要组成部分。 Swift 是一个类型安全的语言，会阻止不正确的值传递。 
- 
- ##常量和变量 常量和变量必须在使用前声明，用 let 来声明常量，用 var 来声明变量。       1  2       let  a =  10    var  b =  1        
- 以在一行中声明多个常量或者多个变量，用逗号隔开：       1       var  x =  0.0 , y =  0.0 , z =  0.0        
- 类型标注，在声明常量和变量的时候加上类型标注，说明变量或者常量要存储的类型。       1       var  str: String        
- 变量名不能包含数学符号，箭头，保留的关键字，Unicode码位，连线和制表符。不能以数字开头。 
- ##输出常量和变量 使用 println 函数来输出当前的变量或常量的值：       1       println (myValue)       
- 使用 \() 语法可以将值转换成字符串类型       1       println ( "I have a value -- \(myValue)" )       
- ##注释 与C语言相通，可以使用 // , /* 做单行、多行注释，也可以嵌套       1  2  3  4  5  6  7  8       // 单行注释    /*       多行注释   */   /* 嵌套    /* 注释 */    * 嵌套   */       
- ##分号 Swift 并不强制要求你在每条语句的结尾处使用分号（;）,同一行内写多条独立的语句则必须加上分号       1      let cat = &quot;pop&quot;;println(cat)       
- ##整数 整数可以是有符号的或者无符号的 如8位无符号整数的类型是 UInt8 ，32位有符号的整数是 Int32  
- ###整数范围 可以根据不同数据类型的 min 和 max 来获取对应的最大值和最小值       1  2       let  minValue =  UInt8 . min    let  maxValue =  UInt8 . max        
- ###Int 长度默认与平台的原生字长相同 
- 
- 在32位平台上， Int 和 Int32 长度相同。 
- 在64位平台上， Int 和 Int64 长度相同。 
- 
- ##浮点数 
- 
-  Double 表示64位浮点数。当你需要存储很大或者很高精度的浮点数时请使用此类型。 
-  Float 表示32位浮点数。精度要求不高的话可以使用此类型。 
- 
- ##类型安全和类型推断 Swift 是一个类型安全（type safe）的语言。不匹配的类型会被标记为错误。       1  2  3  4  5       let  meaningOfLife =  42    // meaningOfLife 会被推测为 Int 类型    //如果你没有给浮点字面量标明类型，Swift 会推断你想要的是Double：    let  pi =  3.14159    // pi 会被推测为 Double 类型        
- ##数值型字面量 
- 
- 一个十进制数，没有前缀 
- 一个二进制数，前缀是0b 
- 一个八进制数，前缀是0o 
- 一个十六进制数，前缀是0x 
- 
- 如果一个十进制数的指数为exp，那这个数相当于基数和10^exp的乘积： 
- 
- 1.25e2 表示 1.25 × 10^2，等于 125.0。 
- 1.25e-2 表示 1.25 × 10^-2，等于 0.0125。 
- 
- 如果一个十六进制数的指数为exp，那这个数相当于基数和2^exp的乘积： 
- 
- 0xFp2 表示 15 × 2^2，等于 60.0。 
- 0xFp-2 表示 15 × 2^-2，等于 3.75。 
- 
- ##类型别名 类型别名（type aliases）就是给现有类型定义另一个名字。你可以使用typealias关键字来定义类型别名。       1      typealias AudioSample = UInt16       
- ##元组 元组（tuples）把多个值组合成一个复合值。元组内的值可以使任意类型，并不要求是相同类型。       1       let  http404Error = ( 400 , "Not Found" )       
- ###元组分解       1  2       let  (statusCode,statusMessage) = http404Error   println (statusCode)  //输出404        
- 也可以使用一部分元组，忽略的部分使用下划线(_)标记       1       let  (statusCode, _ ) = http404Error       
- 也可以实现下标访问单个元素       1       let  statusCode = http404Error. 0        
- 可以定于元组的时候给单个元素命名       1  2       let  http200Status = (statusCode: 200 ,description: "OK" )   println (http200Status.statusCode)       
- ##可选值(Optional) 使用可选值来处理值可能缺失的情况       1  2      // 设置num是一个可选值，并赋值为3  let num? Int = 3       
- ###if语句及强制解析 if语句可以判断一个可选值是否包含值，如果可选类型有值返回 ture ，没有值返回 false        1  2  3  4      // num为一个可选值  if var value = num &#123;      // 有值  &#125;       
- 确定可选类型包含值后，可以再可选的名字后面加上感叹号(!)来获取值。 这个感叹号表示：我知道这个可选值有值，请使用它       1      num!. toString ()       
- ###可选绑定 使用可选绑定来判断可选类型是否包含值，如果包含就把赋值给一个临时常量或者变量。       1       if   let  temp = someOptional       
- ###nil 可以给可选变量赋值为 nil 来表示它没有值       1  2       var  someOptinal: Int ? =  nil   someOptinal =  3        
- 如果在声明可选变量或常量的时候没有赋值，默认设置为 nil  
- ###隐式解析可选类型 改用感叹号来声明一个隐式解析可选类型，隐式可选类型就是一个普通的可选类型，但是可以被当做非可选类型来使用，并不需要每次都解析来获取值。       1  2       let  value :  String ! =  "Hello"    println (value)  // 不需要value!        
- 隐式解析可选类型主要被用作Swift中类的构造过程 隐式解析可选类型可以被当做普通可选类型来判断它是否有值       1  2  3       if  value &#123;       // 有值   &#125;       
- ##断言 断言用作出结束代码运行并通过调试来找到原因 
- ###使用断言进行调试 断言会在运行时判断一个逻辑条件是否为 true ，当条件为真，运行某段代码，条件为假，代码运行停止，应用被终止 例如使用全局 assert 函数来写一个断言，向 assert 函数传入一个结果为 true 或者 false 的表达式以及一条信息，当表达式为 false 的时候这条信息会被显示       1  2  3      let age = -3  assert(age &gt;= 0,&quot;岁数不能小于0&quot;)  // 断言会被触发       
- ###何时使用断言 当条件可能为假时使用断言，但是最终一定要保证条件为真，这样代码才能继续运行，断言的适用场景 
- 
- 整数类型的下标索引被传入一个自定义下标脚本实现，但是下标索引可能太小或者太大 
- 需要给函数传入一个值，但是非法的值可能导致函数不能正常运行 
- 一个可选值现在是nil，但是后续的代码运行时需要一个非 nil 值 
- 
- ##基本运算符 Swift支持大部分标准C语言的运算符，且改进许多特性来减少常规的编码错误，如：赋值符( = )不返回值，以防止把想要判断相等运算符( == )的地方写错导致赋值的错误。数值运算符(+，-，*，、，%)会检测并不允许值溢出。允许使用Swift的溢出运算符来实现溢出。 区别于C语言，在Swift中可以对浮点数进行取余运算( % )，Swift还提供了表达两数之间的值的区间的运算符( a..b 和 a...b )表达一个区间的数值。 
- ###数值运算符 赋值表达用一个值来初始化或更新变量或常量       1  2  3       let  b =  10 ;   var  a =  5 ;  a = b       
- 但赋值不返回任何值       1  2  3       if  x = y &#123;       // 此句错误，因为x = y表达式不返回值   &#125;       
- ###数值运算 
- 
- 加法（+） 
- 减法（-） 
- 乘法（*） 
- 除法（/） Swift默认不允许数值运算中出现溢出情况，但是可以使用溢出运算符来达到有目的的溢出(如 a &amp;+ b ) 加法可以用于 String 的拼接      1       "heloo"  +  " world"       
- 
- 
- 两个Character值或一个String和一个Character值，相加会生成一个新的String值 
- ###求余运算       1  2       9  %  4   // 等于1   - 9  %  4   // 等于-1 4*(-2)+(-1) = 9        
- ###浮点数求余计算       1       8  %  2.5   // 等于0.5        
- ##自增和自增运算 和 C 语言一样，Swift 也提供了方便对变量本身加1或减1的自增（++）和自减（–）的运算符。其操作对象可以是整形和浮点型。  
- 
- 当++前置的时候，先自増再返回。 
- 当++后置的时候，先返回再自增。 ##复合赋值（Compound Assignment Operators） Swift也提供把其他运算符和赋值运算符组合的复合赋值运算符      1  2       var  a =  1   a +=  2   // a = 3       
- 
- 
- ##比较运算 
- 
- 等于( == ) 
- 不等于( != ) 
- 大于( &gt; ) 
- 小于( &lt; ) 
- 大于等于( &gt;= ) 
- 小于等于( &lt;= ) Swift还提供了恒等于 === 和恒不等于 !== 来比较两个对象是否饮用同一个对象的实例 ##三元条件运算(Ternary Conditional Operator)  问题 ? 答案1 : 答案2 ，如果问题成立，返回答案1的结果; 如果不成立，返回答案2的结果。      1       let  value = (boolValue ?  10  :  30 )      
- 
- 
- 三元条件运算提供有效率且便捷的方式来表达二选一的选择。 
- ##区间运算符 
- ###闭区间运算符  a...b 定义了一个包含从 a 到 b 所有值的区间，闭区间运算符在迭代一个区间的所有值时非常有用，比如 for-in 循环中：       1  2  3       for  index  in   1 ... 5 &#123;       //    &#125;       
- ###半闭区间  a..b 定义了一个从 a 到 b 但不包括 b 的区间。       1  2  3  4  5       let  names = [ "Anna" , "Alex" , "Brian" , "Jack" ]   let   count  = name. count    for  i  in   0 .. count  &#123;       //   &#125;       
- ##逻辑运算 
- 
- 逻辑非(!) 
- 逻辑与(&amp;&amp;) 
- 逻辑或(||) 
- 
-
+ 基础部分 数据类型基于C和Objective-C的基础上提出， Int 是整形， Double 和 Float 是浮点型， Bool 是布尔型， String 是字符串。Swift还有两个集合类型 Array 和 Dictionary  除了我们熟悉的类型，Swift 还增加了 Objective-C 中没有的类型比如元组（Tuple）。元组可以让你创建或者传递一组数据，比如作为函数的返回值
     
     
         <a href="/2014/06/25/Swift笔记(二)/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -350,28 +258,17 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-         ##Gradle 
- 
+           Gradle  
  什么是Gradle？ Gradle 是以 Groovy 语言为基础，面向Java应用为主，基于DSL语法的自动化构建工具。说到Java的自动化构建工具。 使用Gradle构建Android项目的优点： 
  在IDE环境和命令行下使用同一个构建系统 
  改进的依赖关系管理 
  更容易地集成到自动构建系统 
  
- ##Gradle 基本概念 如果你用Android Studio新建一个项目的时候，默认生成一大堆关于gradle的东西，其中最重要的是一个build.gradle的文件，内容如下：       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34      buildscript &#123;       // 声明用本地maven库查找依赖       repositories &#123;          mavenCentral()      &#125;      dependencies &#123;          classpath  'com.android.tools.build:gradle:0.8.+'       &#125;  &#125;   // 声明项目是一个android构建   apply  plugin:   'android'    // SDK版本 build工具版本   android &#123;      compileSdkVersion  19       buildToolsVersion  "19.0.0"        // 版本细节       defaultConfig &#123;          minSdkVersion  14           targetSdkVersion  19           versionCode  1           versionName  "1.0"       &#125;       // 发行版定义       buildTypes &#123;          release &#123;              runProguard  false               proguardFiles getDefaultProguardFile( 'proguard-android.txt' ),  'proguard-rules.txt'           &#125;      &#125;  &#125;    dependencies &#123;      compile  'com.android.support:support-v4:19.0.+'   &#125;       
- buildscript节点的内容完全不用动，大概意思就是支持maven，声明Gradle的版本。 apply plugin节点声明构建的项目类型，这里当然是android了 android节点设置编译android项目的参数，接下来，我们的构建android项目的所有配置都在这里完成。 
- ##构建一个Gradle Android项目 除了最基本的Android Gradle配置文件，项目常常需要引入第三方的jar包，比如依赖一个support_v4的jar包，则完整的build.gradle文件如下：       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34      buildscript &#123;      repositories &#123;          mavenCentral()      &#125;      dependencies &#123;          classpath 'com.android.tools.build:gradle:0.8.+'      &#125;  &#125;  apply plugin: 'android'    android &#123;      compileSdkVersion 19      buildToolsVersion "19.0.0"        defaultConfig &#123;          minSdkVersion 14          targetSdkVersion 19          versionCode 1          versionName "1.0"      &#125;      buildTypes &#123;          release &#123;              runProguard false              proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'          &#125;      &#125;  &#125;    dependencies &#123;  	//单文件依赖      compile files('libs/android-support-v4.jar")      //某个文件夹下面全部依赖      compile fileTree(dir: 'libs', include: '*.jar')  &#125;       
- 接着在命令行切换到项目目录下       1      gradle clean       
- 如果是第一次使用gradle构建，则会下载相关依赖包并且对环境进行初始化，如果出错了，一般可能是下载超时，试多几次即可，最后你会看到如下提示：BUILD SUCCESSFUL 完成以上的步骤，就可以正式使用gralde 构建你的android项目了。 
- 接着执行       1      gradle build       
- 就完成了android 项目的构建了。如果，你是照着以上步骤走的话，你将会在项目目录里面看到一个build 的目录，里面就是用gradle 构建android项目的全部东西了。最终打包的apk 就在build/apk 目录下了。然后，你会发现，两个apk 一个是 [项目名]-debug-unaligned [项目名]-release-unsigned，看名字就猜到一个是调试模式没有进行优化的apk（可直接安装），一个是release模式但没有签名的apk（不可直接安装）。 
- ##打包签名 默认输出 release apk 是没有签名的，那么我们需要签名的很简单，只需要在android{}里面补充加上如下代码即可。       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17      // 签名  signingConfigs &#123;      myConfig &#123;          storeFile file(&quot;storm.keystore&quot;)          storePassword &quot;storm&quot;          keyAlias &quot;storm&quot;          keyPassword &quot;storm&quot;      &#125;  &#125;        buildTypes&#123;      release &#123;          signingConfig  signingConfigs.myConfig          runProguard true          proguardFiles getDefaultProguardFile(&apos;proguard-android.txt&apos;), &apos;proguard-rules.txt&apos;      &#125;   &#125;       
- 然后，运行       1  2      gradle clean   gradle build       
- 接着在build/apk目录下就生成了我们需要的签名的apk。 
-
+   Gradle 基本概念  如果你用Android Stud
     
     
         <a href="/2014/06/24/Gradle/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -410,27 +307,11 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-         创建SQLite数据库推荐继承SQLiteOpenHelper类，然后重写其中的onCreate()方法，在onCreate()方法中，执行数据库创建的SQL语句。而SQLiteOpenHelper不仅仅用于SQLite的创建，也可以对其进行维护，以及获得SQLiteDatabase这个数据库操作对象。 SQLiteOpenHelper提供了两个构造器，用于传递当前上下文对象以及SQLite数据库版本信息，在SQLiteOpenHelper的继承类构造方法中，会调用它：       1  2  3       // context是上下文对象；name是数据库名称；factory是一个允许子类在查询时使用的游标，一般不用传null;version是数据库版本号；errorHandler是一个接口，当数据库错误的时候，执行的补救方法。   SQLiteOpenHelper(Context context,String name,SQLiteDatabase.CursorFactory factory, int  version).  SQLiteOpenHelper(Context context,String name,SQLiteDatabase.CursorFactroy factory, int  version,DatabaseErrorHandler errorHandler).       
- 常用的方法： 
- 
-  String getDatabaseName() :获取数据库名。 
-  SQLiteDatabase getReadableDatabase() :创建或者打开一个可读的数据库对象。 
-  SQLiteDatabase getWritableDatabase() :创建或者打开一个可读/写的数据库对象。 
-  abstract void onCreate(SQLiteDatabase db) :当第一次调用SQLiteOpenHelper的时候执行，之后再次调用将不再执行，一般用于完成数据库初始化的工作。 
-  void onUpgrade(SQLiteDatabase db,int oldVersion,int newVersion) :当数据库版本号发生向上更新时，被执行。 
-  void onDowngrade(SQLiteDatabase db,int oldVersion,int newVersion) 当数据库版本号发生向下更新时，被执行。 
- 
- 执行CRUD 　当使用SQLiteOpenHelper的getReadableDatabase()或者getWritableDatabase()方法获取到SQLiteDatabase对象，就可以对这个数据库进行操作了。 
- 对于熟悉SQL语句的开发者而言，其实只需要使用两个方法，即可执行所有CRUD操作，以下方法提供多个重载方法： 
- 
- void execSQL()：通过SQL语句执行一条非查询语句。 
- Cursor rawQuery()：通过SQL语句执行一条查询语句。 
- 
-
+         创建SQLite数据库推荐继承SQLiteOpenHelper类，然后重写其中的onCreate()方法，在onCreate()方法中，执行数据库创建的SQL语句。而SQLiteOpenHelper不仅仅用于SQLite的创建，也可以对其进行维护，以及获得SQLiteDatabase这个数据库操作对象。 SQLiteOpenHelper提供了两个构造器，用于传递当前上下文对象以及SQLite数据
     
     
         <a href="/2014/06/23/SQLite/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -469,18 +350,12 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-         ##AppDelegate.h与AppDelegate.cpp文件 这两个文件时Cocos2d-x游戏的入口文件，控制着游戏的生命周期,除去构造函数和析构函数外，共有 3 个方法。 
-      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20       // 应用程序启动后将调用这个方法。默认的实现中已经包含了游戏启动后的必要准备     bool   applicationDidFinishLaunching  ()    &#123;       //  初始化游戏引擎控制器Director,以便启动游戏引擎        auto  director = Director::getInstance();       auto  glview = director-&gt;getOpenGLView();       if (!glview)&#123;          glview = GLView::create( "My Game" );          director-&gt;setOpenGLView(glview);      &#125;       //  启动FPS显示       director-&gt;setDisplayStats( true );       //  设置绘制间隔       director-&gt;setAnimationInterval( 1.0  /  6.0 );             auto  scence = HelloWorld::createScene();      director-&gt;runWithScene(scence);             return   true ;  &#125;      
- 这段代码首先对引擎进行必要的初始化，然后开启了 FPS 显示。FPS 即每秒帧速率，也就是屏幕每秒重绘的次数。启用了FPS 显示后，当前 FPS 会在游戏的左下角显示。通常在游戏开发阶段，我们会启用 FPS 显示，这样就可以方便地确定游戏运行是否流畅。 
- 接下来是设置绘制间隔。绘制间隔指的是两次绘制的时间间隔，因此绘制间隔的倒数就是 FPS 上限。对于移动设备来说，我们通常都会将 FPS 限制在一个适当的范围内。过低的每秒重绘次数会使动画显示出卡顿的现象，而提高每秒重绘次数会导致设备运算量大幅增加，造成更高的能耗。人眼的刷新频率约为 60 次每秒，因此把 FPS 限定在 60 是一个较为合理的设置，Cocos2d-x 就把绘制间隔设置为 1/60 秒。至此，我们已经完成了引擎的初始化，接下来我们将启动引擎。 
- 最后也是最关键的步骤，那就是创建 Hello World 场景，然后指派 Director 运行这个场景。对于游戏开发者而言，我们需要在此处来对我们的游戏进行其他必要的初始化，例如读取游戏设置、初始化随机数列表等。程序的最末端返回 true，表示程序已经正常初始化。 
-  void applicationDidEnterBackground() 。当应用程序将要进入后台时，会调用这个方法。具体来说，当用户把程序切换到后台，或手机接到电话或短信后程序被系统切换到后台时，会调用这个方法。此时，应该暂停游戏中正在播放的音乐或音效。动作激烈的游戏通常也应该在此时进行暂停操作，以便玩家暂时离开游戏时不会遭受重大损失。 
-  void applicationWillEnterForeground() 。该方法与 applicationDidEnterBackground()成对出现，在应用程序回到前台 时被调用。相对地，我们通常在这里继续播放刚才暂停的音乐，显示游戏暂停菜单等。 
-
+           AppDelegate.h与AppDelegate.cpp文件  这两个文件时Cocos2d-x游戏的入口文件，控制着游戏的生命周期,除去构造函数和析构函数外，共有 3 个方法。 
+      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20       // 应用程序启动后将调用这个方法。默认的实现中
     
     
         <a href="/2014/06/23/Cocos2d-X-30-Hello-World-分析/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -524,27 +399,11 @@
       1  2       abs (- 1 ) ==  1    abs (- 42 ) ==  42       
  
   contains(sequence,element):判断给定的序列（如数组）是否包含特定的元素 
-      1  2  3  4       var  languages = [ "Swift" , "Objective-C" ]   contains (languages, "Swift" ) ==  true    contains (languages, "Java" ) ==  false    contains ([ 29 , 85 , 42 , 96 , 75 ], 42 ) ==  true       
- 
-  drop 
- 
- 
- 
- 
-  abs(singedNumber):返回给定的有符号数字的绝对值 
-      1  2       abs (- 1 ) ==  1    abs (- 42 ) ==  42       
- 
-  contains(sequence,element):判断给定的序列（如数组）是否包含特定的元素 
-      1  2  3  4       var  languages = [ "Swift" , "Objective-C" ]   contains (languages, "Swift" ) ==  true    contains (languages, "Java" ) ==  false    contains ([ 29 , 85 , 42 , 96 , 75 ], 42 ) ==  true       
- 
-  drop 
- 
- 
-
+      1  2  3  4       var  languages = [ "Sw
     
     
         <a href="/2014/06/20/Swift内建函数/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -585,202 +444,11 @@
     
          程序执行需要读取到安全敏感项必需在androidmanifest.xml中声明相关权限请求, 完整列表如下: 
  
-  android.permission.ACCESS_CHECKIN_PROPERTIES 允许读写访问”properties”表在 checkin数据库中，改值可以修改上传( Allows read/write access to the “properties” table in the checkin database, to change values that get uploaded) 
- 
-  android.permission.ACCESS_COARSE_LOCATION 允许一个程序访问CellID或WiFi热点来获取粗略的位置(Allows an application to access coarse (e.g., Cell-ID, WiFi) location) 
- 
-  android.permission.ACCESS_FINE_LOCATION 允许一个程序访问精良位置(如GPS) (Allows an application to access fine (e.g., GPS) location) 
- 
-  android.permission.ACCESS_LOCATION_EXTRA_COMMANDS 允许应用程序访问额外的位置提供命令(Allows an application to access extra location provider commands) 
- 
-  android.permission.ACCESS_MOCK_LOCATION 允许程序创建模拟位置提供用于测试(Allows an application to create mock location providers for testing) 
- 
-  android.permission.ACCESS_NETWORK_STATE 允许程序访问有关GSM网络信息(Allows applications to access information about networks) 
- 
-  android.permission.ACCESS_SURFACE_FLINGER 允许程序使用SurfaceFlinger底层特性 (Allows an application to use SurfaceFlinger’s low level features) 
- 
-  android.permission.ACCESS_WIFI_STATE 允许程序访问Wi-Fi网络状态信息(Allows applications to access information about Wi-Fi networks) 
- 
-  android.permission.ADD_SYSTEM_SERVICE 允许程序发布系统级服务(Allows an application to publish system-level services). 
- 
-  android.permission.BATTERY_STATS 允许程序更新手机电池统计信息(Allows an application to update the collected battery statistics) 
- 
-  android.permission.BLUETOOTH 允许程序连接到已配对的蓝牙设备(Allows applications to connect to paired bluetooth devices) 
- 
-  android.permission.BLUETOOTH_ADMIN 允许程序发现和配对蓝牙设备(Allows applications to discover and pair bluetooth devices) 
- 
-  android.permission.BRICK 请求能够禁用设备(非常危险)(Required to be able to disable the device (very *erous!).) 
- 
-  android.permission.BROADCAST_PACKAGE_REMOVED 允许程序广播一个提示消息在一个应用程序包已经移除后(Allows an application to broadcast a notification that an application package has been removed) 
- 
-  android.permission.BROADCAST_STICKY 允许一个程序广播常用intents(Allows an application to broadcast sticky intents) 
- 
-  android.permission.CALL_PHONE 允许一个程序初始化一个电话拨号不需通过拨号用户界面需要用户确认 (Allows an application to initiate a phone call without going through the Dialer user interface for the user to confirm the call being placed.) 
- 
-  android.permission.CALL_PRIVILEGED 允许一个程序拨打任何号码，包含紧急号码无需通过拨号用户界面需要用户确认 (Allows an application to call any phone number, including emergency numbers, without going through the Dialer user interface for the user to confirm the call being placed) 
- 
-  android.permission.CAMERA 请求访问使用照相设备(Required to be able to access the camera device. ) 
- 
-  android.permission.CHANGE_COMPONENT_ENABLED_STATE 允许一个程序是否改变一个组件或其他的启用或禁用(Allows an application to change whether an application component (other than its own) is enabled or not. ) 
- 
-  android.permission.CHANGE_CONFIGURATION 允许一个程序修改当前设置，如本地化(Allows an application to modify the current configuration, such as locale. ) 
- 
-  android.permission.CHANGE_NETWORK_STATE 允许程序改变网络连接状态(Allows applications to change network connectivity state) 
- 
-  android.permission.CHANGE_WIFI_STATE 允许程序改变Wi-Fi连接状态(Allows applications to change Wi-Fi connectivity state) 
- 
-  android.permission.CLEAR_APP_CACHE 允许一个程序清楚缓存从所有安装的程序在设备中(Allows an application to clear the caches of all installed applications on the device. ) 
- 
-  android.permission.CLEAR_APP_USER_DATA 允许一个程序清除用户设置(Allows an application to clear user data) 
- 
-  android.permission.CONTROL_LOCATION_UPDATES 允许启用禁止位置更新提示从无线模块 (Allows enabling/disabling location update notifications from the radio. ) 
- 
-  android.permission.DELETE_CACHE_FILES 允许程序删除缓存文件(Allows an application to delete cache files) 
- 
-  android.permission.DELETE_PACKAGES 允许一个程序删除包(Allows an application to delete packages) 
- 
-  android.permission.DEVICE_POWER 允许访问底层电源管理(Allows low-level access to power management) 
- 
-  android.permission.DIAGNOSTIC 允许程序RW诊断资源(Allows applications to RW to diagnostic resources. ) 
- 
-  android.permission.DISABLE_KEYGUARD 允许程序禁用键盘锁(Allows applications to disable the keyguard ) 
- 
-  android.permission.DUMP 允许程序返回状态抓取信息从系统服务(Allows an application to retrieve state dump information from system services.) 
- 
-  android.permission.EXPAND_STATUS_BAR 允许一个程序扩展收缩在状态栏,android开发网提示应该是一个类似Windows Mobile中的托盘程序(Allows an application to expand or collapse the status bar. ) 
- 
-  android.permission.FACTORY_TEST 作为一个工厂测试程序，运行在root用户(Run as a manufacturer test application, running as the root user. ) 
- 
-  android.permission.FLASHLIGHT 访问闪光灯,android开发网提示HTC Dream不包含闪光灯(Allows access to the flashlight ) 
- 
-  android.permission.FORCE_BACK 允许程序强行一个后退操作是否在顶层activities(Allows an application to force a BACK operation on whatever is the top activity. ) 
- 
-  android.permission.FOTA_UPDATE 暂时不了解这是做什么使用的，android开发网分析可能是一个预留权限. 
- 
-  android.permission.GET_ACCOUNTS 访问一个帐户列表在Accounts Service中(Allows access to the list of accounts in the Accounts Service) 
- 
-  android.permission.GET_PACKAGE_SIZE 允许一个程序获取任何package占用空间容量(Allows an application to find out the space used by any package. ) 
- 
-  android.permission.GET_TASKS 允许一个程序获取信息有关当前或最近运行的任务，一个缩略的任务状态，是否活动等等(Allows an application to get information about the currently or recently running tasks: a thumbnail representation of the tasks, what activities are running in it, etc.) 
- 
-  android.permission.HARDWARE_TEST 允许访问硬件(Allows access to hardware peripherals. ) 
- 
-  android.permission.INJECT_EVENTS 允许一个程序截获用户事件如按键、触摸、轨迹球等等到一个时间流，android 开发网提醒算是hook技术吧(Allows an application to inject user events (keys, touch, trackball) into the event stream and deliver them to ANY window.) 
- 
-  android.permission.INSTALL_PACKAGES 允许一个程序安装packages(Allows an application to install packages. ) 
- 
-  android.permission.INTERNAL_SYSTEM_WINDOW 允许打开窗口使用系统用户界面(Allows an application to open windows that are for use by parts of the system user interface. ) 
- 
-  android.permission.INTERNET 允许程序打开网络套接字(Allows applications to open network sockets) 
- 
-  android.permission.MANAGE_APP_TOKENS 允许程序管理(创建、催后、 z- order默认向z轴推移)程序引用在窗口管理器中(Allows an application to manage (create, destroy, Z-order) application tokens in the window manager. ) 
- 
-  android.permission.MASTER_CLEAR 目前还没有明确的解释，android开发网分析可能是清除一切数据，类似硬格机 
- 
-  android.permission.MODIFY_AUDIO_SETTINGS 允许程序修改全局音频设置(Allows an application to modify global audio settings) 
- 
-  android.permission.MODIFY_PHONE_STATE 允许修改话机状态，如电源，人机接口等(Allows modification of the telephony state ? power on, mmi, etc. ) 
- 
-  android.permission.MOUNT_UNMOUNT_FILESYSTEMS 允许挂载和反挂载文件系统可移动存储 (Allows mounting and unmounting file systems for removable storage. ) 
- 
-  android.permission.PERSISTENT_ACTIVITY 允许一个程序设置他的activities显示 (Allow an application to make its activities persistent. ) 
- 
-  android.permission.PROCESS_OUTGOING_CALLS 允许程序监视、修改有关播出电话(Allows an application to monitor, modify, or abort outgoing calls) 
- 
-  android.permission.READ_CALENDAR 允许程序读取用户日历数据(Allows an application to read the user’s calendar data.) 
- 
-  android.permission.READ_CONTACTS 允许程序读取用户联系人数据(Allows an application to read the user’s contacts data.) 
- 
-  android.permission.READ_FRAME_BUFFER 允许程序屏幕波或和更多常规的访问帧缓冲数据(Allows an application to take screen shots and more generally get access to the frame buffer data) 
- 
-  android.permission.READ_INPUT_STATE 允许程序返回当前按键状态(Allows an application to retrieve the current state of keys and switches. ) 
- 
-  android.permission.READ_LOGS 允许程序读取底层系统日志文件(Allows an application to read the low-level system log files. ) 
- 
-  android.permission.READ_OWNER_DATA 允许程序读取所有者数据(Allows an application to read the owner’s data) 
- 
-  android.permission.READ_SMS 允许程序读取短信息(Allows an application to read SMS messages.) 
- 
-  android.permission.READ_SYNC_SETTINGS 允许程序读取同步设置(Allows applications to read the sync settings) 
- 
-  android.permission.READ_SYNC_STATS 允许程序读取同步状态(Allows applications to read the sync stats) 
- 
-  android.permission.REBOOT 请求能够重新启动设备(Required to be able to reboot the device. ) 
- 
-  android.permission.RECEIVE_BOOT_COMPLETED 允许一个程序接收到 ACTION_BOOT_COMPLETED广播在系统完成启动(Allows an application to receive the ACTION_BOOT_COMPLETED that is broadcast after the system finishes booting. ) 
- 
-  android.permission.RECEIVE_MMS 允许一个程序监控将收到MMS彩信,记录或处理(Allows an application to monitor incoming MMS messages, to record or perform processing on them. ) 
- 
-  android.permission.RECEIVE_SMS 允许程序监控一个将收到短信息，记录或处理(Allows an application to monitor incoming SMS messages, to record or perform processing on them.) 
- 
-  android.permission.RECEIVE_WAP_PUSH 允许程序监控将收到WAP PUSH信息(Allows an application to monitor incoming WAP push messages. ) 
- 
-  android.permission.RECORD_AUDIO 允许程序录制音频(Allows an application to record audio) 
- 
-  android.permission.REORDER_TASKS 允许程序改变Z轴排列任务(Allows an application to change the Z-order of tasks) 
- 
-  android.permission.RESTART_PACKAGES 允许程序重新启动其他程序(Allows an application to restart other applications) 
- 
-  android.permission.SEND_SMS 允许程序发送SMS短信(Allows an application to send SMS messages) 
- 
-  android.permission.SET_ACTIVITY_WATCHER 允许程序监控或控制activities已经启动全局系统中Allows an application to watch and control how activities are started globally in the system. 
- 
-  android.permission.SET_ALWAYS_FINISH 允许程序控制是否活动间接完成在处于后台时Allows an application to control whether activities are immediately finished when put in the background. 
- 
-  android.permission.SET_ANIMATION_SCALE 修改全局信息比例(Modify the global animation scaling factor.) 
- 
-  android.permission.SET_DEBUG_APP 配置一个程序用于调试(Configure an application for debugging.) 
- 
-  android.permission.SET_ORIENTATION 允许底层访问设置屏幕方向和实际旋转(Allows low-level access to setting the orientation(actually rotation) of the screen.) 
- 
-  android.permission.SET_PREFERRED_APPLICATIONS 允许一个程序修改列表参数 PackageManager.addPackageToPreferred() 和PackageManager.removePackageFromPreferred()方法(Allows an application to modify the list of preferred applications with the PackageManager.addPackageToPreferred() and PackageManager.removePackageFromPreferred() methods.) 
- 
-  android.permission.SET_PROCESS_FOREGROUND 允许程序当前运行程序强行到前台(Allows an application to force any currently running process to be in the foreground.) 
- 
-  android.permission.SET_PROCESS_LIMIT 允许设置最大的运行进程数量(Allows an application to set the maximum number of (not needed) application processes that can be running. ) 
- 
-  android.permission.SET_TIME_ZONE 允许程序设置时间区域(Allows applications to set the system time zone) 
- 
-  android.permission.SET_WALLPAPER 允许程序设置壁纸(Allows applications to set the wallpaper ) 
- 
-  android.permission.SET_WALLPAPER_HINTS 允许程序设置壁纸hits(Allows applications to set the wallpaper hints) 
- 
-  android.permission.SIGNAL_PERSISTENT_PROCESSES 允许程序请求发送信号到所有显示的进程中 (Allow an application to request that a signal be sent to all persistent processes) 
- 
-  android.permission.STATUS_BAR 允许程序打开、关闭或禁用状态栏及图标Allows an application to open, close, or disable the status bar and its icons. 
- 
-  android.permission.SUBSCRIBED_FEEDS_READ 允许一个程序访问订阅RSS Feed内容提供(Allows an application to allow access the subscribed feeds ContentProvider. ) 
- 
-  android.permission.SUBSCRIBED_FEEDS_WRITE 系统暂时保留改设置,android开发网认为未来版本会加入该功能。 
- 
-  android.permission.SYSTEM_ALERT_WINDOW 允许一个程序打开窗口使用 TYPE_SYSTEM_ALERT，显示在其他所有程序的顶层(Allows an application to open windows using the type TYPE_SYSTEM_ALERT, shown on top of all other applications. ) 
- 
-  android.permission.VIBRATE 允许访问振动设备(Allows access to the vibrator) 
- 
-  android.permission.WAKE_LOCK 允许使用PowerManager的 WakeLocks保持进程在休眠时从屏幕消失( Allows using PowerManager WakeLocks to keep processor from sleeping or screen from dimming) 
- 
-  android.permission.WRITE_APN_SETTINGS 允许程序写入API设置(Allows applications to write the apn settings) 
- 
-  android.permission.WRITE_CALENDAR 允许一个程序写入但不读取用户日历数据(Allows an application to write (but not read) the user’s calendar data. ) 
- 
-  android.permission.WRITE_CONTACTS 允许程序写入但不读取用户联系人数据(Allows an application to write (but not read) the user’s contacts data. ) 
- 
-  android.permission.WRITE_GSERVICES 允许程序修改Google服务地图(Allows an application to modify the Google service map. ) 
- 
-  android.permission.WRITE_OWNER_DATA 允许一个程序写入但不读取所有者数据(Allows an application to write (but not read) the owner’s data.) 
- 
-  android.permission.WRITE_SETTINGS 允许程序读取或写入系统设置(Allows an application to read or write the system settings. ) 
- 
-  android.permission.WRITE_SMS 允许程序写短信(Allows an application to write SMS messages) 
- 
-  android.permission.WRITE_SYNC_SETTINGS 允许程序写入同步设置(Allows applications to write the sync settings) 
- 
- 
-
+  android.permission.ACCESS_CHECKIN_PROPERTIES 允许读写访问”properties”表在 checkin数据库中，改值可以修改上传( Allows read/write access to the “properties” table 
     
     
         <a href="/2014/06/19/Android-permission访问权限大全/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -822,43 +490,11 @@
           - void onCreate():当Service第一次被创建后将立即回调该方法。
 - void onStartCommand(Intent intent,int flag,int startId):每次通过startService()方法启动Service时都会被回调
 - void onDestroy():当Service被关闭前会被回调
-- abstract IBinder onBind(Intent intent):该方法是Service子类必须实现的方法，如果不需要通过绑定的方式启动服务，可以返回Null
-- boolean onUnbind(Intent intent):当Service上绑定的所有客户端都被断开连接将被回调该方法
-   通过Service的启动方式与适用范围，可将Service分为两类服务： 
-  - start:启动服务，当一个Android组件（如一个Activity）调用startService()的时候，启动一个Service。Service一旦启动，就可以一直在后台运行下去，即使这个启动它的组件被摧毁。这样的服务模式，通常用于执行一个操作而不需要返回结果给调用者。
-- Bound：绑定服务，当一个Android组件（如一个Activity）调用binService()，一个绑定Service提供了一个客户端到服务端的接口，允许组件与服务之间进行交互，这样可以实现跨进程的通信。绑定服务的生命周期默认是跟随他的绑定组件的，但是一个绑定Service可以绑定多个Android组件，如果这些Android组件都被销毁，那么这个绑定服务也将被销毁。
-   一个Service可以包含上面两种运行方式，与它重载的方法有关，如果重写了onStartCommand()即支持启动Service，如果重写onBind()即支持绑定服务，如果重载实现了两个方法即可实现两种服务。 
- 对于两种方式的Service，其生命周期被回调的方法也是不一样的： 
-   
- ##清单文件的配置     Service是Android的四大组件之一，所以它必须在AndroidManifest清单文件中进行配置，否则系统将找不到这个服务。Service的配置也是在 这个节点下，使用 进行配置，其中android:name属性为Service类。     如果开发的Service需要被外部操作，还需要配置 节点。     如果Service强制仅本应用操作，可以配置 节点的android:exported属性为false，这样即使配置了 ，外部应用也无法操作这个服务，android:exported属性默认是true。      
- ##Service开发步骤 
- 
- 开发一个Service类，需要继承Service或者IntentService 
- 在AndroidManifest清单文件中注册这个Service组件 
- 在一个Android组件中启动这个Service 
- Service使用完成之后，需要停止这个服务 
- 
- ##启动Service     启动服务必须实现Service.onStartCommond()方法，启动服务使用startService(Intent intent)方法开启一个服务，仅需要传递一个Intent对象即可，在Intent对象中指定需要启动的服务，而使用startService()方法启动的服务，在服务的外部，必须使用stopService()方法停止当前的Service，该Service就会被销毁。     对于启动服务，一旦启动将与访问它的组件无任何关联，即使访问它的组件被销毁了，这个服务也一直运行下去，直到被销毁！       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29       public    class   StartService   extends   Service  &#123;  	 private   final   static  String TAG =  "StartService" ;  	 @Override   	  public  IBinder  onBind  (Intent arg0)   &#123;  		 // 仅通过startService()启动服务，所以这个方法返回null即可。   		 return   null ;  	&#125;  	 @Override   	  public   void   onCreate  ()  &#123;  		 super .onCreate();  		Log.i(TAG, "Service is Create" );	  	&#125;  	 @Override         public   void   onCreate  ()   &#123;  		 super .onCreate();  		Log.i(TAG,  "Service is Created" );          	&#125;    	 @Override   	  public   int   onStartCommand  (Intent intent,  int  flags,  int  startId)   &#123;      	Log.i(TAG,  "Service is started" );           return   super .onStartCommand(intent, flags, startId);  	&#125;  	 @Override   	  public   void   onDestroy  ()   &#123;  		Log.i(TAG,  "Service is Destroyed" );  		 super .onDestroy();  	&#125;  &#125;       
-      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26       public    class   MainActivity   extends   Activity  &#123;  	 private  Button startSer,stopSer;  	 private  Intent intent =  null ;    	 @Override   	  protected   void   onCreate  (Bundle saveInstanceState)  &#123;  		 super .onCreate(savedInstanceState);  		setContentView(R.layout.activity_main);  		startSer = (Button) findViewById(R.id.startSer);  		stopSer = (Button) findViewById(R.id.stopSer);    		intent =  new  Intent(MainActivity,StartService.class);  		startSer.setOnClickListener( new  View.OnClickListener() &#123;  			 @Override   			  public   void   onClick  (View v)   &#123;  				startService(intent);  			&#125;  		&#125;  		stopSer.setOnClickListener( new  View.OnClickListener() &#123;  			 @Override   			  public   void   onClick  (View v)   &#123;  				stopService(intent);  			&#125;  		&#125;  	&#125;  &#125;      
- ##绑定服务     如果Service和宿主之间需要进行方法调用或者数据交换，则应该使用Context对象的binService()和unbindSevice()方法来绑定和解除绑定服务。     Context的binService()方法的完整方法签名为:binService(Intent service,ServiceConnection conn,int flags) 
-  - service:通过Intent指定要绑定的Service
-- conn:一个ServiceConnection对象，该对象用于监听访问者与Service对象的onServiceConnected()方法
-- flags:指定绑定时是否自动创建Service，0为不自动创建，BIND_AUTO_CREATE为自动创建
-
-从上面的bindService方法可以看出，绑定一个服务与宿主交互，依托一个ServiceConnection接口，这个接口对象必须声明在主线程中，通过实现其中的两个方法，来实现与Service的交互。
-- void onServiceConnection(ComponentName name,IBinder service)：绑定服务的时候被回调，在这个方法获取绑定Service传递过来的IBinder对象，通过这个IBinder对象，实现宿主和Service的交互。
-- void onServiceDisconnected(ComponetName name):当取消绑定时回调，但正常情况下不被调用，它的调用时机是当Service服务被意外销毁时，才被自动调用。
-
-在绑定Service时，必须提供一个IBinder onBind(Intent intent)方法，在绑定本地Service的情况下，onBind()方法h返回的IBinder对象会传给宿主ServiceConnection.onServiceConnected()方法发service参数，这样宿主就可用通过IBinder对象与Service进行通信。实际开发中一般会继承Binder类(IBinder的实现类)的方式来实现自己的IBinder对象。
-
-如果绑定服务提供的onBind返回为Null，则也可以使用bindService()启动服务，但不会绑定上Service，因此宿主的ServiceConnection.onServiceConnected()方法不会被执行。
-        1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53       // MainActivity.java    public    class   MainActivity   extends   Activity   &#123;  	 private   final  String TAG =  "MainActivity" ;  	 private  Button bn1,bn2,bn3;  	 private  MyService.MyBinder binder;  	 private  ServiceConnection conn =  new  ServiceConnection() &#123;    		 @Override   		  public   void   onServiceDisconnected  (ComponentName name)   &#123;  			Log.d(TAG,  "--Service Disconnected--" );  		&#125;    		 @Override   		  public   void   onServiceConnected  (ComponentName name, IBinder service)   &#123;  			Toast.makeText(MainActivity. this ,  "绑定成功" , Toast.LENGTH_SHORT).show();  			binder = (MyService.MyBinder) service;  		&#125;  	&#125;;    	 @Override   	  protected   void   onCreate  (Bundle savedInstanceState)   &#123;  		 super .onCreate(savedInstanceState);  		setContentView(R.layout.activity_main);  		 final  Intent intent =  new  Intent(MainActivity. this ,MyService.class);  		  		bn1 = (Button) findViewById(R.id.button1);  		bn1.setOnClickListener( new  OnClickListener() &#123;  			 @Override   			  public   void   onClick  (View v)   &#123;  				bindService(intent, conn, Service.BIND_AUTO_CREATE);  			&#125;  		&#125;);  		bn2 = (Button) findViewById(R.id.button2);  		bn2.setOnClickListener( new  OnClickListener() &#123;  			 @Override   			  public   void   onClick  (View v)   &#123;  				binder =  null ;  				unbindService(conn);  			&#125;  		&#125;);  		bn3 = (Button) findViewById(R.id.button3);  		bn3.setOnClickListener( new  OnClickListener() &#123;  			 @Override   			  public   void   onClick  (View v)   &#123;  				 if (binder!= null )&#123;  					Toast.makeText(MainActivity. this ,  "Count" +binder.getCount(), Toast.LENGTH_SHORT).show();  				&#125; else  &#123;  					Toast.makeText(MainActivity. this ,  "未绑定" , Toast.LENGTH_SHORT).show();  				&#125;  			&#125;  		&#125;);  		  	&#125;      
-      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31       &lt;!-- activity_main.xml --&gt;    &lt; LinearLayout   xmlns:android = "http://schemas.android.com/apk/res/android"         xmlns:tools = "http://schemas.android.com/tools"        android:id = "@+id/container"        android:layout_width = "match_parent"        android:layout_height = "match_parent"        android:orientation = "vertical"        tools:context = "com.example.service.MainActivity"  &gt;         &lt; Button             android:id = "@+id/button1"            android:layout_width = "wrap_content"            android:layout_height = "wrap_content"            android:layout_gravity = "center_horizontal"            android:text = "bind"  /&gt;         &lt; Button             android:id = "@+id/button2"            android:layout_width = "wrap_content"            android:layout_height = "wrap_content"            android:layout_gravity = "center_horizontal"            android:text = "unbind"  /&gt;         &lt; Button             android:id = "@+id/button3"            android:layout_width = "wrap_content"            android:layout_height = "wrap_content"            android:layout_gravity = "center_horizontal"            android:text = "getCount"  /&gt;         &lt;/ LinearLayout &gt;       
-      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40       //MyService.java    public    class   MyService   extends   Service   &#123;  	 private   final   static  String TAG =  "MyService" ;  	 private   int  count;  	 private   boolean  quit =  true ;    	 private  Thread thread;  	 private  MyBinder binder =  new  MyBinder();    	 public    class   MyBinder   extends   Binder   &#123;  		  public   int   getCount  ()   &#123;  			 return  count;  		&#125;  	&#125;    	 @Override   	  public   void   onCreate  ()   &#123;  		 super .onCreate();  		thread =  new  Thread( new  Runnable() &#123;  			 @Override   			  public   void   run  ()   &#123;  				 while  (quit) &#123;  					 try  &#123;  						Thread.sleep( 1000 );  					&#125;  catch  (InterruptedException e) &#123;    					&#125;  					count++;  				&#125;  			&#125;  		&#125;);  		thread.start();  	&#125;    	 @Override   	  public  IBinder  onBind  (Intent intent)   &#123;  		 return  binder;  	&#125;    &#125;      
+- abstract IBinder onBind
     
     
         <a href="/2014/06/19/Service/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -899,55 +535,11 @@
     
          面向对象编程————Object Oriented Programming，简称OOP，是一种程序设计思想。OOP吧对象作为程序的基本单元，一个对象包含了数据和操作数据的函数。 
  面向过程的程序设计把计算机程序视为一系列的命令集合，即一组函数的顺序执行，为了简化程序设计，面向过程吧函数继续切分成为子函数，即把大块的函数通过切割成小块函数降低系统的复杂度。 
- 而面向对象的程序设计吧计算机程序视为一组对象的集合，而每个对象都可以接受其他对象发过来的消息，并处理这些消息，计算机程序的执行就是一系列消息在各个对象之间传递。 
- 在Python中，所有数据类型都可以视为对象，当然也可以自定义对象，自定义的对象数据类型就是面向对象中的类(Class)的概念。 
- ##类和实例 面向对象最重要的概念就是类（Class）和实例（Instance），必须牢记类是抽象的模板，而实例是根据类创建出来的一个个具体的‘对象’，每个对象都拥有相同的方法，但各自的数据可能不同。 以Student类为例，在Python中，定义类是通过 class 关键字       1  2        class   Student  (object) :   	 pass        
-  clas 后米娜紧接着是类名，即’Student’，类名通过是大写开头的单词，紧接着是 (object) ，表示类是从哪个类继承下来的， object 是所有类都会继承的类。 定义了好了 Student 类，就可以根据 Student 类创建出 Student 的实例，创建实例是通过类名+()实现的：       1  2  3  4  5  6  7  8  9  10  11  12  13      &gt;&gt;&gt; jack = Student()  &gt;&gt;&gt; jack  &lt;__main__.Student object at 0x10f5e3110&gt;  &gt;&gt;&gt; Student  &lt;class '__main__.Student'&gt;  &gt;&gt;&gt;   通过一个特殊的`__init__`方法，在创建实例的时候，就可以对某些属性初始化  ```Python  class Student(object):        def __init__(self, name, score):          self.name = name          self.score = score       
- 注意 innit 方法的第一个参数永远是 self ，表示创建的实例本身，因此在 __init__ 方法内部，就可以把各个属性绑定到 self ，因为 self 就指向创建的实例本身。 
- 有了 __init__ 方法，在创建实例的时候，就不能传入空的参数了，必须传入与 __init__ 方法匹配的参数，但 self 不需要传，Python解释器自己会把实例变量穿进去：       1  2  3  4  5  6       &gt;&gt;&gt;    class   Student  (object) :    ...         ...        def   __init__  (self,name) :    ...              self.name = name   ...     &gt;&gt;&gt;  jack = Student( 'jack' )       
- ##数据封装 面向对象编程的一个重要特点就是数据封装。 类本身就拥有数据，要访问数据，就没有必要从外面的函数去访问，就直接用类内部定义访问数据的函数，这样就把“数据”给封装起来了，这些封装数据的函数是和类本身关联起来的，外面称之为类的方法，要定义一个方法，除了第一个参数是 self 外，其他和普通函数一样。要调用一个方法，只需要在实例变量上直接调用，出了 self 不用传递，其他参数正常传入。       1  2  3  4  5  6  7  8  9       &gt;&gt;&gt;    class   Student  (object) :    ...        def   __init__  (self,name) :    ...              self.name = name   ...        def   getName  (self) :    ...               return  self.name   ...     &gt;&gt;&gt;  jack = Student( 'jack' )   &gt;&gt;&gt;  jack.getName()   'jack'        
- ##访问限制 在Class内部，可以有属性和方法，而外部代码可以通过直接调用实例变量的方法来操作数据，这样就可以隐藏内部的复杂逻辑。 为了内部属性不被外部访问，可以把属性的名称前加上两个下划线 __ ，在Python中，实例变量名如果以 __ 开头，就变成了一个私有变量(private)，只有内部可以访问，外部不能访问。 需要注意的是，在Python中变量名类似 __xxx__ 的，也就是以双下划线开头，并且以双下划线结尾的，是特殊变量，特殊变量是可以直接访问的，不是private变量，所以不能用 name 这样的变量名。 双下划线开头的实例变量外部不能直接访问是因为Python解释器对外把 __name 变量改成了 _Student__name ，所以，仍然可以通过 _Student__name 来访问 __name 变量。       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15       # /usr/bin/env python    # -*- coding:utf-8 -*-       class   Student  (object) :   	  def   __init__  (self,name) :   		self.__name = name  	  def   print_name  (self) :   		 print   '%s'  % (self.__name)    jack = Student( 'jack' )  jack.print_name()   print  jack._Student__name   #执行结果    #jack    #jack        
- 但不同版本的Python解释器可能会把 __name 改成不同的变量名。 
- ##继承和多态 在OOP程序设计中，定义一个class的时候，可以从某个现有的class继承，新的class称为子类(Subclass)，而被继承的class称为基类、父类或者超类(Base class、Super class)       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19        class   Animal  (object) :   	  def   run  (self) :   		 print   'Animal is running...'       class   Dog  (Animal) :   	  def   run  (self) :   		 print   'Dog is running...'       class   Cat  (Animal) :   	 pass     dog = Dog()  dog.run()    cat = Cat()  cat.run()   #运行结果    #Dog is running...    #Animal is running...        
- 判断一个变量是否是某个类型可以用 isinstance() 判断：       1  2  3  4  5  6  7  8  9  10  11  12  13       &gt;&gt;&gt;  a = list()  # a是list类型    &gt;&gt;&gt;  b = Animal()  # b是Animal类型    &gt;&gt;&gt;  c = Dog()  # c是Dog类型    &gt;&gt;&gt;  isinstance(a,list)   True    &gt;&gt;&gt;  isinstance(b,list)   False    &gt;&gt;&gt;  isinstance(b,Animal)   True    &gt;&gt;&gt;  isinstance(c,Animal)   True    &gt;&gt;&gt;  isinstance(c,Dog)   True        
- ##获取对象信息 
- ###使用type() 判断对象类型，使用 type() 函数       1  2  3  4  5  6  7  8       &gt;&gt;&gt;  type( 123 )  &lt;type  'int' &gt;   &gt;&gt;&gt;  type( 'str' )  &lt;type  'str' &gt;   &gt;&gt;&gt;  type( None )  &lt;type  'NoneType' &gt;   &gt;&gt;&gt;  type(abs)  &lt;type  'builtin_function_or_method' &gt;       
- Python把每种type类型都定义好了常量，放在types模块里，使用之前，需要先导入：       1  2  3  4  5  6  7  8  9       &gt;&gt;&gt;   import  types   &gt;&gt;&gt;  type( 'abc' )==types.StringType   True    &gt;&gt;&gt;  type( u'abc' )==types.UnicodeType   True    &gt;&gt;&gt;  type([])==types.ListType   True    &gt;&gt;&gt;  type(str)==types.TypeType   True        
- ###使用isinstance() 对于class的继承关系，可以用 isinstance() 函数判断       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27       &gt;&gt;&gt;    class   Animal  (object) :    ...       pass    ...     &gt;&gt;&gt;    class   Dog  (Animal) :    ...       pass    ...     &gt;&gt;&gt;    class   Husky  (Dog) :    ...       pass    ...     &gt;&gt;&gt;  a = Animal()   &gt;&gt;&gt;  d = Dog()   &gt;&gt;&gt;  h = Husky()   &gt;&gt;&gt;  isinstance(h,Husky)   True    &gt;&gt;&gt;  isinstance(h,Dog)   True    &gt;&gt;&gt;  isinstance(h,Animal)   True    &gt;&gt;&gt;  isinstance(d,Husky)   False    &gt;&gt;&gt;  isinstance(d,Dog)   True    &gt;&gt;&gt;  isinstance(d,Animal)   True      &gt;&gt;&gt;  isinstance(d,(Animal,Husky)) # d是否为Animal,Husky中的一种    True        
- ###使用dir() 获取一个对象的所有属性和方法，可以使用 dir() 函数，它返回一个包含字符串的list       1  2       &gt;&gt;&gt;  dir( 'ABC' )  [ '__add__' ,  '__class__' ,  '__contains__' ,  '__delattr__' ,  '__doc__' ,  '__eq__' ,  '__format__' ,  '__ge__' ,  '__getattribute__' ,  '__getitem__' ,  '__getnewargs__' ,  '__getslice__' ,  '__gt__' ,  '__hash__' ,  '__init__' ,  '__le__' ,  '__len__' ,  '__lt__' ,  '__mod__' ,  '__mul__' ,  '__ne__' ,  '__new__' ,  '__reduce__' ,  '__reduce_ex__' ,  '__repr__' ,  '__rmod__' ,  '__rmul__' ,  '__setattr__' ,  '__sizeof__' ,  '__str__' ,  '__subclasshook__' ,  '_formatter_field_name_split' ,  '_formatter_parser' ,  'capitalize' ,  'center' ,  'count' ,  'decode' ,  'encode' ,  'endswith' ,  'expandtabs' ,  'find' ,  'format' ,  'index' ,  'isalnum' ,  'isalpha' ,  'isdigit' ,  'islower' ,  'isspace' ,  'istitle' ,  'isupper' ,  'join' ,  'ljust' ,  'lower' ,  'lstrip' ,  'partition' ,  'replace' ,  'rfind' ,  'rindex' ,  'rjust' ,  'rpartition' ,  'rsplit' ,  'rstrip' ,  'split' ,  'splitlines' ,  'startswith' ,  'strip' ,  'swapcase' ,  'title' ,  'translate' ,  'upper' ,  'zfill' ]       
- 类似 __xxx__ 的属性和方法在Python中都有特殊的用途，比如上例的 __len__ 方法返回长度。调用 len() 函数获取对象长度时，实际回去调用对象的 __len__ 方法。 利用 getattr() 、 setattr() 、 hasattr() 函数还可以直接操作一个对象的状态：       1  2  3  4  5  6  7  8  9  10       &gt;&gt;&gt;  obj = MyObject()   &gt;&gt;&gt;  hasattr(obj, 'x' ) # 是否有属性'x'？    True    &gt;&gt;&gt;  hasattr(obj, 'y' ) # 是否有属性'y'？    False    &gt;&gt;&gt;  setattr(obj, 'y' , 19 ) # 设置一个属性'y'    &gt;&gt;&gt;  hasattr(obj, 'y' ) # 是否有属性'y'？    True    &gt;&gt;&gt;  getattr(obj, 'y' ) # 或属性属性'y'    19        
- 可以传入一个default参数，如果属性不存在，就返回默认值：       1  2       &gt;&gt;&gt;  getattr(obj,  'z' ,  404 )  # 获取属性'z'，如果不存在，返回默认值404    404        
- ##动态绑定属性和方法 正常情况下，当我们定义了一个class，差创建一个class的实例后，我们可以给该实例绑定任何属性和方法，这就是动态语言的灵活性：       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15       &gt;&gt;&gt;    class   Student  (object) :    ...       pass    ...     &gt;&gt;&gt;  s = Student()   &gt;&gt;&gt;  s.name =  'Zoe'    &gt;&gt;&gt;   print  s.name  Zoe   &gt;&gt;&gt;    def   set_age  (self,age) :   #定义一个函数作为实例的方法    ...      self.age = age   ...     &gt;&gt;&gt;   from  types  import  MethodType   &gt;&gt;&gt;  s.set_age = MethodType(set_age,s,Student)  # 给实例绑定一个方法    &gt;&gt;&gt;  s.set_age( 22 )   &gt;&gt;&gt;  s.age   22        
- 但是其他的实例该方法是不起作用的       1  2  3  4  5       &gt;&gt;&gt;  s1 = Student()   &gt;&gt;&gt;  s2.set_age( 21 )  Traceback (most recent call last):    File  "&lt;stdin&gt;" , line  1 ,  in  &lt;module&gt;  NameError: name  's2'   is   not  defined       
- 可以给class绑定方法： 
- 
- 
- 
- Student.set_age = MethodType(set_age,None,Student) s1.set_age(21) s1.age 21 s.age 22       1  2  3  4  5  6  7  8  9  10  11  12        ##使用__slots__  如果想要限制class的属性怎么办？比如只允许Student实例添加`name`和`age`属性。  为了达到限制的目的，Python允许在定义class的时候，定义一个特殊的`__slots__`变量，来限制该class能添加的属性：  ```Python  &gt;&gt;&gt; s = Student()  &gt;&gt;&gt; s.name = &apos;Zoe&apos;  &gt;&gt;&gt; s.age = 22  &gt;&gt;&gt; s.score = 99  Traceback (most recent call last):    File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;  AttributeError: &apos;Student&apos; object has no attribute &apos;score&apos;       
- 
- 
- 
- 注意， __slots__ 定义的属性仅对当前类起作用，对继承的子类是不起作用的 
- ##@property 在绑定属性时，我们直接把属性暴露出来，这样还不安全 为了限制属性的使用范围，可以使用 @property 装饰器把一个方法变成属性调用：       1  2  3  4  5  6  7  8  9  10  11       &gt;&gt;&gt;    class   Student  (object) :    ...      @property   ...        def   score  (self) :    ...               return  self._score   ...      @score.setter   ...        def   score  (self,value) :    ...               if   not  isinstance(value,int):   ...                       raise  ValueError( 'score must be an integer!' )   ...               if  value &lt;  0   or  value &gt;  100 :   ...                       raise  ValueError( 'score must between 0 ~ 100' )   ...              self._score = value       
- @property的实现比较复杂，我们先考察如何使用。把一个getter方法变成属性，只需要加上@property就可以了，此时，@property本身又创建了另一个装饰器@score.setter，负责把一个setter方法变成属性赋值，于是，我们就拥有一个可控的属性操作：       1  2  3  4  5  6  7  8  9  10  11  12  13  14      &gt;&gt;&gt; s = Student()  &gt;&gt;&gt; s.score = 69  &gt;&gt;&gt; s.score   69  &gt;&gt;&gt; s.score = 101  Traceback (most recent call last):    File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;    File &quot;&lt;stdin&gt;&quot;, line 10, in score  ValueError: score must between 0 ~ 100  &gt;&gt;&gt; s.score = &apos;99&apos;  Traceback (most recent call last):    File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;    File &quot;&lt;stdin&gt;&quot;, line 8, in score  ValueError: score must be an integer!       
- 还可以定义只读属性，只定义getter方法，不定义setter方法就是一个只读属性：       1  2  3  4  5  6  7  8  9  10  11  12  13      class Student(object):        @property      def birth(self):          return self._birth        @birth.setter      def birth(self, value):          self._birth = value        @property      def age(self):          return 2014 - self._birth       
- 上面的birth是可读写属性，而age就是一个只读属性，因为age可以根据birth和当前时间计算出来。 
- ##多重继承 Python支持同时继承多个父类       1        class   SubClass  (SpuClass1,SpuClass2,...)         
- ##Mixin 在设计类的继承关系时，通常主线是单一继承下来的。为了混入额外的功能，可以通过多继承实现，这种设计称为Mixing。 为了更好地看出继承关系，可以在添加功能的类后面在Mixin，比如 class Dog(Mammal,RunnableMixin,CarnivorousMixin)  Python子弟啊的很多库使用了Mixi,举个例子，Python自带的 TCPServer 和 UDPServer 这两个网络服务，而要同时多个用户就必须使用多进程或多线程模型，这两种模型由 ForkingMixin 和 ThreadingMixin 提供。 
- ##定制类 之前，我们知道了一些形如 __xxx__ 的变量或方法的特殊作用，如： __slots__ ， __len__()  
- ### Str  类的说明       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27      ValueError: score must be an integer!   &gt;&gt;&gt;    class   Student  (object) :    ...        def   __init__  (self,name) :    ...              self.name = name   ...     &gt;&gt;&gt;   print  Student( 'Jack' )  &lt;__main__.Student object at  0x10e50d910 &gt;   &gt;&gt;&gt;    class   Student  (object) :    ...        def   __init__  (self,name) :    ...              self.name = name   ...        def   __str__  (self) :    ...               return   'Student object (name:%s)'  % self.name   ...     &gt;&gt;&gt;   print  Student( 'Jack' )  Student object (name:Jack)   &gt;&gt;&gt;  s  &lt;__main__.Student object at  0x10e50d790 &gt;	 # 直接输出还是“不好看”    &gt;&gt;&gt;    class   Student  (object) :    ...        def   __str__  (self) :    ...               return   'Student object (name:%s)'  % self.name   ...        def   __init__  (self,name) :    ...              self.name = name   ...      __repr__ = __str__   ...     &gt;&gt;&gt;  s = Student( "Jakc" )   &gt;&gt;&gt;  s  Student object (name:Jakc)       
- ### iter_  如果一个类要呗用于 for...in 循环，就必须实现一个 __iter__() 方法，该方法返回一个迭代对象，然后Python的for循环就会不断调用该迭代对象的 next() 方法拿到循环的下一个值，值得遇到StopIteration错误时退出循环。       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39       &gt;&gt;&gt;    class   Fib  (object) :    ...        def   __init__  (self) :    ...              self.a,self.b =  0 , 1    ...        def   __iter__  (self) :    ...               return  self   ...        def   next  (self) :    ...              self.a,self.b = self.b,self.a + self.b   ...               if  self.a &gt;  100000 :   ...                       raise  StopIteration()   ...               return  self.a   ...     &gt;&gt;&gt;   for  n  in  Fib():   ...       print  n   ...     1    1    2    3    5    8    13    21    34    55    89    144    233    377    610    987    1597    2584    4181    6765    10946    17711    28657    46368    75025        
- ### getitem  要想像list那样按照下标取元素，需要实现 getitem ()方法       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18       &gt;&gt;&gt;    class   Fib  (object) :    ...        def   __getitem__  (self,n) :    ...              a,b =  1 , 1    ...               for  x  in  range(n):   ...                      a,b = b,a+b   ...               return  a   ...     &gt;&gt;&gt;  f = Fib()   &gt;&gt;&gt;  f[ 0 ]   1    &gt;&gt;&gt;  f[ 1 ]   1    &gt;&gt;&gt;  f[ 10 ]   89    &gt;&gt;&gt;  f[ 20 ]   10946    &gt;&gt;&gt;  f[ 30 ]   1346269        
- 但是list有个神奇的切片方法：       1  2       &gt;&gt;&gt;  range( 100 )[ 5 : 10 ]  [ 5 ,  6 ,  7 ,  8 ,  9 ]       
- 对于Fib却报错。原因是 getitem ()传入的参数可能是一个int，也可能是一个切片对象slice，所以要做判断：       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17        class   Fib  (object) :         def   __getitem__  (self, n) :            if  isinstance(n, int):              a, b =  1 ,  1                for  x  in  range(n):                  a, b = b, a + b               return  a           if  isinstance(n, slice):              start = n.start              stop = n.stop              a, b =  1 ,  1               L = []               for  x  in  range(stop +  1 ):                   if  x &gt;= start:                      L.append(a)                  a, b = b, a + b               return  L       
- ### getattr  通过 __getattr__() 方法我们可以返回一个不存在的属性       1  2  3  4  5  6  7  8       &gt;&gt;&gt;    class   SubClass  (object) :    ...        def   __getattr__  (self,name) :    ...               if  name== 'age' :   ...                       return   lambda : 22    ...     &gt;&gt;&gt;  s = SubClass()   &gt;&gt;&gt;  s.age()   22        
- ### call  设置一个函数，通过实例本身调用       1  2  3  4  5  6  7  8  9       &gt;&gt;&gt;    class   Student  (object) :    ...        def   __init__  (self,name) :    ...              self.name = name   ...        def   __call__  (self) :    ...              print( 'My name is %s'  % self.name)   ...     &gt;&gt;&gt;  s = Student( 'zoe' )   &gt;&gt;&gt;  s()  My name  is  zoe       
- 通过callable()函数，我们就可以判断一个对象是否是“可调用”对象。       1  2  3  4  5  6  7  8  9  10       &gt;&gt;&gt;  callable(max)   True    &gt;&gt;&gt;  callable([ 1 , 2 , 4 ])   False    &gt;&gt;&gt;  callable( None )   False    &gt;&gt;&gt;  callable( 'str' )   False    &gt;&gt;&gt;  callable(Student( 'zoe' ))   True        
-
+ 而面向对象的程序设计吧计算机程序视
     
     
         <a href="/2014/06/18/Python-六---面向对象编程/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -986,27 +578,11 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-         针对Activity而言，Android存在一个回退栈维护界面体验。当一个应用程序图标被点击时，应用的Task就会来到前台，并把应用的主Activity压入BackStack的栈顶，并获得焦点，这个Activity称之为根Activity，而BackStack中的Activity可以通过点击回退键弹出栈并销毁，使上一个Activity获得焦点，直到用户返回到Home页，而当BackStack中的Activity都被销毁之后，这个Task就不服存在，这个程序的进程还存在（不在此时销毁）。 
- ##Task的状态 每个个Task都存在一个BackStack，而系统中可以存在多个Task，但是每次只有一个Task获得前台焦点，一般而言，系统允许用户在多个Task中切换，而被置于后台的Task的Activity将被置于Stopped状态。实际上，同一个Task中的Activity，只要不存在于栈顶并且获得前台焦点，那么它就是一个Stopped的状态。   
- ##Activity启动模式 根据Activity的不同启动模式，它在BackStack中的状态时不一样的。Activity可以通过AndroidManifest.xml清单文件配置，在 节点中的android:laucherMode属性设置。它有四个选项：  
- 
- standard 
- singleTop 
- singleTask 
- singeInstance ###standard 标准启动模式，也是默认缺省值。standard模式下的Activity会依照启动顺序压入BackStack中，示意图如下：   ###singleTop 单顶模式，这种模式下，启动一个Activity的时候如果发现BackStack的栈顶已经存在这个Activity了，就不会去重建新的Activity，而是复用这个栈顶已经存在的Activity，避免同一个Activity被重复开启。示意图如下：     singleTop应用的场景很多，一般适用于可以复用而又有多个开启渠道的Activity，避免当一个Activity已经开启并获得焦点后，再次重复开启。比如说Android系统浏览器的书签页面。 ###singleTask 开启一个Activity的时候，检查BackStack里面是否有这个Activity的实例存在，如果存在，清空BackStack里这个Activity上所有的其他Activity。   ###singleInstance 被标记为singleInstance启动模式的Activity，在启动的时候，会开启一个新的BackStack，这个BackStack里只有一个Activity的实例存在，并且使这个BackStack获得焦点。这是一种极端的模式，它会导致整个设备的操作系统里，只存在一个这个Activity实例，不论从何处启动的。   singleInstance一般只存在一个适用场景，Android系统的来电页面，多次来电均使用的是一个Activity。 
- 
- 当然，在Android中，除了在AndroidManifest.xml清单文件中配置LauncherMode属性外，还可以在代码中设置启动模式。在组件中，启动一个Activity，需要用到startActivity()方法，其中传递一个Intent，可以使用Intent.setFlags(int flags)来设置新启动的Activity的启动模式，而通过代码设置Activity的启动模式的方式，优先级要高于在AndroidManifest.xml清单文件中的配置。  
- Intent.setFlag(int flags)方法传递的一个整形的数据，被Android系统设置为了常量： 
- 
- FLAG_ACTIVITY_NEW_TASK：这个标识会使新启动的Activity独立创建一个Task。 
- FLAG_ACTIVITY_CLEAR_TOP：这个标识会使新启动的Activity检查是否存在于Task中，如果存在则清除其之上的Activity，使它获得焦点，并不重新实例化一个Activity，一般结合FLAG_ACTIVITY_NEW_TASK一起使用。 
- FLAG_ACTIVITY_SINGLE_TOP：等同于在LauncherMode属性设置为singleTop。 
- 
-
+         针对Activity而言，Android存在一个回退栈维护界面体验。当一个应用程序图标被点击时，应用的Task就会来到前台，并把应用的主Activity压入BackStack的栈顶，并获得焦点，这个Activity称之为根Activity，而BackStack中的Activity可以通过点击回退键弹出栈并销毁，使上一个Activity获得焦点，直到用户返回到Home页，而当BackStack中的
     
     
         <a href="/2014/06/18/Activity启动模式/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -1029,6 +605,51 @@
 <div class="mask" id="mask"></div>
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
+<script>
+var BLOG_SHARE = {
+    title: "SeniorZhai's blog",
+    pic: "/img/logo.jpg",
+    summary: document.getElementsByName('summary')[0].content,
+    url: "http://seniorzhai.github.io/page/31/index.html"
+};
+</script>
+<div class="global-share" id="global-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
 
 <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 
@@ -1036,10 +657,45 @@
 
 
 
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<script type="text/template" id="search-tpl">
+<li class="item">
+    <a href="/{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</script>
+
+<script src="/js/search.js"></script>
 
 
 
 
+
+<script src="//s95.cnzz.com/z_stat.php?id=true&web_id=true"></script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-54646832-1&#39;', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
 
 
 

@@ -16,7 +16,7 @@
 <meta property="og:url" content="http://seniorzhai.github.io/2016/08/26/API可用性检测/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
 <meta property="og:description" content="Swift有检查API可用性的内置支持，确保我们在使用时不会不小心使用当前不可用的API">
-<meta property="og:updated_time" content="2016-08-26T05:43:11.000Z">
+<meta property="og:updated_time" content="2016-09-02T08:08:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="API可用性检测">
 <meta name="twitter:description" content="Swift有检查API可用性的内置支持，确保我们在使用时不会不小心使用当前不可用的API">
@@ -202,8 +202,8 @@
         <div class="post-main">
 
             <div class="post-content" id="post-content" itemprop="postContent">
-            <p>Swift有检查API可用性的内置支持，确保我们在使用时不会不小心使用当前不可用的API<br><a id="more"></a><br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> #available(platform name version, ..., *) &#123;</div><div class="line">  statements</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">  statements</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>可用性条件获取了一系列平台的名字和版本，平台名可以是<code>iOS</code>、<code>OSX</code>、<code>watchOS</code>，版本号可以是主版本号或者小版本，比如<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#available(iOS <span class="number">9</span>, <span class="type">OSX10</span>.<span class="number">10</span>, *)</div></pre></td></tr></table></figure></p>
+            <p>Swift有检查API可用性的内置支持，确保我们在使用时不会不小心使用当前不可用的API<br><a id="more"></a><br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> # available(platform name version, ..., *) &#123;</div><div class="line">  statements</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">  statements</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>可用性条件获取了一系列平台的名字和版本，平台名可以是<code>iOS</code>、<code>OSX</code>、<code>watchOS</code>，版本号可以是主版本号或者小版本，比如<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"># available(iOS <span class="number">9</span>, <span class="type">OSX10</span>.<span class="number">10</span>, *)</div></pre></td></tr></table></figure></p>
 <p>最后一个参数<code>*</code>是必须写的，用于处理未来潜在的平台</p>
 
             <blockquote>

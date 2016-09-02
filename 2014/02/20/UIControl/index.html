@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://github.com/zt1991616/blog/raw/master/Image/14022004.png">
 <meta property="og:image" content="https://github.com/zt1991616/blog/raw/master/Image/14022005.png">
 <meta property="og:image" content="https://github.com/zt1991616/blog/raw/master/Image/14022006.png">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UIControl">
 <meta name="twitter:description" content="UIControl
@@ -237,8 +237,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">// 按下时触发</div><div class="line">UIControlEventTouchDown</div><div class="line">// 多击触发</div><div class="line">UIControlEventTouchDownRepeat</div><div class="line">// 控件内拖动触发</div><div class="line">UIControlEventTouchDragInside</div><div class="line">// 控件外拖动触发</div><div class="line">UIControlEventTouchDrageOutside</div><div class="line">// 当触摸从控件外拖动到控件内部时</div><div class="line">UIControlEventTouchDragEnter</div><div class="line">// 当触摸从控件内拖动到控件外部时</div><div class="line">UIControlEventTouchDragExit</div><div class="line">// 控件之内触摸抬起时</div><div class="line">UIControlEventTouchupInside</div><div class="line">// 控件之外触摸抬起时</div><div class="line">UIControlEventTouchUpOutside</div><div class="line">// 触摸事件取消</div><div class="line">UIControlEventTouchCancel</div><div class="line">// 当控件的值发生改变时</div><div class="line">UIControlEventTouchValueChanged</div><div class="line">// 文本控件中开始编辑</div><div class="line">UIControlEventEditingDidBegin</div><div class="line">// 文本控件中的文本被改变</div><div class="line">UIControlEventEditingChanged</div><div class="line">// 文本孔家中编辑结束</div><div class="line">UIControlEventEditingDidEnd</div><div class="line">// 文本孔家中通过按下回车键结束编辑时</div><div class="line">UIControlEventEditingDidOnExit</div><div class="line">// 所有触摸事件</div><div class="line">UIControlEventAlltouchEvents</div><div class="line">// 所有编辑事件</div><div class="line">UIControlEventAllEditingEvents</div><div class="line">// 所有事件</div><div class="line">UIControlEventAllEvents</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>##导航控制器</p>
-<ul>
+<h2 id="导航控制器"><a href="#导航控制器" class="headerlink" title="导航控制器"></a>导航控制器</h2><ul>
 <li>基本概念<br>  +<code>UINavigationController</code>用于构建分层应用程序的主要工具，管理着多个内容视图的换入（压入）和换出（弹出）。自身提供了视图切换的动画效果。<ul>
 <li>它的父类是<code>UIViewController</code>，是所有视图控件器的基类。</li>
 <li>导航控制器以栈的形式来实现。<br><img src="https://github.com/zt1991616/blog/raw/master/Image/14022004.png" alt=""></li>

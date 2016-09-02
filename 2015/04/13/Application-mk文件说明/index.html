@@ -16,7 +16,7 @@
 <meta property="og:url" content="http://seniorzhai.github.io/2015/04/13/Application-mk文件说明/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
 <meta property="og:description" content="Application.mk描述Android应用程序中需要本地模块">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Application.mk文件说明">
 <meta name="twitter:description" content="Application.mk描述Android应用程序中需要本地模块">
@@ -203,11 +203,11 @@
 
             <div class="post-content" id="post-content" itemprop="postContent">
             <p>Application.mk描述Android应用程序中需要本地模块<br><a id="more"></a></p>
-<p>##APP_PROJECT_PATH<br>应用程序工程的根目录的绝对路径<br>这是用来复制或安装一个没有任何限制的JNI库</p>
-<p>##APP_MODULES<br>可选的变量，默认定义为LOCAL_MODULE中</p>
-<p>##APP_OPTIM<br>可选的变量，用来定义<code>release</code>或<code>debug</code>，在编译应用模块的时候，可以用来改变优先级。<br><code>release</code>会生成高度优化的二进制代码，<code>debug</code>生成的时为优化的二进制代码，可以检测出很多BUG，可以用于调试</p>
-<p>##APP_CFLAGS<br>编译器开关集合，可以用于改变一个给定应用程序需要依赖的模块的构建</p>
-<p>##APP_ABI<br>默认情况下NDK的编译系统根据”armeabi”ABI生成机器代码，可以指定选择不同的ABI生成。<br>如<code>x86</code>，<code>armeabi-v7a</code>，<code>armeabi</code>，<code>all</code></p>
+<h2 id="APP-PROJECT-PATH"><a href="#APP-PROJECT-PATH" class="headerlink" title="APP_PROJECT_PATH"></a>APP_PROJECT_PATH</h2><p>应用程序工程的根目录的绝对路径<br>这是用来复制或安装一个没有任何限制的JNI库</p>
+<h2 id="APP-MODULES"><a href="#APP-MODULES" class="headerlink" title="APP_MODULES"></a>APP_MODULES</h2><p>可选的变量，默认定义为LOCAL_MODULE中</p>
+<h2 id="APP-OPTIM"><a href="#APP-OPTIM" class="headerlink" title="APP_OPTIM"></a>APP_OPTIM</h2><p>可选的变量，用来定义<code>release</code>或<code>debug</code>，在编译应用模块的时候，可以用来改变优先级。<br><code>release</code>会生成高度优化的二进制代码，<code>debug</code>生成的时为优化的二进制代码，可以检测出很多BUG，可以用于调试</p>
+<h2 id="APP-CFLAGS"><a href="#APP-CFLAGS" class="headerlink" title="APP_CFLAGS"></a>APP_CFLAGS</h2><p>编译器开关集合，可以用于改变一个给定应用程序需要依赖的模块的构建</p>
+<h2 id="APP-ABI"><a href="#APP-ABI" class="headerlink" title="APP_ABI"></a>APP_ABI</h2><p>默认情况下NDK的编译系统根据”armeabi”ABI生成机器代码，可以指定选择不同的ABI生成。<br>如<code>x86</code>，<code>armeabi-v7a</code>，<code>armeabi</code>，<code>all</code></p>
 
             <blockquote>
                 <p>

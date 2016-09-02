@@ -6,6 +6,8 @@
   <title>SeniorZhai&#39;s blog | 苟利国家生死以，起因福祸趋避之</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
+  <meta name="theme-color" content="#ED5565">
+  
   
   <meta name="keywords" content="undefined">
   <meta name="description" content="专注于移动平台">
@@ -18,8 +20,10 @@
 <meta name="twitter:title" content="SeniorZhai's blog">
 <meta name="twitter:description" content="专注于移动平台">
   
+    <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
+  
   <meta name="summary" content="专注于移动平台">
-  <link rel="shortcut icon" href="/">
+  <link rel="shortcut icon" href="/img/favicon.ico">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -33,7 +37,7 @@
   </a>
   <div class="brand-wrap">
     <div class="brand">
-      <a href="/" class="avatar"><img src="undefined"></a>
+      <a href="/" class="avatar"><img src="/img/logo.jpg"></a>
       <hgroup class="introduce">
         <h5 class="nickname">Dear宅学长</h5>
         <a href="mailto:developer.zhaitao@gmail.com" title="developer.zhaitao@gmail.com" class="mail">developer.zhaitao@gmail.com</a>
@@ -43,6 +47,48 @@
   <div class="scroll-wrap flex-col">
     <ul class="nav">
       
+          <li class="waves-block waves-effect">
+            <a href="/"  >
+              <i class="icon icon-lg icon-home"></i>
+              主页
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/archives"  >
+              <i class="icon icon-lg icon-archives"></i>
+              Archives
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/tags"  >
+              <i class="icon icon-lg icon-tags"></i>
+              Tags
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://seniorzhai.github.io" target="_blank" >
+              <i class="icon icon-lg icon-github"></i>
+              Github
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="http://weibo.com/seniorszhai/" target="_blank" >
+              <i class="icon icon-lg icon-weibo"></i>
+              Weibo
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/about"  >
+              <i class="icon icon-lg icon-link"></i>
+              about
+            </a>
+          </li>
+      
     </ul>
 
     <footer class="footer">
@@ -50,7 +96,7 @@
   <p>SeniorZhai&#39;s blog &copy; 2016</p>
   <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
   <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
-  <a href="undefined" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
+  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
 </footer>
 
   </div>
@@ -65,6 +111,20 @@
         </a>
         <div class="flex-col header-title ellipsis">SeniorZhai&#39;s blog</div>
         
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
         
     </div>
 </header>
@@ -111,13 +171,11 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-         在 UIView 中有一个autoresizingMask的属性，它对应的是一个枚举的值（如下），属性的意思就是自动调整子控件与父控件中间的位置，宽高。       1  2  3  4  5  6  7  8  9      enum &#123;     UIViewAutoresizingNone                 = 0,     UIViewAutoresizingFlexibleLeftMargin   = 1 &lt;&lt; 0,     UIViewAutoresizingFlexibleWidth        = 1 &lt;&lt; 1,     UIViewAutoresizingFlexibleRightMargin  = 1 &lt;&lt; 2,     UIViewAutoresizingFlexibleTopMargin    = 1 &lt;&lt; 3,     UIViewAutoresizingFlexibleHeight       = 1 &lt;&lt; 4,     UIViewAutoresizingFlexibleBottomMargin = 1 &lt;&lt; 5  &#125;;       
- UIViewAutoresizingNone就是不自动调整。 UIViewAutoresizingFlexibleLeftMargin 自动调整与superView左边的距离，保证与superView右边的距离不变。 UIViewAutoresizingFlexibleRightMargin 自动调整与superView的右边距离，保证与superView左边的距离不变。 UIViewAutoresizingFlexibleTopMargin 自动调整与superView顶部的距离，保证与superView底部的距离不变。 UIViewAutoresizingFlexibleBottomMargin 自动调整与superView底部的距离，也就是说，与superView顶部的距离不变。 UIViewAutoresizingFlexibleWidth 自动调整自己的宽度，保证与superView左边和右边的距离不变。 UIViewAutoresizingFlexibleHeight 自动调整自己的高度，保证与superView顶部和底部的距离不变。 UIViewAutoresizingFlexibleLeftMargin  |UIViewAutoresizingFlexibleRightMargin 自动调整与superView左边的距离，保证与左边的距离和右边的距离和原来距左边和右边的距离的比例不变。 
-
+         在 UIView 中有一个autoresizingMask的属性，它对应的是一个枚举的值（如下），属性的意思就是自动调整子控件与父控件中间的位置，宽高。       1  2  3  4  5  6  7  8  9      enum &#123;     UIViewAutoresizingNone                 = 0,     UIViewAutoresizingFle
     
     
         <a href="/2014/04/08/autoresizingMask/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -157,11 +215,11 @@
 
     
           PendulemView    
-      1  2  3      pendulum = [[PendulumView alloc] initWithFrame:self.view.bounds ballColor:ballColor ballDiameter:35];    pendulum.hidesWhenStopped = NO;    [self.view addSubview:pendulum];      
+      1  2  3      pendulum = [[PendulumView alloc] initWithFrame:self.view.bounds ballColor:ballColor ballDiameter:35];    pendulum.hidesWhenStopped = NO;    [self.view addSubview:
     
     
         <a href="/2014/04/08/PendulemView/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -201,30 +259,11 @@
 
     
           SONFillAnimation 是将一个UIView以指定网格动画显示的类。 
- ##用法       1  2  3  4  5  6      SONFillAnimation *animation = [[SONFillAnimation alloc] initWithNumberOfRows:3 columns:3 animationType:SONFillAnimationTypeDefault];  animation.direction = SONFillAnimationDirectionLeftToRightAndTopDown;  animation.duration = 0.3;  animation.xDelay = 0.1;  animation.yDelay = 0.2;  [animation animateView:view completion:^&#123;&#125;];       
-  numberOfRows 指行数， numberOfColumns 指列数  xDelay 指横向网格之间延迟的属性， yDelay 指纵向网格之间延迟的属性  anchorPoint 指定每个网格的锚点  direction 指定顺序方向 
- 您可以指定以下其中一个方向： 
- 
- SONFillAnimationDirectionLeftToRightAndTopDown 
- SONFillAnimationDirectionLeftToRightAndBottomUp 
- SONFillAnimationDirectionRightToLeftAndTopDown 
- SONFillAnimationDirectionRightToLeftAndBottomUp 
- SONFillAnimationDirectionRandom 
- 
-  animationType 是一个属性，表示一个类型的动画。 
- 您可以指定在以下的animationType： 
- 
- SONFillAnimationTypeDefault 
- SONFillAnimationTypeFoldOut 
- SONFillAnimationTypeFoldIn 
- SONFillAnimationTypeCustom 
- 
-  setRotationVector::: 是定义为FoldIn/折页动画旋转向量的方法。如果动画类型是自定义的，就不需要设置这个值。默认值是（0，-1,0）。 
-
+   用法       1  2  3  4  5  6      SONFillAnimation *animation = [[SONFillAnimation alloc] initWithNumberOfRows:3 columns:3 animationType:SONFillAnimationType
     
     
         <a href="/2014/04/01/SONFillAnimation/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -266,17 +305,11 @@
          在Podfile中添加       1      pod &apos;AVOSCloud&apos;       
  使用UI相关的相关功能，就添加       1      pod &apos;AVOSCloundUI&apos;       
  SNS组件的相关功能，就添加       1      pod &apos;AVOSCloundSNS&apos;       
- 在 AppDelegate.m 文件，添加下列导入语句到头部       1      #import &lt;AVOSClound/AVOSCloud.h&gt;;       
- 在 application:didFinishLaunchingWithOptions 函数内添加       1      [AVOSClound setApplicationId:@&quot;&quot; clientKey:@&quot;&quot;];       
- 要跟踪应用的打开情况，添加下列代码       1      [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];       
- ##对象 AVObject 
- 在AVOS Cloud上，数据存储是围绕 AVObject 进行的。每个 AVObject 都包含了与JSON兼容的key-value对应的数据。数据是schema-free的，不需要在每个AVObject上提前制定存在哪些键，只要直接设定对应的key-value即可。 key必须是字母数字或下划线组成的字符串，自定义的键不能以 __ 开头。值可以是字符串、数字、布尔值、甚至是数组和字典。  注意：在iOS SDK中， uuid 是保留字段，不能作为key来使用。  
- ###保存对象 
-      1  2  3  4  5      AVObject *gameScore = [AVObject objectWithClassName:@&quot;GameScore&quot;];  [gameScore setObject:[NSNumber numberWithInt:1337] forKey:@&quot;score&quot;];  [gameScore setObject:@&quot;Steve&quot; forKey:@&quot;playerName&quot;];  [gameScore setObject:[NSNumber numberWithBool:NO] forKey:@&quot;cheatMode&quot;];  [gameScore save];      
+ 在 AppDel
     
     
         <a href="/2014/04/01/AVOS-Cloud/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -321,13 +354,11 @@
  NO_BORDER 一个方向上铺满屏幕 
  SHOW_ALL 保证设计区域全部显示，但是可能会有黑边 
  FIXED_WIDTH 保证设计分辨率的宽度不变，根据屏幕分辨率修正设计分辨率的高度 
- FIXED_HEIGHT 保证设计分辨率的高度不变，根据屏幕分辨率修正设计分辨率的宽度 
- 
-
+ FIXED_HEI
     
     
         <a href="/2014/04/01/分辨率适配/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -367,17 +398,12 @@
 
     
          NSUserDefaults类提供了一个与默认系统进行交互的编程接口。 
- ##使用 
- 创建一个user defaults       1      NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];       
- 添加数据       1      [userDefaults setObject:nameField.text forKey:UserDefayltNameKey];       
- 也可以是基本数据类型int、float、bool等，有相应的方法       1      [userDefaults setBool:YES forKey:UserDefaultBoolKey];       
- 读取数据       1  2      [userDefaults objectForKey:UserDefaultNameKey];  [userDefaults boolForKey:UserDefaultBoolKey];       
- 注：NSUserDefaults非常好用，并不需要用户在程序中设置NSUserDefaults的全局变量，需要在哪里使用NSUserDefaults的数据，那么就在哪里创建一个NSUserDefaults对象，然后进行读或者写操作。 针对同一个关键字对应的对象或者数据，可以对它进行重写，重写之后关键字就对应新的对象或者数据，旧的对象或者数据会被自动清理。 
-
+   使用  创建一个user defaults       1      NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];       
+ 添加数据       1      [userDefaults setObject:name
     
     
         <a href="/2014/03/31/NSUserDefaults/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -417,55 +443,14 @@
 
     
          Cocos2d-x坐标系和Open GL坐标系相同，都是起源于笛卡尔坐标系。 
- ##笛卡尔坐标系 笛卡尔坐标系中定义右手系原点在左下角，x向右，y向上，z向外   
- ##屏幕坐标系和Cocos2d坐标系 iOS、Android、Windows Phone在开发应用时使用的是标准屏幕坐标系，原点为屏幕左上角，x向右，y向下。 
+   笛卡尔坐标系  笛卡尔坐标系中定义右手系原点在左下角，x向右，y向上，z向外   
+   屏幕坐标系和Cocos2d坐标系  iOS、Android、Windows Phone在开发应用时使用的是标准屏幕坐标系，原点为屏幕左上角，x向右，y向下。 
    
- ##世界坐标系(World Coordinate)和本地坐标系(Node Local) 世界坐标系也叫绝对坐标系，是游戏开发中建立的概念，因此，“世界”指游戏世界。Cocos2d中的元素是由父子关系的层级结构，我们通过Node的 setPosition 设定元素的位置使用的就是相对与父类节点的本地坐标系而非世界坐标系。 
- 本地坐标系也叫相对坐标系，是和节点相关联的坐标系。每个节点都有独立的坐标系，当节点移动或改变方向时，和该节点关联的坐标系将随之移动或改变方向。 
- ##锚点(Anchor Point) 
- 
-  Anchor Point的两个参数都在0~1之间。它们表示的并不是像素点，而是乘数因子。(0.5, 0.5)表示Anchor Point位于节点长度乘0.5和宽度乘0.5的地方，即节点的中心 
- 
-  在Cocos2d-x中Layer的Anchor Point为默认值(0, 0)，其他Node的默认值为(0.5, 0.5)。 我们用以下代码为例，使用默认Anchor Point值，将红色层放在屏幕左下角，绿色层添加到红色层上： 
-      1  2  3  4       auto  red = LayerColor::create(Color4B( 255 , 100 , 100 , 128 ),visibleSize.width/ 2 ,visibleSize.height/ 2 );   auto  green = LayerColor::create(Color4B( 100 , 255 , 100 , 128 ),visibleSize.width/ 4 ,visibleSize.height/ 4 );  red-&gt;addChild(greeen);   this -&gt;addChild(red, 0 );      
- 
- 
-   
- 我们用以下代码为例，将红色层的Anchor Point设为中点放在屏幕中央，绿色层添加到红色层上，绿色层锚点为右上角： 
- 注：因为Layer比较特殊，它默认忽略锚点，所以要调用ignoreAnchorPointForPosition()接口来改变锚点，关于ignoreAnchorPointForPosition()接口的使用说明，我们将在后面详细讲解。       1  2  3  4  5  6  7  8  9  10  11       auto  red = LayerColor::create(Color4B( 255 ,  100 ,  100 ,  128 ), visibleSize.width/ 2 , visibleSize.height/ 2 );  red-&gt;ignoreAnchorPointForPosition( false );  red-&gt;setAnchorPoint(Point( 0.5 ,  0.5 ));  red-&gt;setPosition(Point(visibleSize.width/ 2  + origin.x, visibleSize.height/ 2  + origin.y));      auto  green = LayerColor::create(Color4B( 100 ,  255 ,  100 ,  128 ), visibleSize.width/ 4 , visibleSize.height/ 4 );  green-&gt;ignoreAnchorPointForPosition( false );  green-&gt;setAnchorPoint(Point( 1 ,  1 ));  red-&gt;addChild(green);      this -&gt;addChild(red,  0 );       
-   
- ##忽略锚点(Ignore Anchor Point) 
- Ignore Anchor Point全称是ignoreAnchorPointForPosition，作用是将锚点固定在一个地方。 
- 如果设置其值为true，则图片资源的Anchor Pont固定为左下角，否则即为所设置的位置。 
- 我们用以下代码为例，将两个层的ignoreAnchorPointForPosition设为true，并将绿色的层添加到红色的层上：       1  2  3  4  5  6  7  8  9  10       auto  red = LayerColor::create(Color4B( 255 ,  100 ,  100 ,  128 ), visibleSize.width/ 2 , visibleSize.height/ 2 );  red-&gt;ignoreAnchorPointForPosition( true );  red-&gt;setPosition(Point(visibleSize.width/ 2  + origin.x, visibleSize.height/ 2  + origin.y));      auto  green = LayerColor::create(Color4B( 100 ,  255 ,  100 ,  128 ), visibleSize.width/ 4 , visibleSize.height/ 4 );  green-&gt;ignoreAnchorPointForPosition( true );     red-&gt;addChild(green);      this -&gt;addChild(red,  0 );       
-   
- ##VertexZ，PositionZ和zOrder 
- 
- VerextZ是OpenGL坐标系中的Z值 
- PositionZ是Cocos2d-x坐标系中Z值 
- zOrder是Cocos2d-x本地坐标系中Z值 在实际开发中我们只需关注zOrder。 
- 
- 可以通过setPositionZ接口来设置PositionZ。 
- 以下是setPositionZ接口的说明：       1      Sets the &apos;z&apos; coordinate in the position. It is the OpenGL Z vertex value.       
- 即PositionZ的值即为opengl的z值VertexZ。同样节点的PositionZ也是决定了该节点的渲染顺序，值越大，但是与zOrder不同的区别在于，PositionZ是全局渲染顺序即在根节点上的渲染顺序，而zOrder则是局部渲染顺序，即该节点在其父节点上的渲染顺序，与Node的层级有关。用以下事例来说明:       1  2  3  4  5  6  7  8  9  10  11       auto  red = LayerColor::create(Color4B( 255 ,  100 ,  100 ,  255 ), visibleSize.width/ 2 , visibleSize.height/ 2 );    red-&gt;ignoreAnchorPointForPosition( false );    red-&gt;setPosition(Point(visibleSize.width /  2 , visibleSize.height /  2 ));        auto  green = LayerColor::create(Color4B( 100 ,  255 ,  100 ,  255 ), visibleSize.width/ 4 , visibleSize.height/ 4 );    green-&gt;ignoreAnchorPointForPosition( false );    green-&gt;setPosition(Point(visibleSize.width /  2 , visibleSize.height /  2  -  100 ));    red-&gt;setPositionZ( 1 );    green-&gt;setPositionZ( 0 );     this -&gt;addChild(red,  0 );     this -&gt;addChild(green,  1 );       
-   
- ##触摸点(Touch position) 在处理触摸事件时需要重写以下四个函数：       1  2  3  4        virtual   bool   onTouchBegan  (Touch *touch,Event *event)  ;    virtual   void   onTouchEnded  (Touch *touch,Event *event)  ;    virtual   void   onTouchCancel  (Touch *touch,Event *event)  ;    virtual   void   onTouchMoved  (Touch *touch,Event *event)  ;       
- 在函数中获取到touch，在设计游戏逻辑时需要用到触摸点在Cocos2d坐标系中的位置，就需要将touch的坐标转换成OpenGL坐标系中的点坐标。 
- Touch position是屏幕坐标系中的点，OpenGL postion是cocos2d-x用到OpenGL坐标系上的点坐标，通常我们在开发中会使用两个接口getLocation()和getLocationInView()来进行相应坐标转换工作。 
- 在开发中一班使用getLocation()获取触摸点的GL坐标，而getLocationo()内部实现是通过 Director::getInstance()-&gt;convertToGL(_point); 返回GL坐标。 
- 此外，关于世界坐标系和本地坐标系的互相转换，在Node中定义了以下四个常用的坐标转换的相关方法。       1  2  3  4  5  6  7  8       // 把基于当前节点的本地坐标系下的坐标转换到世界坐标系中    Point  convertToNodeSpace  ( const  Point&amp; worldPoint)   const  ;   // 把世界坐标转换到当前节点的本地坐标系中    Point  convertToWorldSpace  ( const  Point&amp; nodePoint)   const  ;   // 基于Anchor Point把基于当前节点的本地坐标系下的坐标转换到    Point  convertToNodeSpaceAR  ( const  Point&amp; worldPoint)   const  ;   // 基于Anchor Point把世界坐标转换到当前节点的本地坐标系中    Point  convertToWorldSpaceAr  ( const  Point&amp; nodePoint)   const  ;       
- 例子：       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16       auto  *sprite1 = Sprite::create( "HelloWorld.png" );  sprite1-&gt;setPosistion(ccp( 20 , 40 ));  sprite1-&gt;setAnchorPoint(ccp( 0 , 0 ));   this -&gt;addChild(sprite1); // 此时添加到的是世界坐标系，也就是OpenGL坐标系      auto  *sprite2 = Sprite::create( "HelloWorld" );  sprite2-&gt;setPosition(ccp( -5 , -20 ));  sprite2-&gt;setAnchorPoint(ccp( 1 , 1 ));   this -&gt;addChild(sprite2); // 此时添加到的是世界坐标系，也就是OpenGL坐标系      //将sprite2这个节点的坐标ccp(5,-20)转换成sprite1节点下的本地坐标系统的位置坐标   Point point1 = sprite1-&gt;convertToNodeSpace(sprite1-&gt;getPosition());  Point point2 = sprite-&gt;convertToWorldSpce(sprite2-&gt;getPosition());   // 将sprite2这个节点的坐标ccp(5,-20)转换成sprite1节点下的世界坐标系统的位置坐标    log ( "postion = (%f,%f)" ,point1.x,point1.y);   log ( "postion = (%f,%f)" ,point2.x,point2.y);       
-     
- 其中:Point point1 = sprite1-&gt;convertToNodeSpace(sprite2-&gt;getPosition()); 
- 相当于sprite2这个节点添加到（实际没有添加，只是这样理解）sprite1这个节点上，那么就需要使用sprite1这个节点的节点坐标系统，这个节点的节点坐标系统的原点在（20，40），而sprite1的坐标是（-5，-20），那么经过变换之后，sprite1的坐标就是（-25，-60）。 
- 其中:Point point2 = sprite1-&gt;convertToWorldSpace(sprite2-&gt;getPosition()); 
- 此时的变换是将sprite2的坐标转换到sprite1的世界坐标系下，而其中世界坐标系是没有变化的，始终都是和OpenGL等同，只不过sprite2在变换的时候将sprite1作为了”参照“而已。所以变换之后sprite2的坐标为:（15，20）。 
-   
-
+   世界坐标系(World Coordinate)和
     
     
         <a href="/2014/03/31/Cocos2d-X-坐标系详解/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -505,38 +490,11 @@
 
     
            AFNetworking是一个非常流行的网络库，适用于iOS以及Mac OS X，具有良好的架构，丰富的api，以及模块化化构建方式，使得使用起来非常轻松。 
- ##使用CocoaPods安装 
- ###Podfile       1  2      platform :ios, &apos;7.0&apos;  pod &quot;AFNetworking&quot;, &quot;~&gt; 2.0&quot;       
- ##环境要求 Xcode 5、iOS 6.0及以上、Mac OS 10.8以上 
- ##用法 
- ###AFHTTPRequestOperationManager  AFHTTPRequestOperationManager 封装了Web应用程式HTTP通信的功能，包括编辑请求、响应序列化、网络可达性监控和安全系，以及请求管理的常见模式。 
- GET请求       1  2  3  4  5  6      AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];  [manager GET:@&quot;http://example.com/resources.json&quot; parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) &#123;      NSLog(@&quot;JSON: %@&quot;, responseObject);  &#125; failure:^(AFHTTPRequestOperation *operation, NSError *error) &#123;      NSLog(@&quot;Error: %@&quot;, error);  &#125;];       
- POST请求       1  2  3  4  5  6  7      AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];  NSDictionary *parameters = @&#123;@&quot;foo&quot;:@&quot;bar&quot;&#125;;  [manager GET:@&quot;http://example.com/resources.json&quot; parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) &#123;      NSLog(@&quot;JSON: %@&quot;, responseObject);  &#125; failure:^(AFHTTPRequestOperation *operation, NSError *error) &#123;      NSLog(@&quot;Error: %@&quot;, error);  &#125;];       
- POST多部分请求       1  2  3  4  5  6  7  8  9  10      AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];  NSDictionary *parameters = @&#123;@&quot;foo&quot;:@&quot;bar&quot;&#125;;  NSURL *filePath = [NSURL fileURLWithPath:@&quot;file://path/to/image.png&quot;];  [manager POST:@&quot;http://example.com/resources.json&quot; parameters:parametes construtingBodyWithBlock:^(id&lt;AFMultipartFormData&gt; formData)&#123;  	[formData appendPartWithFileUrl:filePath name:@&quot;image&quot; error:nil];  &#125; success:^(AFHTTPRequestOperation *operation,id responseObject)&#123;  	NSLog(@&quot;Success:%@&quot;,responseObject);  &#125;failure:^(AFHTTPRequestOperation *operation,NSError *error))&#123;  	NSLog(@&quot;Error:%@&quot;,error);  &#125;];       
- ###AFURLSessionManager  AFURLSessionManager 根据指定的 NSURLSessionConfiguration 对象创建、管理 NSURLSession ，实现了 &lt;NSURLSessionTaskDelegate&gt; ， &lt;NSURLSessionDataDelegate&gt; ， &lt;NSURLSessionDownloadDelegate&gt; 和 &lt;NSURLSessionDelegate&gt; 委托。 
- 创建下载任务       1  2  3  4  5  6  7  8  9  10  11  12  13      NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];  AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];    NSURL *URL = [NSURL URLWithString:@&quot;http://example.com/download.zip&quot;];  NSURLRequest *request = [NSURLRequest requestWithURL:URL];    NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:nil destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) &#123;      NSURL *documentsDirectoryPath = [NSURL fileURLWithPath:[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]];      return [documentsDirectoryPath URLByAppendingPathComponent:[response suggestedFilename]];  &#125; completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) &#123;      NSLog(@&quot;File downloaded to: %@&quot;, filePath);  &#125;];  [downloadTask resume];       
- 创建上传任务       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15      NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];  AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];    NSURL *URL = [NSURL URLWithString:@&quot;http://example.com/upload&quot;];  NSURLRequest *request = [NSURLRequest requestWithURL:URL];    NSURL *filePath = [NSURL fileURLWithPath:@&quot;file://path/to/image.png&quot;];  NSURLSessionUploadTask *uploadTask = [manager uploadTaskWithRequest:request fromFile:filePath progress:nil completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) &#123;      if (error) &#123;          NSLog(@&quot;Error: %@&quot;, error);      &#125; else &#123;          NSLog(@&quot;Success: %@ %@&quot;, response, responseObject);      &#125;  &#125;];  [uploadTask resume];       
- 创建上传任务多任务请求       1  2  3  4  5  6  7  8  9  10  11  12  13  14      NSMutableURLRequest *requst = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@&quot;POST&quot; URLString:@&quot;http://example.com/upload&quot; parameters:nil constructingBodyWithBlock:^(id&lt;AFMultipartFormData&gt; formData) &#123;  	[formData appendPartWithFileURL:[NSURL fileURLWithPath:@&quot;file://path/to/image.jpg&quot;] name:@&quot;file&quot; fileName:@&quot;filename.jpg&quot; mimeType:@&quot;image/jpeg&quot; error:nil];  &#125;error:nil];    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfigguration:[NSURLSessionConfiguration defaultSessionConfiguration]];  NSProgress *progress = nil;  NSURLSessionUploadTask *uploadTask = [Manager uploadTaskWithStreamedRequest:request progress:&amp;progress completionHandler:^(NSURLResponse *response,id responseObject,NSError *error)&#123;  	if(error)&#123;  		NSLog(@&quot;Error:%@&quot;,error);  	&#125;else&#123;  		NSLog(@&quot;%@,%@&quot;,response,responseObject);  	&#125;  &#125;];  [uploadTask resume];       
- 创建数据任务       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15      NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];  AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];    NSURL *URL = [NSURL URLWithString:@&quot;http://example.com/upload&quot;];  NSURLRequest *request = [NSURLRequest requestWithURL:URL];    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) &#123;      if (error) &#123;          NSLog(@&quot;Error: %@&quot;, error);      &#125; else &#123;          NSLog(@&quot;%@ %@&quot;, response, responseObject);      &#125;  &#125;];  [dataTask resume];  [ dataTask  简历];       
- ###请求序列化 创建序列化URL字符串       1  2      NSString * URLString = @&quot;http://example.com&quot;;  NSDictionary * parmeters = @&#123;@&quot;foo&quot;:@&quot;bar&quot;,@&quot;baz&quot;:@[@1,@2,@3]&#125;;       
- 查询参数列表       1      [[AFHTTPRequestSerializer serializer] requestWithMethod:@&quot;POST&quot; URLString:URLString parameters:parameters];       
-   POST http://example.com/
-Content-Type: application/x-www-form-urlencoded
-foo=bar&amp;baz[]=1&amp;baz[]=2&amp;baz[]=3
-   ###JSON参数       1      [[AFJSONRequestSerializer serializer] requestWithMethod:@&quot;POST&quot; URLString:URLString parameters:parameters];       
-    POST http://example.com/
-Content-Type: application/json
-
-{&quot;foo&quot;: &quot;bar&quot;, &quot;baz&quot;: [1,2,3]}
-   
- ###网络可达性管理  AFNetworkReachabilityManager 监控网络的可达性。       1  2  3      [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) &#123;      NSLog(@&quot;Reachability: %@&quot;, AFStringFromNetworkReachabilityStatus(status));  &#125;];       
- 可达URL的主机       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16      NSURL *baseURL = [NSURL URLWithString:@&quot;http://example.com/&quot;];  AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:baseURL];    NSOperationQueue *operationQueue = manager.operationQueue;  [manager.reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) &#123;      switch (status) &#123;          case AFNetworkReachabilityStatusReachableViaWWAN:          case AFNetworkReachabilityStatusReachableViaWiFi:              [operationQueue setSuspended:NO];              break;          case AFNetworkReachabilityStatusNotReachable:          default:              [operationQueue setSuspended:YES];              break;      &#125;  &#125;];       
- 
-
+   使用CocoaPods安装    Podfile       1  2      platform :ios, &apos;7.0&apos;  pod &quot;AFNetworking&quot;, &quot;~&gt;
     
     
         <a href="/2014/03/26/AFNetworking/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -575,19 +533,11 @@ Content-Type: application/json
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-         这个类只有三个类方法 + (void) resetCache 、 + (void) setObject:(NSData *)data forKey:(NSString *)key 、 + (id) objectForKey:(NSString *)key   resetCache ：清空当前的缓存  setObject:(NSData *)data forKey:(NSString *)key ：根据Key保存data到缓存中  objectForKey:(NSString *)key ：根据Key从缓存中获取data 
- ##方法实现 首先我们需要实现一个方法，该方法用于返回缓存的完整目录 核心的代码为 NSArray* paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES); 用于获取沙盒内的缓存目录       1  2  3  4  5  6  7      + (NSString *) cacheDirectory &#123;  NSArray* paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);      NSString* cacheDirectory = [paths objectAtIndex:0];      // 添加目录后缀      cacheDirectory = [cacheDirectory stringByAppendingPathComponent:@&quot;ZTCaches&quot;];      return cacheDirectory;  &#125;       
- 清空缓存也相对容易，只要把该目录的文件删除即可       1  2  3      + (void) resetCache &#123;      [[NSFileManager defaultManager] removeItemAtPath:[ZTCache cacheDirectory] error:nil];  &#125;       
- 根据Key将data存入缓存       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17      + (void) setObject:(NSData *)data forKey:(NSString *)key&#123;      NSFileManager *fileManager = [NSFileManager defaultManager];      NSString *filename = [self.cacheDirectory stringByAppendingPathComponent:key];      BOOL isDir = YES;      // 如果缓存目录不存在需要创建缓存目录      if (![fileManager fileExistsAtPath:self.cacheDirectory isDirectory:&amp;isDir]) &#123;          // 创建目录          [fileManager createDirectoryAtPath:self.cacheDirectory withIntermediateDirectories:NO attributes:nil error:nil];      &#125;      NSError *error;      @try &#123;          [data writeToFile:filename options:NSDataWritingAtomic error:&amp;error];      &#125;      @catch (NSException *exception) &#123;          //      &#125;  &#125;       
- 根据Key从缓存中获取data       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19      + (NSData *) objectForKey:(NSString *)key&#123;      NSFileManager* fileManager = [NSFileManager defaultManager];      // 根据目录和Key创建一个完整的fileName      NSString* filename = [self.cacheDirectory stringByAppendingPathComponent:key];      // 判断文件是否存在      if ([fileManager fileExistsAtPath:filename]) &#123;          // 获取文件属性Dic，并取其中的最后修改时间属性          NSDate *modificationDate = [[fileManager attributesOfItemAtPath:filename error:nil] objectForKey:NSFileModificationDate];          // 如果最后修改时间与现在时间大于7天，删除文件          if ([modificationDate timeIntervalSinceNow] &gt; cacheTime) &#123;              [fileManager removeItemAtPath:filename error:nil];          &#125;else&#123;              // 从文件中读取data              NSData *data = [NSData dataWithContentsOfFile:filename];              return data;          &#125;      &#125;      return nil;  &#125;       
- ##使用缓存类 根据实际需要，调用获取缓存，URL用MD5进行加工变为短连接       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21      - (void) loadImageFromURL:(NSString*)URL &#123;  	NSURL *imageURL = [NSURL URLWithString:URL];  	NSString *key = [URL MD5Hash];  	NSData *data = [ZTCache objectForKey:key];      // 如果存在将data传入imageView，否则添加一个异步任务  	if (data) &#123;  		UIImage *image = [UIImage imageWithData:data];  		_imageView.image = image;  	&#125; else &#123;  		_imageView.image = [UIImage imageNamed:@&quot;img_def&quot;];  		dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);  		dispatch_async(queue, ^&#123;  			NSData *data = [NSData dataWithContentsOfURL:imageURL];  			[ZTCache setObject:data forKey:key];  			UIImage *image = [UIImage imageWithData:data];  			dispatch_sync(dispatch_get_main_queue(), ^&#123;  				_imageView.image = image;  			&#125;);  		&#125;);  	&#125;  &#125;       
- String+MD5实现如下       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21      - (NSString *) MD5Hash &#123;  	  	CC_MD5_CTX md5;  	CC_MD5_Init (&amp;md5);  	CC_MD5_Update (&amp;md5, [self UTF8String], (CC_LONG)[self length]);  	  	unsigned char digest[CC_MD5_DIGEST_LENGTH];  	CC_MD5_Final (digest, &amp;md5);  	NSString *s = [NSString stringWithFormat: @&quot;%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x&quot;,  				digest[0],  digest[1],   				digest[2],  digest[3],  				digest[4],  digest[5],  				digest[6],  digest[7],  				digest[8],  digest[9],  				digest[10], digest[11],  				digest[12], digest[13],  				digest[14], digest[15]];  	  	return s;  	  &#125;       
-  示例  
-
+         这个类只有三个类方法 + (void) resetCache 、 + (void) setObject:(NSData *)data forKey:(NSString *)key 、 + (id) objectForKey:(NSString *)key   resetCache ：清空当前的缓存  setObject:(NSData *)data forKey:(NSString *)key 
     
     
         <a href="/2014/03/24/一个简单的数据缓存类/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -626,37 +576,14 @@ Content-Type: application/json
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-         ##查看已连接的设备       1      adb devices       
+           查看已连接的设备       1      adb devices      
  会列出连接设备的ID，使用adb -s DEVICE_ID可以指定特定的设备 
- ##安装应用 使用install命令来安装apk，如果设备上已经安装了应用，可以使用可选参数-r重新进行安装并保留所有数据       1      adb install -r APK_FILE       
- ##卸载应用       1      adb uninstall PACKAGE_NAME       
- ##启动Activity 
-      1      adb shell am strat PACKAGE_NAME/ACTIVITY_IN_PACKAGE      
- ##进入设备命令行       1      adb shell       
- ##截取屏幕       1      adb shell screencap -p | perl -pe &apos;s/\x0D\x0A/\x0A/g&apos; &gt; screen.png       
- ##解锁屏幕       1      adb shell input keyevent 82       
- ##日志 
- 用来在命令行中显示日志流       1      adb logcat       
- 按标签过滤       1      adb logcat -s TAG_NAME1 TAH_NAME2       
- 按优先级过滤       1  2  3      adb logcat &quot;*:PRIORITY&quot;  # example  adb logcat &quot;*:W&quot;       
- 优先级设置如下： 
- 
- V:Verbose(最低优先级) 
- D:Debug 
- I:Info 
- W:Warning 
- E:Error 
- F:Fatal 
- S:Slient(最高优先级，在这个级别上不会打印任何信息) 
- 
- 按优先级和标签名过滤       1      adb logcat -s TAG_NAME_1:PRIORITY TAG_NAME_2:PRIORITY       
- 使用grep过滤       1  2      adb logcat | grep &quot;SEARCH_TERM&quot;  adb logcat | grep &quot;SEARCH_TERM_1\|SEARCH_TERM_2&quot;       
- 清楚logcat缓冲区       1      adb logcat -c       
-
+   安装应用  使用install命令来安装apk，如果设备上已经安装了应用，可以使用可选参数-r重新进行安装并保留所有数据       1      adb install -r APK_FILE       
+   卸载应用 
     
     
         <a href="/2014/03/21/Android-ADB常用命令/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -679,6 +606,51 @@ Content-Type: application/json
 <div class="mask" id="mask"></div>
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
+<script>
+var BLOG_SHARE = {
+    title: "SeniorZhai's blog",
+    pic: "/img/logo.jpg",
+    summary: document.getElementsByName('summary')[0].content,
+    url: "http://seniorzhai.github.io/page/35/index.html"
+};
+</script>
+<div class="global-share" id="global-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
 
 <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 
@@ -686,10 +658,45 @@ Content-Type: application/json
 
 
 
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<script type="text/template" id="search-tpl">
+<li class="item">
+    <a href="/{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</script>
+
+<script src="/js/search.js"></script>
 
 
 
 
+
+<script src="//s95.cnzz.com/z_stat.php?id=true&web_id=true"></script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-54646832-1&#39;', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
 
 
 

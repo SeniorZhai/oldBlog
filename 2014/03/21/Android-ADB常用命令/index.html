@@ -10,31 +10,28 @@
   
   
   <meta name="keywords" content="Android">
-  <meta name="description" content="##查看已连接的设备1adb devices
+  <meta name="description" content="查看已连接的设备1adb devices
 会列出连接设备的ID，使用adb -s DEVICE_ID可以指定特定的设备
-##安装应用使用install命令来安装apk，如果设备上已经安装了应用，可以使用可选参数-r重新进行安装并保留所有数据1adb install -r APK_FILE
-##卸载应用1adb uninstall PACKAGE_NAME
-##启动Activity
-1adb s">
+安装应用使用install命令来安装apk，如果设备上已经安装了应用，可以使用可选参数-r重新进行安装并保留所有数据1adb install -r APK_FILE
+卸载应用1adb uninstall PACKAGE_NAME
+启动Activity1adb shell am s">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android ADB常用命令">
 <meta property="og:url" content="http://seniorzhai.github.io/2014/03/21/Android-ADB常用命令/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
-<meta property="og:description" content="##查看已连接的设备1adb devices
+<meta property="og:description" content="查看已连接的设备1adb devices
 会列出连接设备的ID，使用adb -s DEVICE_ID可以指定特定的设备
-##安装应用使用install命令来安装apk，如果设备上已经安装了应用，可以使用可选参数-r重新进行安装并保留所有数据1adb install -r APK_FILE
-##卸载应用1adb uninstall PACKAGE_NAME
-##启动Activity
-1adb s">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+安装应用使用install命令来安装apk，如果设备上已经安装了应用，可以使用可选参数-r重新进行安装并保留所有数据1adb install -r APK_FILE
+卸载应用1adb uninstall PACKAGE_NAME
+启动Activity1adb shell am s">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android ADB常用命令">
-<meta name="twitter:description" content="##查看已连接的设备1adb devices
+<meta name="twitter:description" content="查看已连接的设备1adb devices
 会列出连接设备的ID，使用adb -s DEVICE_ID可以指定特定的设备
-##安装应用使用install命令来安装apk，如果设备上已经安装了应用，可以使用可选参数-r重新进行安装并保留所有数据1adb install -r APK_FILE
-##卸载应用1adb uninstall PACKAGE_NAME
-##启动Activity
-1adb s">
+安装应用使用install命令来安装apk，如果设备上已经安装了应用，可以使用可选参数-r重新进行安装并保留所有数据1adb install -r APK_FILE
+卸载应用1adb uninstall PACKAGE_NAME
+启动Activity1adb shell am s">
   
     <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
   
@@ -217,19 +214,17 @@
         <div class="post-main">
 
             <div class="post-content" id="post-content" itemprop="postContent">
-            <p>##查看已连接的设备<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb devices</div></pre></td></tr></table></figure></p>
+            <h2 id="查看已连接的设备"><a href="#查看已连接的设备" class="headerlink" title="查看已连接的设备"></a>查看已连接的设备</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb devices</div></pre></td></tr></table></figure>
 <p>会列出连接设备的ID，使用adb -s DEVICE_ID可以指定特定的设备</p>
-<p>##安装应用<br>使用install命令来安装apk，如果设备上已经安装了应用，可以使用可选参数-r重新进行安装并保留所有数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb install -r APK_FILE</div></pre></td></tr></table></figure></p>
-<p>##卸载应用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb uninstall PACKAGE_NAME</div></pre></td></tr></table></figure></p>
-<p>##启动Activity</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell am strat PACKAGE_NAME/ACTIVITY_IN_PACKAGE</div></pre></td></tr></table></figure>
-<p>##进入设备命令行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell</div></pre></td></tr></table></figure></p>
-<p>##截取屏幕<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell screencap -p | perl -pe &apos;s/\x0D\x0A/\x0A/g&apos; &gt; screen.png</div></pre></td></tr></table></figure></p>
-<p>##解锁屏幕<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell input keyevent 82</div></pre></td></tr></table></figure></p>
-<p>##日志</p>
-<p>用来在命令行中显示日志流<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb logcat</div></pre></td></tr></table></figure></p>
+<h2 id="安装应用"><a href="#安装应用" class="headerlink" title="安装应用"></a>安装应用</h2><p>使用install命令来安装apk，如果设备上已经安装了应用，可以使用可选参数-r重新进行安装并保留所有数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb install -r APK_FILE</div></pre></td></tr></table></figure></p>
+<h2 id="卸载应用"><a href="#卸载应用" class="headerlink" title="卸载应用"></a>卸载应用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb uninstall PACKAGE_NAME</div></pre></td></tr></table></figure>
+<h2 id="启动Activity"><a href="#启动Activity" class="headerlink" title="启动Activity"></a>启动Activity</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell am strat PACKAGE_NAME/ACTIVITY_IN_PACKAGE</div></pre></td></tr></table></figure>
+<h2 id="进入设备命令行"><a href="#进入设备命令行" class="headerlink" title="进入设备命令行"></a>进入设备命令行</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell</div></pre></td></tr></table></figure>
+<h2 id="截取屏幕"><a href="#截取屏幕" class="headerlink" title="截取屏幕"></a>截取屏幕</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell screencap -p | perl -pe &apos;s/\x0D\x0A/\x0A/g&apos; &gt; screen.png</div></pre></td></tr></table></figure>
+<h2 id="解锁屏幕"><a href="#解锁屏幕" class="headerlink" title="解锁屏幕"></a>解锁屏幕</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell input keyevent 82</div></pre></td></tr></table></figure>
+<h2 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h2><p>用来在命令行中显示日志流<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb logcat</div></pre></td></tr></table></figure></p>
 <p>按标签过滤<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb logcat -s TAG_NAME1 TAH_NAME2</div></pre></td></tr></table></figure></p>
-<p>按优先级过滤<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">adb logcat &quot;*:PRIORITY&quot;</div><div class="line"># example</div><div class="line">adb logcat &quot;*:W&quot;</div></pre></td></tr></table></figure></p>
+<p>按优先级过滤<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">adb logcat &quot;*:PRIORITY&quot;</div><div class="line">#  example</div><div class="line">adb logcat &quot;*:W&quot;</div></pre></td></tr></table></figure></p>
 <p>优先级设置如下：</p>
 <ul>
 <li>V:Verbose(最低优先级)</li>

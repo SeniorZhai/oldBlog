@@ -12,45 +12,45 @@
   <meta name="keywords" content="iOS">
   <meta name="description" content="shimmer是Facebook旗下应用Paper开源的加载效果，显示为一个闪闪发光的Label。
 
-##安装使用Cocoapods来安装FBShimmering库
+安装使用Cocoapods来安装FBShimmering库
 
 命令行里运行pod search Shimmer
 
 
 
 将上面的pod &amp;#39;Shimmer&amp;#39;, &amp;#39;~&amp;gt; 1.0.1&amp;#39;copy，在你的工程下创建Podfile文件，并写入
-123platform :">
+123platform :io">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Shimmer">
 <meta property="og:url" content="http://seniorzhai.github.io/2014/03/20/Shimmer/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
 <meta property="og:description" content="shimmer是Facebook旗下应用Paper开源的加载效果，显示为一个闪闪发光的Label。
 
-##安装使用Cocoapods来安装FBShimmering库
+安装使用Cocoapods来安装FBShimmering库
 
 命令行里运行pod search Shimmer
 
 
 
 将上面的pod &amp;#39;Shimmer&amp;#39;, &amp;#39;~&amp;gt; 1.0.1&amp;#39;copy，在你的工程下创建Podfile文件，并写入
-123platform :">
+123platform :io">
 <meta property="og:image" content="https://raw.github.com/zt1991616/blog/master/Image/14032002.gif">
 <meta property="og:image" content="https://raw.github.com/zt1991616/blog/master/Image/14032003.png">
 <meta property="og:image" content="https://raw.github.com/zt1991616/blog/master/Image/14032001.png">
 <meta property="og:image" content="https://raw.github.com/zt1991616/blog/master/Image/14032004.gif">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shimmer">
 <meta name="twitter:description" content="shimmer是Facebook旗下应用Paper开源的加载效果，显示为一个闪闪发光的Label。
 
-##安装使用Cocoapods来安装FBShimmering库
+安装使用Cocoapods来安装FBShimmering库
 
 命令行里运行pod search Shimmer
 
 
 
 将上面的pod &amp;#39;Shimmer&amp;#39;, &amp;#39;~&amp;gt; 1.0.1&amp;#39;copy，在你的工程下创建Podfile文件，并写入
-123platform :">
+123platform :io">
 <meta name="twitter:image" content="https://raw.github.com/zt1991616/blog/master/Image/14032002.gif">
   
     <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
@@ -236,7 +236,7 @@
             <div class="post-content" id="post-content" itemprop="postContent">
             <p><a href="https://github.com/facebook/Shimmer" target="_blank" rel="external">shimmer</a>是Facebook旗下应用Paper开源的加载效果，显示为一个闪闪发光的Label。</p>
 <p><img src="https://raw.github.com/zt1991616/blog/master/Image/14032002.gif" alt=""></p>
-<p>##安装<br>使用Cocoapods来安装FBShimmering库</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>使用Cocoapods来安装FBShimmering库</p>
 <ol>
 <li>命令行里运行<code>pod search Shimmer</code></li>
 </ol>
@@ -249,8 +249,8 @@
 </li>
 </ol>
 <p><img src="https://raw.github.com/zt1991616/blog/master/Image/14032001.png" alt=""></p>
-<p>##用法<br>创建一个<code>FBShimmeringView</code>或<code>FBShimmeringLayer</code>，添加您的内容。要开启闪烁，就设置<code>shimmering</code>属性为YES。<br>例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">FBShimmeringView  * shimmeringView  =  [[ FBShimmeringView  alloc ]  initWithFrame : self.view.bounds ]; </div><div class="line">[ self.view  addSubview : shimmeringView ];</div><div class="line"></div><div class="line">UILabel  * loadingLabel  =  [[ UILabel  alloc ]  initWithFrame : shimmeringView.bounds ]; </div><div class="line">loadingLabel.textAlignment  =  NSTextAlignmentCenter ; </div><div class="line">loadingLabel.text  =  NSLocalizedString ( @&quot;Shimmer&quot; ,  nil ); </div><div class="line">shimmeringView.contentView  =  loadingLabel ;</div><div class="line"></div><div class="line">/ /开始闪闪发光</div><div class="line">shimmeringView.shimmering =  YES ;</div></pre></td></tr></table></figure></p>
-<p>##示例链接<br><a href="https://github.com/zt1991616/ShimmerDemo" target="_blank" rel="external">示例</a>：</p>
+<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><p>创建一个<code>FBShimmeringView</code>或<code>FBShimmeringLayer</code>，添加您的内容。要开启闪烁，就设置<code>shimmering</code>属性为YES。<br>例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">FBShimmeringView  * shimmeringView  =  [[ FBShimmeringView  alloc ]  initWithFrame : self.view.bounds ]; </div><div class="line">[ self.view  addSubview : shimmeringView ];</div><div class="line"></div><div class="line">UILabel  * loadingLabel  =  [[ UILabel  alloc ]  initWithFrame : shimmeringView.bounds ]; </div><div class="line">loadingLabel.textAlignment  =  NSTextAlignmentCenter ; </div><div class="line">loadingLabel.text  =  NSLocalizedString ( @&quot;Shimmer&quot; ,  nil ); </div><div class="line">shimmeringView.contentView  =  loadingLabel ;</div><div class="line"></div><div class="line">/ /开始闪闪发光</div><div class="line">shimmeringView.shimmering =  YES ;</div></pre></td></tr></table></figure></p>
+<h2 id="示例链接"><a href="#示例链接" class="headerlink" title="示例链接"></a>示例链接</h2><p><a href="https://github.com/zt1991616/ShimmerDemo" target="_blank" rel="external">示例</a>：</p>
 <p><img src="https://raw.github.com/zt1991616/blog/master/Image/14032004.gif" alt=""></p>
 
             <blockquote>

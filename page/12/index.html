@@ -6,6 +6,8 @@
   <title>SeniorZhai&#39;s blog | 苟利国家生死以，起因福祸趋避之</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
+  <meta name="theme-color" content="#ED5565">
+  
   
   <meta name="keywords" content="undefined">
   <meta name="description" content="专注于移动平台">
@@ -18,8 +20,10 @@
 <meta name="twitter:title" content="SeniorZhai's blog">
 <meta name="twitter:description" content="专注于移动平台">
   
+    <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
+  
   <meta name="summary" content="专注于移动平台">
-  <link rel="shortcut icon" href="/">
+  <link rel="shortcut icon" href="/img/favicon.ico">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -33,7 +37,7 @@
   </a>
   <div class="brand-wrap">
     <div class="brand">
-      <a href="/" class="avatar"><img src="undefined"></a>
+      <a href="/" class="avatar"><img src="/img/logo.jpg"></a>
       <hgroup class="introduce">
         <h5 class="nickname">Dear宅学长</h5>
         <a href="mailto:developer.zhaitao@gmail.com" title="developer.zhaitao@gmail.com" class="mail">developer.zhaitao@gmail.com</a>
@@ -43,6 +47,48 @@
   <div class="scroll-wrap flex-col">
     <ul class="nav">
       
+          <li class="waves-block waves-effect">
+            <a href="/"  >
+              <i class="icon icon-lg icon-home"></i>
+              主页
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/archives"  >
+              <i class="icon icon-lg icon-archives"></i>
+              Archives
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/tags"  >
+              <i class="icon icon-lg icon-tags"></i>
+              Tags
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://seniorzhai.github.io" target="_blank" >
+              <i class="icon icon-lg icon-github"></i>
+              Github
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="http://weibo.com/seniorszhai/" target="_blank" >
+              <i class="icon icon-lg icon-weibo"></i>
+              Weibo
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/about"  >
+              <i class="icon icon-lg icon-link"></i>
+              about
+            </a>
+          </li>
+      
     </ul>
 
     <footer class="footer">
@@ -50,7 +96,7 @@
   <p>SeniorZhai&#39;s blog &copy; 2016</p>
   <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
   <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
-  <a href="undefined" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
+  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
 </footer>
 
   </div>
@@ -65,6 +111,20 @@
         </a>
         <div class="flex-col header-title ellipsis">SeniorZhai&#39;s blog</div>
         
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
         
     </div>
 </header>
@@ -115,7 +175,7 @@
     
     
         <a href="/2015/01/20/Express学习笔记-快速开始/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -155,47 +215,11 @@
 
     
           
- #创建应用       1  2  3  4  5  6  7       var  express =  require ( 'express' );   var  app = express();  app.get( '/' ,  function ( req,res ) &#123;  	res.send( 'hello world' );  &#125;)    app.listen( 3000 );       
- ##app设置 
- ###值设置 
- 
-  app.set(name,value) 
-      1      app.set( 'title' , 'My Site' );      
- 
-  app.get(name) 
-      1      app.get( 'title' );  // 'My Site'       
- 
- 
- ###选项设置 
- 
- app.enable(name)    // 设置某项为true 
- app.disable(name)    // 设置某项为false，禁用 
- app.enabled(name)    // 检查某项是否为true 
- app.disabled(name) // 检查某项是否为false 
- 
- ###环境配置 app.configure([env],callback)       1  2  3  4  5  6  7  8  9  10  11  12  13  14       // 所有环境   app.configure(  function (  ) &#123;    app.set( 'title' ,  'My Application' );  &#125;)     // 开发环境   app.configure( 'development' ,   function (  ) &#123;    app.set( 'db uri' ,  'localhost/dev' );  &#125;)     // 只用于生产环境   app.configure( 'production' ,   function (  ) &#123;    app.set( 'db uri' ,  'n.n.n.n/prod' );  &#125;)       
- 更高效且直接的代码如下(历史遗留问题)：       1  2  3  4  5  6  7  8  9  10  11  12      // 所有环境  app.set(&apos;title&apos;, &apos;My Application&apos;);    // 只用于开发环境  if (&apos;development&apos; == app.get(&apos;env&apos;)) &#123;    app.set(&apos;db uri&apos;, &apos;localhost/dev&apos;);  &#125;    // 只用于生产环境  if (&apos;production&apos; == app.get(&apos;env&apos;)) &#123;    app.set(&apos;db uri&apos;, &apos;n.n.n.n/prod&apos;);  &#125;       
- ###使用中间件 app.use([path],function) path默认为”/“       1  2  3  4  5  6  7  8  9  10  11  12  13       var  express =  require ( 'express' )   var  app = express()   // 简单的logger   app.use(  function ( req,res,next ) &#123;  	 console .log( "%s %s" ,req.method,req,url)  	next();  &#125;)    app.use(  function ( req,res,next ) &#123;  	res.send( 'Hello World!' )  &#125;);    app.listen( 3000 );       
- ###setting 使用内建的方式改变Express行为的设置 
- 
- env 运行时环境，默认为 process.env.NODE_ENV 或者 “development” 
- trust proxy 激活反向代理，默认未激活状态 
- jsonp callback name 修改默认?callback=的jsonp回调的名字 
- json replacer JSON replacer 替换时的回调, 默认为null 
- json spaces JSON 响应的空格数量，开发环境下是2 , 生产环境是0 
- case sensitive routing 路由的大小写敏感, 默认是关闭状态， “/Foo” 和”/foo” 是一样的 
- strict routing 路由的严格格式, 默认情况下 “/foo” 和 “/foo/“ 是被同样对待的 
- view cache 模板缓存，在生产环境中是默认开启的 
- view engine 模板引擎 
- views 模板的目录, 默认是”process.cwd() + ./views” 
- 
- ##Request 
- ##req.params 命名过的参数会以键值对的形式存放，默认是 {}        1  2       // GET /user/zoe 路由设置为/user/:name   req.params.name  //zoe        
-
+   创建应用       1  2  3  4  5  6  7       var  express =  require ( 'express' );   var  app = express();  app.get( '/' ,  function ( req,res ) &#123;  	res.send( 'hello world' );  &#125;)    app.list
     
     
         <a href="/2015/01/19/Express基础使用/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -240,18 +264,64 @@
  之后可以在下面的Packages中管理模块，可以选择安装各个模块，包括 express  
   之后在 Libraies 中选择Node.js的支撑   
  
-  运行Express项目 由于Express 4.0采用了scripts的启动方式，所以 node app.js 不能启动应用 采用 npm start 可以启动应用 在 WebStorm 上可以这么设置   
- 
- 
-
+  运行Express项目 由于Express 4.0采用了scripts的启动方式，所以 
     
     
         <a href="/2015/01/19/配置WebStorm支持node-js和Express/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
 	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Express/">Express</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebStorm/">WebStorm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
+
+</article>
+
+    </li>
+  
+    <li class="post-list-item">
+        <article id="post-node核心模块（一）"
+  class="article article-type-post" itemprop="blogPost">
+     
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2015/01/17/node核心模块（一）/">node核心模块（一）</a>
+    </h3>
+  
+
+
+
+    <div class="post-meta">
+        <time datetime="2015-01-17T05:33:12.000Z" itemprop="datePublished" class="post-time">
+  2015-01-17
+</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/node-js/">node.js</a></li></ul>
+
+
+
+    </div>
+
+    <div class="post-content" id="post-content" itemprop="postContent" >
+
+    
+          
+   全局对象  Node.js中的全局对象是 global ，所有全局变量都是 global 的属性 
+   process  process是一个全局变量，用于描述当前Node.js进程状态，提供了一个与操作系统的简单接口 
+ 
+ process.argv是命令行参数的数组 
+ process.studout 标准输出流 
+  process.stdin 标准输入流，初始化时它使被暂停的
+    
+    
+        <a href="/2015/01/17/node核心模块（一）/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li></ul>
 
 </article>
 
@@ -290,95 +360,7 @@
     
     
         <a href="/2015/01/17/node核心模块（二）/" class="post-more waves-effect waves-button">
-            
-        </a>
-    </div>
-    
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li></ul>
-
-</article>
-
-    </li>
-  
-    <li class="post-list-item">
-        <article id="post-node核心模块（一）"
-  class="article article-type-post" itemprop="blogPost">
-     
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2015/01/17/node核心模块（一）/">node核心模块（一）</a>
-    </h3>
-  
-
-
-
-    <div class="post-meta">
-        <time datetime="2015-01-17T05:33:12.000Z" itemprop="datePublished" class="post-time">
-  2015-01-17
-</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/node-js/">node.js</a></li></ul>
-
-
-
-    </div>
-
-    <div class="post-content" id="post-content" itemprop="postContent" >
-
-    
-          
- ##全局对象 Node.js中的全局对象是 global ，所有全局变量都是 global 的属性 
- ###process process是一个全局变量，用于描述当前Node.js进程状态，提供了一个与操作系统的简单接口 
- 
- process.argv是命令行参数的数组 
- process.studout 标准输出流 
-  process.stdin 标准输入流，初始化时它使被暂停的，必须恢复读取数据，并手动编写流的时间响应函数 
-      1  2  3  4      process.stdin.resume()  process.stdin.on( 'data' ,  function ( data ) &#123;  	process.stdout.write( 'read from console: '  + data.toString());  &#125;);      
- 
-  process.nextTick(callback) 为事件循环设置一项任务，Node.js会在下次时间循环响应时调用callback 
-      1  2  3  4  5  6  7  8        function   doSomething ( args,callback )  &#123;  	somthingComplicated(args);  	callback();  &#125;    doSomething(  function   onEnd (  ) &#123;  	compute();  &#125;);      
- 
- 
- 假设上面的代码中 somthingComplicated() 和 compute() 函数都是较为耗时的函数，上面的代码会先执行 somthingComplicated() 立即执行 compute()        1  2  3  4  5  6  7  8        function   doSometing ( args,callback )  &#123;  	somthingComplicated(args);  	process.nextTick(callback);  &#125;    doSomething(fucntion onEnd()&#123;  	compute();  &#125;)       
- ###console console用于控制台的标准输出 
- 
- console.log() 向标准输出流打印字符串以及换行符，也可以接受C语言printf()命令的格式输出 
- console.error() 向标准错误流输出 
-  console.trace() 向标准错误流输出当前的调用栈 ##常用工具util util是Node.js核心模块，提供了常用函数的集合，用于弥补核心JavaScript的功能过于精简的不足 ###util.inherits 实现对象原型继承的函数 
-      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23       var  util =  require ( 'util' );      function   Base (  )  &#123;  	 this .name =  'base' ;  	 this .base =  1991 ;    	 this .sayHello =   function (  )  &#123;  		 console .log( 'Hello'  +  this .name);  	&#125;    	 this .prototype.showName =   function (  )  &#123;  		 console .log( this .name);  	&#125;  &#125;;      function   Sub (  )  &#123;  	 this .name =  'sub' ;  &#125;    util.inherits(Sub,Base);   var  obj =  new  Sub()  obj.showName   console .log(obj)      
-   注；Sub仅仅继承了Base在原型中定义的函数，内部创造的base和sayHeloo都没有被继承 ###util.inspect util.inspect(object,[showHidden],[depth],[colors])是将任意对象转换成字符串的方法 可选参数showHideen控制是否输出更多隐藏信息 depth表示最大递归层数，默认递归2层，指定为null表示不限层数完整递归 color控制是否用ANSI颜色编码输出 ##事件驱动events  events 是Node.js最终要的模块，原因是Node.js本身的架构就是事件式的 ###事件发射器  events 模块只提供一个对象 events.EventEmitter 。EventEmitter对事件发射和事件监听功能进行了封装，每个事件由事件名和若干个参数组成，事件名是一个字符串。对于每个事件，EventEmitter支持若干个事件监听器，当事件发送时注册的事件监听器被依次调用，事件参数作为回调函数参数传递 
-      1  2  3  4  5  6  7  8  9  10  11  12  13  14       var  events =  require ( 'events' );     var  emitter =  new  events.EventEmitter();     // 注册`someEvent`事件监听   emitter.on( 'someEvent' ,  function ( arg1,arg2 ) &#123;  	 console .log( 'listner1' ,arg1,arg2);  &#125;)    emitter.on( 'someEvent' ,  function ( arg1,arg2 ) &#123;  	 console .log( 'listner2' ,arg1,arg2);  &#125;)   // 发送事件   emitter.emit( 'someEvent' , 'zoe' , 1991 );      
- 
-  EventEmitter.on(event,listener) 为指定事件注册一个监听器 
- 
- EventEmitter.emit(event,[arg1],[arg2],[…]) 发射 event 时间，可传递若干参数 
- EventEmitter.once(event,listener) 为指定时间注册一个单次监听器，即监听器最多只会触发一次，触发后立即解除监听 
- EventEmitter.removeListener(event,listener) 移除指定事件的某个监听器，listener必须是该事件已经注册过的监听器 
- EventEmitter.removeAllListener([event]) 移除所有时间的所有监听器，如果指定event则移除指定时间的所有监听器 ###error事件 EventEmitter定义了一个特殊的时间error，在遇到异常时会发射error，如果没有响应的监听器，Node.js会把它当做异常，退出程序打印调用栈。      1  2  3  4  5       var  events =  require ( 'events' );     var  emitter =  new  events.EventEmitter();    emitter.emitter( 'error' );      
- 
- 
- ###继承EventEmitter 很多时候，我们不会直接使用EventEmitter，而是在对象中继承它，包括 fs ， net ， http 在内的基于事件响应的核心模块都是EventEmitter的子类 
- ##文件系统fs  fs 模块是文件操作的封装，它提供了文件的读取、写入、更名、删除、遍历目录、链接等文件系统操作，fs还提供了异步和同步两个版本 
- ###fs.readFile fs.readFile(filename,[encoding],[callback(err,data)])是最简单的读取文件的函数，它接受一个必选参数filename表示要读取的文件名，第二个参数encoding表示文件的字符编码，callback是回调函数，err表示是否有错误，data是文件内容，如果没有指定encoding，data会是Buffer形式表示的二进制数据       1  2  3  4  5  6  7  8  9       var  fs =  require ( 'fs' )    fs.readFile( 'error.js' , 'utf-8' ,  function ( err,data ) &#123;  	 if (err)&#123;  		 console .log(err)  	&#125;  else  &#123;  		 console .log(data)  	&#125;  &#125;)       
- ###fs.readFileSync fs.readFileSync是fs.readFile同步版本，读取到的数据会以返回值的形式返回，需要使用try和catch捕捉处理异常 
- ###fs.open  fs.open(path,flags,[mode],[callback(err,fd)]) ，path为文件路径，flags可以使以下值 
- 
- r 以 读取模式 打开文件 
- r+ 以 读写模式 打开文件 
- w 以 写入模式 打开文件，如果文件不存在则创建 
- w+ 以 读写模式 打开文件，如果文件不存在则创建 
- a 以 追加模式 打开文件，如果不存在则创建 
- a+ 以 读取追加模式 打开文件，如果不存在则创建 mode参数用于创建文件制定权限，默认是0666，回调函数将会传递一个文件描述符fd ###fs.read  fs.read(fd,buffer,offset,length,postion,[callback(err,bytesRead,buffer)]) 从制定的文件描述符fd中读取数据并写入buffer指向的缓冲区对象，offset是buffer的写入偏移量，length是要从文件中读取的字节数，position是文件读取的起始位置，如果position的值为null，则会从当前文件指针的位置读取，回调函数传递bytesRead和buffer分别表示读取的字节数和缓冲区对象      1  2              
- 
- 
-
-    
-    
-        <a href="/2015/01/17/node核心模块（一）/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -421,7 +403,7 @@
     
     
         <a href="/2015/01/16/node-js包/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -464,7 +446,7 @@
     
     
         <a href="/2015/01/16/node-js模块/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -504,24 +486,15 @@
 
     
           
- #JavaScript基础 
- ##变量 变量可以存放值(x=1)和表达式(y=x+1) 变量名字母、数字、少量字符($、_)组成，必须使用字母、字符(但是不建议这么做)开头，变量名对大小写敏感 
- ###声明 JavaScript使用 var 声明变量，声明后，默认是没有值(undefined) 
+   JavaScript基础    变量  变量可以存放值(x=1)和表达式(y=x+1) 变量名字母、数字、少量字符($、_)组成，必须使用字母、字符(但是不建议这么做)开头，变量名对大小写敏感 
+   声明  JavaScript使用 var 声明变量，声明后，默认是没有值(undefined) 
  
- JavaScript支持重新声明，之前赋的值不会丢失 ###数据类型 
- 字符串，使用单引号或双引号包括 
- 数字，可以使小数可以使用指数 
- 布尔，true和false 
- 数组，   var cars = new Array()   var cars = new Array(“Audi”,”BMW”,”Volvo”)   var cars = [“Adudi”,”BMW”] 
- 对象   var person = {name:”Bill”,age:1}   person.name   person.age   var person = new Object()   person.name = “Bill” 
- Undefined 没有值 
- Null 通过设置null来清空数据 在JavaScript一切都是对象，如字符串   txt = “text”   txt.length // 4   txt.indexOf()   txt.replace()   txt.search() 
- 
-
+ JavaScript支持重新声明，之前赋的值不会丢失   数据类型  
+ 字符串，
     
     
         <a href="/2015/01/16/JavaScript基础/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -564,7 +537,7 @@
     
     
         <a href="/2015/01/14/常用-gitignore/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -609,7 +582,7 @@
     
     
         <a href="/2015/01/12/8年来iPhone的变化/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -632,6 +605,51 @@
 <div class="mask" id="mask"></div>
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
+<script>
+var BLOG_SHARE = {
+    title: "SeniorZhai's blog",
+    pic: "/img/logo.jpg",
+    summary: document.getElementsByName('summary')[0].content,
+    url: "http://seniorzhai.github.io/page/12/index.html"
+};
+</script>
+<div class="global-share" id="global-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
 
 <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 
@@ -639,10 +657,45 @@
 
 
 
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<script type="text/template" id="search-tpl">
+<li class="item">
+    <a href="/{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</script>
+
+<script src="/js/search.js"></script>
 
 
 
 
+
+<script src="//s95.cnzz.com/z_stat.php?id=true&web_id=true"></script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-54646832-1&#39;', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
 
 
 

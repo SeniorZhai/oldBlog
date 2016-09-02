@@ -16,7 +16,7 @@
 <meta property="og:url" content="http://seniorzhai.github.io/2015/10/14/Android-Studio上的NDK开发/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
 <meta property="og:description" content="在AndroidStudio全面支持NDK开发前，使用的方法大概是这样的http://seniorzhai.github.io/2015/03/19/AndroidStudio%E4%B8%8A%E4%BD%BF%E7%94%A8NDK/在AS 1.3版本后，NDK终于可以在AndroidStudio正式支持了，不过还在实验阶段，后续可能还会有些许不同，但至少能管中窥豹了。">
-<meta property="og:updated_time" content="2015-12-01T05:53:32.000Z">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android Studio上的NDK开发">
 <meta name="twitter:description" content="在AndroidStudio全面支持NDK开发前，使用的方法大概是这样的http://seniorzhai.github.io/2015/03/19/AndroidStudio%E4%B8%8A%E4%BD%BF%E7%94%A8NDK/在AS 1.3版本后，NDK终于可以在AndroidStudio正式支持了，不过还在实验阶段，后续可能还会有些许不同，但至少能管中窥豹了。">
@@ -203,15 +203,13 @@
 
             <div class="post-content" id="post-content" itemprop="postContent">
             <p>在AndroidStudio全面支持NDK开发前，使用的方法大概是这样的<a href="http://seniorzhai.github.io/2015/03/19/AndroidStudio%E4%B8%8A%E4%BD%BF%E7%94%A8NDK/">http://seniorzhai.github.io/2015/03/19/AndroidStudio%E4%B8%8A%E4%BD%BF%E7%94%A8NDK/</a><br>在AS 1.3版本后，NDK终于可以在AndroidStudio正式支持了，不过还在实验阶段，后续可能还会有些许不同，但至少能管中窥豹了。<br><a id="more"></a></p>
-<p>##环境</p>
-<ul>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
 <li>Android Studio 1.3+</li>
 <li>Gradle 2.5</li>
 <li>NDK r10e</li>
 <li>Build Tools 19.0.0+</li>
 </ul>
-<p>##修改配置文件</p>
-<ul>
+<h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h2><ul>
 <li><p>gradle/wrapper/gradle-wrapper.properties，修改distributionUrl使用Gradle2.5</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">distributionUrl=https\://services.gradle.org/distributions/gradle-2.5-all.zip</div></pre></td></tr></table></figure>
 </li>
@@ -221,8 +219,7 @@
 <li><p>app/build.gradle，新版的Gradle语法有很大的改变，最外层为model，赋值使用=，新增项使用+=（具体可以在<a href="https://github.com/SeniorZhai/AS_NDK/commit/5b4e3c8ee345360d0d0067234a87d0d35e2d096b" target="_blank" rel="external">这儿</a>查看）</p>
 </li>
 </ul>
-<p>##创建JNI</p>
-<ol>
+<h2 id="创建JNI"><a href="#创建JNI" class="headerlink" title="创建JNI"></a>创建JNI</h2><ol>
 <li>创建JNI的目录</li>
 <li>定义JNI Java类，使用javah生产头文件</li>
 <li>编写c文件<br>详情见<a href="https://github.com/SeniorZhai/AS_NDK/commit/81ea7c1285e1a0ca61c79f035b3af01bff14ab11" target="_blank" rel="external">https://github.com/SeniorZhai/AS_NDK/commit/81ea7c1285e1a0ca61c79f035b3af01bff14ab11</a></li>

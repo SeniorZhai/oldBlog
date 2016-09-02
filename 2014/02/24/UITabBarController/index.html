@@ -32,7 +32,7 @@ UITabBar">
 <meta property="og:image" content="https://github.com/zt1991616/blog/raw/master/Image/14022402.png">
 <meta property="og:image" content="https://github.com/zt1991616/blog/raw/master/Image/14022403.png">
 <meta property="og:image" content="https://github.com/zt1991616/blog/raw/master/Image/14022404.png">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UITabBarController">
 <meta name="twitter:description" content="UITabBarController的基本概念
@@ -257,8 +257,7 @@ UITabBar">
 <li>创建系统自带的TabBarController<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">TabBarViewController *tabBarController = [[UITabBarViewController alloc]init];</div><div class="line">FirstViewController *firstItem = [[FirstViewController alloc] init];</div><div class="line">UITabBarItem *firstItem = [[UITabBarItem alloc]initWithTabBarSystemItem:UITabBarSystemItemFavorites tag:1];</div><div class="line">firstViewController.tabBarItem = firstItem;</div><div class="line">// ......</div><div class="line">NSArray *viewControllers = @[firstItem,secondItem,thirdItem];</div><div class="line">[tabBarController setViewControllers:viewControllers animated:YES];</div><div class="line">self.window.rootViewController = tabBarController;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>##自定义UITabBarItem</p>
-<ul>
+<h2 id="自定义UITabBarItem"><a href="#自定义UITabBarItem" class="headerlink" title="自定义UITabBarItem"></a>自定义UITabBarItem</h2><ul>
 <li>图片大小30<em>30px(视网膜屏60</em>60)</li>
 <li><p>图片需要使用淡灰色或者半透明效果，选择系统自动填充蓝色</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">FirstViewController *firstVC = [[FirstViewController alloc]init];</div><div class="line">UITabBarItem *firstItem = [[UITabBarItem alloc] initWithTitle:@&quot;主页&quot; image:[UIImage imageNamed:@&quot;image.ong&quot;]tag:1];</div><div class="line">firstVC.tabBarItem = firstItem;</div></pre></td></tr></table></figure>
@@ -267,8 +266,7 @@ UITabBar">
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">-(BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController</div><div class="line">&#123;</div><div class="line">	// 视图将被切换时调用，viewController为将被显示的控制器</div><div class="line">&#125;</div><div class="line">- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController</div><div class="line">&#123;</div><div class="line">// 视图已经被切换后调用，viewController为已经显示的控制器</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>##基层分栏控制器和导航控制器</p>
-<ul>
+<h2 id="基层分栏控制器和导航控制器"><a href="#基层分栏控制器和导航控制器" class="headerlink" title="基层分栏控制器和导航控制器"></a>基层分栏控制器和导航控制器</h2><ul>
 <li>在Tab Bar控制器中某一个Tab中使用Navigation控制器。</li>
 <li>实现代码<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">FirstViewController *firstVC = [[FirstViewController alloc] init];</div><div class="line">UINavigationController * fNav = [[UINavigation alloc] initWithRootViewController:firstVC];</div><div class="line">SecondViewController * secondVC = [[SecondViewController alloc] init];</div><div class="line">//......</div><div class="line">NSArray *viewControllers = [NSArray arrayWithObjects:firstVC,secondVC,nil];</div><div class="line">UITabBarController*tabController = [[UITabBarController alloc] init];</div><div class="line">tabController.viewControllers = viewControllers;</div><div class="line">self.window.rootViewController = tabController;</div></pre></td></tr></table></figure></li>
 </ul>

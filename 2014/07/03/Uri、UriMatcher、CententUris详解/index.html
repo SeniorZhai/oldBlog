@@ -24,7 +24,7 @@ Android的Uri由以下三部分组成：”content://“、数据的路径、标
 Android的Uri由以下三部分组成：”content://“、数据的路径、标示ID(可选)如：
 
 所有联系人的Uri：">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+<meta property="og:updated_time" content="2016-09-02T08:08:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Uri、UriMatcher、CententUris详解">
 <meta name="twitter:description" content="Uri通用资源标志符(Universal Resource Ident，简称”URI”)Uri代表要操作的数据，Android上可用的每种资源——图片、视频等资源都可以用Uri表示URI一般分为三个部分组成：访问资源的命名机制，存放资源的主机名,资源自身的名字，由路径表示
@@ -228,12 +228,12 @@ Android的Uri由以下三部分组成：”content://“、数据的路径、标
 <li>UriMatcher<br>UriMatcher类主要用于匹配Uri<br>使用方法如下，初始化：<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">UriMathcer matcher = <span class="keyword">new</span> UriMatcher(UriMatcher.NO_MATCH);</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>第二步注册需要的Ur:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">matcher.addURI(<span class="string">"com.zoe.blog"</span>,<span class="string">"people"</span>,PEOPLE);</div><div class="line">matcher.addURI(<span class="string">"com.zoe.blog"</span>, <span class="string">"person/#"</span>, PEOPLE_ID);</div></pre></td></tr></table></figure></p>
+<p>第二步注册需要的Ur:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">matcher.addURI(<span class="string">"com.zoe.blog"</span>,<span class="string">"people"</span>,PEOPLE);</div><div class="line">matcher.addURI(<span class="string">"com.zoe.blog"</span>, <span class="string">"person/# "</span>, PEOPLE_ID);</div></pre></td></tr></table></figure></p>
 <p>第三部，与已经注册的Uri进行匹配:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">Uri uri = Uri.parse(<span class="string">"content://"</span> + <span class="string">"com.zoe.blog"</span> + <span class="string">"/people"</span>);</div><div class="line"><span class="keyword">int</span> match = matcher.match(uri);</div><div class="line"><span class="keyword">switch</span>(match)</div><div class="line">&#123;</div><div class="line">    <span class="keyword">case</span> PEOPLE:</div><div class="line">        <span class="keyword">return</span> <span class="string">"vnd.android.cursor.dir/people"</span>;</div><div class="line">    <span class="keyword">case</span> PEOPLE_ID:</div><div class="line">        <span class="keyword">return</span> <span class="string">"vnd.android.cursor.item/people"</span>;</div><div class="line">    <span class="keyword">default</span>:</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>match方法匹配后会返回一个匹配码Code，即在使用注册方法addURI时传入的第三个参数。</p>
 <ul>
 <li>常量<code>UriMatcher.NO_MATCH</code>表示不匹配任何路径的返回码</li>
-<li><code>#号</code>为通配符</li>
+<li><code># 号</code>为通配符</li>
 <li><code>*号</code>为任意字符</li>
 </ul>
 <ol>

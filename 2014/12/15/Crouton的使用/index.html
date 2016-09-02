@@ -16,7 +16,7 @@
 <meta property="og:url" content="http://seniorzhai.github.io/2014/12/15/Crouton的使用/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
 <meta property="og:description" content="Crouton是一个显示提示信息的显示工具类，可以用来代替Toast。默认显示在窗口的顶部，可以按队列一个接着一个显示。">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Crouton的使用">
 <meta name="twitter:description" content="Crouton是一个显示提示信息的显示工具类，可以用来代替Toast。默认显示在窗口的顶部，可以按队列一个接着一个显示。">
@@ -203,8 +203,7 @@
 
             <div class="post-content" id="post-content" itemprop="postContent">
             <p><code>Crouton</code>是一个显示提示信息的显示工具类，可以用来代替Toast。默认显示在窗口的顶部，可以按队列一个接着一个显示。<br><a id="more"></a></p>
-<p>##使用</p>
-<ul>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ul>
 <li><p>通过CharSequence创建Crouton</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Crouton.makeText(Activity,CharSequence,Style).show();</div></pre></td></tr></table></figure>
 </li>
@@ -218,14 +217,12 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 可以在onDestroy()函数中添加下面的方法，取消所有预定的Crouton</span></div><div class="line">Crouton.cancelAllCroutons();</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>##默认Style</p>
-<ul>
+<h2 id="默认Style"><a href="#默认Style" class="headerlink" title="默认Style"></a>默认Style</h2><ul>
 <li>Style.ALERT</li>
 <li>Style.CONFIRM</li>
 <li>Style.INFO</li>
 </ul>
-<p>###自定义的Style可以设置：</p>
-<ul>
+<h3 id="自定义的Style可以设置："><a href="#自定义的Style可以设置：" class="headerlink" title="自定义的Style可以设置："></a>自定义的Style可以设置：</h3><ul>
 <li>显示时间 Configuration.Builder().setDuration()</li>
 <li>尺寸 </li>
 <li>显示的文本    </li>
@@ -234,7 +231,7 @@
 <li>显示的图像 </li>
 <li>背景色 Style.Builder().setBackgroundColor()</li>
 </ul>
-<p>##导入方式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">dependencies &#123;</div><div class="line">  ...</div><div class="line">  compile(&apos;de.keyboardsurfer.android.widget:crouton:1.8.5@aar&apos;) &#123;</div><div class="line">    // exclusion is not neccessary, but generally a good idea.</div><div class="line">    exclude group: &apos;com.google.android&apos;, module: &apos;support-v4&apos;</div><div class="line">  &#125;</div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="导入方式"><a href="#导入方式" class="headerlink" title="导入方式"></a>导入方式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">dependencies &#123;</div><div class="line">  ...</div><div class="line">  compile(&apos;de.keyboardsurfer.android.widget:crouton:1.8.5@aar&apos;) &#123;</div><div class="line">    // exclusion is not neccessary, but generally a good idea.</div><div class="line">    exclude group: &apos;com.google.android&apos;, module: &apos;support-v4&apos;</div><div class="line">  &#125;</div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <ul>
 <li>例子 <a href="https://github.com/SeniorZhai/CroutonDemo" target="_blank" rel="external">https://github.com/SeniorZhai/CroutonDemo</a></li>
 </ul>

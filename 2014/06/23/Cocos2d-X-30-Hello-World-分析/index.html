@@ -10,19 +10,19 @@
   
   
   <meta name="keywords" content="Cocos2d-X,Hello World">
-  <meta name="description" content="##AppDelegate.h与AppDelegate.cpp文件这两个文件时Cocos2d-x游戏的入口文件，控制着游戏的生命周期,除去构造函数和析构函数外，共有 3 个方法。
-1234567891011121314151617181920// 应用程序启动后将调用这个方法。默认的实现中已经包含了游戏启动后的必要准备bool applicationDidFinishLaunching()&amp;#12">
+  <meta name="description" content="AppDelegate.h与AppDelegate.cpp文件这两个文件时Cocos2d-x游戏的入口文件，控制着游戏的生命周期,除去构造函数和析构函数外，共有 3 个方法。
+1234567891011121314151617181920// 应用程序启动后将调用这个方法。默认的实现中已经包含了游戏启动后的必要准备bool applicationDidFinishLaunching()&amp;#123;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Cocos2d-X 3.0 Hello World 分析">
 <meta property="og:url" content="http://seniorzhai.github.io/2014/06/23/Cocos2d-X-30-Hello-World-分析/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
-<meta property="og:description" content="##AppDelegate.h与AppDelegate.cpp文件这两个文件时Cocos2d-x游戏的入口文件，控制着游戏的生命周期,除去构造函数和析构函数外，共有 3 个方法。
-1234567891011121314151617181920// 应用程序启动后将调用这个方法。默认的实现中已经包含了游戏启动后的必要准备bool applicationDidFinishLaunching()&amp;#12">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+<meta property="og:description" content="AppDelegate.h与AppDelegate.cpp文件这两个文件时Cocos2d-x游戏的入口文件，控制着游戏的生命周期,除去构造函数和析构函数外，共有 3 个方法。
+1234567891011121314151617181920// 应用程序启动后将调用这个方法。默认的实现中已经包含了游戏启动后的必要准备bool applicationDidFinishLaunching()&amp;#123;">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cocos2d-X 3.0 Hello World 分析">
-<meta name="twitter:description" content="##AppDelegate.h与AppDelegate.cpp文件这两个文件时Cocos2d-x游戏的入口文件，控制着游戏的生命周期,除去构造函数和析构函数外，共有 3 个方法。
-1234567891011121314151617181920// 应用程序启动后将调用这个方法。默认的实现中已经包含了游戏启动后的必要准备bool applicationDidFinishLaunching()&amp;#12">
+<meta name="twitter:description" content="AppDelegate.h与AppDelegate.cpp文件这两个文件时Cocos2d-x游戏的入口文件，控制着游戏的生命周期,除去构造函数和析构函数外，共有 3 个方法。
+1234567891011121314151617181920// 应用程序启动后将调用这个方法。默认的实现中已经包含了游戏启动后的必要准备bool applicationDidFinishLaunching()&amp;#123;">
   
     <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
   
@@ -205,7 +205,7 @@
         <div class="post-main">
 
             <div class="post-content" id="post-content" itemprop="postContent">
-            <p>##AppDelegate.h与AppDelegate.cpp文件<br>这两个文件时Cocos2d-x游戏的入口文件，控制着游戏的生命周期,除去构造函数和析构函数外，共有 3 个方法。</p>
+            <h2 id="AppDelegate-h与AppDelegate-cpp文件"><a href="#AppDelegate-h与AppDelegate-cpp文件" class="headerlink" title="AppDelegate.h与AppDelegate.cpp文件"></a>AppDelegate.h与AppDelegate.cpp文件</h2><p>这两个文件时Cocos2d-x游戏的入口文件，控制着游戏的生命周期,除去构造函数和析构函数外，共有 3 个方法。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 应用程序启动后将调用这个方法。默认的实现中已经包含了游戏启动后的必要准备</span></div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">applicationDidFinishLaunching</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">//  初始化游戏引擎控制器Director,以便启动游戏引擎</span></div><div class="line">    <span class="keyword">auto</span> director = Director::getInstance();</div><div class="line">    <span class="keyword">auto</span> glview = director-&gt;getOpenGLView();</div><div class="line">    <span class="keyword">if</span>(!glview)&#123;</div><div class="line">        glview = GLView::create(<span class="string">"My Game"</span>);</div><div class="line">        director-&gt;setOpenGLView(glview);</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//  启动FPS显示</span></div><div class="line">    director-&gt;setDisplayStats(<span class="literal">true</span>);</div><div class="line">    <span class="comment">//  设置绘制间隔</span></div><div class="line">    director-&gt;setAnimationInterval(<span class="number">1.0</span> / <span class="number">6.0</span>);</div><div class="line">    </div><div class="line">    <span class="keyword">auto</span> scence = HelloWorld::createScene();</div><div class="line">    director-&gt;runWithScene(scence);</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>这段代码首先对引擎进行必要的初始化，然后开启了 FPS 显示。FPS 即每秒帧速率，也就是屏幕每秒重绘的次数。启用了FPS 显示后，当前 FPS 会在游戏的左下角显示。通常在游戏开发阶段，我们会启用 FPS 显示，这样就可以方便地确定游戏运行是否流畅。</p>
 <p>接下来是设置绘制间隔。绘制间隔指的是两次绘制的时间间隔，因此绘制间隔的倒数就是 FPS 上限。对于移动设备来说，我们通常都会将 FPS 限制在一个适当的范围内。过低的每秒重绘次数会使动画显示出卡顿的现象，而提高每秒重绘次数会导致设备运算量大幅增加，造成更高的能耗。人眼的刷新频率约为 60 次每秒，因此把 FPS 限定在 60 是一个较为合理的设置，Cocos2d-x 就把绘制间隔设置为 1/60 秒。至此，我们已经完成了引擎的初始化，接下来我们将启动引擎。</p>

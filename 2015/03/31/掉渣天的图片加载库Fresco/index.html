@@ -10,34 +10,34 @@
   
   
   <meta name="keywords" content="图片加载">
-  <meta name="description" content="##开始123dependencies &amp;#123;  compile &apos;com.facebook.fresco:fresco:0.1.0+&apos;&amp;#125;
-##使用简单的下载网络图片
+  <meta name="description" content="开始123dependencies &amp;#123;  compile &apos;com.facebook.fresco:fresco:0.1.0+&apos;&amp;#125;
+使用简单的下载网络图片
 
 在Application中初始化1Fresco.initialize(context);
 
 
-在XML中使用SimpleDraweeView，需要键入命名空间xmlns:fresco=&amp;quot;http://s">
+在XML中使用SimpleDraweeView，需要键入命名空间xmlns:fresco=&amp;quot;http://schem">
 <meta property="og:type" content="article">
 <meta property="og:title" content="掉渣天的图片加载库Fresco">
 <meta property="og:url" content="http://seniorzhai.github.io/2015/03/31/掉渣天的图片加载库Fresco/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
-<meta property="og:description" content="##开始123dependencies &amp;#123;  compile &apos;com.facebook.fresco:fresco:0.1.0+&apos;&amp;#125;
-##使用简单的下载网络图片
+<meta property="og:description" content="开始123dependencies &amp;#123;  compile &apos;com.facebook.fresco:fresco:0.1.0+&apos;&amp;#125;
+使用简单的下载网络图片
 
 在Application中初始化1Fresco.initialize(context);
 
 
-在XML中使用SimpleDraweeView，需要键入命名空间xmlns:fresco=&amp;quot;http://s">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+在XML中使用SimpleDraweeView，需要键入命名空间xmlns:fresco=&amp;quot;http://schem">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="掉渣天的图片加载库Fresco">
-<meta name="twitter:description" content="##开始123dependencies &amp;#123;  compile &apos;com.facebook.fresco:fresco:0.1.0+&apos;&amp;#125;
-##使用简单的下载网络图片
+<meta name="twitter:description" content="开始123dependencies &amp;#123;  compile &apos;com.facebook.fresco:fresco:0.1.0+&apos;&amp;#125;
+使用简单的下载网络图片
 
 在Application中初始化1Fresco.initialize(context);
 
 
-在XML中使用SimpleDraweeView，需要键入命名空间xmlns:fresco=&amp;quot;http://s">
+在XML中使用SimpleDraweeView，需要键入命名空间xmlns:fresco=&amp;quot;http://schem">
   
     <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
   
@@ -221,15 +221,15 @@
 
             <div class="post-content" id="post-content" itemprop="postContent">
             <a id="more"></a>
-<p>##开始<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">dependencies</span> &#123;</div><div class="line">  <span class="keyword">compile</span> <span class="string">'com.facebook.fresco:fresco:0.1.0+'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>##使用<br>简单的下载网络图片</p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">dependencies</span> &#123;</div><div class="line">  <span class="keyword">compile</span> <span class="string">'com.facebook.fresco:fresco:0.1.0+'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>简单的下载网络图片</p>
 <ul>
 <li>在Application中初始化<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Fresco.initialize(context);</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>在XML中使用<code>SimpleDraweeView</code>，需要键入命名空间<code>xmlns:fresco=&quot;http://schemas.android.com/apk/res-auto&quot;</code><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">com.facebook.drawee.view.SimpleDraweeView</span></span></div><div class="line">	<span class="attr">android:id</span>=<span class="string">"@+id/my_image_view"</span></div><div class="line">	<span class="attr">android:layout_width</span>=<span class="string">"20dp"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"20dp"</span></div><div class="line">    <span class="attr">fresco:placeholderImage</span>=<span class="string">"@drawable/my_drawable"</span> /&gt;</div></pre></td></tr></table></figure></p>
 <p>加载<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">draweeView.setImageURL("http://site.com/uri");</div></pre></td></tr></table></figure></p>
-<p>###URLs<br>Fresco不支持相对路径，所有URL必须是绝对路径<br>|类型|Scheme|<br>|:—|:—–|<br>|远程图片|<a href="http://,https://|" target="_blank" rel="external">http://,https://|</a><br>|本地文件|file://|<br>|ContentProvider|content://|<br>|asset目录下资源|asset://|<br>|res目录下资源|res://|</p>
+<h3 id="URLs"><a href="#URLs" class="headerlink" title="URLs"></a>URLs</h3><p>Fresco不支持相对路径，所有URL必须是绝对路径<br>|类型|Scheme|<br>|:—|:—–|<br>|远程图片|<a href="http://,https://|" target="_blank" rel="external">http://,https://|</a><br>|本地文件|file://|<br>|ContentProvider|content://|<br>|asset目录下资源|asset://|<br>|res目录下资源|res://|</p>
 <p>更多请见<a href="http://fresco-cn.org/" target="_blank" rel="external">http://fresco-cn.org/</a></p>
 
             <blockquote>

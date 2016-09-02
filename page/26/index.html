@@ -6,6 +6,8 @@
   <title>SeniorZhai&#39;s blog | 苟利国家生死以，起因福祸趋避之</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
+  <meta name="theme-color" content="#ED5565">
+  
   
   <meta name="keywords" content="undefined">
   <meta name="description" content="专注于移动平台">
@@ -18,8 +20,10 @@
 <meta name="twitter:title" content="SeniorZhai's blog">
 <meta name="twitter:description" content="专注于移动平台">
   
+    <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
+  
   <meta name="summary" content="专注于移动平台">
-  <link rel="shortcut icon" href="/">
+  <link rel="shortcut icon" href="/img/favicon.ico">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -33,7 +37,7 @@
   </a>
   <div class="brand-wrap">
     <div class="brand">
-      <a href="/" class="avatar"><img src="undefined"></a>
+      <a href="/" class="avatar"><img src="/img/logo.jpg"></a>
       <hgroup class="introduce">
         <h5 class="nickname">Dear宅学长</h5>
         <a href="mailto:developer.zhaitao@gmail.com" title="developer.zhaitao@gmail.com" class="mail">developer.zhaitao@gmail.com</a>
@@ -43,6 +47,48 @@
   <div class="scroll-wrap flex-col">
     <ul class="nav">
       
+          <li class="waves-block waves-effect">
+            <a href="/"  >
+              <i class="icon icon-lg icon-home"></i>
+              主页
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/archives"  >
+              <i class="icon icon-lg icon-archives"></i>
+              Archives
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/tags"  >
+              <i class="icon icon-lg icon-tags"></i>
+              Tags
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://seniorzhai.github.io" target="_blank" >
+              <i class="icon icon-lg icon-github"></i>
+              Github
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="http://weibo.com/seniorszhai/" target="_blank" >
+              <i class="icon icon-lg icon-weibo"></i>
+              Weibo
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/about"  >
+              <i class="icon icon-lg icon-link"></i>
+              about
+            </a>
+          </li>
+      
     </ul>
 
     <footer class="footer">
@@ -50,7 +96,7 @@
   <p>SeniorZhai&#39;s blog &copy; 2016</p>
   <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
   <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
-  <a href="undefined" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
+  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
 </footer>
 
   </div>
@@ -65,6 +111,20 @@
         </a>
         <div class="flex-col header-title ellipsis">SeniorZhai&#39;s blog</div>
         
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
         
     </div>
 </header>
@@ -111,15 +171,14 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-         ##界面 
- ###界面简介   
- ###菜单和工具条   管理Android Studio的显示窗口 按下 ctrl+shift+a （mac为command+shift+a）会触发一个命令提示框，输入想要执行的命令的前缀，可以找到自己的命令   
- ##更改常用操作的快捷键 在设置中烧到keymap，可以选择为eclipse的快捷键   
+           界面    界面简介    
+   菜单和工具条    管理Android Studio的显示窗口 按下 ctrl+shift+a （mac为command+shift+a）会触发一个命令提示框，输入想要执行的命令的前缀，可以找到自己的命令   
+   更改常用操作的快捷键  在设置中烧到keymap，可以选择为eclipse的快捷键   
 
     
     
         <a href="/2014/08/18/AndroidStudio使用指南/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -158,23 +217,11 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-         常用创建方法       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33       bool  MyScene::init()  &#123;  	Size size = Director::getInstance()-&gt;getWinSize();    	Sprite *sp1 = Sprite::create( "icon.png" );  	sp1-&gt;setPosition(Vec2(size.with* 0.2 ,size.height* 0.7 ));  	 this -&gt;addChild(sp1);    	Sprite *sp2 = Sprite::create( "icon.png" ,Rect( 10 , 30 , 28 , 28 ));  	sp2-&gt;setPosition(Vec2(size.width* 0.4 ,size.height* 0.7 ));  	 this -&gt;addChild(sp2);  	 // 创建纹理   	Texture2D *texture = TextureCache::sharedTextureCache()-&gt;addImage( "icon.png" );    	Sprite *sp3 = Sprite::createWithTexture(texture);  	sp3-&gt;setPosition(Vec2(size.width* 0.6 ,size.height* 0.7 ));  	 this .addChild(sp3);    	Sprite *sp4 = Sprite::createWithTexture(texture,Rect( 0 , 0 , 40 , 40 ));  	sp4-&gt;setPosition(Vec2(size.width* 0.8 ,size.height* 0.7 ));  	 this .addChild(sp4);    	SpriteFrame *frame = SpriteFrame::create( "icon.png" ,Rect( 0 , 0 , 57 , 57 ));  	Sprite *sp5 = Sprite::createWithSpriteFrame(frame);  	sp5-&gt;setPosition(Vec2(size.width* 0.3 ,size.height* 0.3 ));  	 this .addChild(sp5);    	Sprite *sp6 = Sprite::createWithSpriteFrame( "icon.png" );  	sp6-&gt;setPosition(Vec2(size.width* 0.3 ,size.height* 0.3 ));       this -&gt;addChild(sp6);              return   true ;  &#125;       
- 常用的类方法： 
- 
- setScale(float fScale) 缩放 
- setRotation(float fRotation) 旋转 
- setSkew(float s) 倾斜 
- setAnchorPoint(const Point&amp; another) 设置锚点 
- setVisible(bool bvisible) 是否可见 
- setColor(const cccolor3B&amp; color3) 设置颜色 
- setOpacity(Glubvte Opacity) 透明度设置 0-255 0表示完全透明，255表示不透明 
- setTexture(CCTexture2D *texture) 更改图片 
- 
-
+         常用创建方法       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33       bool  MyScene::init()  &#123;  	Size size = Director::getI
     
     
         <a href="/2014/08/18/Sprite精灵类/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -218,16 +265,11 @@
  ui_print(msg1,…,msgN) 用于在Recovery界面输出字符串，不定参数。 
  run_program(prog,arg1,…,argN) 用于执行程序，其中prog参数表示执行的程序文件(要写完整路径)，arg1,…argN表示执行程序的参数，prog是必须的，arg是可选的 
  delete(file1,…fileN) 用于删除一个或多个文件 
- package)extract_dir(package_path,desination_path) 用于提取刷机包中的pack_path指定的目录。其中package_path参数表示刷机包中的目录，destination_path表示目标目录 
- set_perm(uid,gid,mode,file1,file2,…fileN) 用于设置一个或多个文件的权限，其中uid参数表示用户ID，gid表示用户组ID。如果想让文件的用户和用户组都是root，uid和gid需要都为0。mode参数表示设置的权限，与chmod命令类似。 
- mount(fs_type,partion_type,location,mount_point) 挂载分区 
- unmount(mount_point) 用于解除挂载，mount_point参数表示文件系统 
- 
-
+ package)
     
     
         <a href="/2014/08/17/Edify语言/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -267,16 +309,11 @@
 
     
          仿Path带动画效果的扇形菜单 
-      ##用法       1  2  3  4  5  6  7  8  9      ArcMenu menu = (ArcMenu) findViewById(R.id.arc_menu);   final   int  itemCount = ITEM_DRAWABLES.length;   for  ( int  i =  0 ; i &lt; itemCount; i++) &#123;  	ImageView item =  new  ImageView( this );  	item.setImageResource(ITEM_DRAWABLES[i]);  	menu.addItem(item, new  OnClick(View v)&#123;  		Toast.makeText(MainActivity. this ,  "position:"  + position, Toast.LENGTH_SHORT).show();  	&#125;);  &#125;       
- 改变外观可以在xml中       1  2  3      custom:childSize="50px"  custom:fromDegrees="0.0"  custom:toDegrees="300.0"       
- 或者在java中       1  2      arcLayout.setChildSize( 50 );  arcLayout.setArc( 0.0f , 300.0f );       
- 
-  ArcMenu  
-
+        用法       1  2  3  4  5  6  7  8  9      ArcMenu menu = (ArcMenu) findViewById(R.id.arc_menu);   final   int  itemCount = ITEM_DRAWABLES.length;   for  ( int  i =  0 ; i &lt; 
     
     
         <a href="/2014/08/15/ArcMenu/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -318,15 +355,11 @@
          一个拥有丰富动画的对话框 
    
    
- ##使用       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27       // 获取一个对话框对象   NiftyDialogBuilder dialogBuilder = NiftyDialogBuilder.getInstance( this );  dialogBuilder.withTitle( "弹出框" )						 // 标题   				.withTitleColor( "#FFFFFF" )				 // 标题的颜色   				.withDividerColor( "#11000000" )			 // 分隔栏的颜色   				.withMessage( "这是信息文本。" )			 // 文本信息   				.withMessageColor( "#FFFFFF" )			 // 文本信息的颜色   				.withIcon(getResources().getDrawable(R.drawable.icon))	 // 标题栏的图标   				.isCancelableOnTouchOutside( true ) 		 // 外部点击退出   				.withDuration( 500 ) 						 // 动画延迟   				.withEffect(effect) 					 // 动画类别    				.withButton1Text( "确定" ) 				 // 按钮1的文本   				.withButton2Text( "取消" ) 				 // 按钮2的文本   				.setCustomView(R.layout.custom_view, v.getContext())  // 设置自定义view   				.setButton1Click( new  View.OnClickListener() &#123;  					 @Override   					  public   void   onClick  (View v)   &#123;  						Toast.makeText(v.getContext(),  "确定" ,  								Toast.LENGTH_SHORT).show();  					&#125;  				&#125;).setButton2Click( new  View.OnClickListener() &#123;  					 @Override   					  public   void   onClick  (View v)   &#123;  						Toast.makeText(v.getContext(),  "取消" ,  								Toast.LENGTH_SHORT).show();  					&#125;  				&#125;).show();       
- 
- ##自定义内容 NiftyDialogEffects的color文件内可以修改对话框的颜色       1  2  3  4  5  6  7       &lt; color   name = "text_color" &gt; #FFFFFF &lt;/ color &gt;       &lt; color   name = "divider_color" &gt; #11000000 &lt;/ color &gt;       &lt; color   name = "msg_color" &gt; #FFFFFFFF &lt;/ color &gt;       &lt; color   name = "dialog_bg" &gt; #FF4FC1E9 &lt;/ color &gt;         &lt; color   name = "btn_press_color" &gt; #FF4FC1E9 &lt;/ color &gt;       &lt; color   name = "btn_unpress_color" &gt; #FF3BAFDA &lt;/ color &gt;        
- ===  NiftyDialogEffects  
-
+   使用       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27       // 获取一个对话框对象   NiftyDialogBuilder dialogBuilder = NiftyDialog
     
     
         <a href="/2014/08/15/NiftyDialogEffects/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -365,14 +398,11 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-              ##使用       1  2  3  4  5  6  7  8  9  10  11      LayoutInflater inflator = (LayoutInflater)  this .getSystemService(Context.LAYOUT_INFLATER_SERVICE);  View v = inflator.inflate(R.layout.custom_ab, null );  tabBarView = (TabBarView) v.findViewById(R.id.tab_bar);    getActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_SUSTOM);  getActionBar().setCustomView(v);    mSectionsPagerAdapter =  new  SectionsPagerAdapter(getFramentManager());    mViewPager = (ViewPager) findViewById(R.id.pager);  tabBarView.setViewPager(mViewPager);       
- 实现一个adapter       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31       public    class   SectionsPagerAdapter   extends   FragmentPagerAdapter   implements   IconTabProvider   &#123;  	 private  intp[] tab_icons = &#123;R.drawable.ic_tab1,R.drawable.ic_tab2,R.drawable.ic_tab3&#125;;    	  public   SectionsPagerAdapter  (FragmentManager fm)  &#123;  		 super (fm);  	&#125;    	 @Override   	  public  Fragment  getItem  ( int  position)   &#123;  		 return  PlaceholderFragment.newInstance(position +  1 );  	&#125;    	 @Override   	  public   int   getCount  ()   &#123;  		 return  tab_icons.length;  	&#125;    	 @Override   	  public  CharSequence  getPageTitle  ( int  position)   &#123;  		Locale l = Locale.getDefault();             	 switch  (position) &#123;             	 case   0 :                   return  getString(R.string.title_section1).toUpperCase(l);               case   1 :                   return  getString(R.string.title_section2).toUpperCase(l);               case   2 :                   return  getString(R.string.title_section3).toUpperCase(l);              &#125;               return   null ;  	&#125;  &#125;       
- ===  TabBarView  
-
+                使用       1  2  3  4  5  6  7  8  9  10  11      LayoutInflater inflator = (LayoutInflater)  this .getSystemService(Context.LAYOUT_INFLATER_SERVICE);  View v = inflator.inflate(R.layout.custom_
     
     
         <a href="/2014/08/14/TabBarView/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -411,15 +441,11 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-         ##测光与聚焦区域 如果设备支持自动对焦，可以使用 setFocusMode 方法传入一个 Camera.Parameters.FOCUS_MODE_* 常量来指定对焦模式。根据不同设备的支持，使用 getSupportedFocusMode 方法找到可用的对焦模式。使用自动对焦可以使用 AutoFocusCallback 回调。       1  2  3  4  5  6  7  8  9  10      Camera.Parameters parameters = camera.getParameters();   if (parameters.getSupportedFocusModes().contains(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE))&#123;  parameters.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);    camer.autoFocus( new  AutoFocusCallback()&#123;  	  public   void   onAutoFocus  ( boolean  success,Camera camera)  &#123;  	 //   	&#125;  &#125;);  &#125;       
- getMaxNumFocusAreas方法来确定涉笔是否支持定义对焦区域。getMaxNumMeteringAreas来确定摄像头是否支持测光区域。       1  2  3  4  5  6  7  8  9  10  11       if (params.getMaxNumMeteringAreas() &gt;  0 ) &#123;  // 检查是否支持测光区域   	List&lt;Camera.Area&gt; meteringAreas =  new  ArrayList&lt;Camera.Area&gt;();    	Rect areaRect1 =  new  Rect(- 100 ,- 100 , 100 , 100 );  // 在图像的中心指定一个区域   	meteringAreas.add( new  Camera.Area(areaRect1, 600 ));  // 设置宽度待60%   	Rect areaRect2 =  new  Rect( 800 ,- 1000 , 1000 ,- 800 );  // 在图像的右上角指定一个区域   	meteringAreas.add( new  Camera.Area(areaRect2, 400 ));  // 设置宽度为40%   	params.setMeteringAreas(meteringAreas);  &#125;    mCamera.setParameters(params);       
- Camera.Area对象包含两个参数：一个Rect对象指定了相机视图中的一个区域，还有一个宽度，告诉相机在测光或聚焦计算中此区域的重要程度。 Camera.Area对象的Rect描述了一个矩形区域在一个2000*2000个单元格组成的区域中的映射位置。坐标-1000，-1000表示左上角，1000,1000表示右下角。不会随变焦大小改变。 
- ##人脸识别 调用getMaxNumDetectedFaces()来检测是否支持面部检测特性       1  2  3  4  5  6  7  8        class   MyFaceDetectionoListener   implements   Camera . FaceDetectionListener   &#123;  	 @Override   	  public   void   onFaceDetection  (Face[] faces,Camera camera) 	 &#123;  		 if  (faces.length &gt;  0 ) &#123;  			Log.d( "FaceDetection" , "face detected:"  + faces.length +  "face 1 Location x:"  + faces[ 0 ].rect.centerX() +  "Y:"  + faces[ 0 ].rect.centerY());  		&#125;  	&#125;  &#125;       
-
+           测光与聚焦区域  如果设备支持自动对焦，可以使用 setFocusMode 方法传入一个 Camera.Parameters.FOCUS_MODE_* 常量来指定对焦模式。根据不同设备的支持，使用 getSupportedFocusMode 方法找到可用的对焦模式。使用自动对焦可以使用 AutoFocusCallback 回调。       1  2  3  4  5  6  7  8  9
     
     
         <a href="/2014/08/14/相机功能/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -459,11 +485,11 @@
 
     
           
-      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55  56  57  58  59  60  61  62  63        class   Preview   extends   ViewGroup   implements   SurfaceHolder . Callback   &#123;  	SurfaceView mSurfaceView;  	SurfaceHolder mHolder;    	Perview(Context context)&#123;  		 super (context);    		mSurfaceView =  new  SurfaceView(context);  		addView(mSurfaceView);  		mHolder = mSurfaceView.getHolder();          mHolder.addCallback( this );          mHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);  	&#125;    &#125;      public   void   setCamera  (Camera camera)   &#123;  	 if  (mCamera == camera) &#123;  return ; &#125;    	stopPreviewAndFreeCamera();    	mCamera = camera;    	 if  (mCamera !=  null ) &#123;  		List&lt;Size&gt; localSizes = mCamera.getParameters().getSupportedPreviewSizes();  		mSupportedPreviewSizes = localSizes;  		requestLayout();    		 try  &#123;  			mCamera.setPreviewDisplay(mHolder);  		&#125;  catch  (IOException e) &#123;  			e.printStackTrace();  		&#125;  		mCamera.startPreview();  	&#125;  &#125;   // 修改相机设置     public   void   surfaceChanged  (SurfaceHolder holder, int  format, int  w, int  h)   &#123;  	Camera.Parameters parameters = mCamera.getParameters();  	parameters.setPreviewSize(mPreviewSize.with,mPreviewSize.height);  	requestLayout();  	mCamera.setParameters(parameters);  	mCamera.startPreview();  &#125;   // 设置预览方向 setCameraDisplayOrientation()方法 Android Api level 14之前 必须先体质预览      // 拍摄照片   Camera.takePicture()拍下图片  创建Camera.PictureCallback与Camera.ShutterCallback 对象并传递到Camera.takePocture()中  如果想做连拍动作，可以创建一个Camera.PreviewCallback并实现onPerviewFrame()   // 停止预览并释放相机     public   void   surfaceDestroyed  (SurfaceHolder holder)   &#123;  	 if  (mCamera !=  null ) &#123;  		mCamera.stopPreview();  	&#125;  &#125;    public   void   stopPreviewAndFreeCamera  ()   &#123;  	 if  (mCamera !=  null ) &#123;  		mCamera.stopPreview();  		mCamera.release();  		mCamera =  null ;  	&#125;  &#125;      
+      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  
     
     
         <a href="/2014/08/13/控制相机硬件/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -509,45 +535,11 @@
   ccpSub(v1,v2)  向量之间的减法 
   ccpNeg(v)  向量取反 
   ccpMult(v,s)  数乘，等价于ccp(v.x s,v.y s) s是一个浮点数 
-  ccpMidpoint(v1,v2)  取中点 
-  ccpDot(v1,v2)  点乘 等价于 v1.x v2.x + v1.y v2.y 
-  ccpCross(v1,v2)  叉乘 等价于 v1.x v2.y - v1.y v2.x 
-  ccpProject(v1,v2)  返回向量v1在向量v2的投影向量 
-  ccpLength(v)  返回向量v的长度 
-  ccpLengthSQ(v)  返回向量v的长度的平方 
-  ccpDistance(v1,v2)  返回点v1到v2的距离 
-  cppDistanceSQ(v1,v2)  返回点v1到v2距离的平方 
-   ccpNormalize(v)   返回v的标准化向量，就是长度为1   
- 
-   ccpRotate(v1,v2)  向量v1旋转过向量v2的角度并且乘上向量v2的长度。当v2是一个长度为1的标准向量时就是正常的旋转了，可以配套地用ccpForAngle   
- 
-  ccpPerp(v)  等价于 ccp(-v.y, v.x); （因为opengl坐标系是左下角为原点，所以向量v是逆时针旋转90度）   
-   ccpRPerp(v)  等价于 ccp(v.y, -v.x); 顺时针旋转90度   
- 
-   ccpForAngle(a)  返回一个角度为弧度a的标准向量   
- 
-  ccpToAngle(v)  返回向量v的弧度 
-  ccpAngle(a, b)  返回a，b向量指示角度的差的弧度值  
-   ccpRotateByAngle(v, pivot, angle)  返回向量v以pivot为旋转轴点，按逆时针方向旋转angle弧度  
- 
-   CC_RADIANS_TO_DEGREES(a)  弧度转角度 
- 
-  CC_DEGREES_TO_RADIANS(a)  角度转弧度  
-  CCRANDOM_MINUS1_1()  产生-1到1之间的随机浮点数 
-   CCRANDOM_0_1()  产生0到1之间的随机浮点数   
- 
-   CCAssert(cond,msg)  断言表达式cond为真，如果不为真，则显示字符串msg信息  
- 
- 
-      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17      CCArray*  _  array ;    CCObject*  _ object;      // 用来遍历数组的临时变量     CCARRAY_FOREACH( _  array ,  _ object)  // 正向遍历     &#123;         // todo with _object....     &#125;        CCARRAY_FOREACH_REVERSE( _  array ,  _ object)  // 反向遍历     &#123;         // todo with _object....     &#125;    CCDictionary*  _ dict;    CCDictElement*  _ elmt;  // 遍历表的临时变量     CCDICT_FOREACH( _ dict,  _ elmt)    &#123;    　　 // todo with elmt;     &#125;      
- 
- CREATE_FUNC() 创建构造函数      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16       # define  CREATE_FUNC(__TYPE__)    static   __  TYPE__*  create  ()    &#123;  	 __ TYPE__ *pRet =  new   __ TYPE__();  	 if  (pRet &amp;&amp; pRet-&gt;init())  	&#123;  		pRet-&gt;autorelease();  		 return  pRet;  	&#125;  	 else    	&#123;  		 delete  pRet;  		pRet =  NULL ;  		 return   NULL ;  	&#125;  &#125;       
- 
-
+  ccpMidp
     
     
         <a href="/2014/08/12/Cocos2d-X-常用的数学函数、常用宏/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -589,119 +581,16 @@
           
    
  
- GRAPEFRUIT  #ED5565 , #DA4453  
- BITTERSWEET  #FC6E51 , #E9573F  
- SUNFLOWER  #FFCE54 , #F6BB42  
- GRASS  #A0D468 , #8CC152  
- MINT  #48CFAD , #37BC9B  
- AQUA  #4FC1E9 , #3BAFDA  
- BLUE JEANS  #5D9CEC , #4A89DC  
- LAVANDER  #AC92EC , #967ADC  
- PINK ROSE  #EC87C0 , #D770AD  
- LIGHT GRAY  #F5F7FA , #E6E9ED  
- MEDIUM GRAY  #CCD1D9 , #AAB2BD  
- DARK GRAY  #656D78 , #434A54  
- 
- 不透明度16进制值 
- 
- 
- 
- 不透明度 
- 16进制值 
- 
- 
- 
- 
- 100% 
- FF 
- 
- 
- 95% 
- F2 
- 
- 
- 90% 
- E6 
- 
- 
- 85% 
- D9 
- 
- 
- 80% 
- CC 
- 
- 
- 75% 
- BF 
- 
- 
- 70% 
- B3 
- 
- 
- 65% 
- A6 
- 
- 
- 60% 
- 99 
- 
- 
- 55% 
- 8C 
- 
- 
- 50% 
- 80 
- 
- 
- 45% 
- 73 
- 
- 
- 40% 
- 66 
- 
- 
- 35% 
- 59 
- 
- 
- 30% 
- 4D 
- 
- 
- 25% 
- 40 
- 
- 
- 20% 
- 33 
- 
- 
- 15% 
- 26 
- 
- 
- 10% 
- 1A 
- 
- 
- 5% 
- 0D 
- 
- 
- 0% 
- 00 
- 
- 
- 
-
+ GRAPEFRUIT  # ED5565 , # DA4453  
+ BITTERSWEET  # FC6E51 , # E9573F  
+ SUNFLOWER  # FFCE54 , # F6BB42  
+ GRASS  # A0D468 , # 8CC152  
+ MINT  # 48CFAD , # 37BC9B  
+ AQUA  # 4FC1E9 , # 3BAFDA 
     
     
         <a href="/2014/08/11/看着舒服发12种界面颜色/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -724,6 +613,51 @@
 <div class="mask" id="mask"></div>
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
+<script>
+var BLOG_SHARE = {
+    title: "SeniorZhai's blog",
+    pic: "/img/logo.jpg",
+    summary: document.getElementsByName('summary')[0].content,
+    url: "http://seniorzhai.github.io/page/26/index.html"
+};
+</script>
+<div class="global-share" id="global-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
 
 <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 
@@ -731,10 +665,45 @@
 
 
 
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<script type="text/template" id="search-tpl">
+<li class="item">
+    <a href="/{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</script>
+
+<script src="/js/search.js"></script>
 
 
 
 
+
+<script src="//s95.cnzz.com/z_stat.php?id=true&web_id=true"></script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-54646832-1&#39;', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
 
 
 

@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="SeniorZhai's blog">
 <meta property="og:description" content="一个可爱向的自定义控件">
 <meta property="og:image" content="http://seniorzhai.github.io/img/14091101.gif">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JumpingBeans">
 <meta name="twitter:description" content="一个可爱向的自定义控件">
@@ -205,14 +205,12 @@
 
             <div class="post-content" id="post-content" itemprop="postContent">
             <p>一个可爱向的自定义控件<br><a id="more"></a><br><img src="/img/14091101.gif" alt=""></p>
-<p>##使用</p>
-<ul>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ul>
 <li>将<a href="https://gist.github.com/SeniorZhai/ae1338d6d13c5870d913" target="_blank" rel="external">JumpingBeans</a>导入项目，因为使用了<code>ValueAnimator</code>，所以默认使用Android Api 11+。也已可以使用<a href="https://github.com/JakeWharton/NineOldAndroids" target="_blank" rel="external">NineOldAndroids</a></li>
 <li>设置TextView动画<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Append jumping dots</span></div><div class="line"><span class="keyword">final</span> TextView textView1 = (TextView) findViewById(R.id.jumping_text_1);</div><div class="line">jumpingBeans1 = <span class="keyword">new</span> JumpingBeans.Builder()</div><div class="line">        .appendJumpingDots(textView1)</div><div class="line">        .build();</div><div class="line"></div><div class="line"><span class="comment">// Make the first word's letters jump</span></div><div class="line"><span class="keyword">final</span> TextView textView2 = (TextView) findViewById(R.id.jumping_text_2);</div><div class="line">jumpingBeans2 = <span class="keyword">new</span> JumpingBeans.Builder()</div><div class="line">        .makeTextJump(textView2, <span class="number">0</span>, textView2.getText().toString().indexOf(<span class="string">' '</span>))</div><div class="line">        .build();</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>##其他Api</p>
-<ul>
+<h2 id="其他Api"><a href="#其他Api" class="headerlink" title="其他Api"></a>其他Api</h2><ul>
 <li>setIsWave(false) 可以使跳动对象整个一起跳动</li>
 <li>setLoopDuration(int) 可以设置动画的时间</li>
 <li>setWavePerCharDaley(int) 单个动画之间的延迟</li>

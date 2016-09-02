@@ -16,7 +16,7 @@
 <meta property="og:url" content="http://seniorzhai.github.io/2015/01/08/在Android上使用NoSQL数据库/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
 <meta property="og:description" content="NoSQL泛指非关系数据库，随着web2.0网站的兴起迅速发展。">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在Android上使用NoSQL数据库">
 <meta name="twitter:description" content="NoSQL泛指非关系数据库，随着web2.0网站的兴起迅速发展。">
@@ -203,12 +203,13 @@
 
             <div class="post-content" id="post-content" itemprop="postContent">
             <p>NoSQL泛指非关系数据库，随着web2.0网站的兴起迅速发展。<br><a id="more"></a><br>相对于SQLite数据库，NoSQL无意更加快速、更加轻量级、存取数据方便，不需要设计多张表。</p>
-<p>##SnappyDB<br><a href="https://github.com/nhachicha/SnappyDB" target="_blank" rel="external">SnappyDB</a>是众多NoSQL数据库的一员，Android上非常流行的NoSQL数据库，可以保存任何基本数据类型和序列化(Serializable)的数据及其数组<br>SnappyDB在保存和读取序列对象的时候，使用的是<a href="https://github.com/EsotericSoftware/kryo" target="_blank" rel="external">Kryo</a>库，也Java内置序列化更快。更大的优势是，你并不要为数据去显式的去实现Serializable接口。这就意味着你以前的代码完全不要做任何改动。</p>
-<p>###创建数据库<br>    DB snappydb = DBFactory.open(context);    // 默认名的数据库<br>    DB snappydb = DBFactory.open(context,”books”);    // 指定名字的数据库<br>SnappyDB使用内部存储空间，路径为:<code>/data/data/com.snappydb/files/mydatabase</code><br>也可以使用参数指定存储位置<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">DB snappyDB = <span class="keyword">new</span> SnappyDB.Builder(context)</div><div class="line">					.directory(Environment.getExternalStrongeDirectory().getAbsolutePath())</div><div class="line">					.name(<span class="string">"books"</span>)</div><div class="line">					.build();</div></pre></td></tr></table></figure></p>
-<p>###关闭数据库<br>    snappydb.close();</p>
-<p>###销毁数据库<br>    snappydb.destroy();</p>
-<p>###插入基本数据</p>
-<ul>
+<h2 id="SnappyDB"><a href="#SnappyDB" class="headerlink" title="SnappyDB"></a>SnappyDB</h2><p><a href="https://github.com/nhachicha/SnappyDB" target="_blank" rel="external">SnappyDB</a>是众多NoSQL数据库的一员，Android上非常流行的NoSQL数据库，可以保存任何基本数据类型和序列化(Serializable)的数据及其数组<br>SnappyDB在保存和读取序列对象的时候，使用的是<a href="https://github.com/EsotericSoftware/kryo" target="_blank" rel="external">Kryo</a>库，也Java内置序列化更快。更大的优势是，你并不要为数据去显式的去实现Serializable接口。这就意味着你以前的代码完全不要做任何改动。</p>
+<h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3><pre><code>DB snappydb = DBFactory.open(context);    // 默认名的数据库
+DB snappydb = DBFactory.open(context,&quot;books&quot;);    // 指定名字的数据库
+</code></pre><p>SnappyDB使用内部存储空间，路径为:<code>/data/data/com.snappydb/files/mydatabase</code><br>也可以使用参数指定存储位置<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">DB snappyDB = <span class="keyword">new</span> SnappyDB.Builder(context)</div><div class="line">					.directory(Environment.getExternalStrongeDirectory().getAbsolutePath())</div><div class="line">					.name(<span class="string">"books"</span>)</div><div class="line">					.build();</div></pre></td></tr></table></figure></p>
+<h3 id="关闭数据库"><a href="#关闭数据库" class="headerlink" title="关闭数据库"></a>关闭数据库</h3><pre><code>snappydb.close();
+</code></pre><h3 id="销毁数据库"><a href="#销毁数据库" class="headerlink" title="销毁数据库"></a>销毁数据库</h3><pre><code>snappydb.destroy();
+</code></pre><h3 id="插入基本数据"><a href="#插入基本数据" class="headerlink" title="插入基本数据"></a>插入基本数据</h3><ul>
 <li>short <code>snappyDB.putShort(&quot;myshort&quot;,(short)32768);</code></li>
 <li>int <code>snappyDB.putInt(&quot;myint&quot;,Integer.MAX_VALUE);</code></li>
 <li>long <code>snappyDB.putLong(&quot;mylong&quot;,Long.MAX_VALUE);</code></li>
@@ -217,8 +218,7 @@
 <li>boolean <code>snappyDB.putBoolean(&quot;my_bollean&quot;,true);</code></li>
 <li>String <code>snappyDB.put(&quot;my_string&quot;,&quot;string&quot;);</code></li>
 </ul>
-<p>###读取基本数据</p>
-<ul>
+<h3 id="读取基本数据"><a href="#读取基本数据" class="headerlink" title="读取基本数据"></a>读取基本数据</h3><ul>
 <li>short <code>short myshort = snappyDB.getShort(&quot;myshort&quot;);</code></li>
 <li>int <code>int myInt = snappyDB.getInt(&quot;myint&quot;);</code></li>
 <li>long <code>long myLong = snappyDB.getLong(&quot;mylong&quot;);</code></li>
@@ -227,13 +227,16 @@
 <li>boolean <code>boolean myBool = snappyDB.getBoolean(&quot;my_bollean&quot;);</code></li>
 <li>String <code>String myString = snappyDB.get(&quot;my_string&quot;);</code></li>
 </ul>
-<p>###插入序列化对象<br>    AtomicInteger objAtomicInt = new AtomicInteger (42);<br>    snappyDB.put(“atomic integer”, objAtomicInt);</p>
-<p>###读取序列化对象<br>    AtomicInteger myObject = snappyDB.get(“atomic integer”, AtomicInteger.class);</p>
-<p>###插入对象<br>    MyPojo pojo = new MyPojo ();<br>    snappyDB.put(“my_pojo”, pojo);</p>
-<p>###读取对象<br>    MyPojo myObject = snappyDB.getObject(“non_serializable”, MyPojo.class);</p>
-<p>###插入数组<br>    Number[] array = {new AtomicInteger (42), new BigDecimal(“10E8”), Double.valueOf(Math.PI)};<br>    snappyDB.put(“array”, array);</p>
-<p>###读取数组<br>    Number [] numbers = snappyDB.getObjectArray(“array”, Number.class);</p>
-<p>。。。待续</p>
+<h3 id="插入序列化对象"><a href="#插入序列化对象" class="headerlink" title="插入序列化对象"></a>插入序列化对象</h3><pre><code>AtomicInteger objAtomicInt = new AtomicInteger (42);
+snappyDB.put(&quot;atomic integer&quot;, objAtomicInt);
+</code></pre><h3 id="读取序列化对象"><a href="#读取序列化对象" class="headerlink" title="读取序列化对象"></a>读取序列化对象</h3><pre><code>AtomicInteger myObject = snappyDB.get(&quot;atomic integer&quot;, AtomicInteger.class);
+</code></pre><h3 id="插入对象"><a href="#插入对象" class="headerlink" title="插入对象"></a>插入对象</h3><pre><code>MyPojo pojo = new MyPojo ();
+snappyDB.put(&quot;my_pojo&quot;, pojo);
+</code></pre><h3 id="读取对象"><a href="#读取对象" class="headerlink" title="读取对象"></a>读取对象</h3><pre><code>MyPojo myObject = snappyDB.getObject(&quot;non_serializable&quot;, MyPojo.class);
+</code></pre><h3 id="插入数组"><a href="#插入数组" class="headerlink" title="插入数组"></a>插入数组</h3><pre><code>Number[] array = {new AtomicInteger (42), new BigDecimal(&quot;10E8&quot;), Double.valueOf(Math.PI)};
+snappyDB.put(&quot;array&quot;, array);
+</code></pre><h3 id="读取数组"><a href="#读取数组" class="headerlink" title="读取数组"></a>读取数组</h3><pre><code>Number [] numbers = snappyDB.getObjectArray(&quot;array&quot;, Number.class);
+</code></pre><p>。。。待续</p>
 
             <blockquote>
                 <p>

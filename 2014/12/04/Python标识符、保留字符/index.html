@@ -10,19 +10,55 @@
   
   
   <meta name="keywords" content="基础">
-  <meta name="description" content="##标识符在Python中标识符由字母、数字、下划线组成，但不能以数字开头标识符区分大小写以下划线开头的标识符是有特殊意义的，以单下划线开头(_foo)表示不能直接访问的类属性，需要通过类提供的借口进行访问以双下划线开头的(__foo)代表类的私有成员，以双下划线开头和结尾的(__foo__)表示Python里特殊方法，如__init__()表示类的构造函数
-##保留字符||||||:–|:–|">
+  <meta name="description" content="标识符在Python中标识符由字母、数字、下划线组成，但不能以数字开头标识符区分大小写以下划线开头的标识符是有特殊意义的，以单下划线开头(_foo)表示不能直接访问的类属性，需要通过类提供的借口进行访问以双下划线开头的(__foo)代表类的私有成员，以双下划线开头和结尾的(__foo__)表示Python里特殊方法，如__init__()表示类的构造函数
+保留字符
+
+
+
+
+
+
+
+
+
+
+and
+e">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python标识符、保留字符">
 <meta property="og:url" content="http://seniorzhai.github.io/2014/12/04/Python标识符、保留字符/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
-<meta property="og:description" content="##标识符在Python中标识符由字母、数字、下划线组成，但不能以数字开头标识符区分大小写以下划线开头的标识符是有特殊意义的，以单下划线开头(_foo)表示不能直接访问的类属性，需要通过类提供的借口进行访问以双下划线开头的(__foo)代表类的私有成员，以双下划线开头和结尾的(__foo__)表示Python里特殊方法，如__init__()表示类的构造函数
-##保留字符||||||:–|:–|">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+<meta property="og:description" content="标识符在Python中标识符由字母、数字、下划线组成，但不能以数字开头标识符区分大小写以下划线开头的标识符是有特殊意义的，以单下划线开头(_foo)表示不能直接访问的类属性，需要通过类提供的借口进行访问以双下划线开头的(__foo)代表类的私有成员，以双下划线开头和结尾的(__foo__)表示Python里特殊方法，如__init__()表示类的构造函数
+保留字符
+
+
+
+
+
+
+
+
+
+
+and
+e">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python标识符、保留字符">
-<meta name="twitter:description" content="##标识符在Python中标识符由字母、数字、下划线组成，但不能以数字开头标识符区分大小写以下划线开头的标识符是有特殊意义的，以单下划线开头(_foo)表示不能直接访问的类属性，需要通过类提供的借口进行访问以双下划线开头的(__foo)代表类的私有成员，以双下划线开头和结尾的(__foo__)表示Python里特殊方法，如__init__()表示类的构造函数
-##保留字符||||||:–|:–|">
+<meta name="twitter:description" content="标识符在Python中标识符由字母、数字、下划线组成，但不能以数字开头标识符区分大小写以下划线开头的标识符是有特殊意义的，以单下划线开头(_foo)表示不能直接访问的类属性，需要通过类提供的借口进行访问以双下划线开头的(__foo)代表类的私有成员，以双下划线开头和结尾的(__foo__)表示Python里特殊方法，如__init__()表示类的构造函数
+保留字符
+
+
+
+
+
+
+
+
+
+
+and
+e">
   
     <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
   
@@ -206,10 +242,120 @@
 
             <div class="post-content" id="post-content" itemprop="postContent">
             <a id="more"></a>
-<p>##标识符<br>在Python中标识符由字母、数字、下划线组成，但不能以数字开头<br>标识符区分大小写<br>以下划线开头的标识符是有特殊意义的，以单下划线开头(<code>_foo</code>)表示不能直接访问的类属性，需要通过类提供的借口进行访问<br>以双下划线开头的(<code>__foo</code>)代表类的私有成员，以双下划线开头和结尾的(<code>__foo__</code>)表示Python里特殊方法，如<code>__init__()</code>表示类的构造函数</p>
-<p>##保留字符<br>|||||<br>|:–|:–|:–|<br>|and|exec|not|<br>|assert|finally|or|<br>|break|for|pass|<br>|class|from|print|<br>|continue|global|raise|<br>|def|if|return|<br>|del|import|try|<br>|elif|in|while|<br>|else|is|with|<br>|except|lambda|yield|<br>|and|exec|not|<br>|assert|finally|or|<br>|break|for|pass|<br>|class|from|print|<br>|continue|global|raise|<br>|def|if|return|<br>|del|import|try|<br>|elif|in|while|<br>|else|is|with|<br>|except|lambda|yield|</p>
-<p>##变量类型</p>
-<ul>
+<h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2><p>在Python中标识符由字母、数字、下划线组成，但不能以数字开头<br>标识符区分大小写<br>以下划线开头的标识符是有特殊意义的，以单下划线开头(<code>_foo</code>)表示不能直接访问的类属性，需要通过类提供的借口进行访问<br>以双下划线开头的(<code>__foo</code>)代表类的私有成员，以双下划线开头和结尾的(<code>__foo__</code>)表示Python里特殊方法，如<code>__init__()</code>表示类的构造函数</p>
+<h2 id="保留字符"><a href="#保留字符" class="headerlink" title="保留字符"></a>保留字符</h2><table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left"></th>
+<th style="text-align:left"></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">and</td>
+<td style="text-align:left">exec</td>
+<td style="text-align:left">not</td>
+</tr>
+<tr>
+<td style="text-align:left">assert</td>
+<td style="text-align:left">finally</td>
+<td style="text-align:left">or</td>
+</tr>
+<tr>
+<td style="text-align:left">break</td>
+<td style="text-align:left">for</td>
+<td style="text-align:left">pass</td>
+</tr>
+<tr>
+<td style="text-align:left">class</td>
+<td style="text-align:left">from</td>
+<td style="text-align:left">print</td>
+</tr>
+<tr>
+<td style="text-align:left">continue</td>
+<td style="text-align:left">global</td>
+<td style="text-align:left">raise</td>
+</tr>
+<tr>
+<td style="text-align:left">def</td>
+<td style="text-align:left">if</td>
+<td style="text-align:left">return</td>
+</tr>
+<tr>
+<td style="text-align:left">del</td>
+<td style="text-align:left">import</td>
+<td style="text-align:left">try</td>
+</tr>
+<tr>
+<td style="text-align:left">elif</td>
+<td style="text-align:left">in</td>
+<td style="text-align:left">while</td>
+</tr>
+<tr>
+<td style="text-align:left">else</td>
+<td style="text-align:left">is</td>
+<td style="text-align:left">with</td>
+</tr>
+<tr>
+<td style="text-align:left">except</td>
+<td style="text-align:left">lambda</td>
+<td style="text-align:left">yield</td>
+</tr>
+<tr>
+<td style="text-align:left">and</td>
+<td style="text-align:left">exec</td>
+<td style="text-align:left">not</td>
+</tr>
+<tr>
+<td style="text-align:left">assert</td>
+<td style="text-align:left">finally</td>
+<td style="text-align:left">or</td>
+</tr>
+<tr>
+<td style="text-align:left">break</td>
+<td style="text-align:left">for</td>
+<td style="text-align:left">pass</td>
+</tr>
+<tr>
+<td style="text-align:left">class</td>
+<td style="text-align:left">from</td>
+<td style="text-align:left">print</td>
+</tr>
+<tr>
+<td style="text-align:left">continue</td>
+<td style="text-align:left">global</td>
+<td style="text-align:left">raise</td>
+</tr>
+<tr>
+<td style="text-align:left">def</td>
+<td style="text-align:left">if</td>
+<td style="text-align:left">return</td>
+</tr>
+<tr>
+<td style="text-align:left">del</td>
+<td style="text-align:left">import</td>
+<td style="text-align:left">try</td>
+</tr>
+<tr>
+<td style="text-align:left">elif</td>
+<td style="text-align:left">in</td>
+<td style="text-align:left">while</td>
+</tr>
+<tr>
+<td style="text-align:left">else</td>
+<td style="text-align:left">is</td>
+<td style="text-align:left">with</td>
+</tr>
+<tr>
+<td style="text-align:left">except</td>
+<td style="text-align:left">lambda</td>
+<td style="text-align:left">yield</td>
+</tr>
+</tbody>
+</table>
+<h2 id="变量类型"><a href="#变量类型" class="headerlink" title="变量类型"></a>变量类型</h2><ul>
 <li>Numbers(数字)<ul>
 <li>int(有符号整形)</li>
 <li>long(长整型)</li>
@@ -222,11 +368,196 @@
 <li>Tuple(元组)</li>
 <li>Dictionary(字典)</li>
 </ul>
-<p>###类型转换<br>|函数|描述|<br>|:–|:–|<br>|int(x[,base])|将x转换为一个整数|<br>|long(x[,base])|将x装换成一个长整型|<br>|float(x)|将x转换到一个浮点数|<br>|complex(real [,imag])|创建一个复数|<br>|str(x)|将对象 x 转换为字符串|<br>|repr(x)|将对象 x 转换为表达式字符串|<br>|eval(str)|用来计算在字符串中的有效Python表达式,并返回一个对象|<br>|tuple(s)|将序列 s 转换为一个元组|<br>|list(s)|将序列 s 转换为一个列表|<br>|set(s)|转换为可变集合|<br>|dict(d)|创建一个字典。d 必须是一个序列 (key,value)元组|<br>|frozenset(s)|转换为不可变集合|<br>|chr(x)|将一个整数转换为一个字符|<br>|unichr(x)|将一个整数转换为Unicode字符|<br>|ord(x)|将一个字符转换为它的整数值|<br>|hex(x)|将一个整数转换为一个十六进制字符串|<br>|oct(x)|将一个整数转换为一个八进制字符串|</p>
-<p>##算术运算符<br>|运算符|描述|<br>|:–|:–|<br>|+|加|<br>|-|减|<br>|<em>|乘|<br>|/|除|<br>|%|取模|<br>|*</em>|幂|<br>|//|取整除|</p>
-<p>##比较运算符<br>|运算符|描述|<br>|:–|:–|<br>|==|等于|<br>|!=|不等于|<br>|&lt;&gt;|不等于|<br>|&gt;|大于|<br>|&lt;|小于|<br>|&gt;=|大于等于|<br>|&lt;=|小于等于|</p>
-<p>##成员运算符<br>|运算符|描述|<br>|:–|:–|<br>|in|是否在指定序列中|<br>|not in|是否不再指定序列中|</p>
-<p>##身份运算符<br>|运算符|描述|<br>|:–|:–|<br>|is|判断两个变量是不是引用自一个对象|<br>|is not|判断两个变量是不是引用不同的对象|</p>
+<h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">函数</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">int(x[,base])</td>
+<td style="text-align:left">将x转换为一个整数</td>
+</tr>
+<tr>
+<td style="text-align:left">long(x[,base])</td>
+<td style="text-align:left">将x装换成一个长整型</td>
+</tr>
+<tr>
+<td style="text-align:left">float(x)</td>
+<td style="text-align:left">将x转换到一个浮点数</td>
+</tr>
+<tr>
+<td style="text-align:left">complex(real [,imag])</td>
+<td style="text-align:left">创建一个复数</td>
+</tr>
+<tr>
+<td style="text-align:left">str(x)</td>
+<td style="text-align:left">将对象 x 转换为字符串</td>
+</tr>
+<tr>
+<td style="text-align:left">repr(x)</td>
+<td style="text-align:left">将对象 x 转换为表达式字符串</td>
+</tr>
+<tr>
+<td style="text-align:left">eval(str)</td>
+<td style="text-align:left">用来计算在字符串中的有效Python表达式,并返回一个对象</td>
+</tr>
+<tr>
+<td style="text-align:left">tuple(s)</td>
+<td style="text-align:left">将序列 s 转换为一个元组</td>
+</tr>
+<tr>
+<td style="text-align:left">list(s)</td>
+<td style="text-align:left">将序列 s 转换为一个列表</td>
+</tr>
+<tr>
+<td style="text-align:left">set(s)</td>
+<td style="text-align:left">转换为可变集合</td>
+</tr>
+<tr>
+<td style="text-align:left">dict(d)</td>
+<td style="text-align:left">创建一个字典。d 必须是一个序列 (key,value)元组</td>
+</tr>
+<tr>
+<td style="text-align:left">frozenset(s)</td>
+<td style="text-align:left">转换为不可变集合</td>
+</tr>
+<tr>
+<td style="text-align:left">chr(x)</td>
+<td style="text-align:left">将一个整数转换为一个字符</td>
+</tr>
+<tr>
+<td style="text-align:left">unichr(x)</td>
+<td style="text-align:left">将一个整数转换为Unicode字符</td>
+</tr>
+<tr>
+<td style="text-align:left">ord(x)</td>
+<td style="text-align:left">将一个字符转换为它的整数值</td>
+</tr>
+<tr>
+<td style="text-align:left">hex(x)</td>
+<td style="text-align:left">将一个整数转换为一个十六进制字符串</td>
+</tr>
+<tr>
+<td style="text-align:left">oct(x)</td>
+<td style="text-align:left">将一个整数转换为一个八进制字符串</td>
+</tr>
+</tbody>
+</table>
+<h2 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">运算符</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">+</td>
+<td style="text-align:left">加</td>
+</tr>
+<tr>
+<td style="text-align:left">-</td>
+<td style="text-align:left">减</td>
+</tr>
+<tr>
+<td style="text-align:left">*</td>
+<td style="text-align:left">乘</td>
+</tr>
+<tr>
+<td style="text-align:left">/</td>
+<td style="text-align:left">除</td>
+</tr>
+<tr>
+<td style="text-align:left">%</td>
+<td style="text-align:left">取模</td>
+</tr>
+<tr>
+<td style="text-align:left">**</td>
+<td style="text-align:left">幂</td>
+</tr>
+<tr>
+<td style="text-align:left">//</td>
+<td style="text-align:left">取整除</td>
+</tr>
+</tbody>
+</table>
+<h2 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">运算符</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">==</td>
+<td style="text-align:left">等于</td>
+</tr>
+<tr>
+<td style="text-align:left">!=</td>
+<td style="text-align:left">不等于</td>
+</tr>
+<tr>
+<td style="text-align:left">&lt;&gt;</td>
+<td style="text-align:left">不等于</td>
+</tr>
+<tr>
+<td style="text-align:left">&gt;</td>
+<td style="text-align:left">大于</td>
+</tr>
+<tr>
+<td style="text-align:left">&lt;</td>
+<td style="text-align:left">小于</td>
+</tr>
+<tr>
+<td style="text-align:left">&gt;=</td>
+<td style="text-align:left">大于等于</td>
+</tr>
+<tr>
+<td style="text-align:left">&lt;=</td>
+<td style="text-align:left">小于等于</td>
+</tr>
+</tbody>
+</table>
+<h2 id="成员运算符"><a href="#成员运算符" class="headerlink" title="成员运算符"></a>成员运算符</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">运算符</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">in</td>
+<td style="text-align:left">是否在指定序列中</td>
+</tr>
+<tr>
+<td style="text-align:left">not in</td>
+<td style="text-align:left">是否不再指定序列中</td>
+</tr>
+</tbody>
+</table>
+<h2 id="身份运算符"><a href="#身份运算符" class="headerlink" title="身份运算符"></a>身份运算符</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">运算符</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">is</td>
+<td style="text-align:left">判断两个变量是不是引用自一个对象</td>
+</tr>
+<tr>
+<td style="text-align:left">is not</td>
+<td style="text-align:left">判断两个变量是不是引用不同的对象</td>
+</tr>
+</tbody>
+</table>
 
             <blockquote>
                 <p>

@@ -12,35 +12,32 @@
   <meta name="keywords" content="iOS">
   <meta name="description" content="归档就是用户某种格式把一个或者多个对象保存到指定的文件中，方便以后从文件中恢复它们。
 
-##使用NSKeyedArchiver归档
-
+使用NSKeyedArchiver归档
 NSKeyedArchiver负责将对象归档到指定文件中
 NSKeyedUnarchiver则负责从文件中恢复对象
 
-直接调用archivedDataWithRootObject:data、archiveRootObject:toFile:file类方法将指定对象">
+直接调用archivedDataWithRootObject:data、archiveRootObject:toFile:file类方法将指定对象作为r">
 <meta property="og:type" content="article">
 <meta property="og:title" content="对象归档">
 <meta property="og:url" content="http://seniorzhai.github.io/2014/02/27/对象归档/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
 <meta property="og:description" content="归档就是用户某种格式把一个或者多个对象保存到指定的文件中，方便以后从文件中恢复它们。
 
-##使用NSKeyedArchiver归档
-
+使用NSKeyedArchiver归档
 NSKeyedArchiver负责将对象归档到指定文件中
 NSKeyedUnarchiver则负责从文件中恢复对象
 
-直接调用archivedDataWithRootObject:data、archiveRootObject:toFile:file类方法将指定对象">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+直接调用archivedDataWithRootObject:data、archiveRootObject:toFile:file类方法将指定对象作为r">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="对象归档">
 <meta name="twitter:description" content="归档就是用户某种格式把一个或者多个对象保存到指定的文件中，方便以后从文件中恢复它们。
 
-##使用NSKeyedArchiver归档
-
+使用NSKeyedArchiver归档
 NSKeyedArchiver负责将对象归档到指定文件中
 NSKeyedUnarchiver则负责从文件中恢复对象
 
-直接调用archivedDataWithRootObject:data、archiveRootObject:toFile:file类方法将指定对象">
+直接调用archivedDataWithRootObject:data、archiveRootObject:toFile:file类方法将指定对象作为r">
   
     <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
   
@@ -226,8 +223,7 @@ NSKeyedUnarchiver则负责从文件中恢复对象
             <ul>
 <li>归档就是用户某种格式把一个或者多个对象保存到指定的文件中，方便以后从文件中恢复它们。</li>
 </ul>
-<p>##使用NSKeyedArchiver归档</p>
-<ul>
+<h2 id="使用NSKeyedArchiver归档"><a href="#使用NSKeyedArchiver归档" class="headerlink" title="使用NSKeyedArchiver归档"></a>使用NSKeyedArchiver归档</h2><ul>
 <li>NSKeyedArchiver负责将对象归档到指定文件中</li>
 <li><p>NSKeyedUnarchiver则负责从文件中恢复对象</p>
 <ul>
@@ -238,8 +234,7 @@ NSKeyedUnarchiver则负责从文件中恢复对象
 </ul>
 </li>
 </ul>
-<p>##实现NSCoding协议</p>
-<ul>
+<h2 id="实现NSCoding协议"><a href="#实现NSCoding协议" class="headerlink" title="实现NSCoding协议"></a>实现NSCoding协议</h2><ul>
 <li>自定义类要实现归档、恢复，应该实现NSCoding协议，必须实现该协议中的定义的如下两个方法<ul>
 <li>initWithCoder:该方法负责恢复对象</li>
 <li>encodeWithCoder:该方法负责归档对象</li>
@@ -284,8 +279,8 @@ NSKeyedUnarchiver则负责从文件中恢复对象
 <ul>
 <li>示例</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">#import &lt;Foundation/Foundation.h&gt;</div><div class="line">@interface ZTApple : NSObject &lt;NSCoding&gt;</div><div class="line">@property (nonatomic,copy) NSString* color;</div><div class="line">@property (nonatomic,assign)double weight;</div><div class="line">@property (nonatomic,assign)int size;</div><div class="line">- (id) initWithColor:(NSString*) color weight:(double) weight size:(int) size;</div><div class="line">@end</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">#import &quot;ZTApple.h&quot;</div><div class="line">@implementation ZTApple</div><div class="line">@synthesize color = _color;</div><div class="line">@synthesize weight = _weight;</div><div class="line">@synthesize size = _size;</div><div class="line">-(id) initWithColor:(NSString*) color weight:(double) weight size:(int) size</div><div class="line">&#123;</div><div class="line">    if(self = [super init])</div><div class="line">    &#123;</div><div class="line">        self.color = color;</div><div class="line">        self.weight = weight;</div><div class="line">        self.size = size;</div><div class="line">    &#125;</div><div class="line">    return self;</div><div class="line">&#125; </div><div class="line">-(NSString *)description</div><div class="line">&#123;</div><div class="line">    return [NSString stringWithFormat:&quot;@&lt;ZTApple[_color=%@,_weigt=%g,_size=%d]&gt;&quot;,self.color,self.weight,self.size];</div><div class="line">&#125;</div><div class="line">-(void) encodeWithCoder:(NSCode*) coder</div><div class="line">&#123;</div><div class="line">    [coder encodeOject:_color forKey:@&quot;color&quot;];</div><div class="line">    [coder encodeDouble:_weight foeKey:@&quot;weight&quot;];</div><div class="line">    [coder encodeInt:_size forKey:@&quot;size&quot;];</div><div class="line">&#125;</div><div class="line">-(void) initWithCoder:(NSCoder*) coder</div><div class="line">&#123;</div><div class="line">    _color = [coder decodeObjectForKey:@&quot;color&quot;];</div><div class="line">    _weight = [coder decodeDoubleForkey:@&quot;weight&quot;];</div><div class="line">    _size = [coder decodeIntForKey:@&quot;size&quot;];</div><div class="line">    return self;</div><div class="line">&#125;</div><div class="line">@end</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># import &lt;Foundation/Foundation.h&gt;</div><div class="line">@interface ZTApple : NSObject &lt;NSCoding&gt;</div><div class="line">@property (nonatomic,copy) NSString* color;</div><div class="line">@property (nonatomic,assign)double weight;</div><div class="line">@property (nonatomic,assign)int size;</div><div class="line">- (id) initWithColor:(NSString*) color weight:(double) weight size:(int) size;</div><div class="line">@end</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"># import &quot;ZTApple.h&quot;</div><div class="line">@implementation ZTApple</div><div class="line">@synthesize color = _color;</div><div class="line">@synthesize weight = _weight;</div><div class="line">@synthesize size = _size;</div><div class="line">-(id) initWithColor:(NSString*) color weight:(double) weight size:(int) size</div><div class="line">&#123;</div><div class="line">    if(self = [super init])</div><div class="line">    &#123;</div><div class="line">        self.color = color;</div><div class="line">        self.weight = weight;</div><div class="line">        self.size = size;</div><div class="line">    &#125;</div><div class="line">    return self;</div><div class="line">&#125; </div><div class="line">-(NSString *)description</div><div class="line">&#123;</div><div class="line">    return [NSString stringWithFormat:&quot;@&lt;ZTApple[_color=%@,_weigt=%g,_size=%d]&gt;&quot;,self.color,self.weight,self.size];</div><div class="line">&#125;</div><div class="line">-(void) encodeWithCoder:(NSCode*) coder</div><div class="line">&#123;</div><div class="line">    [coder encodeOject:_color forKey:@&quot;color&quot;];</div><div class="line">    [coder encodeDouble:_weight foeKey:@&quot;weight&quot;];</div><div class="line">    [coder encodeInt:_size forKey:@&quot;size&quot;];</div><div class="line">&#125;</div><div class="line">-(void) initWithCoder:(NSCoder*) coder</div><div class="line">&#123;</div><div class="line">    _color = [coder decodeObjectForKey:@&quot;color&quot;];</div><div class="line">    _weight = [coder decodeDoubleForkey:@&quot;weight&quot;];</div><div class="line">    _size = [coder decodeIntForKey:@&quot;size&quot;];</div><div class="line">    return self;</div><div class="line">&#125;</div><div class="line">@end</div></pre></td></tr></table></figure>
 <h2 id="使用NSData完成自定义归档"><a href="#使用NSData完成自定义归档" class="headerlink" title="使用NSData完成自定义归档"></a>使用NSData完成自定义归档</h2><ul>
 <li>一次性收集多个对象，并将这些对象归档到单个文件中，此时借助NSMutableData来创建NSKeyedArchiver或NSKeyedUnarchiver对象。</li>
 <li>归档过程</li>

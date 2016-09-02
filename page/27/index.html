@@ -6,6 +6,8 @@
   <title>SeniorZhai&#39;s blog | 苟利国家生死以，起因福祸趋避之</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
+  <meta name="theme-color" content="#ED5565">
+  
   
   <meta name="keywords" content="undefined">
   <meta name="description" content="专注于移动平台">
@@ -18,8 +20,10 @@
 <meta name="twitter:title" content="SeniorZhai's blog">
 <meta name="twitter:description" content="专注于移动平台">
   
+    <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
+  
   <meta name="summary" content="专注于移动平台">
-  <link rel="shortcut icon" href="/">
+  <link rel="shortcut icon" href="/img/favicon.ico">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -33,7 +37,7 @@
   </a>
   <div class="brand-wrap">
     <div class="brand">
-      <a href="/" class="avatar"><img src="undefined"></a>
+      <a href="/" class="avatar"><img src="/img/logo.jpg"></a>
       <hgroup class="introduce">
         <h5 class="nickname">Dear宅学长</h5>
         <a href="mailto:developer.zhaitao@gmail.com" title="developer.zhaitao@gmail.com" class="mail">developer.zhaitao@gmail.com</a>
@@ -43,6 +47,48 @@
   <div class="scroll-wrap flex-col">
     <ul class="nav">
       
+          <li class="waves-block waves-effect">
+            <a href="/"  >
+              <i class="icon icon-lg icon-home"></i>
+              主页
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/archives"  >
+              <i class="icon icon-lg icon-archives"></i>
+              Archives
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/tags"  >
+              <i class="icon icon-lg icon-tags"></i>
+              Tags
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://seniorzhai.github.io" target="_blank" >
+              <i class="icon icon-lg icon-github"></i>
+              Github
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="http://weibo.com/seniorszhai/" target="_blank" >
+              <i class="icon icon-lg icon-weibo"></i>
+              Weibo
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/about"  >
+              <i class="icon icon-lg icon-link"></i>
+              about
+            </a>
+          </li>
+      
     </ul>
 
     <footer class="footer">
@@ -50,7 +96,7 @@
   <p>SeniorZhai&#39;s blog &copy; 2016</p>
   <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
   <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
-  <a href="undefined" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
+  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
 </footer>
 
   </div>
@@ -65,6 +111,20 @@
         </a>
         <div class="flex-col header-title ellipsis">SeniorZhai&#39;s blog</div>
         
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
         
     </div>
 </header>
@@ -114,30 +174,11 @@
          
  listview的item可选的背景 
  
-      1  2  3  4  5  6  7  8  9  10  11  12  13  14      &lt;?xml version="1.0" encoding="utf-8" ?&gt;   &lt; selector   xmlns:android = "http://schemas.android.com/apk/res/android" &gt;   	 &lt;!-- 默认时的背景背景 --&gt;   	 &lt; item   android:drawable = "@drawable/pic1"  /&gt;   	 &lt;!-- 没有焦点时的背景图片 --&gt;   	 &lt; item   android:state_window_focused = "false"   android:drawable = "@drawable/pic1"  /&gt;   	 &lt;!-- 非触摸模式下获得焦点并单击时的背景图片 --&gt;   	 &lt; item   android:state_focused = "true"   android:state_pressed = "true"   android:drawable = "@drawable/pic2"  /&gt;   	 &lt;!-- 触摸模式下单击时的背景图片 --&gt;   	 &lt; item   android:state_focused = "false"   android:state_pressed = "true"   android:drawable = "@drawable/pic3"  /&gt;   	 &lt;!-- 选中时的图片背景 --&gt;   	 &lt; item   android:state_selected = "true"   android:drawable = "@drawable/pic4"  /&gt;   	 &lt;!-- 获得焦点时的图片背景 --&gt;   	 &lt; item   android:state_focused = "true"   android:drawable = "@drawable/pic5"  /&gt;       
- 在listView中配置 android:listSelector=&quot;@drawable/list_item_bg&quot; 或者在item中添加 android:background=&quot;@drawable/list_item_bg&quot; 即可实现，或者在java代码中使用 Drawable drawable = getResources().getDrawable(R.drawable.list_item_bg); , listView.setSelector(drawable); 。可能出现列表出现黑的情况，加上 android:cacheColorHint=&quot;@android:color/transparent&quot; 。 
- 
- button的可选背景 
- android:state_selected 为选中 
- android:state_focused 获得焦点 
- android:state_pressed 点击 
- android:state_enable 是否响应事件，指所有事件  &lt;?xml version="1.0" encoding="utf-8"?&gt;
- &lt; selector   xmlns:android = "http://schemas.android.com/apk/res/android" &gt; 
- &lt; item   android:state_selected = "true"   android:color = "#FFF"  /&gt; 
- &lt; item   android:state_focused = "true"   android:color = "FFF"  /&gt; 
- &lt; item   android:state_pressed = "true"   android:color = "#FFF"  /&gt; 
- &lt; item   android:color = "#000"  /&gt; 
- &lt;/ selector &gt; 
-  
- 
- 
- 
- 
-
+      1  2  3  4  5  6  7  8  9  10  11  12  13  14      &lt;?xml version="1.0" encoding="utf-8" ?&gt;   &lt; selector   xmlns:android = "http://schemas.android.com/apk/res/an
     
     
         <a href="/2014/08/11/selector背景选择器/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -180,7 +221,7 @@
     
     
         <a href="/2014/08/09/Android、iOS大不同(一)/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -219,11 +260,11 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-              1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55  56       public    class   PixelUtils   &#123;  	 private   static  Context mContext = MyApplication.getInstance();    	 // dp-&gt;px   	  public   static   int   dp2px  ( float  value)   &#123;   		 final   float  scale = mContext.getResources().getDisplayMetrics().densityDpi;           return  ( int ) (value * (scale /  160 ) +  0.5f );  	&#125;  	 // dp-&gt;px   	  public   static   int   dp2px  ( float  value, Context context)   &#123;           final   float  scale = context.getResources().getDisplayMetrics().densityDpi;           return  ( int ) (value * (scale /  160 ) +  0.5f );      &#125;       // px-&gt;dp         public   static   int   px2dp  ( float  value)   &#123;           final   float  scale = mContext.getResources().getDisplayMetrics().densityDpi;           return  ( int ) ((value *  160 ) / scale +  0.5f );      &#125;       // px-&gt;dp         public   static   int   px2dp  ( float  value, Context context)   &#123;           final   float  scale = context.getResources().getDisplayMetrics().densityDpi;           return  ( int ) ((value *  160 ) / scale +  0.5f );      &#125;       // sp-&gt;px         public   static   int   sp2px  ( float  value)   &#123;          Resources r;           if  (mContext ==  null ) &#123;              r = Resources.getSystem();          &#125;  else  &#123;              r = mContext.getResources();          &#125;           float  spvalue = value * r.getDisplayMetrics().scaledDensity;           return  ( int ) (spvalue +  0.5f );      &#125;       // sp-&gt;px         public   static   int   sp2px  ( float  value, Context context)   &#123;          Resources r;           if  (context ==  null ) &#123;              r = Resources.getSystem();          &#125;  else  &#123;              r = context.getResources();          &#125;           float  spvalue = value * r.getDisplayMetrics().scaledDensity;           return  ( int ) (spvalue +  0.5f );      &#125;       // px-&gt;sp    	  public   static   int   px2sp  ( float  value)   &#123;           final   float  scale = mContext.getResources().getDisplayMetrics().scaledDensity;           return  ( int ) (value / scale +  0.5f );      &#125;       // px-&gt;sp         public   static   int   px2sp  ( float  value, Context context)   &#123;           final   float  scale = context.getResources().getDisplayMetrics().scaledDensity;           return  ( int ) (value / scale +  0.5f );      &#125;  &#125;      
+              1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51 
     
     
         <a href="/2014/08/08/PixelUtils/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -262,11 +303,11 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-              1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90       public    class   PerferencesUtils   &#123;  	 public   static  String PREFERENCE_NAME =  "MYPERFERENCERS" ;    	  public   static   boolean   putString  (Context context,String key,String value)   &#123;  		SharedPreferces settings = context.getSharedPreferences(PREFERENCE_NAME,Context.MODE_PRIVATE);  		SharedPreferces.Editor = settings.edit();  		editor.putString(key,value);  		 return  editor.commit();  	&#125;    	  public   static  String  getString  (Context context,String key)   &#123;  		 return  getString(context,key, null );  	&#125;    	  public   static  String  getString  (Context context,String key,String defaultValue)   &#123;  		SharedPreferces settings = context.getSharedPreferences(PREFERENCE_NAME,Context.MODE_PRIVATE);  		 return  settings.getString(key,defaultValue);  	&#125;    	  public   static   boolean   putInt  (Context context,String key, int  value)   &#123;  		SharedPreferces settings = context.getSharedPreferences(PREFERENCE_NAME,Context.MODE_PRIVATE);  		SharedPreferces.Editor = settings.edit();  		editor.putInt(key,value);  		 return  editor.commit();  	&#125;    	  public   static   int   getInt  (Context context,String key)   &#123;  		 return  getInt(context,key,- 1 );  	&#125;    	  public   static   int   getInt  (Context context,String key, int  defaultValue)   &#123;  		SharedPreferences settings = context.getSharedPreferences(PREFERENCE_NAME,Context.MODE_PRIVATE);  		 return  settings.getInt(key,defaultValue);  	&#125;    	  public   static   putLong  (Context context,String key, long  value)   &#123;  		SharedPreferences settings = context.getSharedPreferences(PREFERENCE_NAME,Context.MODE_PRIVATE);  		SharedPreferences.Editor editor = settings.edit();  		editor.putLong(key,value);  		 return  editor.commit();  	&#125;    	  public   static   long   getLong  (Context context, String key)   &#123;  		 return  getLong(context, key, - 1 );  	&#125;    	  public   static   long   getLong  (Context context, String key,  long  defaultValue)   &#123;  		SharedPreferences settings = context.getSharedPreferences(  				PREFERENCE_NAME, Context.MODE_PRIVATE);  		 return  settings.getLong(key, defaultValue);  	&#125;    	  public   static   boolean   putFloat  (Context context, String key,  float  value)   &#123;  		SharedPreferences settings = context.getSharedPreferences(  				PREFERENCE_NAME, Context.MODE_PRIVATE);  		SharedPreferences.Editor editor = settings.edit();  		editor.putFloat(key, value);  		 return  editor.commit();  	&#125;    	  public   static   float   getFloat  (Context context, String key)   &#123;  		 return  getFloat(context, key, - 1 );  	&#125;    	  public   static   float   getFloat  (Context context, String key,  float  defaultValue)   &#123;  		SharedPreferences settings = context.getSharedPreferences(  				PREFERENCE_NAME, Context.MODE_PRIVATE);  		 return  settings.getFloat(key, defaultValue);  	&#125;    	  public   static   boolean   putBoolean  (Context context, String key,  boolean  value)   &#123;  		SharedPreferences settings = context.getSharedPreferences(  				PREFERENCE_NAME, Context.MODE_PRIVATE);  		SharedPreferences.Editor editor = settings.edit();  		editor.putBoolean(key, value);  		 return  editor.commit();  	&#125;    	  public   static   boolean   getBoolean  (Context context, String key)   &#123;  		 return  getBoolean(context, key,  false );  	&#125;    	  public   static   boolean   getBoolean  (Context context, String key,    			 boolean  defaultValue) &#123;  		SharedPreferences settings = context.getSharedPreferences(  				PREFERENCE_NAME, Context.MODE_PRIVATE);  		 return  settings.getBoolean(key, defaultValue);  	&#125;  	  &#125;      
+              1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51 
     
     
         <a href="/2014/08/08/PreferencesUtils/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -305,11 +346,11 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-              1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55  56  57  58  59  60  61  62  63       public    class   RandomUtils   &#123;  	 // 制定字符串范围的因子   	 public   static   final  String NUMBERS_AND_LETTERS =  "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" ;  	 public   static   final  String NUMBERS =  "0123456789" ;  	 public   static   final  String LETTERS =  "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" ;  	 public   static   final  String CAPITAL_LETTERS =  "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ;  	 public   static   final  String LOWER_CASE_LETTERS =  "abcdefghijklmnopqrstuvwxyz" ;  	 // 获取随机数字、字母字符串   	  public   static  String  getRandomNumbersAndLetters  ( int  length)   &#123;  		 return  getRandom(NUMBERS_AND_LETTERS, length);  	&#125;  	 // 获取随机数字字符串   	  public   static  String  getRandomNumbers  ( int  length)   &#123;  		 return  getRandom(NUMBERS, length);  	&#125;  	 // 获取英文字母组成的随机字符串   	  public   static  String  getRandomLetters  ( int  length)   &#123;  		 return  getRandom(LETTERS, length);  	&#125;  	 // 获取大写字母组成的随机字符串   	  public   static  String  getRandomCapitalLetters  ( int  length)   &#123;  		 return  getRandom(CAPITAL_LETTERS, length);  	&#125;  	 // 获取小写字母组成的随机字符串   	  public   static  String  getRandomLowerCaseLetters  ( int  length)   &#123;  		 return  getRandom(LOWER_CASE_LETTERS, length);  	&#125;  	 // 获取制定字符串和长度的随机字符串   	  public   static  String  getRandom  (String source,  int  length)   &#123;  		 return  TextUtils.isEmpty(source) ?  null  : getRandom(  				source.toCharArray(), length);  	&#125;  	 // 获取制定字符数组和长度的随机字符串   	  public   static  String  getRandom  ( char [] sourceChar,  int  length)   &#123;  		 if  (sourceChar ==  null  || sourceChar.length ==  0  || length &lt;  0 ) &#123;  			 return   null ;  		&#125;    		StringBuilder str =  new  StringBuilder(length);  		Random random =  new  Random();  		 for  ( int  i =  0 ; i &lt; length; i++) &#123;  			str.append(sourceChar[random.nextInt(sourceChar.length)]);  		&#125;  		 return  str.toString();  	&#125;  	  	 // 获取0~max范围的随机int   	  public   static   int   getRandom  ( int  max)   &#123;  		 return  getRandom( 0 , max);  	&#125;  	  	 // 获取min~max范围的随机int   	  public   static   int   getRandom  ( int  min,  int  max)   &#123;           if  (min &gt; max) &#123;               return   0 ;          &#125;           if  (min == max) &#123;               return  min;          &#125;           return  min +  new  Random().nextInt(max - min);      &#125;    &#125;      
+              1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51 
     
     
         <a href="/2014/08/08/RandomUtils随机工具类/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -348,12 +389,11 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-         序列化工具类，用于序列化对象对文件或从文件反序列化对象       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46        public  class  Serialization  (String filePath)   &#123;  	  public   static  Object  deserialization  (String filePath)  &#123;	  		ObjectInputStream in =  null ;  		 try  &#123;  			in =  new  ObjectInputStream( new  FileInputStream(filePath));  			Object o = in.readOject();  			in.close();  			 return  o;  		&#125;  catch  (FileNotFoundException e) &#123;  			 throw   new  RuntimeException( "FileNotFoundException occurred. " , e);  		&#125;  catch  (ClassNotFoundException e) &#123;               throw   new  RuntimeException( "ClassNotFoundException occurred. " , e);          &#125;  catch  (IOException e) &#123;               throw   new  RuntimeException( "IOException occurred. " , e);          &#125;  finally  &#123;               if  (in !=  null ) &#123;                   try  &#123;                      in.close();                  &#125;  catch  (IOException e) &#123;                       throw   new  RuntimeException( "IOException occurred. " , e);                  &#125;              &#125;          &#125;  	&#125;  	  	  public   static   void   serialization  (String filePath,Object obj)   &#123;  		ObjectOutputStream out =  null ;  		 try  &#123;  			out =  new  ObjectOutputStream( new  fileOutputStream(filePath));  			out.writeObject(obj);  			out.close();  		&#125;   catch  (FileNotFoundException e) &#123;               throw   new  RuntimeException( "FileNotFoundException occurred. " , e);          &#125;  catch  (IOException e) &#123;               throw   new  RuntimeException( "IOException occurred. " , e);          &#125;  finally  &#123;               if  (out !=  null ) &#123;                   try  &#123;                      out.close();                  &#125;  catch  (IOException e) &#123;                       throw   new  RuntimeException( "IOException occurred. " , e);                  &#125;              &#125;          &#125;      &#125;  &#125;       
-
+         序列化工具类，用于序列化对象对文件或从文件反序列化对象       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44
     
     
         <a href="/2014/08/08/SerializeUtils/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -392,12 +432,11 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-         工具类，用于读取资源目录下的内容       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71  72  73  74  75  76  77  78  79  80  81  82       public    class   ResourceUtils   &#123;  	 // 读取assets目录下某个文件内容   	  public   static  String  getFileFromAssets  (Context context,String fileName)  &#123;  		 if (context ==  null  || TextUils.isEmpty(fileName)) &#123;  			 return   null ;  		&#125;  		StringBuilder s =  new  StringBuilder( "" );  		 try  &#123;  			InputStreamReader in =  new  InputStreamReader(context.getResources().getAssets().open(fileName));  			BufferedReader br =  new  BufferedReader(in);  			String line;  			 while  ((line = br.readLine()) !=  null )&#123;  				s.append(line);  			&#125;  			 return  s.toString();  		&#125;  catch  (IOException e) &#123;  			e.printStackTrace();  			 return   null ;  		&#125;  	&#125;  	 // 读取raw目录下某个文件内容   	  public   static  String  getFileFromRaw  (Context context, int  resId)   &#123;  		 if  (context ==  null ) &#123;  			 return   null ;  		&#125;    		StringBuilder s =  new  StringBuilder();  		 try  &#123;  			InputStreamRead in =  new  InputStreamReader(context.getResources().openRawResource(resId));  			BufferedReader br =  new  BufferedReader(in);  			String line;  			 while  ((line = br.readLine() !=  null ))&#123;  				s.append(line);  			&#125;  			 return  s.toString();  		&#125;  catch  (IOException e) &#123;  			e.printStatckTrace();  			 return   null ;  		&#125;  	&#125;    	  public   static  List&lt;String&gt;  getFileToListFromAssets  (Context context,String fileName)   &#123;  		 if  (context ==  null  || TextUtils.isEmpty(fileName)) &#123;  			 return   null ;  		&#125;  		List&lt;String&gt; fileContent =  new  ArrayList&lt;String&gt;();  		 try  &#123;  			InputStreamReader in =  new  InputStreamReader(context.getResouces().getAssets().open(fileName));  			BufferedReader br =  new  BufferedReader(in);  			String line;  			 while ((line = br.readLine() !=  null )) &#123;  				fileContent.add(line);  			&#125;  			br.close();  			 return  fileContent;  		&#125;  catch  (IOException e) &#123;  			e.printStackTrace();  			 return   null ;  		&#125;  	&#125;    	  public   static  List&lt;String&gt;  getFileToListFromRaw  (Context context, int  resId)   &#123;  		 if  (context ==  null ) &#123;  			 return   null ;  		&#125;  		List&lt;String&gt; fileContent =  new  ArrayList&lt;String&gt; ();  		BufferedReader reader =  null ;  		 try  &#123;  			InputStreamReader in =  new  InputStreamReader(context.getResouces().openRawResource(resId));  			reader =  new  BufferedReader(in);  			String line =  null ;  			 while ((line = reader.readLine()) !=  null )&#123;  				fileContent.add(line);  			&#125;  			reader.close();  			 return  fileContent;  		&#125;  catch  (IOException e) &#123;  			e.printStackTrace();  			 return   null ;  		&#125;  	&#125;  &#125;       
-
+         工具类，用于读取资源目录下的内容       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  4
     
     
         <a href="/2014/08/08/ResourceUtils/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -437,13 +476,12 @@
 
     
           SockMonitor 可以捕捉PC上进程的网络访问，小米助手可以为小米手机USB共享网络提供，其实可以设置IP代理的方法，但是直接这样太方便了。 
- ##设置 连接手机后设置共享网络，注意断开手机的3G、wifi信号 在防火墙中-&gt;允许程序或功能通过Windows防火墙-&gt;将ScockMonitor添加到其中 
- ##过滤 在ScockMoniter中设置过滤器通过限制 MiPoneManager 这个进程就可以只抓取手机网络访问数据 在限定IP即可抓取指定IP的数据 
-
+   设置  连接手机后设置共享网络，注意断开手机的3G、wifi信号 在防火墙中-&gt;允许程序或功能通过Windows防火墙-&gt;将ScockMonitor添加到其中 
+   过滤  在ScockMoniter中设置过滤器通过限制 Mi
     
     
         <a href="/2014/08/08/SockMonitor和小米助手配合抓包/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -486,7 +524,7 @@
     
     
         <a href="/2014/08/07/CursorLoader/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -525,11 +563,11 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-              1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51       public    class   CipherUtil   &#123;  	 private   final   static  String[] hexDigits = &#123; "0" ,  "1" ,  "2" ,  "3" ,  "4" , "5" ,  "6" ,  "7" ,  "8" ,  "9" ,  "a" ,  "b" ,  "c" ,  "d" ,  "e" ,  "f" &#125;;                 public   static  String  generatePassword  (String inputString)  &#123;           return  encodeByMD5(inputString);      &#125;             // 判断是否与处理后的加密码匹配         public   static   boolean   validatePassword  (String password,String inputString)  &#123;           if (password.equals(encodeByMD5(inputString))&#123;               return   true ;          &#125;  else  &#123;               return   false ;          &#125;      &#125;              private   static  String  encodeByMD5  (String originString)  &#123;           if  (originString !=  null ) &#123;               try &#123;                    // 创建指定算法获取信息摘要                    MessageDigest md = MessageDigest.getInstance( "MD5" );                     // 获取字符串的照耀                     byte [] results = md.digest(originString.getBytes());                   String resultString = byteArrayToHexString(result);                    return  resultString.toUpperCase();              &#125;  catch (Exception e) &#123;                  e.printStackTrace();              &#125;          &#125;           return   null ;      &#125;             // byte[] -&gt; String         private   static  String  byteArrayToHexString  ( byte [] b)   &#123;          StringBuffer resultSb =  new  StringBuffer();           for  ( int  i =  0 ; i &lt; b.length; i++)&#123;              resultSb.append(byteToHexString(b[i]));          &#125;           return  resultSb.toString();      &#125;             // byte -&gt; String         private   static  String  byteToHexString  ( byte  b)   &#123;           int  n = b;           if  (n &lt;  0 )               n =  256  + n;           int  d1 = n /  16 ;           int  d2 = n %  16 ;           return  hexDigits[d1] + hexDigits[d2];      &#125;  &#125;      
+              1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51 
     
     
         <a href="/2014/08/06/加密工具类/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -552,6 +590,51 @@
 <div class="mask" id="mask"></div>
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
+<script>
+var BLOG_SHARE = {
+    title: "SeniorZhai's blog",
+    pic: "/img/logo.jpg",
+    summary: document.getElementsByName('summary')[0].content,
+    url: "http://seniorzhai.github.io/page/27/index.html"
+};
+</script>
+<div class="global-share" id="global-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
 
 <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 
@@ -559,10 +642,45 @@
 
 
 
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<script type="text/template" id="search-tpl">
+<li class="item">
+    <a href="/{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</script>
+
+<script src="/js/search.js"></script>
 
 
 
 
+
+<script src="//s95.cnzz.com/z_stat.php?id=true&web_id=true"></script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-54646832-1&#39;', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
 
 
 

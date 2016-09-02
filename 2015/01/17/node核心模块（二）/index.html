@@ -16,7 +16,7 @@
 <meta property="og:url" content="http://seniorzhai.github.io/2015/01/17/node核心模块（二）/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
 <meta property="og:description" content="Node.js标准库提供了http模块，其中封装了一个高效的HTTP服务器和简易的HTTP客户端。http.Server是一个基于事件的HTTP服务器，核心由C++部分实现，接口由JavaScripte封装，兼顾了高性能和简易性http.request则是一个HTTP客户端工具，用于HTTP服务器发起请求">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node核心模块（二）">
 <meta name="twitter:description" content="Node.js标准库提供了http模块，其中封装了一个高效的HTTP服务器和简易的HTTP客户端。http.Server是一个基于事件的HTTP服务器，核心由C++部分实现，接口由JavaScripte封装，兼顾了高性能和简易性http.request则是一个HTTP客户端工具，用于HTTP服务器发起请求">
@@ -203,24 +203,22 @@
 
             <div class="post-content" id="post-content" itemprop="postContent">
             <p>Node.js标准库提供了http模块，其中封装了一个高效的HTTP服务器和简易的HTTP客户端。http.Server是一个基于事件的HTTP服务器，核心由C++部分实现，接口由JavaScripte封装，兼顾了高性能和简易性<br>http.request则是一个HTTP客户端工具，用于HTTP服务器发起请求<br><a id="more"></a></p>
-<p>##HTTP服务器<br>http.Server是http模块中的HTTP服务器对象<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</div><div class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">	res.writeHead(<span class="number">200</span>,&#123;<span class="string">'Content-Type'</span>:<span class="string">'text/html'</span>&#125;);</div><div class="line">	res.write(<span class="string">'&lt;h1&gt;Node.js&lt;/h1&gt;'</span>);</div><div class="line">	res.end(<span class="string">"&lt;p&gt;Hello World&lt;/p&gt;"</span>);</div><div class="line">&#125;).listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure></p>
-<p>###http.Server的事件</p>
-<ul>
+<h2 id="HTTP服务器"><a href="#HTTP服务器" class="headerlink" title="HTTP服务器"></a>HTTP服务器</h2><p>http.Server是http模块中的HTTP服务器对象<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</div><div class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">	res.writeHead(<span class="number">200</span>,&#123;<span class="string">'Content-Type'</span>:<span class="string">'text/html'</span>&#125;);</div><div class="line">	res.write(<span class="string">'&lt;h1&gt;Node.js&lt;/h1&gt;'</span>);</div><div class="line">	res.end(<span class="string">"&lt;p&gt;Hello World&lt;/p&gt;"</span>);</div><div class="line">&#125;).listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure></p>
+<h3 id="http-Server的事件"><a href="#http-Server的事件" class="headerlink" title="http.Server的事件"></a>http.Server的事件</h3><ul>
 <li>request 客户端请求到来时该事件被触发，提供两个参数req和res，分别是<code>http.ServerRequest</code>和<code>http.ServerResponse</code>的实例，表示请求和响应信息</li>
 <li>connection 当TCP链接建立时，该事件被触发，提供了一个参数socket，为<code>net.Socket</code>的实例</li>
 <li>close 当服务器关闭时，该事件被触发<br>此外还有<code>checkContinue</code>、<code>upgrade</code>、<code>clientError</code>事件，通常不需要关心<br>最常用到的时<code>request</code>，为此http提供了<code>http.createServer([requestListener])</code>，功能是创建HTTP服务器并将<code>requestListener</code>作为request事件的监听函数<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</div><div class="line"></div><div class="line"><span class="keyword">var</span> server = <span class="keyword">new</span> http.Server();</div><div class="line">server.on(<span class="string">'request'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">	res.writeHead(<span class="number">200</span>,&#123;<span class="string">'Content-Type'</span>:<span class="string">'text/html'</span>&#125;);</div><div class="line">	res.write(<span class="string">'&lt;h1&gt;Node.js&lt;/h1&gt;'</span>);</div><div class="line">	res.end(<span class="string">"&lt;p&gt;Hello World&lt;/p&gt;"</span>);</div><div class="line">&#125;);</div><div class="line">server.listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>###http.ServerRequest<br>http.ServerRequest是HTTP请求的信息，是后端开发者最关注的内容，一般由http.Server的request事件发送，作为参数，通常简称<code>req</code>或<code>request</code><br>HTTP请求一般分为两部分:请求头(RequestHeader)和请求体(RequestBody)，http.ServerRequest提供了3个事件用于控制请求体的传输</p>
+<h3 id="http-ServerRequest"><a href="#http-ServerRequest" class="headerlink" title="http.ServerRequest"></a>http.ServerRequest</h3><p>http.ServerRequest是HTTP请求的信息，是后端开发者最关注的内容，一般由http.Server的request事件发送，作为参数，通常简称<code>req</code>或<code>request</code><br>HTTP请求一般分为两部分:请求头(RequestHeader)和请求体(RequestBody)，http.ServerRequest提供了3个事件用于控制请求体的传输</p>
 <ul>
 <li>data 当请求体数据到来时，事件触发，该事件提供了一个参数<code>chunk</code>，表示接收到的数据，如果该事件没有被监听，那么请求体会被抛弃</li>
 <li>end 当请求体传输完成时，该事件被触发，此后将不会再有数据到来</li>
 <li>close 用户请求结束时，该事件被触发</li>
 </ul>
 <p>ServerRequest的属性<br>|名称|含义|<br>|:–|:—|<br>|complete|客户端请求是否已经发送完成|<br>|httpVersion|HTTP协议版本，通常是1.0或1.1|<br>|method|HTTP请求方法，如GET、POST、PUT、DELETE等|<br>|url|原始的请求路径|<br>|headers|HTTP请求头|<br>|trailers|HTTP请求尾(不常见)|<br>|connection|当前HTTP链接套接字，为net.Socket的实例|<br>|socket|connection属性的别名|<br>|client|client属性的别名|</p>
-<p>###获取GET请求<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</div><div class="line"><span class="keyword">var</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>)</div><div class="line"><span class="keyword">var</span> util = <span class="built_in">require</span>(<span class="string">'util'</span>)</div><div class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">	res.writeHead(<span class="number">200</span>,&#123;<span class="string">'Content-Type'</span>:<span class="string">"text/plain"</span>&#125;);</div><div class="line">	res.end(util.inspect(url.parse(req.url,<span class="literal">true</span>)));</div><div class="line">&#125;).listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure></p>
-<p>###获取POST请求<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure></p>
-
+<h3 id="获取GET请求"><a href="#获取GET请求" class="headerlink" title="获取GET请求"></a>获取GET请求</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</div><div class="line"><span class="keyword">var</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>)</div><div class="line"><span class="keyword">var</span> util = <span class="built_in">require</span>(<span class="string">'util'</span>)</div><div class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">	res.writeHead(<span class="number">200</span>,&#123;<span class="string">'Content-Type'</span>:<span class="string">"text/plain"</span>&#125;);</div><div class="line">	res.end(util.inspect(url.parse(req.url,<span class="literal">true</span>)));</div><div class="line">&#125;).listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure>
+<h3 id="获取POST请求"><a href="#获取POST请求" class="headerlink" title="获取POST请求"></a>获取POST请求</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
             <blockquote>
                 <p>
                 本文地址：
@@ -233,18 +231,18 @@
 <nav class="post-nav">
   
     <div class="waves-block waves-effect prev fl">
-      <a href="/2015/01/19/配置WebStorm支持node-js和Express/" id="post-prev" class="post-nav-link">
+      <a href="/2015/01/17/node核心模块（一）/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">配置WebStorm支持node.js和Express</h4>
+        <h4 class="title">node核心模块（一）</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next fr">
-      <a href="/2015/01/17/node核心模块（一）/" id="post-next" class="post-nav-link">
+      <a href="/2015/01/16/node-js包/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">node核心模块（一）</h4>
+        <h4 class="title">node.js包</h4>
       </a>
     </div>
   

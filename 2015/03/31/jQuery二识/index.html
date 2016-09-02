@@ -10,35 +10,29 @@
   
   
   <meta name="keywords" content="js,jQerry,前端">
-  <meta name="description" content="##jQuery DOM操作DOM = Document Object Model(文档对象模型)jQuery提供了一系列与DOM相关的方法，这使访问和操作元素和属性变得容易
-##获取HTML元素
-###获得内容
-
+  <meta name="description" content="jQuery DOM操作DOM = Document Object Model(文档对象模型)jQuery提供了一系列与DOM相关的方法，这使访问和操作元素和属性变得容易
+获取HTML元素获得内容
 text() 设置或返回所选元素的文本内容
 html() 设置或返回所选元素的内容(包括HTML标记)
-val() 设置或返回表单字段的值以上的三个都拥有回调函数，由两个参数：被选元">
+val() 设置或返回表单字段的值以上的三个都拥有回调函数，由两个参数：被选元素列表中当前元素的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jQuery二识">
 <meta property="og:url" content="http://seniorzhai.github.io/2015/03/31/jQuery二识/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
-<meta property="og:description" content="##jQuery DOM操作DOM = Document Object Model(文档对象模型)jQuery提供了一系列与DOM相关的方法，这使访问和操作元素和属性变得容易
-##获取HTML元素
-###获得内容
-
+<meta property="og:description" content="jQuery DOM操作DOM = Document Object Model(文档对象模型)jQuery提供了一系列与DOM相关的方法，这使访问和操作元素和属性变得容易
+获取HTML元素获得内容
 text() 设置或返回所选元素的文本内容
 html() 设置或返回所选元素的内容(包括HTML标记)
-val() 设置或返回表单字段的值以上的三个都拥有回调函数，由两个参数：被选元">
+val() 设置或返回表单字段的值以上的三个都拥有回调函数，由两个参数：被选元素列表中当前元素的">
 <meta property="og:image" content="http://seniorzhai.github.io/img/15033101.gif">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery二识">
-<meta name="twitter:description" content="##jQuery DOM操作DOM = Document Object Model(文档对象模型)jQuery提供了一系列与DOM相关的方法，这使访问和操作元素和属性变得容易
-##获取HTML元素
-###获得内容
-
+<meta name="twitter:description" content="jQuery DOM操作DOM = Document Object Model(文档对象模型)jQuery提供了一系列与DOM相关的方法，这使访问和操作元素和属性变得容易
+获取HTML元素获得内容
 text() 设置或返回所选元素的文本内容
 html() 设置或返回所选元素的内容(包括HTML标记)
-val() 设置或返回表单字段的值以上的三个都拥有回调函数，由两个参数：被选元">
+val() 设置或返回表单字段的值以上的三个都拥有回调函数，由两个参数：被选元素列表中当前元素的">
 <meta name="twitter:image" content="http://seniorzhai.github.io/img/15033101.gif">
   
     <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
@@ -223,46 +217,39 @@ val() 设置或返回表单字段的值以上的三个都拥有回调函数，�
 
             <div class="post-content" id="post-content" itemprop="postContent">
             <a id="more"></a>
-<p>##jQuery DOM操作<br>DOM = Document Object Model(文档对象模型)<br>jQuery提供了一系列与DOM相关的方法，这使访问和操作元素和属性变得容易</p>
-<p>##获取HTML元素</p>
-<p>###获得内容</p>
-<ul>
+<h2 id="jQuery-DOM操作"><a href="#jQuery-DOM操作" class="headerlink" title="jQuery DOM操作"></a>jQuery DOM操作</h2><p>DOM = Document Object Model(文档对象模型)<br>jQuery提供了一系列与DOM相关的方法，这使访问和操作元素和属性变得容易</p>
+<h2 id="获取HTML元素"><a href="#获取HTML元素" class="headerlink" title="获取HTML元素"></a>获取HTML元素</h2><h3 id="获得内容"><a href="#获得内容" class="headerlink" title="获得内容"></a>获得内容</h3><ul>
 <li>text() 设置或返回所选元素的文本内容</li>
 <li>html() 设置或返回所选元素的内容(包括HTML标记)</li>
 <li>val() 设置或返回表单字段的值<br>以上的三个都拥有回调函数，由两个参数：被选元素列表中当前元素的下标以及原始值</li>
 </ul>
-<p>###获取属性</p>
-<ul>
-<li>attr() 获取属性值<br>设置属性<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	$(<span class="string">"#w3s"</span>).attr(<span class="string">"href"</span>,<span class="string">"http://www.baidu.com/"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="获取属性"><a href="#获取属性" class="headerlink" title="获取属性"></a>获取属性</h3><ul>
+<li>attr() 获取属性值<br>设置属性<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	$(<span class="string">"# w3s"</span>).attr(<span class="string">"href"</span>,<span class="string">"http://www.baidu.com/"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>同事设置多个属性<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	$(<span class="string">"#w3s"</span>).attr(&#123;</div><div class="line">		<span class="string">"href"</span>:<span class="string">"http://www.sina.com.cn"</span>,</div><div class="line">		<span class="string">"title"</span>:<span class="string">"Sina"</span></div><div class="line">	&#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>attr()也通过回调函数，包含两个参数：被选元素列表中当前元素的下标，以及原始值<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	$(<span class="string">"#w3s"</span>).attr(<span class="string">"href"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">i,origValue</span>)</span>&#123;</div><div class="line">		<span class="keyword">return</span> origValue + <span class="string">"/jquery"</span>;</div><div class="line">	&#125;);</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>###添加元素</p>
-<ul>
+<p>同事设置多个属性<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	$(<span class="string">"# w3s"</span>).attr(&#123;</div><div class="line">		<span class="string">"href"</span>:<span class="string">"http://www.sina.com.cn"</span>,</div><div class="line">		<span class="string">"title"</span>:<span class="string">"Sina"</span></div><div class="line">	&#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>attr()也通过回调函数，包含两个参数：被选元素列表中当前元素的下标，以及原始值<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	$(<span class="string">"# w3s"</span>).attr(<span class="string">"href"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">i,origValue</span>)</span>&#123;</div><div class="line">		<span class="keyword">return</span> origValue + <span class="string">"/jquery"</span>;</div><div class="line">	&#125;);</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<h3 id="添加元素"><a href="#添加元素" class="headerlink" title="添加元素"></a>添加元素</h3><ul>
 <li>append()    在被选元素的结尾插入内容</li>
 <li>prepend()    在被选元素的开头插入内容</li>
 <li>after()    在被选元素之后插入内容</li>
 <li>before()    在被选元素之前插入内容<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"p"</span>).addend(<span class="string">"Some appended text."</span>)</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>###删除元素</p>
-<ul>
+<h3 id="删除元素"><a href="#删除元素" class="headerlink" title="删除元素"></a>删除元素</h3><ul>
 <li>remove()    删除被选元素(以及子元素)</li>
 <li>empty()    从被选元素中删除子元素<br>remove()方法可以接受一个参数，允许对删除元素进行过滤<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"p"</span>).remove(<span class="string">".italic"</span>);	<span class="comment">// 删除class="italic"的所有&lt;p&gt;元素</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>##获取并设置CSS类</p>
-<p>###操作CSS</p>
-<ul>
+<h2 id="获取并设置CSS类"><a href="#获取并设置CSS类" class="headerlink" title="获取并设置CSS类"></a>获取并设置CSS类</h2><h3 id="操作CSS"><a href="#操作CSS" class="headerlink" title="操作CSS"></a>操作CSS</h3><ul>
 <li>addClass()    向所选元素添加一个或多个类</li>
 <li>removeClass()    从被选元素删除一个或多个类</li>
 <li>toggleClass()    对被选元素进行添加/删除类的切换操作</li>
 <li>css()            设置或返回样式属性</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"button"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	$(<span class="string">"h1,h2,p"</span>).addClass(<span class="string">"blue"</span>);</div><div class="line">	$(<span class="string">"div"</span>).addClass(<span class="string">"important"</span>);</div><div class="line">	<span class="comment">// $("div").addClass("important blue"); 添加多个类</span></div><div class="line">	$(<span class="string">"div"</span>).removeClass(<span class="string">"blue"</span>);</div><div class="line">	$(<span class="string">"div"</span>).toggleClass();</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>####css()方法<br><code>css(&quot;propertyname&quot;)</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"p"</span>).css(<span class="string">"background-color"</span>);</div><div class="line">$(<span class="string">"p"</span>).css(<span class="string">"background-color"</span>,<span class="string">"yellow"</span>); <span class="comment">//设置属性</span></div><div class="line">$(<span class="string">"p"</span>).css(&#123;<span class="string">"background-color"</span>:<span class="string">"yellow"</span>,<span class="string">"font-size"</span>:<span class="string">"200%"</span>&#125;);	<span class="comment">// 同时设置多个属性</span></div></pre></td></tr></table></figure></p>
-<p>##尺寸<br><img src="/img/15033101.gif" alt=""></p>
+<h4 id="css-方法"><a href="#css-方法" class="headerlink" title="css()方法"></a>css()方法</h4><p><code>css(&quot;propertyname&quot;)</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"p"</span>).css(<span class="string">"background-color"</span>);</div><div class="line">$(<span class="string">"p"</span>).css(<span class="string">"background-color"</span>,<span class="string">"yellow"</span>); <span class="comment">//设置属性</span></div><div class="line">$(<span class="string">"p"</span>).css(&#123;<span class="string">"background-color"</span>:<span class="string">"yellow"</span>,<span class="string">"font-size"</span>:<span class="string">"200%"</span>&#125;);	<span class="comment">// 同时设置多个属性</span></div></pre></td></tr></table></figure></p>
+<h2 id="尺寸"><a href="#尺寸" class="headerlink" title="尺寸"></a>尺寸</h2><p><img src="/img/15033101.gif" alt=""></p>
 <ul>
 <li>width()        设置或返回元素的宽度(不包含内边距，边框或外框)</li>
 <li>height()        设置或返回元素的高度(不包含内边距，边框或外框)</li>

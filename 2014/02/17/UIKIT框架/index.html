@@ -22,7 +22,7 @@ UIWin（窗口）是视图的一个子类，窗口的主要功能：1、提供�
 UIViewController视图控制器的基类
 UIResponder表示一个可以接受触摸屏上触摸事件的对象
 UIWin（窗口）是视图的一个子类，窗口的主要功能：1、提供一个区域来显示视图，2、将事件（event）分发给视图。123self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen] b">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UIKIT框架">
 <meta name="twitter:description" content="UIView是视图的基类
@@ -218,10 +218,8 @@ UIWin（窗口）是视图的一个子类，窗口的主要功能：1、提供�
 <li>UIWin（窗口）是视图的一个子类，窗口的主要功能：1、提供一个区域来显示视图，2、将事件（event）分发给视图。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen] bounds];</div><div class="line">self.window.rootViewController = self.viewController;</div><div class="line">[self.window makeKeyAndVisible];</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>##UIScreen</p>
-<pre><code>- UIScreen对象可以充当iOS设备物理屏幕的替代者，通过`[[UIScreen mainScreen] bounds]`可以获得设备的屏幕大小
-</code></pre><p>##UIWindow</p>
-<pre><code>- 通过UIApplication获取当前keyWindow，keyWindow是用来管理键盘以及触摸类的消息，并且只能有一个window是keyWindow.
+<h2 id="UIScreen"><a href="#UIScreen" class="headerlink" title="UIScreen"></a>UIScreen</h2><pre><code>- UIScreen对象可以充当iOS设备物理屏幕的替代者，通过`[[UIScreen mainScreen] bounds]`可以获得设备的屏幕大小
+</code></pre><h2 id="UIWindow"><a href="#UIWindow" class="headerlink" title="UIWindow"></a>UIWindow</h2><pre><code>- 通过UIApplication获取当前keyWindow，keyWindow是用来管理键盘以及触摸类的消息，并且只能有一个window是keyWindow.
 - UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
 - 每个UIWindow对象配置windowLevel属性，大部分时候不应该去改变windowL.
 - UIWindow有3个级别，对应了3种显示优先级。通过windowLevel设置，优先级为：UIWindowLevel &gt; UIWindowLevelStatusBar &gt; UIWindowLevelNormal

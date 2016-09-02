@@ -16,7 +16,7 @@
 <meta property="og:url" content="http://seniorzhai.github.io/2015/03/26/Android开发函数库caffeine/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
 <meta property="og:description" content="相信很多Android开发都有自己的函数库，来完成一些常用的操作，比如dpi操作、获取手机信息、文件操作等。caffeine是一个Android常用函数库，封装了大量常用但是冗长的函数。">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android开发函数库caffeine">
 <meta name="twitter:description" content="相信很多Android开发都有自己的函数库，来完成一些常用的操作，比如dpi操作、获取手机信息、文件操作等。caffeine是一个Android常用函数库，封装了大量常用但是冗长的函数。">
@@ -203,14 +203,12 @@
 
             <div class="post-content" id="post-content" itemprop="postContent">
             <p>相信很多Android开发都有自己的函数库，来完成一些常用的操作，比如dpi操作、获取手机信息、文件操作等。<a href="https://github.com/percolate/caffeine" target="_blank" rel="external">caffeine</a>是一个Android常用函数库，封装了大量常用但是冗长的函数。<br><a id="more"></a></p>
-<p>##使用</p>
-<ul>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ul>
 <li>下载<a href="https://github.com/percolate/caffeine/tree/master/distribution" target="_blank" rel="external">jar</a></li>
 <li>gradle <code>compile &#39;com.percolate:caffeine:0.3.3&#39;</code></li>
 </ul>
-<p>##常用方法<br>详情请见<a href="http://percolate.github.io/caffeine/javadoc/" target="_blank" rel="external">http://percolate.github.io/caffeine/javadoc/</a></p>
-<p>###ActivityUtils</p>
-<ul>
+<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><p>详情请见<a href="http://percolate.github.io/caffeine/javadoc/" target="_blank" rel="external">http://percolate.github.io/caffeine/javadoc/</a></p>
+<h3 id="ActivityUtils"><a href="#ActivityUtils" class="headerlink" title="ActivityUtils"></a>ActivityUtils</h3><ul>
 <li><p>launchActivity<br> public static void launchActivity(android.app.Activity context,</p>
 <pre><code>java.lang.Class&lt;? extends android.app.Activity&gt; activity,
 boolean closeCurrentActivity,
@@ -231,8 +229,7 @@ java.util.Map&lt;java.langString,java.lang.String&gt; params)
 <li><p>turnScreenOn<br>  public static void turnScreenOn(android.app.Activity context)<br>  点亮屏幕</p>
 </li>
 </ul>
-<p>###MiscUtils</p>
-<ul>
+<h3 id="MiscUtils"><a href="#MiscUtils" class="headerlink" title="MiscUtils"></a>MiscUtils</h3><ul>
 <li><p>dpToPx<br>  public static int dpToPx(android.content.Context context,int dp)<br>  dp转px</p>
 </li>
 <li><p>getVersionName<br>  public static java.lang.String getVersion(android.content.Context context)<br>  获取versionName</p>
@@ -248,8 +245,7 @@ java.util.Map&lt;java.langString,java.lang.String&gt; params)
 <li><p>isValidURL<br>  public static final boolean isValidURL(java.lang.String url)<br>  判断是符合WEB_URL</p>
 </li>
 </ul>
-<p>###PhoneUtils</p>
-<ul>
+<h3 id="PhoneUtils"><a href="#PhoneUtils" class="headerlink" title="PhoneUtils"></a>PhoneUtils</h3><ul>
 <li><p>isRotationEnable<br>  public static boolean isRotationEnabled(android.content.Context context)<br>  检查用户是否关闭了自动旋转</p>
 </li>
 <li><p>isNetworkAvailable<br>  public static boolean isNetworkAvailable(android.content.Context context)<br>  判断网络是否可用</p>

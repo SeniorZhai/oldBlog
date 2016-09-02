@@ -16,7 +16,7 @@
 <meta property="og:url" content="http://seniorzhai.github.io/2014/11/24/Paint类/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
 <meta property="og:description" content="Paint即画笔，在绘图过程中起到了极其重要的作用，画笔主要保存了颜色，样式等绘制信息，指定了如何绘制文本和图形，画笔对象有很多设置方法，大体上可以分为两类，一类与图形绘制相关，一类与文本绘制相关。">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Paint类">
 <meta name="twitter:description" content="Paint即画笔，在绘图过程中起到了极其重要的作用，画笔主要保存了颜色，样式等绘制信息，指定了如何绘制文本和图形，画笔对象有很多设置方法，大体上可以分为两类，一类与图形绘制相关，一类与文本绘制相关。">
@@ -203,8 +203,7 @@
 
             <div class="post-content" id="post-content" itemprop="postContent">
             <p>Paint即画笔，在绘图过程中起到了极其重要的作用，画笔主要保存了颜色，样式等绘制信息，指定了如何绘制文本和图形，画笔对象有很多设置方法，大体上可以分为两类，一类与图形绘制相关，一类与文本绘制相关。<br><a id="more"></a></p>
-<p>##图形绘制</p>
-<ul>
+<h2 id="图形绘制"><a href="#图形绘制" class="headerlink" title="图形绘制"></a>图形绘制</h2><ul>
 <li>setARGB(int a,int r,int g,int b);<br>  设置绘制的颜色，a代表透明度，r，g，b代表颜色值</li>
 <li>setAlpha(int a);<br>  设置绘制图形的透明度</li>
 <li>setColor(int color);<br>  设置绘制的颜色，使用颜色值来表示，该颜色值包括透明度和RGB颜色</li>
@@ -220,7 +219,7 @@
 <li>setStrokeCap(Paint.Cap cap);<br>  当画笔样式为<code>STROKE</code>或<code>FILL_OR_STROKE</code>时，设置笔刷的图形样式，如圆形样式Cap.ROUND,或方形样式Cap.SQUARE  </li>
 <li>setSrokeJoin(Paint.Join join);<br>  设置绘制时各图形的结合方式，如平滑效果等  </li>
 <li>setStrokeWidth(float width);<br>  当画笔样式为<code>STROKE</code>或<code>FILL_OR_STROKE</code>时，设置笔刷的粗细度  </li>
-<li>setXfermode(Xfermode xfermode);<br>  设置图形重叠时的处理方式，如合并，取交集或并集，经常用来制作橡皮的擦除效果<br>##文本绘制</li>
+<li>setXfermode(Xfermode xfermode);<br>  设置图形重叠时的处理方式，如合并，取交集或并集，经常用来制作橡皮的擦除效果<h2 id="文本绘制"><a href="#文本绘制" class="headerlink" title="文本绘制"></a>文本绘制</h2></li>
 <li>setFakeBoldText(boolean fakeBoldText);<br>  模拟实现粗体文字，设置在小字体上效果会非常差</li>
 <li>setSubpixelText(boolean subpixelText);<br>  设置该项为true，将有助于文本在LCD屏幕上的显示效果  </li>
 <li>setTextAlign(Paint.Align align);<br>  设置绘制文字的对齐方向 </li>

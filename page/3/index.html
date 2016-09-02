@@ -6,6 +6,8 @@
   <title>SeniorZhai&#39;s blog | 苟利国家生死以，起因福祸趋避之</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
+  <meta name="theme-color" content="#ED5565">
+  
   
   <meta name="keywords" content="undefined">
   <meta name="description" content="专注于移动平台">
@@ -18,8 +20,10 @@
 <meta name="twitter:title" content="SeniorZhai's blog">
 <meta name="twitter:description" content="专注于移动平台">
   
+    <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
+  
   <meta name="summary" content="专注于移动平台">
-  <link rel="shortcut icon" href="/">
+  <link rel="shortcut icon" href="/img/favicon.ico">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -33,7 +37,7 @@
   </a>
   <div class="brand-wrap">
     <div class="brand">
-      <a href="/" class="avatar"><img src="undefined"></a>
+      <a href="/" class="avatar"><img src="/img/logo.jpg"></a>
       <hgroup class="introduce">
         <h5 class="nickname">Dear宅学长</h5>
         <a href="mailto:developer.zhaitao@gmail.com" title="developer.zhaitao@gmail.com" class="mail">developer.zhaitao@gmail.com</a>
@@ -43,6 +47,48 @@
   <div class="scroll-wrap flex-col">
     <ul class="nav">
       
+          <li class="waves-block waves-effect">
+            <a href="/"  >
+              <i class="icon icon-lg icon-home"></i>
+              主页
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/archives"  >
+              <i class="icon icon-lg icon-archives"></i>
+              Archives
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/tags"  >
+              <i class="icon icon-lg icon-tags"></i>
+              Tags
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://seniorzhai.github.io" target="_blank" >
+              <i class="icon icon-lg icon-github"></i>
+              Github
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="http://weibo.com/seniorszhai/" target="_blank" >
+              <i class="icon icon-lg icon-weibo"></i>
+              Weibo
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/about"  >
+              <i class="icon icon-lg icon-link"></i>
+              about
+            </a>
+          </li>
+      
     </ul>
 
     <footer class="footer">
@@ -50,7 +96,7 @@
   <p>SeniorZhai&#39;s blog &copy; 2016</p>
   <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
   <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
-  <a href="undefined" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
+  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
 </footer>
 
   </div>
@@ -65,6 +111,20 @@
         </a>
         <div class="flex-col header-title ellipsis">SeniorZhai&#39;s blog</div>
         
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
         
     </div>
 </header>
@@ -115,7 +175,7 @@
     
     
         <a href="/2016/01/17/AsyncStorage的使用/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -158,7 +218,7 @@
     
     
         <a href="/2016/01/12/-ViewDebug-ExportedProperty注解/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -209,7 +269,7 @@
     
     
         <a href="/2016/01/10/View的一些重要方法/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -253,7 +313,7 @@
     
     
         <a href="/2015/12/02/Xcode上的ActivatePowerMode也来了/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -300,7 +360,7 @@
     
     
         <a href="/2015/11/30/牛逼到天上的Atom插件/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -340,13 +400,11 @@
 
     
           
- ##声明       1  2  3  4  5  6  7  8  9       var  styles = StyleSheet.create(&#123;  	base: &#123;  		width: 38 ,  		height: 38 ,  	&#125;,  	background:&#123;  		backgroundColor: "#222222" ,  	&#125;,  &#125;)       
- ##使用       1  2  3      &lt;Text style=&#123;styles.base&#125; /&gt;  &lt;View style=&#123;styles.background&#125; /&gt;  &lt;View style=&#123;[styles.base,style.background]&#125; /&gt; //可以接受多个style属性       
-
+   声明       1  2  3  4  5  6  7  8  9       var  styles = StyleSheet.create(&#123;  	base: &#123;  		width: 38 ,  		height: 38 ,  	&#125;,  	background:&#123;  		backgroundColor: "# 222222" ,  	&#1
     
     
         <a href="/2015/11/24/ReactNative-样式/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -390,23 +448,11 @@
  iOS 
  在项目中运行Debug Server 
  根据电脑的IP，修改AppDelegate.m中的jsCodeLocation的host改为电脑的IP 
- 或者使用 jsCodeLocation = [[NSBundle mainBundle] URLForResource:@&quot;main&quot; withExtension:@&quot;jsbundle&quot;]  
- 
- 
- Android 
- Android 5.0以上机型使用 adb reverse tcp:8081 tcp:8081 反向代理到Mac上 
- Android 5.0以下选择菜单中Dev Setting &gt; Debug Service host for device选择Mac的IP 
- 使用 react-native run-android 启动应用 
- 或者启动Debug Server(react-native start) 
- 使用Android Studio进行调试 
- 
- 
- 
-
+ 或者使用 jsCodeLocation = [[NSBundle mainBundle] URLForResource:@&quot;main&quot; withExtension:@&quot;jsbundle&quot;
     
     
         <a href="/2015/11/12/ReactNative-第一个项目/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -449,7 +495,7 @@
     
     
         <a href="/2015/10/14/Android-Studio上的NDK开发/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -489,17 +535,12 @@
 
     
           
- #SD卡的种类 SD卡包括SD、SDHC和SDXC卡，这三种卡的区别在存储容量：SD卡≤2GB，SDHC卡4-32GB，SDXC卡式64-2048GB。 SD卡的版本是向下兼容的，比如支持SDXC卡的相机，也支持SD卡和SDHC卡。 值得注意的是 SDXC存储卡由于采用了恶心FAT格式，WinXP SP2或者更低版本系统式无法识别的  
- #存储卡的速度 SD卡上通常会标注速度，有倍速(如300X)或者是+MB/s两种表示方式。1倍速=150KB/s=0.15MB/s(存储算法，不是理论算法)，所以300X是45MB/s，600X是90MB/s 如果卡面上只标注倍速或一个数字，那么一般都是读取速度。写入速度影响了拍摄间隔时间、持续连拍张数、视频记录的最高格式，读取速度则会影响回放、传输速度。一般情况存储设备的写入速度都要低于读取速度。 SD卡有速度等级(Class)、高速等级(UHS Class)两个评价等级，可以辅助判断SD卡的速度。 
- 
- Class 6代表了最低写入速度6M/s；Class 10表示最低写入速度10MB/s 
- UHS-Ⅰ Class 1表示最低写入速度是10MB/s；UHS-Ⅰ Class 3表示最低写入速度是30MB/s Class 10和UHS-Class 1都表示存储卡的最低写入速度是10MB/s，那么它们又有事吗区别呢？非UHS存储卡的理论最高速度只有25MB/s，而UHS-I存储卡则能达到104MB/s。即使两张卡的写入速度相同，UHS-I存储卡的读取速度通常也会更高一些。 
- 
-
+   SD卡的种类  SD卡包括SD、SDHC和SDXC卡，这三种卡的区别在存储容量：SD卡≤2GB，SDHC卡4-32GB，SDXC卡式64-2048GB。 SD卡的版本是向下兼容的，比如支持SDXC卡的相机，也支持SD卡和SDHC卡。 值得注意的是 SDXC存储卡由于采用了恶心FAT格式，WinXP SP2或者更低版本系统式无法识别的  
+   存储卡的速度  SD卡上通常会标注速度，有
     
     
         <a href="/2015/10/04/SD的种类/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -539,43 +580,19 @@
 
     
           
- #基本环境 
- 
+   基本环境  
  Mac OS X 
  Node.js 4.0 
  Xcode 6.3以上版本 
  Android SDK 
- watchman和flow ##安装      1      npm install -g react-native-cli      
+ watchman和flow   安装       1      npm install -g react-native-cli      
  
  
- ##初始化       1      react-native init AwesomeProject       
- ##开发环境配置 
- 
- iOS XCode6.3及以上即可 
- Android 
- 环境变量 ANDROID_HOME  
- SDK Manager 
- Android SDK Build-tools version 23.0.1 
- Android 6.0(API 23) 
- Android Support Repository 
- 
- 
- 
- 
- 
- ##运行 
- 
- iOS 在Xcode中打开工程，直接运行即可 
- Android 在 ./android/ 目录下新建 local.properties 文件 把SDK的路径保存在其中      1      sdk.dir=.../Android/sdk      
- 
- 
- 执行命令       1      react-native run-android       
-      https://github.com/SeniorZhai/ReactNative_Demo  
-
+   初始化       1      react-native init AwesomeProject     
     
     
         <a href="/2015/09/24/ReactNative-如何开始/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -598,6 +615,51 @@
 <div class="mask" id="mask"></div>
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
+<script>
+var BLOG_SHARE = {
+    title: "SeniorZhai's blog",
+    pic: "/img/logo.jpg",
+    summary: document.getElementsByName('summary')[0].content,
+    url: "http://seniorzhai.github.io/page/3/index.html"
+};
+</script>
+<div class="global-share" id="global-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
 
 <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 
@@ -605,10 +667,45 @@
 
 
 
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<script type="text/template" id="search-tpl">
+<li class="item">
+    <a href="/{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</script>
+
+<script src="/js/search.js"></script>
 
 
 
 
+
+<script src="//s95.cnzz.com/z_stat.php?id=true&web_id=true"></script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-54646832-1&#39;', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
 
 
 

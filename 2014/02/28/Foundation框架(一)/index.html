@@ -10,28 +10,25 @@
   
   
   <meta name="keywords" content="iOS">
-  <meta name="description" content="##字符串（NSString与NSMutableString）
-
+  <meta name="description" content="字符串（NSString与NSMutableString）
 NSString代表字符串序列不可变的字符串，NSMutableString代表序列可变的字符串
 NSString常用方法
-1234567891011121314151617181920NSString *str = @&amp;quot;This is a String!&amp;quot;;//以字符串常量创建字符串NSString *str">
+1234567891011121314151617181920NSString *str = @&amp;quot;This is a String!&amp;quot;;//以字符串常量创建字符串NSString *str = [">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Foundation框架(一)">
 <meta property="og:url" content="http://seniorzhai.github.io/2014/02/28/Foundation框架(一)/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
-<meta property="og:description" content="##字符串（NSString与NSMutableString）
-
+<meta property="og:description" content="字符串（NSString与NSMutableString）
 NSString代表字符串序列不可变的字符串，NSMutableString代表序列可变的字符串
 NSString常用方法
-1234567891011121314151617181920NSString *str = @&amp;quot;This is a String!&amp;quot;;//以字符串常量创建字符串NSString *str">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+1234567891011121314151617181920NSString *str = @&amp;quot;This is a String!&amp;quot;;//以字符串常量创建字符串NSString *str = [">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Foundation框架(一)">
-<meta name="twitter:description" content="##字符串（NSString与NSMutableString）
-
+<meta name="twitter:description" content="字符串（NSString与NSMutableString）
 NSString代表字符串序列不可变的字符串，NSMutableString代表序列可变的字符串
 NSString常用方法
-1234567891011121314151617181920NSString *str = @&amp;quot;This is a String!&amp;quot;;//以字符串常量创建字符串NSString *str">
+1234567891011121314151617181920NSString *str = @&amp;quot;This is a String!&amp;quot;;//以字符串常量创建字符串NSString *str = [">
   
     <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
   
@@ -214,8 +211,7 @@ NSString常用方法
         <div class="post-main">
 
             <div class="post-content" id="post-content" itemprop="postContent">
-            <p>##字符串（NSString与NSMutableString）</p>
-<ul>
+            <h2 id="字符串（NSString与NSMutableString）"><a href="#字符串（NSString与NSMutableString）" class="headerlink" title="字符串（NSString与NSMutableString）"></a>字符串（NSString与NSMutableString）</h2><ul>
 <li>NSString代表字符串序列不可变的字符串，NSMutableString代表序列可变的字符串</li>
 <li><p>NSString常用方法</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">NSString *str = @&quot;This is a String!&quot;;//以字符串常量创建字符串</div><div class="line">NSString *str = [[NSString alloc] init];</div><div class="line">str = @&quot;This is a String!&quot;;//创建空字符串，赋值</div><div class="line">NSString *str = [[NSString alloc] initWithString:@&quot;This is a String!&quot;//初始化字符串</div><div class="line">char *Cstring = &quot;This is a String!&quot;</div><div class="line">NSString *str = [[NSString alloc] initWithCString:Cstring];//以标准c字符串初始化创建字符串</div><div class="line">NSString *str = [[NSString alloc] stringWithFormat:@&quot;%s is a String&quot;,&quot;This&quot;];//格式化创建字符串</div><div class="line">NSString *path = [[NSBundle mainBundle] pathForResouce:@&quot;text&quot; ofType:@&quot;txt&quot;];</div><div class="line">NSString *str = [[NSString alloc] initWithContentsOfFile:path];//从文件创建字符串</div><div class="line">[str writeToFile:path atomically:YES];//写入文件</div><div class="line">BOOL result = [str1 isEqualToString:str2];//判断相等与否</div><div class="line">str = [str stringByAppendingString:@&quot;iOS!&quot;];//追加字符串</div><div class="line">char* cstr = [str UTF8String];//获取字符串对应的C风格字符串</div><div class="line">[str length];//获取字符串长度</div><div class="line">[str lengthOfBytesUsingEncoding:NSUTF8StringEncoding];//str按UTF-8字符集解码后字节数</div><div class="line">[str substringToIndex:10];//获取str的前10个字符组成的字符串</div><div class="line">[str substringFromIndex:5];/获取从第5个字符串开始，与后面字符组成的字符串</div><div class="line">[str substringWithRange:NSMakeRange(5,15)];//获取str从第5个字符开始，到第15个字符组成的字符串</div><div class="line">[str rangeOfString:@&quot;ios&quot;];//返回ios在字符串中出现的位置</div><div class="line">[str uppercassString];//str所有字符转为大写</div></pre></td></tr></table></figure>
@@ -225,8 +221,7 @@ NSString常用方法
 <li>NSMutableString常用方法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[str appendString:@&quot;,iOS&quot;];//追加固定字符串</div><div class="line">[str appendFormat:@&quot;%s is ios&quot;,@&quot;,iOS&quot;];//追加字符串</div><div class="line">[str insertString:@&quot;insert&quot; atIndex:6];//指定位置插入字符串</div><div class="line">[str deleteCharactersInRange:NSMakeRange(6,12)];//删除6到12位置的所有字符串</div><div class="line">[str replaceCharactersInRange:NSMakeRange(6,9) withString:@&quot;Objective-C&quot;];//替换6到9位置的字符串</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>##日期与时间（NSDate）</p>
-<ul>
+<h2 id="日期与时间（NSDate）"><a href="#日期与时间（NSDate）" class="headerlink" title="日期与时间（NSDate）"></a>日期与时间（NSDate）</h2><ul>
 <li><p>常用方法</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">NSDate* date1 = [NSDate date];//获取代表当前日期、时间的NSDate</div><div class="line">NSDate* date2 = [[NSDate alloc] initWithTimeIntervalSinceNow:3600*24];//获取从当前时间开始3天之后的日期</div><div class="line">NSDate* date3 = [NSDate dateWithTimeIntervalSince1970:3600*24*366*20];//从1970年1月1日开始，20年之后的日期</div><div class="line">NSLo</div><div class="line">cale* cn = [NSLocale currentLocale];//获取本地位置</div><div class="line">[dete1 descriptionWithLocal:cn];//过去NSDate在当前位置对应的字符串</div><div class="line">[date1 earlieDate:date2];//获取两个日期之间较早的日期</div><div class="line">[date laterDate:date2];//获取两个日期之间较晚的日期</div><div class="line">switch([date1 compare date2])</div><div class="line">&#123;</div><div class="line">    case NSOrderedAscending:</div><div class="line">        break;  //date1在之前</div><div class="line">    case NSOrderedSame:</div><div class="line">        break;  //date1与date2日期相同</div><div class="line">    case NSOrderedDescending:</div><div class="line">        break;  //date1在之后</div><div class="line">&#125;</div><div class="line">[date1 timeIntervalSinceDate:date2];//时间差</div><div class="line">[date1 timeIntervalSinceNow];//与现在时间差</div></pre></td></tr></table></figure>
 <ul>
@@ -234,8 +229,7 @@ NSString常用方法
 </ul>
 </li>
 </ul>
-<p>##日期格式器（NSDateFormatter）</p>
-<ul>
+<h2 id="日期格式器（NSDateFormatter）"><a href="#日期格式器（NSDateFormatter）" class="headerlink" title="日期格式器（NSDateFormatter）"></a>日期格式器（NSDateFormatter）</h2><ul>
 <li>NSDateFoematter代表一个日期格式器，用来完成NSDate与NSString之间的转换</li>
 </ul>
 <ol>
@@ -252,8 +246,7 @@ NSString常用方法
 <li>NSString转换成NSDate可以调用NSDateFormatter的dateFromString:方法执行格式化即可<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 自定义格式式模板</div><div class="line">NSDateFormatter* df = [[NSDateFormatter alloc]init];</div><div class="line">[df setDateFormatter:@&quot;公元yyyy年MM月DD日HH时mm分&quot;];</div><div class="line">NSLog(@&quot;%@&quot;,[df stringFromDate:date]);</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>##日历（NSCalendar）与日期组件（NSDateComponents）</p>
-<ul>
+<h2 id="日历（NSCalendar）与日期组件（NSDateComponents）"><a href="#日历（NSCalendar）与日期组件（NSDateComponents）" class="headerlink" title="日历（NSCalendar）与日期组件（NSDateComponents）"></a>日历（NSCalendar）与日期组件（NSDateComponents）</h2><ul>
 <li>NSCalender对象用于处理NSDate对象所包含的各个字段的数据</li>
 <li>NSCalendar常用方法<ul>
 <li>(NSDateComponents*)components:fromDate:从NSDate提取年、月、日、时、分、秒各时间字段的信息。</li>
@@ -261,8 +254,7 @@ NSString常用方法
 </ul>
 </li>
 </ul>
-<p>##定时器（NSTimer）</p>
-<ol>
+<h2 id="定时器（NSTimer）"><a href="#定时器（NSTimer）" class="headerlink" title="定时器（NSTimer）"></a>定时器（NSTimer）</h2><ol>
 <li>调用NSTimer的scheduledTimerWithTimeInterval:invocation:repeats:或scheduledTimerWithTimeInterval:target:selector:userInfo:repeats:类方法来创建NSTimer对象。<ul>
 <li>timerInterval:指定每个多少秒执行一次任务。</li>
 <li>invocation或target与selector:指定重复执行的任务。如果指定target和selector参数，则指定用某个对象的特定方法作为重复执行的任务；如果指定invacation参数，该参数需要传入一个NSInvocation对象，其中NSInvocation对象也是封装target和selector的，其中也是指定用某个对象的特定方法作为重复执行的任务。</li>
@@ -273,14 +265,12 @@ NSString常用方法
 <li>为第一步的任务编写方法。</li>
 <li>销毁定时器，调用定时器的invalidate方法即可。</li>
 </ol>
-<p>##对象复制</p>
-<ul>
+<h2 id="对象复制"><a href="#对象复制" class="headerlink" title="对象复制"></a>对象复制</h2><ul>
 <li>NSObject类提供了copy和mutableCopy方法，通过这两个方法即可复制已有对象的副本。</li>
 <li>copy方法总是返回不可修改的副本，及时改对象本身是可修改的。</li>
 <li>mutableCopy方法用于复制对象的可变副本，即便对象本事是不可修改的，如NSString，返回的是NSMutableString对象。</li>
 </ul>
-<p>###NSCopying与NSMutableCopy协议</p>
-<ul>
+<h3 id="NSCopying与NSMutableCopy协议"><a href="#NSCopying与NSMutableCopy协议" class="headerlink" title="NSCopying与NSMutableCopy协议"></a>NSCopying与NSMutableCopy协议</h3><ul>
 <li>为了保证自定义类能够使用copy、mutableCopy方法，需要做如下的事<ul>
 <li>让该类实现NSCopying（NSMutableCopying）协议</li>
 <li>让该类实现copyWithZone:(mutableCopyWithZone:)方法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">-(id)copyWithZone:(NSZone*)zone</div><div class="line">&#123;</div><div class="line">    ZTApple apple= [[[self class] allocWithZone:zone]init];</div><div class="line">    ZTApple.color = self.color;</div><div class="line">    ZTApple.weight = self.weight;</div><div class="line">    return apple;</div><div class="line">&#125;</div><div class="line">// 如果父类已经实现了NSCopying协议，那么代码就可简化</div><div class="line">-(id)copyWithZone:(NSZone*)zone</div><div class="line">&#123;</div><div class="line">    id obj = [super copy];</div><div class="line">    //...</div><div class="line">    return obj;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -288,14 +278,13 @@ NSString常用方法
 </ul>
 </li>
 </ul>
-<p>###浅复制(shallow copy)与深复制(deep copy)</p>
-<ul>
+<h3 id="浅复制-shallow-copy-与深复制-deep-copy"><a href="#浅复制-shallow-copy-与深复制-deep-copy" class="headerlink" title="浅复制(shallow copy)与深复制(deep copy)"></a>浅复制(shallow copy)与深复制(deep copy)</h3><ul>
 <li>当对象的实例变量是指针变量时，程序只是复制该指针的地址，而不是真正复制指针指向的对象，这种方式被称为“浅复制”，对浅复制而言，在内存中复制了两个对象，这两个对象的指针变量将会指向同一个对象，也就是两个对象存在公用的部分。</li>
 <li><p>深复制不仅会复制对象本身，而且会“递归”复制每个指针类型的实例变量，直到两个对象没有任何公用的部分。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">-(id)copyWithZone:(NSZone*)zone</div><div class="line">&#123;</div><div class="line">    ZTApple apple= [[[self class] allocWithZone:zone]init];</div><div class="line">    ZTApple.color = [self.color mutableCopy];</div><div class="line">    ZTApple.weight = self.weight;</div><div class="line">    return apple;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
-<li><p>一般来说，Foundation框架中的类大部分只实现了浅复制。<br>####setter方法的copy选项</p>
-</li>
+<li><p>一般来说，Foundation框架中的类大部分只实现了浅复制。</p>
+<h4 id="setter方法的copy选项"><a href="#setter方法的copy选项" class="headerlink" title="setter方法的copy选项"></a>setter方法的copy选项</h4></li>
 <li>setter的copy只实现copy方法，得到的回事一个不可变的副本。</li>
 </ul>
 

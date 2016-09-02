@@ -10,20 +10,20 @@
   
   
   <meta name="keywords" content="生命周期">
-  <meta name="description" content="##onContentChanged不算小众，当Activity的布局改动时，即setContentView()或者addContentView()方法执行完毕时调用该方法，View的findViewById()方法可以放在该方法中。
-##onPostCreate、onPostResumeonPostCreate方法当onCreate方法彻底执行完毕时回调，onPostResume当onRes">
+  <meta name="description" content="onContentChanged不算小众，当Activity的布局改动时，即setContentView()或者addContentView()方法执行完毕时调用该方法，View的findViewById()方法可以放在该方法中。
+onPostCreate、onPostResumeonPostCreate方法当onCreate方法彻底执行完毕时回调，onPostResume当onResume方">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android生命周期函数">
 <meta property="og:url" content="http://seniorzhai.github.io/2014/09/15/Android生命周期中的小众函数/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
-<meta property="og:description" content="##onContentChanged不算小众，当Activity的布局改动时，即setContentView()或者addContentView()方法执行完毕时调用该方法，View的findViewById()方法可以放在该方法中。
-##onPostCreate、onPostResumeonPostCreate方法当onCreate方法彻底执行完毕时回调，onPostResume当onRes">
+<meta property="og:description" content="onContentChanged不算小众，当Activity的布局改动时，即setContentView()或者addContentView()方法执行完毕时调用该方法，View的findViewById()方法可以放在该方法中。
+onPostCreate、onPostResumeonPostCreate方法当onCreate方法彻底执行完毕时回调，onPostResume当onResume方">
 <meta property="og:image" content="http://seniorzhai.github.io/img/14091501.png">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android生命周期函数">
-<meta name="twitter:description" content="##onContentChanged不算小众，当Activity的布局改动时，即setContentView()或者addContentView()方法执行完毕时调用该方法，View的findViewById()方法可以放在该方法中。
-##onPostCreate、onPostResumeonPostCreate方法当onCreate方法彻底执行完毕时回调，onPostResume当onRes">
+<meta name="twitter:description" content="onContentChanged不算小众，当Activity的布局改动时，即setContentView()或者addContentView()方法执行完毕时调用该方法，View的findViewById()方法可以放在该方法中。
+onPostCreate、onPostResumeonPostCreate方法当onCreate方法彻底执行完毕时回调，onPostResume当onResume方">
 <meta name="twitter:image" content="http://seniorzhai.github.io/img/14091501.png">
   
     <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
@@ -209,10 +209,10 @@
             <div class="post-content" id="post-content" itemprop="postContent">
             <a id="more"></a>
 <p><img src="/img/14091501.png" alt=""></p>
-<p>##onContentChanged<br>不算小众，当Activity的布局改动时，即setContentView()或者addContentView()方法执行完毕时调用该方法，View的findViewById()方法可以放在该方法中。</p>
-<p>##onPostCreate、onPostResume<br>onPostCreate方法当onCreate方法彻底执行完毕时回调，onPostResume当onResume方法执行完毕回调。一般不修改，在使用ActionBarDrawerToggle的使用在onPostCreate需要屏幕旋转的时候同步状态<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onPostCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">	<span class="keyword">super</span>.onPostCreate(savedInstanceState);</div><div class="line">	mDrawerToggle.syncState();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>##onPause、onStop<br>onPause为失去焦点时调用，onStop则是整个窗口被完全遮盖时才会被触发</p>
-<p>##完整生命周期为<br>onCreate方法会在第一次创建被执行，接着执行onState方法，也么被完全遮盖会调用onStop方法，返回的时候执行onRestart-&gt;onStart方法，结束Activity时执行onDestroy<br>onCreate -&gt; onContentChanged -&gt; onState -&gt; onPostCreate -&gt; onResume -&gt; onPostResume -&gt; onPause -&gt; onStop -&gt; onDestroy</p>
+<h2 id="onContentChanged"><a href="#onContentChanged" class="headerlink" title="onContentChanged"></a>onContentChanged</h2><p>不算小众，当Activity的布局改动时，即setContentView()或者addContentView()方法执行完毕时调用该方法，View的findViewById()方法可以放在该方法中。</p>
+<h2 id="onPostCreate、onPostResume"><a href="#onPostCreate、onPostResume" class="headerlink" title="onPostCreate、onPostResume"></a>onPostCreate、onPostResume</h2><p>onPostCreate方法当onCreate方法彻底执行完毕时回调，onPostResume当onResume方法执行完毕回调。一般不修改，在使用ActionBarDrawerToggle的使用在onPostCreate需要屏幕旋转的时候同步状态<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onPostCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">	<span class="keyword">super</span>.onPostCreate(savedInstanceState);</div><div class="line">	mDrawerToggle.syncState();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="onPause、onStop"><a href="#onPause、onStop" class="headerlink" title="onPause、onStop"></a>onPause、onStop</h2><p>onPause为失去焦点时调用，onStop则是整个窗口被完全遮盖时才会被触发</p>
+<h2 id="完整生命周期为"><a href="#完整生命周期为" class="headerlink" title="完整生命周期为"></a>完整生命周期为</h2><p>onCreate方法会在第一次创建被执行，接着执行onState方法，也么被完全遮盖会调用onStop方法，返回的时候执行onRestart-&gt;onStart方法，结束Activity时执行onDestroy<br>onCreate -&gt; onContentChanged -&gt; onState -&gt; onPostCreate -&gt; onResume -&gt; onPostResume -&gt; onPause -&gt; onStop -&gt; onDestroy</p>
 
             <blockquote>
                 <p>

@@ -18,7 +18,7 @@
 <meta property="og:description" content="UIView有三个比较重要的布局属性：frame，bounds，center，对应到CALayer叫做frame，bounds，position">
 <meta property="og:image" content="http://seniorzhai.github.io/img/16072501.jpeg">
 <meta property="og:image" content="http://seniorzhai.github.io/img/16072601.jpeg">
-<meta property="og:updated_time" content="2016-07-27T09:20:55.000Z">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图层几何学">
 <meta name="twitter:description" content="UIView有三个比较重要的布局属性：frame，bounds，center，对应到CALayer叫做frame，bounds，position">
@@ -211,7 +211,7 @@
 <li><code>bounds</code>内部坐标，{0，0}是图层的左上角</li>
 <li><code>center</code>、<code>position</code>都代表了相对父图层的<code>anchorPoint</code>所在的位置<br><img src="/img/16072501.jpeg" alt=""></li>
 </ul>
-<p>##锚点<br>默认的anchorPoint位于图层的中点，所以图层将会以这个点为中心放置，anchorPoint属性并没有暴露个UIView接口暴露出来，这也就是视图position属性被叫做<code>center</code>，但是图层的<code>anchorPoint</code>可以被移动<br><img src="/img/16072601.jpeg" alt=""><br><code>anchorPoint</code>用单位坐标来描述，图层左上角是{0,0}，右下角是{1,1}，默认坐标是{0.5,0.5}，<code>anchorPoint</code>也可以通过指定x和y值小于或大于1，使它放置在图层范围之外。</p>
+<h2 id="锚点"><a href="#锚点" class="headerlink" title="锚点"></a>锚点</h2><p>默认的anchorPoint位于图层的中点，所以图层将会以这个点为中心放置，anchorPoint属性并没有暴露个UIView接口暴露出来，这也就是视图position属性被叫做<code>center</code>，但是图层的<code>anchorPoint</code>可以被移动<br><img src="/img/16072601.jpeg" alt=""><br><code>anchorPoint</code>用单位坐标来描述，图层左上角是{0,0}，右下角是{1,1}，默认坐标是{0.5,0.5}，<code>anchorPoint</code>也可以通过指定x和y值小于或大于1，使它放置在图层范围之外。</p>
 
             <blockquote>
                 <p>

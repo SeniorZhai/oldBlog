@@ -10,37 +10,40 @@
   
   
   <meta name="keywords" content="MongoDB">
-  <meta name="description" content="##启动MongoDB指定数据库路径启动1mongod --dbpath
+  <meta name="description" content="启动MongoDB指定数据库路径启动1mongod --dbpath
 添加--port也可以指定端口
-##数据库操作
+数据库操作
+
 切换、创建数据库    use yourDB
 查询所有数据库    show dbs
 删除当前使用数据库    db.dropDatabase()
 从指定主机上克隆数据库    db.cloneDatabase(&amp;quot;127.0.0.1&amp;quot;)
-从指定的机器复制数">
+从指定的机器复制数据库数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MongoDB常用命令">
 <meta property="og:url" content="http://seniorzhai.github.io/2015/03/05/MongoDB常用命令/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
-<meta property="og:description" content="##启动MongoDB指定数据库路径启动1mongod --dbpath
+<meta property="og:description" content="启动MongoDB指定数据库路径启动1mongod --dbpath
 添加--port也可以指定端口
-##数据库操作
+数据库操作
+
 切换、创建数据库    use yourDB
 查询所有数据库    show dbs
 删除当前使用数据库    db.dropDatabase()
 从指定主机上克隆数据库    db.cloneDatabase(&amp;quot;127.0.0.1&amp;quot;)
-从指定的机器复制数">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+从指定的机器复制数据库数">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MongoDB常用命令">
-<meta name="twitter:description" content="##启动MongoDB指定数据库路径启动1mongod --dbpath
+<meta name="twitter:description" content="启动MongoDB指定数据库路径启动1mongod --dbpath
 添加--port也可以指定端口
-##数据库操作
+数据库操作
+
 切换、创建数据库    use yourDB
 查询所有数据库    show dbs
 删除当前使用数据库    db.dropDatabase()
 从指定主机上克隆数据库    db.cloneDatabase(&amp;quot;127.0.0.1&amp;quot;)
-从指定的机器复制数">
+从指定的机器复制数据库数">
   
     <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
   
@@ -224,9 +227,10 @@
 
             <div class="post-content" id="post-content" itemprop="postContent">
             <a id="more"></a>
-<p>##启动MongoDB<br>指定数据库路径启动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongod --dbpath</div></pre></td></tr></table></figure></p>
+<h2 id="启动MongoDB"><a href="#启动MongoDB" class="headerlink" title="启动MongoDB"></a>启动MongoDB</h2><p>指定数据库路径启动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongod --dbpath</div></pre></td></tr></table></figure></p>
 <p>添加<code>--port</code>也可以指定端口</p>
-<h2 id="数据库操作"><a href="#数据库操作" class="headerlink" title="##数据库操作"></a>##数据库操作</h2><ul>
+<h2 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h2><hr>
+<ul>
 <li>切换、创建数据库    <code>use yourDB</code></li>
 <li>查询所有数据库    <code>show dbs</code></li>
 <li>删除当前使用数据库    <code>db.dropDatabase()</code></li>
@@ -238,19 +242,22 @@
 <li>当前db版本    <code>db.version()</code></li>
 <li>查看当前数据库机器地址    <code>db.getMongo()</code></li>
 </ul>
-<h2 id="集合操作"><a href="#集合操作" class="headerlink" title="##集合操作"></a>##集合操作</h2><ul>
+<h2 id="集合操作"><a href="#集合操作" class="headerlink" title="集合操作"></a>集合操作</h2><hr>
+<ul>
 <li>创建集合    <code>db.createCollection(&#39;collName&#39;,{size:20,capped:5,max:100})</code> 创建成功会显示<code>{&quot;ok&quot;:1}</code></li>
 <li>得到指定名称的集合    <code>db.getCollection(&quot;account&quot;)</code></li>
 <li>得到当前数据库所有集合    <code>db.getCollectionNames()</code></li>
 <li>得到当前数据库所有集合索引的状态    <code>db.printCollectionStats()</code></li>
 </ul>
-<h2 id="用户相关"><a href="#用户相关" class="headerlink" title="##用户相关"></a>##用户相关</h2><ul>
+<h2 id="用户相关"><a href="#用户相关" class="headerlink" title="用户相关"></a>用户相关</h2><hr>
+<ul>
 <li>添加用户    <code>db.addUser(&quot;name&quot;)</code>和<code>db.addUser(&quot;userName&quot;,&quot;pwd123&quot;,true)</code> 设置密码、是否只读</li>
 <li>数据库认证    <code>db.auth(&quot;userName&quot;,&quot;123123&quot;)</code></li>
 <li>显示当前所用用户    <code>show users</code></li>
 <li>删除用户    <code>db.removeUser(&quot;userName&quot;)</code></li>
 </ul>
-<h2 id="集合查询"><a href="#集合查询" class="headerlink" title="##集合查询"></a>##集合查询</h2><ul>
+<h2 id="集合查询"><a href="#集合查询" class="headerlink" title="集合查询"></a>集合查询</h2><hr>
+<ul>
 <li>查询所用记录    <code>db.userInfo.find()</code> 默认每页显示20条记录</li>
 <li>查询去掉后的当前集合中的某列的重复数据    <code>db.userInfo.disinct(&quot;name&quot;)</code></li>
 <li>查询(等于) <code>db.userInfo.find({&quot;gae&quot;:22})</code> 查询age==22的集合</li>

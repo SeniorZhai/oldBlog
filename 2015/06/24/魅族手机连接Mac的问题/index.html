@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="SeniorZhai's blog">
 <meta property="og:description" content="部分三星、魅族的手机，连接Mac时，执行adb devices不能发现设备">
 <meta property="og:image" content="http://seniorzhai.github.io/img/15062001.png">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+<meta property="og:updated_time" content="2016-09-02T08:08:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="魅族手机连接Mac的问题">
 <meta name="twitter:description" content="部分三星、魅族的手机，连接Mac时，执行adb devices不能发现设备">
@@ -205,8 +205,7 @@
 
             <div class="post-content" id="post-content" itemprop="postContent">
             <p>部分三星、魅族的手机，连接Mac时，执行<code>adb devices</code>不能发现设备<br><a id="more"></a></p>
-<p>#解决方法</p>
-<ol>
+<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><ol>
 <li>打开<code>系统信息</code>，在USB中找到手机，然后查找厂商ID</li>
 <li>在<code>~/.android/adb_usb.ini</code>文件中添加厂商ID</li>
 <li>执行<code>adb kill-server</code>和<code>adb start-server</code>重启ADB<br><img src="/img/15062001.png" alt=""></li>

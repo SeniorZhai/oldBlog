@@ -16,7 +16,7 @@
 <meta property="og:url" content="http://seniorzhai.github.io/2014/09/05/Android、iOS大不同(五)/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
 <meta property="og:description" content="Objective-C特殊的键指编码(KOC)与监值兼听(KVO)">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android、iOS大不同(五)">
 <meta name="twitter:description" content="Objective-C特殊的键指编码(KOC)与监值兼听(KVO)">
@@ -203,7 +203,7 @@
 
             <div class="post-content" id="post-content" itemprop="postContent">
             <p>Objective-C特殊的键指编码(KOC)与监值兼听(KVO)<br><a id="more"></a></p>
-<p>##键值编码(KVC)<br>简直编码用来简化设置对象的属性的方法<br>最基本的KVC由NSKeyValueCode协议提供，最基本的操作属性的方法如下</p>
+<h2 id="键值编码-KVC"><a href="#键值编码-KVC" class="headerlink" title="键值编码(KVC)"></a>键值编码(KVC)</h2><p>简直编码用来简化设置对象的属性的方法<br>最基本的KVC由NSKeyValueCode协议提供，最基本的操作属性的方法如下</p>
 <ul>
 <li><code>setValue:value forKey:key</code> 通过属性名来设置值</li>
 <li><code>valueForKey</code> 通过属性名来获取属性值<br>在KVC中，调用以上方法存取属性值时，底层的机制如下：</li>
@@ -224,7 +224,7 @@
 <li>valueForKeyPath: 根据Key路径获取属性值<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">@interface Order : NSObject</div><div class="line">@property(nonatomic,strong) Item* item;</div><div class="line">@property(nonatomic,strong) NSString* amout;</div><div class="line">@end</div><div class="line"></div><div class="line">//</div><div class="line">Order* order = [[Order alloc] init];</div><div class="line">[order setValue:[[Item alloc] init] forKey:@&quot;item&quot;];</div><div class="line">[order setValue:@&quot;Zoe&quot; forKeyPath:@&quot;item.name&quot;];</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>##键值监听(KVO)<br>键值监听(Key Value Observing)机制由<code>NSKeyValueObserving</code>协议提供支持，NSObject遵守了该协议。<br>该协议包含如下常用方法可用于注册静听器：</p>
+<h2 id="键值监听-KVO"><a href="#键值监听-KVO" class="headerlink" title="键值监听(KVO)"></a>键值监听(KVO)</h2><p>键值监听(Key Value Observing)机制由<code>NSKeyValueObserving</code>协议提供支持，NSObject遵守了该协议。<br>该协议包含如下常用方法可用于注册静听器：</p>
 <ul>
 <li>addObserver:forKeyPath:optioncontext: 注册一个监听器用于监听指定的key路径</li>
 <li>removeObserver:forKeyPath: 为key路径删除指定的监听器</li>

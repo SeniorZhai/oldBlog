@@ -6,6 +6,8 @@
   <title>SeniorZhai&#39;s blog | 苟利国家生死以，起因福祸趋避之</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
+  <meta name="theme-color" content="#ED5565">
+  
   
   <meta name="keywords" content="undefined">
   <meta name="description" content="专注于移动平台">
@@ -18,8 +20,10 @@
 <meta name="twitter:title" content="SeniorZhai's blog">
 <meta name="twitter:description" content="专注于移动平台">
   
+    <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
+  
   <meta name="summary" content="专注于移动平台">
-  <link rel="shortcut icon" href="/">
+  <link rel="shortcut icon" href="/img/favicon.ico">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -33,7 +37,7 @@
   </a>
   <div class="brand-wrap">
     <div class="brand">
-      <a href="/" class="avatar"><img src="undefined"></a>
+      <a href="/" class="avatar"><img src="/img/logo.jpg"></a>
       <hgroup class="introduce">
         <h5 class="nickname">Dear宅学长</h5>
         <a href="mailto:developer.zhaitao@gmail.com" title="developer.zhaitao@gmail.com" class="mail">developer.zhaitao@gmail.com</a>
@@ -43,6 +47,48 @@
   <div class="scroll-wrap flex-col">
     <ul class="nav">
       
+          <li class="waves-block waves-effect">
+            <a href="/"  >
+              <i class="icon icon-lg icon-home"></i>
+              主页
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/archives"  >
+              <i class="icon icon-lg icon-archives"></i>
+              Archives
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/tags"  >
+              <i class="icon icon-lg icon-tags"></i>
+              Tags
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://seniorzhai.github.io" target="_blank" >
+              <i class="icon icon-lg icon-github"></i>
+              Github
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="http://weibo.com/seniorszhai/" target="_blank" >
+              <i class="icon icon-lg icon-weibo"></i>
+              Weibo
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/about"  >
+              <i class="icon icon-lg icon-link"></i>
+              about
+            </a>
+          </li>
+      
     </ul>
 
     <footer class="footer">
@@ -50,7 +96,7 @@
   <p>SeniorZhai&#39;s blog &copy; 2016</p>
   <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
   <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
-  <a href="undefined" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
+  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
 </footer>
 
   </div>
@@ -65,6 +111,20 @@
         </a>
         <div class="flex-col header-title ellipsis">SeniorZhai&#39;s blog</div>
         
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
         
     </div>
 </header>
@@ -112,32 +172,12 @@
 
     
           
- ##标识符 在Python中标识符由字母、数字、下划线组成，但不能以数字开头 标识符区分大小写 以下划线开头的标识符是有特殊意义的，以单下划线开头( _foo )表示不能直接访问的类属性，需要通过类提供的借口进行访问 以双下划线开头的( __foo )代表类的私有成员，以双下划线开头和结尾的( __foo__ )表示Python里特殊方法，如 __init__() 表示类的构造函数 
- ##保留字符 ||||| |:–|:–|:–| |and|exec|not| |assert|finally|or| |break|for|pass| |class|from|print| |continue|global|raise| |def|if|return| |del|import|try| |elif|in|while| |else|is|with| |except|lambda|yield| |and|exec|not| |assert|finally|or| |break|for|pass| |class|from|print| |continue|global|raise| |def|if|return| |del|import|try| |elif|in|while| |else|is|with| |except|lambda|yield| 
- ##变量类型 
+   标识符  在Python中标识符由字母、数字、下划线组成，但不能以数字开头 标识符区分大小写 以下划线开头的标识符是有特殊意义的，以单下划线开头( _foo )表示不能直接访问的类属性，需要通过类提供的借口进行访问 以双下划线开头的( __foo )代表类的私有成员，以双下划线开头和结尾的( __foo__ )表示Python里特殊方法，如 __init__() 表示类的构造函数 
  
- Numbers(数字) 
- int(有符号整形) 
- long(长整型) 
- float(浮点数) 
- comples(复数) a+bj或者comples(a,b)表示 
- 
- 
- String(字符串) 
- List(列表) 
- Tuple(元组) 
- Dictionary(字典) 
- 
- ###类型转换 |函数|描述| |:–|:–| |int(x[,base])|将x转换为一个整数| |long(x[,base])|将x装换成一个长整型| |float(x)|将x转换到一个浮点数| |complex(real [,imag])|创建一个复数| |str(x)|将对象 x 转换为字符串| |repr(x)|将对象 x 转换为表达式字符串| |eval(str)|用来计算在字符串中的有效Python表达式,并返回一个对象| |tuple(s)|将序列 s 转换为一个元组| |list(s)|将序列 s 转换为一个列表| |set(s)|转换为可变集合| |dict(d)|创建一个字典。d 必须是一个序列 (key,value)元组| |frozenset(s)|转换为不可变集合| |chr(x)|将一个整数转换为一个字符| |unichr(x)|将一个整数转换为Unicode字符| |ord(x)|将一个字符转换为它的整数值| |hex(x)|将一个整数转换为一个十六进制字符串| |oct(x)|将一个整数转换为一个八进制字符串| 
- ##算术运算符 |运算符|描述| |:–|:–| |+|加| |-|减| | |乘| |/|除| |%|取模| |* |幂| |//|取整除| 
- ##比较运算符 |运算符|描述| |:–|:–| |==|等于| |!=|不等于| |&lt;&gt;|不等于| |&gt;|大于| |&lt;|小于| |&gt;=|大于等于| |&lt;=|小于等于| 
- ##成员运算符 |运算符|描述| |:–|:–| |in|是否在指定序列中| |not in|是否不再指定序列中| 
- ##身份运算符 |运算符|描述| |:–|:–| |is|判断两个变量是不是引用自一个对象| |is not|判断两个变量是不是引用不同的对象| 
-
     
     
         <a href="/2014/12/04/Python标识符、保留字符/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -180,7 +220,7 @@
     
     
         <a href="/2014/11/27/android-async-http/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -223,7 +263,7 @@
     
     
         <a href="/2014/11/26/RecyclerView/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -266,7 +306,7 @@
     
     
         <a href="/2014/11/24/Paint类/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -307,56 +347,11 @@
     
           
  
-  MaterialDesignLibrary  MaterialDesignLibrary可以说是颇受开发者瞩目的一个控件效果库，能够让开发者在Android 2.2系统上使用Android 5.0才支持的控件效果，比如扁平、矩形、浮动按钮，复选框以及各式各样的进度指示器等。 MaterialDesignLibrary还拥有SnackBar、Dialog、Color selector组件，可非常便捷地对应用界面进行设置。   进度指示器样式效果设置：      1  2  3  4  5       &lt; com.gc.materialdesign.views.ProgressBarCircularIndetermininate                         android:id = "@+id/progressBarCircularIndetermininate"                        android:layout_width = "32dp"                        android:layout_height = "32dp"                        android:background = "#1E88E5"  /&gt;      
- 
- 
- Dialog       1  2      Dialog dialog =  new  Dialog(Context context,String title, String message);    dialog.show();       
- 
-   RippleEffect  来自法兰西的Robin Chutaux开发的RippleEffect基于MIT许可协议开源，能够在Android API 9+上实现Material Design，为开发者提供了一种极为简易的方式来创建带有可扩展视图的header视图，并且允许最大程度上的自定制。   用法（在XML文件中声明一个RippleView）： 
-      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17       &lt; com.andexert.library.RippleView         android:id = "@+id/more"        android:layout_width = "?android:actionBarSize"        android:layout_height = "?android:actionBarSize"        android:layout_toLeftOf = "@+id/more2"        android:layout_margin = "5dp"        ripple:rv_centered = "true" &gt;           &lt; ImageView           android:layout_width = "?android:actionBarSize"          android:layout_height = "?android:actionBarSize"          android:src = "@android:drawable/ic_menu_edit"          android:layout_centerInParent = "true"          android:padding = "10dp"          android:background = "@android:color/holo_blue_dark" /&gt;         &lt;/ com.andexert.library.RippleView &gt;       
- 
-   MaterialEditText  AppCompat v21也为开发者提供了Material Design的控件外观支持，其中就包括EditText，但却并不好用，没有设置颜色的API，也没有任何Google Material Design Spec中提到的特性。于是，来自国内的开发者“扔物线”开发了MaterialEditText库，直接继承EditText，无需修改Java文件即能实现自定义控件颜色。   自定义Base Color： 
-      1      app:baseColor="#0056d3"      
- 
- 
- 自定义Error Color：       1  2      app:maxCharacters="10"    app:errorColor="#ddaa00"       
- 
-  Android-LollipopShowcase  Android-LollipopShowcase是由来自奥地利的移动、后端及Web开发者Mike Penz所开发的演示应用，集中演示了新Material Design中所有的UI效果，以及Android Lollipop中其他非常酷炫的特性元素，比如Toolbar、RecyclerView、ActionBarDrawerToggle、Floating Action Button（FAB）、Android Compat Theme等。   
-   MaterialList  MaterialList是一个能够帮助所有Android开发者获取谷歌UI设计规范中新增的CardView（卡片视图）的开源库，支持Android 2.3+系统。作为ListView的扩展，MaterialList可以接收、存储卡片列表，并根据它们的Android风格和设计模式进行展示。此外，开发者还可以创建专属于自己的卡片布局，并轻松将其添加到CardList中。 
-      1  2  3  4  5  6  7  8  9  10  11  12  13  14       &lt; RelativeLayout   xmlns:android = "http://schemas.android.com/apk/res/android"           android:layout_width = "match_parent"          android:layout_height = "match_parent"          android:paddingLeft = "@dimen/activity_horizontal_margin"          android:paddingRight = "@dimen/activity_horizontal_margin"          android:paddingTop = "@dimen/activity_vertical_margin"          android:paddingBottom = "@dimen/activity_vertical_margin" &gt;             &lt; com.dexafree.materiallistviewexample.view.MaterialListView               android:layout_width = "fill_parent"              android:layout_height = "fill_parent"              android:id = "@+id/material_listview" /&gt;         &lt;/ RelativeLayout &gt;       
- 
-   android-floating-action-button  Floating Action Button（FAB）是众多专家大牛针对Material Design讨论比较细化的一个点，通过圆形元素与分割线、卡片、各种Bar的直线形成鲜明对比，并使用色彩设定中鲜艳的辅色，带来更具突破性的视觉效果。也正因如此，在Github上，有着许多与FAB相关的开源项目，基于Material Design规范的开源Android浮动Action Button控件android-floating-action-button便是其中之一。   其主要特性如下： 
- 
- 
- 
- 支持常规56dp和最小40dp的按钮； 
- 支持自定义正常、Press状态以及可拖拽图标的按钮背景颜色； 
- AddFloatingActionButton类能够让开发者非常方便地直接在代码中写入加号图标； 
- FloatingActionsMenu类支持展开/折叠显示动作。 
- 
- 
-  android-ui  android-ui是Android UI组件类库，支持Android API 14+，包含了ActionView、RevealColorView等UI组件。其中，ActionView可使Action动作显示动画效果，而RevealColorView则带来了Android 5.0中的圆形显示/隐藏动画体验。   
-   Material Menu  Material Menu为开发者带来了非常酷炫的Android菜单、返回、删除以及检查按钮变形，完全控制动画，并为开发者提供了两种MaterialMenuDrawable包装。   自定义颜色等操作： 
-      1  2  3  4  5  6  7  8  9  10  11  12  13  14       // change color     MaterialMenu.setColor( int  color)         // change transformation animation duration     MaterialMenu.setTransformationDuration( int  duration)         // change pressed animation duration     MaterialMenu.setPressedDuration( int  duration)         // change transformation interpolator     MaterialMenu.setInterpolator(Interpolator interpolator)         // set RTL layout support     MaterialMenu.setRTLEnabled( boolean  enabled)      
- 
-   Android-ObservableScrollView  Android-ObservableScrollView是一款用于在滚动视图中观测滚动事件的Android库。它能够轻而易举地与Android 5.0 Lollipop引进的工具栏（Toolbar）进行交互，还可以帮助开发者实现拥有Material Design应用视觉体验的界面外观，支持ListView、ScrollView、WebView、RecyclerView、GridView组件。   交互代码回调： 
-      1  2  3  4  5  6  7  8  9  10  11  12  13       @Override       public   void   onUpOrCancelMotionEvent  (ScrollState scrollState)   &#123;        ActionBar ab = getSupportActionBar();    	 if  (scrollState == ScrollState.UP) &#123;             if  (ab.isShowing()) &#123;                ab.hide();            &#125;        &#125;  else   if  (scrollState == ScrollState.DOWN) &#123;               if  (!ab.isShowing()) &#123;                    ab.show();            &#125;        &#125;    &#125;      
- 
-   Material Design Icons  最后，再来介绍一下Google Material Design规范的官方开源图标集Material Design Icons。良心Google开源了包括Material Design系统图标包在内的750个字形，涵盖动作、音视频、通信、内容、编辑器、文件、硬件、图像、地图、导航、通知、社交等各个方面，适用于Web、Android和iOS应用开发，绝对是开发者及设计师必备的资源。 图标格式主要包括：  
- 
- 
- 
- SVG格式，24px和48px； 
- SVG和CSS Sprites； 
- 适用于Web平台的1x、2x PNG格式图标； 
- 适用于iOS的1x、2x、3x PNG图标； 
- 所有图标的Hi-dpi版本（hdpi、mdpi、xhdpi、xxhdpi、xxxhdpi）。 
- 
-
+  MaterialDesignLibrary  MaterialDesignLibrary可以说是颇受开发者瞩目的一个控件效果库，能够让开发者在Android 2.2系统上使用Android 5.0才支持的控件效果，比如扁平、矩形、浮动按钮，复选框以及各式各样的进度指示器等。 MaterialDesignLibrary还拥有SnackBar、Dialog、Color selector组
     
     
         <a href="/2014/11/24/十大Material-Design项目/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -399,7 +394,7 @@
     
     
         <a href="/2014/11/20/ListView嵌套GridView/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -442,7 +437,7 @@
     
     
         <a href="/2014/11/20/GridLayout/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -485,7 +480,7 @@
     
     
         <a href="/2014/11/20/StickyListHeadersListView/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -528,7 +523,7 @@
     
     
         <a href="/2014/11/19/sp与px的换算/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -568,51 +563,18 @@
 
     
           
- ##URI和URL 
- ###URI(Universal Resource Identifier)是通用资源标志符 通常由三部分组成： 
+   URI和URL    URI(Universal Resource Identifier)是通用资源标志符  通常由三部分组成： 
  
  访问资源的命名机制 
  存放资源的主机名 
  资源自身的名称  http://www.baidu.com/img/bdlogo.png 可以解释为 
  一个可以通过HTTP协议访问的资源 
  位于主机 www.baidu.com 上 
- 通过 /img/bdlogo.png 访问 
- 
- ###URL URL是URI的一个子集，是Uniform Resource Locator的缩写，译为 统一资源定位符 ，简而言之URL是Internet上描述信息资源的字符串。 URL的一般格式为(带方括号[]为可选项)  protocol://hostname[:port]/path/[parameters][?query]#fragment  
- 
- 第一部分是协议 
- 第二部分为存有资源的主机IP也可能包括端口号 
- 第三部分是主机资源的具体地址，如目录和文件名等 
- 
- ###区别 URI属于URL更低级层次的抽象，一种字符串文本标准 URI表示请求服务器的路径定义一个资源，而URL同时说明要如何访问这个资源 
- ##抓取网页内容       1  2  3  4       import  urllib2  response = urllib2.urlopen( 'http://www.baidu.com' )  html = response.read()   print  html       
- 使用请求       1  2  3  4  5       import  urllib2  req = urllib2.Request( 'http://www.baidu.com' )  response = urllib2.urlopen(req)  the_page = respense.read()   print  the_page       
- Post请求       1  2  3  4  5  6  7  8  9  10  11  12  13       import  urllib   import  urllib2    url =  'http://www.someserver.com/register.cgi'     values = &#123; 'name' : 'WHY' ,  			 'location' : 'SDU' ,  			 'language' , 'Python' &#125;    data = urllib.urlencode(values)  req = urllib2.Request(url,data)  response = urllib2.urlopen(req)  the_page = response.read()       
- GET请求       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17       import  urllib2   import  urllib    data = &#123;&#125;    data[ 'name' ] =  'WHY'   data[ 'location' ] =  'SDU'   data[ 'language' ] =  'Python'     url_values = urllib.urlencode(data)   print  url_values    name = Somebody + Here&amp;language=Python&amp;location=Northampton  url =  'http://www.example.com/example.cgi'   full_url = url +  '?'  + url_values    data = urllib2.open(full_url)       
- 设置Headers       1  2  3  4  5  6  7  8  9  10  11  12  13  14       import  urllib   import  urllib2    url =  'http://www.someserver.com/cgi-bn/register.cgi'     user_agent =  'Mozilla/4.0 (compatible; MSIE 5.5;Windows NT)'   values = &#123; 'name' : 'WHY' ,  		 'location' : 'SDU' ,  		 'language' : 'Python' &#125;  headers = &#123; 'User-Agent' :user_agent&#125;  data = urllib.urlencode(values)  req = urllib2.Request(url,data,headers)  response = urllib.urlopen(req)  the_page = response.read()       
- ##异常 
- ###URLError 通常，URLError在没用网络连接(没有路由到特定服务器)或者服务器不存在产生 这种情况下，异常同样会带有 reason 属性，他是一个tuple 包含了一个错误号和一个错误信息       1  2  3  4  5  6  7  8       import  urllib2    req = urllib2.Request( 'http://www.baibai.com' )     try : urllib2.urlopen(req)     except  urllib2.URLError,e:  	 print  e.reason       
- ###HTTPError 服务器上每个HTTP应答对象response包含一个数字”状态码” 有时状态码服务器无法完成请求，默认的处理器会为你处理一部分应答 HTTP状态码分别以1~5开头由3位整数组成： 
- 
- 200:请求成功，处理方式：获得相应的内容，进行处理 
- 201:请求完成，结果是创建了新资源，心创建资源的URI可再响应的实体中得到 
- 202:请求被接受，处理尚未完成 处理方式：阻塞等待 
- 204:服务器已经实现了请求，但没有返回心的信息，如果客户是用户代理，则无须为此更新自身的文档视图，处理方式 丢弃 
- 300: 作为3XX类型回应的默认解释，存在多个可用的被请求资源。处理方式：若程序中能够处理，则进行进一步处理，如果程序不能处理，则丢弃 
- 301:请求到飞资源都会被分配一个永久的URL，这个就可以在将来通过URL来访问此资源，处理方式：重定向到分配的URL 
- 302:请求到的资源在一个不同的URL处临时保存，处理方式：重新向到临时的URL 
- 400:非法请求 处理方式 丢弃 
- 401:未授权 处理方式 丢弃 
- 403:禁止 处理方式 丢弃 
- 404:没有找到 处理方式 丢弃 
-    5XX:服务器错误，处理方式 丢弃 HTTPError产生后会有一个整形 code 属性，是服务器发送的行管错误 BaseHTTPServer.BaseHTTPRequestHandler.reponse是一个很有用的应答号码字典，显示HTTP协议使用所有的应答号      1  2  3  4  5  6  7       import  urllib2  req = urllib2.Request( 'http://bbs.csdn.net/callmewhy' )     try :  	urllb2.urlopen(req)   except  urllib2.URLError, e:  	 print  e.code      
- 
- 
-
+ 通过 /im
     
     
         <a href="/2014/11/19/WebSpider/" class="post-more waves-effect waves-button">
-            
+            阅读全文...
         </a>
     </div>
     
@@ -635,6 +597,51 @@
 <div class="mask" id="mask"></div>
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
+<script>
+var BLOG_SHARE = {
+    title: "SeniorZhai's blog",
+    pic: "/img/logo.jpg",
+    summary: document.getElementsByName('summary')[0].content,
+    url: "http://seniorzhai.github.io/page/16/index.html"
+};
+</script>
+<div class="global-share" id="global-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
 
 <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 
@@ -642,10 +649,45 @@
 
 
 
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<script type="text/template" id="search-tpl">
+<li class="item">
+    <a href="/{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</script>
+
+<script src="/js/search.js"></script>
 
 
 
 
+
+<script src="//s95.cnzz.com/z_stat.php?id=true&web_id=true"></script>
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-54646832-1&#39;', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
 
 
 

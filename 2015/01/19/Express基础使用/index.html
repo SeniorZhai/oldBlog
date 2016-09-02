@@ -10,31 +10,25 @@
   
   
   <meta name="keywords" content="express">
-  <meta name="description" content="#创建应用1234567var express = require(&apos;express&apos;);var app = express();app.get(&apos;/&apos;,function(req,res)&amp;#123;	res.send(&apos;hello world&apos;);&amp;#125;)app.listen(3000);
-##app设置
-###值设置
-
+  <meta name="description" content="创建应用1234567var express = require(&apos;express&apos;);var app = express();app.get(&apos;/&apos;,function(req,res)&amp;#123;	res.send(&apos;hello world&apos;);&amp;#125;)app.listen(3000);
+app设置值设置
 app.set(name,value)
-1app.set(&apos;tit">
+1app.set(&apos;title&apos;,&apos;My">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Express基础使用">
 <meta property="og:url" content="http://seniorzhai.github.io/2015/01/19/Express基础使用/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
-<meta property="og:description" content="#创建应用1234567var express = require(&apos;express&apos;);var app = express();app.get(&apos;/&apos;,function(req,res)&amp;#123;	res.send(&apos;hello world&apos;);&amp;#125;)app.listen(3000);
-##app设置
-###值设置
-
+<meta property="og:description" content="创建应用1234567var express = require(&apos;express&apos;);var app = express();app.get(&apos;/&apos;,function(req,res)&amp;#123;	res.send(&apos;hello world&apos;);&amp;#125;)app.listen(3000);
+app设置值设置
 app.set(name,value)
-1app.set(&apos;tit">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+1app.set(&apos;title&apos;,&apos;My">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Express基础使用">
-<meta name="twitter:description" content="#创建应用1234567var express = require(&apos;express&apos;);var app = express();app.get(&apos;/&apos;,function(req,res)&amp;#123;	res.send(&apos;hello world&apos;);&amp;#125;)app.listen(3000);
-##app设置
-###值设置
-
+<meta name="twitter:description" content="创建应用1234567var express = require(&apos;express&apos;);var app = express();app.get(&apos;/&apos;,function(req,res)&amp;#123;	res.send(&apos;hello world&apos;);&amp;#125;)app.listen(3000);
+app设置值设置
 app.set(name,value)
-1app.set(&apos;tit">
+1app.set(&apos;title&apos;,&apos;My">
   
     <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
   
@@ -218,10 +212,8 @@ app.set(name,value)
 
             <div class="post-content" id="post-content" itemprop="postContent">
             <a id="more"></a>
-<p>#创建应用<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</div><div class="line"><span class="keyword">var</span> app = express();</div><div class="line">app.get(<span class="string">'/'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">	res.send(<span class="string">'hello world'</span>);</div><div class="line">&#125;)</div><div class="line"></div><div class="line">app.listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure></p>
-<p>##app设置</p>
-<p>###值设置</p>
-<ul>
+<h1 id="创建应用"><a href="#创建应用" class="headerlink" title="创建应用"></a>创建应用</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</div><div class="line"><span class="keyword">var</span> app = express();</div><div class="line">app.get(<span class="string">'/'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">	res.send(<span class="string">'hello world'</span>);</div><div class="line">&#125;)</div><div class="line"></div><div class="line">app.listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure>
+<h2 id="app设置"><a href="#app设置" class="headerlink" title="app设置"></a>app设置</h2><h3 id="值设置"><a href="#值设置" class="headerlink" title="值设置"></a>值设置</h3><ul>
 <li><p>app.set(name,value)</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">app.set(<span class="string">'title'</span>,<span class="string">'My Site'</span>);</div></pre></td></tr></table></figure>
 </li>
@@ -229,17 +221,16 @@ app.set(name,value)
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">app.get(<span class="string">'title'</span>); <span class="comment">// 'My Site'</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>###选项设置</p>
-<ul>
+<h3 id="选项设置"><a href="#选项设置" class="headerlink" title="选项设置"></a>选项设置</h3><ul>
 <li>app.enable(name)    // 设置某项为true</li>
 <li>app.disable(name)    // 设置某项为false，禁用</li>
 <li>app.enabled(name)    // 检查某项是否为true</li>
 <li>app.disabled(name) // 检查某项是否为false</li>
 </ul>
-<p>###环境配置<br>app.configure([env],callback)<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 所有环境</span></div><div class="line">app.configure(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  app.set(<span class="string">'title'</span>, <span class="string">'My Application'</span>);</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 开发环境</span></div><div class="line">app.configure(<span class="string">'development'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  app.set(<span class="string">'db uri'</span>, <span class="string">'localhost/dev'</span>);</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 只用于生产环境</span></div><div class="line">app.configure(<span class="string">'production'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  app.set(<span class="string">'db uri'</span>, <span class="string">'n.n.n.n/prod'</span>);</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><p>app.configure([env],callback)<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 所有环境</span></div><div class="line">app.configure(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  app.set(<span class="string">'title'</span>, <span class="string">'My Application'</span>);</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 开发环境</span></div><div class="line">app.configure(<span class="string">'development'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  app.set(<span class="string">'db uri'</span>, <span class="string">'localhost/dev'</span>);</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 只用于生产环境</span></div><div class="line">app.configure(<span class="string">'production'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  app.set(<span class="string">'db uri'</span>, <span class="string">'n.n.n.n/prod'</span>);</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
 <p>更高效且直接的代码如下(历史遗留问题)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">// 所有环境</div><div class="line">app.set(&apos;title&apos;, &apos;My Application&apos;);</div><div class="line"></div><div class="line">// 只用于开发环境</div><div class="line">if (&apos;development&apos; == app.get(&apos;env&apos;)) &#123;</div><div class="line">  app.set(&apos;db uri&apos;, &apos;localhost/dev&apos;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 只用于生产环境</div><div class="line">if (&apos;production&apos; == app.get(&apos;env&apos;)) &#123;</div><div class="line">  app.set(&apos;db uri&apos;, &apos;n.n.n.n/prod&apos;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>###使用中间件<br>app.use([path],function) path默认为”/“<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</div><div class="line"><span class="keyword">var</span> app = express()</div><div class="line"><span class="comment">// 简单的logger</span></div><div class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">req,res,next</span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">"%s %s"</span>,req.method,req,url)</div><div class="line">	next();</div><div class="line">&#125;)</div><div class="line"></div><div class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">req,res,next</span>)</span>&#123;</div><div class="line">	res.send(<span class="string">'Hello World!'</span>)</div><div class="line">&#125;);</div><div class="line"></div><div class="line">app.listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure></p>
-<p>###setting<br>使用内建的方式改变Express行为的设置</p>
+<h3 id="使用中间件"><a href="#使用中间件" class="headerlink" title="使用中间件"></a>使用中间件</h3><p>app.use([path],function) path默认为”/“<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</div><div class="line"><span class="keyword">var</span> app = express()</div><div class="line"><span class="comment">// 简单的logger</span></div><div class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">req,res,next</span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">"%s %s"</span>,req.method,req,url)</div><div class="line">	next();</div><div class="line">&#125;)</div><div class="line"></div><div class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">req,res,next</span>)</span>&#123;</div><div class="line">	res.send(<span class="string">'Hello World!'</span>)</div><div class="line">&#125;);</div><div class="line"></div><div class="line">app.listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure></p>
+<h3 id="setting"><a href="#setting" class="headerlink" title="setting"></a>setting</h3><p>使用内建的方式改变Express行为的设置</p>
 <ul>
 <li>env 运行时环境，默认为 process.env.NODE_ENV 或者 “development”</li>
 <li>trust proxy 激活反向代理，默认未激活状态</li>
@@ -252,8 +243,7 @@ app.set(name,value)
 <li>view engine 模板引擎</li>
 <li>views 模板的目录, 默认是”process.cwd() + ./views”</li>
 </ul>
-<p>##Request</p>
-<p>##req.params<br>命名过的参数会以键值对的形式存放，默认是<code>{}</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// GET /user/zoe 路由设置为/user/:name</span></div><div class="line">req.params.name <span class="comment">//zoe</span></div></pre></td></tr></table></figure></p>
+<h2 id="Request"><a href="#Request" class="headerlink" title="Request"></a>Request</h2><h2 id="req-params"><a href="#req-params" class="headerlink" title="req.params"></a>req.params</h2><p>命名过的参数会以键值对的形式存放，默认是<code>{}</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// GET /user/zoe 路由设置为/user/:name</span></div><div class="line">req.params.name <span class="comment">//zoe</span></div></pre></td></tr></table></figure></p>
 
             <blockquote>
                 <p>

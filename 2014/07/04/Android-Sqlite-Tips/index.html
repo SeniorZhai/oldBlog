@@ -22,7 +22,7 @@
 
 
 2.Delete column,Rename columnsqlite3不允许指直接delete，rename只能进行以下操作12create table temp(id integer PRIMARY KEY,code varch">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android Sqlite Tips">
 <meta name="twitter:description" content="Add column1ALTER TABLE &amp;#123;tableName&amp;#125; ADD COLUMN COLNew &amp;#123;type&amp;#125;;
@@ -221,8 +221,7 @@
 <p>5.导出sql<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sqlite3. data.db</div><div class="line">&gt;.output dd.sql</div><div class="line">&gt;.dump</div></pre></td></tr></table></figure></p>
 <p>6.导入<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sqlite3 mydb.db</div><div class="line">&gt;.read dd.sql</div></pre></td></tr></table></figure></p>
 <p>7.释放空间<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vacuum</div></pre></td></tr></table></figure></p>
-<p>##一些SQLite命令</p>
-<ul>
+<h2 id="一些SQLite命令"><a href="#一些SQLite命令" class="headerlink" title="一些SQLite命令"></a>一些SQLite命令</h2><ul>
 <li>database 列出数据库文件名</li>
 <li>tables ?PATTERN? 列出?PATTERN?匹配的表名</li>
 <li>import FILE TABLE 将文件中的数据导入表中</li>

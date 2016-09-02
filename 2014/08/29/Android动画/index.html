@@ -16,7 +16,7 @@
 <meta property="og:url" content="http://seniorzhai.github.io/2014/08/29/Android动画/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
 <meta property="og:description" content="Android 3.0之后的动画框架">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android动画">
 <meta name="twitter:description" content="Android 3.0之后的动画框架">
@@ -203,8 +203,7 @@
 
             <div class="post-content" id="post-content" itemprop="postContent">
             <p>Android 3.0之后的动画框架<br><a id="more"></a></p>
-<p>##分类</p>
-<ul>
+<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><ul>
 <li>Property Animation 属性动画<br>几乎可以让任何对象动起来，它使一个框架，在一个时间内，使用指定的内插技术来影响任何对象的属性</li>
 <li>View Animation<ul>
 <li>Tween Animation 补间动画 应用于View可以定义一系列位置、大小、旋转和透明度的改变</li>
@@ -212,7 +211,7 @@
 </ul>
 </li>
 </ul>
-<p>###Property Animation<br>在Android 3.0(API level 11)引入，通过一个属性动画生成器，在一个给定时间内使用设定的差值算法将属性从一个值转换到另一个值。<br>属性动画设定了规定时间内修改对象的属性，比如背景色和alpha值等，从简单的View效果，如移动、缩放、View的淡入淡出，到复杂的动画，如运行时的布局改变、曲线变换。<br>可以用xml定义，存放路径为：res/animator/filename.xml<br>可以通过资源的形式引用：R.animator.filename(in java)、@[package:]animator/file<br>常用的java类包括：ValueAnimator,ObjectAnimator,AnimatorSet</p>
+<h3 id="Property-Animation"><a href="#Property-Animation" class="headerlink" title="Property Animation"></a>Property Animation</h3><p>在Android 3.0(API level 11)引入，通过一个属性动画生成器，在一个给定时间内使用设定的差值算法将属性从一个值转换到另一个值。<br>属性动画设定了规定时间内修改对象的属性，比如背景色和alpha值等，从简单的View效果，如移动、缩放、View的淡入淡出，到复杂的动画，如运行时的布局改变、曲线变换。<br>可以用xml定义，存放路径为：res/animator/filename.xml<br>可以通过资源的形式引用：R.animator.filename(in java)、@[package:]animator/file<br>常用的java类包括：ValueAnimator,ObjectAnimator,AnimatorSet</p>
 <ul>
 <li>XML文件格式：<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- together为同时播放 sequenttially为按顺序播放 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">set</span> <span class="attr">android:ordering</span>=<span class="string">[</span>"<span class="attr">together</span>"|"<span class="attr">sequentially</span>"]&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">objectAnimator</span></span></div><div class="line">        <span class="attr">android:propertyName</span>=<span class="string">"String"</span></div><div class="line">        <span class="attr">android:duration</span>=<span class="string">"int"</span></div><div class="line">        <span class="attr">android:valueFrom</span>=<span class="string">"float|int|color"</span></div><div class="line">        <span class="attr">android:valueTo</span>=<span class="string">"float|int|color"</span></div><div class="line">        <span class="attr">android:startOffset</span>=<span class="string">"int"</span></div><div class="line">        <span class="attr">android:repeatCount</span>=<span class="string">"int"</span></div><div class="line">        <span class="attr">android:repeatMode</span>=<span class="string">[</span>"<span class="attr">repeat</span>"|"<span class="attr">reverse</span>"]</div><div class="line">        <span class="attr">android:valueType</span>=<span class="string">[</span>"<span class="attr">intType</span>"|"<span class="attr">floatType</span>"]/&gt;</div><div class="line">    <span class="tag">&lt;<span class="name">animator</span></span></div><div class="line">        <span class="attr">android:duration</span>=<span class="string">"int"</span></div><div class="line">        <span class="attr">android:valueFrom</span>=<span class="string">"float|int|color"</span></div><div class="line">        <span class="attr">android:valueTo</span>=<span class="string">"float|int|color"</span></div><div class="line">        <span class="attr">android:startOffset</span>=<span class="string">"int"</span></div><div class="line">        <span class="attr">android:repeatCount</span>=<span class="string">"int"</span></div><div class="line">        <span class="attr">android:repeatMode</span>=<span class="string">[</span>"<span class="attr">repeat</span>"|"<span class="attr">reverse</span>"]</div><div class="line">        <span class="attr">android:valueType</span>=<span class="string">[</span>"<span class="attr">intType</span>"|"<span class="attr">floatType</span>"]/&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">set</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
@@ -234,7 +233,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Animator.AnimatorListener l = <span class="keyword">new</span> AnimatorListener() &#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationStart</span><span class="params">(Animator animation)</span></span>&#123;&#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationRepeat</span><span class="params">(Animator animation)</span></span>&#123;&#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationEnd</span><span class="params">(Animator animation)</span></span>&#123;&#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationCancel</span><span class="params">(Animator animation)</span></span>&#123;&#125;</div><div class="line">&#125;</div><div class="line">anim.addListener(l);</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>#####插值器<br>默认情况下，在每个动画开始和结束值之间中所用的差值器是一个非线性的插值器<code>AccelerateDecelerateInterpolator</code>提供了开始加速和结束时减速的效果，SDK提供的插值器有：</p>
+<h5 id="插值器"><a href="#插值器" class="headerlink" title="插值器"></a>插值器</h5><p>默认情况下，在每个动画开始和结束值之间中所用的差值器是一个非线性的插值器<code>AccelerateDecelerateInterpolator</code>提供了开始加速和结束时减速的效果，SDK提供的插值器有：</p>
 <ul>
 <li>AccelerateDecelerateInterpolator 开始和结束时结束变化较慢，在中间的时候加速</li>
 <li>AccelerateInterpolator 开始的时候向后，然后再向前急冲</li>
@@ -242,7 +241,7 @@
 <li>BouceInterpolator 动画结束时弹回</li>
 <li>DecelerateInterpolator 开始时速度变化较快，然后减速</li>
 <li>LinearInterpolator 速度的变化是一个常量</li>
-<li>OvershootInterpolator 开始时向前急冲，超过最终的值，然后再回来<br>通过<code>setInterpolator()</code>方法设置插值器，也可以实现<code>TimeInterpolator</code>类来指定一个自定义的差值算法。<br>###View Animation<br>View Animation包含了Tween Animation、Freme Animation<br>####Tween Animation</li>
+<li>OvershootInterpolator 开始时向前急冲，超过最终的值，然后再回来<br>通过<code>setInterpolator()</code>方法设置插值器，也可以实现<code>TimeInterpolator</code>类来指定一个自定义的差值算法。<h3 id="View-Animation"><a href="#View-Animation" class="headerlink" title="View Animation"></a>View Animation</h3>View Animation包含了Tween Animation、Freme Animation<h4 id="Tween-Animation"><a href="#Tween-Animation" class="headerlink" title="Tween Animation"></a>Tween Animation</h4></li>
 <li>存放路径：res/anim/filename.xml</li>
 <li>引用：R.anim.filename(in java)、@[package:]anim/file</li>
 <li>应用：<ul>
@@ -275,7 +274,7 @@
 </ol>
 <ul>
 <li>LayoutAniamationController 可以选择每一个View的开始偏移时间(以毫秒为单位)，以及把动画应用到每一个子View中的顺序和起始时间(正向、反向、随机)</li>
-<li>GridLayoutAnimationController 使用由行和列所映射的网格来向子View分配动画序列<br>#####示例：<br>创建布局动画<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">layoutAnimation</span></span></div><div class="line">	<span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></div><div class="line">	<span class="attr">android:delay</span>=<span class="string">"0.5"</span></div><div class="line">	<span class="attr">android:animationOrder</span>=<span class="string">"random"</span></div><div class="line">	<span class="attr">android:animation</span>=<span class="string">"anim/popin"</span>/&gt;</div></pre></td></tr></table></figure>
+<li>GridLayoutAnimationController 使用由行和列所映射的网格来向子View分配动画序列<h5 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h5>创建布局动画<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">layoutAnimation</span></span></div><div class="line">	<span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></div><div class="line">	<span class="attr">android:delay</span>=<span class="string">"0.5"</span></div><div class="line">	<span class="attr">android:animationOrder</span>=<span class="string">"random"</span></div><div class="line">	<span class="attr">android:animation</span>=<span class="string">"anim/popin"</span>/&gt;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>使用布局动画<br>使用代码或者布局XML资源将其应用到一个ViewGroup中</p>
@@ -285,7 +284,7 @@
 </li>
 </ul>
 <p>通常情况动画会在ViewGroup第一次进行布局的时候执行一次，可以调用<code>scheduleLayoutAnimation</code>来强制动画再次执行，在View Grop下次布局的时候这个动画就会再次执行。<br>布局动画也支持动画监听<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">aViewGroup.setLayoutAnimationListener(<span class="keyword">new</span> AnimationListener() &#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationEnd</span><span class="params">(Animation _animation)</span></span>&#123;&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationRepeat</span><span class="params">(Animation _animation)</span></span>&#123;&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAnimationStart</span><span class="params">(Animation _animation)</span></span>&#123;&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>####Frame animation<br>帧动画是一系列的图片按顺序显示</p>
+<h4 id="Frame-animation"><a href="#Frame-animation" class="headerlink" title="Frame animation"></a>Frame animation</h4><p>帧动画是一系列的图片按顺序显示</p>
 <ul>
 <li>文件路径res/drawable/filename.xml</li>
 <li>引用：R.drawable.filename(in java)、@[package:]drawable/file</li>

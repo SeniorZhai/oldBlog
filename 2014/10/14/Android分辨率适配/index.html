@@ -10,35 +10,32 @@
   
   
   <meta name="keywords" content="分辨率">
-  <meta name="description" content="##基本概念
-
+  <meta name="description" content="基本概念
 分辨率：屏幕上显示的像素个数，单位尺寸内像素点越多，显示的图像就越清楚 主流分辨率:480*800、720*1280、1080*1920
 像素密度 240dpi(480*800)、320dpi(720*1280)、480dpi(1080*1920)
 单位 px:像素 dp:设备独立像素(160dpi为标准)240dpi下，1dp=1.5px
 320dpi下，1dp=2px
-480">
+480dpi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android分辨率适配">
 <meta property="og:url" content="http://seniorzhai.github.io/2014/10/14/Android分辨率适配/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
-<meta property="og:description" content="##基本概念
-
+<meta property="og:description" content="基本概念
 分辨率：屏幕上显示的像素个数，单位尺寸内像素点越多，显示的图像就越清楚 主流分辨率:480*800、720*1280、1080*1920
 像素密度 240dpi(480*800)、320dpi(720*1280)、480dpi(1080*1920)
 单位 px:像素 dp:设备独立像素(160dpi为标准)240dpi下，1dp=1.5px
 320dpi下，1dp=2px
-480">
+480dpi">
 <meta property="og:image" content="http://seniorzhai.github.io/img/14101401.png">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android分辨率适配">
-<meta name="twitter:description" content="##基本概念
-
+<meta name="twitter:description" content="基本概念
 分辨率：屏幕上显示的像素个数，单位尺寸内像素点越多，显示的图像就越清楚 主流分辨率:480*800、720*1280、1080*1920
 像素密度 240dpi(480*800)、320dpi(720*1280)、480dpi(1080*1920)
 单位 px:像素 dp:设备独立像素(160dpi为标准)240dpi下，1dp=1.5px
 320dpi下，1dp=2px
-480">
+480dpi">
 <meta name="twitter:image" content="http://seniorzhai.github.io/img/14101401.png">
   
     <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
@@ -223,8 +220,7 @@
 
             <div class="post-content" id="post-content" itemprop="postContent">
             <a id="more"></a>
-<p>##基本概念</p>
-<ol>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ol>
 <li>分辨率：屏幕上显示的像素个数，单位尺寸内像素点越多，显示的图像就越清楚<br> 主流分辨率:<code>480*800</code>、<code>720*1280</code>、<code>1080*1920</code></li>
 <li>像素密度<br> 240dpi(<code>480*800</code>)、320dpi(<code>720*1280</code>)、480dpi(<code>1080*1920</code>)</li>
 <li>单位<br> px:像素<br> dp:设备独立像素(160dpi为标准)<pre><code>240dpi下，1dp=1.5px
@@ -235,21 +231,19 @@
 480dpi下，1sp=3px
 </code></pre></li>
 </ol>
-<p>##常见分辨率</p>
-<ul>
+<h2 id="常见分辨率"><a href="#常见分辨率" class="headerlink" title="常见分辨率"></a>常见分辨率</h2><ul>
 <li>4:3<br>  VGA     <code>640*480</code><br>  QVGA    <code>320*240</code><br>  HVGA    <code>480*320</code><br>  SVGA    <code>800*600</code></li>
 <li>5:3<br>  WVGA    <code>800*480</code></li>
 <li>16:9<br>  FWVGA   <code>854*480</code><br>  HD      <code>1920*1080</code><br>  QHD     <code>960*540</code><br>  720p    <code>1280*720</code><br>  1080p   <code>1920*1080</code></li>
 <li>Apple<br>  iPhone4/4s      <code>960*640</code><br>  iPhone5/5s      <code>1136*640</code><br>  iPhone6         <code>1334*750</code><br>  iPhone6Plus     <code>1920*1080</code><br>  小米1           <code>854*480</code><br>  小米2           <code>1280*720</code><br>  红米1/1s/note   <code>1280*720</code>  </li>
 </ul>
-<p>###对应的DPI</p>
-<ul>
+<h3 id="对应的DPI"><a href="#对应的DPI" class="headerlink" title="对应的DPI"></a>对应的DPI</h3><ul>
 <li>HVGA  mdpi</li>
 <li>WVGA  hdpi</li>
 <li>FWVGA hdpi</li>
 <li>QHD   hdpi</li>
 <li>720p  xhdpi</li>
-<li>1080p xxhdpi<br>##最佳方案</li>
+<li>1080p xxhdpi<h2 id="最佳方案"><a href="#最佳方案" class="headerlink" title="最佳方案"></a>最佳方案</h2></li>
 </ul>
 <ol>
 <li>选取320dpi下(720*1280)进行设计，此分辨率下1dp=2px</li>
@@ -260,9 +254,8 @@
 </li>
 <li>标注尽量采用相对关系</li>
 </ol>
-<p>##文字<br>中文字体：默认为Droid Sans Fallback,设计时可采用微软雅黑。<br>英文字体：Andriod4.x及以上采用Roboto，Andrio2.x和andriod3.x采用 Droid Sans。建议尽量采用系统默认字体。<br>Andriod规范建议，字号采用12sp、14sp、18sp、22sp等四个级别来设计。（实际设计时可以按实际情况调整）</p>
-<p>##总结</p>
-<ol>
+<h2 id="文字"><a href="#文字" class="headerlink" title="文字"></a>文字</h2><p>中文字体：默认为Droid Sans Fallback,设计时可采用微软雅黑。<br>英文字体：Andriod4.x及以上采用Roboto，Andrio2.x和andriod3.x采用 Droid Sans。建议尽量采用系统默认字体。<br>Andriod规范建议，字号采用12sp、14sp、18sp、22sp等四个级别来设计。（实际设计时可以按实际情况调整）</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
 <li>采用<code>720*1280</code>分辨率来进行设计。（设计时，采用偶数值进行设计，方便dp和px的转换）</li>
 <li>开始标注了，标注尽量采用相对位置进行标注。</li>
 <li>切图了，在<code>720*1280</code>下进行切图，可以完全适配<code>720*1280</code>后放大缩小切图资源</li>

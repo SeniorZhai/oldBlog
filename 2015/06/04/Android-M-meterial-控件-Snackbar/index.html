@@ -16,7 +16,7 @@
 <meta property="og:url" content="http://seniorzhai.github.io/2015/06/04/Android-M-meterial-控件-Snackbar/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
 <meta property="og:description" content="Android M发布的Android Design Support Library提供了很多Material Design控件，支持Android 2.1及以后的版本。再也不用担心第三方的Material Design不可靠了。">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android M meterial 控件 - Snackbar">
 <meta name="twitter:description" content="Android M发布的Android Design Support Library提供了很多Material Design控件，支持Android 2.1及以后的版本。再也不用担心第三方的Material Design不可靠了。">
@@ -203,7 +203,7 @@
 
             <div class="post-content" id="post-content" itemprop="postContent">
             <p>Android M发布的Android Design Support Library提供了很多Material Design控件，支持Android 2.1及以后的版本。<br>再也不用担心第三方的Material Design不可靠了。<br><a id="more"></a></p>
-<p>##Snackbar<br>Snackbar类型于Toast用作轻量级的操作反馈，与<a href="https://github.com/keyboardsurfer/Crouton" target="_blank" rel="external">Crouton</a>相似(Snackbar显示在父视图的底部)，但是功能要简单的多。</p>
+<h2 id="Snackbar"><a href="#Snackbar" class="headerlink" title="Snackbar"></a>Snackbar</h2><p>Snackbar类型于Toast用作轻量级的操作反馈，与<a href="https://github.com/keyboardsurfer/Crouton" target="_blank" rel="external">Crouton</a>相似(Snackbar显示在父视图的底部)，但是功能要简单的多。</p>
 <ul>
 <li>关于<code>Crouton</code>可以查看<a href="http://seniorzhai.github.io/2014/12/15/Crouton%E7%9A%84%E4%BD%BF%E7%94%A8/">http://seniorzhai.github.io/2014/12/15/Crouton%E7%9A%84%E4%BD%BF%E7%94%A8/</a><br><p><br><video width="100%" height="240" controls><source src="http://ac-lhzo7z96.clouddn.com/1433285265672" type="video/mp4"></video><br></p><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Snackbar</div><div class="line">	.make(parentLayout, R.string.snackbar_text, Snackbar.LENGTH_LONG)	<span class="comment">// 显示的文本及显示的位置</span></div><div class="line">	.setAction(R.string.snackbar_action, myOnClickListener)	<span class="comment">// 自定义点击时间</span></div><div class="line">	.show();</div></pre></td></tr></table></figure>
 </li>

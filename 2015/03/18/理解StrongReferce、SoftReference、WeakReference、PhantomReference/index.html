@@ -16,7 +16,7 @@
 <meta property="og:url" content="http://seniorzhai.github.io/2015/03/18/理解StrongReferce、SoftReference、WeakReference、PhantomReference/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
 <meta property="og:description" content="JDK 1.2版本引入了强、软、弱、虚引用的概念">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+<meta property="og:updated_time" content="2016-09-02T08:08:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="理解StrongReferce、SoftReference、WeakReference、PhantomReference">
 <meta name="twitter:description" content="JDK 1.2版本引入了强、软、弱、虚引用的概念">
@@ -203,21 +203,17 @@
 
             <div class="post-content" id="post-content" itemprop="postContent">
             <p>JDK 1.2版本引入了强、软、弱、虚引用的概念<br><a id="more"></a></p>
-<p>#StrongReference</p>
-<ul>
+<h1 id="StrongReference"><a href="#StrongReference" class="headerlink" title="StrongReference"></a>StrongReference</h1><ul>
 <li>修饰的对象，JVM宁愿抛出OOM也不回收对象</li>
 </ul>
-<p>#SoftReference</p>
-<ul>
+<h1 id="SoftReference"><a href="#SoftReference" class="headerlink" title="SoftReference"></a>SoftReference</h1><ul>
 <li>内存不足时，才会回收对象</li>
 </ul>
-<p>#WeakReference</p>
-<ul>
+<h1 id="WeakReference"><a href="#WeakReference" class="headerlink" title="WeakReference"></a>WeakReference</h1><ul>
 <li>无论内容是否足够，垃圾回收扫描到，他就会被回收<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Test</span>  </div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">weakReference</span><span class="params">()</span> </span>&#123;   </div><div class="line">     Object referent = <span class="keyword">new</span> Object();   </div><div class="line">     WeakReference&lt;Object&gt; weakRerference = <span class="keyword">new</span> WeakReference&lt;Object&gt;(referent);   </div><div class="line">  </div><div class="line">     assertSame(referent, weakRerference.get());   </div><div class="line">       </div><div class="line">     referent = <span class="keyword">null</span>;   </div><div class="line">     System.gc();   </div><div class="line">       </div><div class="line">    <span class="comment">/**</span></div><div class="line">      * 一旦没有指向 referent 的强引用, weak reference 在 GC 后会被自动回收</div><div class="line">      */  </div><div class="line">     assertNull(weakRerference.get());   </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>#PhantomReference</p>
-<ul>
+<h1 id="PhantomReference"><a href="#PhantomReference" class="headerlink" title="PhantomReference"></a>PhantomReference</h1><ul>
 <li>相对于完全没有引用</li>
 </ul>
 

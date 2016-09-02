@@ -10,28 +10,28 @@
   
   
   <meta name="keywords" content="反编译">
-  <meta name="description" content="#使用将jadx克隆到本地，进行编译123git clone https://github.com/skylot/jadxcd jadx./gradlew dist
+  <meta name="description" content="使用将jadx克隆到本地，进行编译123git clone https://github.com/skylot/jadxcd jadx./gradlew dist
 编译完成后可以在build/jadx/bin中找到运行文件
-##运行GUI界面可以点击运行jadx-gui文件命令行可以使用./jadx1jadx demo.apk
+运行GUI界面可以点击运行jadx-gui文件命令行可以使用./jadx1jadx demo.apk
 
-命令格式12345678910111213141516jadx[">
+命令格式12345678910111213141516jadx[-gu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用jadx">
 <meta property="og:url" content="http://seniorzhai.github.io/2016/03/10/使用jadx/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
-<meta property="og:description" content="#使用将jadx克隆到本地，进行编译123git clone https://github.com/skylot/jadxcd jadx./gradlew dist
+<meta property="og:description" content="使用将jadx克隆到本地，进行编译123git clone https://github.com/skylot/jadxcd jadx./gradlew dist
 编译完成后可以在build/jadx/bin中找到运行文件
-##运行GUI界面可以点击运行jadx-gui文件命令行可以使用./jadx1jadx demo.apk
+运行GUI界面可以点击运行jadx-gui文件命令行可以使用./jadx1jadx demo.apk
 
-命令格式12345678910111213141516jadx[">
-<meta property="og:updated_time" content="2016-03-10T09:44:19.000Z">
+命令格式12345678910111213141516jadx[-gu">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用jadx">
-<meta name="twitter:description" content="#使用将jadx克隆到本地，进行编译123git clone https://github.com/skylot/jadxcd jadx./gradlew dist
+<meta name="twitter:description" content="使用将jadx克隆到本地，进行编译123git clone https://github.com/skylot/jadxcd jadx./gradlew dist
 编译完成后可以在build/jadx/bin中找到运行文件
-##运行GUI界面可以点击运行jadx-gui文件命令行可以使用./jadx1jadx demo.apk
+运行GUI界面可以点击运行jadx-gui文件命令行可以使用./jadx1jadx demo.apk
 
-命令格式12345678910111213141516jadx[">
+命令格式12345678910111213141516jadx[-gu">
   
     <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
   
@@ -215,9 +215,9 @@
 
             <div class="post-content" id="post-content" itemprop="postContent">
             <a id="more"></a>
-<p>#使用<br>将<a href="https://github.com/skylot/jadx" target="_blank" rel="external">jadx</a>克隆到本地，进行编译<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/skylot/jadx</div><div class="line">cd jadx</div><div class="line">./gradlew dist</div></pre></td></tr></table></figure></p>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>将<a href="https://github.com/skylot/jadx" target="_blank" rel="external">jadx</a>克隆到本地，进行编译<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/skylot/jadx</div><div class="line">cd jadx</div><div class="line">./gradlew dist</div></pre></td></tr></table></figure></p>
 <p>编译完成后可以在<code>build/jadx/bin</code>中找到运行文件</p>
-<p>##运行<br>GUI界面可以点击运行<code>jadx-gui</code>文件<br>命令行可以使用<code>./jadx</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jadx demo.apk</div></pre></td></tr></table></figure></p>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>GUI界面可以点击运行<code>jadx-gui</code>文件<br>命令行可以使用<code>./jadx</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jadx demo.apk</div></pre></td></tr></table></figure></p>
 <ul>
 <li>命令格式<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">jadx[-gui] [options] &lt;input file&gt; (.dex , .apk , .jar or .class)</div><div class="line">options:</div><div class="line">  -d,--output-dir         指定输出文件夹</div><div class="line">  -j,--threads-count      执行线程数量</div><div class="line">  -f,--fallback</div><div class="line">  -r,--no-res             不解码资源文件</div><div class="line">  -s,--no-src             不反编代码</div><div class="line">     --show-bad-code      显示不正确的反编译代码</div><div class="line">     --cfg                </div><div class="line">     --raw-cfg</div><div class="line">  -v,--verbose            详细输出</div><div class="line">     --deobf              激活deofuscation</div><div class="line">     --deobf-min</div><div class="line">     --deobf-max</div><div class="line">     --deobf-rewrite-cfg</div><div class="line">  -h,--help</div></pre></td></tr></table></figure>
 </li>

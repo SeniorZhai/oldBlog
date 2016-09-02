@@ -10,31 +10,28 @@
   
   
   <meta name="keywords" content="iOS,Android,Java,Objective-C,大不同,生命周期">
-  <meta name="description" content="##iOS Application生命周期
-###AppDelegate
+  <meta name="description" content="iOS Application生命周期AppDelegate
 
 - (BOOL)application:(UIApplication *)applicationwillFinishLaunchingWithOptions:(NSDictionary *)launchOptions 将要启动
-- (BOOL)application:(UIApplication *)applicatio">
+- (BOOL)application:(UIApplication *)applicationdidFi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android、iOS大不同——生命周期">
 <meta property="og:url" content="http://seniorzhai.github.io/2014/12/11/Android、iOS大不同——生命周期/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
-<meta property="og:description" content="##iOS Application生命周期
-###AppDelegate
+<meta property="og:description" content="iOS Application生命周期AppDelegate
 
 - (BOOL)application:(UIApplication *)applicationwillFinishLaunchingWithOptions:(NSDictionary *)launchOptions 将要启动
-- (BOOL)application:(UIApplication *)applicatio">
+- (BOOL)application:(UIApplication *)applicationdidFi">
 <meta property="og:image" content="http://seniorzhai.github.io/img/iOS_LifeCycle.png">
 <meta property="og:image" content="http://seniorzhai.github.io/img/iOS_LifeCycle_ViewController.png">
 <meta property="og:image" content="http://seniorzhai.github.io/img/Android_LifeCycle.png">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android、iOS大不同——生命周期">
-<meta name="twitter:description" content="##iOS Application生命周期
-###AppDelegate
+<meta name="twitter:description" content="iOS Application生命周期AppDelegate
 
 - (BOOL)application:(UIApplication *)applicationwillFinishLaunchingWithOptions:(NSDictionary *)launchOptions 将要启动
-- (BOOL)application:(UIApplication *)applicatio">
+- (BOOL)application:(UIApplication *)applicationdidFi">
 <meta name="twitter:image" content="http://seniorzhai.github.io/img/iOS_LifeCycle.png">
   
     <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
@@ -219,8 +216,7 @@
 
             <div class="post-content" id="post-content" itemprop="postContent">
             <a id="more"></a>
-<p>##iOS Application生命周期</p>
-<p>###AppDelegate<br><img src="/img/iOS_LifeCycle.png" alt=""></p>
+<h2 id="iOS-Application生命周期"><a href="#iOS-Application生命周期" class="headerlink" title="iOS Application生命周期"></a>iOS Application生命周期</h2><h3 id="AppDelegate"><a href="#AppDelegate" class="headerlink" title="AppDelegate"></a>AppDelegate</h3><p><img src="/img/iOS_LifeCycle.png" alt=""></p>
 <ol>
 <li><code>- (BOOL)application:(UIApplication *)applicationwillFinishLaunchingWithOptions:(NSDictionary *)launchOptions</code><br> 将要启动</li>
 <li><code>- (BOOL)application:(UIApplication *)applicationdidFinishLaunchingWithOptions:(NSDictionary *)launchOptions</code><br> 程序首次完成启动时执行，若直接启动，launchOptions没有数据，若由其他应用启动，launchOptions包含数据</li>
@@ -240,7 +236,7 @@
 </li>
 <li><code>- (void)applicationWillEnterForeground:(UIApplication *)application</code><br> 从后台进入前台时调用</li>
 <li><code>- (void)applicationDidBecomeActive:(UIApplication *)application</code><br> 应用进入激活状态</li>
-<li><code>- (void)applicationWillTerminate:(UIApplication *)application</code><br> 应用兼将要退出时调用<br>###UIController<br><img src="/img/iOS_LifeCycle_ViewController.png" alt=""></li>
+<li><code>- (void)applicationWillTerminate:(UIApplication *)application</code><br> 应用兼将要退出时调用<h3 id="UIController"><a href="#UIController" class="headerlink" title="UIController"></a>UIController</h3><img src="/img/iOS_LifeCycle_ViewController.png" alt=""></li>
 </ol>
 <ul>
 <li>alloc 创建对象</li>
@@ -252,7 +248,7 @@
 <li>viewDiddisapper 从屏幕移除之前</li>
 <li>viewWillUnload 已经从屏幕移除</li>
 <li>viewDidUnload 载出之前 </li>
-<li>dealloc 被销毁<br>##Android Activity生命周期<br><img src="/img/Android_LifeCycle.png" alt=""></li>
+<li>dealloc 被销毁<h2 id="Android-Activity生命周期"><a href="#Android-Activity生命周期" class="headerlink" title="Android Activity生命周期"></a>Android Activity生命周期</h2><img src="/img/Android_LifeCycle.png" alt=""></li>
 </ul>
 <ol>
 <li><code>onCreate()</code><br> 创建Activity</li>
@@ -263,17 +259,17 @@
 <li><code>onStop()</code><br> 退出当前Activity或者跳转到新的Activity时被调用</li>
 <li><code>onDestroy()</code><br> 退出Activity时被调用，调用之后Activity就被销毁了</li>
 <li><code>onSaveInstanceState(Budle outState)</code><br> Activity被系统销毁时调用</li>
-<li><code>onRestoreInstanceState(Budle savedInstanceState)</code><br> Activity重建时被调用<br>##对比<br>###第一次启动<br>iOS:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">- [AppDelegate application:didFinishLaunchingWithOptions:]</div><div class="line">- [ViewController viewDidLoad]</div><div class="line">- [ViewController viewWillAppear:]</div><div class="line">- [AppDelegate applicationDidBecomeActivie:]</div><div class="line">- [ViewController viewDidAppear:]</div></pre></td></tr></table></figure>
+<li><code>onRestoreInstanceState(Budle savedInstanceState)</code><br> Activity重建时被调用<h2 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h2><h3 id="第一次启动"><a href="#第一次启动" class="headerlink" title="第一次启动"></a>第一次启动</h3>iOS:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">- [AppDelegate application:didFinishLaunchingWithOptions:]</div><div class="line">- [ViewController viewDidLoad]</div><div class="line">- [ViewController viewWillAppear:]</div><div class="line">- [AppDelegate applicationDidBecomeActivie:]</div><div class="line">- [ViewController viewDidAppear:]</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>Android:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">onCreate()</div><div class="line">onStart()</div><div class="line">onResume()</div></pre></td></tr></table></figure></p>
-<p>###应用进入后台<br>iOS<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- [AppDelegate applicationWillResignActive:]</div><div class="line">- [AppDelegate applicationDidEnterBackground:]</div></pre></td></tr></table></figure></p>
+<h3 id="应用进入后台"><a href="#应用进入后台" class="headerlink" title="应用进入后台"></a>应用进入后台</h3><p>iOS<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- [AppDelegate applicationWillResignActive:]</div><div class="line">- [AppDelegate applicationDidEnterBackground:]</div></pre></td></tr></table></figure></p>
 <p>Android<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">onPause()</div><div class="line">onStop()</div></pre></td></tr></table></figure></p>
-<p>###应用从后台进入前台<br>iOS<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- [AppDelegate applicationWillEnterForeground:]</div><div class="line">- [AppDelegate applicationDidBecomeActive:]</div></pre></td></tr></table></figure></p>
+<h3 id="应用从后台进入前台"><a href="#应用从后台进入前台" class="headerlink" title="应用从后台进入前台"></a>应用从后台进入前台</h3><p>iOS<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- [AppDelegate applicationWillEnterForeground:]</div><div class="line">- [AppDelegate applicationDidBecomeActive:]</div></pre></td></tr></table></figure></p>
 <p>Android<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">onStart()</div><div class="line">onResume()</div></pre></td></tr></table></figure></p>
-<p>###完全退出应用<br>iOS<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">- [AppDelegate applicationDidEnterBackground:]</div><div class="line">- [ViewController viewWillDisappear:]</div><div class="line">- [ViewController viewDidDisappear:]</div><div class="line">- [AppDelegate applicationWillTerminate:]</div></pre></td></tr></table></figure></p>
+<h3 id="完全退出应用"><a href="#完全退出应用" class="headerlink" title="完全退出应用"></a>完全退出应用</h3><p>iOS<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">- [AppDelegate applicationDidEnterBackground:]</div><div class="line">- [ViewController viewWillDisappear:]</div><div class="line">- [ViewController viewDidDisappear:]</div><div class="line">- [AppDelegate applicationWillTerminate:]</div></pre></td></tr></table></figure></p>
 <p>Android<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">onPause()</div><div class="line">onStop()</div><div class="line">onDestroy()</div></pre></td></tr></table></figure></p>
-<p>##分析<br>Android、iOS的生命周期看着大同小异，但是差别还算比较大。<br>Android的Activity类似iOS中UIApplication + UIViewController。<br>iOS的应用像是一个全屏展开的窗口，UIApplication负责管理运行状态的生命周期，UIController负责管理视图，视图间靠通知传递数据<br>Android的App可以理解为<code>Activity</code>，<code>Service</code>，<code>Centent Provider</code>，<code>BroadcastReceiver</code>组成，可视部分主要由Activity组成，Activity要管理运行状态和视图，而且每个Activity的运行状态相对独立，四大组件之间、包括应用之间都可以通过<code>Intent</code>传递数据。</p>
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>Android、iOS的生命周期看着大同小异，但是差别还算比较大。<br>Android的Activity类似iOS中UIApplication + UIViewController。<br>iOS的应用像是一个全屏展开的窗口，UIApplication负责管理运行状态的生命周期，UIController负责管理视图，视图间靠通知传递数据<br>Android的App可以理解为<code>Activity</code>，<code>Service</code>，<code>Centent Provider</code>，<code>BroadcastReceiver</code>组成，可视部分主要由Activity组成，Activity要管理运行状态和视图，而且每个Activity的运行状态相对独立，四大组件之间、包括应用之间都可以通过<code>Intent</code>传递数据。</p>
 
             <blockquote>
                 <p>

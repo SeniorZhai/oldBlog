@@ -10,31 +10,28 @@
   
   
   <meta name="keywords" content="Kotlin">
-  <meta name="description" content="##安装Kotlin插件
-
+  <meta name="description" content="安装Kotlin插件
 Kotlin 使Android Studio可以识别kotlin代码
 Kotlin Android Extensions 使Android Studio可以自动地从XML中注入所有的View到Activity
 
-##修改Gradle1234567891011121314151617181920212223242526apply plugin: &apos;com.android">
+修改Gradle1234567891011121314151617181920212223242526apply plugin: &apos;com.android.appl">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Kotlin简单的开始">
 <meta property="og:url" content="http://seniorzhai.github.io/2016/02/18/Kotlin简单的开始/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
-<meta property="og:description" content="##安装Kotlin插件
-
+<meta property="og:description" content="安装Kotlin插件
 Kotlin 使Android Studio可以识别kotlin代码
 Kotlin Android Extensions 使Android Studio可以自动地从XML中注入所有的View到Activity
 
-##修改Gradle1234567891011121314151617181920212223242526apply plugin: &apos;com.android">
-<meta property="og:updated_time" content="2016-03-10T09:35:51.000Z">
+修改Gradle1234567891011121314151617181920212223242526apply plugin: &apos;com.android.appl">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kotlin简单的开始">
-<meta name="twitter:description" content="##安装Kotlin插件
-
+<meta name="twitter:description" content="安装Kotlin插件
 Kotlin 使Android Studio可以识别kotlin代码
 Kotlin Android Extensions 使Android Studio可以自动地从XML中注入所有的View到Activity
 
-##修改Gradle1234567891011121314151617181920212223242526apply plugin: &apos;com.android">
+修改Gradle1234567891011121314151617181920212223242526apply plugin: &apos;com.android.appl">
   
     <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
   
@@ -218,14 +215,13 @@ Kotlin Android Extensions 使Android Studio可以自动地从XML中注入所有�
 
             <div class="post-content" id="post-content" itemprop="postContent">
             <a id="more"></a>
-<p>##安装Kotlin插件</p>
-<ul>
+<h2 id="安装Kotlin插件"><a href="#安装Kotlin插件" class="headerlink" title="安装Kotlin插件"></a>安装Kotlin插件</h2><ul>
 <li>Kotlin 使Android Studio可以识别kotlin代码</li>
 <li>Kotlin Android Extensions 使Android Studio可以自动地从XML中注入所有的View到Activity</li>
 </ul>
-<p>##修改Gradle<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">apply plugin: <span class="string">'com.android.application'</span></div><div class="line">apply plugin: <span class="string">'kotlin-android'</span></div><div class="line">android &#123;</div><div class="line">  ...</div><div class="line">  <span class="keyword">sourceSets</span> &#123;</div><div class="line">    main.java.srcDirs += <span class="string">'src/main/kotlin'</span></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">dependencies</span> &#123;</div><div class="line">  ...    </div><div class="line">  <span class="keyword">compile</span> <span class="string">"org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">buildscript</span> &#123;</div><div class="line">    ext.kotlin_version = <span class="string">'1.0.0'</span></div><div class="line">    <span class="keyword">repositories</span> &#123;</div><div class="line">        mavenCentral()</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">dependencies</span> &#123;</div><div class="line">        <span class="keyword">classpath</span> <span class="string">"org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">repositories</span> &#123;</div><div class="line">    mavenCentral()</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="修改Gradle"><a href="#修改Gradle" class="headerlink" title="修改Gradle"></a>修改Gradle</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">apply plugin: <span class="string">'com.android.application'</span></div><div class="line">apply plugin: <span class="string">'kotlin-android'</span></div><div class="line">android &#123;</div><div class="line">  ...</div><div class="line">  <span class="keyword">sourceSets</span> &#123;</div><div class="line">    main.java.srcDirs += <span class="string">'src/main/kotlin'</span></div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">dependencies</span> &#123;</div><div class="line">  ...    </div><div class="line">  <span class="keyword">compile</span> <span class="string">"org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">buildscript</span> &#123;</div><div class="line">    ext.kotlin_version = <span class="string">'1.0.0'</span></div><div class="line">    <span class="keyword">repositories</span> &#123;</div><div class="line">        mavenCentral()</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">dependencies</span> &#123;</div><div class="line">        <span class="keyword">classpath</span> <span class="string">"org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">repositories</span> &#123;</div><div class="line">    mavenCentral()</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>PS：未修改处省略</p>
-<p>##修改MainActivity<br>选择MainActivity.java-&gt;Code-&gt;Convert Java File to Kotlin File</p>
+<h2 id="修改MainActivity"><a href="#修改MainActivity" class="headerlink" title="修改MainActivity"></a>修改MainActivity</h2><p>选择MainActivity.java-&gt;Code-&gt;Convert Java File to Kotlin File</p>
 
             <blockquote>
                 <p>

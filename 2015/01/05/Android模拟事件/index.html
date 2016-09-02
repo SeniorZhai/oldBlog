@@ -10,31 +10,31 @@
   
   
   <meta name="keywords" content="模拟,事件,测试">
-  <meta name="description" content="##使用Shell命令Android中自带一个input工具，使用方法如下
+  <meta name="description" content="使用Shell命令Android中自带一个input工具，使用方法如下
 
-模拟按键操作123adb shell # 进入系统input keyevent KEYCODE_BACK # 模拟返回键input keyevent keyevent 3 # 模拟返回键
+模拟按键操作123adb shell #  进入系统input keyevent KEYCODE_BACK #  模拟返回键input keyevent keyevent 3 #  模拟返回键
 
 
-常见的按键可以在http://developer.android.com/reference/android/view/KeyE">
+常见的按键可以在http://developer.android.com/reference/android/view/Key">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android模拟事件">
 <meta property="og:url" content="http://seniorzhai.github.io/2015/01/05/Android模拟事件/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
-<meta property="og:description" content="##使用Shell命令Android中自带一个input工具，使用方法如下
+<meta property="og:description" content="使用Shell命令Android中自带一个input工具，使用方法如下
 
-模拟按键操作123adb shell # 进入系统input keyevent KEYCODE_BACK # 模拟返回键input keyevent keyevent 3 # 模拟返回键
+模拟按键操作123adb shell #  进入系统input keyevent KEYCODE_BACK #  模拟返回键input keyevent keyevent 3 #  模拟返回键
 
 
-常见的按键可以在http://developer.android.com/reference/android/view/KeyE">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+常见的按键可以在http://developer.android.com/reference/android/view/Key">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android模拟事件">
-<meta name="twitter:description" content="##使用Shell命令Android中自带一个input工具，使用方法如下
+<meta name="twitter:description" content="使用Shell命令Android中自带一个input工具，使用方法如下
 
-模拟按键操作123adb shell # 进入系统input keyevent KEYCODE_BACK # 模拟返回键input keyevent keyevent 3 # 模拟返回键
+模拟按键操作123adb shell #  进入系统input keyevent KEYCODE_BACK #  模拟返回键input keyevent keyevent 3 #  模拟返回键
 
 
-常见的按键可以在http://developer.android.com/reference/android/view/KeyE">
+常见的按键可以在http://developer.android.com/reference/android/view/Key">
   
     <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
   
@@ -218,19 +218,19 @@
 
             <div class="post-content" id="post-content" itemprop="postContent">
             <a id="more"></a>
-<p>##使用Shell命令<br>Android中自带一个input工具，使用方法如下</p>
+<h2 id="使用Shell命令"><a href="#使用Shell命令" class="headerlink" title="使用Shell命令"></a>使用Shell命令</h2><p>Android中自带一个input工具，使用方法如下</p>
 <ol>
-<li>模拟按键操作<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">adb shell # 进入系统</div><div class="line">input keyevent KEYCODE_BACK # 模拟返回键</div><div class="line">input keyevent keyevent 3 # 模拟返回键</div></pre></td></tr></table></figure>
+<li>模拟按键操作<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">adb shell #  进入系统</div><div class="line">input keyevent KEYCODE_BACK #  模拟返回键</div><div class="line">input keyevent keyevent 3 #  模拟返回键</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>常见的按键可以在<a href="http://developer.android.com/reference/android/view/KeyEvent.html" target="_blank" rel="external">http://developer.android.com/reference/android/view/KeyEvent.html</a>查看</p>
 <ol>
-<li>对获得焦点的输入框，输入文本<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">input text hello # 输入hello文本</div></pre></td></tr></table></figure>
+<li>对获得焦点的输入框，输入文本<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">input text hello #  输入hello文本</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>输入的文本不能带空格，也不能是中文</p>
 <ol>
-<li>模拟点击屏幕事件<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">input tap 100 200 # 在屏幕坐标(100,200)处点击</div></pre></td></tr></table></figure>
+<li>模拟点击屏幕事件<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">input tap 100 200 #  在屏幕坐标(100,200)处点击</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <pre><code>注：坐标是从左上角开始计算的
@@ -263,7 +263,7 @@
 </ul>
 </arg></li>
 </ul>
-<p>##使用Instrumentation<br><a href="http://developer.android.com/tools/testing/index.html" target="_blank" rel="external">Instrumentation是Android</a>用来测试的工具，可以监测系统与应用程序之间的交互，可以使用他发送按键或者触屏事件</p>
+<h2 id="使用Instrumentation"><a href="#使用Instrumentation" class="headerlink" title="使用Instrumentation"></a>使用Instrumentation</h2><p><a href="http://developer.android.com/tools/testing/index.html" target="_blank" rel="external">Instrumentation是Android</a>用来测试的工具，可以监测系统与应用程序之间的交互，可以使用他发送按键或者触屏事件</p>
 <ul>
 <li><p>发送按键</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Instrumentation mInst = <span class="keyword">new</span> Instrumentation();</div><div class="line">mInst.sendKeyDownUpSync(KeyEvent.KEYCODE_CAMERA); <span class="comment">// 同步发送一个按下和弹起事件</span></div></pre></td></tr></table></figure>
@@ -273,10 +273,10 @@
 </li>
 <li><p>发送文本</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sendPointerSync(<span class="string">"text"</span>);</div></pre></td></tr></table></figure>
-<p>  注：以上代码都需要权限的支持，需要在AndroidManifast.xml中添加<uses-permission android:name="android.permission.INJECT_EVENTS"> ，但还有一些复杂的问题，可以参考<a href="http://stackoverflow.com/questions/5383401/android-inject-events-permission/7328055#7328055" target="_blank" rel="external">这里</a></uses-permission></p>
+<p>  注：以上代码都需要权限的支持，需要在AndroidManifast.xml中添加<uses-permission android:name="android.permission.INJECT_EVENTS"> ，但还有一些复杂的问题，可以参考<a href="http://stackoverflow.com/questions/5383401/android-inject-events-permission/7328055# 7328055" target="_blank" rel="external">这里</a></uses-permission></p>
 </li>
 </ul>
-<p>##使用内部API<br>在Android系统中，有些内部的API提供注入事件的方法。因为是内部API，在不同版本上可能变化比较大。使用如果想在普通App中使用，可能需要通过反射机制来调用。</p>
+<h2 id="使用内部API"><a href="#使用内部API" class="headerlink" title="使用内部API"></a>使用内部API</h2><p>在Android系统中，有些内部的API提供注入事件的方法。因为是内部API，在不同版本上可能变化比较大。使用如果想在普通App中使用，可能需要通过反射机制来调用。</p>
 <p>在Android API 16之前，WindownManager有相应的方法提供注入事件的方法，如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">IBinder wmbinder = ServiceManager.getService(<span class="string">"window"</span>);  </div><div class="line">IWindowManager wm = IWindowManager.Stub.asInterface(wmbinder); <span class="comment">//pointer  </span></div><div class="line">wm.injectPointerEvent(myMotionEvent, <span class="keyword">false</span>); <span class="comment">//key  </span></div><div class="line">wm.injectKeyEvent(<span class="keyword">new</span> KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_A), <span class="keyword">false</span>);  </div><div class="line">wm.injectKeyEvent(<span class="keyword">new</span> KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_A), <span class="keyword">false</span>); <span class="comment">//trackball  </span></div><div class="line">wm.injectTrackballEvent(myMotionEvent, <span class="keyword">false</span>);</div></pre></td></tr></table></figure></p>
 <p>在API 15之后，引入了InputManager，把上面的哪些injectXXXEvent()方法从WindowManager中移除了。使用方法类似：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">IBinder imBinder = ServiceManager.getService(<span class="string">"input"</span>);  </div><div class="line">IInputManager im = IInputManager.Stub.asInterface(imBinder);</div><div class="line"></div><div class="line"><span class="comment">//inject key event</span></div><div class="line"><span class="keyword">final</span> KeyEvent keyEvent = <span class="keyword">new</span> KeyEvent(downTime, eventTime, action,  </div><div class="line">    code, repeatCount, metaState, deviceId, scancode, </div><div class="line">    flags | KeyEvent.FLAG_FROM_SYSTEM |KeyEvent.FLAG_KEEP_TOUCH_MODE | KeyEvent.FLAG_SOFT_KEYBOARD, </div><div class="line">    source);</div><div class="line">event.setSource(InputDevice.SOURCE_ANY)  </div><div class="line">im.injectInputEvent(keyEvent, InputManager.INJECT_INPUT_EVENT_MODE_WAIT_FOR_FINISH);</div><div class="line"></div><div class="line"><span class="comment">//inject pointer event</span></div><div class="line">motionEvent.setSource(InputDevice.SOURCE_TOUCHSCREEN);  </div><div class="line">im.injectInputEvent(motionEvent, InputManager.INJECT_INPUT_EVENT_MODE_WAIT_FOR_FINISH);</div></pre></td></tr></table></figure></p>
 <p>从API 16开始，InputManager就成了一个公开的类了，可以通过如下方法获得InputManager实例：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">InputManager im = (InputManager) getSystemService(Context.INPUT_SERVICE);</div></pre></td></tr></table></figure></p>

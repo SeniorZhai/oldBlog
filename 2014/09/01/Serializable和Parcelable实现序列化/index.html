@@ -16,7 +16,7 @@
 <meta property="og:url" content="http://seniorzhai.github.io/2014/09/01/Serializable和Parcelable实现序列化/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
 <meta property="og:description" content="序列化是为了将对象转换成字节序列保存到本地或者在网络中、进程或Activity间传递对象。">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Serializable和Parcelable实现序列化">
 <meta name="twitter:description" content="序列化是为了将对象转换成字节序列保存到本地或者在网络中、进程或Activity间传递对象。">
@@ -203,15 +203,13 @@
 
             <div class="post-content" id="post-content" itemprop="postContent">
             <p>序列化是为了将对象转换成字节序列保存到本地或者在网络中、进程或Activity间传递对象。<br><a id="more"></a><br>Android中自定义的对象序列化可以选择<code>Parcelable</code>或者<code>Serializable</code>来解决。</p>
-<p>##区别</p>
-<ol>
+<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><ol>
 <li>在使用内存时，Parcelable比Serializable的性能高</li>
 <li>Serializable在序列化的过程中产生大量的临时变量，从而引起频繁的GC</li>
 <li>Parceable不能使用在数据存储在磁盘的情况</li>
 <li>Serialzable接口是Java SE支持的，Parcelable是Android特有的功能</li>
 </ol>
-<p>##实现</p>
-<ul>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><ul>
 <li><p>Serializable的实现与使用</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Box</span> <span class="keyword">implements</span> <span class="title">Serializable</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> width;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> height;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setWidth</span><span class="params">(<span class="keyword">int</span> width)</span></span>&#123;</div><div class="line">		<span class="keyword">this</span>.width = width;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setHeight</span><span class="params">(<span class="keyword">int</span> height)</span></span>&#123;</div><div class="line">		<span class="keyword">this</span>.height = height;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</div><div class="line">		Box box = <span class="keyword">new</span> Box();</div><div class="line">		box.setWidth(<span class="number">50</span>);</div><div class="line">		box.setHeight(<span class="number">30</span>);</div><div class="line">		<span class="keyword">try</span>&#123;</div><div class="line">			FileOutputStream fs = <span class="keyword">new</span> FileOutputStream(<span class="string">"foo.ser"</span>);     </div><div class="line">          	ObjectOutputStream os =  <span class="keyword">new</span> ObjectOutputStream(fs);     </div><div class="line">            os.writeObject(myBox);     </div><div class="line">           	os.close();     </div><div class="line">         &#125;<span class="keyword">catch</span>(Exception ex)&#123;     </div><div class="line">            ex.printStackTrace();     </div><div class="line">         &#125;     </div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>

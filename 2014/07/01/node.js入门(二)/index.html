@@ -10,7 +10,7 @@
   
   
   <meta name="keywords" content="node.js">
-  <meta name="description" content="##ExpressExpress是Node.js的一个Web框架，Web应用程序有公用的模式，所以使用框架来构建经常事半功倍。其他一些成熟的框架，比如：
+  <meta name="description" content="ExpressExpress是Node.js的一个Web框架，Web应用程序有公用的模式，所以使用框架来构建经常事半功倍。其他一些成熟的框架，比如：
 
 Ruby on Rails(Ruby)
 Sinatra(Ruby)
@@ -22,12 +22,12 @@ CodeIgniter(PHP)
 
 基于JSON的API
 单页面Web应用程序
-事实W">
+事实Web">
 <meta property="og:type" content="article">
 <meta property="og:title" content="node.js入门(二)">
 <meta property="og:url" content="http://seniorzhai.github.io/2014/07/01/node.js入门(二)/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
-<meta property="og:description" content="##ExpressExpress是Node.js的一个Web框架，Web应用程序有公用的模式，所以使用框架来构建经常事半功倍。其他一些成熟的框架，比如：
+<meta property="og:description" content="ExpressExpress是Node.js的一个Web框架，Web应用程序有公用的模式，所以使用框架来构建经常事半功倍。其他一些成熟的框架，比如：
 
 Ruby on Rails(Ruby)
 Sinatra(Ruby)
@@ -39,11 +39,11 @@ CodeIgniter(PHP)
 
 基于JSON的API
 单页面Web应用程序
-事实W">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+事实Web">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node.js入门(二)">
-<meta name="twitter:description" content="##ExpressExpress是Node.js的一个Web框架，Web应用程序有公用的模式，所以使用框架来构建经常事半功倍。其他一些成熟的框架，比如：
+<meta name="twitter:description" content="ExpressExpress是Node.js的一个Web框架，Web应用程序有公用的模式，所以使用框架来构建经常事半功倍。其他一些成熟的框架，比如：
 
 Ruby on Rails(Ruby)
 Sinatra(Ruby)
@@ -55,7 +55,7 @@ CodeIgniter(PHP)
 
 基于JSON的API
 单页面Web应用程序
-事实W">
+事实Web">
   
     <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
   
@@ -238,7 +238,7 @@ CodeIgniter(PHP)
         <div class="post-main">
 
             <div class="post-content" id="post-content" itemprop="postContent">
-            <p>##Express<br>Express是Node.js的一个Web框架，Web应用程序有公用的模式，所以使用框架来构建经常事半功倍。其他一些成熟的框架，比如：</p>
+            <h2 id="Express"><a href="#Express" class="headerlink" title="Express"></a>Express</h2><p>Express是Node.js的一个Web框架，Web应用程序有公用的模式，所以使用框架来构建经常事半功倍。其他一些成熟的框架，比如：</p>
 <ul>
 <li>Ruby on Rails(Ruby)</li>
 <li>Sinatra(Ruby)</li>
@@ -260,11 +260,11 @@ CodeIgniter(PHP)
 <li>package.json<br>提供应用程序的信息，包括运行应用程序所需安装的依赖模块</li>
 <li>public<br>Web进行服务的公共文件夹，在这个文件夹中可以看到样式单、javascript和图片</li>
 <li>routes<br>路由，定义了应用程序应该响应的页面</li>
-<li>views<br>视图文件夹定义应用程序的布局<br>在views文件夹有很多以<code>.jade</code>为扩展名的文件，Express利用模板引擎将视图编译成HTML，默认情况，Express使用Jade作为模板引擎。<br>###Jade<br>Jade通过缩进定义页面结构，如果一行在上一行下面缩进，就认为它是上一行的子行。</li>
+<li>views<br>视图文件夹定义应用程序的布局<br>在views文件夹有很多以<code>.jade</code>为扩展名的文件，Express利用模板引擎将视图编译成HTML，默认情况，Express使用Jade作为模板引擎。<h3 id="Jade"><a href="#Jade" class="headerlink" title="Jade"></a>Jade</h3>Jade通过缩进定义页面结构，如果一行在上一行下面缩进，就认为它是上一行的子行。</li>
 <li>html 编译后是： <html></html><br>这里可以使用任何HTML标记(body、section、p等等)</li>
-<li>要给标记使用id，可加上一个<code>#</code>号后跟id名称，注意不允许有空格<br>section#wrapper 编译后： <section id="wrapper"></section></li>
+<li>要给标记使用id，可加上一个<code>#</code>号后跟id名称，注意不允许有空格<br>section# wrapper 编译后： <section id="wrapper"></section></li>
 <li>可以添加一个类，方法是加上一个小数点后跟类的名称。<br>p.highlight 编译后： <p class="highlight"></p></li>
-<li>急需要类也需要id<br>section#wrapper.class-name 编译后： <section id="wrapper" class="class-name"></section></li>
+<li>急需要类也需要id<br>section# wrapper.class-name 编译后： <section id="wrapper" class="class-name"></section></li>
 <li>Jade也支持在一个标记上有多个类<br>p.first.second.third.fourth 编译后： <p class="first second third fourth"></p></li>
 <li>为了创建HTML结构，要使用缩进<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">p</div><div class="line">    span</div></pre></td></tr></table></figure>
 </li>
@@ -276,26 +276,25 @@ CodeIgniter(PHP)
 </li>
 </ul>
 <p>编译后：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Text can be over many lines after a pipe symbol<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>###Jade输出数据<br>Jade使用两个特殊符号来决定应该如何翻译代码，当一个字符是减号(-)，用于告诉随后的代码应当被执行。第二个字符是字符(=)告诉解释器要对对代码进行演算、转义，然后输出。</p>
-<p>####变量</p>
-<ul>
-<li>-var foo = bar<br>变量设置之后可以再以后使用：<br>p I want to learn to use variables.Foo is #{foo}!<br>”#{变量}“这个特殊语法将用变量来代替：<br><p>I want to learn to use variables.Foo is bar!</p><br>####循环<br>循环用来迭代数组和对象。</li>
+<h3 id="Jade输出数据"><a href="#Jade输出数据" class="headerlink" title="Jade输出数据"></a>Jade输出数据</h3><p>Jade使用两个特殊符号来决定应该如何翻译代码，当一个字符是减号(-)，用于告诉随后的代码应当被执行。第二个字符是字符(=)告诉解释器要对对代码进行演算、转义，然后输出。</p>
+<h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><ul>
+<li>-var foo = bar<br>变量设置之后可以再以后使用：<br>p I want to learn to use variables.Foo is # {foo}!<br>”# {变量}“这个特殊语法将用变量来代替：<br><p>I want to learn to use variables.Foo is bar!</p><h4 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h4>循环用来迭代数组和对象。</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- users = [&apos;Sally&apos;,&apos;Joseph&apos;,&apos;Michael&apos;,&apos;Sanjay&apos;]</div><div class="line">- each user in users</div><div class="line">  p= user</div></pre></td></tr></table></figure>
 <p>编译后：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;Sally&lt;/p&gt;</div><div class="line">&lt;p&gt;Joseph&lt;/p&gt;</div><div class="line">&lt;p&gt;Michael&lt;/p&gt;</div><div class="line">&lt;p&gt;Sanjay&lt;/p&gt;</div></pre></td></tr></table></figure></p>
 <p>也可以使用<code>for</code>关键字</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- for user in users</div><div class="line">  p= user</div></pre></td></tr></table></figure>
 <p>对象进行迭代：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">- obj = &#123;first_name:&apos;George&apos;,surname:&apos;Ornbo&apos;&#125;</div><div class="line">- each val,key in obj</div><div class="line">  li #&#123;key&#125;:#&#123;val&#125;</div><div class="line">```   </div><div class="line">编译后：</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">- obj = &#123;first_name:&apos;George&apos;,surname:&apos;Ornbo&apos;&#125;</div><div class="line">- each val,key in obj</div><div class="line">  li # &#123;key&#125;:# &#123;val&#125;</div><div class="line">```   </div><div class="line">编译后：</div></pre></td></tr></table></figure>
 <p><li>first_name:George</li></p>
-<p><li>surname:Ornbo</li><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">####条件</div></pre></td></tr></table></figure></p>
+<p><li>surname:Ornbo</li><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#### 条件</div></pre></td></tr></table></figure></p>
 <ul>
 <li>awake = false</li>
 <li>if (awake)<br>p You are awake! Make coffee!</li>
-<li>else<br>p You are sleeping<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">`if`和`else`关键字之前的减号(-)是可选的</div><div class="line">####内联(inline)JavaScript</div></pre></td></tr></table></figure>
+<li>else<br>p You are sleeping<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">`if`和`else`关键字之前的减号(-)是可选的</div><div class="line">#### 内联(inline)JavaScript</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>script<br>    alert(‘You can execute inline JavaScript through Jade’)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#####包含(include)</div><div class="line">Jade通过include关键字后跟想要包含的模板来支持包含功能</div></pre></td></tr></table></figure></p>
+<p>script<br>    alert(‘You can execute inline JavaScript through Jade’)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">##### 包含(include)</div><div class="line">Jade通过include关键字后跟想要包含的模板来支持包含功能</div></pre></td></tr></table></figure></p>
 <p>html<br>    body<br>        include includes/header<br>```</p>
 
             <blockquote>

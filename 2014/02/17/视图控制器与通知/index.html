@@ -10,31 +10,28 @@
   
   
   <meta name="keywords" content="iOS">
-  <meta name="description" content="##UIViewController
-
+  <meta name="description" content="UIViewController
 视图控制器是数据和视图之间的桥梁，视图供职器提供了一个基本的框架来构建应用程序。
 UIViewController是所有视图控制器的父类
-iOS提供了许多内置的视图控制器，以支持标准的用户界面部分，比如导航控制器UINavigationController，标签栏控制器UITabBarController,表视图控制器UITableViewControlle">
+iOS提供了许多内置的视图控制器，以支持标准的用户界面部分，比如导航控制器UINavigationController，标签栏控制器UITabBarController,表视图控制器UITableViewController等">
 <meta property="og:type" content="article">
 <meta property="og:title" content="视图控制器与通知">
 <meta property="og:url" content="http://seniorzhai.github.io/2014/02/17/视图控制器与通知/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
-<meta property="og:description" content="##UIViewController
-
+<meta property="og:description" content="UIViewController
 视图控制器是数据和视图之间的桥梁，视图供职器提供了一个基本的框架来构建应用程序。
 UIViewController是所有视图控制器的父类
-iOS提供了许多内置的视图控制器，以支持标准的用户界面部分，比如导航控制器UINavigationController，标签栏控制器UITabBarController,表视图控制器UITableViewControlle">
+iOS提供了许多内置的视图控制器，以支持标准的用户界面部分，比如导航控制器UINavigationController，标签栏控制器UITabBarController,表视图控制器UITableViewController等">
 <meta property="og:image" content="https://github.com/zt1991616/blog/raw/master/Image/14021701.jpg">
 <meta property="og:image" content="https://github.com/zt1991616/blog/raw/master/Image/14021702.jpg">
 <meta property="og:image" content="https://github.com/zt1991616/blog/raw/master/Image/14021703.png">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="视图控制器与通知">
-<meta name="twitter:description" content="##UIViewController
-
+<meta name="twitter:description" content="UIViewController
 视图控制器是数据和视图之间的桥梁，视图供职器提供了一个基本的框架来构建应用程序。
 UIViewController是所有视图控制器的父类
-iOS提供了许多内置的视图控制器，以支持标准的用户界面部分，比如导航控制器UINavigationController，标签栏控制器UITabBarController,表视图控制器UITableViewControlle">
+iOS提供了许多内置的视图控制器，以支持标准的用户界面部分，比如导航控制器UINavigationController，标签栏控制器UITabBarController,表视图控制器UITableViewController等">
 <meta name="twitter:image" content="https://github.com/zt1991616/blog/raw/master/Image/14021701.jpg">
   
     <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
@@ -218,14 +215,12 @@ iOS提供了许多内置的视图控制器，以支持标准的用户界面部�
         <div class="post-main">
 
             <div class="post-content" id="post-content" itemprop="postContent">
-            <p>##UIViewController</p>
-<ul>
+            <h2 id="UIViewController"><a href="#UIViewController" class="headerlink" title="UIViewController"></a>UIViewController</h2><ul>
 <li>视图控制器是数据和视图之间的桥梁，视图供职器提供了一个基本的框架来构建应用程序。</li>
 <li>UIViewController是所有视图控制器的父类</li>
 <li>iOS提供了许多内置的视图控制器，以支持标准的用户界面部分，比如导航控制器<code>UINavigationController</code>，标签栏控制器<code>UITabBarController</code>,表视图控制器<code>UITableViewController</code>等</li>
 </ul>
-<p>##视图控制器与视图的关系</p>
-<ul>
+<h2 id="视图控制器与视图的关系"><a href="#视图控制器与视图的关系" class="headerlink" title="视图控制器与视图的关系"></a>视图控制器与视图的关系</h2><ul>
 <li>视图控制器是传统Modle-View-Controller(MVC)设计模式中————控制器对象</li>
 <li>视图控制器提供了许多控制器的基本功能</li>
 <li>对于某些功能，基类提供了解决方案的一部分，其他的自定义的功能由视图控制器的子类去实现，比如：用户选择设备，可以由子类去控制是否旋转</li>
@@ -238,15 +233,14 @@ iOS提供了许多内置的视图控制器，以支持标准的用户界面部�
 </ul>
 </li>
 </ul>
-<p>##视图控制器(UIViewController)的创建<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// 代码创建</div><div class="line">UIViewController *mainViewController = [[UIViewCtroller alloc] init];</div><div class="line">mainViewController.view.backgroundColor = [UIColor redColor];</div><div class="line">self.window.rootViewController = mainViewCtroller;</div><div class="line">// nib创建</div><div class="line">RootViewController *rootViewController = [[RootViewController alloc] initWithNibName:@&quot;view&quot; bundle:nil];</div><div class="line">self.window.rootViewController = rootViewController;</div></pre></td></tr></table></figure></p>
-<p>##UIViewController生命周期<br><img src="https://github.com/zt1991616/blog/raw/master/Image/14021701.jpg" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">-(void)loadView</div><div class="line">&#123;</div><div class="line">    // 调用父类来创建view</div><div class="line">    // 从nib、storybord加载View，否则创建一个empty view</div><div class="line">    // 创建一个自定义的视图，覆盖即可</div><div class="line">&#125;</div><div class="line">-(void)view</div></pre></td></tr></table></figure></p>
-<p>###加载过程</p>
-<ul>
+<h2 id="视图控制器-UIViewController-的创建"><a href="#视图控制器-UIViewController-的创建" class="headerlink" title="视图控制器(UIViewController)的创建"></a>视图控制器(UIViewController)的创建</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// 代码创建</div><div class="line">UIViewController *mainViewController = [[UIViewCtroller alloc] init];</div><div class="line">mainViewController.view.backgroundColor = [UIColor redColor];</div><div class="line">self.window.rootViewController = mainViewCtroller;</div><div class="line">// nib创建</div><div class="line">RootViewController *rootViewController = [[RootViewController alloc] initWithNibName:@&quot;view&quot; bundle:nil];</div><div class="line">self.window.rootViewController = rootViewController;</div></pre></td></tr></table></figure>
+<h2 id="UIViewController生命周期"><a href="#UIViewController生命周期" class="headerlink" title="UIViewController生命周期"></a>UIViewController生命周期</h2><p><img src="https://github.com/zt1991616/blog/raw/master/Image/14021701.jpg" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">-(void)loadView</div><div class="line">&#123;</div><div class="line">    // 调用父类来创建view</div><div class="line">    // 从nib、storybord加载View，否则创建一个empty view</div><div class="line">    // 创建一个自定义的视图，覆盖即可</div><div class="line">&#125;</div><div class="line">-(void)view</div></pre></td></tr></table></figure></p>
+<h3 id="加载过程"><a href="#加载过程" class="headerlink" title="加载过程"></a>加载过程</h3><ul>
 <li>首先去访问view属性</li>
 <li>如果存在view，判断之间加载。否则，则UIViewCtroller调用loadView方法<ul>
 <li>loadView方法执行如下操作<ul>
 <li>如果覆盖了该方法，则必须创建View给UIViewCtroller的View属性</li>
-<li>如果没有覆盖该方法，UIViewControlller会调用父类的方法<br>###各个方法执行顺序<ul>
+<li>如果没有覆盖该方法，UIViewControlller会调用父类的方法<h3 id="各个方法执行顺序"><a href="#各个方法执行顺序" class="headerlink" title="各个方法执行顺序"></a>各个方法执行顺序</h3><ul>
 <li>(id)initWithNibName:(NSString <em>)nibNameOrNil bundle:(NSBundle </em>)nibBundleOrNil</li>
 <li>(void)loadView</li>
 <li>(void)viewDidLoad</li>
@@ -261,7 +255,7 @@ iOS提供了许多内置的视图控制器，以支持标准的用户界面部�
 </ul>
 </li>
 </ul>
-<p>##视图卸载<br><img src="https://github.com/zt1991616/blog/raw/master/Image/14021702.jpg" alt=""></p>
+<h2 id="视图卸载"><a href="#视图卸载" class="headerlink" title="视图卸载"></a>视图卸载</h2><p><img src="https://github.com/zt1991616/blog/raw/master/Image/14021702.jpg" alt=""></p>
 <ul>
 <li>iOS6之前使用<code>viewDidUnload:</code>方法来释放对象的引用</li>
 <li>iOS6之后使用<code>didRecevelMemoryWarning</code>内存紧张的时候调用</li>
@@ -271,12 +265,10 @@ iOS提供了许多内置的视图控制器，以支持标准的用户界面部�
 <li>viewDidDisappear  视图已经被从屏幕上移除，用户看不到这个视图   </li>
 <li>dealloc  视图被销毁，此处需要对你在init和viewDidLoad中创建的对象进行释放</li>
 </ol>
-<p>##试图控制器的响应链</p>
-<ul>
+<h2 id="试图控制器的响应链"><a href="#试图控制器的响应链" class="headerlink" title="试图控制器的响应链"></a>试图控制器的响应链</h2><ul>
 <li>事件传递流程<br>  当前触发的事件-&gt;视图控制器的跟视图-&gt;视图控制器-&gt;窗口-&gt;UIApplication对象-&gt;不处理</li>
 </ul>
-<p>##模态视图</p>
-<ul>
+<h2 id="模态视图"><a href="#模态视图" class="headerlink" title="模态视图"></a>模态视图</h2><ul>
 <li>模态视图不是特定的某个类，而是通过视图控制器的pressntModalViewController:方法弹出的视图称为模态视图</li>
 <li>模态视图出现的场景一般是临时弹出的窗口，譬如：登入窗口</li>
 <li>模态视图弹出时通过modalTransitionStyle属性设置不同的动画效果</li>
@@ -284,10 +276,9 @@ iOS提供了许多内置的视图控制器，以支持标准的用户界面部�
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">-(void)viewDidLoad</div><div class="line">&#123;</div><div class="line">    [super viewDidLoad];</div><div class="line">    self.view.backgroundColor = [UIColor purpleColor];</div><div class="line">    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundeRect];</div><div class="line">    button.frame = CGRectMake(320/2 - 140/2,80,140,40);</div><div class="line">    [button setTitle:@&quot;Present&quot; forState:UIControlStateNormal];</div><div class="line">    [button addTarget:self action:@selector[presentModalVc] forControlEvents:UIControlEventTouchUpInside];</div><div class="line">    [self.view addSubview:button];</div><div class="line">&#125;</div><div class="line">-(void)presentModalVC</div><div class="line">&#123;</div><div class="line">    ModalViewController *modalVc = [[ModalViewController alloc] init];</div><div class="line">    // 动画效果</div><div class="line">    modalVc.modalTranstionSyle = UIModalTransitionStylePatialCurl;</div><div class="line">    if([[UIDevice currentDevice].systemVersion floatValue] &lt; 6.0)&#123;</div><div class="line">        [self.presentModalViewController:modalVc animated:YES];</div><div class="line">    &#125;else&#123;</div><div class="line">        [self.presentModalViewController:modalVc animated:YES completion:^&#123;</div><div class="line">        NSLog(@&quot;call back&quot;);</div><div class="line">        &#125;];</div><div class="line">    [modalVC relese];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//ModalViewController.m</div><div class="line">-(void)dismiss</div><div class="line">&#123;   </div><div class="line">    // 将模态视图关闭</div><div class="line">    [self dismissViewControllerAnimated:YES completion:^&#123;</div><div class="line">        NSLog(@&quot;dismiss&quot;)];</div><div class="line">    &#125;];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>##支持多个方向</p>
-<p><img src="https://github.com/zt1991616/blog/raw/master/Image/14021703.png" alt=""></p>
+<h2 id="支持多个方向"><a href="#支持多个方向" class="headerlink" title="支持多个方向"></a>支持多个方向</h2><p><img src="https://github.com/zt1991616/blog/raw/master/Image/14021703.png" alt=""></p>
 <ul>
-<li>iOS设备中的加速计可以确定设备的当前方向。默认情况下，一个应用支持纵向和横向。当设备方向改变时，系统会发送UIDiviceOrientationDidChangeNotfication通知，默认情况下UIKit框架监听这个通知，并自定义更新这个方向。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">-(void)viewDidLoad</div><div class="line">&#123;</div><div class="line">    // ...</div><div class="line">    // 采用通知获取屏幕方向切换</div><div class="line">    [[UINotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientation:)name:UIDeviceOrientationDidChangeNotifitation object:nil];</div><div class="line">&#125;</div><div class="line">-(void)deviceOrientation:(NSNotification *)notification</div><div class="line">&#123;</div><div class="line">    UIDevice *device = (UIDevice *)[notification object];</div><div class="line">    NSLog(@&quot;device:%d&quot;,device.orientation);</div><div class="line">&#125;</div><div class="line">-(BOOL)shoudlAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation</div><div class="line">&#123;</div><div class="line">    return NO;   //NO为不支持</div><div class="line">    // return (toInterfaceOrientation != UIterfaceOrientationLandscapeLeft); // 不支持一个方向</div><div class="line">&#125;</div><div class="line">#pragma mark - Orientation iOS 3.0_5.0</div><div class="line">-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrienttation)toInterfaceOrientation</div><div class="line">&#123;</div><div class="line">    return NO;</div><div class="line">&#125;</div><div class="line">#pragma mark - Orientation iOS 6.0</div><div class="line">-(BOOL)shouldAutorotate</div><div class="line">&#123;</div><div class="line">    return YES;</div><div class="line">&#125;</div><div class="line">-(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration</div><div class="line">&#123;</div><div class="line">    NSLog(@&quot;duration:%f&quot;,duration);</div><div class="line">    UIView* button = [self.view viewWithTag:101];</div><div class="line">    if(toInterfaceOrientation == UIInterfaceOrientationPortrait)&#123;</div><div class="line">        button.frame = CGRectMake(320/2-140/2,80,140,40);</div><div class="line">    &#125;else&#123;</div><div class="line">        button.frame = CGRectMake(480/2-140/2,80,140,40);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li>iOS设备中的加速计可以确定设备的当前方向。默认情况下，一个应用支持纵向和横向。当设备方向改变时，系统会发送UIDiviceOrientationDidChangeNotfication通知，默认情况下UIKit框架监听这个通知，并自定义更新这个方向。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">-(void)viewDidLoad</div><div class="line">&#123;</div><div class="line">    // ...</div><div class="line">    // 采用通知获取屏幕方向切换</div><div class="line">    [[UINotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientation:)name:UIDeviceOrientationDidChangeNotifitation object:nil];</div><div class="line">&#125;</div><div class="line">-(void)deviceOrientation:(NSNotification *)notification</div><div class="line">&#123;</div><div class="line">    UIDevice *device = (UIDevice *)[notification object];</div><div class="line">    NSLog(@&quot;device:%d&quot;,device.orientation);</div><div class="line">&#125;</div><div class="line">-(BOOL)shoudlAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation</div><div class="line">&#123;</div><div class="line">    return NO;   //NO为不支持</div><div class="line">    // return (toInterfaceOrientation != UIterfaceOrientationLandscapeLeft); // 不支持一个方向</div><div class="line">&#125;</div><div class="line"># pragma mark - Orientation iOS 3.0_5.0</div><div class="line">-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrienttation)toInterfaceOrientation</div><div class="line">&#123;</div><div class="line">    return NO;</div><div class="line">&#125;</div><div class="line"># pragma mark - Orientation iOS 6.0</div><div class="line">-(BOOL)shouldAutorotate</div><div class="line">&#123;</div><div class="line">    return YES;</div><div class="line">&#125;</div><div class="line">-(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration</div><div class="line">&#123;</div><div class="line">    NSLog(@&quot;duration:%f&quot;,duration);</div><div class="line">    UIView* button = [self.view viewWithTag:101];</div><div class="line">    if(toInterfaceOrientation == UIInterfaceOrientationPortrait)&#123;</div><div class="line">        button.frame = CGRectMake(320/2-140/2,80,140,40);</div><div class="line">    &#125;else&#123;</div><div class="line">        button.frame = CGRectMake(480/2-140/2,80,140,40);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 

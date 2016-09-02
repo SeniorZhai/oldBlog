@@ -11,19 +11,19 @@
   
   <meta name="keywords" content="Android">
   <meta name="description" content="仿Path带动画效果的扇形菜单
-##用法123456789ArcMenu menu = (ArcMenu) findViewById(R.id.arc_menu);final int itemCount = ITEM_DRAWABLES.length;for (int i = 0; i &amp;lt; itemCount; i++) &amp;#123;	ImageView item = new ImageVi">
+用法123456789ArcMenu menu = (ArcMenu) findViewById(R.id.arc_menu);final int itemCount = ITEM_DRAWABLES.length;for (int i = 0; i &amp;lt; itemCount; i++) &amp;#123;	ImageView item = new ImageView">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ArcMenu">
 <meta property="og:url" content="http://seniorzhai.github.io/2014/08/15/ArcMenu/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
 <meta property="og:description" content="仿Path带动画效果的扇形菜单
-##用法123456789ArcMenu menu = (ArcMenu) findViewById(R.id.arc_menu);final int itemCount = ITEM_DRAWABLES.length;for (int i = 0; i &amp;lt; itemCount; i++) &amp;#123;	ImageView item = new ImageVi">
+用法123456789ArcMenu menu = (ArcMenu) findViewById(R.id.arc_menu);final int itemCount = ITEM_DRAWABLES.length;for (int i = 0; i &amp;lt; itemCount; i++) &amp;#123;	ImageView item = new ImageView">
 <meta property="og:image" content="https://github.com/zt1991616/blog/raw/master/Image/14081503.png">
-<meta property="og:updated_time" content="2015-08-25T03:13:07.000Z">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ArcMenu">
 <meta name="twitter:description" content="仿Path带动画效果的扇形菜单
-##用法123456789ArcMenu menu = (ArcMenu) findViewById(R.id.arc_menu);final int itemCount = ITEM_DRAWABLES.length;for (int i = 0; i &amp;lt; itemCount; i++) &amp;#123;	ImageView item = new ImageVi">
+用法123456789ArcMenu menu = (ArcMenu) findViewById(R.id.arc_menu);final int itemCount = ITEM_DRAWABLES.length;for (int i = 0; i &amp;lt; itemCount; i++) &amp;#123;	ImageView item = new ImageView">
 <meta name="twitter:image" content="https://github.com/zt1991616/blog/raw/master/Image/14081503.png">
   
     <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
@@ -208,7 +208,7 @@
 
             <div class="post-content" id="post-content" itemprop="postContent">
             <p>仿Path带动画效果的扇形菜单</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a><img src="https://github.com/zt1991616/blog/raw/master/Image/14081503.png" alt=""></h2><p>##用法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">ArcMenu menu = (ArcMenu) findViewById(R.id.arc_menu);</div><div class="line"><span class="keyword">final</span> <span class="keyword">int</span> itemCount = ITEM_DRAWABLES.length;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; itemCount; i++) &#123;</div><div class="line">	ImageView item = <span class="keyword">new</span> ImageView(<span class="keyword">this</span>);</div><div class="line">	item.setImageResource(ITEM_DRAWABLES[i]);</div><div class="line">	menu.addItem(item,<span class="keyword">new</span> OnClick(View v)&#123;</div><div class="line">		Toast.makeText(MainActivity.<span class="keyword">this</span>, <span class="string">"position:"</span> + position, Toast.LENGTH_SHORT).show();</div><div class="line">	&#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><img src="https://github.com/zt1991616/blog/raw/master/Image/14081503.png" alt=""></h2><h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">ArcMenu menu = (ArcMenu) findViewById(R.id.arc_menu);</div><div class="line"><span class="keyword">final</span> <span class="keyword">int</span> itemCount = ITEM_DRAWABLES.length;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; itemCount; i++) &#123;</div><div class="line">	ImageView item = <span class="keyword">new</span> ImageView(<span class="keyword">this</span>);</div><div class="line">	item.setImageResource(ITEM_DRAWABLES[i]);</div><div class="line">	menu.addItem(item,<span class="keyword">new</span> OnClick(View v)&#123;</div><div class="line">		Toast.makeText(MainActivity.<span class="keyword">this</span>, <span class="string">"position:"</span> + position, Toast.LENGTH_SHORT).show();</div><div class="line">	&#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>改变外观可以在xml中<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">custom:childSize="50px"</div><div class="line">custom:fromDegrees="0.0"</div><div class="line">custom:toDegrees="300.0"</div></pre></td></tr></table></figure></p>
 <p>或者在java中<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">arcLayout.setChildSize(<span class="number">50</span>);</div><div class="line">arcLayout.setArc(<span class="number">0.0f</span>,<span class="number">300.0f</span>);</div></pre></td></tr></table></figure></p>
 <hr>

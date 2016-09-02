@@ -16,7 +16,7 @@
 <meta property="og:url" content="http://seniorzhai.github.io/2016/01/20/SystemUI与FitsSystemWindows/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
 <meta property="og:description" content="在亘古时代(Android 2.+)的时候，全屏操作简单粗暴，但是切换显示、隐藏时丑陋之极。">
-<meta property="og:updated_time" content="2016-01-21T09:25:51.000Z">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SystemUI与FitsSystemWindows">
 <meta name="twitter:description" content="在亘古时代(Android 2.+)的时候，全屏操作简单粗暴，但是切换显示、隐藏时丑陋之极。">
@@ -209,16 +209,16 @@
 </ul>
 <p>因为设置了WindowManager的flag，想要切换只能重置flag，而且因为大小变了，activity的界面也会改变。</p>
 <p>在改革春风吹满地的新时代(Android 4.0+)，SDK提供了我们新的选择，使用setSystemUiVisibility()来操控SystemUI，这里不只StatusBar还有NavigationBar</p>
-<p>##4.0可使用的方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">View decorView = getWindow().getDecorView();</div><div class="line"><span class="keyword">int</span> uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_FULLSCREEN;</div><div class="line">decorView.setSystemUiVisibilit(uiOptions);</div></pre></td></tr></table></figure></p>
+<h2 id="4-0可使用的方法"><a href="#4-0可使用的方法" class="headerlink" title="4.0可使用的方法"></a>4.0可使用的方法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">View decorView = getWindow().getDecorView();</div><div class="line"><span class="keyword">int</span> uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_FULLSCREEN;</div><div class="line">decorView.setSystemUiVisibilit(uiOptions);</div></pre></td></tr></table></figure>
 <ul>
 <li>触摸屏幕任何位置都会使得导航、状态栏出现，且<code>SYSTEM_UI_FLAG_HIDE_NAVIGATION</code>被清除</li>
 <li>一旦标志位被清除，需要重新设置</li>
 <li>在不用地方UI FLAG是不同的，所有最好在onReasume()和onWindowFocusChaned()中设置</li>
-<li>被调用的View显示时才会生效<br>##4.1以后<br>上面的方法设置后，内容还是会因为场景的变化而变化，所以我们需要让我们的内容放在SystemUI的后面<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">View decorView = getWindow().getDecorView();</div><div class="line"><span class="keyword">int</span> uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION |View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN;</div><div class="line">decorView.setSystemUiVisibilit(uiOptions);</div></pre></td></tr></table></figure>
+<li>被调用的View显示时才会生效<h2 id="4-1以后"><a href="#4-1以后" class="headerlink" title="4.1以后"></a>4.1以后</h2>上面的方法设置后，内容还是会因为场景的变化而变化，所以我们需要让我们的内容放在SystemUI的后面<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">View decorView = getWindow().getDecorView();</div><div class="line"><span class="keyword">int</span> uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION |View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN;</div><div class="line">decorView.setSystemUiVisibilit(uiOptions);</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>值得注意的是，有些控件我们是不希望不覆盖住的，比如toolbar，这个时候需要给它加上FitsSystemWindows属性，保证不会被SystemUI遮住。<br>从示例上看，系统会为View设置上Padding，所以，如果要做切换时，可能要考虑还原View的Padding。</p>
-<p>#示例<br><a href="https://github.com/SeniorZhai/SystemUI" target="_blank" rel="external">https://github.com/SeniorZhai/SystemUI</a></p>
+<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><p><a href="https://github.com/SeniorZhai/SystemUI" target="_blank" rel="external">https://github.com/SeniorZhai/SystemUI</a></p>
 
             <blockquote>
                 <p>

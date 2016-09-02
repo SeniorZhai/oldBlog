@@ -18,7 +18,7 @@
 <meta property="og:description" content="UIView有三个比较重要的布局属性：frame，bounds，center，对应到CALayer叫做frame，bounds，position">
 <meta property="og:image" content="http://seniorzhai.github.io/img/16072501.jpeg">
 <meta property="og:image" content="http://seniorzhai.github.io/img/16072601.jpeg">
-<meta property="og:updated_time" content="2016-08-05T06:21:32.000Z">
+<meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图层几何学">
 <meta name="twitter:description" content="UIView有三个比较重要的布局属性：frame，bounds，center，对应到CALayer叫做frame，bounds，position">
@@ -211,16 +211,16 @@
 <li><code>bounds</code>内部坐标，{0，0}是图层的左上角</li>
 <li><code>center</code>、<code>position</code>都代表了相对父图层的<code>anchorPoint</code>所在的位置<br><img src="/img/16072501.jpeg" alt=""></li>
 </ul>
-<p>##锚点<br>默认的anchorPoint位于图层的中点，所以图层将会以这个点为中心放置，anchorPoint属性并没有暴露个UIView接口暴露出来，这也就是视图position属性被叫做<code>center</code>，但是图层的<code>anchorPoint</code>可以被移动<br><img src="/img/16072601.jpeg" alt=""><br><code>anchorPoint</code>用单位坐标来描述，图层左上角是{0,0}，右下角是{1,1}，默认坐标是{0.5,0.5}，<code>anchorPoint</code>也可以通过指定x和y值小于或大于1，使它放置在图层范围之外。</p>
-<p>##坐标系<br>一个图层的<code>position</code>依赖于它父图层的<code>bounds</code>，如果父图层发生了移动，它的所有子图层也会跟着移动<br>定义一个图层坐标系下的点或者矩形转换成另一个图层坐标系下的点或者矩形</p>
+<h2 id="锚点"><a href="#锚点" class="headerlink" title="锚点"></a>锚点</h2><p>默认的anchorPoint位于图层的中点，所以图层将会以这个点为中心放置，anchorPoint属性并没有暴露个UIView接口暴露出来，这也就是视图position属性被叫做<code>center</code>，但是图层的<code>anchorPoint</code>可以被移动<br><img src="/img/16072601.jpeg" alt=""><br><code>anchorPoint</code>用单位坐标来描述，图层左上角是{0,0}，右下角是{1,1}，默认坐标是{0.5,0.5}，<code>anchorPoint</code>也可以通过指定x和y值小于或大于1，使它放置在图层范围之外。</p>
+<h2 id="坐标系"><a href="#坐标系" class="headerlink" title="坐标系"></a>坐标系</h2><p>一个图层的<code>position</code>依赖于它父图层的<code>bounds</code>，如果父图层发生了移动，它的所有子图层也会跟着移动<br>定义一个图层坐标系下的点或者矩形转换成另一个图层坐标系下的点或者矩形</p>
 <ul>
 <li><code>convertPoint(p: CGPoint, toLayer:CALayer)</code></li>
 <li><code>convertPoint(p: CGPoint,toLayer:CALayer)</code></li>
 <li><code>convertRect(rect: CGRect,fromLayer: CALayer)</code></li>
 <li><code>convertRect(rect: CGRect,toLayer: CALayer)</code></li>
 </ul>
-<p>###翻转几何结构<br>通常iOS一个图层的position位于父图层的左上角，Mac OS则位于左下角，Core Animation可以通过<code>geometryFlipped</code>属性来适配这两种情况，它决定了一个图层的坐标系是否相对父图层垂直翻转。</p>
-<p>###Z坐标轴<br>CALayer存在一个三维空间，除了<code>posistion</code>和<code>anchorPoint</code>属性外，CALayer还有另外两个属性，<code>zPosition</code>和<code>anchorPointZ</code>两者都是在Z轴上描述图层位置的浮点类型。<br><code>zPosition</code>决定图层显示顺序，图层根据子图层的<code>sublayers</code>出现的顺序来类绘制。<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">self</span>.greenView.layer.zPosition = <span class="number">1</span>.0f</div></pre></td></tr></table></figure></p>
+<h3 id="翻转几何结构"><a href="#翻转几何结构" class="headerlink" title="翻转几何结构"></a>翻转几何结构</h3><p>通常iOS一个图层的position位于父图层的左上角，Mac OS则位于左下角，Core Animation可以通过<code>geometryFlipped</code>属性来适配这两种情况，它决定了一个图层的坐标系是否相对父图层垂直翻转。</p>
+<h3 id="Z坐标轴"><a href="#Z坐标轴" class="headerlink" title="Z坐标轴"></a>Z坐标轴</h3><p>CALayer存在一个三维空间，除了<code>posistion</code>和<code>anchorPoint</code>属性外，CALayer还有另外两个属性，<code>zPosition</code>和<code>anchorPointZ</code>两者都是在Z轴上描述图层位置的浮点类型。<br><code>zPosition</code>决定图层显示顺序，图层根据子图层的<code>sublayers</code>出现的顺序来类绘制。<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">self</span>.greenView.layer.zPosition = <span class="number">1</span>.0f</div></pre></td></tr></table></figure></p>
 
             <blockquote>
                 <p>
