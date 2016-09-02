@@ -6,8 +6,6 @@
   <title>SeniorZhai&#39;s blog | 苟利国家生死以，起因福祸趋避之</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="theme-color" content="#ED5565">
-  
   
   <meta name="keywords" content="undefined">
   <meta name="description" content="专注于移动平台">
@@ -20,10 +18,8 @@
 <meta name="twitter:title" content="SeniorZhai's blog">
 <meta name="twitter:description" content="专注于移动平台">
   
-    <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
-  
   <meta name="summary" content="专注于移动平台">
-  <link rel="shortcut icon" href="/img/favicon.ico">
+  <link rel="shortcut icon" href="/">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -37,7 +33,7 @@
   </a>
   <div class="brand-wrap">
     <div class="brand">
-      <a href="/" class="avatar"><img src="/img/logo.jpg"></a>
+      <a href="/" class="avatar"><img src="undefined"></a>
       <hgroup class="introduce">
         <h5 class="nickname">Dear宅学长</h5>
         <a href="mailto:developer.zhaitao@gmail.com" title="developer.zhaitao@gmail.com" class="mail">developer.zhaitao@gmail.com</a>
@@ -47,48 +43,6 @@
   <div class="scroll-wrap flex-col">
     <ul class="nav">
       
-          <li class="waves-block waves-effect">
-            <a href="/"  >
-              <i class="icon icon-lg icon-home"></i>
-              主页
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="/archives"  >
-              <i class="icon icon-lg icon-archives"></i>
-              Archives
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="/tags"  >
-              <i class="icon icon-lg icon-tags"></i>
-              Tags
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="https://seniorzhai.github.io" target="_blank" >
-              <i class="icon icon-lg icon-github"></i>
-              Github
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="http://weibo.com/seniorszhai/" target="_blank" >
-              <i class="icon icon-lg icon-weibo"></i>
-              Weibo
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="/about"  >
-              <i class="icon icon-lg icon-link"></i>
-              about
-            </a>
-          </li>
-      
     </ul>
 
     <footer class="footer">
@@ -96,7 +50,7 @@
   <p>SeniorZhai&#39;s blog &copy; 2016</p>
   <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
   <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
-  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
+  <a href="undefined" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
 </footer>
 
   </div>
@@ -111,20 +65,6 @@
         </a>
         <div class="flex-col header-title ellipsis">SeniorZhai&#39;s blog</div>
         
-        <div class="search-wrap" id="search-wrap">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
-                <i class="icon icon-lg icon-chevron-left"></i>
-            </a>
-            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
-                <i class="icon icon-lg icon-search"></i>
-            </a>
-        </div>
-        
-        
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
-            <i class="icon icon-lg icon-share-alt"></i>
-        </a>
         
     </div>
 </header>
@@ -181,11 +121,69 @@
  JavaScript特效和动画 
  HTML DOM遍历和修改 
  AJAX 
- Utilties #jQuery安装      1  2  3  4       &lt; head &gt;   	 &lt; script   src =
+ Utilties #jQuery安装      1  2  3  4       &lt; head &gt;   	 &lt; script   src = "jquery-1.10.2.min.js"  /&gt;     	 &lt;!-- &lt;script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"&gt; --&gt;    &lt;/ head &gt;       
+ 
+ 
+ #语法 jQuery语法是通过选取HTML元素，并对选取的元素执行某些操作 
+ ##基础语法  $(selector).action()  
+ 
+ 美元符定义jQuery 
+ 选取符(selector)查询和查找HTML元素 
+ jQuery的action()执行元素的操作 ###文档就绪事件      1  2  3      $( document ).ready(  function (  ) &#123;  	 // 为了防止文档在完全加载就绪之前运行jQuery代码   &#125;);      
+ 
+ 
+ 简洁的写法可以是这样的：       1  2  3      $(  function (  ) &#123;  	 //   &#125;);       
+ ##选择器 jQuery选择器用于对HTML元素组或者单个元素进行操作 基于元素的id、类、类型、属性、属性值等”查找”HTML元素 所有选择器都以美元符开头：$() 
+ 
+  基于元素名选取元素 
+      1  2  3  4  5      $(  function (  ) &#123;  	$( "button" ).click(  function (  ) &#123;  		$( "p" ).hide();  	&#125;)  &#125;)      
+ 
+  基于id选择 
+      1  2  3  4  5      $(  function (  ) &#123;  	$( "button" ).click(  function (  )) &#123;  		$( "#test" ).hide();  	&#125;  &#125;)      
+ 
+  基于class选择 
+      1  2  3  4  5      $(  function (  ) &#123;  	$( "button" ).click(  function (  ) &#123;  		$( ".test" ).hide();  	&#125;);  &#125;)      
+ 
+ 
+ ###更多实例 |语法|描述| |:–|:–| |$(“*”)|所有元素| |$(this)|当前元素| |$(“p.intro”)|class为intro的 &lt;p&gt; 元素| |$(“p:first”)|第一个 &lt;p&gt; 元素| |$(“ul li:first”| &lt;ul&gt; 元素的第一个 &lt;li&gt; 元素| |$(“ul li:first-child”|每一个 &lt;ul&gt; 元素的第一个 &lt;li&gt; 元素| |$(“[href]”)|选取所有带href属性的元素| |$(“a[target=’_blank’]”)|所有target属性不等于 &quot;_blank&quot; 的 &lt;a&gt; 元素| |$(“a[target!=’_blank’]”)|选取所有 target 属性值不等于  &quot;_blank&quot; 的  &lt;a&gt; 元素| |$(“:button”)|选取所有 type=”button” 的 &lt;input&gt; 元素和 &lt;button&gt; 元素| |$(“tr:even”)|选取偶数位置的 &lt;tr&gt; 元素| |$(“tr:odd”)|选取奇数位置的 &lt;tr&gt; 元素| 
+ ##jQuery事件 |鼠标事件|键盘事件|表单事件|文档/窗口事件| |:—|:—|:—|:—| |click|keypress|submit|load| |dblclick|keydown|change|resize| |mouseenter|keyup|focus|scroll| |mouseleave||blur|unload| 
+ ###常用事件 
+ 
+ $(document).ready() 文档准备完毕 
+ click() 按钮点击事件 
+ dblclick() 双击元素事件 
+ mouseenter() 当鼠标指针穿过元素时 
+ mouseleave() 当鼠标离开元素时 
+ mousedown() 当鼠标移动到元素上并按下鼠标时 
+ mouseup() 当鼠标移动到元素上并松开鼠标时 
+ hover() 模拟光标悬停事件 
+ focus() 元素获得焦点事件 
+ blur() 元素失去焦点事件 
+ 
+ ###hide()和show() 用于元素的隐藏和显示       1  2      $(selector).hide(speed,callback)	 //speed 可以使slow fast或毫秒用于规定隐藏/显示的速度   $(selector).show(speed,callback)       
+ ####toggle() 用于切换hide()和show()       1      $(selector).toggle(speed,callback)       
+ ###淡入淡出效果 
+ 
+ fadeIn() 
+ fadeOut() 
+ fadeToggle() 
+ fadeTo()      1      $(selector).fadeIn(speed,callback);      
+ 
+ 
+ fadeIn为淡入，fadeOut为淡出，fadeToggle()为切换 fadeTo允许为给定的不透明度(值为0到1之间)       1      $(selector).fadeTo(speed,opacity,callback)       
+ ###滑动效果       1  2  3      $(selector).slideDown(speed,callback)	 // 用于向下滑动元素   $(selector).slideUp(speed,callback)  $(selector).slideToggle(speed,callback)       
+ ##自定义动画       1      $(selector).animate(&#123;params&#125;,speed,callback);       
+ params为定义形成动画的CSS属性       1  2  3      $( "button" ).click(  function (  ) &#123;    $( "div" ).animate(&#123;left: '250px' &#125;);  &#125;);       
+ 也可以同时操作多个属性       1  2  3  4  5  6  7  8      $( "button" ).click(  function (  ) &#123;    $( "div" ).animate(&#123;      left: '250px' ,      opacity: '0.5' ,      height: '150px' ,      width: '150px'     &#125;);  &#125;);       
+ 使用相对值       1  2  3  4  5  6  7      $( "button" ).click(  function (  ) &#123;    $( "div" ).animate(&#123;      left: '250px' ,      height: '+=150px' ,      width: '+=150px'     &#125;);  &#125;);       
+ 使用预定值       1  2  3  4  5      $( "button" ).click(  function (  ) &#123;    $( "div" ).animate(&#123;      height: 'toggle'     &#125;);  &#125;);       
+ 使用队列       1  2  3  4  5  6  7      $( "button" ).click(  function (  ) &#123;     var  div=$( "div" );    div.animate(&#123;height: '300px' ,opacity: '0.4' &#125;, "slow" );    div.animate(&#123;width: '300px' ,opacity: '0.8' &#125;, "slow" );    div.animate(&#123;height: '100px' ,opacity: '0.4' &#125;, "slow" );    div.animate(&#123;width: '100px' ,opacity: '0.8' &#125;, "slow" );  &#125;);       
+ ##停止动画 stop()方法用于停止动画或效果  $(selector).stop(stopAll,goToEnd)  可选的stopAll指定是否应该清除动画队列，默认是false，即仅停止活动的动画，允许任何排入队列的动画向后执行 可选的goToEnd参数指定是否立即完成当前动画，默认是false       1  2  3      $( "#stop" ).click(  function (  ) &#123;    $( "#pancel" ).stop();  &#125;);       
+
     
     
         <a href="/2015/03/30/jQuery初识/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -228,7 +226,7 @@
     
     
         <a href="/2015/03/26/Android开发函数库caffeine/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -271,7 +269,7 @@
     
     
         <a href="/2015/03/20/Selector/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -314,7 +312,7 @@
     
     
         <a href="/2015/03/19/500-px模糊控件/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -360,11 +358,17 @@
  配置环境变量，在 ~/.bash_profile 文件下添加      1  2  3      # 根据自己存放的位置指定  export NDK_ROOT=/Users/UserName/Documents/Android/android-ndk-r10  export PATH=$NDK_ROOT:$PATH      
  
  
- ##新建一个项
+ ##新建一个项目 创建一个 MathKit 类         1  2  3  4  5  6  7       public    class   MathKit   &#123;  	  public   static   native   int   square  ( int  num)  ;    	 static  &#123;  		System.loadLibrary( "JniDemo" );  	&#125;  &#125;       
+ 在命令行中进入目录，使用 javah 命令生成.h文件   将.h文件存放至jni文件夹下，并新建.cpp文件   根据头文件，编写cpp文件       1  2  3  4  5  6  7       # include   &lt;com_zoe_ndkdemo_jni_MathKit.h&gt;       JNIEXPORT jint JNICALL  Java_com_zoe_ndkdemo_jni_MathKit_square       (JNIEnv * env, jclass cls, jint num)     &#123;       return  num * num;    &#125;       
+ 在 local.properties 文件添加ndk路径       1      ndk.dir=/Users/UserName/Documents/Android/android-ndk-r10       
+ 在app项目中的build.gradle中的 defaultConfig 中添加       1  2  3      ndk &#123;  	moduleName &quot;JniDemo&quot;  &#125;       
+ 之后就可以在代码中调用       1  2  3  4  5  6  7  8  9       private  TextView textView;     @Override     protected   void   onCreate  (Bundle savedInstanceState)   &#123;      super .onCreate(savedInstanceState);     setContentView(R.layout.activity_main);     textView = (TextView) findViewById(R.id.text);     textView.setText( "2*2=" + MathKit.square( 2 ));  &#125;       
+  示例 ： https://github.com/SeniorZhai/NdkDemo  
+
     
     
         <a href="/2015/03/19/AndroidStudio上使用NDK/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -407,7 +411,7 @@
     
     
         <a href="/2015/03/18/理解StrongReferce、SoftReference、WeakReference、PhantomReference/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -458,11 +462,35 @@
  gradient 渐变 
  android:startColor 起始颜色 
  android:endColor 结束颜色 
- android:angle 渐变角度，0从上到下，9
+ android:angle 渐变角度，0从上到下，90从左到右，数值必须为45的倍数，默认为0 
+ android:type 渐变样式 line线性渐变，radial环形渐变，sweep扫描渐变 
+ 
+ 
+ solid 填充颜色 
+ android:color 填充颜色 
+ 
+ 
+ stroke 描边 
+ android:width 描边的宽度 
+ android:color 描边的颜色 
+ android:dashWidth 间隔线的宽度 
+ android:dashGap 间隔线的间隔 
+ 
+ 
+ corners  圆角 
+ android:radius 圆角的半径，值越大越圆 
+ android:topRightRadius 右上角半径 
+ android:bottomLeftRadius 左下角半径 
+ android:topLeftRadius 右上角半径 
+ android:bottomRightRadius 右下角半径 
+ 
+ 
+ 
+
     
     
         <a href="/2015/03/17/Android-Shape的使用/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -505,7 +533,7 @@
     
     
         <a href="/2015/03/16/androidannotations(二)/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -548,7 +576,7 @@
     
     
         <a href="/2015/03/11/TimingLogger/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -591,7 +619,7 @@
     
     
         <a href="/2015/03/09/Git之Bug分支/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -614,51 +642,6 @@
 <div class="mask" id="mask"></div>
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
-<script>
-var BLOG_SHARE = {
-    title: "SeniorZhai's blog",
-    pic: "/img/logo.jpg",
-    summary: document.getElementsByName('summary')[0].content,
-    url: "http://seniorzhai.github.io/page/8/index.html"
-};
-</script>
-<div class="global-share" id="global-share">
-    <div class="tit">分享到：</div>
-    <ul class="reset share-icons">
-      <li>
-        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-      <li>
-        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-      <li>
-        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
-          <i class="icon icon-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
-          <i class="icon icon-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
-          豆
-        </a>
-      </li>
-    </ul>
- </div>
-
-
 
 <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 
@@ -666,45 +649,10 @@ var BLOG_SHARE = {
 
 
 
-<div class="search-panel" id="search-panel">
-    <ul class="search-result" id="search-result"></ul>
-</div>
-<script type="text/template" id="search-tpl">
-<li class="item">
-    <a href="/{path}" class="waves-block waves-effect">
-        <div class="title ellipsis" title="{title}">{title}</div>
-        <div class="flex-row flex-middle">
-            <div class="tags ellipsis">
-                {tags}
-            </div>
-            <time class="flex-col time">{date}</time>
-        </div>
-    </a>
-</li>
-</script>
-
-<script src="/js/search.js"></script>
 
 
 
 
-
-<script src="//s95.cnzz.com/z_stat.php?id=true&web_id=true"></script>
-
-
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-54646832-1&#39;', 'auto');
-ga('send', 'pageview');
-
-</script>
-<!-- End Google Analytics -->
 
 
 

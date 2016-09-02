@@ -6,8 +6,6 @@
   <title>SeniorZhai&#39;s blog | 苟利国家生死以，起因福祸趋避之</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="theme-color" content="#ED5565">
-  
   
   <meta name="keywords" content="undefined">
   <meta name="description" content="专注于移动平台">
@@ -20,10 +18,8 @@
 <meta name="twitter:title" content="SeniorZhai's blog">
 <meta name="twitter:description" content="专注于移动平台">
   
-    <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
-  
   <meta name="summary" content="专注于移动平台">
-  <link rel="shortcut icon" href="/img/favicon.ico">
+  <link rel="shortcut icon" href="/">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -37,7 +33,7 @@
   </a>
   <div class="brand-wrap">
     <div class="brand">
-      <a href="/" class="avatar"><img src="/img/logo.jpg"></a>
+      <a href="/" class="avatar"><img src="undefined"></a>
       <hgroup class="introduce">
         <h5 class="nickname">Dear宅学长</h5>
         <a href="mailto:developer.zhaitao@gmail.com" title="developer.zhaitao@gmail.com" class="mail">developer.zhaitao@gmail.com</a>
@@ -47,48 +43,6 @@
   <div class="scroll-wrap flex-col">
     <ul class="nav">
       
-          <li class="waves-block waves-effect">
-            <a href="/"  >
-              <i class="icon icon-lg icon-home"></i>
-              主页
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="/archives"  >
-              <i class="icon icon-lg icon-archives"></i>
-              Archives
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="/tags"  >
-              <i class="icon icon-lg icon-tags"></i>
-              Tags
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="https://seniorzhai.github.io" target="_blank" >
-              <i class="icon icon-lg icon-github"></i>
-              Github
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="http://weibo.com/seniorszhai/" target="_blank" >
-              <i class="icon icon-lg icon-weibo"></i>
-              Weibo
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="/about"  >
-              <i class="icon icon-lg icon-link"></i>
-              about
-            </a>
-          </li>
-      
     </ul>
 
     <footer class="footer">
@@ -96,7 +50,7 @@
   <p>SeniorZhai&#39;s blog &copy; 2016</p>
   <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
   <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
-  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
+  <a href="undefined" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
 </footer>
 
   </div>
@@ -111,20 +65,6 @@
         </a>
         <div class="flex-col header-title ellipsis">SeniorZhai&#39;s blog</div>
         
-        <div class="search-wrap" id="search-wrap">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
-                <i class="icon icon-lg icon-chevron-left"></i>
-            </a>
-            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
-                <i class="icon icon-lg icon-search"></i>
-            </a>
-        </div>
-        
-        
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
-            <i class="icon icon-lg icon-share-alt"></i>
-        </a>
         
     </div>
 </header>
@@ -177,7 +117,7 @@
     
     
         <a href="/2014/10/23/Android、iOS切图规范/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -225,7 +165,7 @@
     
     
         <a href="/2014/10/22/gravity属性/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -266,11 +206,30 @@
     
           
  
- httplib.HTTPConnection(host,[,port,[,strict,[,timeout]]])   表示一次与服务器的交互，即请求/响应。host表示服务器主机，port表示端口号(默认值是80)，参数strict默认值为false，表示在无法解析服务器返回的状态行时(status line)是否剖出BadStatusLine异常，可选参数timeout表示超时时间
+ httplib.HTTPConnection(host,[,port,[,strict,[,timeout]]])   表示一次与服务器的交互，即请求/响应。host表示服务器主机，port表示端口号(默认值是80)，参数strict默认值为false，表示在无法解析服务器返回的状态行时(status line)是否剖出BadStatusLine异常，可选参数timeout表示超时时间 
+ HTTPConnection.request(method,url,[,body[,headers]])   发送一次请求，method表示请求方法，url表示请求资源，body表示提交服务器的数据，必须是字符串，headers表示请求的http头 
+ HTTPConnection.getresponse()   获取Http 响应 
+ HTTPConnection.connect()   连接到HTTP服务器 
+ HTTPConnection.close()   关闭与服务器连接 
+ HTTPConnection.set_debuglevel(level)   设置调试级别，参数level默认为0，表示不输出任何调试信息 
+ 
+ 
+ httplib.HTTPResponse    表示服务器对客户端的相应，通过 HTTPConnection.getresponse() 来创建 
+ HTTPResponse.read([amt])   获取响应的消息体，如果请求的是一个普通的网页，该方法返回页面的html，可选参数amt表示从响应流中读取指定字节的数据 
+ HTTPResponse.getheader(name[, default]) 　　获取响应头。Name表示头域(header field)名，可选参数default在头域名不存在的情况下作为默认值返回。 
+ HTTPResponse.getheaders() 　　以列表的形式返回所有的头信息。 
+ HTTPResponse.msg 　　获取所有的响应头信息。 
+ HTTPResponse.version 　　获取服务器所使用的http协议版本。11表示http/1.1；10表示http/1.0。 
+ HTTPResponse.status 　　获取响应的状态码。如：200表示请求成功。 
+ HTTPResponse.reason 　　     返回服务器处理请求的结果说明。一般为”OK” 
+ 
+ 
+ 
+      1  2  3  4  5  6  7  8  9  10      headers = &#123; "Content-type" :  "application/x-www-form-urlencoded"                       ,  "Accept" :  "text/plain" &#125;  values = &#123; 'param1' : '2' , 'param2' : '3' &#125;  params = urllib.urlencode(values)  conn = httplib.HTTPConnection( "ave.bolyartech.com" )   conn.request( "POST" ,  "/params.php" , params,headers)  response = conn.getresponse()       print  response.status, response.reason     print  response.read()  conn.close();      
     
     
         <a href="/2014/10/16/httplib模块/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -319,66 +278,26 @@
   Ctrl + 1 快速修复 
   Ctrl + pageup/pagedown 选项卡切换 
   Ctrl + W 关闭当前编辑框 
-  Ctrl + d 删
+  Ctrl + d 删除行 
+  Ctrl + shift + F4 关闭所有编辑框 
+  Ctrl + shift + X 选中文本全部大写 
+  Ctrl + shift + Y 选中文本全部小写 
+  Ctrl + shift + F 格式化当前代码 
+  Shift + Enter 插入空行 
+  Ctrl + shift + T 查找Java类文件 
+  Ctrl + shift + G 查找引用 
+  Ctrl + K 高亮代码 
+  Alt + shift + R 重命名 
+ 
+
     
     
         <a href="/2014/10/15/Eclipse实用快捷键/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
 	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eclipse/">eclipse</a></li></ul>
-
-</article>
-
-    </li>
-  
-    <li class="post-list-item">
-        <article id="post-Android主题和样式"
-  class="article article-type-post" itemprop="blogPost">
-     
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2014/10/14/Android主题和样式/">Android主题和样式</a>
-    </h3>
-  
-
-
-
-    <div class="post-meta">
-        <time datetime="2014-10-14T05:14:42.000Z" itemprop="datePublished" class="post-time">
-  2014-10-14
-</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
-
-
-
-    </div>
-
-    <div class="post-content" id="post-content" itemprop="postContent" >
-
-    
-          
- ##位置 在Android Frameworks/base/core/res/res/values目录下 
- 
-  themes.xml  
-  themes_device_defaults.xml  
-  styles.xml  
-  styles_device_defaults.xml  
- 
- ##主题Theme  theme.xml 定义了Android低版本的theme和Holo
-    
-    
-        <a href="/2014/10/14/Android主题和样式/" class="post-more waves-effect waves-button">
-            阅读全文...
-        </a>
-    </div>
-    
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Holo/">Holo</a></li></ul>
 
 </article>
 
@@ -421,15 +340,182 @@
  @android:style/Theme.Material.Light 
  @android:style/Theme.Material.DarkActionBar 
  
- ###自定义主题的基础颜色       1  2  3  4  5
+ ###自定义主题的基础颜色       1  2  3  4  5  6  7       &lt; resources &gt;   	 &lt; style   name = "AppTheme"   parent = "android:Theme.Material" &gt;     		 &lt; item   name = "android:colorPrimary" &gt; @color/primary &lt;/ item &gt;   		 &lt; item   name = "android:colorPrimaryDark" &gt; @color/primary_dark &lt;/ item &gt;   		 &lt; item   name = "android:colorAccent" &gt; @color/accent &lt;/ item &gt;   	 &lt;/ style &gt;    &lt;/ resources &gt;        
+
     
     
         <a href="/2014/10/14/Material/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
 	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Material/">Material</a></li></ul>
+
+</article>
+
+    </li>
+  
+    <li class="post-list-item">
+        <article id="post-Android主题和样式"
+  class="article article-type-post" itemprop="blogPost">
+     
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2014/10/14/Android主题和样式/">Android主题和样式</a>
+    </h3>
+  
+
+
+
+    <div class="post-meta">
+        <time datetime="2014-10-14T05:14:42.000Z" itemprop="datePublished" class="post-time">
+  2014-10-14
+</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+
+
+    </div>
+
+    <div class="post-content" id="post-content" itemprop="postContent" >
+
+    
+          
+ ##位置 在Android Frameworks/base/core/res/res/values目录下 
+ 
+  themes.xml  
+  themes_device_defaults.xml  
+  styles.xml  
+  styles_device_defaults.xml  
+ 
+ ##主题Theme  theme.xml 定义了Android低版本的theme和Holo theme， themes_device_defaults.xml 定义了DeviceDefault主题(继承自Holo主题) 系统如何选择默认主题呢？       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23       /**frameworks/base/core/java/android/content/res/Resources.java*/     public   static   int   selectDefaultTheme  ( int  curTheme,  int  targetSdkVersion)   &#123;       return  selectSystemTheme(curTheme, targetSdkVersion,              com.android.internal.R.style.Theme,              com.android.internal.R.style.Theme_Holo,              com.android.internal.R.style.Theme_DeviceDefault);  &#125;          public   static   int   selectSystemTheme  ( int  curTheme,  int  targetSdkVersion,             int  orig,  int  holo,  int  deviceDefault) &#123;       if  (curTheme !=  0 ) &#123;            return  curTheme;      &#125;           if  (targetSdkVersion &lt; Build.VERSION_CODES.HONEYCOMB) &#123;           // &lt; 11            return  orig;      &#125;           if  (targetSdkVersion &lt; Build.VERSION_CODES.ICE_CREAM_SANDWICH) &#123;            // &lt; 14             return  holo;      &#125;           return  deviceDefault;  &#125;       
+ 当 =11&amp;&amp; 14时，使用DeviceDefault主题   
+ ##系统主题Theme列表 系统默认大的主题是三种：Theme,Theme.Holo,Theme.DeviceDefault, 但是实际上在此基础系统还定义了大量的派生主题，最典型的是对应的Light主题。   
+ ##详解每个主题item分类 
+ 
+  颜色 
+      1  2  3  4  5  6  7  8  9       &lt; item   name = "colorForeground" &gt; @android:color/bright_foreground_dark &lt;/ item &gt;    &lt; item   name = "colorForegroundInverse" &gt; @android:color/bright_foreground_dark_inverse &lt;/ item &gt;    &lt; item   name = "colorBackground" &gt; @android:color/background_dark &lt;/ item &gt;    &lt; item   name = "colorBackgroundCacheHint" &gt; ?android:attr/colorBackground &lt;/ item &gt;    &lt; item   name = "colorPressedHighlight" &gt; @color/legacy_pressed_highlight &lt;/ item &gt;    &lt; item   name = "colorLongPressedHighlight" &gt; @color/legacy_long_pressed_highlight &lt;/ item &gt;    &lt; item   name = "colorFocusedHighlight" &gt; @color/legacy_selected_highlight &lt;/ item &gt;    &lt; item   name = "colorMultiSelectHighlight" &gt; @color/legacy_selected_highlight &lt;/ item &gt;    &lt; item   name = "colorActivatedHighlight" &gt; @color/legacy_selected_highlight &lt;/ item &gt;       
+ 
+  字体 
+      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49       &lt; item   name = "textAppearance" &gt; @android:style/TextAppearance &lt;/ item &gt;    &lt; item   name = "textAppearanceInverse" &gt; @android:style/TextAppearance.Inverse &lt;/ item &gt;       &lt; item   name = "textColorPrimary" &gt; @android:color/primary_text_dark &lt;/ item &gt;    &lt; item   name = "textColorSecondary" &gt; @android:color/secondary_text_dark &lt;/ item &gt;    &lt; item   name = "textColorTertiary" &gt; @android:color/tertiary_text_dark &lt;/ item &gt;    &lt; item   name = "textColorPrimaryInverse" &gt; @android:color/primary_text_light &lt;/ item &gt;    &lt; item   name = "textColorSecondaryInverse" &gt; @android:color/secondary_text_light &lt;/ item &gt;    &lt; item   name = "textColorTertiaryInverse" &gt; @android:color/tertiary_text_light &lt;/ item &gt;    &lt; item   name = "textColorPrimaryDisableOnly" &gt; @android:color/primary_text_dark_disable_only &lt;/ item &gt;    &lt; item   name = "textColorPrimaryInverseDisableOnly" &gt; @android:color/primary_text_light_disable_only &lt;/ item &gt;    &lt; item   name = "textColorPrimaryNoDisable" &gt; @android:color/primary_text_dark_nodisable &lt;/ item &gt;    &lt; item   name = "textColorSecondaryNoDisable" &gt; @android:color/secondary_text_dark_nodisable &lt;/ item &gt;    &lt; item   name = "textColorPrimaryInverseNoDisable" &gt; @android:color/primary_text_light_nodisable &lt;/ item &gt;    &lt; item   name = "textColorSecondaryInverseNoDisable" &gt; @android:color/secondary_text_light_nodisable &lt;/ item &gt;    &lt; item   name = "textColorHint" &gt; @android:color/hint_foreground_dark &lt;/ item &gt;    &lt; item   name = "textColorHintInverse" &gt; @android:color/hint_foreground_light &lt;/ item &gt;    &lt; item   name = "textColorSearchUrl" &gt; @android:color/search_url_text &lt;/ item &gt;    &lt; item   name = "textColorHighlight" &gt; @android:color/highlighted_text_dark &lt;/ item &gt;    &lt; item   name = "textColorHighlightInverse" &gt; @android:color/highlighted_text_light &lt;/ item &gt;    &lt; item   name = "textColorLink" &gt; @android:color/link_text_dark &lt;/ item &gt;    &lt; item   name = "textColorLinkInverse" &gt; @android:color/link_text_light &lt;/ item &gt;    &lt; item   name = "textColorAlertDialogListItem" &gt; @android:color/primary_text_light_disable_only &lt;/ item &gt;       &lt; item   name = "textAppearanceLarge" &gt; @android:style/TextAppearance.Large &lt;/ item &gt;    &lt; item   name = "textAppearanceMedium" &gt; @android:style/TextAppearance.Medium &lt;/ item &gt;    &lt; item   name = "textAppearanceSmall" &gt; @android:style/TextAppearance.Small &lt;/ item &gt;    &lt; item   name = "textAppearanceLargeInverse" &gt; @android:style/TextAppearance.Large.Inverse &lt;/ item &gt;    &lt; item   name = "textAppearanceMediumInverse" &gt; @android:style/TextAppearance.Medium.Inverse &lt;/ item &gt;    &lt; item   name = "textAppearanceSmallInverse" &gt; @android:style/TextAppearance.Small.Inverse &lt;/ item &gt;    &lt; item   name = "textAppearanceSearchResultTitle" &gt; @android:style/TextAppearance.SearchResult.Title &lt;/ item &gt;    &lt; item   name = "textAppearanceSearchResultSubtitle" &gt; @android:style/TextAppearance.SearchResult.Subtitle &lt;/ item &gt;       &lt; item   name = "textAppearanceEasyCorrectSuggestion" &gt; @android:style/TextAppearance.EasyCorrectSuggestion &lt;/ item &gt;    &lt; item   name = "textAppearanceMisspelledSuggestion" &gt; @android:style/TextAppearance.MisspelledSuggestion &lt;/ item &gt;    &lt; item   name = "textAppearanceAutoCorrectionSuggestion" &gt; @android:style/TextAppearance.AutoCorrectionSuggestion &lt;/ item &gt;       &lt; item   name = "textAppearanceButton" &gt; @android:style/TextAppearance.Widget.Button &lt;/ item &gt;       &lt; item   name = "editTextColor" &gt; @android:color/primary_text_light &lt;/ item &gt;    &lt; item   name = "editTextBackground" &gt; @android:drawable/edit_text &lt;/ item &gt;       &lt; item   name = "candidatesTextStyleSpans" &gt; @android:string/candidates_style &lt;/ item &gt;       &lt; item   name = "textCheckMark" &gt; @android:drawable/indicator_check_mark_dark &lt;/ item &gt;    &lt; item   name = "textCheckMarkInverse" &gt; @android:drawable/indicator_check_mark_light &lt;/ item &gt;       &lt; item   name = "textAppearanceLargePopupMenu" &gt; @android:style/TextAppearance.Widget.PopupMenu.Large &lt;/ item &gt;    &lt; item   name = "textAppearanceSmallPopupMenu" &gt; @android:style/TextAppearance.Widget.PopupMenu.Small &lt;/ item &gt;       
+ 
+  按钮 
+      1  2  3  4  5  6  7  8  9  10       &lt; item   name = "buttonStyle" &gt; @android:style/Widget.Button &lt;/ item &gt;       &lt; item   name = "buttonStyleSmall" &gt; @android:style/Widget.Button.Small &lt;/ item &gt;    &lt; item   name = "buttonStyleInset" &gt; @android:style/Widget.Button.Inset &lt;/ item &gt;       &lt; item   name = "buttonStyleToggle" &gt; @android:style/Widget.Button.Toggle &lt;/ item &gt;       &lt; item   name = "selectableItemBackground" &gt; @android:drawable/item_background &lt;/ item &gt;    &lt; item   name = "borderlessButtonStyle" &gt; ?android:attr/buttonStyle &lt;/ item &gt;    &lt; item   name = "homeAsUpIndicator" &gt; @android:drawable/ic_ab_back_holo_dark &lt;/ item &gt;       
+ 
+  List 
+      1  2  3  4  5  6  7  8  9  10       &lt; item   name = "listPreferredItemHeight" &gt; 64dip &lt;/ item &gt;    &lt; item   name = "listPreferredItemHeightSmall" &gt; ?android:attr/listPreferredItemHeight &lt;/ item &gt;    &lt; item   name = "listPreferredItemHeightLarge" &gt; ?android:attr/listPreferredItemHeight &lt;/ item &gt;    &lt; item   name = "dropdownListPreferredItemHeight" &gt; ?android:attr/listPreferredItemHeight &lt;/ item &gt;    &lt; item   name = "textAppearanceListItem" &gt; ?android:attr/textAppearanceLarge &lt;/ item &gt;    &lt; item   name = "textAppearanceListItemSmall" &gt; ?android:attr/textAppearanceLarge &lt;/ item &gt;    &lt; item   name = "listPreferredItemPaddingLeft" &gt; 6dip &lt;/ item &gt;    &lt; item   name = "listPreferredItemPaddingRight" &gt; 6dip &lt;/ item &gt;    &lt; item   name = "listPreferredItemPaddingStart" &gt; 6dip &lt;/ item &gt;    &lt; item   name = "listPreferredItemPaddingEnd" &gt; 6dip &lt;/ item &gt;       
+ 
+  Window 
+      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18       &lt; item   name = "windowBackground" &gt; @android:drawable/screen_background_selector_dark &lt;/ item &gt;    &lt; item   name = "windowFrame" &gt; @null &lt;/ item &gt;    &lt; item   name = "windowNoTitle" &gt; false &lt;/ item &gt;    &lt; item   name = "windowFullscreen" &gt; false &lt;/ item &gt;    &lt; item   name = "windowOverscan" &gt; false &lt;/ item &gt;    &lt; item   name = "windowIsFloating" &gt; false &lt;/ item &gt;    &lt; item   name = "windowContentOverlay" &gt; @null &lt;/ item &gt;    &lt; item   name = "windowShowWallpaper" &gt; false &lt;/ item &gt;    &lt; item   name = "windowTitleStyle" &gt; @android:style/WindowTitle &lt;/ item &gt;    &lt; item   name = "windowTitleSize" &gt; 25dip &lt;/ item &gt;    &lt; item   name = "windowTitleBackgroundStyle" &gt; @android:style/WindowTitleBackground &lt;/ item &gt;    &lt; item   name = "android:windowAnimationStyle" &gt; @android:style/Animation.Activity &lt;/ item &gt;    &lt; item   name = "android:windowSoftInputMode" &gt; stateUnspecified|adjustUnspecified &lt;/ item &gt;    &lt; item   name = "windowActionBar" &gt; false &lt;/ item &gt;    &lt; item   name = "windowActionModeOverlay" &gt; false &lt;/ item &gt;    &lt; item   name = "windowCloseOnTouchOutside" &gt; false &lt;/ item &gt;    &lt; item   name = "windowTranslucentStatus" &gt; false &lt;/ item &gt;    &lt; item   name = "windowTranslucentNavigation" &gt; false &lt;/ item &gt;       
+ 
+  Dialog 
+      1  2  3  4       &lt; item   name = "dialogTheme" &gt; @android:style/Theme.Dialog &lt;/ item &gt;    &lt; item   name = "dialogTitleIconsDecorLayout" &gt; @layout/dialog_title_icons &lt;/ item &gt;    &lt; item   name = "dialogCustomTitleDecorLayout" &gt; @layout/dialog_custom_title &lt;/ item &gt;    &lt; item   name = "dialogTitleDecorLayout" &gt; @layout/dialog_title &lt;/ item &gt;       
+ 
+  AlertDialog 
+      1  2  3  4       &lt; item   name = "alertDialogTheme" &gt; @android:style/Theme.Dialog.Alert &lt;/ item &gt;    &lt; item   name = "alertDialogStyle" &gt; @android:style/AlertDialog &lt;/ item &gt;    &lt; item   name = "alertDialogCenterButtons" &gt; true &lt;/ item &gt;    &lt; item   name = "alertDialogIcon" &gt; @android:drawable/ic_dialog_alert &lt;/ item &gt;       
+ 
+  Panel 
+      1  2  3  4  5  6  7  8  9       &lt; item   name = "panelBackground" &gt; @android:drawable/menu_background &lt;/ item &gt;    &lt; item   name = "panelFullBackground" &gt; @android:drawable/menu_background_fill_parent_width &lt;/ item &gt;    &lt;!-- These three attributes do not seems to be used by the framework. Declared public though --&gt;    &lt; item   name = "panelColorBackground" &gt; #000 &lt;/ item &gt;    &lt; item   name = "panelColorForeground" &gt; ?android:attr/textColorPrimary &lt;/ item &gt;    &lt; item   name = "panelTextAppearance" &gt; ?android:attr/textAppearance &lt;/ item &gt;       &lt; item   name = "panelMenuIsCompact" &gt; false &lt;/ item &gt;    &lt; item   name = "panelMenuListWidth" &gt; 296dip &lt;/ item &gt;       
+ 
+  滚动条(Scrollbar) 
+      1  2  3  4  5  6  7       &lt; item   name = "scrollbarFadeDuration" &gt; 250 &lt;/ item &gt;    &lt; item   name = "scrollbarDefaultDelayBeforeFade" &gt; 300 &lt;/ item &gt;     &lt; item   name = "scrollbarSize" &gt; 10dip &lt;/ item &gt;    &lt; item   name = "scrollbarThumbHorizontal" &gt; @android:drawable/scrollbar_handle_horizontal &lt;/ item &gt;    &lt; item   name = "scrollbarThumbVertical" &gt; @android:drawable/scrollbar_handle_vertical &lt;/ item &gt;    &lt; item   name = "scrollbarTrackHorizontal" &gt; @null &lt;/ item &gt;    &lt; item   name = "scrollbarTrackVertical" &gt; @null &lt;/ item &gt;       
+ 
+  文字选中(Text selection) 
+      1  2  3  4  5  6  7  8  9  10       &lt; item   name = "textSelectHandleLeft" &gt; @android:drawable/text_select_handle_left &lt;/ item &gt;    &lt; item   name = "textSelectHandleRight" &gt; @android:drawable/text_select_handle_right &lt;/ item &gt;    &lt; item   name = "textSelectHandle" &gt; @android:drawable/text_select_handle_middle &lt;/ item &gt;    &lt; item   name = "textSelectHandleWindowStyle" &gt; @android:style/Widget.TextSelectHandle &lt;/ item &gt;    &lt; item   name = "textEditPasteWindowLayout" &gt; @android:layout/text_edit_paste_window &lt;/ item &gt;    &lt; item   name = "textEditNoPasteWindowLayout" &gt; @android:layout/text_edit_no_paste_window &lt;/ item &gt;    &lt; item   name = "textEditSidePasteWindowLayout" &gt; @android:layout/text_edit_side_paste_window &lt;/ item &gt;    &lt; item   name = "textEditSideNoPasteWindowLayout" &gt; @android:layout/text_edit_side_no_paste_window &lt;/ item &gt;    &lt; item   name = "textSuggestionsWindowStyle" &gt; @android:style/Widget.TextSuggestionsPopupWindow &lt;/ item &gt;    &lt; item   name = "textEditSuggestionItemLayout" &gt; @android:layout/text_edit_suggestion_item &lt;/ item &gt;        
+ 
+
+    
+    
+        <a href="/2014/10/14/Android主题和样式/" class="post-more waves-effect waves-button">
+            
+        </a>
+    </div>
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Holo/">Holo</a></li></ul>
+
+</article>
+
+    </li>
+  
+    <li class="post-list-item">
+        <article id="post-UIL图片异步加载库的使用"
+  class="article article-type-post" itemprop="blogPost">
+     
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2014/10/14/UIL图片异步加载库的使用/">UIL图片异步加载库的使用</a>
+    </h3>
+  
+
+
+
+    <div class="post-meta">
+        <time datetime="2014-10-14T03:14:42.000Z" itemprop="datePublished" class="post-time">
+  2014-10-14
+</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+
+
+    </div>
+
+    <div class="post-content" id="post-content" itemprop="postContent" >
+
+    
+          
+ ##使用 作为图片加载库必须设置网络、SD卡权限       1  2       &lt; uses-permission   android:name = "android.permission.INTERNET"  /&gt;      &lt; uses-permission   android:name = "android.permission.WRITE_EXTERNAL_STORAGE"  /&gt;        
+ 
+ 设置缓存目录      1  2  3      File cacheDir = StorageUtils.getOwnCacheDirectory(getApplicationContext(), "imageloader/Cache" );   // 设置ImageLoaderConfiguration   .discCache( new  UnlimitedDiscCache(cacheDir));      
+ 
+ 
+ ###配置ImageLoaderConfiguration       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19      ImageLoaderConfiguration config =  new  ImageLoaderConfiguration  	.Builder(context)  	.memoryCacheExtraOptions( 480 , 800 )	 // 保存的每个文件的最大长宽   	.discCacheExtraOptions( 480 , 800 ,CompressFormat.JPEG, 75 , null )	 // 设置详细信息，最好不要设置   	.threadPoolSize( 3 )	 // 线程池加载的数量   	.threadPriority(Thread.NORM_PRIORITY -  2 )  	.denyCacheImageMultipleSizesInMemory()  	.memoryCache( new  UsingFreqLimitedMemoryCache( 2  *  1024  *  1024 ))	 // 缓存，可以自己实现   	.memoryCacheSize( 2  *  1024  *  1024 )  	.discCacheSize( 50  *  1024  *  1024 )  	.discCacheFileNameGenerator( new  Md5FileNameGenerator())	 // 保存URI名称用MD5加密 可以使用HashCodeFileNameGenerator   	.tasksProcessingOrder(QueueProcessingType.LIFO)  	.discCacheFileCount( 100 )	 // 缓存文件数量   	.discCache( new  UnlimitedDiscCache(cacheDir))	 // 自定义缓存路径   	.defaultDisplayImageOptions(DisplayImageOptions.createSimple())	  	.imageDownloader( new  BaseImageDownloader(context, 5  *  1000 , 30  *  1000 ))	 // 连接超时5s，读取超时30s   	.writeDebugLogs()  	.build();	 // 开始构建   ImageLoader.getInstance().init(config);       
+ ###加载       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20       // 获取ImageLoader实例   ImageLoader imageLoader = ImageLoader.getInstance();   // 设置配置   DisplayImageOptions option;  options =  new  DisplayImageOptions.Builder()  	.showImageOnLoading(R.drawable.ic_launcher)	 // 设置图片在下载期间显示的图片   	.showImageForEmptyUri(R.drawable.ic_launcher)	 // 设置图片Uri为空或者是错误的时候显示的图片   	.showImageOnFail(R.drawable.ic_laucher)	 // 设置图片加载、解码过程错误的时候显示的图片   	.cacheInMemory( true )	 // 设置下载的图片是否缓存在内存中   	.cacheOnDisc( true )	 // 设置下载的图片是否缓存在SD卡中   	.considerExifParams( true )	 // 是否考虑JPEG图像EXIF参数(旋转、翻转)   	.imageScaleType(ImageScaleType.EXACTLY_STRETCHED)	 //设置图片以何种编码方式显示   	.bitmapConfig(Bitmap.Config.RGB_565)	 // 设置图片的解码类型   	.decodingOptions(android.graphics.BitmapFactory.Options decodingOptions)	 // 设置图片的解码配置   	.delayBeforeLoading( int  delayInMillis)	 // 下载完的延迟时间   	.preProcessor(BitmapProcessor preProcessor)	 // 设置图片加入缓存前，对bitmap进行设置   	.resetViewBeforeLoading( true )	 // 设置图片在下载前是否重置，复位   	.displayer( new  RondedBitmapDisplayer( 20 ))	 // 是否设置为圆角   	.displayer( new  FadeInBitmapDisplayer( 100 ))	 // 是否显示加载渐入动画   	.build();  // 构建完成        
+ 
+ 不需要的可以不做配置 
+ 
+ 
+ .imageScaleType(ImageScaleType imageScaleType)    设置图片的缩放方式   EXACTLY :图像将完全按比例缩小到目标大小   EXACTLY_STRETCHED :图片会缩放到目标大小   IN_SAMPLE_INT :图像将被二次采样的整数倍   IN_SAMPLE_POWER_OF_2 :图片将降低2倍，直到下一减少步骤，使图像更小的目标大小   NONE :图片不会调整 
+ .displayer(BitmapDisplayer displayer)   是设置 图片的显示方式  RoundedBitmapDisplayer(int roundPixels) 设置圆角图片  FakeBitmapDisplayer() 这个类什么都没做  FadeInBitmapDisplayer(int durationMillis) 设置图片渐显的时间  SimpleBitmapDisplayer() 正常显示一张图片　　      1  2      ImageLoader.getInstance().displayImage(imageUrl, imageView);  // imageUrl代表图片的URL地址，imageView代表承载图片的IMAGEVIEW控件     ImageLoader.getInstance().displayImage(imageUrl, imageView，options);  // imageUrl代表图片的URL地址，imageView代表承载图片的IMAGEVIEW控件 ， options代表DisplayImageOptions配置文件       
+ 
+ 
+ ###加载监听       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18      imageLoader.displayImage(imageUrl, imageView, options,  new  ImageLoadingListener() &#123;         @Override           public   void   onLoadingStarted  ()   &#123;            //开始加载的时候执行         &#125;         @Override           public   void   onLoadingFailed  (FailReason failReason)   &#123;                  //加载失败的时候执行         &#125;          @Override            public   void   onLoadingComplete  (Bitmap loadedImage)   &#123;            //加载成功的时候执行         &#125;          @Override            public   void   onLoadingCancelled  ()   &#123;            //加载取消的时候执行             &#125;&#125;);       
+ ###加载监听进度       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22      imageLoader.displayImage(imageUrl, imageView, options,  new  ImageLoadingListener() &#123;         @Override           public   void   onLoadingStarted  ()   &#123;            //开始加载的时候执行         &#125;         @Override           public   void   onLoadingFailed  (FailReason failReason)   &#123;                  //加载失败的时候执行         &#125;             @Override               public   void   onLoadingComplete  (Bitmap loadedImage)   &#123;            //加载成功的时候执行         &#125;             @Override               public   void   onLoadingCancelled  ()   &#123;            //加载取消的时候执行         &#125;, new  ImageLoadingProgressListener() &#123;                 @Override             public   void   onProgressUpdate  (String imageUri, View view,  int  current, int  total)   &#123;              //在这里更新 ProgressBar的进度信息           &#125;        &#125;);       
+ ##注意事项 
+ 
+ 权限 
+ 必须初始化ImageLoader.getInstance().init(config) 
+ ImageLoader是根据ImageView的height，width确定图片的宽高 
+ 如果经常出现OOM 
+ ①减少配置之中线程池的大小， .(.threadPoolSize) 推荐1-5； 
+ ②使用 .bitmapConfig(Bitmap.config.RGB_565) 代替ARGB_8888; 
+ 
+ 
+ ③使用 .imageScaleType(ImageScaleType.IN_SAMPLE_INT) 或者 try.imageScaleType(ImageScaleType.EXACTLY) ； 
+ ④避免使用 RoundedBitmapDisplayer. 他会创建新的 ARGB_8888 格式的Bitmap对象； 
+ ⑤使用 .memoryCache(new WeakMemoryCache()) ，不要使用 .cacheInMemory() ; 
+ 
+ 
+ 
+ 
+ 
+ ##其他       1  2  3  4  5      String imageUri =  "http://site.com/image.png" ;  // from Web     String imageUri =  "file:///mnt/sdcard/image.png" ;  // from SD card     String imageUri =  "content://media/external/audio/albumart/13" ;  // from content provider     String imageUri =  "assets://image.png" ;  // from assets     String imageUri =  "drawable://"  + R.drawable.image;  // from drawables (only images, non-9patch)        
+
+    
+    
+        <a href="/2014/10/14/UIL图片异步加载库的使用/" class="post-more waves-effect waves-button">
+            
+        </a>
+    </div>
+    
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UIL/">UIL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/异步加载/">异步加载</a></li></ul>
 
 </article>
 
@@ -469,59 +555,57 @@
  
  分辨率：屏幕上显示的像素个数，单位尺寸内像素点越多，显示的图像就越清楚  主流分辨率: 480*800 、 720*1280 、 1080*1920  
  像素密度  240dpi( 480*800 )、320dpi( 720*1280 )、480dpi( 1080*1920 ) 
- 单位  px:像素  dp:设备独立像素(160dpi为标准)  240dpi下，1
+ 单位  px:像素  dp:设备独立像素(160dpi为标准)  240dpi下，1dp=1.5px
+320dpi下，1dp=2px
+480dpi下，1dp=3px
+   sp:等同于dp，用于描述字体大小  240dpi下，1sp=1.5px    
+320dpi下，1sp=2px
+480dpi下，1sp=3px
+   
+ 
+ ##常见分辨率 
+ 
+ 4:3   VGA      640*480    QVGA     320*240    HVGA     480*320    SVGA     800*600  
+ 5:3   WVGA     800*480  
+ 16:9   FWVGA    854*480    HD       1920*1080    QHD      960*540    720p     1280*720    1080p    1920*1080  
+ Apple   iPhone4/4s       960*640    iPhone5/5s       1136*640    iPhone6          1334*750    iPhone6Plus      1920*1080    小米1            854*480    小米2            1280*720    红米1/1s/note    1280*720    
+ 
+ ###对应的DPI 
+ 
+ HVGA  mdpi 
+ WVGA  hdpi 
+ FWVGA hdpi 
+ QHD   hdpi 
+ 720p  xhdpi 
+ 1080p xxhdpi ##最佳方案 
+ 
+ 
+ 选取320dpi下(720*1280)进行设计，此分辨率下1dp=2px 
+ 对于一切切图资源特殊处理  输出多套分辨率的切图，例如480p和720p，在设计的时候要注意好切图区域的大小能被2和1.5整除的大小，如 48p*48px 、 96*96px 等。 
+  使用相对于单位进行标注   
+ 
+  采用自适应布局 
+ 
+ 标注尽量采用相对关系 
+ 
+ ##文字 中文字体：默认为Droid Sans Fallback,设计时可采用微软雅黑。 英文字体：Andriod4.x及以上采用Roboto，Andrio2.x和andriod3.x采用 Droid Sans。建议尽量采用系统默认字体。 Andriod规范建议，字号采用12sp、14sp、18sp、22sp等四个级别来设计。（实际设计时可以按实际情况调整） 
+ ##总结 
+ 
+ 采用 720*1280 分辨率来进行设计。（设计时，采用偶数值进行设计，方便dp和px的转换） 
+ 开始标注了，标注尽量采用相对位置进行标注。 
+ 切图了，在 720*1280 下进行切图，可以完全适配 720*1280 后放大缩小切图资源 
+ 分别适配 480*800 、 1080*1920  
+ 不要忘记了，开发完后要进行bug测试（视觉方面的） 
+ 
+
     
     
         <a href="/2014/10/14/Android分辨率适配/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
 	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/分辨率/">分辨率</a></li></ul>
-
-</article>
-
-    </li>
-  
-    <li class="post-list-item">
-        <article id="post-UIL图片异步加载库的使用"
-  class="article article-type-post" itemprop="blogPost">
-     
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2014/10/14/UIL图片异步加载库的使用/">UIL图片异步加载库的使用</a>
-    </h3>
-  
-
-
-
-    <div class="post-meta">
-        <time datetime="2014-10-14T03:14:42.000Z" itemprop="datePublished" class="post-time">
-  2014-10-14
-</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
-
-
-
-    </div>
-
-    <div class="post-content" id="post-content" itemprop="postContent" >
-
-    
-          
- ##使用 作为图片加载库必须设置网络、SD卡权限       1  2       &lt; uses-permission   android:name = "android.permission.INTERNET"  /&gt;      &lt; uses-permission   android:name = "android.permission.WRITE_EXTERNAL_S
-    
-    
-        <a href="/2014/10/14/UIL图片异步加载库的使用/" class="post-more waves-effect waves-button">
-            阅读全文...
-        </a>
-    </div>
-    
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UIL/">UIL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/异步加载/">异步加载</a></li></ul>
 
 </article>
 
@@ -557,11 +641,18 @@
 
     
           
- ##基本请求       1  2  3  4  5  6  7  8  9  10  11  12  13      StringRequest stringRequest =  new  StringRequest( "http://www.baidu.com" , new  Response.Listener&lt;String&gt;()&#123;  	 @Override   
+ ##基本请求       1  2  3  4  5  6  7  8  9  10  11  12  13      StringRequest stringRequest =  new  StringRequest( "http://www.baidu.com" , new  Response.Listener&lt;String&gt;()&#123;  	 @Override   	  public   void   onResponse  (String response)   &#123;  		 //   	&#125;,  new  Response.ErrorListener() &#123;  		 @Override   		  public   void   onErrorResopnse  (VolleyError error)   &#123;  			 //   		&#125;  	&#125;  &#125;);   // 添加请求道请求队列中   mQueue.add(stringRequest);       
+ 三个参数分别是目标服务器的URL地址，服务器响应成功的回调，服务器响应失败的回调 
+ ##Post       1  2  3  4  5  6  7  8  9      StringRequest stringRequest =  new  StringRequest(Method.POST,url,listener,errorListenrer) &#123;  	 @Override   	  protected  Map&lt;String,String&gt;  getParams  ()   throws  AuthFailureError  &#123;  		Map&lt;String,String&gt; map = newHash&lt;String,String&gt;();  		map.put( "params1" , "value1" );  		map.put( "params2" , "value2" );  		 return  map;  	&#125;  &#125;       
+ ##JsonRequest JsonRequest是一个抽象类，有两个直接子类，JsonObjectRequest和JsonArrayRequest，分别用于处理JSON数据和JSON数组       1  2  3  4  5  6  7  8  9  10  11      JsonObjectRequest jsonObjectRequest =  new  JsonObjectRequest( "http://m.weather.com.cn/data/101010100.html" , null ,  new  Response.Listener&lt;JSONObject&gt;() &#123;                 @Override                   public   void   onResponse  (JSONObject response)   &#123;                    Log.d( "TAG" , response.toString());                &#125;            &#125;,  new  Response.ErrorListener() &#123;                 @Override                   public   void   onErrorResponse  (VolleyError error)   &#123;                    Log.e( "TAG" , error.getMessage(), error);                &#125;            &#125;);       
+ ##ImageRequest       1  2  3  4  5  6  7  8  9  10  11  12  13      ImageRequest imageRequest =  new  ImageRequest(  	 "https://avatars3.githubusercontent.com/u/5416585?v=2&amp;s=460" ,  	 new  Response.Listener&lt;Bitmap&gt;() &#123;  		 @Override               public   void   onResponse  (Bitmap response)   &#123;                imageView.setImageBitmap(response);           	&#125;      &#125;, 0 , 0 ,Config.RGB_565, new  Response.ErrorListener() &#123;             @Override               public   void   onErrorResponse  (VolleyError error)   &#123;           	   imageView.setImageResource(R.drawable.default_image);            &#125;    	&#125;);       
+ 第三第四个参数指定允许图片最大的宽度和高度，如果指定的网络图片的宽度或高度大于这里的最大值，则会对图片进行压缩，指定为0即表示不管图片多大都不压缩。 
+ ##ImageLoader 
+
     
     
         <a href="/2014/10/14/volley详解/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -601,11 +692,11 @@
 
     
           
-      1  2  3  4  5  6  7  8  9  10  11       import  urllib   import  urllib2    url =  'http://ave.bolyartech.com/params.php'   values = &#123; 'param1' : '2' , 'param2' : '3' &#125;  data = urll
+      1  2  3  4  5  6  7  8  9  10  11       import  urllib   import  urllib2    url =  'http://ave.bolyartech.com/params.php'   values = &#123; 'param1' : '2' , 'param2' : '3' &#125;  data = urllib.urlencode(values)   print  data  req = urllib2.Request(url, data)	 # Post请求   response = urllib2.urlopen(req)  the_page = response.read()	 # 读取返回数据    print  the_page      
     
     
         <a href="/2014/10/13/Python实现简单的Post请求/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -628,51 +719,6 @@
 <div class="mask" id="mask"></div>
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
-<script>
-var BLOG_SHARE = {
-    title: "SeniorZhai's blog",
-    pic: "/img/logo.jpg",
-    summary: document.getElementsByName('summary')[0].content,
-    url: "http://seniorzhai.github.io/page/19/index.html"
-};
-</script>
-<div class="global-share" id="global-share">
-    <div class="tit">分享到：</div>
-    <ul class="reset share-icons">
-      <li>
-        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-      <li>
-        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-      <li>
-        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
-          <i class="icon icon-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
-          <i class="icon icon-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
-          豆
-        </a>
-      </li>
-    </ul>
- </div>
-
-
 
 <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 
@@ -680,45 +726,10 @@ var BLOG_SHARE = {
 
 
 
-<div class="search-panel" id="search-panel">
-    <ul class="search-result" id="search-result"></ul>
-</div>
-<script type="text/template" id="search-tpl">
-<li class="item">
-    <a href="/{path}" class="waves-block waves-effect">
-        <div class="title ellipsis" title="{title}">{title}</div>
-        <div class="flex-row flex-middle">
-            <div class="tags ellipsis">
-                {tags}
-            </div>
-            <time class="flex-col time">{date}</time>
-        </div>
-    </a>
-</li>
-</script>
-
-<script src="/js/search.js"></script>
 
 
 
 
-
-<script src="//s95.cnzz.com/z_stat.php?id=true&web_id=true"></script>
-
-
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-54646832-1&#39;', 'auto');
-ga('send', 'pageview');
-
-</script>
-<!-- End Google Analytics -->
 
 
 

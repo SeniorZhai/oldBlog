@@ -6,8 +6,6 @@
   <title>SeniorZhai&#39;s blog | 苟利国家生死以，起因福祸趋避之</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="theme-color" content="#ED5565">
-  
   
   <meta name="keywords" content="undefined">
   <meta name="description" content="专注于移动平台">
@@ -20,10 +18,8 @@
 <meta name="twitter:title" content="SeniorZhai's blog">
 <meta name="twitter:description" content="专注于移动平台">
   
-    <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
-  
   <meta name="summary" content="专注于移动平台">
-  <link rel="shortcut icon" href="/img/favicon.ico">
+  <link rel="shortcut icon" href="/">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -37,7 +33,7 @@
   </a>
   <div class="brand-wrap">
     <div class="brand">
-      <a href="/" class="avatar"><img src="/img/logo.jpg"></a>
+      <a href="/" class="avatar"><img src="undefined"></a>
       <hgroup class="introduce">
         <h5 class="nickname">Dear宅学长</h5>
         <a href="mailto:developer.zhaitao@gmail.com" title="developer.zhaitao@gmail.com" class="mail">developer.zhaitao@gmail.com</a>
@@ -47,48 +43,6 @@
   <div class="scroll-wrap flex-col">
     <ul class="nav">
       
-          <li class="waves-block waves-effect">
-            <a href="/"  >
-              <i class="icon icon-lg icon-home"></i>
-              主页
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="/archives"  >
-              <i class="icon icon-lg icon-archives"></i>
-              Archives
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="/tags"  >
-              <i class="icon icon-lg icon-tags"></i>
-              Tags
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="https://seniorzhai.github.io" target="_blank" >
-              <i class="icon icon-lg icon-github"></i>
-              Github
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="http://weibo.com/seniorszhai/" target="_blank" >
-              <i class="icon icon-lg icon-weibo"></i>
-              Weibo
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="/about"  >
-              <i class="icon icon-lg icon-link"></i>
-              about
-            </a>
-          </li>
-      
     </ul>
 
     <footer class="footer">
@@ -96,7 +50,7 @@
   <p>SeniorZhai&#39;s blog &copy; 2016</p>
   <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
   <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
-  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
+  <a href="undefined" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
 </footer>
 
   </div>
@@ -111,20 +65,6 @@
         </a>
         <div class="flex-col header-title ellipsis">SeniorZhai&#39;s blog</div>
         
-        <div class="search-wrap" id="search-wrap">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
-                <i class="icon icon-lg icon-chevron-left"></i>
-            </a>
-            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
-                <i class="icon icon-lg icon-search"></i>
-            </a>
-        </div>
-        
-        
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
-            <i class="icon icon-lg icon-share-alt"></i>
-        </a>
         
     </div>
 </header>
@@ -178,7 +118,7 @@
     
     
         <a href="/2015/09/04/判断iOS设备种类/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -221,7 +161,7 @@
     
     
         <a href="/2015/09/01/Android、iOS大不同-八-新的开始/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -262,7 +202,7 @@
     
     
         <a href="/2015/08/26/Swift版Masonry-SnapKit布局框架/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -300,11 +240,16 @@
 
     
           
- ##在Fargment中使用       1  2  3  4  5  6  7       &lt; layout &gt;        &lt; date &gt;            &lt; variable                 name = "user"                type = "io.github.seniorzhai.databinding
+ ##在Fargment中使用       1  2  3  4  5  6  7       &lt; layout &gt;        &lt; date &gt;            &lt; variable                 name = "user"                type = "io.github.seniorzhai.databindingdemo.model.PlainUser"  /&gt;       &lt;/ date &gt;    &lt;/ layout &gt;        
+ 在Fragment.java中       1  2  3  4  5  6  7  8  9      onCreateView() &#123;      ItemGridBinding binding = DataBindingUtil.inflate(inflater, R.layout.item_grid, container,  false );      PlainUser user =  new  PlainUser();      user.name.set( "SBBBBBBBB" );      user.age.set( 111 );      binding.setUser(user);      binding.getRoot().setBackgroundColor(RandomColor.getColor());       return  binding.getRoot();  &#125;       
+  https://github.com/SeniorZhai/DataBindingDemo/blob/master/app/src/main/java/io/github/seniorzhai/databindingdemo/BingdingFragment.java  
+ ##在GridView中使用 主要的实现代码需要在Adapter的getView方法中实现       1  2  3  4  5  6  7  8  9  10  11        public  View  getView  ( int  position,View convertView,ViewGroup parent)   &#123;       if  (convertView ==  null ) &#123;          binding = DataBindingUtil.inflate(inflater,R.layout.item_grid,parent, false );          convertView = binding.getRoot();          convertView.setTag(binding);      &#125;  else  &#123;          binding = convertView.getTag();      &#125;      binding.setVariable(BR.user,getItem(position));       return  converView;  &#125;       
+  https://github.com/SeniorZhai/DataBindingDemo/blob/master/app/src/main/java/io/github/seniorzhai/databindingdemo/MyAdapter.java  
+
     
     
         <a href="/2015/08/16/Data-Binding（二）/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -347,7 +292,7 @@
     
     
         <a href="/2015/08/16/常用的Gradle命令/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -390,7 +335,7 @@
     
     
         <a href="/2015/08/16/Data-Binding（一）/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -439,11 +384,33 @@
  图标缺失、重复、错误尺寸 
  AndroidManifest.xml中的错误 
  
- ##Lint Lint工具
+ ##Lint Lint工具在 /AndroidSDK/tools/ 文件夹下 
+ ###使用 
+ 
+  lint &lt;project directory&gt;  lint命令后添加工程目录 
+  lint --html &lt;project directory&gt;  生成html格式的报告 
+  lint --simplehtml &lt;project directory&gt;  生成简单html格式的报告 
+  lint --xml &lt;project directory&gt;  生成xml格式的报告 
+  lint --check &quot;UnusedResources&quot; &lt;project directory&gt;  清理冗余资源文件 
+  lint --show 可获得详细问题列表 
+ AdapterViewChildren 确保没有在XML文件中定义它的子view 
+ OnClick 确保XML文件声明的OnClick的调用函数在代码中实际存在 
+ SuspiciousImport 可疑import的检查 
+ UsesMinSdkAttributes 检查是否在AndroidManifest.xml文件中定义了minimum SDK 和 target SDK这两个属性 
+ WrongViewCast View强转换的检查 
+ MissingRegistered 检查manifest文件中声明的类实际是否存在于工程或工程的libraries中 
+ NamespaceTypo 命名空间拼写检查 
+ Proguard 混淆配置检查 
+ ScrollViewCount 检查ScrollViews是否只有一个child 
+ …… 
+ 
+ 
+ 
+
     
     
         <a href="/2015/08/12/Android-Lint工具/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -491,11 +458,55 @@
  
  ###2.color 
  
- 颜色类型      1       &lt; attr   name = "textColor"   format = "c
+ 颜色类型      1       &lt; attr   name = "textColor"   format = "color"  /&gt;       
+ 
+ 
+ ###3.boolean 
+ 
+ 布尔类型      1       &lt; attr   name = "focusable"   format = "boolean"  /&gt;       
+ 
+ 
+ ###4.dimension 
+ 
+ 尺寸类型      1       &lt; attr   name = "layout_width"   format = "dimension"  /&gt;       
+ 
+ 
+ ###5.float 
+ 
+ 浮点类类型      1       &lt; attr   name = "toAlpha"   format = "float" /&gt;       
+ 
+ 
+ ###6.integer 
+ 
+ 整数类型      1       &lt; attr   name = "visible"   format = "integer"  /&gt;       
+ 
+ 
+ ###7.string 
+ 
+ 字符串类型      1       &lt; attr   name = "key"   format = "string"  /&gt;       
+ 
+ 
+ ###8.fraction 
+ 
+ 百分比类型      1       &lt; attr   name = "pivotX"   format = "fraction"  /&gt;       
+ 
+ 
+ ###9.enum 
+ 
+ 枚举类型      1  2  3  4       &lt; attr   name = "orientation" &gt;   	 &lt; enum   name = "horizontal"   value = "0"  /&gt;   	 &lt; enum   name = "vertical"   value = "1"  /&gt;    &lt;/ attr &gt;       
+ 
+ 
+ ###10.flag 
+ 
+ 标记类型(可以与或运算)      1  2  3  4       &lt; attr   name = "mode" &gt;   	 &lt; flag   name = "stateVisible"   value = "0x01" &gt;   	 &lt; flag   name = "statePan"   value = "0x10" &gt;    &lt;/ attr &gt;       
+ 
+ 
+ ###注意 属性可以同时指定多个类型值       1       &lt; attr   name = "background"   format = "referce|color"  /&gt;        
+
     
     
         <a href="/2015/08/10/自定义属性汇总/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -538,10 +549,15 @@
  闭包(closure)包含了可执行程序(跟方法主体(statements)类似)以及接收(capture)的参数，格式如下       1  2  3      &#123;(parameters) -&gt;  return  type  in   	statements  &#125;       
  
  闭包可以省略参数的类型和返回值的类型，如果省略了参数类型也要省略 in 关键字 
+ 闭包省略参数，可以使用 $0 , $1 , $2 ……来引用出现的第一个、第二个、得三个……参数 
+ 如果闭包只包含一个表达式，那么表达式就会自动成为该闭包的返回值      1  2  3  4  5  6  7  8  9  10  11  12  13      func1 &#123;  	(x: Int ,y: Int ) -&gt;  Int   in   	 return  x + y  &#125;    func2 &#123;  	(x,y)  in   	 return  x + y  &#125;    func3 &#123; return  $ 0  + $ 1 &#125;    func4 &#123; $ 0  + $ 1  &#125;      
+ 
+ 
+
     
     
         <a href="/2015/08/09/Swift闭包表达式/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -584,7 +600,7 @@
     
     
         <a href="/2015/08/06/Android反编译——Mac篇/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -607,51 +623,6 @@
 <div class="mask" id="mask"></div>
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
-<script>
-var BLOG_SHARE = {
-    title: "SeniorZhai's blog",
-    pic: "/img/logo.jpg",
-    summary: document.getElementsByName('summary')[0].content,
-    url: "http://seniorzhai.github.io/page/4/index.html"
-};
-</script>
-<div class="global-share" id="global-share">
-    <div class="tit">分享到：</div>
-    <ul class="reset share-icons">
-      <li>
-        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-      <li>
-        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-      <li>
-        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
-          <i class="icon icon-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
-          <i class="icon icon-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
-          豆
-        </a>
-      </li>
-    </ul>
- </div>
-
-
 
 <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 
@@ -659,45 +630,10 @@ var BLOG_SHARE = {
 
 
 
-<div class="search-panel" id="search-panel">
-    <ul class="search-result" id="search-result"></ul>
-</div>
-<script type="text/template" id="search-tpl">
-<li class="item">
-    <a href="/{path}" class="waves-block waves-effect">
-        <div class="title ellipsis" title="{title}">{title}</div>
-        <div class="flex-row flex-middle">
-            <div class="tags ellipsis">
-                {tags}
-            </div>
-            <time class="flex-col time">{date}</time>
-        </div>
-    </a>
-</li>
-</script>
-
-<script src="/js/search.js"></script>
 
 
 
 
-
-<script src="//s95.cnzz.com/z_stat.php?id=true&web_id=true"></script>
-
-
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-54646832-1&#39;', 'auto');
-ga('send', 'pageview');
-
-</script>
-<!-- End Google Analytics -->
 
 
 

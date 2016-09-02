@@ -6,8 +6,6 @@
   <title>SeniorZhai&#39;s blog | 苟利国家生死以，起因福祸趋避之</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="theme-color" content="#ED5565">
-  
   
   <meta name="keywords" content="undefined">
   <meta name="description" content="专注于移动平台">
@@ -20,10 +18,8 @@
 <meta name="twitter:title" content="SeniorZhai's blog">
 <meta name="twitter:description" content="专注于移动平台">
   
-    <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
-  
   <meta name="summary" content="专注于移动平台">
-  <link rel="shortcut icon" href="/img/favicon.ico">
+  <link rel="shortcut icon" href="/">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -37,7 +33,7 @@
   </a>
   <div class="brand-wrap">
     <div class="brand">
-      <a href="/" class="avatar"><img src="/img/logo.jpg"></a>
+      <a href="/" class="avatar"><img src="undefined"></a>
       <hgroup class="introduce">
         <h5 class="nickname">Dear宅学长</h5>
         <a href="mailto:developer.zhaitao@gmail.com" title="developer.zhaitao@gmail.com" class="mail">developer.zhaitao@gmail.com</a>
@@ -47,48 +43,6 @@
   <div class="scroll-wrap flex-col">
     <ul class="nav">
       
-          <li class="waves-block waves-effect">
-            <a href="/"  >
-              <i class="icon icon-lg icon-home"></i>
-              主页
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="/archives"  >
-              <i class="icon icon-lg icon-archives"></i>
-              Archives
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="/tags"  >
-              <i class="icon icon-lg icon-tags"></i>
-              Tags
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="https://seniorzhai.github.io" target="_blank" >
-              <i class="icon icon-lg icon-github"></i>
-              Github
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="http://weibo.com/seniorszhai/" target="_blank" >
-              <i class="icon icon-lg icon-weibo"></i>
-              Weibo
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="/about"  >
-              <i class="icon icon-lg icon-link"></i>
-              about
-            </a>
-          </li>
-      
     </ul>
 
     <footer class="footer">
@@ -96,7 +50,7 @@
   <p>SeniorZhai&#39;s blog &copy; 2016</p>
   <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
   <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
-  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
+  <a href="undefined" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
 </footer>
 
   </div>
@@ -111,20 +65,6 @@
         </a>
         <div class="flex-col header-title ellipsis">SeniorZhai&#39;s blog</div>
         
-        <div class="search-wrap" id="search-wrap">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
-                <i class="icon icon-lg icon-chevron-left"></i>
-            </a>
-            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
-                <i class="icon icon-lg icon-search"></i>
-            </a>
-        </div>
-        
-        
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
-            <i class="icon icon-lg icon-share-alt"></i>
-        </a>
         
     </div>
 </header>
@@ -175,7 +115,7 @@
     
     
         <a href="/2014/09/30/CountDownTimer倒计时类/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -216,11 +156,14 @@
     
           
  ##Jar包 Jar包的处理相对简单，将Jar包复制到lib文件夹中，然后右击Jar包选择 add as a library 即可导入。 删除时，需要先删除 build.gradle 中的语句，再删除Jar包   
- ##添加远程开源库   一般新的开源库在其README.md中都会有相应连接，比如 FlatUI ，在其GitHub页面可以得到以下内容   要将上面内容添加到项目中的 bu
+ ##添加远程开源库   一般新的开源库在其README.md中都会有相应连接，比如 FlatUI ，在其GitHub页面可以得到以下内容   要将上面内容添加到项目中的 build.gradle 中，切勿添加到全局的build.gradle文件中去 
+ ##添加本地开源库 下载开源库后，放置在 app 目录同级的目录下，编辑 setting.gradle 文件加入 :开源库文件名 ，例如在app同级目录下放置了volley的开源文件夹，编辑setting.gradle的内容为       1       include   ':app' , ":volley"        
+ 之后再app目录下的 build.gradle 文件下，在 dependencies{} 节点下加入:       1       compile   project ( ':volley' )       
+
     
     
         <a href="/2014/09/29/Android-Studio导入Jar包及第三方开源库的方法/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -260,11 +203,12 @@
 
     
           
- 效果         1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49
+ 效果         1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71  72  73       public    class   AnimationUtils   &#123;    	  public   static  ObjectAnimator  tada  (View view)   &#123;  	     return  tada(view,  1f );  	&#125;    	  public   static  ObjectAnimator  tada  (View view,  float  shakeFactor)   &#123;    	    PropertyValuesHolder pvhScaleX = PropertyValuesHolder.ofKeyframe(View.SCALE_X,  	            Keyframe.ofFloat( 0f ,  1f ),  	            Keyframe.ofFloat(. 1f , . 9f ),  	            Keyframe.ofFloat(. 2f , . 9f ),  	            Keyframe.ofFloat(. 3f ,  1.1f ),  	            Keyframe.ofFloat(. 4f ,  1.1f ),  	            Keyframe.ofFloat(. 5f ,  1.1f ),  	            Keyframe.ofFloat(. 6f ,  1.1f ),  	            Keyframe.ofFloat(. 7f ,  1.1f ),  	            Keyframe.ofFloat(. 8f ,  1.1f ),  	            Keyframe.ofFloat(. 9f ,  1.1f ),  	            Keyframe.ofFloat( 1f ,  1f )  	    );    	    PropertyValuesHolder pvhScaleY = PropertyValuesHolder.ofKeyframe(View.SCALE_Y,  	            Keyframe.ofFloat( 0f ,  1f ),  	            Keyframe.ofFloat(. 1f , . 9f ),  	            Keyframe.ofFloat(. 2f , . 9f ),  	            Keyframe.ofFloat(. 3f ,  1.1f ),  	            Keyframe.ofFloat(. 4f ,  1.1f ),  	            Keyframe.ofFloat(. 5f ,  1.1f ),  	            Keyframe.ofFloat(. 6f ,  1.1f ),  	            Keyframe.ofFloat(. 7f ,  1.1f ),  	            Keyframe.ofFloat(. 8f ,  1.1f ),  	            Keyframe.ofFloat(. 9f ,  1.1f ),  	            Keyframe.ofFloat( 1f ,  1f )  	    );    	    PropertyValuesHolder pvhRotate = PropertyValuesHolder.ofKeyframe(View.ROTATION,  	            Keyframe.ofFloat( 0f ,  0f ),  	            Keyframe.ofFloat(. 1f , - 3f  * shakeFactor),  	            Keyframe.ofFloat(. 2f , - 3f  * shakeFactor),  	            Keyframe.ofFloat(. 3f ,  3f  * shakeFactor),  	            Keyframe.ofFloat(. 4f , - 3f  * shakeFactor),  	            Keyframe.ofFloat(. 5f ,  3f  * shakeFactor),  	            Keyframe.ofFloat(. 6f , - 3f  * shakeFactor),  	            Keyframe.ofFloat(. 7f ,  3f  * shakeFactor),  	            Keyframe.ofFloat(. 8f , - 3f  * shakeFactor),  	            Keyframe.ofFloat(. 9f ,  3f  * shakeFactor),  	            Keyframe.ofFloat( 1f ,  0 )  	    );    	     return  ObjectAnimator.ofPropertyValuesHolder(view, pvhScaleX, pvhScaleY, pvhRotate).  	            setDuration( 1000 );  	&#125;    	  public   static  ObjectAnimator  nope  (View view)   &#123;  	     int  delta = view.getResources().getDimensionPixelOffset(R.dimen.spacing_medium);    	    PropertyValuesHolder pvhTranslateX = PropertyValuesHolder.ofKeyframe(View.TRANSLATION_X,  	            Keyframe.ofFloat( 0f ,  0 ),  	            Keyframe.ofFloat(. 10f , -delta),  	            Keyframe.ofFloat(. 26f , delta),  	            Keyframe.ofFloat(. 42f , -delta),  	            Keyframe.ofFloat(. 58f , delta),  	            Keyframe.ofFloat(. 74f , -delta),  	            Keyframe.ofFloat(. 90f , delta),  	            Keyframe.ofFloat( 1f ,  0f )  	    );    	     return  ObjectAnimator.ofPropertyValuesHolder(view, pvhTranslateX).  	            setDuration( 500 );  	&#125;    &#125;       
+
     
     
         <a href="/2014/09/29/晃动动画/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -308,11 +252,45 @@
  
  使用Ctrl+`打开Sublime Text控制台 
   输入下面命令道控制台 
-      1      import urllib.request,os,hashlib; h = &a
+      1      import urllib.request,os,hashlib; h = &apos;7183a2d3e96f11eeadd761d777e62404&apos; + &apos;e330c659d4bb41d3bdf022e94cab3cd0&apos;; pf = &apos;Package Control.sublime-package&apos;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( &apos;http://sublime.wbond.net/&apos; + pf.replace(&apos; &apos;, &apos;%20&apos;)).read(); dh = hashlib.sha256(by).hexdigest(); print(&apos;Error validating download (got %s instead of %s), please try manual install&apos; % (dh, h)) if dh != h else open(os.path.join( ipp, pf), &apos;wb&apos; ).write(by)      
+ 
+  等待Package Control安装完成，使用 Ctrl + Shift + P 打开命令板 ##基本操作 
+ 
+  Ctrl + Enter 在当前行下面增加一行并跳至该行 
+  Ctrl + Shift + Enter 在当前行上增加一行并跳至该行 
+  Ctrl + ←/→ 逐词移动 
+  Ctrl + Shift + ←/→ 逐词选择 
+  Ctrl + ↑/↓ 移动显示区域 
+  Ctrl + Shift + ↑/↓ 移动当前行 ##选择 
+  Ctrl + D 选择当前光标所在的词并高亮该词出现的位置，再次按下选择该词下次出现的位置 
+  Ctrl + K 在多重选词的过程中进行跳过，使用 Ctrl + U 进行回退，使用 Esc 退出多重编辑   
+  Ctrl + Shift + L 将当前选中区域打散，然后进行同时编辑   
+  Ctrl + J 将当前选中的区域合并成一行   ##查找&amp;替换 Sublime Text的查找功能可以分为 快速查找 、 标准查找 、 多文件查找  ###快速查找 使用 Shift + ←/→ 或者 Ctrl + D 选中关键字，然后使用 F3 跳到其下一个出现的位置， Shift + F3 跳到其上一个出现的位置， Alt + F3 可以选中其出现的所有位置   ###标准查找&amp;替换 使用 Ctrl + F 调出搜索框进行搜索   使用 Ctrl + H 调出替换框， Ctrl +_Shift + H 替换当前关键字， Ctrl + Alt + H 替换所有匹配关键字   ####关键字查找&amp;替换 
+  Alt + C 切换大小写敏感模式 
+  Alt + W 切换整字匹配模式 ###多文件搜索  Ctrl + Shift + F 开启多文件搜索&amp;替换   ##跳转 
+  Ctrl + P 会列出当前打开的文件（或者是当前文件夹的文件），输入文件名然后Enter跳转至该文件。   
+  Ctrl + R 会列出当前文件中的符号（例如类名和函数名，但无法深入到变量名），输入符号名称Enter即可以跳转到该处。此外，还可以使用F12快速跳转到当前光标所在符号的定义处（Jump to Definition）。   
+  Ctrl + G 然后输入行号以跳转到指定行。   ###组合跳跃 在 Ctrl + P 匹配文件后，可以进行后续输入以跳转到更精确的位置 
+  @ 符号跳转：输入 @demo 跳转到 demo 符号所在的位置 
+  # 关键字跳转：输入 #keyword 跳转到 keyword 所在的位置 
+  : 行号跳转：输入:12跳转到文件的第12行。   ##文件夹 用 Ctrl + K ,  Ctrl + B 显示或隐藏侧栏，使用 Ctrl + P 快速跳转到文件夹里的文件。   
+ 使用 Ctrl + Shift + N 创建一个新窗口 
+  Ctrl + N 在当前窗口创建一个新标签， Ctrl + W 关闭当前标签， Ctrl + Shift + T 恢复刚刚关闭的标签。 
+ 分屏： Alt + Shift + 2 进行左右分屏， Alt + Shift + 8 进行上下分屏， Alt + Shift + 5 进行上下左右分屏（即分为四屏）。 
+ 分屏下，使用 Ctrl + 数字 键跳转到指定屏，使用 Ctrl + Shift + 数字键 将当前屏移动到指定屏 
+ 
+ 
+  F11  全屏 
+  Shift + F11  切换无干扰全屏 ##格式化 手动格式化使用 Ctrl + [ 向左缩进， Ctrl + ] 向右缩进， Ctrl + Shift + V 以当前缩进粘贴代码 此外也可以使用插件实现自动缩进和智能对齐 
+  HTMLBeautify ：格式化HTML。 
+  AutoPEP8 ：格式化Python代码。 
+  Alignment ：进行智能对齐。 ##中文输入法Bug Sublime Text一直存在一个Bug：中文输入框不跟随。   解决方法是安装 IMESupport 插件，之后重启Sublime Text问题就解决了。   
+ 
+
     
     
         <a href="/2014/09/28/Sublime-Text使用指南/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -355,7 +333,7 @@
     
     
         <a href="/2014/09/27/Python遍历/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -407,11 +385,26 @@
  count()    列表含多少元素 
  index(x)    差选下标为x的元素 
  append()    在末尾添加元素 
- sort()  
+ sort()    排序 
+ pop()        或许最后一个元素，并去除 
+ remove()    删除元素 
+ insert(x,y)    在下边x的位置插入y 
+ 
+ ##字典 
+ ###常用方法 
+ 
+ keys()    返回dict所有键 
+ values()    返回dict所有值 
+ items()    返回dict所有元素 
+ clear()    清空dict 
+ del dic{‘tom’}    删除’tom’元素 
+ len()            获取地点的元素总数 
+ 
+      1  2  3  4  5  6  7  8  9  10      dic = &#123; 'zoe' : 1 , 'joy' : 2 , 'tom' : 3 &#125;   print  dic   print  len(dic)   print  dic.keys()   print  dic.values()   print  dic.items()   del  dic[ 'tom' ]   print  dic  dic.clear()   print  dic      
     
     
         <a href="/2014/09/27/Python模块/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -452,7 +445,7 @@
     
     
         <a href="/2014/09/26/为什么是Service不是Thread/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -502,11 +495,26 @@
  count()    列表含多少元素 
  index(x)    差选下标为x的元素 
  append()    在末尾添加元素 
- sort()  
+ sort()    排序 
+ pop()        或许最后一个元素，并去除 
+ remove()    删除元素 
+ insert(x,y)    在下边x的位置插入y 
+ 
+ ##字典 
+ ###常用方法 
+ 
+ keys()    返回dict所有键 
+ values()    返回dict所有值 
+ items()    返回dict所有元素 
+ clear()    清空dict 
+ del dic{‘tom’}    删除’tom’元素 
+ len()            获取地点的元素总数 
+ 
+      1  2  3  4  5  6  7  8  9  10      dic = &#123; 'zoe' : 1 , 'joy' : 2 , 'tom' : 3 &#125;   print  dic   print  len(dic)   print  dic.keys()   print  dic.values()   print  dic.items()   del  dic[ 'tom' ]   print  dic  dic.clear()   print  dic      
     
     
         <a href="/2014/09/26/Python常用方法/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -553,11 +561,15 @@
  创建分支 git branch new_branch_name 
  切换分支 git checkout target_branch_name 
  删除分支 -D target_branch_name   ##推送到远程分支 
- git push origin local_branch_na
+ git push origin local_branch_name:remote_branch_name   ##合并分支 
+ git merge source_branch   ##标记 
+ git tag xxx   
+ 
+
     
     
         <a href="/2014/09/24/git命令/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -597,11 +609,17 @@
 
     
           
-   主界面       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28       &lt; RelativeLayout   xmlns:android = "http://schemas.android.com/apk/res/an
+   主界面       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28       &lt; RelativeLayout   xmlns:android = "http://schemas.android.com/apk/res/android"         xmlns:tools = "http://schemas.android.com/tools"        android:layout_width = "match_parent"        android:layout_height = "match_parent" &gt;       &lt; ListView              android:layout_width = "match_parent"            android:layout_height = "match_parent"            android:id = "@+id/product_list"            android:cacheColorHint = "#00000000"          	/&gt;       &lt; RelativeLayout         	 android:id = "@+id/shopping_cart"       	 android:layout_width = "wrap_content"       	 android:layout_height = "70dp"       	 android:layout_alignParentBottom = "true"       	 android:layout_marginLeft = "20dp"       	 android:paddingBottom = "22dp"       	 android:gravity = "center_vertical" &gt;      	 &lt; ImageView        		 android:id = "@+id/shopping_img_cart"       		 android:layout_width = "50dp"       		 android:layout_height = "50dp"       		 android:padding = "1dp"       		 android:layout_alignParentLeft = "true"       		 android:scaleType = "centerInside"       		 android:src = "@drawable/shopping_cart" /&gt;       &lt;/ RelativeLayour &gt;    &lt;/ RelativeLayout &gt;        
+ item项       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25       &lt; RlativeLayout    	 xmlns:android = "http://schemas.android.com/apk/res/android"   	 android:layout_width = "match_parent"   	 android:layout_height = "48dp" &gt;  	 &lt; Button     		 android:id = "@+id/product_buy_btn"   		 android:layout_width = "40dp"   		 android:layout_height = "48dp"   		 android:layout_alignParentRight = "true"            android:layout_gravity = "center_vertical"            android:layout_margin = "10dp"   		 android:text = "购买"   		 android:textColor = "#F8720D"   		 android:textSize = "12sp"  /&gt;  	 &lt; TextView     		 android:id = "@+id/name"   		 android:layout_width = "match_parent"   		 android:layout_height = "48dp"   		 android:paddingLeft = "10dp"   		 android:text = "商品"   		 android:textSize = "18sp"   		 android:gravity = "center_vertical"   		 android:layout_toLeftOf = "@id/product_buy_btn"   		/&gt;   &lt;/ RlativeLayout &gt;        
+ 代码       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90  91  92  93  94  95  96  97  98  99  100  101  102  103  104  105  106  107  108  109  110  111  112  113  114  115  116  117  118  119  120  121  122  123  124  125  126  127  128  129  130  131  132  133  134  135  136  137  138  139  140  141  142  143  144  145  146  147  148  149  150  151  152  153  154  155  156  157  158  159  160  161       public    class   MainActivity   extends   Activity   &#123;    	 private  ListView mListView;  	 private  ImageView shopCart;  	 private  ImageView buyImg;  	 private  ViewGroup anim_mask_layout; //动画层     	 private  Context mContext;  	 private  ProductAdapter productAdapter;    	 @Override   	  protected   void   onCreate  (Bundle savedInstanceState)   &#123;  		 super .onCreate(savedInstanceState);  		setContentView(R.layout.activity_main);  		mContext =  this ;  		initView();  	&#125;    	  private   void   initView  ()   &#123;  		shopCart = (ImageView) findViewById(R.id.shopping_img_cart);  		mListView = (ListView) findViewById(R.id.product_list);  		productAdapter =  new  ProductAdapter();  		mListView.setAdapter(productAdapter);  	&#125;    	 private    class   ProductAdapter   extends   BaseAdapter   &#123;    		  public   ProductAdapter  ()   &#123;  		&#125;    		 @Override   		  public   int   getCount  ()   &#123;  			 return   20 ;  		&#125;    		 @Override   		  public  String  getItem  ( int  position)   &#123;  			 return   "商品"  + (position +  1 );  		&#125;    		 @Override   		  public   long   getItemId  ( int  position)   &#123;  			 return  position;  		&#125;    		 @Override   		  public  View  getView  ( int  position, View convertView,    				 final  ViewGroup parent) &#123;  			String name = getItem(position);  			ViewHolder holder =  null ;  			 if  (convertView ==  null ) &#123;  				convertView = LayoutInflater.from(mContext).inflate(  						R.layout.item,  null );  				holder =  new  ViewHolder();  				holder.nameTxt = (TextView) convertView.findViewById(R.id.name);  				holder.buyBtn = (Button) convertView  						.findViewById(R.id.product_buy_btn);  				convertView.setTag(holder);  			&#125;  else  &#123;  				holder = (ViewHolder) convertView.getTag();  			&#125;  			holder.nameTxt.setText(name);  			holder.buyBtn.setOnClickListener( new  OnClickListener() &#123;  				 @Override   				  public   void   onClick  (View v)   &#123;  					 int [] start_location =  new   int [ 2 ];  					v.getLocationInWindow(start_location);  					buyImg =  new  ImageView(mContext);  					buyImg.setImageResource(R.drawable.sign);  					setAnim(buyImg, start_location);  				&#125;  			&#125;);  			 return  convertView;  		&#125;    		  class   ViewHolder   &#123;  			TextView nameTxt;  			Button buyBtn;  		&#125;    	&#125;    	  private  ViewGroup  createAnimLayout  ()   &#123;  		ViewGroup rootView = (ViewGroup)  this .getWindow().getDecorView();  		LinearLayout animLayout =  new  LinearLayout( this );  		LinearLayout.LayoutParams lp =  new  LinearLayout.LayoutParams(  				LinearLayout.LayoutParams.MATCH_PARENT,  				LinearLayout.LayoutParams.MATCH_PARENT);  		animLayout.setLayoutParams(lp);  		animLayout.setId(Integer.MAX_VALUE);  		animLayout.setBackgroundResource(android.R.color.transparent);  		rootView.addView(animLayout);  		 return  animLayout;  	&#125;    	  private  View  addViewToAnimLayout  ( final  ViewGroup vg,  final  View view,    			 int [] location) &#123;  		 int  x = location[ 0 ];  		 int  y = location[ 1 ];  		LinearLayout.LayoutParams lp =  new  LinearLayout.LayoutParams(  				LinearLayout.LayoutParams.WRAP_CONTENT,  				LinearLayout.LayoutParams.WRAP_CONTENT);  		lp.leftMargin = x;  		lp.topMargin = y;  		view.setLayoutParams(lp);  		 return  view;  	&#125;    	  private   void   setAnim  ( final  View v,  int [] start_location)   &#123;  		anim_mask_layout =  null ;  		anim_mask_layout = createAnimLayout();  		anim_mask_layout.addView(v); //把动画小球添加到动画层   		 final  View view = addViewToAnimLayout(anim_mask_layout, v,  				start_location);  		 int [] end_location =  new   int [ 2 ]; // 这是用来存储动画结束位置的X、Y坐标   		shopCart.getLocationInWindow(end_location); // shopCart是那个购物车   		  		  		  		 // 计算位移   		 int  endX =  0  - start_location[ 0 ] +  40 ;  		 int  endY = end_location[ 1 ] - start_location[ 1 ];  		Log.d( "---" , endX+ "" +endY);  		TranslateAnimation translateAnimationX =  new  TranslateAnimation( 0 ,  				endX,  0 ,  0 );  		translateAnimationX.setInterpolator( new  LinearInterpolator());  		translateAnimationX.setRepeatCount( 0 ); // 动画重复执行的次数   		translateAnimationX.setFillAfter( true );    		TranslateAnimation translateAnimationY =  new  TranslateAnimation( 0 ,  0 ,  				 0 , endY);  		translateAnimationY.setInterpolator( new  AccelerateInterpolator());  		translateAnimationY.setRepeatCount( 0 ); // 动画重复执行的次数   		translateAnimationX.setFillAfter( true );    		AnimationSet set =  new  AnimationSet( false );  		set.setFillAfter( false );  		set.addAnimation(translateAnimationY);  		set.addAnimation(translateAnimationX);  		set.setDuration(Math.abs(endY/ 1 )); // 动画的执行时间   		v.startAnimation(set);  		set.setAnimationListener( new  AnimationListener() &#123;  			 // 动画的开始   			 @Override   			  public   void   onAnimationStart  (Animation animation)   &#123;  				v.setVisibility(View.VISIBLE);  			&#125;    			 @Override   			  public   void   onAnimationRepeat  (Animation animation)   &#123;  				 // TODO Auto-generated method stub   			&#125;    			 // 动画的结束   			 @Override   			  public   void   onAnimationEnd  (Animation animation)   &#123;  				v.setVisibility(View.GONE);  			&#125;  		&#125;);  	&#125;  &#125;       
+ 
+ 例子 
+  https://github.com/SeniorZhai/ShoppingAnimation  
+
     
     
         <a href="/2014/09/23/购物车效果/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -624,51 +642,6 @@
 <div class="mask" id="mask"></div>
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
-<script>
-var BLOG_SHARE = {
-    title: "SeniorZhai's blog",
-    pic: "/img/logo.jpg",
-    summary: document.getElementsByName('summary')[0].content,
-    url: "http://seniorzhai.github.io/page/21/index.html"
-};
-</script>
-<div class="global-share" id="global-share">
-    <div class="tit">分享到：</div>
-    <ul class="reset share-icons">
-      <li>
-        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-      <li>
-        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-      <li>
-        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
-          <i class="icon icon-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
-          <i class="icon icon-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
-          豆
-        </a>
-      </li>
-    </ul>
- </div>
-
-
 
 <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 
@@ -676,45 +649,10 @@ var BLOG_SHARE = {
 
 
 
-<div class="search-panel" id="search-panel">
-    <ul class="search-result" id="search-result"></ul>
-</div>
-<script type="text/template" id="search-tpl">
-<li class="item">
-    <a href="/{path}" class="waves-block waves-effect">
-        <div class="title ellipsis" title="{title}">{title}</div>
-        <div class="flex-row flex-middle">
-            <div class="tags ellipsis">
-                {tags}
-            </div>
-            <time class="flex-col time">{date}</time>
-        </div>
-    </a>
-</li>
-</script>
-
-<script src="/js/search.js"></script>
 
 
 
 
-
-<script src="//s95.cnzz.com/z_stat.php?id=true&web_id=true"></script>
-
-
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-54646832-1&#39;', 'auto');
-ga('send', 'pageview');
-
-</script>
-<!-- End Google Analytics -->
 
 
 

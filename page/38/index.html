@@ -6,8 +6,6 @@
   <title>SeniorZhai&#39;s blog | 苟利国家生死以，起因福祸趋避之</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="theme-color" content="#ED5565">
-  
   
   <meta name="keywords" content="undefined">
   <meta name="description" content="专注于移动平台">
@@ -20,10 +18,8 @@
 <meta name="twitter:title" content="SeniorZhai's blog">
 <meta name="twitter:description" content="专注于移动平台">
   
-    <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
-  
   <meta name="summary" content="专注于移动平台">
-  <link rel="shortcut icon" href="/img/favicon.ico">
+  <link rel="shortcut icon" href="/">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -37,7 +33,7 @@
   </a>
   <div class="brand-wrap">
     <div class="brand">
-      <a href="/" class="avatar"><img src="/img/logo.jpg"></a>
+      <a href="/" class="avatar"><img src="undefined"></a>
       <hgroup class="introduce">
         <h5 class="nickname">Dear宅学长</h5>
         <a href="mailto:developer.zhaitao@gmail.com" title="developer.zhaitao@gmail.com" class="mail">developer.zhaitao@gmail.com</a>
@@ -47,48 +43,6 @@
   <div class="scroll-wrap flex-col">
     <ul class="nav">
       
-          <li class="waves-block waves-effect">
-            <a href="/"  >
-              <i class="icon icon-lg icon-home"></i>
-              主页
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="/archives"  >
-              <i class="icon icon-lg icon-archives"></i>
-              Archives
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="/tags"  >
-              <i class="icon icon-lg icon-tags"></i>
-              Tags
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="https://seniorzhai.github.io" target="_blank" >
-              <i class="icon icon-lg icon-github"></i>
-              Github
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="http://weibo.com/seniorszhai/" target="_blank" >
-              <i class="icon icon-lg icon-weibo"></i>
-              Weibo
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="/about"  >
-              <i class="icon icon-lg icon-link"></i>
-              about
-            </a>
-          </li>
-      
     </ul>
 
     <footer class="footer">
@@ -96,7 +50,7 @@
   <p>SeniorZhai&#39;s blog &copy; 2016</p>
   <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
   <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
-  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
+  <a href="undefined" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
 </footer>
 
   </div>
@@ -111,20 +65,6 @@
         </a>
         <div class="flex-col header-title ellipsis">SeniorZhai&#39;s blog</div>
         
-        <div class="search-wrap" id="search-wrap">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
-                <i class="icon icon-lg icon-chevron-left"></i>
-            </a>
-            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
-                <i class="icon icon-lg icon-search"></i>
-            </a>
-        </div>
-        
-        
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
-            <i class="icon icon-lg icon-share-alt"></i>
-        </a>
         
     </div>
 </header>
@@ -174,11 +114,22 @@
           ../cocos2d-x/tools/project-creator 目录下的create_project.py 输入 ./create_project.py -project Name -package PackageName -language cpp 命令，创建一个名为 Name ，包名为 PackageName ，编程语言为c++的一个工程。 
  ##环境配置 
  
-  .bash_p
+  .bash_profile中加上以下几个路径： 
+      1  2  3  4  5  6      export COCOS2DX_ROOT=/Users/zhaitao/Documents/cocos2d-x-2.2.2  export ANDROID_SDK_ROOT=/Users/zhaitao/Documents/Android/sdk  export ANDROID_NDK_ROOT=/Users/zhaitao/Documents/Android/android-ndk-r9c  export NDK_ROOT=/Users/zhaitao/Documents/Android/android-ndk-r9c  export PATH=$PATH:$ANDROID_NDK_ROOT  export PATH=$PATH:$ANDROID_SDK_ROOT      
+ 
+  修改build_native.sh文件 
+ 
+ 
+ 
+ 在路径/Users/user/Documents/cocos2d-x-2.2.2/samples/Cpp/TestCpp/proj.android下找到build_native.sh 
+ 在APPNAME=”TestCpp”下添加NDK_ROOT=”/Users/user/Documents/android-ndk-r9c”    
+ 命令行执行build_native.sh 
+ 
+
     
     
         <a href="/2014/02/26/创建Cocos2d-X工程/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -225,11 +176,165 @@
       1      CGContextRef ctx = UIGraphicsGetCurrentContext();      
  
   创建位图获取CGContextRef &gt; 
-      1
+      1  2  3  4      // 创建内存中的图片  UIGraphicsBeginImageContext(CGSizeMake(320,480));  // 获取想内存中图片执行绘制的CGContextRef  CGContextRef ctx = UIGraphicsGetCurrentContext();      
+ 
+ 
+ ##Quart2D的绘图相关函数 
+ 
+ 
+ 
+  函数签名  
+  简要说明  
+ 
+ 
+ 
+ 
+ void CGContextClearRect(CGContextRef c,CGRect rect) 
+ 擦除指定矩形区域上绘制的图形 
+ 
+ 
+ void CGContextDrawPath(CGContextRef c,CGPathDrawingMode mode) 
+ 使用指定模式绘制当前CGContextRef中所包含的路径。第二个参数支持kCGPathFill、kCGPathEOFill、kCGPathStroke、kCGPathFillStroke、kCGPathEOFillStroke 
+ 
+ 
+ void CGContextEOFillPath(CGContextRef c) 
+ 用奇偶规则来填充该路径包围的区域，奇偶规则指：如果某个点被路径包围了奇数次，系统绘制该点：如果被路径包围偶数次，系统不绘制该点 
+ 
+ 
+ void CGContextFillPath(CGContextRef c) 
+ 填充该路径包围的区域 
+ 
+ 
+ void CGContextFillPath(CGContextRef c,CGRect rect) 
+ 填充rect代表的矩形 
+ 
+ 
+ void CGContextFillRects(CGContextRef c,const CGRect rects[],size_t_count) 
+ 填充多个矩形 
+ 
+ 
+ void CGContextFillElipseInRect(CGContextRef context,CGRect rect) 
+ 填充rect矩形的内切椭圆 
+ 
+ 
+ void CGContextStrokePath(CGContextRef c) 
+ 使用当前CGContextRef设置的线宽绘制路径 
+ 
+ 
+ void CGContextStrokeRect(CGContextRef c,CGRect rect) 
+ 使用当前CGContextRef设置的线宽绘制矩型 
+ 
+ 
+ void CGContextStrokeRectWillWidth(CGContextRef c,CGRect rect,CGFloat width) 
+ 使用指定线宽绘制矩形框 
+ 
+ 
+ void CGContextReplacePathWillStrokePath(CGContextRef c) 
+ 使用绘制当前路径时覆盖的区域作为当前CGContextRef中的新路径 
+ 
+ 
+ void CGContextStokrEllipseInRect(CGContextRef context,CGRect rect) 
+ 使用当前CGContextRef设置的线宽绘制rect矩形的内切椭圆 
+ 
+ 
+ void CGContextStrokeLineSegments(CGContextRef c,const CGPoint points[],size_t count) 
+ 使用当前CGContextRef设置的线宽绘制多条线段，其中1、2点组成一个线段，3、4组成一条限度，以此类推 
+ 
+ 
+ 
+ ##设置绘图属性的相关函数 | 函数签名 | 简要说明 | |—|:—| |void CGContextSavaGState(CGContextRef c);|保存CGContextRef当前的绘图状态，以便以后恢复该状态| |void CGContextRestoreGState(CGContextRef c);|把CGContextRef的状态恢复到最近一次保存时的状态| |CGInterpolationQuality CGContextGetInterpolationQuality(CGContextRef c);|获取当前CGContextRef在放大图片时差值质量| |void CGContextSetInterpolationQuality(CGContextRef c,CGInterpolationQuality quality);|设置当前CGContextRef在放大图片时差值质量| |void CGContextSetLineCap(CGContextRef c,CGLineCap cap);|设置线段端点的绘制形状，该属性支持如下三个值：kCGLineCapButt：该属性不会只端点，线条结尾处直接结束，此为默认值；kCGLineCapRound：该属性指定绘制原点端点，线条结尾处绘制一个直径为线条宽度的半圆；kCGLineCapSquare:该属性指定绘制方形端点。线条结尾处绘制半个边长为线条宽度的正方形。| |void CGContextSetLineDash(CGContextRef c,CGFloat phase,const CGFloat lengths[],size_t count);|设置绘制边框时所用的点线模式| |void CGContextSetLineJoin(CGContextRef c,CGLineJoin join);|设置线条连接点的风格支持以下三个值：kCGLineJoinMeter,kCGLineJoinRound,kCGLineJoinBevel| |void CGContextSetLineWidth(CGContextRef c,CGFloat width);|设置绘制直线、边框时的线条宽度| |void CGContextSetMiterLimit(CGContextRef c,CGFloat limit);|当把连接点风格设置为meter风格时，该方法用于控制锐角箭头的长度| |void CGContextSetPatternPhase(CGContextRef c,CGSize phase);|设置该CGContextRef采用位图填充的相位| |void CGContextSetFillPattern(CGContextRef c,CGPatternRef pattern,const CGFloat components[]);|设置该CGContextRef使用位图填充| |void CGContextSetShouldAntialias(CGContextRef c,bool shouldAnitialias);|设置该CGContextRef是否应该抗锯齿| |void CGContextSetStrokePattern(CGContextRef c,CGPatternRef pattern,const CGFloat components[]);|设置该CGContextRef使用位图绘制线条、边框| |void CGContextSetBlendMode(CGContextRef context,CGBlendMode mode);|设置CGContextRef的叠加模式| |void CGContextSetAllowsAntialiasing(CGContext context,bool allowsAntialiasing);|设置该CGContextRef是否允许抗锯齿| |void CGContextSetAllowsFontSmoothing(CGContext context,bool allowsFontSmoothing);|设置该CGcontextRef是否允许光滑字体| |void CGContextSetShouldSmoothFonts(CGContext c,bool shouldSmoothFonts);|设置该CGcontextRef是否允许光滑字体| |void CGContextSetAlpha(CGContext c,CGFloat alpha);|设置全局透明度| |void CGContextSetCMKYFillColor(CGContextRef c,CGFloat cyan,CGFloat magenta,CGFloat yellow,CGFloat black,CGFloat alpha);|使用CMYK颜色模式来设置该CGContextRef的填充颜色| |void CGContextSetCMYKStrokeColor(CGContextRef c,CGFloat cyan,CGFloat magenta,CGFloat yellow,CGFloat black,CGFloat alpha)|使用CMYK颜色模式来设置该CGContextRef的线条颜色| |void CGContextSetFillColorWithColor(CGContextRef c,CGColorRef color);|使用指定颜色来设置该CGContextRef的填充颜色| |void CGContextSetStrokeColorWithColor(CGContextRef c,CGColorRef color);|使用指定颜色来设置该CGContextRef的线条颜色 |void CGContextSetGrayFillColor(CGContextRef c,CGFloat gray,CGFloat alpha);|使用灰色来设置该CGContextRef的填充颜色| |void CGContextSetGrayStrokeColor(CGContextRef c,CGFloat gray,CGFloat alpha);|使用灰色来设置该CGContextRef的线条颜色| |void CGContextSetRGBFillColor(CGContextRef c,CGFloat red,CGFloat green,CGFloat blue,CGFloat alpha);|使用RGB颜色模式来设置该CGContextRef的填充颜色| |void CGContextSetRGBStoreColor(CGContextRef c,CGFloat red,CGFloat green,CGFloat blue,CGFloat alpha);|使用GRB颜色模式来设置该CGContextRef的线条颜色| |void CGContextSetShadow(CGContext context,CGSize offset,CGFloat blur);|设置阴影在X,Y方向上的偏移，以及模糊度（blur值越大，阴影越模糊），默认模糊颜色为RGBA(0,0,0,1/3.0)| |void CGContextSetShadowWithColor(CGContextRef context,CGSize offset,CGFloat blur,CGColorRef color);|设置阴影在X、Y方向上的偏移，以及模糊度和阴影颜色| 
+ ##点线模式 
+ 
+ Quartz 2D绘制线段或边框时，默认总是使用实线，使用点线进行绘制，可调用CGContextRefLineDash(CGContextRef c,CGFloat phase,const CGFloat lengths[],size_t count)进行设置。 
+ 
+ ##绘制文本 
+ 
+ CGContextRef为绘制文字提供了如下函数 
+  CGAffineTransform CGContextGetTextMartix(CGContextRef c): ：获取当前对文本执行变换的变换矩阵。 
+  CGPoint CGContextGetTextPosition(CGContextRef c): ：获取该CGContextRef中当前绘制文本的位置。 
+  CGContextSelectFont(CGContextRef c,const char *name,CGFloat size,CGTextEncoding textEncoding): ：设置该CGContextRef当前绘制文本的字体、字体大小。 
+  void CGContextSetCharacterSpacing(CGContextRef c,CGFloat spacing): ：设置该CGContextRef中绘制文本的字符间距。 
+  void CGContextSetFont(CGContextRef c,CGFonRef font): ：设置该CGContextRef中绘制文本的字体。 
+  void CGContextSetFontSize(CGContextRef c,CGFloat size): ：设置该CGContextRef中绘制文本的字体大小。 
+  CGContextSetTextDrawingMode(CGContextRef c,CGTextDrawingMode mode): ：设置该CGContextRef绘制文本的绘制模式。该函数支持kCGTextFill、kCGTextStroke、kCGTextFillStroke等绘制模式。 
+  void CGContextSetTextMatrix(CGContextRef c,CGAffineTransform t): ：设置对将要绘制的文本执行指定的变换。 
+  void CGContextSetTextPosition(CGContextRef c,CGFloat x,CGFloat y): ：设置CGContextRef的一个文本绘制位置。 
+  void CGContextShowText(CGContextRef c,const char* string,size_t length): ：控制CGContextRef在当前绘制点绘制指定文本。 
+  void CGContextShowTextAtPoint(CGContextRef c,CGFloat x,CGFloat y,const char *string,size_t length): ：控制CGContextRef在指定绘制点绘制文本。 
+ 
+ 
+ 使用CGContextRef绘制文本的步骤： 
+ 
+ 
+ 获取绘图的CGContextRef 
+ 设置绘制文本的相关属性 
+ 如果只是绘制不需要进行变换的文本，直接调用NSString的drawAtPoint:withAttributes:、drawInAttrubutes:withFont:等方法绘制即可。如果需要绘制文本进行变换，则需要先调用CGContextSetTextMatrix()函数设置变换矩阵，再调用CGContextShowTextAtPoint()方法绘制文本。 
+ 
+ ##使用路径 -绘制复杂的图形，需要使用路径 
+ 
+ 创建路径的相关函数 | 函数签名 | 简要说明 | |—|:—| |void CGContextBeginPath(CGContextRef c);|开始定义路径| |void CGContextClosePath(CGContextRef c);|关闭前面定义的路径| |void CGContextAddArc(CGContextRef c,CGFloat x,CGFloat y,CGFloat radius,CGFloat startAngle,CGFloat endAngle,int clockwise);|向CGContextRef的当前路径添加一段弧| |void CGContextAddArcToPoint(CGContextRef c,CGFloat x1,CGFloat y1,CGFloat x2,CGFloat y2,CGFloat radius);|向CGContextRef的当前路径添加一段贝塞尔曲线| |void CGContextAddCurveToPoint(CGContextRef c,CGFloat cp1x,CGFloat cp1y,CGFloat cp2x,CGFloat cp2y,CGFloat x,CGFloat y);|向CGContextRef的当前路径添加一段贝塞尔曲线| |void CGContextAddLines(CGContextRef c,const CGPoint points[],size_t count);|向CGContextRef的当前路径上添加多条线段。该方法需要传入N个CGPoint组成的数组，其中1、2点组成第一条线段，2、3点组成一条线段……| |void CGContextAddLineToPoint(CGContextRef c,CGFloat x,CGFloat y);|把CGContextRef的当前路径从当前结束点连接到x、y对应的点| |void CGContextAddQuadCurveToPoint(CGContextRef c,CGFloat cpx,CGFloat cpy,CGFloat x,CGFloat y);|向CGContextRef的当前路径从当前结束点连接到x、y对应的点| |void CGContextAddRect(CGContextRef c,CGRect rect);|向CGContextRef的当前路径添加一个矩形| |void CGContextAddRects(CGContextRef c,const CGRect rects[],size_t count);|向CGContextRef的当前路径添加多个矩形| |void CGContextMoveToPoint(CGContextRef c,CGFloat x,CGFloat y);|向CGContextRef的当前结束点移动到x、y对应的点| |void GCContextAddEllipseInRect(CGContextRef c,CGRect rect);|向CGContextRef的当前路径添加一个椭圆| |CGPathRef CGContextCopyPath(CGContextRef context);|复制当前CGContextRef包含的路径，该函数返回的CGPathRef代表当前CGContextRef包含的路径| |void CGContextAddPath(CGContextref context,CGPathRef path);|将已有的CGPathRef代表的路径添加到当前CGContextRef的路径中| 
+ 获取CGContextRef所包含的路径信息的函数 
+  bool CGContextIsPathEmpty(CGContextRef c): :该函数用于判断指定CGContextRef包含的路径是否为空。 
+  CGPoint CGContextGetPathCurrentPoint(CGContextRef c): ：该函数用于返回指定CGContextRef包含的路径的当前点。 
+  CGRect CGContextGetPathBoundingBox(CGContextRef c): ：该函数用于返回指定CGContextRef中能完整包围所有路径的最小矩形。 
+  bool CGContextPathContainsPoint(CGContextRef context,CGPoint point,CGPathDrawingMode mode): ：该函数判断指定CGContextRef包含的路径按指定绘制模式进行绘制时，是否需要绘制point点。 
+ 
+ 
+ 使用路径绘制步骤 
+ 
+ 
+ 调用CGContextBeginPath()函数开始定义路径 
+ 添加子路径 
+ 调用CGContextClosePath()函数关闭路径 
+ 调用CGContextDrawPath()、CGContextEOFFillPath()、CGContextFillPath()、CGContextStrokePath()函数来填充路径或绘制路径边框。 
+ CGContextDrawPath() 可以代替其他三个方法，它可以使用特定的模式绘制图形 
+ kCGPathFill:指定填充路径 
+ kCGPathEOFill:指定采用even-odd模式填充路径 
+ kCGPathStroke:指定只绘制路径 
+ kCGPathFillStroke:指定既绘制路径，也填充路径 
+ kCGPathEOFillStroke:指定既绘制路径，也采用even-odd模式填充路径 
+ 
+ 
+ 
+ 
+ 
+   Core Image滤镜  
+ IOS5新增框架，可以对图像进行各种特效处理，包括进行色彩调节、降噪、扭曲等。 
+ Core Image的三个核心API： 
+ CIContext：处理的核心API，所有图片的处理都在它的管理下完成。 
+ CIFilter：过滤器，所有的过滤器都由该CIFilter代表，在创建CIFilter时，需要传入不同的参数即可创建不同类型的过滤器。 
+ CIImage：被处理的图片，可通过UIImage、图片文件或像素数据来创建CIImage。 
+ 
+ 
+ 使用CoreImage的步骤 
+ 
+ 
+  创建CIContext对象 
+ 
+  创建基于CPU的CIContext对象 
+      1      ctx = [CIContext contextWithOptions:[NSDicationary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:kCIContextUseSoftwareRenderer]];      
+ 
+  创建基于GPU的CIContext对象 
+      1      ctx = [CIContext contextWithOptions:nil]      
+ 
+  创建基于OpenGL优化CIContext对象，可获得实时性能 
+      1  2      EAGLContext * eaglctx = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];  ctx = [CIContext contextWithEAGLContext:eaglctx];      
+ 
+ 
+ 
+  创建CIFilter过滤器，CIFilter提供了filterWithName：类方法来创建CIFilter对象。该方法需要传入过滤器的名字，根据不同名字创建不同的过滤器，可在在 此处 查看。 
+ 
+ 创建CIImage对象，该CIImage将要作为过滤器处理的源图片。 
+ 调用CIFilter的[filter setValue:behinImage for:@”inputImage”]方法为inputImage属性赋值，该属性用于指定该过滤器将要处理的源图片。 
+ 根据需要，为不同的过滤器设置不同的过滤参数。 
+ 调用CIFilter的outputImage属性获取该过滤器处理后的图片，程序返回的是CIImage对象。 
+ 调用CIContext的不同方法将CIImage转换成CGImageRef或将CImage绘制到指定区域中。 
+ 
+
     
     
         <a href="/2014/02/26/Quartz-2D绘图/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -273,11 +378,21 @@
  Not running(未运行):应用程序 未启动 或者应用被系统 终止  
  Inactive(不活动):程序在前台运行，但不能接受事件处理。当应用从一个状态切换到另一个状态时，中途过渡会短暂停留在此状态。 
  Active(活动):程序在前台运行且能接收到事件，这是应用在前台运行时所处的正常状态。 
- Background(后台):应用处在后台运行，并且还在执行代
+ Background(后台):应用处在后台运行，并且还在执行代码。大多数将要进入Suspended做状态的应用，会先短暂进入状态。如果一个应用要求启动时直接进入后台运行，这样应用会直接从Not running状态进入Background状态，中途不会经过Inactive状态。 
+ Suspended(挂起):应用处在后台，并且没有执行任何代码。系统会自动将应用转入该状态，并且不会发出任何通知。当处在该状态时，应用依然驻留内存，但不执行任何程序代码。 ##App Delegate对应的回调方法 
+ application:willFinishLaunchingWithOptions:程序将要启动时自动调用该方法，该方法是应用程序启动时第一次执行自定义代码的机会。 
+ application:didFinishLaunchingWithOptions:应用程序启动时自动调用该方法，开发者可以在该方法中执行初始化相关的代码。 
+ applicationDidBecomeActive:应用在转入前台，并进入活动状态时回调该方法（当应用从启动到进入前台，或从后台转入前台都会调用该方法），可重写该方法执行最后的准备工作。 
+ applicationWillResignActive:应用正要从前台运行状态离开时将会调用该方法。 
+ applicationDidEnterBackground:应用在正处于Background状态，且随时可能进入Suspended状态时将会调用该方法。 
+ applicationWillEnterForeground:应用正从后台转入前台运行状态，但暂时还没有到达Active状态时将会调用该方法。 
+ applicationWillTerminate:该应用程序即将被终止时调用该方法，如果应用当前处在Suspended状态，此方法将不会被调用。 
+ 
+
     
     
         <a href="/2014/02/26/iOS应用生命周期/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -321,11 +436,50 @@
  UITableView提供了 editing 属性来判断该表格控件是否处于编辑状态。可以使用 setEdting:animated: 方法切换表格的编辑状态。 
  UITableView提供了如下的方法来插入、删除和移动表格栏 
  -beginUpdates:在执行多个连续编辑之前，先调用该方法开始更新。 
- -endUpda
+ -endUpdates:在执行多个连续编辑之后，调用该方法提交更新。 
+ -insertRowsAtIndexPaths:withRowAnimation:在一个或多个NSIndexPath处插入表格行。 
+ -deleteRowsAtIndexPaths:withRowAnimation:删除一个或多个NSIndexPath处的表格行。 
+ -moveRowAtIndex:toIndexPath:将指定NSIndexPath处的表格行移动到另一个NSIndexPath处。 
+ -insertSections:withRowAnimation:在指定NSIndexPath所包含的一个或多个分区号对应的位置插入分区。 
+ -deleteSections:withRowAnimation:删除指定NSIndexPath所包含的一个或多个分区对应的分区。 
+ -moveSection:toSection:将指定区域移动到另一个位置。 
+ 
+ 
+ 动态编辑表格，必须实现UITableView对应dataSource对象中的如下方法： 
+ -tableView:canEditRowAtIndexPath:该方法的返回值决定指定NSIndexPath对应的表格行是否可编辑。 
+ -tableView:commitEditingStyle:forRowAtIndexPath:该方法的返回值决定指定表格行编辑完成时激发。 
+ -tableView:canMoveRowAtIndexPath:该方法的返回值决定指定的NSIndexPath对应的表格栏是否可移动。 
+ -tableView:moveRowAtIndexPath:toIndexPath:该方法告诉该DataSource将指定的表格行移动到另一个位置。 
+ 
+ 
+ UITableViewDelegate协议为编辑表格定义了如下方法： 
+ -tableView:willBeginEditingRowAtIndexPath:开始编辑某个表格行时激发委托对象的该方法。 
+ -tableView:didEndEditingRowAtIndexPath:当编辑完某个表格行是激发委托对象的该方法。 
+ -tableView:editingStyleForRowAtIndexPath:该方法的返回值决定了该表格行的编辑状态。可以返回UITableViewCellEditingStyleNone、UITableViewCellEditingStyleDelete、UITableViewCellEditingStyleInsert这三个枚举值之一。 
+ -tableView:titleForDeleteConfirmationButtonForRowAtIndexPath:该方法返回的NSString将会作为删除指定表格行时确定按钮的文本。 
+ -tableView:shouldIndetWhileEditingRowAtIndexPath:该方法返回的BOOL值决定指定表格行处于编辑状态时，该表格行是否应该缩进。默认编辑状态都会缩进。 
+ 
+ 
+ 多分区表格以及分区索引 
+ UITableView生成表格控件包含更多的分区，需要为表格的dataSource对象实现更多的方法。 
+ -numberOfSectionsInTableView:该方法的返回值决定表格包含多少个分区。 
+ -sectionIndexTitlesForTableView:该方法的返回值用于在表格右边建立一列浮动的索引。 
+ -tableView:titleForHeaderInSection:该方法的返回值决定指定分区的页眉。 
+ -tableView:titleForFooterInSection:该方法的返回值决定分区的页脚。 
+ 
+ 
+ 
+ 
+ 直接使用UITableViewController 
+ 只显示一个表格的话，可以之间继承UITableViewController，其已经实现了UITableViewDataSource和UITableViewDelegate协议。 
+ 
+ 
+ 
+
     
     
         <a href="/2014/02/26/编辑表格/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -370,11 +524,52 @@
  UINavigationController是用来管理视图之间的导航，UITabBarController是管理固定的几个视图控制器，子控制器是并列的。可以任意切换显示。 
  
  
- UITabBarController基本样
+ UITabBarController基本样式   
+  UITabBarController初始化 
+      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17        UIViewController *viewCtrl1 = [[UIViewController alloc] init];  viewCtrl.title = @&quot;主页&quot;;    UIViewController *viewCtrl2 = [[UIViewController alloc] init];  viewCtr2.title = @&quot;消息&quot;;    UIViewController *viewCtrl3 = [[UIViewController alloc] init];  viewCtr3.title = @&quot;搜索&quot;;    UIViewController *viewCtrl4 = [[UIViewController alloc] init];  viewCtr4.title = @&quot;设置&quot;;    NSArray *viewControllers = [NSArray arrayWitjObjects:viewCtr1,viewCtrl2,viewCtrl3,viewCtrl3,viewCtrl4,nil];  UITabBarController *mainViewController = [[UITabBarController alloc] init];  mainViewController.viewControllers = viewControllers;  [self.window setRootViewController:mainViewController];      
+ 
+  示例代码 
+      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32      /* ... */  /*   * 1.创建若干个子视图控制器，它们是并列关系   * 2.创建一个数组，将已创建的子视图控制器，添加到数组中   * 3.创建UITabBarContrller实例   * 4.tabBarController.viewContrllers = viewContollers;   * 5.添加到window的rootViewController   */  UIViewController *vc1 = [[UIViewController alloc]init];  vc1.title = @&quot;首页&quot;；  vc1.view.backgroundColor = [UIColor redColor];    UIViewController *vc2 = [[UIViewController alloc]init];  vc2.title = @&quot;新闻&quot;；  vc2.view.backgroundColor = [UIColor blueColor];    UIViewController *vc3 = [[UIViewController alloc]init];  vc3.title = @&quot;历史&quot;；  vc3.view.backgroundColor = [UIColor yellowColor];    UIViewController *vc4 = [[UIViewController alloc]init];  vc4.title = @&quot;搜索&quot;；  vc4.view.backgroundColor = [UIColor purpColor];    UIViewController *vc5 = [[UIViewController alloc]init];  vc5.title = @&quot;设置&quot;；  vc5.view.backgroundColor = [UIColor orangeColor];    NSArray *viewControllers = @[vc1,vc2,vc3,vc4,vc5];  UITabBarController tabBarController = [[UITabBarController alloc] init];  [UITabBarController setViewContronllers:viewControllers animated:YES];  self.window.rootViewController = tabBarController;      
+ 
+  UITabBarController结构图 
+ 
+ Tab控制器用数组管理视图，视图间是平级的。   
+ 
+ 
+  TabBarController类图分析 
+ 
+ 一个分栏视图控制器控制着若干视图控制器，由一个数组管理 
+ 每个分栏控制器只有一个UITabBar视图，用于显示UITabItem实例 
+ UITabBarItem由当前的视图控制器管理   
+ 
+ 
+  UITabBarController系统样式   +TabBar只能显示5个Tab Item，超过5个则会自动生成个More标签显示剩余的Tab，这些Tab可以通过编辑显示在UITabBar上。如果将视图添加到导航控制器中，默认出现编辑按钮，可以自由移动item实例。   
+ 
+ 
+   实例代码  
+ 创建系统自带的TabBarController      1  2  3  4  5  6  7  8      TabBarViewController *tabBarController = [[UITabBarViewController alloc]init];  FirstViewController *firstItem = [[FirstViewController alloc] init];  UITabBarItem *firstItem = [[UITabBarItem alloc]initWithTabBarSystemItem:UITabBarSystemItemFavorites tag:1];  firstViewController.tabBarItem = firstItem;  // ......  NSArray *viewControllers = @[firstItem,secondItem,thirdItem];  [tabBarController setViewControllers:viewControllers animated:YES];  self.window.rootViewController = tabBarController;      
+ 
+ 
+ ##自定义UITabBarItem 
+ 
+ 图片大小30 30px(视网膜屏60 60) 
+  图片需要使用淡灰色或者半透明效果，选择系统自动填充蓝色 
+      1  2  3      FirstViewController *firstVC = [[FirstViewController alloc]init];  UITabBarItem *firstItem = [[UITabBarItem alloc] initWithTitle:@&quot;主页&quot; image:[UIImage imageNamed:@&quot;image.ong&quot;]tag:1];  firstVC.tabBarItem = firstItem;      
+ 
+  UITabBarController代理方法 
+      1  2  3  4  5  6  7  8      -(BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController  &#123;  	// 视图将被切换时调用，viewController为将被显示的控制器  &#125;  - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController  &#123;  // 视图已经被切换后调用，viewController为已经显示的控制器  &#125;      
+ 
+ 
+ ##基层分栏控制器和导航控制器 
+ 
+ 在Tab Bar控制器中某一个Tab中使用Navigation控制器。 
+ 实现代码      1  2  3  4  5  6  7  8      FirstViewController *firstVC = [[FirstViewController alloc] init];  UINavigationController * fNav = [[UINavigation alloc] initWithRootViewController:firstVC];  SecondViewController * secondVC = [[SecondViewController alloc] init];  //......  NSArray *viewControllers = [NSArray arrayWithObjects:firstVC,secondVC,nil];  UITabBarController*tabController = [[UITabBarController alloc] init];  tabController.viewControllers = viewControllers;  self.window.rootViewController = tabController;       
+ 
+
     
     
         <a href="/2014/02/24/UITabBarController/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -415,11 +610,24 @@
     
          
   设置背景需要通过类别修改drawRect方法。5.0以上SDK提供了设置背景图片的方法。 
-      1  2  3  4  5  6  7  8  9  10      // 5.0之前，类别扩展给UINavagationBar设置图片背景  @implementation UINavigationBar (CustomNavigationBar)  - (void)drawRect:
+      1  2  3  4  5  6  7  8  9  10      // 5.0之前，类别扩展给UINavagationBar设置图片背景  @implementation UINavigationBar (CustomNavigationBar)  - (void)drawRect:(CGRect)rect&#123;  	UIImage * image = [UIImage imageNamed:@&quot;image.png&quot;];  	[image drawInRect:rect];  &#125;  @end  // 5.x新增了serBackgroundImage方法来设定图片背景  UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:viewController];  [navigation.navigationBar setBackgroundImage:[UIImage imageNamed:@&quot;image.png&quot;] forBarMetrics:UIBarMetricsDefault];      
+ 
+  小结 
+ 
+ 一个UINavigationController对应一个NavigationBar实例 
+ 一个UINavigationController可以包含多个UIViewController 
+ 每一个UIViewController对应一个UINavigationItem实例 
+ UINavagationItem控制多个UIBarButtonItem 
+ 一个UINavigationController控制着一个UIToolBar实例 
+ UIToolBar中的UIBarButtonItem由当前的视图控制器管理，而不是由导航控制器控制 
+ 
+ 
+ 
+
     
     
         <a href="/2014/02/24/自定义导航栏/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -470,11 +678,21 @@
  Track Tink 
  设置进度条轨迹颜色。 
  progressImage:设置该进度条完成部分的图片 
- tracjImage:设置进
+ tracjImage:设置进度条的轨道图片 
+ 
+ 
+ 
+ 
+ ImageView图像拉伸 
+ 默认情况下，iOS将会对该图像整体缩放，从而让图片被拉伸、变形。 +为了精确地控制只对制定区域进行缩放，可通过uIImage来创建“可拉伸”图片。当通过一个UIEdgeInsets结构体（包括left、top、right、bottom）定义图片的拉伸区域。   
+ 
+ 
+ 
+
     
     
         <a href="/2014/02/23/进度条/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -520,11 +738,43 @@
  将它导入到eclipse开发环境中（最好选择cpoy到自己的工作空间） 
  在命令行进入该项目的路径，执行 ndk-build 命令，编译程序 
  在eclipse上试运行（注：在4.x的版本要将Dependencies包去掉，貌似这个包是做低版本支持的，在高版本中会出错）   
- 运行成
+ 运行成功 
+ 
+   
+      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28       //hello-jni.c    # include   &lt;string.h&gt;     # include   &lt;jni.h&gt;     // &lt;jni.h&gt;用于java的调用   jstring   // 名字即包名加函数名   Java_com_example_hellojni_HelloJni_stringFromJNI( JNIEnv* env, jobject thiz )  &#123;   # if  defined(__arm__)      # if  defined(__ARM_ARCH_7A__)        # if  defined(__ARM_NEON__)          # define  ABI  "armeabi-v7a/NEON"         # else           # define  ABI  "armeabi-v7a"         # endif       # else        # define  ABI  "armeabi"       # endif     # elif  defined(__i386__)       # define  ABI  "x86"     # elif  defined(__mips__)       # define  ABI  "mips"     # else        # define  ABI  "unknown"     # endif         // env为java与C交互的结构，返回UTF编码的字符串        return  (*env)-&gt;NewStringUTF(env,  "Hello from JNI !  Compiled with ABI "  ABI  "." );  &#125;      
+      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17       public    class   HelloJni   extends   Activity    &#123;       @Override         public   void   onCreate  (Bundle savedInstanceState)        &#123;           super .onCreate(savedInstanceState);          TextView  tv =  new  TextView( this );          tv.setText(stringFromJNI() );          setContentView(tv);      &#125;       // 声明一个native方法，即.c的函数         public   native  String   stringFromJNI  ()  ;        public   native  String   unimplementedStringFromJNI  ()  ;       static  &#123;          System.loadLibrary( "hello-jni" );      &#125;  &#125;      
+ ##在adb shell中运行c程序 
+ 
+ 在 \android-ndk\samples\test-libstdc++ 下有这样一个例子，我们进行修改后然后在设备上运行它。 
+ 
+ 
+ 将jni目录下的 test-libstl.cpp 的文件进行修改 
+ 
+      1  2  3  4  5  6  7  8       # include   &lt;cerrno&gt;     # include   &lt;cstddef&gt;     # include   &lt;stdio.h&gt;      int   main  ( void )    &#123;     printf ( "Zoe\n" );       return   0 ;  &#125;      
+ 
+ 在命令行下使用 ndk-build 编译该项目   
+ 将项目目录下的 \libs\armeabi\test-libstl 文件拷贝到设备的 /data/data 目录下(你需要该目录的写权限)   
+ 进入设备的shell，并获取权限   
+ 切换到 /data/data 目录，修改 test-libstl 文件的权限，并执行它   
+ 
+ ##编写自己的程序 
+ 
+ 在任意目录下，创建jni文件夹 
+  创建一个你的程序，如： MyDemo.c  
+      1  2  3  4  5  6  7       # include   &lt;stdio.h&gt;      void   main  ()    &#123;     int  a,b,c;     scanf ( "%d %d %d" ,&amp;a,&amp;b,&amp;c);     printf ( "%d+%d+%d=%d\n" ,a,b,c,a+b+c);  &#125;      
+ 
+  创建 Android.mk 文件，注意 LOCAL_MODULE 、 LOCAL_SRC_FILES 属性 
+      1  2  3  4  5      LOCAL_PATH := $(call my-dir)  include $(CLEAR_VARS)  LOCAL_MODULE := MyDemo  LOCAL_SRC_FILES := MyDemo.c  include $(BUILD_EXECUTABLE)      
+ 
+  按上一个例子编译、拷贝、执行 
+ 
+ 
+   
+
     
     
         <a href="/2014/02/22/NDK-Samples/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -568,11 +818,64 @@
  UITextView与UITextField的区别 
  UITextView是一个多行文本框，UITextField只是单行文本 
  UITextView没有继承UIControl控件 
- UITextView继承了UIScrollView，所以它具有UISrollView的功能和行为。   UIScrollView支持的
+ UITextView继承了UIScrollView，所以它具有UISrollView的功能和行为。   UIScrollView支持的属性  
+ 
+ 
+ 控制显示区域的属性 
+ contentSize:该属性是一个CGSize类型的值，制定显示内容的完整宽度和完整高度。 
+ contentInset:该属性是一个UIEdgeInsets类型的值，表示所需要内容在上下左右的留白。 
+ contentOffset:该属性是一个CGPoint值，表示可视区域在显示内容上滚动的距离。 
+ 
+ 
+ 属性设置 1.Scrollers 
+ Shows Horizontal Scrllers:当用户水平滚动该控件时，该控件会显示水平滚动条。 
+ Shows Vertical Scrollers: 当用户垂直滚动该控件时，该控件会显示垂直滚动条。 
+ Scrolling Enabled:控件能否滚动。 
+ Paging Enabled:是否分页。 
+ Direction Lock Enabled:第一次滚动后，不允许向其他方向滚动。 
+ 
+ 
+ 
+ 
+ Bounce 
+ Bounce :弹回效果。 
+ Bounce Horizontally:水平弹回效果。 
+ Bounce Vertically:垂直弹回效果。 
+ 
+ 
+ Zoom 
+ Min 最小的可缩放比例。 
+ Max 最大的可缩放比例。 
+ 
+ 
+ Touch 
+ Bounces Zoom:内容缩放是否有弹性。 
+ Delays Content Touches:真正确定滚动意图才去处理触碰手势。 
+ Cancellable Content Touches:勾选后，如果该UIScrollView中的内容已经跟踪用户手势触碰动作的情况下，且用户拖动手指足以启动一个滚动事件，该UISrollView控件会调用touchesCancelled:withEvent:方法，并将该手指拖动事件当成滚动该UISroll控件。如果不勾选，UIScrollView控件已经跟踪某个手指动作，将不会理会其他的手指动作。 
+ 
+ 
+ 
+ 
+ 使用委托对象处理UITextView事件 
+ 委托对象必须实现UITextViewDelegate协议，协议定义了如下方法。 
+ 
+ 
+ -textViewShouldBeginEdting:将要开始编辑内容时回调。 
+ -textViewDidBeginEdting:开始编辑内容时回调。 
+ -textViewShouldEndEdting:将要结束时回调。 
+ -textViewDidEndEdting:结束编辑时回调。 
+ -textView:shouldChangeTextInRange:replacementText:指定范围内的文本内容将要被替换是回调。 
+ -textViewDidChange:文本内容发生改变时回调。 
+ -textViewDidChangeSelection:文本内某些文本改变时回调。 
+ 
+ 
+  实例  
+ 
+
     
     
         <a href="/2014/02/22/UITextView多行文本控件/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -614,11 +917,19 @@
          
  创建控制器. File-&gt;New File-&gt;Iphone OS-&gt;Cocoa Touch Class-&gt;UIViewController subclass; 
  创建xib. File-&gt;New File-&gt;Iphone OS-&gt;User Interface-&gt;View XIB 
- 绑定controller和view. 用Interface 
+ 绑定controller和view. 用Interface Builder打开xxx.xib, 点击Files’ Owner, 在Identity Inspector里面的Class Identity, 选择Step 1创建的控制器类, 接着拖拽File’s Owner到View中, 选择Outlets-&gt;view.先选中file’s owner(这个很重要) 
+ 
+     
+ ##定制iOS应用图标 
+ 
+ 需要57X57、114X114、120X120的图片作为图标。 
+    需要320X480、640X960、640X1136的素材作为启动画面。  
+ 
+
     
     
         <a href="/2014/02/22/xib文件注意点/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -641,51 +952,6 @@
 <div class="mask" id="mask"></div>
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
-<script>
-var BLOG_SHARE = {
-    title: "SeniorZhai's blog",
-    pic: "/img/logo.jpg",
-    summary: document.getElementsByName('summary')[0].content,
-    url: "http://seniorzhai.github.io/page/38/index.html"
-};
-</script>
-<div class="global-share" id="global-share">
-    <div class="tit">分享到：</div>
-    <ul class="reset share-icons">
-      <li>
-        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-      <li>
-        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-      <li>
-        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
-          <i class="icon icon-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
-          <i class="icon icon-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
-          豆
-        </a>
-      </li>
-    </ul>
- </div>
-
-
 
 <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 
@@ -693,45 +959,10 @@ var BLOG_SHARE = {
 
 
 
-<div class="search-panel" id="search-panel">
-    <ul class="search-result" id="search-result"></ul>
-</div>
-<script type="text/template" id="search-tpl">
-<li class="item">
-    <a href="/{path}" class="waves-block waves-effect">
-        <div class="title ellipsis" title="{title}">{title}</div>
-        <div class="flex-row flex-middle">
-            <div class="tags ellipsis">
-                {tags}
-            </div>
-            <time class="flex-col time">{date}</time>
-        </div>
-    </a>
-</li>
-</script>
-
-<script src="/js/search.js"></script>
 
 
 
 
-
-<script src="//s95.cnzz.com/z_stat.php?id=true&web_id=true"></script>
-
-
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-54646832-1&#39;', 'auto');
-ga('send', 'pageview');
-
-</script>
-<!-- End Google Analytics -->
 
 
 

@@ -6,8 +6,6 @@
   <title>SeniorZhai&#39;s blog | 苟利国家生死以，起因福祸趋避之</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="theme-color" content="#ED5565">
-  
   
   <meta name="keywords" content="undefined">
   <meta name="description" content="专注于移动平台">
@@ -20,10 +18,8 @@
 <meta name="twitter:title" content="SeniorZhai's blog">
 <meta name="twitter:description" content="专注于移动平台">
   
-    <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
-  
   <meta name="summary" content="专注于移动平台">
-  <link rel="shortcut icon" href="/img/favicon.ico">
+  <link rel="shortcut icon" href="/">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -37,7 +33,7 @@
   </a>
   <div class="brand-wrap">
     <div class="brand">
-      <a href="/" class="avatar"><img src="/img/logo.jpg"></a>
+      <a href="/" class="avatar"><img src="undefined"></a>
       <hgroup class="introduce">
         <h5 class="nickname">Dear宅学长</h5>
         <a href="mailto:developer.zhaitao@gmail.com" title="developer.zhaitao@gmail.com" class="mail">developer.zhaitao@gmail.com</a>
@@ -47,48 +43,6 @@
   <div class="scroll-wrap flex-col">
     <ul class="nav">
       
-          <li class="waves-block waves-effect">
-            <a href="/"  >
-              <i class="icon icon-lg icon-home"></i>
-              主页
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="/archives"  >
-              <i class="icon icon-lg icon-archives"></i>
-              Archives
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="/tags"  >
-              <i class="icon icon-lg icon-tags"></i>
-              Tags
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="https://seniorzhai.github.io" target="_blank" >
-              <i class="icon icon-lg icon-github"></i>
-              Github
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="http://weibo.com/seniorszhai/" target="_blank" >
-              <i class="icon icon-lg icon-weibo"></i>
-              Weibo
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="/about"  >
-              <i class="icon icon-lg icon-link"></i>
-              about
-            </a>
-          </li>
-      
     </ul>
 
     <footer class="footer">
@@ -96,7 +50,7 @@
   <p>SeniorZhai&#39;s blog &copy; 2016</p>
   <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
   <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
-  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
+  <a href="undefined" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
 </footer>
 
   </div>
@@ -111,20 +65,6 @@
         </a>
         <div class="flex-col header-title ellipsis">SeniorZhai&#39;s blog</div>
         
-        <div class="search-wrap" id="search-wrap">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
-                <i class="icon icon-lg icon-chevron-left"></i>
-            </a>
-            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
-                <i class="icon icon-lg icon-search"></i>
-            </a>
-        </div>
-        
-        
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
-            <i class="icon icon-lg icon-share-alt"></i>
-        </a>
         
     </div>
 </header>
@@ -174,11 +114,191 @@
            
  ##什么是UICollectionView UICollectionView是一种新的数据展示方式，简单来说可以把他理解成多列的UITableView。比如iBooks，一个虚拟的书架上放着各类图书，排列整齐，亦或者iPad的iOS6中的原生时钟中的各个时钟，也是UICollectionView的最简单的一个布局。 
    
- 最简单的UICollectionView就是一个GirdVi
+ 最简单的UICollectionView就是一个GirdView，可以以多列的方式来将数据进行展示，标准的UICollection包含三个部分： 
+ 
+ Cells用于展示内容的主体，对于不同的cell可以指定不同尺寸和不同的内容 
+ Supplementary Views追加视图，用来标记每个section的view 
+ Decoration Views装饰视图，每个section的背景 
+ 
+     
+ ##实现一个简单的UICollectionView 
+ 和UITableView一样，UICollectionView同样采用datasource和delegate设计模式：datasource为View提供数据源，告诉View要实现什么及如何显示它们，delegate提供一些样式的小细节以及用户交互的相应。 
+ ###UICollectionViewDataSource 
+ 
+  
+ (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section:section的数量 
+ 
+ 
+  
+ (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section:某个section里有多少个item 
+ 
+ 
+  
+ (UICollectionViewCell  )collectionView:(UICollectionView  )collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath:指定显示什么样的cell 
+ 
+ 
+ 
+ 实现了以上三个委托方法，基本上就可以保证CollectionView工作正常，同时还通过了Supplementary View方法 
+ 
+  
+ (UICollectionReusableView  )collectionView:(UICollectionView  )collectionView viewForSupplementaryElementOfKind:(NSString  )kind atIndexPath:(NSIndexPath  )indexPath 
+ 
+ 
+ 
+ ####用于重用 
+ 在UICollectionView中在请求数据源之前要注册CellView、SupplementaryView，可以通过以下方法进行注册 -registerClass:forCellWithReuseIdentifier: -registerClass:forSupplementaryViewOfKind:withReuseIdentifier: -registerNib:forCellWithReuseIdentifier: -registerNib:forSupplementaryViewOfKind:withReuseIdentifier: 
+ ###UICollectionViewDelegate 负责交互 
+ 
+ cell的高亮 
+ cell的选中状态 
+ 可以支持长按后的菜单 用户点击cell的时候，现在会按照以下流程向delegate进行询问： 
+ 
+ 
+  
+ collectionView:shouldHighlightItemAtIndexPath:是否应该高亮？ 
+ 
+ 
+  
+ collectionView:didHighlightItemAtIndexPath:如果1回答是，那么高亮 
+ 
+ 
+  
+ collectionView:shouldSelectItemAtIndexPath:无论1结果如何，都询问是否可以被选中？ 
+ 
+ 
+  
+ collectionView:didUnhighlightItemAtIndexPath:如果1回答是否，那么取消高亮 
+ 
+ 
+  
+ collectionView:didSelectItemAtIndexPath:如果3回答为是，那么选中cell 
+ 
+ 
+ 
+ 对应的高亮和选中状态分别由highlighted和selected两个属性表示。 
+ ###关于cell 
+ UICollectionViewCell相比UITableViewCell没有太多的花头，首先不存在格式各样的默认的style。UICollectionViewCell结构上相对比较简单，由下至上： 
+ 
+ cell本身作为容器View 
+ 一个大小自动适应整个cell的backgroundView，用于cell默认的背景 
+ selectedBackgroundView，是cell被选中时的背景 
+ contentView，自定义内容应被加载这个View上。 
+ 
+ ###UICollectionViewLayout 负责各个cell、Supplementary View和Decoration Views进行组织，为了它们设定各自的属性，包括但不限于：位置、尺寸、透明度、层级关系、形状、等等… 
+ 
+ Layout决定了UICollectionView是如何显示在界面上的。在展示之前，一般需要生成合适的UICollectionViewLayout子类对象，并将其赋予CollectionView的collectionViewLayout属性。 
+ 
+ 默认常用的Layout是UICollectionViewFlowLayout，是一个直线对齐的Layout。 
+ 
+ itemSize，定义了每一个item的大小。通过设定itemSize可以全局改变所有cell的尺寸，如果想要对某个cell定制尺寸，可以使用-collectionView:layout:sizeForItemAtIndexPath:方法。 
+ 间隔 指定每个item之间的间隔和每一行之间的间隔，和size类似，有全局属性，也可以对每一个item和每一个section做出设定： 
+ @property (CGSize) minimumInteritemSpacing 
+ @property (CGSize) minimumLineSpacing 
+ -collectionView:layout:minimumInteritemSpacingForSectionAtIndex: 
+ -collectionView:layout:minimumLineSpacingForSectionAtIndex: 
+ 
+ 
+ 滚动方向 由属性scrollDirection确定scroll View的方向，将影响Flow Layout的基本方向和由header及footer确定的section之间的宽度 
+ UICollectionViewScrollDirectionVertical 
+ UICollectionViewScrollDirectionHorizontal 
+ 
+ 
+ Header和Footer尺寸 分为全局和部分，需要注意根据滚动方向不同，header和footer的高和宽中只有一个和会起作用，垂直滚动时section间宽度为该迟钝的高，而水平滚动时为宽度起作用 
+ @property (CGSize) headerReferenceSize 
+ @property (CGSize) footerReferenceSize 
+ -collectionView:layout:referenceSizeForHeaderInSection: 
+ -collectionView:layout:referenceSizeForFooterInSection: 
+ 
+ 
+ 缩进 
+ @property UIEdgeInsets sectionInset; 
+ -collectionView:layout:insetForSectionAtIndex: #自定义UICollectionViewLayout 
+ 
+ 
+ 
+  总结  一个UICollectionView的实现包括两个必要部分：UICollectionViewDataSource和UICollectionViewLayout，和一个交互部分：UICollectionViewDelegate。而Apple给出的UICollectionViewFlowLayout已经是一个很强力的layout方案了。 
+ #UICollectionViewLayoutAttributes property列表： 
+ 
+ @property (nonatomic) CGRect frame 
+ @property (nonatomic) CGPoint center 
+ @property (nonatomic) CGSize size 
+ @property (nonatomic) CATransform3D transform3D 
+ @property (nonatomic) CGFloat alpha 
+ @property (nonatomic) NSInteger zIndex 
+ @property (nonatomic, getter=isHidden) BOOL hidden 
+ 
+ UICollectionViewLayoutAttributes的实例中包含了诸如边框，中心点，大小，形状，透明度，层次关系和是否隐藏等信息。当UICollectionView在获取布局时将针对每一个indexPath的部件（包括cell，追加视图和装饰视图），向其上的UICollectionViewLayout实例询问该部件的布局信息。这个布局信息，就以UICollectionViewLayoutAttributes的实例的方式给出。 
+ #UICollectionViewLayout UICollectionViewLayout的功能为向UICollectionView提供布局信息，不仅包括cell的布局信息，也包括追加视图和装饰视图的布局信息。实现一个自定义layou的常规做法是继承UICollectionViewLayout类，然后重载下列方法。 
+ 
+  
+ (CGSize)collectioonViewContentSize 
+ 返回collctionView的内容尺寸 
+ 
+ 
+ 
+ 
+  
+ (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect 
+ 返回rect中的所有的元素的布局属性 
+ 返回的包括UICollectionViewLayoutAttributes的NSArray 
+ UICollctionViewLayoutAttributes可以是cell，追加视图或装饰视图的信息，通过不同的UICollectionViewLayoutAttributes初始化方法可以得到不同类型的UICollctionViewLayoutAttributes 
+ ayoutAttributesForCellWithIndexPath: 
+ layoutAttributesForSupplementaryViewOfKind:withIndexPath: 
+ layoutAttributesForDecorationViewOfKind:withIndexPath: 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ (UICollectionViewLayoutAttributes  )layoutAttributesForItemAtIndexPath:(NSIndexPath  )indexPath 
+ 返回对应indexPath位置的cell布局属性 
+ 
+ 
+ 
+ 
+  
+ (UICollectionViewLayoutAttributes  )layoutAttributesForDecorationViewOfKind:(NSString  )decorationViewKind atIndexPath:(NSIndexPath *)indexPath 
+ 返回对应indexPath位置的追加视图的布局属性，如果没有追加视图可以不重载 
+ 
+ 
+ 
+ 
+  
+ (UICollectionViewLayoutAttributes  )layoutAttributesForDecorationViewOfKind:(NSString  )decorationViewKind atIndexPath:(NSIndexPath *)indexPath 
+ 返回对应于indexPath的位置的装饰视图的布局属性，如果没有装饰视图可不重载 
+ 
+ 
+ 
+ 
+  
+ (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds 
+ 当边界发生改变时，是否应该刷新布局。 
+ 
+ 
+ 
+ 
+ 
+ 在初始化一个UICollectionViewLayout实例后，会有一系列的准备方法被自动调用，以保证layout实例的正确 
+ 
+ -(void)prepareLayout，默认下该方法是每都不做，但是在自己的子类实现中，一般在该方法中设定一些必要的layout的结构和初始需要的参数等。 
+ -(CGSize)collectionViewContentSize，以确定collection应该占据的尺寸，注意这里的尺寸不是指可使部分的尺寸，而是所有内容所占的尺寸。 
+ -(NSArray *)layoutAttributesForElementsInRect:(Rect)rect被调用，初始的layout外观将由该方法返回的UICollctionViewLayoutAttributes来决定。 
+ 
+ 另外，在需要更新layout时，需要给当前layout发送 -invalidateLayout，该消息会立即返回，并且预约在下一个loop的时候刷新当前layout。在-invalidateLayout后的下一个collectionView的刷新loop中，又会从prepareLayout开始，依次再调用-collectionViewContentSize和-layoutAttributesForElementsInRect来生成更新后的布局。 
+ ###LineLayout——对于个别UICollectionViewLayoutAttributes的调整 
+      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71      // LinrLayout.m  #import &quot;LineLayout.h&quot;      #define ITEM_SIZE 200.0  #define ACTIVE_DISTANCE 200  #define ZOOM_FACTOR 0.4    @implementation LineLayout    -(id)init  &#123;      self = [super init];      if (self) &#123;          self.itemSize = CGSizeMake(ITEM_SIZE, ITEM_SIZE);          self.scrollDirection = UICollectionViewScrollDirectionHorizontal;          //  确定了缩进，此处为上方、下方各缩进200          self.sectionInset = UIEdgeInsetsMake(ITEM_SIZE, ITEM_SIZE/2, ITEM_SIZE, ITEM_SIZE/2);          //  每个item在水平方向的最小间距          self.minimumLineSpacing = ITEM_SIZE/4;                &#125;      return self;  &#125;  // 边界改变时是否重新排版  - (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)oldBounds  &#123;      return YES;  &#125;  //  初始的layout外观将由该方法返回的UICollctionViewLayoutAttributes来决定  -(NSArray*)layoutAttributesForElementsInRect:(CGRect)rect  &#123;      NSArray* array = [super layoutAttributesForElementsInRect:rect];      CGRect visibleRect;      visibleRect.origin = self.collectionView.contentOffset;      visibleRect.size = self.collectionView.bounds.size;      for (UICollectionViewLayoutAttributes* attributes in array) &#123;          if (CGRectIntersectsRect(attributes.frame, rect)) &#123;              CGFloat distance = CGRectGetMidX(visibleRect) - attributes.center.x;              CGFloat normalizedDistance = distance / ACTIVE_DISTANCE;              if (ABS(distance) &lt; ACTIVE_DISTANCE) &#123;                  CGFloat zoom = 1 + ZOOM_FACTOR*(1 - ABS(normalizedDistance));                  attributes.transform3D = CATransform3DMakeScale(zoom, zoom, 1.0);                  attributes.zIndex = 1;              &#125;          &#125;      &#125;      return array;  &#125;    //  自动对齐到网格  - (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity  &#123;      //  proposedContentOffset是没有对齐到网格时本来应该停下来的位置      CGFloat offsetAdjustment = MAXFLOAT;      CGFloat horizontalCenter = proposedContentOffset.x + (CGRectGetWidth(self.collectionView.bounds) / 2.0);      //  当前显示的区域      CGRect targetRect = CGRectMake(proposedContentOffset.x, 0.0, self.collectionView.bounds.size.width, self.collectionView.bounds.size.height);      //  取当前显示的item      NSArray* array = [super layoutAttributesForElementsInRect:targetRect];      //  对当前屏幕中的UICollectionViewLayoutAttributes逐个与屏幕中心进行比较，找出最接近中心的一个      for (UICollectionViewLayoutAttributes* layoutAttributes in array) &#123;          CGFloat itemHorizontalCenter = layoutAttributes.center.x;          if (ABS(itemHorizontalCenter - horizontalCenter) &lt; ABS(offsetAdjustment)) &#123;              offsetAdjustment = itemHorizontalCenter - horizontalCenter;          &#125;      &#125;          return CGPointMake(proposedContentOffset.x + offsetAdjustment, proposedContentOffset.y);  &#125;    @end      
+  例子  
+ ###CircleLayout——完全自定义的Layout，添加删除item，以及手势识别 
+      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55  56  57  58  59  60  61  62  63  64      #import &quot;CircleLayout.h&quot;    #define ITEM_SIZE 70    @implementation CircleLayout    // 准备计算需要的参数  -(void)prepareLayout  &#123;      [super prepareLayout];            CGSize size = self.collectionView.frame.size;      _cellCount = [[self collectionView] numberOfItemsInSection:0];      // 中心点      _center = CGPointMake(size.width / 2.0, size.height / 2.0);      // 半径      _radius = MIN(size.width, size.height) / 2.5;  &#125;  // collctionView的内容大小就是collectionView的大小  -(CGSize)collectionViewContentSize  &#123;      return [self collectionView].frame.size;  &#125;  // 通过所在的indexPath确定位置  - (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)path  &#123;      UICollectionViewLayoutAttributes* attributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:path];      attributes.size = CGSizeMake(ITEM_SIZE, ITEM_SIZE);      // 配置attributes到圆周上      attributes.center = CGPointMake(_center.x + _radius * cosf(2 * path.item * M_PI / _cellCount),                                      _center.y + _radius * sinf(2 * path.item * M_PI / _cellCount));      return attributes;  &#125;  // 用来在一开始给出一套UICollectionViewLayoutAttributes  -(NSArray*)layoutAttributesForElementsInRect:(CGRect)rect  &#123;      NSMutableArray* attributes = [NSMutableArray array];      for (NSInteger i=0 ; i &lt; self.cellCount; i++) &#123;          //          NSIndexPath* indexPath = [NSIndexPath indexPathForItem:i inSection:0];          [attributes addObject:[self layoutAttributesForItemAtIndexPath:indexPath]];      &#125;          return attributes;  &#125;  // 插入前，cell在圆心位置，全透明  - (UICollectionViewLayoutAttributes *)initialLayoutAttributesForInsertedItemAtIndexPath:(NSIndexPath *)itemIndexPath  &#123;      UICollectionViewLayoutAttributes* attributes = [self layoutAttributesForItemAtIndexPath:itemIndexPath];      attributes.alpha = 0.0;      attributes.center = CGPointMake(_center.x, _center.y);      return attributes;  &#125;    // 删除时，cell在圆心位置，全透明，且只有原来的1/10大  - (UICollectionViewLayoutAttributes *)finalLayoutAttributesForDeletedItemAtIndexPath:(NSIndexPath *)itemIndexPath  &#123;      UICollectionViewLayoutAttributes* attributes = [self layoutAttributesForItemAtIndexPath:itemIndexPath];      attributes.alpha = 0.0;      attributes.center = CGPointMake(_center.x, _center.y);      attributes.transform3D = CATransform3DMakeScale(0.1, 0.1, 1.0);      return attributes;  &#125;    @end      
+      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53      #import &quot;ViewController.h&quot;  #import &quot;Cell.h&quot;    @implementation ViewController    -(void)viewDidLoad  &#123;      self.cellCount = 20;      // 添加一个手势识别      UITapGestureRecognizer* tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)];      [self.collectionView addGestureRecognizer:tapRecognizer];      [self.collectionView registerClass:[Cell class] forCellWithReuseIdentifier:@&quot;MY_CELL&quot;];      [self.collectionView reloadData];      self.collectionView.backgroundColor = [UIColor greenColor];  &#125;    - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section;  &#123;      return self.cellCount;  &#125;    - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath;  &#123;      Cell *cell = [cv dequeueReusableCellWithReuseIdentifier:@&quot;MY_CELL&quot; forIndexPath:indexPath];      return cell;  &#125;    - (void)handleTapGesture:(UITapGestureRecognizer *)sender &#123;            if (sender.state == UIGestureRecognizerStateEnded)      &#123;          CGPoint initialPinchPoint = [sender locationInView:self.collectionView];          NSIndexPath* tappedCellPath = [self.collectionView indexPathForItemAtPoint:initialPinchPoint];          // 点击处没有cell          if (tappedCellPath!=nil)          &#123;              self.cellCount = self.cellCount - 1;              [self.collectionView performBatchUpdates:^&#123;                  [self.collectionView deleteItemsAtIndexPaths:[NSArray arrayWithObject:tappedCellPath]];                                &#125; completion:nil];          &#125;          else          &#123;              self.cellCount = self.cellCount + 1;              [self.collectionView performBatchUpdates:^&#123;                  [self.collectionView insertItemsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForItem:0 inSection:0]]];              &#125; completion:nil];          &#125;      &#125;  &#125;    @end      
+  例子  
+
     
     
         <a href="/2014/03/21/Collection-Views/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -224,11 +344,12 @@
  实现回调方法 
  移除观察 
  
- KVO涉及到的主要方法：       1  2  3  4      //	三个参数分别是监听对象、监听属性、监听选项  - (void)addObserver:(NSObj
+ KVO涉及到的主要方法：       1  2  3  4      //	三个参数分别是监听对象、监听属性、监听选项  - (void)addObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options context:(void *)context;  //	删除监听器，监听的对象、监听的属性  - (void)removeObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath;       
+      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55  56  57  58  59  60  61  62  63  64      @implementation ViewController  &#123;      UILabel *_name;      UILabel *_age;      UIButton *_b1;      UIButton *_b2;  &#125;    - (void)viewDidLoad  &#123;      [super viewDidLoad];  	_myData= [[MyData alloc] init];      [_myData setValue:@&quot;name&quot; forKey:@&quot;name&quot;];      [_myData setValue:@&quot;22&quot; forKey:@&quot;age&quot;];      [_myData addObserver:self forKeyPath:@&quot;age&quot; options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:NULL];      [_myData addObserver:self forKeyPath:@&quot;name&quot; options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:NULL];        CGSize size = self.view.bounds.size;        _name = [[UILabel alloc]initWithFrame:CGRectMake(size.width/2 - 75, 100, 150, 30 )];      _name.textColor = [UIColor redColor];      _name.text = [_myData valueForKey:@&quot;name&quot;];      _name.textAlignment = NSTextAlignmentCenter;      [self.view addSubview:_name];        _age = [[UILabel alloc]initWithFrame:CGRectMake(size.width/2 - 50, 140, 100, 30 )];      _age.textColor = [UIColor redColor];      _age.text = [[NSString alloc]initWithFormat:@&quot;%@&quot;,[_myData valueForKey:@&quot;age&quot;]];      _age.textAlignment = NSTextAlignmentCenter;      [self.view addSubview:_age];            _b1 = [UIButton buttonWithType:UIButtonTypeRoundedRect];      [_b1 setTitle:@&quot;Push&quot; forState:UIControlStateNormal];      _b1.frame = CGRectMake(size.width/2 - 50, size.height/2 + 100, 100, 30);      [_b1 addTarget:self action:@selector(buttonAction1) forControlEvents:UIControlEventTouchUpInside];      [self.view addSubview:_b1];            _b2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];      [_b2 setTitle:@&quot;Push&quot; forState:UIControlStateNormal];      _b2.frame = CGRectMake(size.width/2 - 50, size.height/2 + 140, 100, 30);      [_b2 addTarget:self action:@selector(buttonAction2) forControlEvents:UIControlEventTouchUpInside];      [self.view addSubview:_b2];  &#125;  -(void) buttonAction1  &#123;      unsigned int random = arc4random_uniform(999);      _myData.name = [[NSString alloc]initWithFormat:@&quot;随机数字:%d&quot;,random];  &#125;  -(void) buttonAction2  &#123;      unsigned int age = arc4random_uniform(100);      _myData.age = age;  &#125;  -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context  &#123;      if([keyPath isEqualToString:@&quot;age&quot;])      &#123;          _age.text = [[NSString alloc]initWithFormat:@&quot;%@&quot;,[_myData valueForKey:@&quot;age&quot;]];      &#125; else if([keyPath isEqualToString:@&quot;name&quot;])      &#123;          _name.text = _myData.name;                &#125;  &#125;      
     
     
         <a href="/2014/03/20/KVO/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -272,11 +393,24 @@
       1  2      // 获取1到x之间的整数的代码如下:  int value = (arc4random() % x) + 1;      
  
   random() 
-      1  2      // 需要初始化时设置种子  srandom((unsigned int)time(time_t *)NULL); //初始化时，设置下种子就好了。
+      1  2      // 需要初始化时设置种子  srandom((unsigned int)time(time_t *)NULL); //初始化时，设置下种子就好了。      
+ 
+  CCRANDOM_0_1() 
+      1  2  3      // cocos2d中使用 ，范围是[0,1]  // [0,5]   CCRANDOM_0_1() 取值范围是[0,1]  float random = CCRANDOM_0_1() * 5;      
+ 
+  arc4random_uniform 
+ 
+ 
+ 
+ 推介使用      1  2      // 返回一个小于number的均匀分布的整数  arc4random_uniform(number)      
+ 
+ 
+ 还存在其他一些arc4随机函数，详情查看   
+
     
     
         <a href="/2014/03/20/Objective-C中随机数的用法/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -323,11 +457,21 @@
  
    
  
-  将上面的 pod &#39;Shimmer&#39;, &#39;~&gt; 1.0.1&#39; copy，在你的工程下创建 Po
+  将上面的 pod &#39;Shimmer&#39;, &#39;~&gt; 1.0.1&#39; copy，在你的工程下创建 Podfile 文件，并写入 
+      1  2  3      platform :ios, &apos;7.0&apos;    pod &apos;Shimmer&apos;, &apos;~&gt; 1.0.1&apos;      
+ 
+  在命令行切换到你的工程目录，运行 pod install  
+ 
+ 
+   
+ ##用法 创建一个 FBShimmeringView 或 FBShimmeringLayer ，添加您的内容。要开启闪烁，就设置 shimmering 属性为YES。 例子：       1  2  3  4  5  6  7  8  9  10      FBShimmeringView  * shimmeringView  =  [[ FBShimmeringView  alloc ]  initWithFrame : self.view.bounds ];   [ self.view  addSubview : shimmeringView ];    UILabel  * loadingLabel  =  [[ UILabel  alloc ]  initWithFrame : shimmeringView.bounds ];   loadingLabel.textAlignment  =  NSTextAlignmentCenter ;   loadingLabel.text  =  NSLocalizedString ( @&quot;Shimmer&quot; ,  nil );   shimmeringView.contentView  =  loadingLabel ;    / /开始闪闪发光  shimmeringView.shimmering =  YES ;       
+ ##示例链接  示例 ： 
+   
+
     
     
         <a href="/2014/03/20/Shimmer/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -382,11 +526,25 @@
  Visual Studio 2012 
  Python 2.7.5 
  
- ##创建新工程 切
+ ##创建新工程 切换到cocos的根目录       1      cocos new MyGame -p com.zoe.MyGame -l cpp -d ./MyProject       
+ 
+  MyGame :指定工程名 
+  - p com.zoe.MyGame :指定Android的包名 
+  -l cpp :指定项目的语言，可用 cpp 或者 lua  
+  -d ./MyProject :指定存放目录   成的项目的文件夹结构如下：   ##编译运行新工程 
+ 
+      1      cocos run -s ./MyProject/MyGame -p ios      
+ 
+  -s :指定工程目录，必须是绝对目录且有效的 
+   -p :选着运行平台，可选项有 ios , android , win32 , mac , linux  
+   
+ 
+ 
+
     
     
         <a href="/2014/03/19/使用Cocosd-console创建运行工程/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -431,11 +589,18 @@
  下载 Java ,安装后，通过 java -version 进行验证 
  下载 SDK , NDK 解压到你存放的位置 
  ###Python和ant 
- Python作为Ma
+ Python作为Mac的一等公民，Macbook上是默认自带了的。 可以通过 python --version 验证：       1  2      -&gt;	python --version  Python 2.7.5       
+ 如果没有安装可以通过 brew install python 进行安装 如果brew也没有，可以到 brew 官网按照指定命令安装 
+ 之后我们还需要安装ant       1      brew install ant       
+ 通过 ant -version 进行验证       1  2      ant -version  Apache Ant(TM) version 1.9.3 compiled on December 23 2013       
+ ###初始化环境 切换到 ./cocos2d-x 的目录下（根据实际存放的位置）执行 .\setup.py 或者 python setup.py 运行设置脚本 根据提示分别填写NSK、SDK、ant的路径（根据实际存放位置，ant可以通过 which ant 命令查看位置）       
+ 最后，执行下面的命令完成设置       1      source ~/.bash_profile       
+ ##编译 切换到cocos2d-x的build目录下 执行下面命令       1      python android-build.py -p 10 cpp-test       
+
     
     
         <a href="/2014/03/18/Cocos2d-X-V30-如何在Android上运行Cpp-tests/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -493,11 +658,16 @@
  
  运行中 
  
-  
+   
+ 
+ 点击 stop 退出模拟器 
+ 
+   
+
     
     
         <a href="/2014/03/18/Cocos2d-X-V30-如何在iOS上运行Cpp-tests/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -536,11 +706,12 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-              1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51 
+              1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90  91  92  93  94  95  96  97  98  99  100  101  102  103  104  105  106  107  108  109  110  111  112  113  114  115  116  117  118  119  120  121  122  123  124  125  126  127  128  129  130  131  132  133  134  135  136  137  138  139  140  141  142  143  144  145  146  147  148  149  150  151  152  153  154  155  156  157  158  159  160  161  162  163  164  165  166  167  168  169  170  171  172  173  174  175  176  177  178  179  180  181  182  183  184  185  186  187  188  189  190  191  192  193  194  195  196  197  198  199  200  201  202  203  204  205  206  207  208  209  210  211  212  213  214  215  216  217  218  219  220  221  222  223  224  225  226  227  228  229  230  231  232  233  234  235  236  237  238  239  240  241  242  243  244  245  246  247  248  249  250  251  252  253  254  255  256  257  258  259  260  261  262  263  264  265  266  267  268  269  270  271  272  273  274  275  276  277  278  279  280  281  282  283  284  285  286  287  288  289  290  291  292  293  294  295  296  297  298  299  300  301  302  303  304  305  306  307  308  309  310  311  312  313  314  315  316  317  318  319  320  321  322  323  324  325  326  327  328  329  330  331  332  333  334  335  336  337  338  339  340  341  342  343  344  345  346  347  348  349  350  351  352  353  354  355  356  357  358  359  360  361  362       // FileCache.java    import  java.io.File;   import  android.content.Context;     public    class   FileCache  &#123;  	 private  FileCacheDir;  	  public   FileCache  (Context context)  &#123;  		 if (android.os.Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED))  			cacheDir =  new  File(android.os.Environmet.getExternalStrorageDirectory(), "文件夹名称" );  		 else   			cacheDir = context.getCacheDir();  		 if (!cacheDir.exsts())  			cache.mkdirs();  	&#125;    	  public  File  getFile  (String url)  &#123;  		String fileName = String.valueOf(url.hashCode());  		File file =  new  File(cacheDir,fileName);  		 return  file;  	&#125;    	  public   void   clear  ()  &#123;  		File[] files = cacheDir.listFiles();  		 if (files ==  null )  			 return ;  		 for (File file:files)  		&#123;  			file.delete();  		&#125;  	&#125;  &#125;   // HttpUtil.java    import  java.io.ByteArrayOutputStream;   import  java.io.File;   import  java.io.FileNotFoudException;   import  java.io.FileOutputStream;   import  java.io.IOException;   import  java.io.InputStream;   import  java.io.OutputStream;   import  java.io.UnsupportedEncodingException;   import  java.net.HttpURLConnection;   import  java.net.MalformedURLException;   import  java.net.ProtocolException;   import  java.net.URL;   import  java.net.URLEncoder;   import  java.util.Map;     /**    * Http请求工具类   */    public    class   HttpUtil  &#123;   	  public   static  String  getResponseStr  (String path,Map&lt;String,String&gt;parameters)  &#123;   		StringBuffer buffer =  new  StringBuffer();   		URL url;   		 try &#123;   			 if (parameters!= null &amp;&amp;parameters.isEmpty())&#123;   				 for (Map.Entry&lt;String,String&gt;entry:parameters.entrySet())&#123;   					buffer.append(entry.getKey()).append( "=" ).append(URLEncoder.encode(entry.getValue(), "UTF-8" )).append( "&amp;" );   			&#125;   			buffer.deleteCharAt(buffer.length()- 1 );   		&#125;   		url =  new  URL(path);   		HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();   		urlConnection.setConnectTimeout( 3000 );   		urlConnection.SetRequesMethod( "POST" );   		urlConnection.SetDoInput( true );   		urlConnection.SetDoOutput( true );   		 //     		 byte [] mydata = buffer.toString().getBytes();   		urlConnection.setRequesProperty( "Content-Type" , "application.x-www-form-urlencoded" );   		urlConnection.setRequesProperty( "Content-Length" ,String.valueOf(mydata.length));   		 // 获取输出流，向服务器输出数据    		OutputStream outputStream = urlConnection.getOutputStream();   		outputStream.write(mydata, 0 ,mydata.length());   		outputStream.close();   		 int  responseCode = urlConnection.getResponseCode();   		 if (responseCode ==  200 )&#123;   			 return  changeInuptstream(urlConnection.getInputStream());   		&#125; catch (UnsupportedEncodingException e)&#123;   			e.printStackTrace();   		&#125; catch (MalformedURLException e)&#123;   			e.printStackTrace();   		&#125; catch (ProtocolException e)&#123;   			e.printStackTrace();   		&#125; catch (IOException e)&#123;   			e.printStackTrace();   		&#125;   		retun  null ;   	&#125;   	  private   static  String  changeInputStream  (InputStream inputStream)  &#123;   		ByteArrayOutpoutStream outputStream =  new  ByteArrayOutputStream();   		 byte [] data =  new   byte [ 1024 ];   		 int  len =  0 ;   		String result =  "" ;   		 if (inputStream !=  null )&#123;   			 try &#123;   				 while ((len = inputStream.read(data)) != - 1 )&#123;   					outputStream.write(data, 0 ,len);   				&#125;   				result =  new  String(outputStream.toByteArray(), "UTF-8" );   			&#125; catch (IOException)&#123;   				e.printStacckTrace();   			&#125;   		&#125;   	 return  result;   	&#125;   	  public   static  InputStream  getInputStream  (String path)  &#123;   		URL url;   		 try &#123;   			url =  new  URL(path);   			HttpURLConnection urlConnection = (HttpURLConnection)url.open.Connection();   			urlConnecation.setConnectTimeout( 3000 );   			urlConnecation.setRequestMethod( "GET" );   			urlConnecation.setDoInput( true );   			urlConnecation.connect();   			 if (urlConnection.getResponseCode ==  200 )   				 return  urlConnection.getInputStream();   		&#125; catch (MalformedURLException e)&#123;   			e.printStackTrace();   		&#125; catch (IOException e)&#123;   			e.printStackTrace();   		&#125; catch (Exception e)&#123;   			e.printStacjTrace();   		&#125;   		 return   null ;   	&#125;   	 public  satatic  byte [] readStream(InputStream inStream)throwsException&#123;   		ByteArrayOutputStream outSteam = newByteArrayOutputStream();   		 byte [] buffer =  new   byte [ 1024 ];   		 int  len = - 1 ;   		 while ((len = inStream.read(buffer)) != - 1 )&#123;   			outStream.write(buffer, 0 ,len);   		&#125;   		outStream.close();   		inStream.close();   		 return  outStream.toByteArray();   	&#125;   	  public   static   void   copyStream  (String url,File f)  &#123;   		FileOutputStream fileOutputStream =  null ;   		InputStream inputStream =  null ;   		 try &#123;   			inputStream = getInputStream(url);   			 byte [] data =  new   byte [ 1024 ];   			 int  len =  0 ;   			fileOutputStream =  new  FileOutputStream(f);   			 while ((len = inputStream.read(data)) != - 1 )&#123;   				fileOutputStream.write(data, 0 ,len);   			&#125;   		&#125; catch (FileNotFoundException e)&#123;   			e.printStackTrace();   		&#125; catch (IOException e)&#123;   			e.printStackTrace();   		&#125; finally &#123;   			 if (inputStream !=  null )&#123;   				 try &#123;   					inputStream.close();   				&#125; catch (IOException e)&#123;   					e.printStackTrace();   				&#125;   			&#125;   		&#125;   	&#125;  &#125;   // MemoryCache.java    import  java.lang.ref.SoftReference;   import  java.util.Collections;   import  jave.util.HashMap;   import  java.util.Map;   import  android.graphics.Bitmap;     public    class   MemoryCache  &#123;  	 private  Map&lt;String,SoftReference&lt;Bitmap&gt;&gt; cache = Collections.sycnchronizedMap(newHashMap&lt;String,SoftReference&lt;Bitmap&gt;&gt;()); //软引用     	  public   Bitmapget  (String id)  &#123;  		 if (!cache.containsKey(id))  			 return   null ;  		SoftReference&lt;Bitmap&gt; ref = cache.get(id);  		 return  ref.get();  	&#125;  	  public   void   put  (String id,Bitmap bitmap)  &#123;  		cache.put(id,newSoftReferce&lt;Bitmap&gt;(bitmap));  	&#125;  	  public   void   clear  ()  &#123;  		cache.clear();  	&#125;  &#125;   // ImageLoader.java    import  java.io.File;   import  java.io.FileInputStream;   import  java.io.FileNotFoundException;   import  java.io.UnsupportedEncodingException;   import  java.io.net.URLEncoder;   import  java.io.util.Collections;   import  java.util.Map;   import  java.util.WeakHashMap;   import  java.util.concurrent.ExecutorService;   import  java.util.concurrent.Executors;   import  android.app.Activity;   import  android.content.Context;   import  android.graphics.Bitmap;   import  android.grapgics.BitmapFactory;   import  android.grapgics.drawable.BitmapDrawable;   import  android.widget.ImageView;     public    class   ImageLoader  &#123;  	 private  MemoryCachemoryCache =  new  MemoryCache();  	 private  FileCache fileCache;  	 private  Map&lt;ImageView,String&gt; imageViews = Collections.synchronizedMap( new  WeakHashMap&lt;ImageView,String&gt;());  	 private  ExecutorService executorService;  	 private   boolean  isSrc;    	  public   ImageLoader  (Context context, boolean  flag)  &#123;  		fileCache =  new  FileCache(context);  		executorService = Executors.newFixedThreadPool( 5 );  		isSrc = flag;  	&#125;  	 final   int  stub_id = R.drawable.ic_launcher;  	  public   void   DisplayImage  (String url,ImageView imageView)  &#123;  		String u1 = url.substring( 0 ,url.lastIndexOf( "/" )+ 1 );  		String u2 = url.substring(url,lastIndexOf( "/" )+ 1 );  		 try &#123;  			u2 = URLEncoder.encode(u2, "UTF-8" );  		&#125; catch (UnsupportedEncodingException e)&#123;  			e.printStackTrace();  		&#125;  		url = u1 +u2;  		imageViews.put(imageView,rul);  		Bitmap bitmap = memoryCache.get(url);  		 if (bitmap !=  null )&#123;  			 if (isSrc)  				imageView.setImageBitmap(bitmap);  			 else   				imageView.setBackgroundDrawable( new  BitmapDrawable(bitmap));  		&#125; else &#123;  			queuePhoto(url,imageView);  			 if (isSrc)  				imageView.setImageResouce(stub_id);  			 else   				imageView.setBackgroundResource(stub_id);  		&#125;  	&#125;  	  private   void   ququePhoto  (String url,ImageView imageView)  &#123;  		PhotoToLoad p =  new  PhotoToLoad(url,imageView);  		executoService.submit( new  PhotoSLoader(p));  	&#125;  	  private  Bitmap  getBitmap  (String url)  &#123;  		 try &#123;  			File f = filCache.getFile(url);  			 // SD卡   			Bitmap b = onDecodeFile(f);  			 if (b !=  null )  				 return  b;  			 // 从网络   			Bitmap bitmap =  null ;  			Sysytem.out.println( "ImageLoader--&gt;download" );  			HttpUtil.CopyStream(url,f);  			bitmap = onDecoderFile(f);  			 return  bitmap;  		&#125; catch (Exception e)&#123;  			e.printStackTrace();  			 return   null ;  		&#125;  	&#125;  	  public  Bitmap  onDecodeFile  (File f)  &#123;  		 try &#123;  			 return  BitmapFactory.decodeStream( new  FileInputStream(f));  		&#125; catch (FileNotFoundException e)&#123;  			e.printStackTrace();  		&#125;  		 return   null ;  	&#125;  	 // 解码图像用来减少内存消耗   	  public  Bitmap  decodeFile  (File f)  &#123;  		 try &#123;  			 // 解码图像大小   			BitmapFactory.Options o =  new  BitmapFactory.Options();  			o.inJustDecodeBounds =  true ;  			BitmapFactory.decodeStream( new  FileInputStream(f), null ,o);  			 // 找到正确的刻度值，它应该是2的幂   			 final   int  REQUIRED_SIZE =  70 ;  			 int  width_tmp = o.outWidth,height_tmp = o.outHeight;  			 int  scale =  1 ;  			 while ( true )&#123;  				 if (width_tmp/ 2  &lt; REQUIRED_SIZE || height_tmp/ 2  &lt; REQUIRED_SIZE)  				 break ;  				width_tmp /=  2 ;  				height_tmp /=  2 ;  				scale *=  2 ;  			&#125;  			BitmapFactory.Options o2 =  new  BitmapFactory.Options();  			o2.inSampleSize = scale;  			 return  BitmapFactory.decodeStream( new  FileInputStream(f), null ,o2);  		&#125; catch (FileNotFoundException e)&#123;    		&#125;  		 return   null ;  	&#125;  	 // 任务队列   	 private    class   PhotToLoad  &#123;  		 public  String url;  		 public  ImageView imageView;    		  public   PhotoToLoad  (String u,ImageView i)  &#123;  			url = u;  			imageView = i;  		&#125;  	&#125;  	  class   PhotosLoader   implementsRunnable  &#123;  		PhotoToLoad photoToLoad;    		PhotoLoader(PhotoToLoad photoToLoad)&#123;  			 this .photoToLoad = photoToLoad;  		&#125;  		 @Override   		  public   void   run  ()  &#123;  			 if (imageViewReused(photoToLoad))  				 return ;  			Bitmap bmp = getBitMap(photoToLoad.url);  			memoryCache.put(photoToLoade.url.bmp);  			 if (imageViewReused(photoToLoade))  				 return ;  			BitmapDisplayer bd =  new  BitmapDisplayer(bmp,photoToLoad);  			Activity a = (Activity)photoToLoad.imageView.getContext();  			a.runOnUiThread(bd);  		&#125;  	&#125;  	  boolean   imageViewReused  (PhotoToLoade photoToLoad)  &#123;  		String tag = imageViews.get(photoToLoad.imageView);  		 if (tag ==  null  ||!tag.equals(pgotoToLoad.url))  			 return   true ;  		 return   false ;  	&#125;  	 // 在UI线程显示位图   	  class   BitmapDisplayer   implements   Runnable  &#123;  		Bitmap bitmap;  		PhotoToLoad photoToLoad;    		  public   BitmapDisplayer  (Bitmap b,PhotoToLoad p)  &#123;  			bitmap = b;  			photoToLoad = p;  		&#125;  		  public   void   run  ()  &#123;  			 if (imageViewReused(photoToLoad))  				 return ;  			 if (bitmap != unll)&#123;  				 if (isSrc)  					photoToLoad.imageView.setImageResouce(stub_id);  				 else   					photoToLoad.imageView.setBackgroundDrawable( new  BitmapDrawable(bitmao));  			&#125; else &#123;  				 if (isSrc)  					photoToLoad.imageView.setImageResouce(stub_id);  				 else   					photoToLoad.imageView.setBackgroundDrawable( new  BitmapDrawable(bitmao));  			&#125;  		&#125;  	&#125;  	  public   void   clearCache  ()  &#123;  		memoryCache.clear();  		fileCache.clear();  	&#125;  &#125;      
+
     
     
         <a href="/2014/03/13/Android异步加载图片并缓存到本地软引用/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -583,11 +754,17 @@
  ##简介 
  Alcartraz是一个帮助你管理Xcode插件、模板以及颜色配置的工具，集成在Xcode的图形界面中。 
  ##安装与卸载 
- 安装命令       1  2      mkdir -p ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins;  curl -L http://git.io/lOQWeA
+ 安装命令       1  2      mkdir -p ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins;  curl -L http://git.io/lOQWeA | tar xvz -C ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins       
+ 卸载命令       1  2      rm -rf ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins/Alcatraz.xcplugin  rm -rf ~/Library/Application\ Support/Alcatraz       
+ ##使用 
+ 安装成功后重启Xcode，就可以在Xcode的顶部菜单中找到Alcatraz，如下所示：   点击“Package Manager”，即可启动插件列表页面，如下所示   之后你可以在右上角搜索插件，对于想安装的插件，点击其左边的图标，即可下载安装，如下所示，我正在安装KImageNamed插件：   安装完成后，再次点击插件左边的图标，可以将该插件删除。 
+ ##插件路径 
+ Xcode所有的插件都安装在目录 ~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/ 下，你也可以手工切换到这个目录来删除插件。 
+
     
     
         <a href="/2014/03/12/Xcode插件管理大师Alcartraz/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -635,11 +812,59 @@
  
  通过URL将数据下载到内存 
  通过URL将数据下载到文件系统 
- 将数据上传到指定
+ 将数据上传到指定URL 
+ 在后台完成上述功能 
+ 
+ 
+ 工作流程 1.创建一个NSURLSessionConfiguration，用于第二部创建NSSession时设置工作模式和网络设置，工作模式分为： 
+ 一般模式（default）：工作模式类似于NSURLConnection，可以使用缓存的Cache，Cookie，鉴权 
+ 及时模式（ephemeral）：不使用缓存的Cache，Cookie，鉴权 
+ 后台模式（background）：在后台完成下载，创建Configuration对象的时候需要给一个NSString的ID用于跟踪完成工作的Session是哪一个 网络设置：参靠NSURLConnection中的设置项。 
+ 
+ 
+ 
+ 
+  创建一个NSURLSession。系统提供了两个创建方法 
+ 
+ sessionWithConfiguration: 
+  sessionWithConfiguration:delegate:delegateQueue: 
+ 
+  第一个粒度较低就是根据刚才创建的Configuration创建一个Session，系统默认创建一个新的OperationQueue处理Session的消息。 
+ 
+  第二个粒度比较高，可以设定回调的delegate（注意这个回调delegate会被强引用），并且可以设定delegate在哪个OperationQueue回调，如果我们将其设置为[NSOperationQueue mainQueue]就能在主线程进行回调非常的方便。 
+ 
+ 
+ 
+ 创建一个NSURLRequest调用刚才的NSURLSession对象提供的Task函数，创建NSURLSessionTask 
+ 根据智能不同Task有三个子类： 
+ NSURLSessionUploadTask:上传用的Task，传完以后不会再下载返回结果； 
+ NSURLSessionDownloadTask:下载用的Task； 
+ NSURLSessionDataTask:可以上传内容，上传完成后再进行下载; 
+ 
+ 
+ 得到的Task，调用resume开始工作 
+ 
+ 
+ 如果是细粒度的Session调用，Session与Delegate会在指定的OperationQueue中进行交互，以下载例子，交互的顺序图如下（假设不需要鉴权，即非HTTPS请求）：   
+ 当不再需要连接调用Session的invaildateAndCancel直接关闭，或者调用finishTasksAndInvalidate等待当前Task结束后关闭。这时Delegate会收到URLSession:didBeComeInvaliWithErro:这个事件。Delegge收到这个事件之后会被解引用。 
+ 如果是一个BackgroundSession，在Task执行的时候，用户切到后台，Session会和ApplicationDelegate做交互，当程序切到后台后，在BackgroundSession中的Task还会继续下载 
+ 
+ 1）当加入了多个Task，程序没有切换到后台 这种情况Task会按照NSURLSessionConfiguration设置正常下载，不和和ApplicationDelegate有交互。 
+ 2）当加入了多个Task，程序切换到后台，所有Task都完成下载。 在切换到后台之后，Session的Delegate的application:handleEventForBackgroundURLSession:completionHandler:回调，之后“汇报”下载工作，对于每一个后台下载的Task调用Session的Delegate中的URLSession:downloadTask:didFinishDownloadingToURL:（成功的话）和URLSession:task:didCompleteWithError:(成功或者失败都会调用) 之后调用Session的Delegate回调URLSessionDidFinishEventsForBackgroundURLSession 
+ 
+  注意：在ApplicationDelegate被唤醒后，会有个参数ComplietionHandler，这个参数是个Block，这个参数要在后面Session的Delegate中didFinish的时候调用一下，如下：  
+ 
+      1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55  56  57      @implementation APLAppDelegate             - (void)application:(UIApplication *)application handleEventsForBackgroundURLSession:(NSString *)identifier        completionHandler:(void (^)())completionHandler      &#123;          BLog();          /*           Store the completion handler. The completion handler is invoked by the view controller&apos;s checkForAllDownloadsHavingCompleted method (if all the download tasks have been completed).           */            self.backgroundSessionCompletionHandler = completionHandler;      &#125;      //……      @end             //Session的Delegate      @implementation APLViewController             - (void)URLSessionDidFinishEventsForBackgroundURLSession:(NSURLSession *)session      &#123;          APLAppDelegate *appDelegate = (APLAppDelegate *)[[UIApplication sharedApplication] delegate];          if (appDelegate.backgroundSessionCompletionHandler) &#123;              void (^completionHandler)() = appDelegate.backgroundSessionCompletionHandler;              appDelegate.backgroundSessionCompletionHandler = nil;              completionHandler();          &#125;                 NSLog(@&quot;All tasks are finished&quot;);      &#125;      @end      
+ 3）当加入了多个Task，程序切换到后台，下载完成了几个Task，然后用户又切换到前台。（程序没有退出） 
+ 
+ 切换到后台之后，Session的Delegate仍然收不到消息，在下载完成几个Task之后再切换到前台，系统会先汇报已经下载完成的Task的情况，然后继续下载没有下载完成的Task。 
+ 
+ 4）当加入了多个Task，程序切到后台，几个Task已经完成，但还有Task还没有下载完的时候关掉退出程序然后再进入程序的时候。（程序退出了） 
+
     
     
         <a href="/2014/03/09/NSURLSession/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -662,51 +887,6 @@
 <div class="mask" id="mask"></div>
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
-<script>
-var BLOG_SHARE = {
-    title: "SeniorZhai's blog",
-    pic: "/img/logo.jpg",
-    summary: document.getElementsByName('summary')[0].content,
-    url: "http://seniorzhai.github.io/page/36/index.html"
-};
-</script>
-<div class="global-share" id="global-share">
-    <div class="tit">分享到：</div>
-    <ul class="reset share-icons">
-      <li>
-        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-      <li>
-        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-      <li>
-        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
-          <i class="icon icon-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
-          <i class="icon icon-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
-          豆
-        </a>
-      </li>
-    </ul>
- </div>
-
-
 
 <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 
@@ -714,45 +894,10 @@ var BLOG_SHARE = {
 
 
 
-<div class="search-panel" id="search-panel">
-    <ul class="search-result" id="search-result"></ul>
-</div>
-<script type="text/template" id="search-tpl">
-<li class="item">
-    <a href="/{path}" class="waves-block waves-effect">
-        <div class="title ellipsis" title="{title}">{title}</div>
-        <div class="flex-row flex-middle">
-            <div class="tags ellipsis">
-                {tags}
-            </div>
-            <time class="flex-col time">{date}</time>
-        </div>
-    </a>
-</li>
-</script>
-
-<script src="/js/search.js"></script>
 
 
 
 
-
-<script src="//s95.cnzz.com/z_stat.php?id=true&web_id=true"></script>
-
-
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-54646832-1&#39;', 'auto');
-ga('send', 'pageview');
-
-</script>
-<!-- End Google Analytics -->
 
 
 
