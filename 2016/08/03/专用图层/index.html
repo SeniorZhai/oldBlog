@@ -6,24 +6,24 @@
   <title>专用图层 | SeniorZhai&#39;s blog | 苟利国家生死以，起因福祸趋避之</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="theme-color" content="#3F51B5">
+  <meta name="theme-color" content="#ED5565">
   
   
   <meta name="keywords" content="">
-  <meta name="description" content="##CATextLayer123456789101112131415let textLayer = CATextLayer()textLayer.frame = self.view.boundsself.view.layer.addSublayer(textLayer)textLayer.foregroundColor = UIColor.blueColor().CGColortextLayer">
+  <meta name="description" content="iOS里有很多专用的Layer，用来处理各种不同绘制需求">
 <meta property="og:type" content="article">
 <meta property="og:title" content="专用图层">
 <meta property="og:url" content="http://seniorzhai.github.io/2016/08/03/专用图层/index.html">
 <meta property="og:site_name" content="SeniorZhai's blog">
-<meta property="og:description" content="##CATextLayer123456789101112131415let textLayer = CATextLayer()textLayer.frame = self.view.boundsself.view.layer.addSublayer(textLayer)textLayer.foregroundColor = UIColor.blueColor().CGColortextLayer">
-<meta property="og:updated_time" content="2016-08-05T06:05:13.000Z">
+<meta property="og:description" content="iOS里有很多专用的Layer，用来处理各种不同绘制需求">
+<meta property="og:updated_time" content="2016-09-02T06:27:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="专用图层">
-<meta name="twitter:description" content="##CATextLayer123456789101112131415let textLayer = CATextLayer()textLayer.frame = self.view.boundsself.view.layer.addSublayer(textLayer)textLayer.foregroundColor = UIColor.blueColor().CGColortextLayer">
+<meta name="twitter:description" content="iOS里有很多专用的Layer，用来处理各种不同绘制需求">
   
     <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
   
-  <meta name="summary" content="专注于移动平台">
+  <meta name="summary" content="&lt;p&gt;iOS里有很多专用的Layer，用来处理各种不同绘制需求&lt;br&gt;">
   <link rel="shortcut icon" href="/img/favicon.ico">
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -41,57 +41,58 @@
       <a href="/" class="avatar"><img src="/img/logo.jpg"></a>
       <hgroup class="introduce">
         <h5 class="nickname">Dear宅学长</h5>
-        <a href="mailto:370985116@qq.com" title="370985116@qq.com" class="mail">370985116@qq.com</a>
+        <a href="mailto:developer.zhaitao@gmail.com" title="developer.zhaitao@gmail.com" class="mail">developer.zhaitao@gmail.com</a>
       </hgroup>
     </div>
   </div>
-  <ul class="nav flex-col">
-    
-        <li class="waves-block waves-effect">
-          <a href="/"  >
-            <i class="icon icon-lg icon-home"></i>
-            Home
-          </a>
-        </li>
-    
-        <li class="waves-block waves-effect">
-          <a href="/archives"  >
-            <i class="icon icon-lg icon-archives"></i>
-            Archives
-          </a>
-        </li>
-    
-        <li class="waves-block waves-effect">
-          <a href="/tags"  >
-            <i class="icon icon-lg icon-tags"></i>
-            Tags
-          </a>
-        </li>
-    
-        <li class="waves-block waves-effect">
-          <a href="https://github.com/seniorzhai" target="_blank" >
-            <i class="icon icon-lg icon-github"></i>
-            Github
-          </a>
-        </li>
-    
-        <li class="waves-block waves-effect">
-          <a href="http://weibo.com/seniorszhai/home" target="_blank" >
-            <i class="icon icon-lg icon-weibo"></i>
-            Weibo
-          </a>
-        </li>
-    
-        <li class="waves-block waves-effect">
-          <a href="/about"  >
-            <i class="icon icon-lg icon-link"></i>
-            About
-          </a>
-        </li>
-    
-  </ul>
+  <div class="scroll-wrap flex-col">
+    <ul class="nav">
+      
+          <li class="waves-block waves-effect">
+            <a href="/"  >
+              <i class="icon icon-lg icon-home"></i>
+              主页
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/archives"  >
+              <i class="icon icon-lg icon-archives"></i>
+              Archives
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/tags"  >
+              <i class="icon icon-lg icon-tags"></i>
+              Tags
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://seniorzhai.github.io" target="_blank" >
+              <i class="icon icon-lg icon-github"></i>
+              Github
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="http://weibo.com/seniorszhai/" target="_blank" >
+              <i class="icon icon-lg icon-weibo"></i>
+              Weibo
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/about"  >
+              <i class="icon icon-lg icon-link"></i>
+              about
+            </a>
+          </li>
+      
+    </ul>
 
-  <footer class="footer">
+    <footer class="footer">
   <p><a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0;vertical-align:middle;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAPCAMAAABEF7i9AAAAllBMVEUAAAD///+rsapERER3d3eIiIjMzMzu7u4iIiKUmZO6v7rKzsoODg4RERFVVVUNDQ0NDg0PEA8zMzNLTEtbXltmZmZydnF9gn2AgICPkI+ZmZmqqqq7u7vFxsXIzMgNDQwZGRkgICAhISEkJSMnKCcuMC4xMzE5Ozk7PTtBQkFCQkJDQ0Nna2eGhoaHh4ezuLLGysbd3d1wVGpAAAAA4UlEQVR42q2T1xqCMAyFk7QsBQeKA9x7j/d/OSm22CpX0nzcpA1/T05aAOuBVkMAScQFHLnEwoCo2f1TnQIGoVMewjZEjVFN4GH1Ue1Cn2jWqwfsOOj6wDwGvotsl/c8lv7KIq1eLOsT0HMFHMIE/RZyHnlphryT9zyV+8WH5e8yQw3wnQvgAFxPTKUVi555SHR/lOfLMgVTeDlSfN+TaoUsiTyeIm+bCkHvCA2FUKG48LDtYBZBknsYP/G8NTw0gaaHyuQf4H5pecrB/FYCT2sL9zAfy1Xyjou6L8X2W7YcLyBZCRtnq/zfAAAAAElFTkSuQmCC" /></a></p>
   <p>SeniorZhai&#39;s blog &copy; 2016</p>
   <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
@@ -99,6 +100,7 @@
   <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
 </footer>
 
+  </div>
 </div>
 
   </nav>
@@ -200,7 +202,7 @@
         <div class="post-main">
 
             <div class="post-content" id="post-content" itemprop="postContent">
-            <a id="more"></a>
+            <p>iOS里有很多专用的Layer，用来处理各种不同绘制需求<br><a id="more"></a></p>
 <p>##CATextLayer<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> textLayer = <span class="type">CATextLayer</span>()</div><div class="line">textLayer.frame = <span class="keyword">self</span>.view.bounds</div><div class="line"></div><div class="line"><span class="keyword">self</span>.view.layer.addSublayer(textLayer)</div><div class="line"></div><div class="line">textLayer.foregroundColor = <span class="type">UIColor</span>.blueColor().<span class="type">CGColor</span></div><div class="line">textLayer.alignmentMode = kCAAlignmentJustified</div><div class="line">textLayer.wrapped = <span class="literal">true</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> font = <span class="type">UIFont</span>.systemFontOfSize(<span class="number">15</span>)</div><div class="line"><span class="keyword">let</span> fontRef = <span class="type">CGFontCreateWithFontName</span>(font.fontName)</div><div class="line">textLayer.font = fontRef</div><div class="line">textLayer.fontSize = font.pointSize</div><div class="line"><span class="type">CFRelease</span>(fontRef)</div><div class="line">textLayer.string = <span class="string">"示例文字\n示例文字"</span></div></pre></td></tr></table></figure></p>
 <blockquote>
 <p>注: 需要指定contentScale才能按设备放大系数准确渲染</p>
@@ -344,29 +346,9 @@ var BLOG_SHARE = {
 
 
 
-<!-- mathjax config similar to math.stackexchange -->
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
-
-<script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 
-
+<script src="//s95.cnzz.com/z_stat.php?id=true&web_id=true"></script>
 
 
 
@@ -377,7 +359,7 @@ MathJax.Hub.Queue(function() {
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', 'UA-54646832-1', 'auto');
+ga('create', 'UA-54646832-1&#39;', 'auto');
 ga('send', 'pageview');
 
 </script>

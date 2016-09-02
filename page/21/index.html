@@ -6,7 +6,7 @@
   <title>SeniorZhai&#39;s blog | 苟利国家生死以，起因福祸趋避之</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="theme-color" content="#3F51B5">
+  <meta name="theme-color" content="#ED5565">
   
   
   <meta name="keywords" content="undefined">
@@ -40,57 +40,58 @@
       <a href="/" class="avatar"><img src="/img/logo.jpg"></a>
       <hgroup class="introduce">
         <h5 class="nickname">Dear宅学长</h5>
-        <a href="mailto:370985116@qq.com" title="370985116@qq.com" class="mail">370985116@qq.com</a>
+        <a href="mailto:developer.zhaitao@gmail.com" title="developer.zhaitao@gmail.com" class="mail">developer.zhaitao@gmail.com</a>
       </hgroup>
     </div>
   </div>
-  <ul class="nav flex-col">
-    
-        <li class="waves-block waves-effect">
-          <a href="/"  >
-            <i class="icon icon-lg icon-home"></i>
-            Home
-          </a>
-        </li>
-    
-        <li class="waves-block waves-effect">
-          <a href="/archives"  >
-            <i class="icon icon-lg icon-archives"></i>
-            Archives
-          </a>
-        </li>
-    
-        <li class="waves-block waves-effect">
-          <a href="/tags"  >
-            <i class="icon icon-lg icon-tags"></i>
-            Tags
-          </a>
-        </li>
-    
-        <li class="waves-block waves-effect">
-          <a href="https://github.com/seniorzhai" target="_blank" >
-            <i class="icon icon-lg icon-github"></i>
-            Github
-          </a>
-        </li>
-    
-        <li class="waves-block waves-effect">
-          <a href="http://weibo.com/seniorszhai/home" target="_blank" >
-            <i class="icon icon-lg icon-weibo"></i>
-            Weibo
-          </a>
-        </li>
-    
-        <li class="waves-block waves-effect">
-          <a href="/about"  >
-            <i class="icon icon-lg icon-link"></i>
-            About
-          </a>
-        </li>
-    
-  </ul>
+  <div class="scroll-wrap flex-col">
+    <ul class="nav">
+      
+          <li class="waves-block waves-effect">
+            <a href="/"  >
+              <i class="icon icon-lg icon-home"></i>
+              主页
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/archives"  >
+              <i class="icon icon-lg icon-archives"></i>
+              Archives
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/tags"  >
+              <i class="icon icon-lg icon-tags"></i>
+              Tags
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="https://seniorzhai.github.io" target="_blank" >
+              <i class="icon icon-lg icon-github"></i>
+              Github
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="http://weibo.com/seniorszhai/" target="_blank" >
+              <i class="icon icon-lg icon-weibo"></i>
+              Weibo
+            </a>
+          </li>
+      
+          <li class="waves-block waves-effect">
+            <a href="/about"  >
+              <i class="icon icon-lg icon-link"></i>
+              about
+            </a>
+          </li>
+      
+    </ul>
 
-  <footer class="footer">
+    <footer class="footer">
   <p><a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0;vertical-align:middle;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAPCAMAAABEF7i9AAAAllBMVEUAAAD///+rsapERER3d3eIiIjMzMzu7u4iIiKUmZO6v7rKzsoODg4RERFVVVUNDQ0NDg0PEA8zMzNLTEtbXltmZmZydnF9gn2AgICPkI+ZmZmqqqq7u7vFxsXIzMgNDQwZGRkgICAhISEkJSMnKCcuMC4xMzE5Ozk7PTtBQkFCQkJDQ0Nna2eGhoaHh4ezuLLGysbd3d1wVGpAAAAA4UlEQVR42q2T1xqCMAyFk7QsBQeKA9x7j/d/OSm22CpX0nzcpA1/T05aAOuBVkMAScQFHLnEwoCo2f1TnQIGoVMewjZEjVFN4GH1Ue1Cn2jWqwfsOOj6wDwGvotsl/c8lv7KIq1eLOsT0HMFHMIE/RZyHnlphryT9zyV+8WH5e8yQw3wnQvgAFxPTKUVi555SHR/lOfLMgVTeDlSfN+TaoUsiTyeIm+bCkHvCA2FUKG48LDtYBZBknsYP/G8NTw0gaaHyuQf4H5pecrB/FYCT2sL9zAfy1Xyjou6L8X2W7YcLyBZCRtnq/zfAAAAAElFTkSuQmCC" /></a></p>
   <p>SeniorZhai&#39;s blog &copy; 2016</p>
   <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
@@ -98,6 +99,7 @@
   <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
 </footer>
 
+  </div>
 </div>
 
   </nav>
@@ -213,8 +215,7 @@
 
     
           
- ##Jar包 Jar包的处理相对简单，将Jar包复制到lib文件夹中，然后右击Jar包选择 add as a library 即可导入。 删除时，需要先删除 build.gradle 中的语句，再删除Jar包   
- ##添加远程开源库   一般新的开源库在其README.md中都会有相应连接，比如 FlatUI ，在其GitHub页面可以得到以下内容   要将上面内容添加到项目中的 bu
+ ##Jar包 Jar包的处理相对简单，将Jar包复制到lib文件夹中，然后右击Jar包选择 add as a library 即可导入。 删除时，需要先删除 build.gradle 中的语句
     
     
         <a href="/2014/09/29/Android-Studio导入Jar包及第三方开源库的方法/" class="post-more waves-effect waves-button">
@@ -258,7 +259,7 @@
 
     
           
- 效果         1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49
+ 效果         1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24
     
     
         <a href="/2014/09/29/晃动动画/" class="post-more waves-effect waves-button">
@@ -302,11 +303,7 @@
 
     
           
- ##安装Package Control Sublime Text支持大量插件，Package Control能够帮助我们管理这些插件，它可以方便的浏览、安装和卸载Sublime Text中的插件 
- 
- 使用Ctrl+`打开Sublime Text控制台 
-  输入下面命令道控制台 
-      1      import urllib.request,os,hashlib; h = &a
+ ##安装Package Control Sublime Text支持大量插件，Package Control能够帮助我们管理这些插件，它可以方便的浏览、安装和卸载Sublime Text中的插
     
     
         <a href="/2014/09/28/Sublime-Text使用指南/" class="post-more waves-effect waves-button">
@@ -398,14 +395,7 @@
  type()    查看数据类型 
  dir()        返回所以属性和方法 
  help()     返回帮助信息 
- range(x,y)    获取x到y-1的元素 ##列表 
- 
- ###常用方法 
- 
- count()    列表含多少元素 
- index(x)    差选下标为x的元素 
- append()    在末尾添加元素 
- sort()  
+ range(x,y)    获取x到y-1
     
     
         <a href="/2014/09/27/Python模块/" class="post-more waves-effect waves-button">
@@ -493,14 +483,7 @@
  type()    查看数据类型 
  dir()        返回所以属性和方法 
  help()     返回帮助信息 
- range(x,y)    获取x到y-1的元素 ##列表 
- 
- ###常用方法 
- 
- count()    列表含多少元素 
- index(x)    差选下标为x的元素 
- append()    在末尾添加元素 
- sort()  
+ range(x,y)    获取x到y-1
     
     
         <a href="/2014/09/26/Python常用方法/" class="post-more waves-effect waves-button">
@@ -549,9 +532,7 @@
  ##创建和切换分支 
  
  创建分支 git branch new_branch_name 
- 切换分支 git checkout target_branch_name 
- 删除分支 -D target_branch_name   ##推送到远程分支 
- git push origin local_branch_na
+ 切换分支 git ch
     
     
         <a href="/2014/09/24/git命令/" class="post-more waves-effect waves-button">
@@ -595,7 +576,7 @@
 
     
           
-   主界面       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28       &lt; RelativeLayout   xmlns:android = "http://schemas.android.com/apk/res/an
+   主界面       1  2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  2
     
     
         <a href="/2014/09/23/购物车效果/" class="post-more waves-effect waves-button">
@@ -695,29 +676,9 @@ var BLOG_SHARE = {
 
 
 
-<!-- mathjax config similar to math.stackexchange -->
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
-
-<script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 
-
+<script src="//s95.cnzz.com/z_stat.php?id=true&web_id=true"></script>
 
 
 
@@ -728,7 +689,7 @@ MathJax.Hub.Queue(function() {
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', 'UA-54646832-1', 'auto');
+ga('create', 'UA-54646832-1&#39;', 'auto');
 ga('send', 'pageview');
 
 </script>
