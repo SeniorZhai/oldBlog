@@ -81,6 +81,256 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2014/03/13/Android异步加载图片并缓存到本地软引用/" title="Android异步加载图片并缓存到本地软引用" itemprop="url">Android异步加载图片并缓存到本地软引用</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Dear宅学长" target="_blank" itemprop="author">Dear宅学长</a>
+		
+  <p class="article-time">
+    <time datetime="2014-03-13T05:16:45.000Z" itemprop="datePublished"> 发表于 2014-03-13</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div><div class="line">227</div><div class="line">228</div><div class="line">229</div><div class="line">230</div><div class="line">231</div><div class="line">232</div><div class="line">233</div><div class="line">234</div><div class="line">235</div><div class="line">236</div><div class="line">237</div><div class="line">238</div><div class="line">239</div><div class="line">240</div><div class="line">241</div><div class="line">242</div><div class="line">243</div><div class="line">244</div><div class="line">245</div><div class="line">246</div><div class="line">247</div><div class="line">248</div><div class="line">249</div><div class="line">250</div><div class="line">251</div><div class="line">252</div><div class="line">253</div><div class="line">254</div><div class="line">255</div><div class="line">256</div><div class="line">257</div><div class="line">258</div><div class="line">259</div><div class="line">260</div><div class="line">261</div><div class="line">262</div><div class="line">263</div><div class="line">264</div><div class="line">265</div><div class="line">266</div><div class="line">267</div><div class="line">268</div><div class="line">269</div><div class="line">270</div><div class="line">271</div><div class="line">272</div><div class="line">273</div><div class="line">274</div><div class="line">275</div><div class="line">276</div><div class="line">277</div><div class="line">278</div><div class="line">279</div><div class="line">280</div><div class="line">281</div><div class="line">282</div><div class="line">283</div><div class="line">284</div><div class="line">285</div><div class="line">286</div><div class="line">287</div><div class="line">288</div><div class="line">289</div><div class="line">290</div><div class="line">291</div><div class="line">292</div><div class="line">293</div><div class="line">294</div><div class="line">295</div><div class="line">296</div><div class="line">297</div><div class="line">298</div><div class="line">299</div><div class="line">300</div><div class="line">301</div><div class="line">302</div><div class="line">303</div><div class="line">304</div><div class="line">305</div><div class="line">306</div><div class="line">307</div><div class="line">308</div><div class="line">309</div><div class="line">310</div><div class="line">311</div><div class="line">312</div><div class="line">313</div><div class="line">314</div><div class="line">315</div><div class="line">316</div><div class="line">317</div><div class="line">318</div><div class="line">319</div><div class="line">320</div><div class="line">321</div><div class="line">322</div><div class="line">323</div><div class="line">324</div><div class="line">325</div><div class="line">326</div><div class="line">327</div><div class="line">328</div><div class="line">329</div><div class="line">330</div><div class="line">331</div><div class="line">332</div><div class="line">333</div><div class="line">334</div><div class="line">335</div><div class="line">336</div><div class="line">337</div><div class="line">338</div><div class="line">339</div><div class="line">340</div><div class="line">341</div><div class="line">342</div><div class="line">343</div><div class="line">344</div><div class="line">345</div><div class="line">346</div><div class="line">347</div><div class="line">348</div><div class="line">349</div><div class="line">350</div><div class="line">351</div><div class="line">352</div><div class="line">353</div><div class="line">354</div><div class="line">355</div><div class="line">356</div><div class="line">357</div><div class="line">358</div><div class="line">359</div><div class="line">360</div><div class="line">361</div><div class="line">362</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// FileCache.java</span></div><div class="line"><span class="keyword">import</span> java.io.File;</div><div class="line"><span class="keyword">import</span> android.content.Context;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileCache</span></span>&#123;</div><div class="line">	<span class="keyword">private</span> FileCacheDir;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">FileCache</span><span class="params">(Context context)</span></span>&#123;</div><div class="line">		<span class="keyword">if</span>(android.os.Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED))</div><div class="line">			cacheDir = <span class="keyword">new</span> File(android.os.Environmet.getExternalStrorageDirectory(),<span class="string">"文件夹名称"</span>);</div><div class="line">		<span class="keyword">else</span></div><div class="line">			cacheDir = context.getCacheDir();</div><div class="line">		<span class="keyword">if</span>(!cacheDir.exsts())</div><div class="line">			cache.mkdirs();</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> File <span class="title">getFile</span><span class="params">(String url)</span></span>&#123;</div><div class="line">		String fileName = String.valueOf(url.hashCode());</div><div class="line">		File file = <span class="keyword">new</span> File(cacheDir,fileName);</div><div class="line">		<span class="keyword">return</span> file;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">clear</span><span class="params">()</span></span>&#123;</div><div class="line">		File[] files = cacheDir.listFiles();</div><div class="line">		<span class="keyword">if</span>(files == <span class="keyword">null</span>)</div><div class="line">			<span class="keyword">return</span>;</div><div class="line">		<span class="keyword">for</span>(File file:files)</div><div class="line">		&#123;</div><div class="line">			file.delete();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">// HttpUtil.java</span></div><div class="line"><span class="keyword">import</span> java.io.ByteArrayOutputStream;</div><div class="line"><span class="keyword">import</span> java.io.File;</div><div class="line"><span class="keyword">import</span> java.io.FileNotFoudException;</div><div class="line"><span class="keyword">import</span> java.io.FileOutputStream;</div><div class="line"><span class="keyword">import</span> java.io.IOException;</div><div class="line"><span class="keyword">import</span> java.io.InputStream;</div><div class="line"><span class="keyword">import</span> java.io.OutputStream;</div><div class="line"><span class="keyword">import</span> java.io.UnsupportedEncodingException;</div><div class="line"><span class="keyword">import</span> java.net.HttpURLConnection;</div><div class="line"><span class="keyword">import</span> java.net.MalformedURLException;</div><div class="line"><span class="keyword">import</span> java.net.ProtocolException;</div><div class="line"><span class="keyword">import</span> java.net.URL;</div><div class="line"><span class="keyword">import</span> java.net.URLEncoder;</div><div class="line"><span class="keyword">import</span> java.util.Map;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * Http请求工具类</div><div class="line"> */</div><div class="line"> <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HttpUtil</span></span>&#123;</div><div class="line"> 	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">getResponseStr</span><span class="params">(String path,Map&lt;String,String&gt;parameters)</span></span>&#123;</div><div class="line"> 		StringBuffer buffer = <span class="keyword">new</span> StringBuffer();</div><div class="line"> 		URL url;</div><div class="line"> 		<span class="keyword">try</span>&#123;</div><div class="line"> 			<span class="keyword">if</span>(parameters!=<span class="keyword">null</span>&amp;&amp;parameters.isEmpty())&#123;</div><div class="line"> 				<span class="keyword">for</span>(Map.Entry&lt;String,String&gt;entry:parameters.entrySet())&#123;</div><div class="line"> 					buffer.append(entry.getKey()).append(<span class="string">"="</span>).append(URLEncoder.encode(entry.getValue(),<span class="string">"UTF-8"</span>)).append(<span class="string">"&amp;"</span>);</div><div class="line"> 			&#125;</div><div class="line"> 			buffer.deleteCharAt(buffer.length()-<span class="number">1</span>);</div><div class="line"> 		&#125;</div><div class="line"> 		url = <span class="keyword">new</span> URL(path);</div><div class="line"> 		HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();</div><div class="line"> 		urlConnection.setConnectTimeout(<span class="number">3000</span>);</div><div class="line"> 		urlConnection.SetRequesMethod(<span class="string">"POST"</span>);</div><div class="line"> 		urlConnection.SetDoInput(<span class="keyword">true</span>);</div><div class="line"> 		urlConnection.SetDoOutput(<span class="keyword">true</span>);</div><div class="line"> 		<span class="comment">// </span></div><div class="line"> 		<span class="keyword">byte</span>[] mydata = buffer.toString().getBytes();</div><div class="line"> 		urlConnection.setRequesProperty(<span class="string">"Content-Type"</span>,<span class="string">"application.x-www-form-urlencoded"</span>);</div><div class="line"> 		urlConnection.setRequesProperty(<span class="string">"Content-Length"</span>,String.valueOf(mydata.length));</div><div class="line"> 		<span class="comment">// 获取输出流，向服务器输出数据</span></div><div class="line"> 		OutputStream outputStream = urlConnection.getOutputStream();</div><div class="line"> 		outputStream.write(mydata,<span class="number">0</span>,mydata.length());</div><div class="line"> 		outputStream.close();</div><div class="line"> 		<span class="keyword">int</span> responseCode = urlConnection.getResponseCode();</div><div class="line"> 		<span class="keyword">if</span>(responseCode == <span class="number">200</span>)&#123;</div><div class="line"> 			<span class="keyword">return</span> changeInuptstream(urlConnection.getInputStream());</div><div class="line"> 		&#125;<span class="keyword">catch</span>(UnsupportedEncodingException e)&#123;</div><div class="line"> 			e.printStackTrace();</div><div class="line"> 		&#125;<span class="keyword">catch</span>(MalformedURLException e)&#123;</div><div class="line"> 			e.printStackTrace();</div><div class="line"> 		&#125;<span class="keyword">catch</span>(ProtocolException e)&#123;</div><div class="line"> 			e.printStackTrace();</div><div class="line"> 		&#125;<span class="keyword">catch</span>(IOException e)&#123;</div><div class="line"> 			e.printStackTrace();</div><div class="line"> 		&#125;</div><div class="line"> 		retun <span class="keyword">null</span>;</div><div class="line"> 	&#125;</div><div class="line"> 	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> String <span class="title">changeInputStream</span><span class="params">(InputStream inputStream)</span></span>&#123;</div><div class="line"> 		ByteArrayOutpoutStream outputStream = <span class="keyword">new</span> ByteArrayOutputStream();</div><div class="line"> 		<span class="keyword">byte</span>[] data = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</div><div class="line"> 		<span class="keyword">int</span> len = <span class="number">0</span>;</div><div class="line"> 		String result = <span class="string">""</span>;</div><div class="line"> 		<span class="keyword">if</span>(inputStream != <span class="keyword">null</span>)&#123;</div><div class="line"> 			<span class="keyword">try</span>&#123;</div><div class="line"> 				<span class="keyword">while</span>((len = inputStream.read(data)) != -<span class="number">1</span>)&#123;</div><div class="line"> 					outputStream.write(data,<span class="number">0</span>,len);</div><div class="line"> 				&#125;</div><div class="line"> 				result = <span class="keyword">new</span> String(outputStream.toByteArray(),<span class="string">"UTF-8"</span>);</div><div class="line"> 			&#125;<span class="keyword">catch</span>(IOException)&#123;</div><div class="line"> 				e.printStacckTrace();</div><div class="line"> 			&#125;</div><div class="line"> 		&#125;</div><div class="line"> 	<span class="keyword">return</span> result;</div><div class="line"> 	&#125;</div><div class="line"> 	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> InputStream <span class="title">getInputStream</span><span class="params">(String path)</span></span>&#123;</div><div class="line"> 		URL url;</div><div class="line"> 		<span class="keyword">try</span>&#123;</div><div class="line"> 			url = <span class="keyword">new</span> URL(path);</div><div class="line"> 			HttpURLConnection urlConnection = (HttpURLConnection)url.open.Connection();</div><div class="line"> 			urlConnecation.setConnectTimeout(<span class="number">3000</span>);</div><div class="line"> 			urlConnecation.setRequestMethod(<span class="string">"GET"</span>);</div><div class="line"> 			urlConnecation.setDoInput(<span class="keyword">true</span>);</div><div class="line"> 			urlConnecation.connect();</div><div class="line"> 			<span class="keyword">if</span>(urlConnection.getResponseCode == <span class="number">200</span>)</div><div class="line"> 				<span class="keyword">return</span> urlConnection.getInputStream();</div><div class="line"> 		&#125;<span class="keyword">catch</span>(MalformedURLException e)&#123;</div><div class="line"> 			e.printStackTrace();</div><div class="line"> 		&#125;<span class="keyword">catch</span>(IOException e)&#123;</div><div class="line"> 			e.printStackTrace();</div><div class="line"> 		&#125;<span class="keyword">catch</span>(Exception e)&#123;</div><div class="line"> 			e.printStacjTrace();</div><div class="line"> 		&#125;</div><div class="line"> 		<span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line"> 	&#125;</div><div class="line"> 	<span class="keyword">public</span> satatic <span class="keyword">byte</span>[] readStream(InputStream inStream)throwsException&#123;</div><div class="line"> 		ByteArrayOutputStream outSteam = newByteArrayOutputStream();</div><div class="line"> 		<span class="keyword">byte</span>[] buffer = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</div><div class="line"> 		<span class="keyword">int</span> len = -<span class="number">1</span>;</div><div class="line"> 		<span class="keyword">while</span>((len = inStream.read(buffer)) != -<span class="number">1</span>)&#123;</div><div class="line"> 			outStream.write(buffer,<span class="number">0</span>,len);</div><div class="line"> 		&#125;</div><div class="line"> 		outStream.close();</div><div class="line"> 		inStream.close();</div><div class="line"> 		<span class="keyword">return</span> outStream.toByteArray();</div><div class="line"> 	&#125;</div><div class="line"> 	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">copyStream</span><span class="params">(String url,File f)</span></span>&#123;</div><div class="line"> 		FileOutputStream fileOutputStream = <span class="keyword">null</span>;</div><div class="line"> 		InputStream inputStream = <span class="keyword">null</span>;</div><div class="line"> 		<span class="keyword">try</span>&#123;</div><div class="line"> 			inputStream = getInputStream(url);</div><div class="line"> 			<span class="keyword">byte</span>[] data = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</div><div class="line"> 			<span class="keyword">int</span> len = <span class="number">0</span>;</div><div class="line"> 			fileOutputStream = <span class="keyword">new</span> FileOutputStream(f);</div><div class="line"> 			<span class="keyword">while</span>((len = inputStream.read(data)) != -<span class="number">1</span>)&#123;</div><div class="line"> 				fileOutputStream.write(data,<span class="number">0</span>,len);</div><div class="line"> 			&#125;</div><div class="line"> 		&#125;<span class="keyword">catch</span>(FileNotFoundException e)&#123;</div><div class="line"> 			e.printStackTrace();</div><div class="line"> 		&#125;<span class="keyword">catch</span>(IOException e)&#123;</div><div class="line"> 			e.printStackTrace();</div><div class="line"> 		&#125;<span class="keyword">finally</span>&#123;</div><div class="line"> 			<span class="keyword">if</span>(inputStream != <span class="keyword">null</span>)&#123;</div><div class="line"> 				<span class="keyword">try</span>&#123;</div><div class="line"> 					inputStream.close();</div><div class="line"> 				&#125;<span class="keyword">catch</span>(IOException e)&#123;</div><div class="line"> 					e.printStackTrace();</div><div class="line"> 				&#125;</div><div class="line"> 			&#125;</div><div class="line"> 		&#125;</div><div class="line"> 	&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">// MemoryCache.java</span></div><div class="line"><span class="keyword">import</span> java.lang.ref.SoftReference;</div><div class="line"><span class="keyword">import</span> java.util.Collections;</div><div class="line"><span class="keyword">import</span> jave.util.HashMap;</div><div class="line"><span class="keyword">import</span> java.util.Map;</div><div class="line"><span class="keyword">import</span> android.graphics.Bitmap;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MemoryCache</span></span>&#123;</div><div class="line">	<span class="keyword">private</span> Map&lt;String,SoftReference&lt;Bitmap&gt;&gt; cache = Collections.sycnchronizedMap(newHashMap&lt;String,SoftReference&lt;Bitmap&gt;&gt;());<span class="comment">//软引用</span></div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Bitmapget</span><span class="params">(String id)</span></span>&#123;</div><div class="line">		<span class="keyword">if</span>(!cache.containsKey(id))</div><div class="line">			<span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">		SoftReference&lt;Bitmap&gt; ref = cache.get(id);</div><div class="line">		<span class="keyword">return</span> ref.get();</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">put</span><span class="params">(String id,Bitmap bitmap)</span></span>&#123;</div><div class="line">		cache.put(id,newSoftReferce&lt;Bitmap&gt;(bitmap));</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">clear</span><span class="params">()</span></span>&#123;</div><div class="line">		cache.clear();</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">// ImageLoader.java</span></div><div class="line"><span class="keyword">import</span> java.io.File;</div><div class="line"><span class="keyword">import</span> java.io.FileInputStream;</div><div class="line"><span class="keyword">import</span> java.io.FileNotFoundException;</div><div class="line"><span class="keyword">import</span> java.io.UnsupportedEncodingException;</div><div class="line"><span class="keyword">import</span> java.io.net.URLEncoder;</div><div class="line"><span class="keyword">import</span> java.io.util.Collections;</div><div class="line"><span class="keyword">import</span> java.util.Map;</div><div class="line"><span class="keyword">import</span> java.util.WeakHashMap;</div><div class="line"><span class="keyword">import</span> java.util.concurrent.ExecutorService;</div><div class="line"><span class="keyword">import</span> java.util.concurrent.Executors;</div><div class="line"><span class="keyword">import</span> android.app.Activity;</div><div class="line"><span class="keyword">import</span> android.content.Context;</div><div class="line"><span class="keyword">import</span> android.graphics.Bitmap;</div><div class="line"><span class="keyword">import</span> android.grapgics.BitmapFactory;</div><div class="line"><span class="keyword">import</span> android.grapgics.drawable.BitmapDrawable;</div><div class="line"><span class="keyword">import</span> android.widget.ImageView;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ImageLoader</span></span>&#123;</div><div class="line">	<span class="keyword">private</span> MemoryCachemoryCache = <span class="keyword">new</span> MemoryCache();</div><div class="line">	<span class="keyword">private</span> FileCache fileCache;</div><div class="line">	<span class="keyword">private</span> Map&lt;ImageView,String&gt; imageViews = Collections.synchronizedMap(<span class="keyword">new</span> WeakHashMap&lt;ImageView,String&gt;());</div><div class="line">	<span class="keyword">private</span> ExecutorService executorService;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">boolean</span> isSrc;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">ImageLoader</span><span class="params">(Context context,<span class="keyword">boolean</span> flag)</span></span>&#123;</div><div class="line">		fileCache = <span class="keyword">new</span> FileCache(context);</div><div class="line">		executorService = Executors.newFixedThreadPool(<span class="number">5</span>);</div><div class="line">		isSrc = flag;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">final</span> <span class="keyword">int</span> stub_id = R.drawable.ic_launcher;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">DisplayImage</span><span class="params">(String url,ImageView imageView)</span></span>&#123;</div><div class="line">		String u1 = url.substring(<span class="number">0</span>,url.lastIndexOf(<span class="string">"/"</span>)+<span class="number">1</span>);</div><div class="line">		String u2 = url.substring(url,lastIndexOf(<span class="string">"/"</span>)+<span class="number">1</span>);</div><div class="line">		<span class="keyword">try</span>&#123;</div><div class="line">			u2 = URLEncoder.encode(u2,<span class="string">"UTF-8"</span>);</div><div class="line">		&#125;<span class="keyword">catch</span>(UnsupportedEncodingException e)&#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">		url = u1 +u2;</div><div class="line">		imageViews.put(imageView,rul);</div><div class="line">		Bitmap bitmap = memoryCache.get(url);</div><div class="line">		<span class="keyword">if</span>(bitmap != <span class="keyword">null</span>)&#123;</div><div class="line">			<span class="keyword">if</span>(isSrc)</div><div class="line">				imageView.setImageBitmap(bitmap);</div><div class="line">			<span class="keyword">else</span></div><div class="line">				imageView.setBackgroundDrawable(<span class="keyword">new</span> BitmapDrawable(bitmap));</div><div class="line">		&#125;<span class="keyword">else</span>&#123;</div><div class="line">			queuePhoto(url,imageView);</div><div class="line">			<span class="keyword">if</span>(isSrc)</div><div class="line">				imageView.setImageResouce(stub_id);</div><div class="line">			<span class="keyword">else</span></div><div class="line">				imageView.setBackgroundResource(stub_id);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">ququePhoto</span><span class="params">(String url,ImageView imageView)</span></span>&#123;</div><div class="line">		PhotoToLoad p = <span class="keyword">new</span> PhotoToLoad(url,imageView);</div><div class="line">		executoService.submit(<span class="keyword">new</span> PhotoSLoader(p));</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">private</span> Bitmap <span class="title">getBitmap</span><span class="params">(String url)</span></span>&#123;</div><div class="line">		<span class="keyword">try</span>&#123;</div><div class="line">			File f = filCache.getFile(url);</div><div class="line">			<span class="comment">// SD卡</span></div><div class="line">			Bitmap b = onDecodeFile(f);</div><div class="line">			<span class="keyword">if</span>(b != <span class="keyword">null</span>)</div><div class="line">				<span class="keyword">return</span> b;</div><div class="line">			<span class="comment">// 从网络</span></div><div class="line">			Bitmap bitmap = <span class="keyword">null</span>;</div><div class="line">			Sysytem.out.println(<span class="string">"ImageLoader--&gt;download"</span>);</div><div class="line">			HttpUtil.CopyStream(url,f);</div><div class="line">			bitmap = onDecoderFile(f);</div><div class="line">			<span class="keyword">return</span> bitmap;</div><div class="line">		&#125;<span class="keyword">catch</span>(Exception e)&#123;</div><div class="line">			e.printStackTrace();</div><div class="line">			<span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> Bitmap <span class="title">onDecodeFile</span><span class="params">(File f)</span></span>&#123;</div><div class="line">		<span class="keyword">try</span>&#123;</div><div class="line">			<span class="keyword">return</span> BitmapFactory.decodeStream(<span class="keyword">new</span> FileInputStream(f));</div><div class="line">		&#125;<span class="keyword">catch</span>(FileNotFoundException e)&#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="comment">// 解码图像用来减少内存消耗</span></div><div class="line">	<span class="function"><span class="keyword">public</span> Bitmap <span class="title">decodeFile</span><span class="params">(File f)</span></span>&#123;</div><div class="line">		<span class="keyword">try</span>&#123;</div><div class="line">			<span class="comment">// 解码图像大小</span></div><div class="line">			BitmapFactory.Options o = <span class="keyword">new</span> BitmapFactory.Options();</div><div class="line">			o.inJustDecodeBounds = <span class="keyword">true</span>;</div><div class="line">			BitmapFactory.decodeStream(<span class="keyword">new</span> FileInputStream(f),<span class="keyword">null</span>,o);</div><div class="line">			<span class="comment">// 找到正确的刻度值，它应该是2的幂</span></div><div class="line">			<span class="keyword">final</span> <span class="keyword">int</span> REQUIRED_SIZE = <span class="number">70</span>;</div><div class="line">			<span class="keyword">int</span> width_tmp = o.outWidth,height_tmp = o.outHeight;</div><div class="line">			<span class="keyword">int</span> scale = <span class="number">1</span>;</div><div class="line">			<span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</div><div class="line">				<span class="keyword">if</span>(width_tmp/<span class="number">2</span> &lt; REQUIRED_SIZE || height_tmp/<span class="number">2</span> &lt; REQUIRED_SIZE)</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">				width_tmp /= <span class="number">2</span>;</div><div class="line">				height_tmp /= <span class="number">2</span>;</div><div class="line">				scale *= <span class="number">2</span>;</div><div class="line">			&#125;</div><div class="line">			BitmapFactory.Options o2 = <span class="keyword">new</span> BitmapFactory.Options();</div><div class="line">			o2.inSampleSize = scale;</div><div class="line">			<span class="keyword">return</span> BitmapFactory.decodeStream(<span class="keyword">new</span> FileInputStream(f),<span class="keyword">null</span>,o2);</div><div class="line">		&#125;<span class="keyword">catch</span>(FileNotFoundException e)&#123;</div><div class="line"></div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="comment">// 任务队列</span></div><div class="line">	<span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">PhotToLoad</span></span>&#123;</div><div class="line">		<span class="keyword">public</span> String url;</div><div class="line">		<span class="keyword">public</span> ImageView imageView;</div><div class="line"></div><div class="line">		<span class="function"><span class="keyword">public</span> <span class="title">PhotoToLoad</span><span class="params">(String u,ImageView i)</span></span>&#123;</div><div class="line">			url = u;</div><div class="line">			imageView = i;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="class"><span class="keyword">class</span> <span class="title">PhotosLoader</span> <span class="title">implementsRunnable</span></span>&#123;</div><div class="line">		PhotoToLoad photoToLoad;</div><div class="line"></div><div class="line">		PhotoLoader(PhotoToLoad photoToLoad)&#123;</div><div class="line">			<span class="keyword">this</span>.photoToLoad = photoToLoad;</div><div class="line">		&#125;</div><div class="line">		<span class="meta">@Override</span></div><div class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</div><div class="line">			<span class="keyword">if</span>(imageViewReused(photoToLoad))</div><div class="line">				<span class="keyword">return</span>;</div><div class="line">			Bitmap bmp = getBitMap(photoToLoad.url);</div><div class="line">			memoryCache.put(photoToLoade.url.bmp);</div><div class="line">			<span class="keyword">if</span>(imageViewReused(photoToLoade))</div><div class="line">				<span class="keyword">return</span>;</div><div class="line">			BitmapDisplayer bd = <span class="keyword">new</span> BitmapDisplayer(bmp,photoToLoad);</div><div class="line">			Activity a = (Activity)photoToLoad.imageView.getContext();</div><div class="line">			a.runOnUiThread(bd);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">boolean</span> <span class="title">imageViewReused</span><span class="params">(PhotoToLoade photoToLoad)</span></span>&#123;</div><div class="line">		String tag = imageViews.get(photoToLoad.imageView);</div><div class="line">		<span class="keyword">if</span>(tag == <span class="keyword">null</span> ||!tag.equals(pgotoToLoad.url))</div><div class="line">			<span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="comment">// 在UI线程显示位图</span></div><div class="line">	<span class="class"><span class="keyword">class</span> <span class="title">BitmapDisplayer</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</div><div class="line">		Bitmap bitmap;</div><div class="line">		PhotoToLoad photoToLoad;</div><div class="line"></div><div class="line">		<span class="function"><span class="keyword">public</span> <span class="title">BitmapDisplayer</span><span class="params">(Bitmap b,PhotoToLoad p)</span></span>&#123;</div><div class="line">			bitmap = b;</div><div class="line">			photoToLoad = p;</div><div class="line">		&#125;</div><div class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</div><div class="line">			<span class="keyword">if</span>(imageViewReused(photoToLoad))</div><div class="line">				<span class="keyword">return</span>;</div><div class="line">			<span class="keyword">if</span>(bitmap != unll)&#123;</div><div class="line">				<span class="keyword">if</span>(isSrc)</div><div class="line">					photoToLoad.imageView.setImageResouce(stub_id);</div><div class="line">				<span class="keyword">else</span></div><div class="line">					photoToLoad.imageView.setBackgroundDrawable(<span class="keyword">new</span> BitmapDrawable(bitmao));</div><div class="line">			&#125;<span class="keyword">else</span>&#123;</div><div class="line">				<span class="keyword">if</span>(isSrc)</div><div class="line">					photoToLoad.imageView.setImageResouce(stub_id);</div><div class="line">				<span class="keyword">else</span></div><div class="line">					photoToLoad.imageView.setBackgroundDrawable(<span class="keyword">new</span> BitmapDrawable(bitmao));</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">clearCache</span><span class="params">()</span></span>&#123;</div><div class="line">		memoryCache.clear();</div><div class="line">		fileCache.clear();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Android/">Android</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Android/">Android</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2014/03/13/Android异步加载图片并缓存到本地软引用/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/03/13/Android异步加载图片并缓存到本地软引用/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/03/12/Xcode插件管理大师Alcartraz/" title="Xcode插件管理大师Alcartraz" itemprop="url">Xcode插件管理大师Alcartraz</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Dear宅学长" target="_blank" itemprop="author">Dear宅学长</a>
+		
+  <p class="article-time">
+    <time datetime="2014-03-12T04:52:59.000Z" itemprop="datePublished"> 发表于 2014-03-12</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p><img src="https:github.com/zt1991616/blog/raw/master/Image/14031201.jpg" alt=""></p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Alcartraz是一个帮助你管理Xcode插件、模板以及颜色配置的工具，集成在Xcode的图形界面中。</p>
+<h2 id="安装与卸载"><a href="#安装与卸载" class="headerlink" title="安装与卸载"></a>安装与卸载</h2><p>安装命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir -p ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins;</div><div class="line">curl -L http://git.io/lOQWeA | tar xvz -C ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins</div></pre></td></tr></table></figure></p>
+<p>卸载命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">rm -rf ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins/Alcatraz.xcplugin</div><div class="line">rm -rf ~/Library/Application\ Support/Alcatraz</div></pre></td></tr></table></figure></p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>安装成功后重启Xcode，就可以在Xcode的顶部菜单中找到Alcatraz，如下所示：<br><img src="https:github.com/zt1991616/blog/raw/master/Image/14031202.png" alt=""><br>点击“Package Manager”，即可启动插件列表页面，如下所示<br><img src="https://github.com/zt1991616/blog/raw/master/Image/14031203.png" alt=""><br>之后你可以在右上角搜索插件，对于想安装的插件，点击其左边的图标，即可下载安装，如下所示，我正在安装KImageNamed插件：<br><img src="https://github.com/zt1991616/blog/raw/master/Image/14031204.jpg" alt=""><br>安装完成后，再次点击插件左边的图标，可以将该插件删除。</p>
+<h2 id="插件路径"><a href="#插件路径" class="headerlink" title="插件路径"></a>插件路径</h2><p>Xcode所有的插件都安装在目录<code>~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/</code>下，你也可以手工切换到这个目录来删除插件。</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/iOS/">iOS</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/iOS/">iOS</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2014/03/12/Xcode插件管理大师Alcartraz/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/03/12/Xcode插件管理大师Alcartraz/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/03/09/NSURLSession/" title="NSURLSession" itemprop="url">NSURLSession</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Dear宅学长" target="_blank" itemprop="author">Dear宅学长</a>
+		
+  <p class="article-time">
+    <time datetime="2014-03-09T04:51:59.000Z" itemprop="datePublished"> 发表于 2014-03-09</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <ul>
+<li><p>NSURLSession是iOS7中新的网络接口，它与NSURLConnection是并列的，程序在前台时，NSURLSession与NSURLConnection可以互为替代工作，注意，如果用户强制将小横须关闭，NSURLSession会断掉。</p>
+</li>
+<li><p>NSURLSession的功能：</p>
+</li>
+</ul>
+<ol>
+<li>通过URL将数据下载到内存</li>
+<li>通过URL将数据下载到文件系统</li>
+<li>将数据上传到指定URL</li>
+<li>在后台完成上述功能</li>
+</ol>
+<ul>
+<li>工作流程<br>1.创建一个NSURLSessionConfiguration，用于第二部创建NSSession时设置工作模式和网络设置，工作模式分为：<ul>
+<li>一般模式（default）：工作模式类似于NSURLConnection，可以使用缓存的Cache，Cookie，鉴权</li>
+<li>及时模式（ephemeral）：不使用缓存的Cache，Cookie，鉴权</li>
+<li>后台模式（background）：在后台完成下载，创建Configuration对象的时候需要给一个NSString的ID用于跟踪完成工作的Session是哪一个<br>网络设置：参靠NSURLConnection中的设置项。</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li><p>创建一个NSURLSession。系统提供了两个创建方法</p>
+<ul>
+<li>sessionWithConfiguration:</li>
+<li><p>sessionWithConfiguration:delegate:delegateQueue:</p>
+</li>
+<li><p>第一个粒度较低就是根据刚才创建的Configuration创建一个Session，系统默认创建一个新的OperationQueue处理Session的消息。</p>
+</li>
+<li><p>第二个粒度比较高，可以设定回调的delegate（注意这个回调delegate会被强引用），并且可以设定delegate在哪个OperationQueue回调，如果我们将其设置为[NSOperationQueue mainQueue]就能在主线程进行回调非常的方便。</p>
+</li>
+</ul>
+</li>
+<li>创建一个NSURLRequest调用刚才的NSURLSession对象提供的Task函数，创建NSURLSessionTask<ul>
+<li>根据智能不同Task有三个子类：<ul>
+<li>NSURLSessionUploadTask:上传用的Task，传完以后不会再下载返回结果；</li>
+<li>NSURLSessionDownloadTask:下载用的Task；</li>
+<li>NSURLSessionDataTask:可以上传内容，上传完成后再进行下载;</li>
+</ul>
+</li>
+<li>得到的Task，调用resume开始工作</li>
+</ul>
+</li>
+<li>如果是细粒度的Session调用，Session与Delegate会在指定的OperationQueue中进行交互，以下载例子，交互的顺序图如下（假设不需要鉴权，即非HTTPS请求）：<br><img src="https://github.com/zt1991616/blog/raw/master/Image/14030901.jpg" alt=""></li>
+<li>当不再需要连接调用Session的invaildateAndCancel直接关闭，或者调用finishTasksAndInvalidate等待当前Task结束后关闭。这时Delegate会收到URLSession:didBeComeInvaliWithErro:这个事件。Delegge收到这个事件之后会被解引用。</li>
+<li>如果是一个BackgroundSession，在Task执行的时候，用户切到后台，Session会和ApplicationDelegate做交互，当程序切到后台后，在BackgroundSession中的Task还会继续下载</li>
+</ol>
+<p>1）当加入了多个Task，程序没有切换到后台<br>这种情况Task会按照NSURLSessionConfiguration设置正常下载，不和和ApplicationDelegate有交互。</p>
+<p>2）当加入了多个Task，程序切换到后台，所有Task都完成下载。<br>在切换到后台之后，Session的Delegate的application:handleEventForBackgroundURLSession:completionHandler:回调，之后“汇报”下载工作，对于每一个后台下载的Task调用Session的Delegate中的URLSession:downloadTask:didFinishDownloadingToURL:（成功的话）和URLSession:task:didCompleteWithError:(成功或者失败都会调用)<br>之后调用Session的Delegate回调URLSessionDidFinishEventsForBackgroundURLSession</p>
+<ul>
+<li><strong>注意：在ApplicationDelegate被唤醒后，会有个参数ComplietionHandler，这个参数是个Block，这个参数要在后面Session的Delegate中didFinish的时候调用一下，如下：</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line">@implementation APLAppDelegate </div><div class="line"> </div><div class="line">  </div><div class="line"> </div><div class="line">- (void)application:(UIApplication *)application handleEventsForBackgroundURLSession:(NSString *)identifier </div><div class="line"> </div><div class="line">  completionHandler:(void (^)())completionHandler </div><div class="line"> </div><div class="line">&#123; </div><div class="line"> </div><div class="line">    BLog(); </div><div class="line"> </div><div class="line">    /* </div><div class="line"> </div><div class="line">     Store the completion handler. The completion handler is invoked by the view controller&apos;s checkForAllDownloadsHavingCompleted method (if all the download tasks have been completed). </div><div class="line"> </div><div class="line">     */ </div><div class="line"> </div><div class="line">      self.backgroundSessionCompletionHandler = completionHandler; </div><div class="line"> </div><div class="line">&#125; </div><div class="line"> </div><div class="line">//…… </div><div class="line"> </div><div class="line">@end </div><div class="line"> </div><div class="line">  </div><div class="line"> </div><div class="line">//Session的Delegate </div><div class="line"> </div><div class="line">@implementation APLViewController </div><div class="line"> </div><div class="line">  </div><div class="line"> </div><div class="line">- (void)URLSessionDidFinishEventsForBackgroundURLSession:(NSURLSession *)session </div><div class="line"> </div><div class="line">&#123; </div><div class="line"> </div><div class="line">    APLAppDelegate *appDelegate = (APLAppDelegate *)[[UIApplication sharedApplication] delegate]; </div><div class="line"> </div><div class="line">    if (appDelegate.backgroundSessionCompletionHandler) &#123; </div><div class="line"> </div><div class="line">        void (^completionHandler)() = appDelegate.backgroundSessionCompletionHandler; </div><div class="line"> </div><div class="line">        appDelegate.backgroundSessionCompletionHandler = nil; </div><div class="line"> </div><div class="line">        completionHandler(); </div><div class="line"> </div><div class="line">    &#125; </div><div class="line"> </div><div class="line">  </div><div class="line"> </div><div class="line">    NSLog(@&quot;All tasks are finished&quot;); </div><div class="line"> </div><div class="line">&#125; </div><div class="line"> </div><div class="line">@end</div></pre></td></tr></table></figure>
+<p>3）当加入了多个Task，程序切换到后台，下载完成了几个Task，然后用户又切换到前台。（程序没有退出）</p>
+<ul>
+<li>切换到后台之后，Session的Delegate仍然收不到消息，在下载完成几个Task之后再切换到前台，系统会先汇报已经下载完成的Task的情况，然后继续下载没有下载完成的Task。</li>
+</ul>
+<p>4）当加入了多个Task，程序切到后台，几个Task已经完成，但还有Task还没有下载完的时候关掉退出程序然后再进入程序的时候。（程序退出了）</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/iOS/">iOS</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/iOS/">iOS</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2014/03/09/NSURLSession/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/03/09/NSURLSession/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2014/03/08/Objective-C块语法/" title="Objective-C块语法" itemprop="url">Objective-C块语法</a>
   </h1>
   <p class="article-author">By
@@ -690,457 +940,9 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2014/02/27/NSBundle/" title="NSBundle" itemprop="url">NSBundle</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Dear宅学长" target="_blank" itemprop="author">Dear宅学长</a>
-		
-  <p class="article-time">
-    <time datetime="2014-02-27T04:45:49.000Z" itemprop="datePublished"> 发表于 2014-02-27</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <ul>
-<li>NSBundle用来访问应用自包含的资源文件。</li>
-<li>获取NSBundle对象，一般会调用该类的mainBundle方法。<ul>
-<li>URLForResource:withExtension:subdirectory:根据<code>资源名</code>、<code>扩展名</code>从指定<code>子目录</code>获取对用资源的URL</li>
-<li>URLForResource:withExtension:根据<code>资源名</code>、<code>扩展名</code>获取该资源对应的URL</li>
-<li>pathForResouce:ofType:根据<code>资源名</code>、<code>类型名</code>获取该资源对应的路径</li>
-<li>URLsForResoucesWithExtension:subdirectory:获取指定<code>子目录</code>下匹配特定<code>扩展名</code>的所有资源对应的URL组成的数组</li>
-<li>pathForResouces:ofType:inDirectory:从指定的子目录下，根据<code>资源名</code>,<code>类型名</code>获取该资源对应的路径</li>
-<li>pathForResoucesOfType:inDirectory:获取指定子目录下，匹配特定类型名的所有资源对应的路径组成的数组</li>
-<li>resoucePath:直接根据完整的资源路径来获取对应的资源<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">NSString* filePath = [[NSBundle mainBundle] pathForResource:@&quot;test&quot; ofType:@&quot;txt&quot;];</div><div class="line">NSString* content = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];</div></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/iOS/">iOS</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/iOS/">iOS</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2014/02/27/NSBundle/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/02/27/NSBundle/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2014/02/27/对象归档/" title="对象归档" itemprop="url">对象归档</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Dear宅学长" target="_blank" itemprop="author">Dear宅学长</a>
-		
-  <p class="article-time">
-    <time datetime="2014-02-27T04:45:09.000Z" itemprop="datePublished"> 发表于 2014-02-27</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <ul>
-<li>归档就是用户某种格式把一个或者多个对象保存到指定的文件中，方便以后从文件中恢复它们。</li>
-</ul>
-<h2 id="使用NSKeyedArchiver归档"><a href="#使用NSKeyedArchiver归档" class="headerlink" title="使用NSKeyedArchiver归档"></a>使用NSKeyedArchiver归档</h2><ul>
-<li>NSKeyedArchiver负责将对象归档到指定文件中</li>
-<li><p>NSKeyedUnarchiver则负责从文件中恢复对象</p>
-<ul>
-<li><p>直接调用<code>archivedDataWithRootObject:data</code>、<code>archiveRootObject:toFile:file</code>类方法将指定对象作为root进行归档；恢复时，则调用NSKeyedUnarchiver的<code>unarchiveObjectWithData:data</code>或者<code>unarchiveObjectWithFile:file</code>类方法。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// 归档</div><div class="line">NSDictionary* dict = [NSDictionary dictionaryWithObjectsAndKeys:</div><div class="line">    [NSNumber numberWithInt:89],@&quot;objc&quot;,</div><div class="line">    [NSNumber numberWithInt:88],@&quot;cpp&quot;,</div><div class="line">    [NSNumber numberWithInt:87],@&quot;java&quot;,</div><div class="line">    nil];</div><div class="line">[NSKeyedArchiver archiveRootObject:dict toFile:@&quot;myDict.archive&quot;];</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// 恢复</div><div class="line">NSDictionary* dict = [NSKeyedUnarchiver unarchiveObjectWithFile:@&quot;myDict.archive&quot;];</div><div class="line">NSLog(&quot;%d&quot;,[dict valueForKey:@&quot;objc&quot;]);</div><div class="line">NSLog(&quot;%d&quot;,[dict valueForKey:@&quot;cpp&quot;]);</div><div class="line">NSLog(&quot;%d&quot;,[dict valueForKey:@&quot;java&quot;]);</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="实现NSCoding协议"><a href="#实现NSCoding协议" class="headerlink" title="实现NSCoding协议"></a>实现NSCoding协议</h2><ul>
-<li>自定义类要实现归档、恢复，应该实现NSCoding协议，必须实现该协议中的定义的如下两个方法<ul>
-<li>initWithCoder:该方法负责恢复对象</li>
-<li>encodeWithCoder:该方法负责归档对象</li>
-</ul>
-</li>
-<li>归档和恢复基本数据类型</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>归档数据</th>
-<th style="text-align:left">恢复数据</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>encodeBool:forKey</td>
-<td style="text-align:left">decodeBoolForKey</td>
-</tr>
-<tr>
-<td>encodeInt:forKey</td>
-<td style="text-align:left">decodeIntForKey</td>
-</tr>
-<tr>
-<td>encodeInt32:forKey</td>
-<td style="text-align:left">decodeInt32ForKey</td>
-</tr>
-<tr>
-<td>encodeInt64:forKey</td>
-<td style="text-align:left">decodeInt64ForKey</td>
-</tr>
-<tr>
-<td>encodeFloat:forKey</td>
-<td style="text-align:left">decodeFloatForKey</td>
-</tr>
-<tr>
-<td>encodeDouble:forKey</td>
-<td style="text-align:left">decodeDoubleForKey</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>示例</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># import &lt;Foundation/Foundation.h&gt;</div><div class="line">@interface ZTApple : NSObject &lt;NSCoding&gt;</div><div class="line">@property (nonatomic,copy) NSString* color;</div><div class="line">@property (nonatomic,assign)double weight;</div><div class="line">@property (nonatomic,assign)int size;</div><div class="line">- (id) initWithColor:(NSString*) color weight:(double) weight size:(int) size;</div><div class="line">@end</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"># import &quot;ZTApple.h&quot;</div><div class="line">@implementation ZTApple</div><div class="line">@synthesize color = _color;</div><div class="line">@synthesize weight = _weight;</div><div class="line">@synthesize size = _size;</div><div class="line">-(id) initWithColor:(NSString*) color weight:(double) weight size:(int) size</div><div class="line">&#123;</div><div class="line">    if(self = [super init])</div><div class="line">    &#123;</div><div class="line">        self.color = color;</div><div class="line">        self.weight = weight;</div><div class="line">        self.size = size;</div><div class="line">    &#125;</div><div class="line">    return self;</div><div class="line">&#125; </div><div class="line">-(NSString *)description</div><div class="line">&#123;</div><div class="line">    return [NSString stringWithFormat:&quot;@&lt;ZTApple[_color=%@,_weigt=%g,_size=%d]&gt;&quot;,self.color,self.weight,self.size];</div><div class="line">&#125;</div><div class="line">-(void) encodeWithCoder:(NSCode*) coder</div><div class="line">&#123;</div><div class="line">    [coder encodeOject:_color forKey:@&quot;color&quot;];</div><div class="line">    [coder encodeDouble:_weight foeKey:@&quot;weight&quot;];</div><div class="line">    [coder encodeInt:_size forKey:@&quot;size&quot;];</div><div class="line">&#125;</div><div class="line">-(void) initWithCoder:(NSCoder*) coder</div><div class="line">&#123;</div><div class="line">    _color = [coder decodeObjectForKey:@&quot;color&quot;];</div><div class="line">    _weight = [coder decodeDoubleForkey:@&quot;weight&quot;];</div><div class="line">    _size = [coder decodeIntForKey:@&quot;size&quot;];</div><div class="line">    return self;</div><div class="line">&#125;</div><div class="line">@end</div></pre></td></tr></table></figure>
-<h2 id="使用NSData完成自定义归档"><a href="#使用NSData完成自定义归档" class="headerlink" title="使用NSData完成自定义归档"></a>使用NSData完成自定义归档</h2><ul>
-<li>一次性收集多个对象，并将这些对象归档到单个文件中，此时借助NSMutableData来创建NSKeyedArchiver或NSKeyedUnarchiver对象。</li>
-<li>归档过程</li>
-</ul>
-<ol>
-<li>以NSMutableData作为参数，创建NSKeyedArchiver对象。</li>
-<li>反复调用NSKeyedArchiver对象的encodeXxx:forKey:方法来归档所有需要归档到一个文件的对象。</li>
-<li>调用NSKeyedArchiver对象的finishEncoding方法来结束归档。</li>
-<li>根据需要，程序可以选择将保存归档数据的NSMutableData通过网络或输出到磁盘文件上。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">NSDictionary* dict = [NSDictionary dictionaryWithObjectsAndKeys:</div><div class="line">    [NSNumber numberWithInt:66],@&quot;objc&quot;,</div><div class="line">    [NSNumber numberWithInt:76],@&quot;c++&quot;,</div><div class="line">    [NSNumber numberWithInt:86],@&quot;java&quot;,nil];</div><div class="line">NSSet* set = [NSSet setWithObjects:</div><div class="line">    @&quot;test1&quot;,@&quot;test2&quot;,@&quot;test3&quot;,nil];</div><div class="line">ZTApple* apple = [[ZTApple alloc] initWithColor:@&quot;红色&quot; weight:3.4 size:20];</div><div class="line">NSMutableData* data = [[NSMutableData data];</div><div class="line">NSKeyedArchiver* arch = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];</div><div class="line">[arch encodeObject:dict forKey:@&quot;dict&quot;];</div><div class="line">[arch encodeObject:set forKey:@&quot;set&quot;];</div><div class="line">[arch encodeObject:apple forKey:@&quot;apple&quot;];</div><div class="line">[arch finishEncoding];</div><div class="line">if([data writeToFile:@&quot;multi.archive&quot; atomically:YES] == NO)</div><div class="line">&#123;</div><div class="line">    NSLog(&quot;归档失败&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<ul>
-<li>恢复过程</li>
-</ul>
-<ol>
-<li>以NSData作为参数，创建NSkeyedUnarchiver对象</li>
-<li>重复调用NSKeyedUnarchiver对象的decodeXxx:forKey:方法从文件中恢复所有归档过的对象</li>
-<li>调用NSKeyedUnarchiver对象的finishDecoding方法结束恢复<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">NSData* data = [NSData dataWithContentsOfFile:@&quot;multi.archive&quot;];</div><div class="line">NSKeyedUnarchiver* unarch = [[NSKeyedUnarchiver alloc] initForReadingWithData:data];</div><div class="line">NSDictionary* dict = [unarch decodeObjectForKey:@&quot;dict&quot;];</div><div class="line">NSSet* set = [unarch decodeObjectForKey:@&quot;set&quot;];</div><div class="line">NSApple* apple = [unarch decodeObjectForKey:@&quot;apple&quot;];</div><div class="line">[unarch finishDecoding];</div></pre></td></tr></table></figure></li>
-</ol>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/iOS/">iOS</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/iOS/">iOS</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2014/02/27/对象归档/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/02/27/对象归档/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2014/02/27/文件IO/" title="文件I/O" itemprop="url">文件I/O</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Dear宅学长" target="_blank" itemprop="author">Dear宅学长</a>
-		
-  <p class="article-time">
-    <time datetime="2014-02-27T04:44:30.000Z" itemprop="datePublished"> 发表于 2014-02-27</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="NSData与NSMutableData"><a href="#NSData与NSMutableData" class="headerlink" title="NSData与NSMutableData"></a>NSData与NSMutableData</h2><ul>
-<li>代表数据缓存区，作用有两个①对数据读取NSData、②输出NSData的数据<ul>
-<li>初始化方法(类方法以data开头，实例方法以init开头)<ul>
-<li><code>data:</code>：创建一个不包含任何数据的、空的NSData对象</li>
-<li><code>dataWithBytes:length:</code>/<code>initWithBytesNoCopy:length:</code>：复制C数组所包含的数据类初始化NSData的数据</li>
-<li><code>dataWithBytesNoCopy:length:</code>/<code>initWithBytesNoCopy:length:</code>：直接利用C数组所包含数据来初始化NSData对象。当该对象呗执行malloc方法销毁自己时，程序会释放该数组</li>
-<li><code>dataWithBytesNoDopy:length:freeWhenDone:</code>/<code>initWithBytesNoCopy:length:freeWhenDone:</code>：直接利用C数组所包含的数据来初始化NSData对象。只有当最后一个参数为YES，且该对象被执行malloc方法销毁自己时，程序才会释放该C数组</li>
-<li><code>dataWithContentsOfFile:</code>/<code>initWithContentsOfFile:</code>：直接读取文件内容，并利用文件内容来初始化NSData</li>
-<li><code>dataWithContentOfURL:</code>/<code>initWithContentOfURL:</code>：直接读取URL关联的内容，并利用该URL关联的内容初始化NSData</li>
-<li><code>dataWithData:</code>/<code>initWithData:</code>：直接使用另一个NSData所包含的数据来初始化先创建的NSData</li>
-</ul>
-</li>
-<li>常用方法<ul>
-<li><code>bytes:</code>：获取该NSData所包含的数据</li>
-<li><code>getBytes:length:</code>：获取NSData所包含的指定长度的数据</li>
-<li><code>getBytes:range:</code>：获取NSData所包含的指定范围的数据</li>
-<li><code>subdataWithRange:</code>：获取NSData所包含的指定范围的数据组成的NSData对象</li>
-<li><code>writeToFile:atomically:</code>：将NSData的数据写入文件</li>
-<li><code>writeToURL:atomically:</code>：将NSData的数据写入URL对应的资源</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="NSFileManager"><a href="#NSFileManager" class="headerlink" title="NSFileManager"></a>NSFileManager</h2><ul>
-<li>NSFileManager代表文件管理器，可以执行文件的移动、复制、链接、删除文件或目录，同时提供一个配套的事件委托（NSFileManagerDelegate），确保文件操作后调用相对应的处理方法。文件名作为文件的唯一标识，可使用绝对路径或相对路径。</li>
-<li>NSFileManager访问属性和内容提供如下方法：</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th><strong>方法名</strong></th>
-<th style="text-align:left"><strong>说明</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>fileExistsAtPath:</td>
-<td style="text-align:left">判断指定文件名对应的文件是否存在</td>
-</tr>
-<tr>
-<td>fileExistsAtPath:isDirectoy:</td>
-<td style="text-align:left">判断指定文件名对应的文件或者目录是否存在，最后一个参数可用于返回该文件名是否为目录</td>
-</tr>
-<tr>
-<td>isReadableFileAtPath:</td>
-<td style="text-align:left">判断指定目录下的文件是否可读</td>
-</tr>
-<tr>
-<td>isWritableFileAtPath:</td>
-<td style="text-align:left">判断指定目录下的文件是否可写</td>
-</tr>
-<tr>
-<td>isExcutableFileAtPath:</td>
-<td style="text-align:left">判断指定目录下的文件是否可执行</td>
-</tr>
-<tr>
-<td>isDeletableFileAtPath:</td>
-<td style="text-align:left">判断指定目录下的文件是否可删除</td>
-</tr>
-<tr>
-<td>componentsToDisplayForPath:</td>
-<td style="text-align:left">获取指定文件名对应文件的各个路径组件</td>
-</tr>
-<tr>
-<td>displayNameAtPath:</td>
-<td style="text-align:left">获取指定文件名对应文件的简单文件名</td>
-</tr>
-<tr>
-<td>attributesOfItemAtPath:error:</td>
-<td style="text-align:left">获取指定文件名对应文件的属性</td>
-</tr>
-<tr>
-<td>attributesOfFileSystemForPath:error:</td>
-<td style="text-align:left">获取指定文件名对应的文件所在文件系统的属性</td>
-</tr>
-<tr>
-<td>setAttributes:ofItemAtPath:error:</td>
-<td style="text-align:left">设置指定文件名对应文件的属性</td>
-</tr>
-<tr>
-<td>contentsAtPath:</td>
-<td style="text-align:left">获取指定文件名对应文件的内容</td>
-</tr>
-<tr>
-<td>contentsEqualAtPath:andPath:</td>
-<td style="text-align:left">判断两个文件名指定的内容是否相同</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>NSFileManager为创建、删除、移动、复制文件或目录提供了如下方法</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th><strong>方法名</strong></th>
-<th style="text-align:left"><strong>说明</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>createDirectoryAtURL:withIntermediateDirectories:attributes:error:</td>
-<td style="text-align:left">根据指定的URL创建目录</td>
-</tr>
-<tr>
-<td>createDirectoryAtPath:withIntermediateDirectories:attributes:error:</td>
-<td style="text-align:left">根据指定的路径创建目录</td>
-</tr>
-<tr>
-<td>createFileAtPath:contents:attributes:</td>
-<td style="text-align:left">根据指定的文件路径、内容创建文件</td>
-</tr>
-<tr>
-<td>removeItemAtURL:error:</td>
-<td style="text-align:left">删除指定URL对应的文件</td>
-</tr>
-<tr>
-<td>removeItemAtPath:error:</td>
-<td style="text-align:left">删除指定路径对应的文件</td>
-</tr>
-<tr>
-<td>copyItemAtURL:toURL:error:</td>
-<td style="text-align:left">根据指定的URL复制文件或目录</td>
-</tr>
-<tr>
-<td>copyItemAtPath:toPath:error:</td>
-<td style="text-align:left">根据指定的路径复制文件或目录</td>
-</tr>
-<tr>
-<td>moveItemAtURL:toURL:error:</td>
-<td style="text-align:left">根据指定URL移动文件或目录</td>
-</tr>
-<tr>
-<td>moveItemAtPath:toPath:error:</td>
-<td style="text-align:left">根据指定路径移动文件或目录</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>NSFileManager查看目录包含内容提供了如下方法</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th><strong>方法名</strong></th>
-<th style="text-align:left"><strong>说明</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>contentsOfDirectoryAtPath:error:</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td>enumeratorAtPath:</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td>subpathsOf</td>
-</tr>
-</tbody>
-</table>
-<h2 id="NSURL"><a href="#NSURL" class="headerlink" title="NSURL"></a>NSURL</h2><ul>
-<li>URL(Uniform Resource Locator)对象表示同意资源定位器，它是指向互联网“资源”的指针。通常情况下，URL由协议名、主机、端口和资源路径组成，格式如下：<blockquote>
-<p>scheme://host:port/path</p>
-</blockquote>
-</li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/iOS/">iOS</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/iOS/">iOS</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2014/02/27/文件IO/#comments" class="ds-thread-count comments-count-link" data-thread-key="2014/02/27/文件IO/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
-    <a class="extend prev" rel="prev" href="/page/36/"><span></span>Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/35/">35</a><a class="page-number" href="/page/36/">36</a><span class="page-number current">37</span><a class="page-number" href="/page/38/">38</a><a class="page-number" href="/page/39/">39</a><a class="extend next" rel="next" href="/page/38/">Next<span></span></a>
+    <a class="extend prev" rel="prev" href="/page/36/"><span></span>Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/35/">35</a><a class="page-number" href="/page/36/">36</a><span class="page-number current">37</span><a class="page-number" href="/page/38/">38</a><a class="page-number" href="/page/39/">39</a><a class="page-number" href="/page/40/">40</a><a class="extend next" rel="next" href="/page/38/">Next<span></span></a>
   </nav>
 
 </div>
@@ -1188,6 +990,10 @@
 		  
 		
 		  
+			<li><a href="/categories/摄影/" title="摄影">摄影<sup>1</sup></a></li>
+		  
+		
+		  
 			<li><a href="/categories/杂文/" title="杂文">杂文<sup>3</sup></a></li>
 		  
 		
@@ -1199,7 +1005,7 @@
   <div class="tagcloudlist">
     <p class="asidetitle">标签云</p>
     <div class="tagcloudlist clearfix">
-       <a href="/tags/AFNetworking/" style="font-size: 10px;">AFNetworking</a> <a href="/tags/APK/" style="font-size: 10px;">APK</a> <a href="/tags/AS/" style="font-size: 10px;">AS</a> <a href="/tags/Adapter/" style="font-size: 10px;">Adapter</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Android-5-0/" style="font-size: 10px;">Android 5.0</a> <a href="/tags/Android-Studio/" style="font-size: 11.54px;">Android Studio</a> <a href="/tags/AndroidAninotations/" style="font-size: 10px;">AndroidAninotations</a> <a href="/tags/AndroidStudio/" style="font-size: 15.38px;">AndroidStudio</a> <a href="/tags/Animation/" style="font-size: 12.31px;">Animation</a> <a href="/tags/Api/" style="font-size: 11.54px;">Api</a> <a href="/tags/App/" style="font-size: 10px;">App</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Async/" style="font-size: 10px;">Async</a> <a href="/tags/Atom/" style="font-size: 10.77px;">Atom</a> <a href="/tags/AutoLayout/" style="font-size: 10px;">AutoLayout</a> <a href="/tags/BaseAdapter/" style="font-size: 10px;">BaseAdapter</a> <a href="/tags/Blur/" style="font-size: 10px;">Blur</a> <a href="/tags/Box2D/" style="font-size: 10px;">Box2D</a> <a href="/tags/Broadcast/" style="font-size: 10px;">Broadcast</a> <a href="/tags/CardView/" style="font-size: 10px;">CardView</a> <a href="/tags/CocoaPods/" style="font-size: 10px;">CocoaPods</a> <a href="/tags/Cocos2d-X/" style="font-size: 13.08px;">Cocos2d-X</a> <a href="/tags/CocosPods/" style="font-size: 10px;">CocosPods</a> <a href="/tags/ContentProvider/" style="font-size: 10px;">ContentProvider</a> <a href="/tags/Context/" style="font-size: 10px;">Context</a> <a href="/tags/Crouton/" style="font-size: 10px;">Crouton</a> <a href="/tags/CursorLoader/" style="font-size: 10px;">CursorLoader</a> <a href="/tags/Demo/" style="font-size: 10.77px;">Demo</a> <a href="/tags/Dialog/" style="font-size: 10px;">Dialog</a> <a href="/tags/EditView/" style="font-size: 10px;">EditView</a> <a href="/tags/EventBus/" style="font-size: 10px;">EventBus</a> <a href="/tags/Express/" style="font-size: 10px;">Express</a> <a href="/tags/Express学习笔记/" style="font-size: 10px;">Express学习笔记</a> <a href="/tags/Flex/" style="font-size: 10px;">Flex</a> <a href="/tags/Fragment/" style="font-size: 10.77px;">Fragment</a> <a href="/tags/GET/" style="font-size: 10px;">GET</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Gradle/" style="font-size: 10.77px;">Gradle</a> <a href="/tags/GridLayout/" style="font-size: 10px;">GridLayout</a> <a href="/tags/GridView/" style="font-size: 10.77px;">GridView</a> <a href="/tags/Gson/" style="font-size: 10px;">Gson</a> <a href="/tags/HTTP/" style="font-size: 10.77px;">HTTP</a> <a href="/tags/Handler/" style="font-size: 10px;">Handler</a> <a href="/tags/HeadersList/" style="font-size: 10px;">HeadersList</a> <a href="/tags/Hello-World/" style="font-size: 10px;">Hello World</a> <a href="/tags/Holo/" style="font-size: 10px;">Holo</a> <a href="/tags/IDE/" style="font-size: 10px;">IDE</a> <a href="/tags/IM/" style="font-size: 10.77px;">IM</a> <a href="/tags/Indicator/" style="font-size: 10px;">Indicator</a> <a href="/tags/IntentService/" style="font-size: 10px;">IntentService</a> <a href="/tags/JCenter/" style="font-size: 10px;">JCenter</a> <a href="/tags/JSON解析/" style="font-size: 10px;">JSON解析</a> <a href="/tags/Java/" style="font-size: 16.15px;">Java</a> <a href="/tags/Json/" style="font-size: 10.77px;">Json</a> <a href="/tags/KVO/" style="font-size: 10.77px;">KVO</a> <a href="/tags/Kotlin/" style="font-size: 10px;">Kotlin</a> <a href="/tags/Layout/" style="font-size: 10px;">Layout</a> <a href="/tags/Lint/" style="font-size: 10px;">Lint</a> <a href="/tags/ListView/" style="font-size: 10.77px;">ListView</a> <a href="/tags/Log/" style="font-size: 10px;">Log</a> <a href="/tags/MVVM/" style="font-size: 10.77px;">MVVM</a> <a href="/tags/Mac/" style="font-size: 10.77px;">Mac</a> <a href="/tags/Markdown/" style="font-size: 10.77px;">Markdown</a> <a href="/tags/Masonry/" style="font-size: 10px;">Masonry</a> <a href="/tags/Material/" style="font-size: 10.77px;">Material</a> <a href="/tags/Material-Design/" style="font-size: 10px;">Material Design</a> <a href="/tags/MaterialDesign/" style="font-size: 10px;">MaterialDesign</a> <a href="/tags/Meterial/" style="font-size: 10.77px;">Meterial</a> <a href="/tags/Meterial-Design/" style="font-size: 10px;">Meterial Design</a> <a href="/tags/Model/" style="font-size: 10px;">Model</a> <a href="/tags/MongoDB/" style="font-size: 10.77px;">MongoDB</a> <a href="/tags/Mongoose/" style="font-size: 10px;">Mongoose</a> <a href="/tags/NavBar/" style="font-size: 10px;">NavBar</a> <a href="/tags/Navigator/" style="font-size: 10px;">Navigator</a> <a href="/tags/NavtigationBar/" style="font-size: 10px;">NavtigationBar</a> <a href="/tags/NoSQL/" style="font-size: 10px;">NoSQL</a> <a href="/tags/OSX/" style="font-size: 10px;">OSX</a> <a href="/tags/Objective-C/" style="font-size: 16.92px;">Objective-C</a> <a href="/tags/POST/" style="font-size: 10px;">POST</a> <a href="/tags/PagerAdapter/" style="font-size: 10px;">PagerAdapter</a> <a href="/tags/PagerTranformer/" style="font-size: 10px;">PagerTranformer</a> <a href="/tags/Paint/" style="font-size: 10px;">Paint</a> <a href="/tags/Parcelable/" style="font-size: 10px;">Parcelable</a> <a href="/tags/PerferenceScreencreen/" style="font-size: 10px;">PerferenceScreencreen</a> <a href="/tags/Post/" style="font-size: 10px;">Post</a> <a href="/tags/ProGuard/" style="font-size: 10px;">ProGuard</a> <a href="/tags/Prose/" style="font-size: 12.31px;">Prose</a> <a href="/tags/Python/" style="font-size: 18.46px;">Python</a> <a href="/tags/REST/" style="font-size: 10.77px;">REST</a> <a href="/tags/Random/" style="font-size: 10px;">Random</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/ReactNative/" style="font-size: 10px;">ReactNative</a> <a href="/tags/RecyclerView/" style="font-size: 10.77px;">RecyclerView</a> <a href="/tags/SDK/" style="font-size: 11.54px;">SDK</a> <a href="/tags/SD卡/" style="font-size: 10px;">SD卡</a> <a href="/tags/SE5/" style="font-size: 10px;">SE5</a> <a href="/tags/SE6/" style="font-size: 10px;">SE6</a> <a href="/tags/SaveInstance/" style="font-size: 10px;">SaveInstance</a> <a href="/tags/Serializable/" style="font-size: 10px;">Serializable</a> <a href="/tags/SharedPreferce/" style="font-size: 10px;">SharedPreferce</a> <a href="/tags/SizeClass/" style="font-size: 10px;">SizeClass</a> <a href="/tags/Spider/" style="font-size: 10px;">Spider</a> <a href="/tags/Sprite/" style="font-size: 10.77px;">Sprite</a> <a href="/tags/Style/" style="font-size: 10px;">Style</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Sublime-Text/" style="font-size: 10px;">Sublime Text</a> <a href="/tags/SublimeText/" style="font-size: 10px;">SublimeText</a> <a href="/tags/Swift/" style="font-size: 17.69px;">Swift</a> <a href="/tags/TextView/" style="font-size: 10.77px;">TextView</a> <a href="/tags/Thread/" style="font-size: 10px;">Thread</a> <a href="/tags/Tips/" style="font-size: 10px;">Tips</a> <a href="/tags/ToolBar/" style="font-size: 10px;">ToolBar</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/UIActionSheet/" style="font-size: 10px;">UIActionSheet.</a> <a href="/tags/UIAlertView/" style="font-size: 10px;">UIAlertView</a> <a href="/tags/UIImageView/" style="font-size: 10px;">UIImageView</a> <a href="/tags/UIL/" style="font-size: 10px;">UIL</a> <a href="/tags/UIScrollView/" style="font-size: 10px;">UIScrollView</a> <a href="/tags/Ui/" style="font-size: 10px;">Ui</a> <a href="/tags/View/" style="font-size: 10px;">View</a> <a href="/tags/Volley/" style="font-size: 10px;">Volley</a> <a href="/tags/WebStorm/" style="font-size: 10px;">WebStorm</a> <a href="/tags/WebStrom/" style="font-size: 10px;">WebStrom</a> <a href="/tags/XCode/" style="font-size: 10px;">XCode</a> <a href="/tags/adb/" style="font-size: 10px;">adb</a> <a href="/tags/app/" style="font-size: 10.77px;">app</a> <a href="/tags/async/" style="font-size: 10px;">async</a> <a href="/tags/blur/" style="font-size: 10px;">blur</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/console/" style="font-size: 10px;">console</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/curl/" style="font-size: 10px;">curl</a> <a href="/tags/eclipse/" style="font-size: 10px;">eclipse</a> <a href="/tags/emoji/" style="font-size: 10px;">emoji</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/fallthrough/" style="font-size: 10px;">fallthrough</a> <a href="/tags/findViewById/" style="font-size: 10px;">findViewById</a> <a href="/tags/git/" style="font-size: 13.08px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/gradlew/" style="font-size: 10px;">gradlew</a> <a href="/tags/gravity/" style="font-size: 10px;">gravity</a> <a href="/tags/host/" style="font-size: 10px;">host</a> <a href="/tags/http/" style="font-size: 10.77px;">http</a> <a href="/tags/iOS/" style="font-size: 19.23px;">iOS</a> <a href="/tags/iPhone/" style="font-size: 10px;">iPhone</a> <a href="/tags/icon/" style="font-size: 10px;">icon</a> <a href="/tags/include/" style="font-size: 10px;">include</a> <a href="/tags/jQerry/" style="font-size: 11.54px;">jQerry</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/js/" style="font-size: 13.85px;">js</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/keymap/" style="font-size: 10px;">keymap</a> <a href="/tags/lambda/" style="font-size: 10px;">lambda</a> <a href="/tags/layout/" style="font-size: 11.54px;">layout</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/measure/" style="font-size: 10px;">measure</a> <a href="/tags/merge/" style="font-size: 10px;">merge</a> <a href="/tags/meteor/" style="font-size: 10.77px;">meteor</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/mongo/" style="font-size: 10px;">mongo</a> <a href="/tags/ndk/" style="font-size: 11.54px;">ndk</a> <a href="/tags/nil/" style="font-size: 10px;">nil</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/node-js/" style="font-size: 14.62px;">node.js</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/package/" style="font-size: 10px;">package</a> <a href="/tags/px/" style="font-size: 10px;">px</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/ripple/" style="font-size: 10px;">ripple</a> <a href="/tags/selector/" style="font-size: 10px;">selector</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/shape/" style="font-size: 10px;">shape</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/so/" style="font-size: 10px;">so</a> <a href="/tags/sp/" style="font-size: 10px;">sp</a> <a href="/tags/sqlite/" style="font-size: 10px;">sqlite</a> <a href="/tags/style/" style="font-size: 10px;">style</a> <a href="/tags/supervisor/" style="font-size: 10px;">supervisor</a> <a href="/tags/support/" style="font-size: 10px;">support</a> <a href="/tags/swfit/" style="font-size: 10px;">swfit</a> <a href="/tags/swift/" style="font-size: 10.77px;">swift</a> <a href="/tags/switch/" style="font-size: 10px;">switch</a> <a href="/tags/view/" style="font-size: 10px;">view</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web-app/" style="font-size: 10px;">web app</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/wifi/" style="font-size: 10px;">wifi</a> <a href="/tags/yield/" style="font-size: 10px;">yield</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/依赖管理/" style="font-size: 10px;">依赖管理</a> <a href="/tags/保存数据/" style="font-size: 10px;">保存数据</a> <a href="/tags/倒计时/" style="font-size: 10px;">倒计时</a> <a href="/tags/关键字/" style="font-size: 10px;">关键字</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/分支/" style="font-size: 10.77px;">分支</a> <a href="/tags/分辨率/" style="font-size: 10.77px;">分辨率</a> <a href="/tags/分配率/" style="font-size: 10px;">分配率</a> <a href="/tags/切换/" style="font-size: 10px;">切换</a> <a href="/tags/初始化/" style="font-size: 10px;">初始化</a> <a href="/tags/前端/" style="font-size: 11.54px;">前端</a> <a href="/tags/加密/" style="font-size: 10px;">加密</a> <a href="/tags/动态交互/" style="font-size: 10px;">动态交互</a> <a href="/tags/动态注入/" style="font-size: 10px;">动态注入</a> <a href="/tags/动画/" style="font-size: 13.85px;">动画</a> <a href="/tags/包/" style="font-size: 10px;">包</a> <a href="/tags/反编译/" style="font-size: 10.77px;">反编译</a> <a href="/tags/取色/" style="font-size: 10px;">取色</a> <a href="/tags/图片加载/" style="font-size: 10px;">图片加载</a> <a href="/tags/坐标系/" style="font-size: 10px;">坐标系</a> <a href="/tags/基础/" style="font-size: 11.54px;">基础</a> <a href="/tags/复用/" style="font-size: 10px;">复用</a> <a href="/tags/多分辨率/" style="font-size: 10px;">多分辨率</a> <a href="/tags/多屏幕/" style="font-size: 10px;">多屏幕</a> <a href="/tags/大不同/" style="font-size: 16.15px;">大不同</a> <a href="/tags/妈妈再也不用担心系列/" style="font-size: 10px;">妈妈再也不用担心系列</a> <a href="/tags/定位代码/" style="font-size: 10px;">定位代码</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/对象/" style="font-size: 10px;">对象</a> <a href="/tags/导航/" style="font-size: 10px;">导航</a> <a href="/tags/属性/" style="font-size: 10.77px;">属性</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/工具类/" style="font-size: 11.54px;">工具类</a> <a href="/tags/布局/" style="font-size: 12.31px;">布局</a> <a href="/tags/带标题的ListView/" style="font-size: 10px;">带标题的ListView</a> <a href="/tags/常用/" style="font-size: 10.77px;">常用</a> <a href="/tags/序列化/" style="font-size: 10px;">序列化</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/开源/" style="font-size: 10px;">开源</a> <a href="/tags/开源库/" style="font-size: 10px;">开源库</a> <a href="/tags/异步/" style="font-size: 10.77px;">异步</a> <a href="/tags/异步加载/" style="font-size: 10px;">异步加载</a> <a href="/tags/引导/" style="font-size: 10px;">引导</a> <a href="/tags/引用/" style="font-size: 10px;">引用</a> <a href="/tags/录屏/" style="font-size: 10px;">录屏</a> <a href="/tags/快捷键/" style="font-size: 10px;">快捷键</a> <a href="/tags/持久化/" style="font-size: 10px;">持久化</a> <a href="/tags/按钮/" style="font-size: 10px;">按钮</a> <a href="/tags/提示/" style="font-size: 10.77px;">提示</a> <a href="/tags/插件/" style="font-size: 11.54px;">插件</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/数学，宏/" style="font-size: 10px;">数学，宏</a> <a href="/tags/数据库/" style="font-size: 11.54px;">数据库</a> <a href="/tags/数据绑定/" style="font-size: 10.77px;">数据绑定</a> <a href="/tags/文本大小/" style="font-size: 10px;">文本大小</a> <a href="/tags/杂文/" style="font-size: 10.77px;">杂文</a> <a href="/tags/权限/" style="font-size: 10px;">权限</a> <a href="/tags/样式/" style="font-size: 10px;">样式</a> <a href="/tags/模块/" style="font-size: 10.77px;">模块</a> <a href="/tags/模拟/" style="font-size: 10px;">模拟</a> <a href="/tags/模糊/" style="font-size: 10.77px;">模糊</a> <a href="/tags/毛玻璃/" style="font-size: 10px;">毛玻璃</a> <a href="/tags/波纹/" style="font-size: 10px;">波纹</a> <a href="/tags/注入/" style="font-size: 10.77px;">注入</a> <a href="/tags/注解/" style="font-size: 10px;">注解</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/混淆/" style="font-size: 10px;">混淆</a> <a href="/tags/热启动/" style="font-size: 10px;">热启动</a> <a href="/tags/爬虫/" style="font-size: 10.77px;">爬虫</a> <a href="/tags/物理引擎/" style="font-size: 10px;">物理引擎</a> <a href="/tags/环信/" style="font-size: 10.77px;">环信</a> <a href="/tags/生命周期/" style="font-size: 11.54px;">生命周期</a> <a href="/tags/用时/" style="font-size: 10px;">用时</a> <a href="/tags/界面/" style="font-size: 10px;">界面</a> <a href="/tags/硬盘缓存/" style="font-size: 10px;">硬盘缓存</a> <a href="/tags/第一个项目/" style="font-size: 10px;">第一个项目</a> <a href="/tags/精灵/" style="font-size: 10px;">精灵</a> <a href="/tags/精灵帧/" style="font-size: 10px;">精灵帧</a> <a href="/tags/约束/" style="font-size: 10px;">约束</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/绘制/" style="font-size: 10px;">绘制</a> <a href="/tags/继承/" style="font-size: 10px;">继承</a> <a href="/tags/缓存/" style="font-size: 10px;">缓存</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a> <a href="/tags/网络请求/" style="font-size: 10.77px;">网络请求</a> <a href="/tags/翻墙/" style="font-size: 10.77px;">翻墙</a> <a href="/tags/自动布局/" style="font-size: 10px;">自动布局</a> <a href="/tags/自定义/" style="font-size: 10.77px;">自定义</a> <a href="/tags/自定义控件/" style="font-size: 10px;">自定义控件</a> <a href="/tags/自适应/" style="font-size: 10px;">自适应</a> <a href="/tags/虚拟键/" style="font-size: 10px;">虚拟键</a> <a href="/tags/角标/" style="font-size: 10px;">角标</a> <a href="/tags/设计/" style="font-size: 10px;">设计</a> <a href="/tags/设计缺陷/" style="font-size: 10px;">设计缺陷</a> <a href="/tags/访问/" style="font-size: 10px;">访问</a> <a href="/tags/调试/" style="font-size: 10.77px;">调试</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/资源文件/" style="font-size: 10px;">资源文件</a> <a href="/tags/路由/" style="font-size: 10px;">路由</a> <a href="/tags/转义/" style="font-size: 10px;">转义</a> <a href="/tags/轻量级/" style="font-size: 10px;">轻量级</a> <a href="/tags/连接/" style="font-size: 10px;">连接</a> <a href="/tags/适配/" style="font-size: 10.77px;">适配</a> <a href="/tags/遍历/" style="font-size: 10px;">遍历</a> <a href="/tags/配置/" style="font-size: 10px;">配置</a> <a href="/tags/镜像/" style="font-size: 10px;">镜像</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/随机/" style="font-size: 10px;">随机</a> <a href="/tags/隐藏/" style="font-size: 10px;">隐藏</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a> <a href="/tags/颜色/" style="font-size: 10.77px;">颜色</a> <a href="/tags/颜色选择器/" style="font-size: 10px;">颜色选择器</a> <a href="/tags/魅族/" style="font-size: 10px;">魅族</a>
+       <a href="/tags/AFNetworking/" style="font-size: 10px;">AFNetworking</a> <a href="/tags/APK/" style="font-size: 10px;">APK</a> <a href="/tags/AS/" style="font-size: 10px;">AS</a> <a href="/tags/Adapter/" style="font-size: 10px;">Adapter</a> <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Android-5-0/" style="font-size: 10px;">Android 5.0</a> <a href="/tags/Android-Studio/" style="font-size: 11.54px;">Android Studio</a> <a href="/tags/AndroidAninotations/" style="font-size: 10px;">AndroidAninotations</a> <a href="/tags/AndroidStudio/" style="font-size: 15.38px;">AndroidStudio</a> <a href="/tags/Animation/" style="font-size: 12.31px;">Animation</a> <a href="/tags/Api/" style="font-size: 11.54px;">Api</a> <a href="/tags/App/" style="font-size: 10px;">App</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/Async/" style="font-size: 10px;">Async</a> <a href="/tags/Atom/" style="font-size: 10.77px;">Atom</a> <a href="/tags/AutoLayout/" style="font-size: 10px;">AutoLayout</a> <a href="/tags/BaseAdapter/" style="font-size: 10px;">BaseAdapter</a> <a href="/tags/Blur/" style="font-size: 10px;">Blur</a> <a href="/tags/Box2D/" style="font-size: 10px;">Box2D</a> <a href="/tags/Broadcast/" style="font-size: 10px;">Broadcast</a> <a href="/tags/CardView/" style="font-size: 10px;">CardView</a> <a href="/tags/CocoaPods/" style="font-size: 10px;">CocoaPods</a> <a href="/tags/Cocos2d-X/" style="font-size: 13.08px;">Cocos2d-X</a> <a href="/tags/CocosPods/" style="font-size: 10px;">CocosPods</a> <a href="/tags/ContentProvider/" style="font-size: 10px;">ContentProvider</a> <a href="/tags/Context/" style="font-size: 10px;">Context</a> <a href="/tags/Crouton/" style="font-size: 10px;">Crouton</a> <a href="/tags/CursorLoader/" style="font-size: 10px;">CursorLoader</a> <a href="/tags/Demo/" style="font-size: 10.77px;">Demo</a> <a href="/tags/Dialog/" style="font-size: 10px;">Dialog</a> <a href="/tags/EditView/" style="font-size: 10px;">EditView</a> <a href="/tags/EventBus/" style="font-size: 10px;">EventBus</a> <a href="/tags/Express/" style="font-size: 10px;">Express</a> <a href="/tags/Express学习笔记/" style="font-size: 10px;">Express学习笔记</a> <a href="/tags/Flex/" style="font-size: 10px;">Flex</a> <a href="/tags/Fragment/" style="font-size: 10.77px;">Fragment</a> <a href="/tags/GET/" style="font-size: 10px;">GET</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Gradle/" style="font-size: 10.77px;">Gradle</a> <a href="/tags/GridLayout/" style="font-size: 10px;">GridLayout</a> <a href="/tags/GridView/" style="font-size: 10.77px;">GridView</a> <a href="/tags/Gson/" style="font-size: 10px;">Gson</a> <a href="/tags/HTTP/" style="font-size: 10.77px;">HTTP</a> <a href="/tags/Handler/" style="font-size: 10px;">Handler</a> <a href="/tags/HeadersList/" style="font-size: 10px;">HeadersList</a> <a href="/tags/Hello-World/" style="font-size: 10px;">Hello World</a> <a href="/tags/Holo/" style="font-size: 10px;">Holo</a> <a href="/tags/IDE/" style="font-size: 10px;">IDE</a> <a href="/tags/IM/" style="font-size: 10.77px;">IM</a> <a href="/tags/Indicator/" style="font-size: 10px;">Indicator</a> <a href="/tags/IntentService/" style="font-size: 10px;">IntentService</a> <a href="/tags/JCenter/" style="font-size: 10px;">JCenter</a> <a href="/tags/JSON解析/" style="font-size: 10px;">JSON解析</a> <a href="/tags/Java/" style="font-size: 16.15px;">Java</a> <a href="/tags/Json/" style="font-size: 10.77px;">Json</a> <a href="/tags/KVO/" style="font-size: 10.77px;">KVO</a> <a href="/tags/Kotlin/" style="font-size: 10px;">Kotlin</a> <a href="/tags/Layout/" style="font-size: 10px;">Layout</a> <a href="/tags/Lint/" style="font-size: 10px;">Lint</a> <a href="/tags/ListView/" style="font-size: 10.77px;">ListView</a> <a href="/tags/Log/" style="font-size: 10px;">Log</a> <a href="/tags/MVVM/" style="font-size: 10.77px;">MVVM</a> <a href="/tags/Mac/" style="font-size: 10.77px;">Mac</a> <a href="/tags/Markdown/" style="font-size: 10.77px;">Markdown</a> <a href="/tags/Masonry/" style="font-size: 10px;">Masonry</a> <a href="/tags/Material/" style="font-size: 10.77px;">Material</a> <a href="/tags/Material-Design/" style="font-size: 10px;">Material Design</a> <a href="/tags/MaterialDesign/" style="font-size: 10px;">MaterialDesign</a> <a href="/tags/Meterial/" style="font-size: 10.77px;">Meterial</a> <a href="/tags/Meterial-Design/" style="font-size: 10px;">Meterial Design</a> <a href="/tags/Model/" style="font-size: 10px;">Model</a> <a href="/tags/MongoDB/" style="font-size: 10.77px;">MongoDB</a> <a href="/tags/Mongoose/" style="font-size: 10px;">Mongoose</a> <a href="/tags/NavBar/" style="font-size: 10px;">NavBar</a> <a href="/tags/Navigator/" style="font-size: 10px;">Navigator</a> <a href="/tags/NavtigationBar/" style="font-size: 10px;">NavtigationBar</a> <a href="/tags/NoSQL/" style="font-size: 10px;">NoSQL</a> <a href="/tags/OSX/" style="font-size: 10px;">OSX</a> <a href="/tags/Objective-C/" style="font-size: 16.92px;">Objective-C</a> <a href="/tags/POST/" style="font-size: 10px;">POST</a> <a href="/tags/PagerAdapter/" style="font-size: 10px;">PagerAdapter</a> <a href="/tags/PagerTranformer/" style="font-size: 10px;">PagerTranformer</a> <a href="/tags/Paint/" style="font-size: 10px;">Paint</a> <a href="/tags/Parcelable/" style="font-size: 10px;">Parcelable</a> <a href="/tags/PerferenceScreencreen/" style="font-size: 10px;">PerferenceScreencreen</a> <a href="/tags/Post/" style="font-size: 10px;">Post</a> <a href="/tags/ProGuard/" style="font-size: 10px;">ProGuard</a> <a href="/tags/Prose/" style="font-size: 12.31px;">Prose</a> <a href="/tags/Python/" style="font-size: 18.46px;">Python</a> <a href="/tags/REST/" style="font-size: 10.77px;">REST</a> <a href="/tags/Random/" style="font-size: 10px;">Random</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/ReactNative/" style="font-size: 10px;">ReactNative</a> <a href="/tags/RecyclerView/" style="font-size: 10.77px;">RecyclerView</a> <a href="/tags/SDK/" style="font-size: 11.54px;">SDK</a> <a href="/tags/SD卡/" style="font-size: 10px;">SD卡</a> <a href="/tags/SE5/" style="font-size: 10px;">SE5</a> <a href="/tags/SE6/" style="font-size: 10px;">SE6</a> <a href="/tags/SaveInstance/" style="font-size: 10px;">SaveInstance</a> <a href="/tags/Serializable/" style="font-size: 10px;">Serializable</a> <a href="/tags/SharedPreferce/" style="font-size: 10px;">SharedPreferce</a> <a href="/tags/SizeClass/" style="font-size: 10px;">SizeClass</a> <a href="/tags/Spider/" style="font-size: 10px;">Spider</a> <a href="/tags/Sprite/" style="font-size: 10.77px;">Sprite</a> <a href="/tags/Style/" style="font-size: 10px;">Style</a> <a href="/tags/Sublime/" style="font-size: 10px;">Sublime</a> <a href="/tags/Sublime-Text/" style="font-size: 10px;">Sublime Text</a> <a href="/tags/SublimeText/" style="font-size: 10px;">SublimeText</a> <a href="/tags/Swift/" style="font-size: 17.69px;">Swift</a> <a href="/tags/TextView/" style="font-size: 10.77px;">TextView</a> <a href="/tags/Thread/" style="font-size: 10px;">Thread</a> <a href="/tags/Tips/" style="font-size: 10px;">Tips</a> <a href="/tags/ToolBar/" style="font-size: 10px;">ToolBar</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/UIActionSheet/" style="font-size: 10px;">UIActionSheet.</a> <a href="/tags/UIAlertView/" style="font-size: 10px;">UIAlertView</a> <a href="/tags/UIImageView/" style="font-size: 10px;">UIImageView</a> <a href="/tags/UIL/" style="font-size: 10px;">UIL</a> <a href="/tags/UIScrollView/" style="font-size: 10px;">UIScrollView</a> <a href="/tags/Ui/" style="font-size: 10px;">Ui</a> <a href="/tags/View/" style="font-size: 10px;">View</a> <a href="/tags/Volley/" style="font-size: 10px;">Volley</a> <a href="/tags/WebStorm/" style="font-size: 10px;">WebStorm</a> <a href="/tags/WebStrom/" style="font-size: 10px;">WebStrom</a> <a href="/tags/XCode/" style="font-size: 10px;">XCode</a> <a href="/tags/adb/" style="font-size: 10px;">adb</a> <a href="/tags/app/" style="font-size: 10.77px;">app</a> <a href="/tags/async/" style="font-size: 10px;">async</a> <a href="/tags/blur/" style="font-size: 10px;">blur</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/color/" style="font-size: 10px;">color</a> <a href="/tags/console/" style="font-size: 10px;">console</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/curl/" style="font-size: 10px;">curl</a> <a href="/tags/eclipse/" style="font-size: 10px;">eclipse</a> <a href="/tags/emoji/" style="font-size: 10px;">emoji</a> <a href="/tags/express/" style="font-size: 10px;">express</a> <a href="/tags/fallthrough/" style="font-size: 10px;">fallthrough</a> <a href="/tags/findViewById/" style="font-size: 10px;">findViewById</a> <a href="/tags/git/" style="font-size: 13.08px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/google/" style="font-size: 10px;">google</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/gradlew/" style="font-size: 10px;">gradlew</a> <a href="/tags/gravity/" style="font-size: 10px;">gravity</a> <a href="/tags/host/" style="font-size: 10px;">host</a> <a href="/tags/http/" style="font-size: 10.77px;">http</a> <a href="/tags/iOS/" style="font-size: 19.23px;">iOS</a> <a href="/tags/iPhone/" style="font-size: 10px;">iPhone</a> <a href="/tags/icon/" style="font-size: 10px;">icon</a> <a href="/tags/include/" style="font-size: 10px;">include</a> <a href="/tags/jQerry/" style="font-size: 11.54px;">jQerry</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/js/" style="font-size: 13.85px;">js</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/keymap/" style="font-size: 10px;">keymap</a> <a href="/tags/lambda/" style="font-size: 10px;">lambda</a> <a href="/tags/layout/" style="font-size: 11.54px;">layout</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/measure/" style="font-size: 10px;">measure</a> <a href="/tags/merge/" style="font-size: 10px;">merge</a> <a href="/tags/meteor/" style="font-size: 10.77px;">meteor</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/mongo/" style="font-size: 10px;">mongo</a> <a href="/tags/ndk/" style="font-size: 11.54px;">ndk</a> <a href="/tags/nil/" style="font-size: 10px;">nil</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/node-js/" style="font-size: 14.62px;">node.js</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/package/" style="font-size: 10px;">package</a> <a href="/tags/px/" style="font-size: 10px;">px</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/ripple/" style="font-size: 10px;">ripple</a> <a href="/tags/selector/" style="font-size: 10px;">selector</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/shape/" style="font-size: 10px;">shape</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/so/" style="font-size: 10px;">so</a> <a href="/tags/sp/" style="font-size: 10px;">sp</a> <a href="/tags/sqlite/" style="font-size: 10px;">sqlite</a> <a href="/tags/style/" style="font-size: 10px;">style</a> <a href="/tags/supervisor/" style="font-size: 10px;">supervisor</a> <a href="/tags/support/" style="font-size: 10px;">support</a> <a href="/tags/swfit/" style="font-size: 10px;">swfit</a> <a href="/tags/swift/" style="font-size: 10.77px;">swift</a> <a href="/tags/switch/" style="font-size: 10px;">switch</a> <a href="/tags/view/" style="font-size: 10px;">view</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web-app/" style="font-size: 10px;">web app</a> <a href="/tags/weex/" style="font-size: 10px;">weex</a> <a href="/tags/wifi/" style="font-size: 10px;">wifi</a> <a href="/tags/yield/" style="font-size: 10px;">yield</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/依赖管理/" style="font-size: 10px;">依赖管理</a> <a href="/tags/保存数据/" style="font-size: 10px;">保存数据</a> <a href="/tags/倒计时/" style="font-size: 10px;">倒计时</a> <a href="/tags/关键字/" style="font-size: 10px;">关键字</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/分支/" style="font-size: 10.77px;">分支</a> <a href="/tags/分辨率/" style="font-size: 10.77px;">分辨率</a> <a href="/tags/分配率/" style="font-size: 10px;">分配率</a> <a href="/tags/切换/" style="font-size: 10px;">切换</a> <a href="/tags/初始化/" style="font-size: 10px;">初始化</a> <a href="/tags/前端/" style="font-size: 11.54px;">前端</a> <a href="/tags/加密/" style="font-size: 10px;">加密</a> <a href="/tags/动态交互/" style="font-size: 10px;">动态交互</a> <a href="/tags/动态注入/" style="font-size: 10px;">动态注入</a> <a href="/tags/动画/" style="font-size: 13.85px;">动画</a> <a href="/tags/包/" style="font-size: 10px;">包</a> <a href="/tags/反编译/" style="font-size: 10.77px;">反编译</a> <a href="/tags/取色/" style="font-size: 10px;">取色</a> <a href="/tags/图片加载/" style="font-size: 10px;">图片加载</a> <a href="/tags/坐标系/" style="font-size: 10px;">坐标系</a> <a href="/tags/基础/" style="font-size: 11.54px;">基础</a> <a href="/tags/复用/" style="font-size: 10px;">复用</a> <a href="/tags/多分辨率/" style="font-size: 10px;">多分辨率</a> <a href="/tags/多屏幕/" style="font-size: 10px;">多屏幕</a> <a href="/tags/大不同/" style="font-size: 16.15px;">大不同</a> <a href="/tags/妈妈再也不用担心系列/" style="font-size: 10px;">妈妈再也不用担心系列</a> <a href="/tags/定位代码/" style="font-size: 10px;">定位代码</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/对象/" style="font-size: 10px;">对象</a> <a href="/tags/导航/" style="font-size: 10px;">导航</a> <a href="/tags/属性/" style="font-size: 10.77px;">属性</a> <a href="/tags/嵌套/" style="font-size: 10px;">嵌套</a> <a href="/tags/工具类/" style="font-size: 11.54px;">工具类</a> <a href="/tags/布局/" style="font-size: 12.31px;">布局</a> <a href="/tags/带标题的ListView/" style="font-size: 10px;">带标题的ListView</a> <a href="/tags/常用/" style="font-size: 10.77px;">常用</a> <a href="/tags/序列化/" style="font-size: 10px;">序列化</a> <a href="/tags/开始/" style="font-size: 10px;">开始</a> <a href="/tags/开源/" style="font-size: 10px;">开源</a> <a href="/tags/开源库/" style="font-size: 10px;">开源库</a> <a href="/tags/异步/" style="font-size: 10.77px;">异步</a> <a href="/tags/异步加载/" style="font-size: 10px;">异步加载</a> <a href="/tags/引导/" style="font-size: 10px;">引导</a> <a href="/tags/引用/" style="font-size: 10px;">引用</a> <a href="/tags/录屏/" style="font-size: 10px;">录屏</a> <a href="/tags/快捷键/" style="font-size: 10px;">快捷键</a> <a href="/tags/持久化/" style="font-size: 10px;">持久化</a> <a href="/tags/按钮/" style="font-size: 10px;">按钮</a> <a href="/tags/提示/" style="font-size: 10.77px;">提示</a> <a href="/tags/插件/" style="font-size: 11.54px;">插件</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/数学，宏/" style="font-size: 10px;">数学，宏</a> <a href="/tags/数据库/" style="font-size: 11.54px;">数据库</a> <a href="/tags/数据绑定/" style="font-size: 10.77px;">数据绑定</a> <a href="/tags/文本大小/" style="font-size: 10px;">文本大小</a> <a href="/tags/杂文/" style="font-size: 10.77px;">杂文</a> <a href="/tags/权限/" style="font-size: 10px;">权限</a> <a href="/tags/样式/" style="font-size: 10px;">样式</a> <a href="/tags/模块/" style="font-size: 10.77px;">模块</a> <a href="/tags/模拟/" style="font-size: 10px;">模拟</a> <a href="/tags/模糊/" style="font-size: 10.77px;">模糊</a> <a href="/tags/毛玻璃/" style="font-size: 10px;">毛玻璃</a> <a href="/tags/波纹/" style="font-size: 10px;">波纹</a> <a href="/tags/注入/" style="font-size: 10.77px;">注入</a> <a href="/tags/注解/" style="font-size: 10px;">注解</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/混淆/" style="font-size: 10px;">混淆</a> <a href="/tags/热启动/" style="font-size: 10px;">热启动</a> <a href="/tags/爬虫/" style="font-size: 10.77px;">爬虫</a> <a href="/tags/物理引擎/" style="font-size: 10px;">物理引擎</a> <a href="/tags/环信/" style="font-size: 10.77px;">环信</a> <a href="/tags/生命周期/" style="font-size: 11.54px;">生命周期</a> <a href="/tags/用时/" style="font-size: 10px;">用时</a> <a href="/tags/界面/" style="font-size: 10px;">界面</a> <a href="/tags/硬盘缓存/" style="font-size: 10px;">硬盘缓存</a> <a href="/tags/第一个项目/" style="font-size: 10px;">第一个项目</a> <a href="/tags/精灵/" style="font-size: 10px;">精灵</a> <a href="/tags/精灵帧/" style="font-size: 10px;">精灵帧</a> <a href="/tags/约束/" style="font-size: 10px;">约束</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/绘制/" style="font-size: 10px;">绘制</a> <a href="/tags/继承/" style="font-size: 10px;">继承</a> <a href="/tags/缓存/" style="font-size: 10px;">缓存</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a> <a href="/tags/网络请求/" style="font-size: 10.77px;">网络请求</a> <a href="/tags/翻墙/" style="font-size: 10.77px;">翻墙</a> <a href="/tags/自动布局/" style="font-size: 10px;">自动布局</a> <a href="/tags/自定义/" style="font-size: 10.77px;">自定义</a> <a href="/tags/自定义控件/" style="font-size: 10px;">自定义控件</a> <a href="/tags/自适应/" style="font-size: 10px;">自适应</a> <a href="/tags/虚拟键/" style="font-size: 10px;">虚拟键</a> <a href="/tags/角标/" style="font-size: 10px;">角标</a> <a href="/tags/设计/" style="font-size: 10px;">设计</a> <a href="/tags/设计缺陷/" style="font-size: 10px;">设计缺陷</a> <a href="/tags/访问/" style="font-size: 10px;">访问</a> <a href="/tags/调试/" style="font-size: 10.77px;">调试</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/资源文件/" style="font-size: 10px;">资源文件</a> <a href="/tags/路由/" style="font-size: 10px;">路由</a> <a href="/tags/转义/" style="font-size: 10px;">转义</a> <a href="/tags/轻量级/" style="font-size: 10px;">轻量级</a> <a href="/tags/连接/" style="font-size: 10px;">连接</a> <a href="/tags/适配/" style="font-size: 10.77px;">适配</a> <a href="/tags/遍历/" style="font-size: 10px;">遍历</a> <a href="/tags/配置/" style="font-size: 10px;">配置</a> <a href="/tags/镜像/" style="font-size: 10px;">镜像</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/随机/" style="font-size: 10px;">随机</a> <a href="/tags/隐藏/" style="font-size: 10px;">隐藏</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a> <a href="/tags/预处理/" style="font-size: 10px;">预处理</a> <a href="/tags/颜色/" style="font-size: 10.77px;">颜色</a> <a href="/tags/颜色选择器/" style="font-size: 10px;">颜色选择器</a> <a href="/tags/魅族/" style="font-size: 10px;">魅族</a>
     </div>
   </div>
 
@@ -1207,7 +1013,7 @@
   
   <div class="archiveslist">
     <p class="asidetitle"><a href="/archives">归档</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">二月 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">九月 2014</a><span class="archive-list-count">36</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">八月 2014</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">七月 2014</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">五月 2014</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">四月 2014</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">三月 2014</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">二月 2014</a><span class="archive-list-count">24</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">五月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">二月 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">十一月 2014</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">九月 2014</a><span class="archive-list-count">36</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">八月 2014</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">七月 2014</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">六月 2014</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">五月 2014</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">四月 2014</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">三月 2014</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">二月 2014</a><span class="archive-list-count">24</span></li></ul>
   </div>
 
 

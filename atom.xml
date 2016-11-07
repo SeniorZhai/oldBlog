@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://seniorzhai.github.io/"/>
-  <updated>2016-09-02T08:08:33.000Z</updated>
+  <updated>2016-10-13T08:34:08.000Z</updated>
   <id>http://seniorzhai.github.io/</id>
   
   <author>
@@ -14,6 +14,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Android Build</title>
+    <link href="http://seniorzhai.github.io/2016/10/13/Android-Build/"/>
+    <id>http://seniorzhai.github.io/2016/10/13/Android-Build/</id>
+    <published>2016-10-13T07:19:07.000Z</published>
+    <updated>2016-10-13T08:34:08.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Android Build系统是Android源码的一部分，用来编译Android系统、Android SDK和相关文档。&lt;br&gt;主要有Make文件、Shell脚本以及Python脚本组成，其中最主要的是Make文件。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;Android包含了大量的开源项目以及许多的模块，不同产商的不同设备对Android的定制也不一样，那么如何将这些项目和模块的编译同意管理起来？如何能够在不同的操作系统上进行编译？如何在编译时能够支持面向不同的硬件设备？不同的编译类型？同事还要提供面向各个产商定制扩展？&lt;/p&gt;
+&lt;p&gt;Build系统的主要逻辑都在Make文件上，其他脚本只是起到一些辅助作用&lt;br&gt;整个Build系统中的Make文件可以分为三类：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Build系统核心文件，此类文件定义了整个Build系统的基础框架，这些文件位于&lt;code&gt;/build/core&lt;/code&gt;目录下&lt;/li&gt;
+&lt;li&gt;针对某设备的Make文件，这些文件通常位于&lt;code&gt;device&lt;/code&gt;目录下&lt;/li&gt;
+&lt;li&gt;针对某个模块的Make文件，这类文件的名称统一为&lt;code&gt;Android.mk&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;##执行编译&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;source build/envsetup.sh # 引入build/envsetup.sh脚本，该脚本初始化编译环境&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;lunch full-eng # lunch函数的参数用来制定此次编译的目标设备以及编译类型&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;make -j8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Android Build系统是Android源码的一部分，用来编译Android系统、Android SDK和相关文档。&lt;br&gt;主要有Make文件、Shell脚本以及Python脚本组成，其中最主要的是Make文件。&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>View</title>
+    <link href="http://seniorzhai.github.io/2016/09/14/View/"/>
+    <id>http://seniorzhai.github.io/2016/09/14/View/</id>
+    <published>2016-09-14T08:49:28.000Z</published>
+    <updated>2016-09-14T08:49:28.000Z</updated>
+    
+    <content type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>API可用性检测</title>
@@ -66,6 +110,73 @@
       <category term="swift" scheme="http://seniorzhai.github.io/tags/swift/"/>
     
       <category term="关键字" scheme="http://seniorzhai.github.io/tags/%E5%85%B3%E9%94%AE%E5%AD%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>摄影预处理</title>
+    <link href="http://seniorzhai.github.io/2016/08/07/%E6%91%84%E5%BD%B1%E9%A2%84%E5%A4%84%E7%90%86/"/>
+    <id>http://seniorzhai.github.io/2016/08/07/摄影预处理/</id>
+    <published>2016-08-07T08:47:42.000Z</published>
+    <updated>2016-11-07T08:49:43.000Z</updated>
+    
+    <content type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;Camera RAW&lt;/p&gt;
+&lt;p&gt;#预处理&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;准确的色彩还原&lt;br&gt;用吸色找中性灰&lt;/li&gt;
+&lt;li&gt;正确的黑白场&lt;br&gt;按住option调整黑白，主体黑色不能纯黑，主体不能发白&lt;/li&gt;
+&lt;li&gt;足够的清晰度&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;加清晰度需要减曝光&lt;/li&gt;
+&lt;li&gt;option调整蒙版，之后锐化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;适当的饱和度&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;自然饱和度 若隐若现的颜色&lt;/li&gt;
+&lt;li&gt;饱和度 已经出现的颜色&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;丰富合理的层次&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;讲直方图的信息展开&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;#二次构图&lt;br&gt;先做相机、镜头矫正&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;删除色差&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;#输出&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;TIFF印刷，色彩空间Adobe RGB，色彩深度16位&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;相机用Adobe RGB&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;网络输出&lt;br&gt;JPEG 删除信息 品质选双数&lt;br&gt;色彩空间sRGB 色彩深度8位 大小1500-2000&lt;br&gt;可以使用PS-脚本-图像处理器批量处理&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;Camera RAW&lt;/p&gt;
+&lt;p&gt;#预处理&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;准确的色彩还原&lt;br&gt;用吸色找中性灰&lt;/li&gt;
+&lt;li&gt;正确的黑白场&lt;br&gt;按住option调整黑白，主体黑色不能纯黑，主体不能发白&lt;/li&gt;
+&lt;li&gt;足够的清晰度&lt;
+    
+    </summary>
+    
+      <category term="摄影" scheme="http://seniorzhai.github.io/categories/%E6%91%84%E5%BD%B1/"/>
+    
+    
+      <category term="预处理" scheme="http://seniorzhai.github.io/tags/%E9%A2%84%E5%A4%84%E7%90%86/"/>
     
   </entry>
   
@@ -666,99 +777,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>gradle下载地址</title>
-    <link href="http://seniorzhai.github.io/2016/01/18/gradle%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80/"/>
-    <id>http://seniorzhai.github.io/2016/01/18/gradle下载地址/</id>
-    <published>2016-01-18T14:19:42.000Z</published>
-    <updated>2016-01-23T20:13:11.000Z</updated>
-    
-    <content type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;&lt;a href=&quot;https://services.gradle.org/distributions/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://services.gradle.org/distributions/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;放到&lt;code&gt;~/.gradle/wrapper/dists&lt;/code&gt;目录下&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;不知道是不是我环境的问题，用P2P下载文件一直有问题，还是直接下载的好&lt;/p&gt;
-&lt;/blockquote&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;&lt;a href=&quot;https://services.gradle.org/distributions/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://services.gradle.org/distrib
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>ReactNative-ListView</title>
-    <link href="http://seniorzhai.github.io/2016/01/17/ReactNative-ListView/"/>
-    <id>http://seniorzhai.github.io/2016/01/17/ReactNative-ListView/</id>
-    <published>2016-01-17T15:26:29.000Z</published>
-    <updated>2016-01-17T15:26:29.000Z</updated>
-    
-    <content type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;</content>
-    
-    <summary type="html">
-    
-      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>ReactNative-Navigator</title>
-    <link href="http://seniorzhai.github.io/2016/01/17/ReactNative-Navigator/"/>
-    <id>http://seniorzhai.github.io/2016/01/17/ReactNative-Navigator/</id>
-    <published>2016-01-17T15:22:02.000Z</published>
-    <updated>2016-09-02T08:08:34.000Z</updated>
-    
-    <content type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h1 id=&quot;基本用法&quot;&gt;&lt;a href=&quot;#基本用法&quot; class=&quot;headerlink&quot; title=&quot;基本用法&quot;&gt;&lt;/a&gt;基本用法&lt;/h1&gt;&lt;p&gt;Navigator可以切换不同场景，导航器通过路由来分辨不同的场景。&lt;br&gt;&lt;code&gt;renderScene&lt;/code&gt;方法用来指定渲染的场景，&lt;code&gt;configureScene&lt;/code&gt;属性指定路由对象的配置信息，可以指定进场动画或者手势。&lt;/p&gt;
-&lt;h1 id=&quot;方法&quot;&gt;&lt;a href=&quot;#方法&quot; class=&quot;headerlink&quot; title=&quot;方法&quot;&gt;&lt;/a&gt;方法&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;getCurrentRoutes()&lt;/code&gt; 获取当前栈里的路由&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;jumpBack()&lt;/code&gt; 跳回之前的路由，当前场景保留&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;jumpForward()&lt;/code&gt; 跳回之后的路由&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;jumpTo(route)&lt;/code&gt; 跳转到已有的场景并且不卸载&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;push(route)&lt;/code&gt; 跳转到新的场景&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;pop()&lt;/code&gt; 跳转出去并且卸载当前场景&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;replace(route)&lt;/code&gt; 用一个新的路由替换掉当前场景&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;replaceAtIndex(rote,index)&lt;/code&gt; 替换掉指定序列的场景&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;replacePrevious(route)&lt;/code&gt; 替换掉之前的场景&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;immediatelyResetRouteStack(routeStack)&lt;/code&gt;  用新的路由重置路由栈&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;popToRoute(route)&lt;/code&gt; pop到路由指定的场景，其他的场景将被卸载&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;popToTp()&lt;/code&gt; pop到栈中单第一个场景，卸载掉所有的其他场景&lt;h1 id=&quot;属性&quot;&gt;&lt;a href=&quot;#属性&quot; class=&quot;headerlink&quot; title=&quot;属性&quot;&gt;&lt;/a&gt;属性&lt;/h1&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;configureScene&lt;/code&gt; 可选函数，用来指定场景动画和手势&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;initialRoute&lt;/code&gt; 指定启动时加载的路由&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;initialRouteStack&lt;/code&gt; 指定一个路由集合来初始化&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;navigatorBar&lt;/code&gt; 可选参数，提供一个场景切换时保持的导航栏&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;navigator&lt;/code&gt; 可选参数，提供父类导航获取导航器对象&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;renderScene&lt;/code&gt; 必选参数，用来指定路由渲染的场景&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sceneStyle&lt;/code&gt; 指定每个场景的容器上的样式&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h1 id=&quot;基本用法&quot;&gt;&lt;a href=&quot;#基本用法&quot; class=&quot;headerlink&quot; title=&quot;基本用法&quot;&gt;&lt;/a&gt;基本用法&lt;/h1&gt;&lt;p&gt;Navigator可以切换不同场景，导航器通过路由来分辨不同的场景。&lt;br&gt;&lt;code&gt;
-    
-    </summary>
-    
-      <category term="ReactNative" scheme="http://seniorzhai.github.io/categories/ReactNative/"/>
-    
-    
-      <category term="Navigator" scheme="http://seniorzhai.github.io/tags/Navigator/"/>
-    
-      <category term="路由" scheme="http://seniorzhai.github.io/tags/%E8%B7%AF%E7%94%B1/"/>
-    
-      <category term="切换" scheme="http://seniorzhai.github.io/tags/%E5%88%87%E6%8D%A2/"/>
     
   </entry>
   
