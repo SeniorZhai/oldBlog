@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://seniorzhai.github.io/"/>
-  <updated>2016-10-13T08:34:08.000Z</updated>
+  <updated>2016-12-07T09:57:11.000Z</updated>
   <id>http://seniorzhai.github.io/</id>
   
   <author>
@@ -14,6 +14,61 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Android与so</title>
+    <link href="http://seniorzhai.github.io/2016/12/07/Android%E4%B8%8Eso/"/>
+    <id>http://seniorzhai.github.io/2016/12/07/Android与so/</id>
+    <published>2016-12-07T09:25:41.000Z</published>
+    <updated>2016-12-07T09:57:11.000Z</updated>
+    
+    <content type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;##ABI&lt;/p&gt;
+&lt;p&gt;ABI（Application Binary Interface）应用二进制借口，定义了CPU能够执行的二进制文件的格式规范。&lt;br&gt;Android支持的CPU架构众多，ABI包括&lt;code&gt;armeabi&lt;/code&gt;、&lt;code&gt;armeabi-v7a&lt;/code&gt;、&lt;code&gt;arm64-v8a&lt;/code&gt;、&lt;code&gt;x86&lt;/code&gt;、&lt;code&gt;x86_64&lt;/code&gt;、&lt;code&gt;mips&lt;/code&gt;、&lt;code&gt;mips64&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://developer.android.com/ndk/guides/abis.html#sa&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://developer.android.com/ndk/guides/abis.html#sa&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;so (shared object)是机器可以直接运行的二进制代码，买个App的so被打包在apk文件的&lt;code&gt;lib/&lt;/code&gt;目录下&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;lib&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;├── armeabi&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│   └── libmath.so&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;├── armeabi-v7a&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│   └── libmath.so&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;├── mips&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;│   └── libmath.so&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;└── x86&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    └── libmath.so&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;使用下面命令可以查看apk支持的abi&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;appt dump bading app.apk | grep abi&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;##制定ABI生产so&lt;/p&gt;
+&lt;p&gt;在&lt;code&gt;Application.mk&lt;/code&gt;文件中指定&lt;code&gt;APP_ABI&lt;/code&gt;参数&lt;/p&gt;
+&lt;p&gt;##Android系统的ABI支持&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;primary ABI当前系统使用的ABI&lt;/li&gt;
+&lt;li&gt;secondary ABI 当前系统支持的其他ABI&lt;br&gt;一般情况手机不止支持一个ABI&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;###查看ABI&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;/system/build.prop&lt;/code&gt;中制定了支持的ABI类型，可以在adb shell中查看&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;getprop | grep abilist&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;使用&lt;code&gt;Build.BUPPORTED_ABIS&lt;/code&gt;可以获取当前设备支持的ABI列表&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;Build.SUPPORTED_ABIS;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在apk安装过程时，Package Manager会扫描整个apk寻找符合下面文件路径格式动态链接库&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;lib/&amp;lt;primary-abi&amp;gt;/lib&amp;lt;name&amp;gt;.so&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;primary-abi&lt;/code&gt;是上面表中的abi的值，&lt;code&gt;name&lt;/code&gt;对应的是&lt;code&gt;Android.mk&lt;/code&gt;中定义的&lt;code&gt;LOCAL_MODULE&lt;/code&gt;的值&lt;br&gt;如果没有当前&lt;code&gt;primary-abi&lt;/code&gt;的so，Package Manager会尝试寻找合适&lt;code&gt;secondary-abi&lt;/code&gt;的so文件&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;lib/&amp;lt;secondary-abi&amp;gt;/lib&amp;lt;name&amp;gt;.so&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;有合适的so文件后，包管理会在改ABI文件下的所有so库全部拷贝到应用的data目录下&lt;code&gt;data/data/&amp;lt;package_name&amp;gt;/lib/&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;在代码调用so时，如果ABI文件夹下没有提供so文件，运行时会遇到&lt;code&gt;java.lang.UnsatisfiedLinkError&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;##加载so&lt;br&gt;&lt;code&gt;System.loadLibrary&lt;/code&gt;之传入&lt;code&gt;Android.mk&lt;/code&gt;中定义的&lt;code&gt;LOCAL_MODULE&lt;/code&gt;的值&lt;br&gt;&lt;code&gt;System.load&lt;/code&gt;这个方法可以动态的加载非apk内置的so，甚至动态下载的so，但是不能加载SD卡中的so&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;System.load(&amp;quot;/data/data/&amp;lt;package-name/dir/libmath.so&amp;quot;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;##ABI&lt;/p&gt;
+&lt;p&gt;ABI（Application Binary Interface）应用二进制借口，定义了CPU能够执行的二进制文件的格式规范。&lt;br&gt;Android支持的CPU架构众多，ABI包括&lt;code&gt;armeabi&lt;/c
+    
+    </summary>
+    
+      <category term="Android" scheme="http://seniorzhai.github.io/categories/Android/"/>
+    
+    
+      <category term="ndk" scheme="http://seniorzhai.github.io/tags/ndk/"/>
+    
+      <category term="so" scheme="http://seniorzhai.github.io/tags/so/"/>
+    
+  </entry>
   
   <entry>
     <title>Android Build</title>
@@ -35,24 +90,6 @@
     <summary type="html">
     
       &lt;p&gt;Android Build系统是Android源码的一部分，用来编译Android系统、Android SDK和相关文档。&lt;br&gt;主要有Make文件、Shell脚本以及Python脚本组成，其中最主要的是Make文件。&lt;br&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>View</title>
-    <link href="http://seniorzhai.github.io/2016/09/14/View/"/>
-    <id>http://seniorzhai.github.io/2016/09/14/View/</id>
-    <published>2016-09-14T08:49:28.000Z</published>
-    <updated>2016-09-14T08:49:28.000Z</updated>
-    
-    <content type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;</content>
-    
-    <summary type="html">
-    
-      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
     
     </summary>
     
@@ -118,7 +155,7 @@
     <link href="http://seniorzhai.github.io/2016/08/07/%E6%91%84%E5%BD%B1%E9%A2%84%E5%A4%84%E7%90%86/"/>
     <id>http://seniorzhai.github.io/2016/08/07/摄影预处理/</id>
     <published>2016-08-07T08:47:42.000Z</published>
-    <updated>2016-11-07T09:01:01.000Z</updated>
+    <updated>2016-11-14T06:29:21.000Z</updated>
     
     <content type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;Camera RAW&lt;/p&gt;
@@ -126,25 +163,10 @@
 &lt;ol&gt;
 &lt;li&gt;准确的色彩还原&lt;br&gt;用吸色找中性灰&lt;/li&gt;
 &lt;li&gt;正确的黑白场&lt;br&gt;按住option调整黑白，主体黑色不能纯黑，主体不能发白&lt;/li&gt;
-&lt;li&gt;足够的清晰度&lt;/li&gt;
+&lt;li&gt;足够的清晰度&lt;br&gt;加清晰度需要减曝光&lt;br&gt;option调整蒙版，之后锐化&lt;/li&gt;
+&lt;li&gt;适当的饱和度&lt;br&gt;自然饱和度 若隐若现的颜色&lt;br&gt;饱和度 已经出现的颜色&lt;/li&gt;
+&lt;li&gt;丰富合理的层次&lt;br&gt;讲直方图的信息展开&lt;/li&gt;
 &lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;加清晰度需要减曝光&lt;/li&gt;
-&lt;li&gt;option调整蒙版，之后锐化&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol&gt;
-&lt;li&gt;适当的饱和度&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;自然饱和度 若隐若现的颜色&lt;/li&gt;
-&lt;li&gt;饱和度 已经出现的颜色&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol&gt;
-&lt;li&gt;丰富合理的层次&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;讲直方图的信息展开&lt;/li&gt;
-&lt;/ul&gt;
 &lt;p&gt;#二次构图&lt;br&gt;先做相机、镜头矫正&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;删除色差&lt;/p&gt;
