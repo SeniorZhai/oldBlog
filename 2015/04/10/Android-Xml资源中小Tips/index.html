@@ -105,10 +105,10 @@
 		<a id="more"></a>
 <h1 id=""><a href="#" class="headerlink" title="@"></a>@</h1><ul>
 <li><p>引入自定义资源，格式为<code>@[package:]type/name</code><br>  最常见的资源引用</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">android:text="@string/hello"</div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android:text="@string/hello"</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>引入系统资源，格式为<code>@android:type/name</code></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">android:textColor="@android:color/opaque_red"</div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android:textColor="@android:color/opaque_red"</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h1 id="-1"><a href="#-1" class="headerlink" title="@*"></a>@*</h1><p>引用系统非public资源<code>@*android:type/name</code></p>
@@ -116,8 +116,8 @@
 <p>系统资源纷纷public和非public，生命在<sdk>\platforms\android-8\data\res\values\public.xml</sdk></p>
 </blockquote>
 <p>相比<code>@android:type/name</code>，<code>@*android:type/name</code>能够使用所有Android系统资源，不过Google官方不推介使用</p>
-<h1 id="-2"><a href="#-2" class="headerlink" title="?"></a>?</h1><p><code>?[namespace:]type/name</code>这种方式用于引用当前主题中的属性值，这个属性值只能在style资源和XML属性中使用<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">android:textColor="?android:textDisabledColor"</div></pre></td></tr></table></figure></p>
-<h1 id="-3"><a href="#-3" class="headerlink" title="@+"></a>@+</h1><p><code>@+type/name</code>，<code>+</code>表示在type中添加一条记录通常用于定义资源<code>id</code><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">android:id="@+id/select"</div></pre></td></tr></table></figure></p>
+<h1 id="-2"><a href="#-2" class="headerlink" title="?"></a>?</h1><p><code>?[namespace:]type/name</code>这种方式用于引用当前主题中的属性值，这个属性值只能在style资源和XML属性中使用<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android:textColor="?android:textDisabledColor"</span><br></pre></td></tr></table></figure></p>
+<h1 id="-3"><a href="#-3" class="headerlink" title="@+"></a>@+</h1><p><code>@+type/name</code>，<code>+</code>表示在type中添加一条记录通常用于定义资源<code>id</code><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android:id="@+id/select"</span><br></pre></td></tr></table></figure></p>
   
 	</div>
 		<footer class="article-footer clearfix">

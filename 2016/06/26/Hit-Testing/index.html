@@ -120,7 +120,7 @@
 <li><code>convertRect(rect: CGRect,toLayer: CALayer)</code></li>
 </ul>
 <h3 id="翻转几何结构"><a href="#翻转几何结构" class="headerlink" title="翻转几何结构"></a>翻转几何结构</h3><p>通常iOS一个图层的position位于父图层的左上角，Mac OS则位于左下角，Core Animation可以通过<code>geometryFlipped</code>属性来适配这两种情况，它决定了一个图层的坐标系是否相对父图层垂直翻转。</p>
-<h3 id="Z坐标轴"><a href="#Z坐标轴" class="headerlink" title="Z坐标轴"></a>Z坐标轴</h3><p>CALayer存在一个三维空间，除了<code>posistion</code>和<code>anchorPoint</code>属性外，CALayer还有另外两个属性，<code>zPosition</code>和<code>anchorPointZ</code>两者都是在Z轴上描述图层位置的浮点类型。<br><code>zPosition</code>决定图层显示顺序，图层根据子图层的<code>sublayers</code>出现的顺序来类绘制。<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">self</span>.greenView.layer.zPosition = <span class="number">1</span>.0f</div></pre></td></tr></table></figure></p>
+<h3 id="Z坐标轴"><a href="#Z坐标轴" class="headerlink" title="Z坐标轴"></a>Z坐标轴</h3><p>CALayer存在一个三维空间，除了<code>posistion</code>和<code>anchorPoint</code>属性外，CALayer还有另外两个属性，<code>zPosition</code>和<code>anchorPointZ</code>两者都是在Z轴上描述图层位置的浮点类型。<br><code>zPosition</code>决定图层显示顺序，图层根据子图层的<code>sublayers</code>出现的顺序来类绘制。<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">self</span>.greenView.layer.zPosition = <span class="number">1</span>.0f</span><br></pre></td></tr></table></figure></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -157,18 +157,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2016/06/26/图层几何学/" title="图层几何学">
+ <a href="/2016/08/03/专用图层/" title="专用图层">
   <strong>上一篇：</strong><br/>
   <span>
-  图层几何学</span>
+  专用图层</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2016/06/25/CALayer/"  title="CALayer">
+<a href="/2016/06/26/图层几何学/"  title="图层几何学">
  <strong>下一篇：</strong><br/> 
- <span>CALayer
+ <span>图层几何学
 </span>
 </a>
 </div>

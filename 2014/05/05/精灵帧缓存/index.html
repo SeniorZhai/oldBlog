@@ -11,19 +11,19 @@
     
 
     
-    <meta name="description" content="简介SpriteFrameCache 主要服务于多张碎图合并出来的纹理图片。这种纹理在一张大图中包含了多张小图，直接通过TextureCache引用会有诸多不便，因而衍生出来精灵框帧的处理方式，即把截取好的纹理信息保存在一个精灵框帧内，精灵通过切换不同的框帧来显示出不同的图案。 SpriteFrameCacheSpriteFrameCache的内部封装了一个Map _spriteFrames对象">
+    <meta name="description" content="简介SpriteFrameCache 主要服务于多张碎图合并出来的纹理图片。这种纹理在一张大图中包含了多张小图，直接通过TextureCache引用会有诸多不便，因而衍生出来精灵框帧的处理方式，即把截取好的纹理信息保存在一个精灵框帧内，精灵通过切换不同的框帧来显示出不同的图案。 SpriteFrameCacheSpriteFrameCache的内部封装了一个Map&amp;lt;std::string,">
 <meta name="keywords" content="Sprite,精灵帧">
 <meta property="og:type" content="article">
 <meta property="og:title" content="精灵帧缓存">
 <meta property="og:url" content="http://seniorzhai.github.io/2014/05/05/精灵帧缓存/index.html">
 <meta property="og:site_name" content="SeniorZhai&#39;s blog">
-<meta property="og:description" content="简介SpriteFrameCache 主要服务于多张碎图合并出来的纹理图片。这种纹理在一张大图中包含了多张小图，直接通过TextureCache引用会有诸多不便，因而衍生出来精灵框帧的处理方式，即把截取好的纹理信息保存在一个精灵框帧内，精灵通过切换不同的框帧来显示出不同的图案。 SpriteFrameCacheSpriteFrameCache的内部封装了一个Map _spriteFrames对象">
+<meta property="og:description" content="简介SpriteFrameCache 主要服务于多张碎图合并出来的纹理图片。这种纹理在一张大图中包含了多张小图，直接通过TextureCache引用会有诸多不便，因而衍生出来精灵框帧的处理方式，即把截取好的纹理信息保存在一个精灵框帧内，精灵通过切换不同的框帧来显示出不同的图案。 SpriteFrameCacheSpriteFrameCache的内部封装了一个Map&amp;lt;std::string,">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://github.com/zt1991616/blog/master/raw/Image/14050501.png">
 <meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="精灵帧缓存">
-<meta name="twitter:description" content="简介SpriteFrameCache 主要服务于多张碎图合并出来的纹理图片。这种纹理在一张大图中包含了多张小图，直接通过TextureCache引用会有诸多不便，因而衍生出来精灵框帧的处理方式，即把截取好的纹理信息保存在一个精灵框帧内，精灵通过切换不同的框帧来显示出不同的图案。 SpriteFrameCacheSpriteFrameCache的内部封装了一个Map _spriteFrames对象">
+<meta name="twitter:description" content="简介SpriteFrameCache 主要服务于多张碎图合并出来的纹理图片。这种纹理在一张大图中包含了多张小图，直接通过TextureCache引用会有诸多不便，因而衍生出来精灵框帧的处理方式，即把截取好的纹理信息保存在一个精灵框帧内，精灵通过切换不同的框帧来显示出不同的图案。 SpriteFrameCacheSpriteFrameCache的内部封装了一个Map&amp;lt;std::string,">
 <meta name="twitter:image" content="https://github.com/zt1991616/blog/master/raw/Image/14050501.png">
 
     
@@ -106,11 +106,11 @@
 		
 		<p><img src="https://github.com/zt1991616/blog/master/raw/Image/14050501.png" alt=""></p>
 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>SpriteFrameCache 主要服务于多张碎图合并出来的纹理图片。这种纹理在一张大图中包含了多张小图，直接通过TextureCache引用会有诸多不便，因而衍生出来精灵框帧的处理方式，即把截取好的纹理信息保存在一个精灵框帧内，精灵通过切换不同的框帧来显示出不同的图案。</p>
-<h2 id="SpriteFrameCache"><a href="#SpriteFrameCache" class="headerlink" title="SpriteFrameCache"></a>SpriteFrameCache</h2><p>SpriteFrameCache的内部封装了一个Map<std::string, spriteframe*=""> _spriteFrames对象。key为帧的名称。SpriteFrameCache一般用来处理plist文件(这个文件指定了每个独立的精灵在这张“大图”里面的位置和大小)，该文件对应一张包含多个精灵的大图，plist文件可以使用TexturePacker制作。</std::string,></p>
+<h2 id="SpriteFrameCache"><a href="#SpriteFrameCache" class="headerlink" title="SpriteFrameCache"></a>SpriteFrameCache</h2><p>SpriteFrameCache的内部封装了一个Map&lt;std::string, SpriteFrame*&gt; _spriteFrames对象。key为帧的名称。SpriteFrameCache一般用来处理plist文件(这个文件指定了每个独立的精灵在这张“大图”里面的位置和大小)，该文件对应一张包含多个精灵的大图，plist文件可以使用TexturePacker制作。</p>
 <p>SpriteFrameCache的常用接口和TextureCache类似，不再赘述了，唯一需要注意的是添加精灵帧的配套文件一个plist文件和一张大的纹理图。下面列举了SpriteFrameCache常用的方法：（详细API请看SpriteFrameCache API）</p>
-<p>获取单例的SpriteFrameCache对象。sharedSpriteFrameCache方法在3.0中已经弃用。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SpriteFrameCache* cache = SpriteFrameCache::getInstance();</div></pre></td></tr></table></figure></p>
-<p>销毁SpriteFrameCache对象。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SpriteFrameCache::destroyInstance();</div></pre></td></tr></table></figure></p>
-<p>使用SpriteFrameCache获取指定的精灵帧，创建精灵对象。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">SpriteFrameCache *frameCache = SpriteFrameCache::getInstance(); </div><div class="line">frameCache-&gt;addSpriteFramesWithFile(<span class="string">"boy.plist"</span>,<span class="string">"boy.png"</span>);<span class="comment">//boy.png里集合了boy1.png,boy2.png这些小图 </span></div><div class="line"><span class="keyword">auto</span> frame_sp = Sprite::createWithSpriteFrameName(<span class="string">"boy1.png"</span>);<span class="comment">//从SpriteFrameCache缓存中找到boy1.png这张图片. </span></div><div class="line"><span class="keyword">this</span>-&gt;addChild(frame_sp,<span class="number">2</span>);</div></pre></td></tr></table></figure></p>
+<p>获取单例的SpriteFrameCache对象。sharedSpriteFrameCache方法在3.0中已经弃用。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SpriteFrameCache* cache = SpriteFrameCache::getInstance();</span><br></pre></td></tr></table></figure></p>
+<p>销毁SpriteFrameCache对象。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SpriteFrameCache::destroyInstance();</span><br></pre></td></tr></table></figure></p>
+<p>使用SpriteFrameCache获取指定的精灵帧，创建精灵对象。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SpriteFrameCache *frameCache = SpriteFrameCache::getInstance(); </span><br><span class="line">frameCache-&gt;addSpriteFramesWithFile(<span class="string">"boy.plist"</span>,<span class="string">"boy.png"</span>);<span class="comment">//boy.png里集合了boy1.png,boy2.png这些小图 </span></span><br><span class="line"><span class="keyword">auto</span> frame_sp = Sprite::createWithSpriteFrameName(<span class="string">"boy1.png"</span>);<span class="comment">//从SpriteFrameCache缓存中找到boy1.png这张图片. </span></span><br><span class="line"><span class="keyword">this</span>-&gt;addChild(frame_sp,<span class="number">2</span>);</span><br></pre></td></tr></table></figure></p>
 <h2 id="SpriteFrameCache-vs-TextureCache"><a href="#SpriteFrameCache-vs-TextureCache" class="headerlink" title="SpriteFrameCache vs. TextureCache"></a>SpriteFrameCache vs. TextureCache</h2><ul>
 <li><p>SpriteFrameCache精灵框帧缓存。顾名思义，这里缓存的是精灵帧SpriteFrame，它主要服务于多张碎图合并出来的纹理图片。这种纹理在一张大图中包含了多张小图，直接通过TextureCache引用会有诸多不便，因而衍生出来精灵框帧的处理方式，即把截取好的纹理信息保存在一个精灵框帧内，精灵通过切换不同的框帧来显示出不同的图案。</p>
 </li>

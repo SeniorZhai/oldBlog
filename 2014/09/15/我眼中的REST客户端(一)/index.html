@@ -113,15 +113,15 @@
 </ul>
 <h3 id="网络通信"><a href="#网络通信" class="headerlink" title="网络通信"></a>网络通信</h3><p>原始的HttpClient开发成本高，且稳定性、安全性、实用性并不高，最高使用先进的网络访问库</p>
 <ul>
-<li><a href="https://android.googlesource.com/platform/frameworks/volley" target="_blank" rel="external">Volley</a> Google官方于2013年I/O大会发布</li>
-<li><a href="https://github.com/AsyncHttpClient/async-http-client" target="_blank" rel="external">AsyncHttpClient</a> SonaType的一个开源库，移植到Android平台需要进行一些定制</li>
-<li><a href="http://square.github.io/retrofit/" target="_blank" rel="external">Retrofit</a> 专注于网络请求和数据解析</li>
+<li><a href="https://android.googlesource.com/platform/frameworks/volley" target="_blank" rel="noopener">Volley</a> Google官方于2013年I/O大会发布</li>
+<li><a href="https://github.com/AsyncHttpClient/async-http-client" target="_blank" rel="noopener">AsyncHttpClient</a> SonaType的一个开源库，移植到Android平台需要进行一些定制</li>
+<li><a href="http://square.github.io/retrofit/" target="_blank" rel="noopener">Retrofit</a> 专注于网络请求和数据解析</li>
 </ul>
 <h3 id="数据解析"><a href="#数据解析" class="headerlink" title="数据解析"></a>数据解析</h3><p>Android默认使用<code>JsonObject</code>来解析数据，处理方式比较远(ma)古(fan)，下面的一些开源库可以帮助快速、安全的解析Json数据</p>
 <ul>
-<li><a href="https://www.google.com.hk/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=0CCsQFjAA&amp;url=http%3a%2f%2fcode%2egoogle%2ecom%2fp%2fgoogle-gson%2f&amp;ei=Vv3sUengEoPJkwXcvYDIDg&amp;usg=AFQjCNGGFFMez8-PfFoEQP93a7eHFY8ssA" target="_blank" rel="external">Gson</a> Google官方出品，速度快，解析方便</li>
-<li><a href="http://jackson.codehaus.org/" target="_blank" rel="external">Jackson</a> 小有名气，但是导入的包相对多</li>
-<li><a href="http://code.alibabatech.com/wiki/display/FastJSON/Home-zh" target="_blank" rel="external">Fastjson</a> 阿里主导的开源项目，每个属性都必须具备getter/setter方法</li>
+<li><a href="https://www.google.com.hk/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=0CCsQFjAA&amp;url=http%3a%2f%2fcode%2egoogle%2ecom%2fp%2fgoogle-gson%2f&amp;ei=Vv3sUengEoPJkwXcvYDIDg&amp;usg=AFQjCNGGFFMez8-PfFoEQP93a7eHFY8ssA" target="_blank" rel="noopener">Gson</a> Google官方出品，速度快，解析方便</li>
+<li><a href="http://jackson.codehaus.org/" target="_blank" rel="noopener">Jackson</a> 小有名气，但是导入的包相对多</li>
+<li><a href="http://code.alibabatech.com/wiki/display/FastJSON/Home-zh" target="_blank" rel="noopener">Fastjson</a> 阿里主导的开源项目，每个属性都必须具备getter/setter方法</li>
 </ul>
 <h3 id="数据存储"><a href="#数据存储" class="headerlink" title="数据存储"></a>数据存储</h3><p><code>ContentProvider</code>原本用于跨进程、夸应用的数据访问，提供了清晰的接口来访问数据库，而且可以使用<code>CursorLoader</code>。<br><code>CursorLoader</code>是目前<code>Activity</code>和<code>Fragment</code>中异步读取<code>ContentProvider</code>的最佳方案。CursorLoader会接到数据变更的通知，可以保证Cursor的数据始终与数据库同步。</p>
   

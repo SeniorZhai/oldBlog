@@ -11,13 +11,13 @@
     
 
     
-    <meta name="description" content="安装Package ControlSublime Text支持大量插件，Package Control能够帮助我们管理这些插件，它可以方便的浏览、安装和卸载Sublime Text中的插件  使用Ctrl+`打开Sublime Text控制台 输入下面命令道控制台 1import urllib.request,os,hashlib; h = &amp;apos;7183a2d3e96f11eeadd76">
+    <meta name="description" content="安装Package ControlSublime Text支持大量插件，Package Control能够帮助我们管理这些插件，它可以方便的浏览、安装和卸载Sublime Text中的插件  使用Ctrl+`打开Sublime Text控制台 输入下面命令道控制台 1import urllib.request,os,hashlib; h = &apos;7183a2d3e96f11eeadd761d777">
 <meta name="keywords" content="Sublime Text">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Sublime Text使用指南">
 <meta property="og:url" content="http://seniorzhai.github.io/2014/09/28/Sublime-Text使用指南/index.html">
 <meta property="og:site_name" content="SeniorZhai&#39;s blog">
-<meta property="og:description" content="安装Package ControlSublime Text支持大量插件，Package Control能够帮助我们管理这些插件，它可以方便的浏览、安装和卸载Sublime Text中的插件  使用Ctrl+`打开Sublime Text控制台 输入下面命令道控制台 1import urllib.request,os,hashlib; h = &amp;apos;7183a2d3e96f11eeadd76">
+<meta property="og:description" content="安装Package ControlSublime Text支持大量插件，Package Control能够帮助我们管理这些插件，它可以方便的浏览、安装和卸载Sublime Text中的插件  使用Ctrl+`打开Sublime Text控制台 输入下面命令道控制台 1import urllib.request,os,hashlib; h = &apos;7183a2d3e96f11eeadd761d777">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://seniorzhai.github.io/img/14092801.gif">
 <meta property="og:image" content="http://seniorzhai.github.io/img/14092802.gif">
@@ -36,7 +36,7 @@
 <meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sublime Text使用指南">
-<meta name="twitter:description" content="安装Package ControlSublime Text支持大量插件，Package Control能够帮助我们管理这些插件，它可以方便的浏览、安装和卸载Sublime Text中的插件  使用Ctrl+`打开Sublime Text控制台 输入下面命令道控制台 1import urllib.request,os,hashlib; h = &amp;apos;7183a2d3e96f11eeadd76">
+<meta name="twitter:description" content="安装Package ControlSublime Text支持大量插件，Package Control能够帮助我们管理这些插件，它可以方便的浏览、安装和卸载Sublime Text中的插件  使用Ctrl+`打开Sublime Text控制台 输入下面命令道控制台 1import urllib.request,os,hashlib; h = &apos;7183a2d3e96f11eeadd761d777">
 <meta name="twitter:image" content="http://seniorzhai.github.io/img/14092801.gif">
 
     
@@ -122,7 +122,7 @@
 <ul>
 <li>使用Ctrl+`打开Sublime Text控制台</li>
 <li><p>输入下面命令道控制台</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import urllib.request,os,hashlib; h = &apos;7183a2d3e96f11eeadd761d777e62404&apos; + &apos;e330c659d4bb41d3bdf022e94cab3cd0&apos;; pf = &apos;Package Control.sublime-package&apos;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( &apos;http://sublime.wbond.net/&apos; + pf.replace(&apos; &apos;, &apos;%20&apos;)).read(); dh = hashlib.sha256(by).hexdigest(); print(&apos;Error validating download (got %s instead of %s), please try manual install&apos; % (dh, h)) if dh != h else open(os.path.join( ipp, pf), &apos;wb&apos; ).write(by)</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>等待Package Control安装完成，使用<code>Ctrl + Shift + P</code>打开命令板</p>
 <h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2></li>
@@ -152,9 +152,9 @@
 </li>
 <li><code>F11</code> 全屏</li>
 <li><code>Shift + F11</code> 切换无干扰全屏<h2 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h2>手动格式化使用<code>Ctrl + [</code>向左缩进，<code>Ctrl + ]</code>向右缩进，<code>Ctrl + Shift + V</code>以当前缩进粘贴代码<br>此外也可以使用插件实现自动缩进和智能对齐</li>
-<li><a href="https://sublime.wbond.net/packages/HTMLBeautify" target="_blank" rel="external">HTMLBeautify</a>：格式化HTML。</li>
-<li><a href="https://sublime.wbond.net/packages/AutoPEP8" target="_blank" rel="external">AutoPEP8</a>：格式化Python代码。</li>
-<li><a href="https://sublime.wbond.net/packages/Alignment" target="_blank" rel="external">Alignment</a>：进行智能对齐。<h2 id="中文输入法Bug"><a href="#中文输入法Bug" class="headerlink" title="中文输入法Bug"></a>中文输入法Bug</h2>Sublime Text一直存在一个Bug：中文输入框不跟随。<br><img src="/img/14092812.jpg" alt=""><br>解决方法是安装<code>IMESupport</code>插件，之后重启Sublime Text问题就解决了。<br><img src="/img/14092813.jpg" alt=""></li>
+<li><a href="https://sublime.wbond.net/packages/HTMLBeautify" target="_blank" rel="noopener">HTMLBeautify</a>：格式化HTML。</li>
+<li><a href="https://sublime.wbond.net/packages/AutoPEP8" target="_blank" rel="noopener">AutoPEP8</a>：格式化Python代码。</li>
+<li><a href="https://sublime.wbond.net/packages/Alignment" target="_blank" rel="noopener">Alignment</a>：进行智能对齐。<h2 id="中文输入法Bug"><a href="#中文输入法Bug" class="headerlink" title="中文输入法Bug"></a>中文输入法Bug</h2>Sublime Text一直存在一个Bug：中文输入框不跟随。<br><img src="/img/14092812.jpg" alt=""><br>解决方法是安装<code>IMESupport</code>插件，之后重启Sublime Text问题就解决了。<br><img src="/img/14092813.jpg" alt=""></li>
 </ul>
   
 	</div>

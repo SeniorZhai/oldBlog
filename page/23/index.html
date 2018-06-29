@@ -159,7 +159,7 @@
 </header>
     <div class="article-content">
         
-        <p><a href="http://easemob.com/">环信</a>提供了一套IM SDK，可以很方便的在App中集成IM功能<br>
+        <p><a href="http://easemob.com/" target="_blank" rel="noopener">环信</a>提供了一套IM SDK，可以很方便的在App中集成IM功能<br>
         
         
         <p class="article-more-link">
@@ -482,7 +482,7 @@
         <a id="more"></a>
 <p><img src="/img/14091501.png" alt=""></p>
 <h2 id="onContentChanged"><a href="#onContentChanged" class="headerlink" title="onContentChanged"></a>onContentChanged</h2><p>不算小众，当Activity的布局改动时，即setContentView()或者addContentView()方法执行完毕时调用该方法，View的findViewById()方法可以放在该方法中。</p>
-<h2 id="onPostCreate、onPostResume"><a href="#onPostCreate、onPostResume" class="headerlink" title="onPostCreate、onPostResume"></a>onPostCreate、onPostResume</h2><p>onPostCreate方法当onCreate方法彻底执行完毕时回调，onPostResume当onResume方法执行完毕回调。一般不修改，在使用ActionBarDrawerToggle的使用在onPostCreate需要屏幕旋转的时候同步状态<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onPostCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">	<span class="keyword">super</span>.onPostCreate(savedInstanceState);</div><div class="line">	mDrawerToggle.syncState();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="onPostCreate、onPostResume"><a href="#onPostCreate、onPostResume" class="headerlink" title="onPostCreate、onPostResume"></a>onPostCreate、onPostResume</h2><p>onPostCreate方法当onCreate方法彻底执行完毕时回调，onPostResume当onResume方法执行完毕回调。一般不修改，在使用ActionBarDrawerToggle的使用在onPostCreate需要屏幕旋转的时候同步状态<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onPostCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">super</span>.onPostCreate(savedInstanceState);</span><br><span class="line">	mDrawerToggle.syncState();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="onPause、onStop"><a href="#onPause、onStop" class="headerlink" title="onPause、onStop"></a>onPause、onStop</h2><p>onPause为失去焦点时调用，onStop则是整个窗口被完全遮盖时才会被触发</p>
 <h2 id="完整生命周期为"><a href="#完整生命周期为" class="headerlink" title="完整生命周期为"></a>完整生命周期为</h2><p>onCreate方法会在第一次创建被执行，接着执行onState方法，也么被完全遮盖会调用onStop方法，返回的时候执行onRestart-&gt;onStart方法，结束Activity时执行onDestroy<br>onCreate -&gt; onContentChanged -&gt; onState -&gt; onPostCreate -&gt; onResume -&gt; onPostResume -&gt; onPause -&gt; onStop -&gt; onDestroy</p>
 

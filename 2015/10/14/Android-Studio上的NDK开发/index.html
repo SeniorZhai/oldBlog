@@ -111,18 +111,18 @@
 </ul>
 <h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h2><ul>
 <li><p>gradle/wrapper/gradle-wrapper.properties，修改distributionUrl使用Gradle2.5</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">distributionUrl=https\://services.gradle.org/distributions/gradle-2.5-all.zip</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">distributionUrl=https\://services.gradle.org/distributions/gradle-2.5-all.zip</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>build.gradle，使用gradle-experimental替代gradle</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">classpath &apos;com.android.tools.build:gradle-experimental:0.2.0&apos;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">classpath &apos;com.android.tools.build:gradle-experimental:0.2.0&apos;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>app/build.gradle，新版的Gradle语法有很大的改变，最外层为model，赋值使用=，新增项使用+=（具体可以在<a href="https://github.com/SeniorZhai/AS_NDK/commit/5b4e3c8ee345360d0d0067234a87d0d35e2d096b" target="_blank" rel="external">这儿</a>查看）</p>
+<li><p>app/build.gradle，新版的Gradle语法有很大的改变，最外层为model，赋值使用=，新增项使用+=（具体可以在<a href="https://github.com/SeniorZhai/AS_NDK/commit/5b4e3c8ee345360d0d0067234a87d0d35e2d096b" target="_blank" rel="noopener">这儿</a>查看）</p>
 </li>
 </ul>
 <h2 id="创建JNI"><a href="#创建JNI" class="headerlink" title="创建JNI"></a>创建JNI</h2><ol>
 <li>创建JNI的目录</li>
 <li>定义JNI Java类，使用javah生产头文件</li>
-<li>编写c文件<br>详情见<a href="https://github.com/SeniorZhai/AS_NDK/commit/81ea7c1285e1a0ca61c79f035b3af01bff14ab11" target="_blank" rel="external">https://github.com/SeniorZhai/AS_NDK/commit/81ea7c1285e1a0ca61c79f035b3af01bff14ab11</a></li>
+<li>编写c文件<br>详情见<a href="https://github.com/SeniorZhai/AS_NDK/commit/81ea7c1285e1a0ca61c79f035b3af01bff14ab11" target="_blank" rel="noopener">https://github.com/SeniorZhai/AS_NDK/commit/81ea7c1285e1a0ca61c79f035b3af01bff14ab11</a></li>
 </ol>
   
 	</div>

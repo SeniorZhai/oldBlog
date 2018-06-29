@@ -107,11 +107,11 @@
 		<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>ContentProvider是Android应用对外开放的数据接口，只要符合它所定义的Uri格式的请求，均可以正常访问执行操作。其他的Android应用可以使用ContentResolver对象通过与ContentProvider同名的方法请求执行，被执行的就是ContentProvider中的同名的方法。所以ContentProvider很多对外可以访问的方法，在ContentResolver中均有同名的方法，是一一对应的，如图：</p>
 <p><img src="https://github.com/zt1991616/blog/raw/master/Image/14062501.png" alt=""></p>
 <h2 id="Uri"><a href="#Uri" class="headerlink" title="Uri"></a>Uri</h2><p>在Android中，Uri是一种比较常见的资源访问方式，而对ContentProvider而言，Uri也是有固定格式的：</p>
-<p><srandard_prefix>://<authority>/<data_path>/<id></id></data_path></authority></srandard_prefix></p>
+<p>&lt;srandard_prefix&gt;://<authority>/&lt;data_path&gt;/<id></id></authority></p>
 <ul>
-<li><srandard_prefix>：ContentProvider的srandard_prefix始终是content://</srandard_prefix></li>
+<li>&lt;srandard_prefix&gt;：ContentProvider的srandard_prefix始终是content://</li>
 <li><authority>：ContentProvider的名称</authority></li>
-<li><data_path>：请求的数据类型</data_path></li>
+<li>&lt;data_path&gt;：请求的数据类型</li>
 <li><id>：指定请求的特定数据</id></li>
 </ul>
 <h2 id="ContentProvider"><a href="#ContentProvider" class="headerlink" title="ContentProvider"></a>ContentProvider</h2><p>　ContentProvider也是Android应用的四大组件之一，所以也需要在AndroidManifest.xml文件中进行配置。而且某个应用程序通过ContentProvider暴露了自己的数据操作接口，那么不管该应用程序是否启动，其他应用程序都可以通过这个接口来操作它的内部数据。<br>　Android附带了许多有用的ContentProvider，但是本篇博客不会涉及到这些内容的，以后有时间会再讲解。Android附带的ContentProvider包括：</p>
@@ -137,7 +137,7 @@
 <li>void addURI(String authoity,String path,int code):添加一个Uri匹配项，authtity为AndroidManifest.xml中注册的ContentProvider的authority属性；path为一个路径，可以设置通配符，# 表示任意数字，*表示任意字符；code为自定义的一个Uri代码</li>
 <li>int match(Uri uri):匹配传递的Uri，返回addUri()传递的Code参数。</li>
 </ul>
-<p>在创建好一个ContentProvider之后，还需要在AndroidManifest.xml文件中对ContentProvider进行配置，使用一个<provider...>节点，一般只需要设置两个属性即可访问，一些额外的属性就是为了设置访问权限而存在的</provider...></p>
+<p>在创建好一个ContentProvider之后，还需要在AndroidManifest.xml文件中对ContentProvider进行配置，使用一个&lt;provider…/&gt;节点，一般只需要设置两个属性即可访问，一些额外的属性就是为了设置访问权限而存在的</p>
 <ul>
 <li>android:name:provide的响应类</li>
 <li>android:authorities:Provider的唯一标识，用于Uri匹配，一般为ContentProvider类的全名</li>

@@ -111,7 +111,7 @@
 <li>URLsForResoucesWithExtension:subdirectory:获取指定<code>子目录</code>下匹配特定<code>扩展名</code>的所有资源对应的URL组成的数组</li>
 <li>pathForResouces:ofType:inDirectory:从指定的子目录下，根据<code>资源名</code>,<code>类型名</code>获取该资源对应的路径</li>
 <li>pathForResoucesOfType:inDirectory:获取指定子目录下，匹配特定类型名的所有资源对应的路径组成的数组</li>
-<li>resoucePath:直接根据完整的资源路径来获取对应的资源<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">NSString* filePath = [[NSBundle mainBundle] pathForResource:@&quot;test&quot; ofType:@&quot;txt&quot;];</div><div class="line">NSString* content = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];</div></pre></td></tr></table></figure></li>
+<li>resoucePath:直接根据完整的资源路径来获取对应的资源<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">NSString* filePath = [[NSBundle mainBundle] pathForResource:@&quot;test&quot; ofType:@&quot;txt&quot;];</span><br><span class="line">NSString* content = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 </ul>

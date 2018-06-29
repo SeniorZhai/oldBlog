@@ -105,7 +105,7 @@
 		
 		</div>
 		
-		<p>Palette可以从图像中提取突出的颜色，可以利用它把色值赋给ActionBar或者其他空间，可以让界面整个色调统一<br><a id="more"></a><br><img src="/img/15010601.png" alt=""><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Bitmap bm = BitmapFactory.decodeResouce(getResources(),item.image);</div><div class="line">Palette palette = Palette.generate(bm);</div><div class="line"><span class="keyword">if</span>(palette.getLightVibrantColor() != <span class="keyword">null</span>) &#123;</div><div class="line">	getSupportActionBar().setBackgroundDrawable(<span class="keyword">new</span> ColorDrawable(palette.getLightVibrantColor().getRgb()));  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+		<p>Palette可以从图像中提取突出的颜色，可以利用它把色值赋给ActionBar或者其他空间，可以让界面整个色调统一<br><a id="more"></a><br><img src="/img/15010601.png" alt=""><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Bitmap bm = BitmapFactory.decodeResouce(getResources(),item.image);</span><br><span class="line">Palette palette = Palette.generate(bm);</span><br><span class="line"><span class="keyword">if</span>(palette.getLightVibrantColor() != <span class="keyword">null</span>) &#123;</span><br><span class="line">	getSupportActionBar().setBackgroundDrawable(<span class="keyword">new</span> ColorDrawable(palette.getLightVibrantColor().getRgb()));  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>Palette可以取出以下突出的颜色</p>
 <ul>
 <li>Vibrant  （有活力）</li>
@@ -115,7 +115,7 @@
 <li>Muted dark（柔和 暗色）</li>
 <li>Muted light（柔和 亮色）</li>
 </ul>
-<p>Gradle中的dependencies中添加<code>compile &#39;com.android.support:palette-v7:21.0.+&#39;</code><br><a href="https://github.com/SeniorZhai/PaletteDemo" target="_blank" rel="external">示例</a><br><img src="/img/15010602.png" alt=""></p>
+<p>Gradle中的dependencies中添加<code>compile &#39;com.android.support:palette-v7:21.0.+&#39;</code><br><a href="https://github.com/SeniorZhai/PaletteDemo" target="_blank" rel="noopener">示例</a><br><img src="/img/15010602.png" alt=""></p>
   
 	</div>
 		<footer class="article-footer clearfix">

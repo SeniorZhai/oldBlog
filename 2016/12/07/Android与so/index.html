@@ -106,10 +106,10 @@
 <p>##ABI</p>
 <p>ABI（Application Binary Interface）应用二进制借口，定义了CPU能够执行的二进制文件的格式规范。<br>Android支持的CPU架构众多，ABI包括<code>armeabi</code>、<code>armeabi-v7a</code>、<code>arm64-v8a</code>、<code>x86</code>、<code>x86_64</code>、<code>mips</code>、<code>mips64</code></p>
 <blockquote>
-<p><a href="https://developer.android.com/ndk/guides/abis.html#sa" target="_blank" rel="external">https://developer.android.com/ndk/guides/abis.html#sa</a></p>
+<p><a href="https://developer.android.com/ndk/guides/abis.html#sa" target="_blank" rel="noopener">https://developer.android.com/ndk/guides/abis.html#sa</a></p>
 </blockquote>
-<p>so (shared object)是机器可以直接运行的二进制代码，买个App的so被打包在apk文件的<code>lib/</code>目录下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">lib</div><div class="line">|</div><div class="line">├── armeabi</div><div class="line">│   └── libmath.so</div><div class="line">├── armeabi-v7a</div><div class="line">│   └── libmath.so</div><div class="line">├── mips</div><div class="line">│   └── libmath.so</div><div class="line">└── x86</div><div class="line">    └── libmath.so</div></pre></td></tr></table></figure></p>
-<p>使用下面命令可以查看apk支持的abi<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">appt dump bading app.apk | grep abi</div></pre></td></tr></table></figure></p>
+<p>so (shared object)是机器可以直接运行的二进制代码，买个App的so被打包在apk文件的<code>lib/</code>目录下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">lib</span><br><span class="line">|</span><br><span class="line">├── armeabi</span><br><span class="line">│   └── libmath.so</span><br><span class="line">├── armeabi-v7a</span><br><span class="line">│   └── libmath.so</span><br><span class="line">├── mips</span><br><span class="line">│   └── libmath.so</span><br><span class="line">└── x86</span><br><span class="line">    └── libmath.so</span><br></pre></td></tr></table></figure></p>
+<p>使用下面命令可以查看apk支持的abi<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">appt dump bading app.apk | grep abi</span><br></pre></td></tr></table></figure></p>
 <p>##制定ABI生产so</p>
 <p>在<code>Application.mk</code>文件中指定<code>APP_ABI</code>参数</p>
 <p>##Android系统的ABI支持</p>
@@ -120,17 +120,17 @@
 <p>###查看ABI</p>
 <ul>
 <li><p><code>/system/build.prop</code>中制定了支持的ABI类型，可以在adb shell中查看</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">getprop | grep abilist</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getprop | grep abilist</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>使用<code>Build.BUPPORTED_ABIS</code>可以获取当前设备支持的ABI列表</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Build.SUPPORTED_ABIS;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Build.SUPPORTED_ABIS;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>在apk安装过程时，Package Manager会扫描整个apk寻找符合下面文件路径格式动态链接库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">lib/&lt;primary-abi&gt;/lib&lt;name&gt;.so</div></pre></td></tr></table></figure></p>
-<p><code>primary-abi</code>是上面表中的abi的值，<code>name</code>对应的是<code>Android.mk</code>中定义的<code>LOCAL_MODULE</code>的值<br>如果没有当前<code>primary-abi</code>的so，Package Manager会尝试寻找合适<code>secondary-abi</code>的so文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">lib/&lt;secondary-abi&gt;/lib&lt;name&gt;.so</div></pre></td></tr></table></figure></p>
+<p>在apk安装过程时，Package Manager会扫描整个apk寻找符合下面文件路径格式动态链接库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lib/&lt;primary-abi&gt;/lib&lt;name&gt;.so</span><br></pre></td></tr></table></figure></p>
+<p><code>primary-abi</code>是上面表中的abi的值，<code>name</code>对应的是<code>Android.mk</code>中定义的<code>LOCAL_MODULE</code>的值<br>如果没有当前<code>primary-abi</code>的so，Package Manager会尝试寻找合适<code>secondary-abi</code>的so文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lib/&lt;secondary-abi&gt;/lib&lt;name&gt;.so</span><br></pre></td></tr></table></figure></p>
 <p>有合适的so文件后，包管理会在改ABI文件下的所有so库全部拷贝到应用的data目录下<code>data/data/&lt;package_name&gt;/lib/</code></p>
 <p>在代码调用so时，如果ABI文件夹下没有提供so文件，运行时会遇到<code>java.lang.UnsatisfiedLinkError</code></p>
-<p>##加载so<br><code>System.loadLibrary</code>之传入<code>Android.mk</code>中定义的<code>LOCAL_MODULE</code>的值<br><code>System.load</code>这个方法可以动态的加载非apk内置的so，甚至动态下载的so，但是不能加载SD卡中的so<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">System.load(&quot;/data/data/&lt;package-name/dir/libmath.so&quot;)</div></pre></td></tr></table></figure></p>
+<p>##加载so<br><code>System.loadLibrary</code>之传入<code>Android.mk</code>中定义的<code>LOCAL_MODULE</code>的值<br><code>System.load</code>这个方法可以动态的加载非apk内置的so，甚至动态下载的so，但是不能加载SD卡中的so<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.load(&quot;/data/data/&lt;package-name/dir/libmath.so&quot;)</span><br></pre></td></tr></table></figure></p>
   
 	</div>
 		<footer class="article-footer clearfix">

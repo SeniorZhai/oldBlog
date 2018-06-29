@@ -95,7 +95,7 @@
 </header>
     <div class="article-content">
         
-        <p><a href="https://github.com/excilys/androidannotations">androidannotations</a>是一款Android注入框架，可以方便我们编程，减少代码量(变相减少了错误的可能)，让我们可以更多的把精力放在逻辑处理上。<br>
+        <p><a href="https://github.com/excilys/androidannotations" target="_blank" rel="noopener">androidannotations</a>是一款Android注入框架，可以方便我们编程，减少代码量(变相减少了错误的可能)，让我们可以更多的把精力放在逻辑处理上。<br>
         
         
         <p class="article-more-link">
@@ -159,7 +159,7 @@
 </header>
     <div class="article-content">
         
-        <p>转至<a href="http://blog.danlew.net/2014/03/30/android-tips-round-up-part-1/">http://blog.danlew.net/2014/03/30/android-tips-round-up-part-1/</a><br>
+        <p>转至<a href="http://blog.danlew.net/2014/03/30/android-tips-round-up-part-1/" target="_blank" rel="noopener">http://blog.danlew.net/2014/03/30/android-tips-round-up-part-1/</a><br>
         
         
         <p class="article-more-link">
@@ -223,7 +223,7 @@
 </header>
     <div class="article-content">
         
-        <p><a href="https://github.com/konifar/android-material-design-icon-generator-plugin">Android Material Design Icon Generator Plugin</a>是一款帮助我们设置Material风格图标的插件<br>
+        <p><a href="https://github.com/konifar/android-material-design-icon-generator-plugin" target="_blank" rel="noopener">Android Material Design Icon Generator Plugin</a>是一款帮助我们设置Material风格图标的插件<br>
         
         
         <p class="article-more-link">
@@ -287,7 +287,7 @@
 </header>
     <div class="article-content">
         
-        <p><a href="https://github.com/fabiendevos/nanotasks">NanoTasks</a>是一款轻量级的Android异步任务工具类，是<code>AsyncTask</code>的替代品。<br>
+        <p><a href="https://github.com/fabiendevos/nanotasks" target="_blank" rel="noopener">NanoTasks</a>是一款轻量级的Android异步任务工具类，是<code>AsyncTask</code>的替代品。<br>
         
         
         <p class="article-more-link">
@@ -351,7 +351,7 @@
 </header>
     <div class="article-content">
         
-        <p><a href="https://www.meteor.com/">Meteor</a>是一个强大的Web APP框架，基础框架是<code>Node.JS</code>+<code>MongoDB</code><br>
+        <p><a href="https://www.meteor.com/" target="_blank" rel="noopener">Meteor</a>是一个强大的Web APP框架，基础框架是<code>Node.JS</code>+<code>MongoDB</code><br>
         
         
         <p class="article-more-link">
@@ -416,11 +416,11 @@
     <div class="article-content">
         
         <a id="more"></a>
-<h2 id="单个对象"><a href="#单个对象" class="headerlink" title="单个对象"></a>单个对象</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">	name: <span class="string">'Zoe'</span>,</div><div class="line">	describe: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="string">'Person named '</span> + <span class="keyword">this</span>.name;</div><div class="line">	&#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>使用时<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">obj.name;	<span class="comment">// Zoe</span></div><div class="line">obj.name = <span class="string">'Zhai'</span>;	<span class="comment">// 赋值</span></div><div class="line">obj.age = <span class="number">22</span>;	<span class="comment">// 自动创建</span></div><div class="line">obj.describe();	<span class="comment">// Person named Zhai;</span></div></pre></td></tr></table></figure></p>
-<p><code>in</code>操作符可以用来检测一个属性是否存在<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="string">'age'</span> <span class="keyword">in</span> obj;	<span class="comment">// true</span></div><div class="line"><span class="string">'foo'</span> <span class="keyword">in</span> obj;	<span class="comment">// false，不存在的属性为undefined值</span></div></pre></td></tr></table></figure></p>
-<p><code>delete</code>操作符可以用来删除一个属性<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">delete</span> obj.age;</div><div class="line">obj.age;	<span class="comment">//undefined</span></div></pre></td></tr></table></figure></p>
-<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><p>除了作为“真正”的函数和方法，函数还在JavaScript中扮演第三种角色：如果通过new操作符调用，他们会变为构造函数，对象的工厂。构造函数是对其他语言中的类的粗略模拟。约定俗成，构造函数的第一个字母大写。例如：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 设置实例数据</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Point</span>(<span class="params">x, y</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.x = x;</div><div class="line">    <span class="keyword">this</span>.y = y;</div><div class="line">&#125;</div><div class="line"><span class="comment">// 方法</span></div><div class="line">Point.prototype.dist = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.sqrt(<span class="keyword">this</span>.x*<span class="keyword">this</span>.x + <span class="keyword">this</span>.y*<span class="keyword">this</span>.y);</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<h2 id="单个对象"><a href="#单个对象" class="headerlink" title="单个对象"></a>单个对象</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">	name: <span class="string">'Zoe'</span>,</span><br><span class="line">	describe: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">'Person named '</span> + <span class="keyword">this</span>.name;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>使用时<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">obj.name;	<span class="comment">// Zoe</span></span><br><span class="line">obj.name = <span class="string">'Zhai'</span>;	<span class="comment">// 赋值</span></span><br><span class="line">obj.age = <span class="number">22</span>;	<span class="comment">// 自动创建</span></span><br><span class="line">obj.describe();	<span class="comment">// Person named Zhai;</span></span><br></pre></td></tr></table></figure></p>
+<p><code>in</code>操作符可以用来检测一个属性是否存在<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'age'</span> <span class="keyword">in</span> obj;	<span class="comment">// true</span></span><br><span class="line"><span class="string">'foo'</span> <span class="keyword">in</span> obj;	<span class="comment">// false，不存在的属性为undefined值</span></span><br></pre></td></tr></table></figure></p>
+<p><code>delete</code>操作符可以用来删除一个属性<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> obj.age;</span><br><span class="line">obj.age;	<span class="comment">//undefined</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><p>除了作为“真正”的函数和方法，函数还在JavaScript中扮演第三种角色：如果通过new操作符调用，他们会变为构造函数，对象的工厂。构造函数是对其他语言中的类的粗略模拟。约定俗成，构造函数的第一个字母大写。例如：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设置实例数据</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Point</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.x = x;</span><br><span class="line">    <span class="keyword">this</span>.y = y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 方法</span></span><br><span class="line">Point.prototype.dist = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.sqrt(<span class="keyword">this</span>.x*<span class="keyword">this</span>.x + <span class="keyword">this</span>.y*<span class="keyword">this</span>.y);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 
         
         
@@ -547,7 +547,7 @@
 </header>
     <div class="article-content">
         
-        <p><a href="https://github.com/inmite/android-selector-chapek">SelectorChapek</a>是一款帮助我们快速完成Selector的AndroidStudio插件<br>
+        <p><a href="https://github.com/inmite/android-selector-chapek" target="_blank" rel="noopener">SelectorChapek</a>是一款帮助我们快速完成Selector的AndroidStudio插件<br>
         
         
         <p class="article-more-link">
@@ -615,10 +615,10 @@
 <ol>
 <li>将*.so文件拷贝到<code>app\libs\armeabi</code>文件夹下</li>
 <li><p>修改<code>build.gradle</code>文件，在<code>buildTypes</code>下添加</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sourceSets &#123;  </div><div class="line">        main &#123;  </div><div class="line">            jniLibs.srcDirs = [&apos;libs&apos;]  </div><div class="line">        &#125;  </div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sourceSets &#123;  </span><br><span class="line">        main &#123;  </span><br><span class="line">            jniLibs.srcDirs = [&apos;libs&apos;]  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在调用处</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">native</span> String  <span class="title">stringFromJNI</span><span class="params">()</span></span>;           <span class="comment">//jni 函数名  </span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">native</span> String  <span class="title">getFFmpegVersionFromJNI</span><span class="params">()</span></span>; <span class="comment">//jni函数名  </span></div><div class="line"><span class="keyword">static</span> &#123;  </div><div class="line">    System.loadLibrary(<span class="string">"ffmpeg"</span>);                <span class="comment">//加载.so文件  </span></div><div class="line">    System.loadLibrary(<span class="string">"ffmpeg-jni"</span>);            <span class="comment">//加载.so文件  </span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">native</span> String  <span class="title">stringFromJNI</span><span class="params">()</span></span>;           <span class="comment">//jni 函数名  </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">native</span> String  <span class="title">getFFmpegVersionFromJNI</span><span class="params">()</span></span>; <span class="comment">//jni函数名  </span></span><br><span class="line"><span class="keyword">static</span> &#123;  </span><br><span class="line">    System.loadLibrary(<span class="string">"ffmpeg"</span>);                <span class="comment">//加载.so文件  </span></span><br><span class="line">    System.loadLibrary(<span class="string">"ffmpeg-jni"</span>);            <span class="comment">//加载.so文件  </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <hr>

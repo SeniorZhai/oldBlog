@@ -105,16 +105,16 @@
 		<p>CocoaPods是一个objc的依赖管理工具，本身利用ruby的依赖管理gem进行构建<br><a id="more"></a></p>
 <h2 id="下载及安装"><a href="#下载及安装" class="headerlink" title="下载及安装"></a>下载及安装</h2><p>本地安装好Ruby环境，在Terminator中输入以下命令</p>
 <pre><code>sudo gem install cocoapods
-</code></pre><p>由于cocoapods.org会被<code>墙</code>，所以需要使用淘宝镜像来访问<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ gem sources --remove https://rubygems.org/</div><div class="line">$ gem sources -a http://ruby.taobao.org/</div><div class="line">$ gem sources -l # 查看</div></pre></td></tr></table></figure></p>
-<h2 id="使用CocoaPods"><a href="#使用CocoaPods" class="headerlink" title="使用CocoaPods"></a>使用CocoaPods</h2><p>示例导入<a href="https://github.com/AFNetworking/AFNetworking" target="_blank" rel="external">AFNetworking</a><br>为了确定<code>AFNetworking</code>是否支持CocoaPods可以先使用CocoaPods的搜索功能验证以下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pod search AFNetworking</div></pre></td></tr></table></figure></p>
+</code></pre><p>由于cocoapods.org会被<code>墙</code>，所以需要使用淘宝镜像来访问<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> gem sources --remove https://rubygems.org/</span><br><span class="line"><span class="meta">$</span> gem sources -a http://ruby.taobao.org/</span><br><span class="line"><span class="meta">$</span> gem sources -l # 查看</span><br></pre></td></tr></table></figure></p>
+<h2 id="使用CocoaPods"><a href="#使用CocoaPods" class="headerlink" title="使用CocoaPods"></a>使用CocoaPods</h2><p>示例导入<a href="https://github.com/AFNetworking/AFNetworking" target="_blank" rel="noopener">AFNetworking</a><br>为了确定<code>AFNetworking</code>是否支持CocoaPods可以先使用CocoaPods的搜索功能验证以下<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> pod search AFNetworking</span><br></pre></td></tr></table></figure></p>
 <p>如果可以在终端中看到关于AFNetworking类库的一些信息，说明AFNetworking支持CocoaPods</p>
 <ol>
 <li>首先用XCode建立一个工程，然后关闭XCode</li>
-<li>在工程目录下创建<code>Podfile</code>文件，并写入<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">platform :ios,&apos;7.0&apos;</div><div class="line">pod &quot;AFNetworking&quot;,&quot;~&gt; 2.0&quot;</div></pre></td></tr></table></figure>
+<li>在工程目录下创建<code>Podfile</code>文件，并写入<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">platform :ios,'7.0'</span><br><span class="line">pod "AFNetworking","~&gt; 2.0"</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>以上文本可以在开源库的github上找到，上述文本的意思是支持iOS7.0使用AFNetworking 2.0版本    </p>
-<ol>
+<ol start="3">
 <li>在命令行中(工程目录下)，执行安装命令<code>pod install</code></li>
 <li>完成后，可以在工程目录下看到<code>XXX.xcworkspace</code>文件，点击他就可进入已包含<code>AFNetworking</code>的工程</li>
 </ol>

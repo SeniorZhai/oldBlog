@@ -11,18 +11,18 @@
     
 
     
-    <meta name="description" content="使用Quartz 2D绘图的关键步骤有两步：获取CGContextRef，调用CGContextRef的方法进行绘图。   自定义UIView获取CGContextRef 1CGContextRef ctx = UIGraphicsGetCurrentContext();  创建位图获取CGContextRef&amp;gt; 1234// 创建内存中的图片UIGraphicsBeginImageCon">
+    <meta name="description" content="使用Quartz 2D绘图的关键步骤有两步：获取CGContextRef，调用CGContextRef的方法进行绘图。   自定义UIView获取CGContextRef 1CGContextRef ctx = UIGraphicsGetCurrentContext();  创建位图获取CGContextRef    1234// 创建内存中的图片UIGraphicsBeginImageCont">
 <meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Quartz 2D绘图">
 <meta property="og:url" content="http://seniorzhai.github.io/2014/02/26/Quartz-2D绘图/index.html">
 <meta property="og:site_name" content="SeniorZhai&#39;s blog">
-<meta property="og:description" content="使用Quartz 2D绘图的关键步骤有两步：获取CGContextRef，调用CGContextRef的方法进行绘图。   自定义UIView获取CGContextRef 1CGContextRef ctx = UIGraphicsGetCurrentContext();  创建位图获取CGContextRef&amp;gt; 1234// 创建内存中的图片UIGraphicsBeginImageCon">
+<meta property="og:description" content="使用Quartz 2D绘图的关键步骤有两步：获取CGContextRef，调用CGContextRef的方法进行绘图。   自定义UIView获取CGContextRef 1CGContextRef ctx = UIGraphicsGetCurrentContext();  创建位图获取CGContextRef    1234// 创建内存中的图片UIGraphicsBeginImageCont">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2016-09-02T08:12:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Quartz 2D绘图">
-<meta name="twitter:description" content="使用Quartz 2D绘图的关键步骤有两步：获取CGContextRef，调用CGContextRef的方法进行绘图。   自定义UIView获取CGContextRef 1CGContextRef ctx = UIGraphicsGetCurrentContext();  创建位图获取CGContextRef&amp;gt; 1234// 创建内存中的图片UIGraphicsBeginImageCon">
+<meta name="twitter:description" content="使用Quartz 2D绘图的关键步骤有两步：获取CGContextRef，调用CGContextRef的方法进行绘图。   自定义UIView获取CGContextRef 1CGContextRef ctx = UIGraphicsGetCurrentContext();  创建位图获取CGContextRef    1234// 创建内存中的图片UIGraphicsBeginImageCont">
 
     
     <link rel="alternative" href="/atom.xml" title="SeniorZhai&#39;s blog" type="application/atom+xml">
@@ -107,10 +107,12 @@
 </ul>
 <ol>
 <li><p>自定义UIView获取CGContextRef</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CGContextRef ctx = UIGraphicsGetCurrentContext();</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CGContextRef ctx = UIGraphicsGetCurrentContext();</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>创建位图获取CGContextRef<br>&gt;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 创建内存中的图片</div><div class="line">UIGraphicsBeginImageContext(CGSizeMake(320,480));</div><div class="line">// 获取想内存中图片执行绘制的CGContextRef</div><div class="line">CGContextRef ctx = UIGraphicsGetCurrentContext();</div></pre></td></tr></table></figure>
+<li><p>创建位图获取CGContextRef </p>
+<blockquote>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 创建内存中的图片</span><br><span class="line">UIGraphicsBeginImageContext(CGSizeMake(320,480));</span><br><span class="line">// 获取想内存中图片执行绘制的CGContextRef</span><br><span class="line">CGContextRef ctx = UIGraphicsGetCurrentContext();</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <h2 id="Quart2D的绘图相关函数"><a href="#Quart2D的绘图相关函数" class="headerlink" title="Quart2D的绘图相关函数"></a>Quart2D的绘图相关函数</h2><table>
@@ -364,17 +366,17 @@
 <li><p>创建CIContext对象</p>
 <ul>
 <li><p>创建基于CPU的CIContext对象</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ctx = [CIContext contextWithOptions:[NSDicationary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:kCIContextUseSoftwareRenderer]];</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ctx = [CIContext contextWithOptions:[NSDicationary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:kCIContextUseSoftwareRenderer]];</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>创建基于GPU的CIContext对象</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ctx = [CIContext contextWithOptions:nil]</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ctx = [CIContext contextWithOptions:nil]</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>创建基于OpenGL优化CIContext对象，可获得实时性能</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">EAGLContext * eaglctx = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];</div><div class="line">ctx = [CIContext contextWithEAGLContext:eaglctx];</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">EAGLContext * eaglctx = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];</span><br><span class="line">ctx = [CIContext contextWithEAGLContext:eaglctx];</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
-<li><p>创建CIFilter过滤器，CIFilter提供了filterWithName：类方法来创建CIFilter对象。该方法需要传入过滤器的名字，根据不同名字创建不同的过滤器，可在在<a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/Reference/Reference.html" target="_blank" rel="external">此处</a>查看。</p>
+<li><p>创建CIFilter过滤器，CIFilter提供了filterWithName：类方法来创建CIFilter对象。该方法需要传入过滤器的名字，根据不同名字创建不同的过滤器，可在在<a href="https://developer.apple.com/library/ios/documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/Reference/Reference.html" target="_blank" rel="noopener">此处</a>查看。</p>
 </li>
 <li>创建CIImage对象，该CIImage将要作为过滤器处理的源图片。</li>
 <li>调用CIFilter的[filter setValue:behinImage for:@”inputImage”]方法为inputImage属性赋值，该属性用于指定该过滤器将要处理的源图片。</li>
