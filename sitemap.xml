@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://seniorzhai.github.io/2018/09/04/OpenCV-contrib/</loc>
+    
+    <lastmod>2018-09-04T09:16:12.437Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2017/02/28/vim%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
+    
+    <lastmod>2018-08-01T06:27:56.381Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2018/08/01/Charles%E4%B8%8ESS%E5%86%B2%E7%AA%81/</loc>
+    
+    <lastmod>2018-08-01T06:27:53.703Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://seniorzhai.github.io/2016/12/22/RN%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</loc>
     
     <lastmod>2018-07-30T05:19:41.766Z</lastmod>
@@ -37,21 +58,14 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2017/02/28/vim%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
-    
-    <lastmod>2018-06-29T04:42:18.710Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2017/02/20/Docker%E5%85%A5%E9%97%A8/</loc>
+    <loc>http://seniorzhai.github.io/2016/12/07/Android%E4%B8%8Eso/</loc>
     
     <lastmod>2018-06-29T04:42:18.709Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2016/12/07/Android%E4%B8%8Eso/</loc>
+    <loc>http://seniorzhai.github.io/2017/02/20/Docker%E5%85%A5%E9%97%A8/</loc>
     
     <lastmod>2018-06-29T04:42:18.709Z</lastmod>
     
@@ -79,13 +93,6 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/09/10/%E9%A2%9C%E8%89%B2%E6%90%AD%E9%85%8D/</loc>
-    
-    <lastmod>2018-06-29T04:38:41.510Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://seniorzhai.github.io/2015/06/24/%E9%AD%85%E6%97%8F%E6%89%8B%E6%9C%BA%E8%BF%9E%E6%8E%A5Mac%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
     
     <lastmod>2018-06-29T04:38:41.510Z</lastmod>
@@ -93,16 +100,9 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/12/25/%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6%E8%AF%A6%E8%A7%A3/</loc>
+    <loc>http://seniorzhai.github.io/2014/09/10/%E9%A2%9C%E8%89%B2%E6%90%AD%E9%85%8D/</loc>
     
-    <lastmod>2018-06-29T04:38:41.509Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/02/23/%E8%BF%9B%E5%BA%A6%E6%9D%A1/</loc>
-    
-    <lastmod>2018-06-29T04:38:41.509Z</lastmod>
+    <lastmod>2018-06-29T04:38:41.510Z</lastmod>
     
   </url>
   
@@ -121,7 +121,21 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/09/23/%E8%B4%AD%E7%89%A9%E8%BD%A6%E6%95%88%E6%9E%9C/</loc>
+    <loc>http://seniorzhai.github.io/2014/02/23/%E8%BF%9B%E5%BA%A6%E6%9D%A1/</loc>
+    
+    <lastmod>2018-06-29T04:38:41.509Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/12/25/%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6%E8%AF%A6%E8%A7%A3/</loc>
+    
+    <lastmod>2018-06-29T04:38:41.509Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/12/22/%E8%AE%A9AndroidSDK%E9%A3%9E/</loc>
     
     <lastmod>2018-06-29T04:38:41.508Z</lastmod>
     
@@ -135,16 +149,9 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/12/22/%E8%AE%A9AndroidSDK%E9%A3%9E/</loc>
+    <loc>http://seniorzhai.github.io/2014/09/23/%E8%B4%AD%E7%89%A9%E8%BD%A6%E6%95%88%E6%9E%9C/</loc>
     
     <lastmod>2018-06-29T04:38:41.508Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2015/08/10/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7%E6%B1%87%E6%80%BB/</loc>
-    
-    <lastmod>2018-06-29T04:38:41.507Z</lastmod>
     
   </url>
   
@@ -156,9 +163,23 @@
   </url>
   
   <url>
+    <loc>http://seniorzhai.github.io/2015/08/10/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7%E6%B1%87%E6%80%BB/</loc>
+    
+    <lastmod>2018-06-29T04:38:41.507Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://seniorzhai.github.io/2015/08/05/%E8%8E%B7%E5%8F%96NavBar%E9%AB%98%E5%BA%A6%E7%9A%84%E6%96%B9%E6%B3%95/</loc>
     
     <lastmod>2018-06-29T04:38:41.507Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2015/04/16/%E7%BB%99AS%E4%B8%80%E4%B8%AAMeterial-template%E6%A8%A1%E6%9D%BF/</loc>
+    
+    <lastmod>2018-06-29T04:38:41.506Z</lastmod>
     
   </url>
   
@@ -177,21 +198,14 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/04/16/%E7%BB%99AS%E4%B8%80%E4%B8%AAMeterial-template%E6%A8%A1%E6%9D%BF/</loc>
-    
-    <lastmod>2018-06-29T04:38:41.506Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/08/11/%E7%9C%8B%E7%9D%80%E8%88%92%E6%9C%8D%E5%8F%9112%E7%A7%8D%E7%95%8C%E9%9D%A2%E9%A2%9C%E8%89%B2/</loc>
+    <loc>http://seniorzhai.github.io/2014/05/05/%E7%B2%BE%E7%81%B5%E5%B8%A7%E7%BC%93%E5%AD%98/</loc>
     
     <lastmod>2018-06-29T04:38:41.505Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/05/05/%E7%B2%BE%E7%81%B5%E5%B8%A7%E7%BC%93%E5%AD%98/</loc>
+    <loc>http://seniorzhai.github.io/2014/08/11/%E7%9C%8B%E7%9D%80%E8%88%92%E6%9C%8D%E5%8F%9112%E7%A7%8D%E7%95%8C%E9%9D%A2%E9%A2%9C%E8%89%B2/</loc>
     
     <lastmod>2018-06-29T04:38:41.505Z</lastmod>
     
@@ -205,14 +219,14 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/09/19/%E7%8E%AF%E4%BF%A1SDK(%E4%BA%8C)/</loc>
+    <loc>http://seniorzhai.github.io/2015/03/18/%E7%90%86%E8%A7%A3StrongReferce%E3%80%81SoftReference%E3%80%81WeakReference%E3%80%81PhantomReference/</loc>
     
     <lastmod>2018-06-29T04:38:41.504Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/03/18/%E7%90%86%E8%A7%A3StrongReferce%E3%80%81SoftReference%E3%80%81WeakReference%E3%80%81PhantomReference/</loc>
+    <loc>http://seniorzhai.github.io/2014/09/19/%E7%8E%AF%E4%BF%A1SDK(%E4%BA%8C)/</loc>
     
     <lastmod>2018-06-29T04:38:41.504Z</lastmod>
     
@@ -233,14 +247,14 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/09/18/%E7%8E%AF%E4%BF%A1SDK(%E4%B8%80)/</loc>
+    <loc>http://seniorzhai.github.io/2014/02/27/%E6%96%87%E4%BB%B6IO/</loc>
     
     <lastmod>2018-06-29T04:38:41.503Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/02/27/%E6%96%87%E4%BB%B6IO/</loc>
+    <loc>http://seniorzhai.github.io/2014/09/18/%E7%8E%AF%E4%BF%A1SDK(%E4%B8%80)/</loc>
     
     <lastmod>2018-06-29T04:38:41.503Z</lastmod>
     
@@ -268,6 +282,13 @@
   </url>
   
   <url>
+    <loc>http://seniorzhai.github.io/2014/09/15/%E6%88%91%E7%9C%BC%E4%B8%AD%E7%9A%84REST%E5%AE%A2%E6%88%B7%E7%AB%AF(%E4%B8%80)/</loc>
+    
+    <lastmod>2018-06-29T04:38:41.501Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://seniorzhai.github.io/2014/09/17/%E6%88%91%E7%9C%BC%E4%B8%AD%E7%9A%84REST%E5%AE%A2%E6%88%B7%E7%AB%AF(%E4%BA%8C)/</loc>
     
     <lastmod>2018-06-29T04:38:41.501Z</lastmod>
@@ -282,9 +303,9 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/09/15/%E6%88%91%E7%9C%BC%E4%B8%AD%E7%9A%84REST%E5%AE%A2%E6%88%B7%E7%AB%AF(%E4%B8%80)/</loc>
+    <loc>http://seniorzhai.github.io/2014/08/27/%E5%B8%B8%E7%94%A8git%E5%91%BD%E4%BB%A4/</loc>
     
-    <lastmod>2018-06-29T04:38:41.501Z</lastmod>
+    <lastmod>2018-06-29T04:38:41.500Z</lastmod>
     
   </url>
   
@@ -303,9 +324,9 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/08/27/%E5%B8%B8%E7%94%A8git%E5%91%BD%E4%BB%A4/</loc>
+    <loc>http://seniorzhai.github.io/2015/05/29/%E5%B8%83%E5%B1%80%E5%B1%9E%E6%80%A7%E6%B1%87%E6%80%BB/</loc>
     
-    <lastmod>2018-06-29T04:38:41.500Z</lastmod>
+    <lastmod>2018-06-29T04:38:41.499Z</lastmod>
     
   </url>
   
@@ -324,14 +345,7 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/05/29/%E5%B8%83%E5%B1%80%E5%B1%9E%E6%80%A7%E6%B1%87%E6%80%BB/</loc>
-    
-    <lastmod>2018-06-29T04:38:41.499Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/02/27/%E5%AF%B9%E8%B1%A1%E5%BD%92%E6%A1%A3/</loc>
+    <loc>http://seniorzhai.github.io/2014/09/30/%E5%9C%A8Chrome%E4%B8%8A%E4%BD%BF%E7%94%A8Markdown/</loc>
     
     <lastmod>2018-06-29T04:38:41.498Z</lastmod>
     
@@ -345,14 +359,14 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/09/30/%E5%9C%A8Chrome%E4%B8%8A%E4%BD%BF%E7%94%A8Markdown/</loc>
+    <loc>http://seniorzhai.github.io/2014/02/27/%E5%AF%B9%E8%B1%A1%E5%BD%92%E6%A1%A3/</loc>
     
     <lastmod>2018-06-29T04:38:41.498Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2016/06/26/%E5%9B%BE%E5%B1%82%E5%87%A0%E4%BD%95%E5%AD%A6/</loc>
+    <loc>http://seniorzhai.github.io/2014/07/08/%E5%93%8D%E5%BA%94%E4%B8%8D%E5%90%8C%E7%9A%84%E8%AF%B7%E6%B1%82/</loc>
     
     <lastmod>2018-06-29T04:38:41.497Z</lastmod>
     
@@ -366,7 +380,7 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/07/08/%E5%93%8D%E5%BA%94%E4%B8%8D%E5%90%8C%E7%9A%84%E8%AF%B7%E6%B1%82/</loc>
+    <loc>http://seniorzhai.github.io/2016/06/26/%E5%9B%BE%E5%B1%82%E5%87%A0%E4%BD%95%E5%AD%A6/</loc>
     
     <lastmod>2018-06-29T04:38:41.497Z</lastmod>
     
@@ -387,7 +401,7 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/02/18/%E5%88%A9%E7%94%A8%E4%BB%A3%E7%90%86/</loc>
+    <loc>http://seniorzhai.github.io/2014/05/04/%E5%8A%A8%E7%94%BB%E5%BC%95%E6%93%8EPop%E4%BB%8B%E7%BB%8D/</loc>
     
     <lastmod>2018-06-29T04:38:41.495Z</lastmod>
     
@@ -401,9 +415,16 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/05/04/%E5%8A%A8%E7%94%BB%E5%BC%95%E6%93%8EPop%E4%BB%8B%E7%BB%8D/</loc>
+    <loc>http://seniorzhai.github.io/2014/02/18/%E5%88%A9%E7%94%A8%E4%BB%A3%E7%90%86/</loc>
     
     <lastmod>2018-06-29T04:38:41.495Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2015/09/04/%E5%88%A4%E6%96%ADiOS%E8%AE%BE%E5%A4%87%E7%A7%8D%E7%B1%BB/</loc>
+    
+    <lastmod>2018-06-29T04:38:41.494Z</lastmod>
     
   </url>
   
@@ -415,9 +436,9 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/09/04/%E5%88%A4%E6%96%ADiOS%E8%AE%BE%E5%A4%87%E7%A7%8D%E7%B1%BB/</loc>
+    <loc>http://seniorzhai.github.io/2014/11/18/%E4%BD%BF%E7%94%A8curl%E8%B0%83%E8%AF%95%E6%8E%A5%E5%8F%A3/</loc>
     
-    <lastmod>2018-06-29T04:38:41.494Z</lastmod>
+    <lastmod>2018-06-29T04:38:41.493Z</lastmod>
     
   </url>
   
@@ -436,9 +457,9 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/11/18/%E4%BD%BF%E7%94%A8curl%E8%B0%83%E8%AF%95%E6%8E%A5%E5%8F%A3/</loc>
+    <loc>http://seniorzhai.github.io/2015/02/04/%E4%BD%BF%E7%94%A8Gradle%E5%8F%91%E5%B8%83%E9%A1%B9%E7%9B%AE%E5%88%B0JCenter%E4%BB%93%E5%BA%93/</loc>
     
-    <lastmod>2018-06-29T04:38:41.493Z</lastmod>
+    <lastmod>2018-06-29T04:38:41.492Z</lastmod>
     
   </url>
   
@@ -457,9 +478,9 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/02/04/%E4%BD%BF%E7%94%A8Gradle%E5%8F%91%E5%B8%83%E9%A1%B9%E7%9B%AE%E5%88%B0JCenter%E4%BB%93%E5%BA%93/</loc>
+    <loc>http://seniorzhai.github.io/2014/07/07/%E4%BD%BF%E7%94%A8ContentProvider%E7%AE%A1%E7%90%86App%E6%95%B0%E6%8D%AE/</loc>
     
-    <lastmod>2018-06-29T04:38:41.492Z</lastmod>
+    <lastmod>2018-06-29T04:38:41.491Z</lastmod>
     
   </url>
   
@@ -478,20 +499,6 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/07/07/%E4%BD%BF%E7%94%A8ContentProvider%E7%AE%A1%E7%90%86App%E6%95%B0%E6%8D%AE/</loc>
-    
-    <lastmod>2018-06-29T04:38:41.491Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/03/24/%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BC%93%E5%AD%98%E7%B1%BB/</loc>
-    
-    <lastmod>2018-06-29T04:38:41.490Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://seniorzhai.github.io/2014/12/18/%E4%B8%80%E5%8F%A5%E8%AF%9D%E8%A7%A3%E9%87%8A%EF%BC%9F%E5%92%8C%EF%BC%81/</loc>
     
     <lastmod>2018-06-29T04:38:41.490Z</lastmod>
@@ -499,9 +506,9 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/02/25/typeof%E5%92%8Cinstanceof/</loc>
+    <loc>http://seniorzhai.github.io/2014/03/24/%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BC%93%E5%AD%98%E7%B1%BB/</loc>
     
-    <lastmod>2018-06-29T04:38:41.489Z</lastmod>
+    <lastmod>2018-06-29T04:38:41.490Z</lastmod>
     
   </url>
   
@@ -527,6 +534,20 @@
   </url>
   
   <url>
+    <loc>http://seniorzhai.github.io/2015/02/25/typeof%E5%92%8Cinstanceof/</loc>
+    
+    <lastmod>2018-06-29T04:38:41.489Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2015/01/22/schedule%E5%AE%9E%E7%8E%B0%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/</loc>
+    
+    <lastmod>2018-06-29T04:38:41.488Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://seniorzhai.github.io/2015/03/05/npm%E9%95%9C%E5%83%8F/</loc>
     
     <lastmod>2018-06-29T04:38:41.488Z</lastmod>
@@ -541,14 +562,7 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/01/22/schedule%E5%AE%9E%E7%8E%B0%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/</loc>
-    
-    <lastmod>2018-06-29T04:38:41.488Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2015/01/17/node%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97%EF%BC%88%E4%BA%8C%EF%BC%89/</loc>
+    <loc>http://seniorzhai.github.io/2015/01/17/node%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97%EF%BC%88%E4%B8%80%EF%BC%89/</loc>
     
     <lastmod>2018-06-29T04:38:41.487Z</lastmod>
     
@@ -562,7 +576,7 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/01/17/node%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97%EF%BC%88%E4%B8%80%EF%BC%89/</loc>
+    <loc>http://seniorzhai.github.io/2015/01/17/node%E6%A0%B8%E5%BF%83%E6%A8%A1%E5%9D%97%EF%BC%88%E4%BA%8C%EF%BC%89/</loc>
     
     <lastmod>2018-06-29T04:38:41.487Z</lastmod>
     
@@ -583,13 +597,6 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/11/04/iPhone%E7%95%8C%E9%9D%A2%E9%80%82%E9%85%8D%E8%AF%A6%E8%A7%A3/</loc>
-    
-    <lastmod>2018-06-29T04:38:41.485Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://seniorzhai.github.io/2015/03/30/jQuery%E5%88%9D%E8%AF%86/</loc>
     
     <lastmod>2018-06-29T04:38:41.485Z</lastmod>
@@ -597,14 +604,21 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/03/31/jQuery%E4%B8%89%E8%AF%86/</loc>
+    <loc>http://seniorzhai.github.io/2015/03/31/jQuery%E4%BA%8C%E8%AF%86/</loc>
     
     <lastmod>2018-06-29T04:38:41.485Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/03/31/jQuery%E4%BA%8C%E8%AF%86/</loc>
+    <loc>http://seniorzhai.github.io/2014/11/04/iPhone%E7%95%8C%E9%9D%A2%E9%80%82%E9%85%8D%E8%AF%A6%E8%A7%A3/</loc>
+    
+    <lastmod>2018-06-29T04:38:41.485Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2015/03/31/jQuery%E4%B8%89%E8%AF%86/</loc>
     
     <lastmod>2018-06-29T04:38:41.485Z</lastmod>
     
@@ -625,14 +639,14 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/02/26/iOS%E5%BA%94%E7%94%A8%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
+    <loc>http://seniorzhai.github.io/2016/08/25/guard%E5%92%8Cdefer/</loc>
     
     <lastmod>2018-06-29T04:38:41.483Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2016/08/25/guard%E5%92%8Cdefer/</loc>
+    <loc>http://seniorzhai.github.io/2014/02/26/iOS%E5%BA%94%E7%94%A8%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
     
     <lastmod>2018-06-29T04:38:41.483Z</lastmod>
     
@@ -642,13 +656,6 @@
     <loc>http://seniorzhai.github.io/2014/09/24/git%E5%91%BD%E4%BB%A4/</loc>
     
     <lastmod>2018-06-29T04:38:41.483Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2015/03/16/androidannotations(%E4%BA%8C)/</loc>
-    
-    <lastmod>2018-06-29T04:38:41.482Z</lastmod>
     
   </url>
   
@@ -667,7 +674,14 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2016/05/10/Weex%E5%88%9D%E6%8E%A2/</loc>
+    <loc>http://seniorzhai.github.io/2015/03/16/androidannotations(%E4%BA%8C)/</loc>
+    
+    <lastmod>2018-06-29T04:38:41.482Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/03/12/Xcode%E6%8F%92%E4%BB%B6%E7%AE%A1%E7%90%86%E5%A4%A7%E5%B8%88Alcartraz/</loc>
     
     <lastmod>2018-06-29T04:38:41.481Z</lastmod>
     
@@ -681,14 +695,14 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/03/12/Xcode%E6%8F%92%E4%BB%B6%E7%AE%A1%E7%90%86%E5%A4%A7%E5%B8%88Alcartraz/</loc>
+    <loc>http://seniorzhai.github.io/2016/05/10/Weex%E5%88%9D%E6%8E%A2/</loc>
     
     <lastmod>2018-06-29T04:38:41.481Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/05/07/Volley/</loc>
+    <loc>http://seniorzhai.github.io/2014/07/03/Uri%E3%80%81UriMatcher%E3%80%81CententUris%E8%AF%A6%E8%A7%A3/</loc>
     
     <lastmod>2018-06-29T04:38:41.480Z</lastmod>
     
@@ -702,7 +716,7 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/07/03/Uri%E3%80%81UriMatcher%E3%80%81CententUris%E8%AF%A6%E8%A7%A3/</loc>
+    <loc>http://seniorzhai.github.io/2014/05/07/Volley/</loc>
     
     <lastmod>2018-06-29T04:38:41.480Z</lastmod>
     
@@ -716,13 +730,6 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/02/17/UIView/</loc>
-    
-    <lastmod>2018-06-29T04:38:41.479Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://seniorzhai.github.io/2014/02/24/UITabBarController/</loc>
     
     <lastmod>2018-06-29T04:38:41.479Z</lastmod>
@@ -730,9 +737,9 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/02/17/UIKIT%E6%A1%86%E6%9E%B6/</loc>
+    <loc>http://seniorzhai.github.io/2014/02/17/UIView/</loc>
     
-    <lastmod>2018-06-29T04:38:41.478Z</lastmod>
+    <lastmod>2018-06-29T04:38:41.479Z</lastmod>
     
   </url>
   
@@ -751,14 +758,14 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/02/21/UIImageView-UIAlertView-UIActionSheet/</loc>
+    <loc>http://seniorzhai.github.io/2014/02/17/UIKIT%E6%A1%86%E6%9E%B6/</loc>
     
-    <lastmod>2018-06-29T04:38:41.477Z</lastmod>
+    <lastmod>2018-06-29T04:38:41.478Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/02/20/UIControl/</loc>
+    <loc>http://seniorzhai.github.io/2014/02/21/UIImageView-UIAlertView-UIActionSheet/</loc>
     
     <lastmod>2018-06-29T04:38:41.477Z</lastmod>
     
@@ -772,16 +779,9 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/08/20/SwipeView/</loc>
+    <loc>http://seniorzhai.github.io/2014/02/20/UIControl/</loc>
     
-    <lastmod>2018-06-29T04:38:41.476Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2015/01/07/ToolBar%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
-    
-    <lastmod>2018-06-29T04:38:41.476Z</lastmod>
+    <lastmod>2018-06-29T04:38:41.477Z</lastmod>
     
   </url>
   
@@ -793,7 +793,21 @@
   </url>
   
   <url>
+    <loc>http://seniorzhai.github.io/2014/08/20/SwipeView/</loc>
+    
+    <lastmod>2018-06-29T04:38:41.476Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://seniorzhai.github.io/2014/08/14/TabBarView/</loc>
+    
+    <lastmod>2018-06-29T04:38:41.476Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2015/01/07/ToolBar%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
     
     <lastmod>2018-06-29T04:38:41.476Z</lastmod>
     
@@ -821,14 +835,14 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/08/26/Swift%E7%89%88Masonry-SnapKit%E5%B8%83%E5%B1%80%E6%A1%86%E6%9E%B6/</loc>
+    <loc>http://seniorzhai.github.io/2014/06/17/Swift%E7%AC%94%E8%AE%B0(%E4%B8%80)/</loc>
     
     <lastmod>2018-06-29T04:38:41.474Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/06/17/Swift%E7%AC%94%E8%AE%B0(%E4%B8%80)/</loc>
+    <loc>http://seniorzhai.github.io/2015/08/26/Swift%E7%89%88Masonry-SnapKit%E5%B8%83%E5%B1%80%E6%A1%86%E6%9E%B6/</loc>
     
     <lastmod>2018-06-29T04:38:41.474Z</lastmod>
     
@@ -856,7 +870,7 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/08/08/SockMonitor%E5%92%8C%E5%B0%8F%E7%B1%B3%E5%8A%A9%E6%89%8B%E9%85%8D%E5%90%88%E6%8A%93%E5%8C%85/</loc>
+    <loc>http://seniorzhai.github.io/2014/11/20/StickyListHeadersListView/</loc>
     
     <lastmod>2018-06-29T04:38:41.472Z</lastmod>
     
@@ -870,16 +884,9 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/11/20/StickyListHeadersListView/</loc>
+    <loc>http://seniorzhai.github.io/2014/08/08/SockMonitor%E5%92%8C%E5%B0%8F%E7%B1%B3%E5%8A%A9%E6%89%8B%E9%85%8D%E5%90%88%E6%8A%93%E5%8C%85/</loc>
     
     <lastmod>2018-06-29T04:38:41.472Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/03/20/Shimmer/</loc>
-    
-    <lastmod>2018-06-29T04:38:41.471Z</lastmod>
     
   </url>
   
@@ -891,9 +898,23 @@
   </url>
   
   <url>
+    <loc>http://seniorzhai.github.io/2014/03/20/Shimmer/</loc>
+    
+    <lastmod>2018-06-29T04:38:41.471Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://seniorzhai.github.io/2015/04/16/ShowTipsView%E6%8F%90%E7%A4%BA%E8%AF%B4%E6%98%8E%E6%8E%A7%E4%BB%B6/</loc>
     
     <lastmod>2018-06-29T04:38:41.471Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/09/01/Serializable%E5%92%8CParcelable%E5%AE%9E%E7%8E%B0%E5%BA%8F%E5%88%97%E5%8C%96/</loc>
+    
+    <lastmod>2018-06-29T04:38:41.470Z</lastmod>
     
   </url>
   
@@ -912,20 +933,6 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/09/01/Serializable%E5%92%8CParcelable%E5%AE%9E%E7%8E%B0%E5%BA%8F%E5%88%97%E5%8C%96/</loc>
-    
-    <lastmod>2018-06-29T04:38:41.470Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/04/01/SONFillAnimation/</loc>
-    
-    <lastmod>2018-06-29T04:38:41.469Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://seniorzhai.github.io/2015/02/13/SelectorChapek%E6%8F%92%E4%BB%B6/</loc>
     
     <lastmod>2018-06-29T04:38:41.469Z</lastmod>
@@ -933,7 +940,7 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/10/04/SD%E7%9A%84%E7%A7%8D%E7%B1%BB/</loc>
+    <loc>http://seniorzhai.github.io/2014/04/01/SONFillAnimation/</loc>
     
     <lastmod>2018-06-29T04:38:41.469Z</lastmod>
     
@@ -947,7 +954,14 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/01/06/RecyclerView%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
+    <loc>http://seniorzhai.github.io/2015/10/04/SD%E7%9A%84%E7%A7%8D%E7%B1%BB/</loc>
+    
+    <lastmod>2018-06-29T04:38:41.469Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2015/11/24/ReactNative-%E6%A0%B7%E5%BC%8F/</loc>
     
     <lastmod>2018-06-29T04:38:41.468Z</lastmod>
     
@@ -961,7 +975,7 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/11/24/ReactNative-%E6%A0%B7%E5%BC%8F/</loc>
+    <loc>http://seniorzhai.github.io/2015/01/06/RecyclerView%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
     
     <lastmod>2018-06-29T04:38:41.468Z</lastmod>
     
@@ -975,13 +989,6 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/09/24/ReactNative-%E5%A6%82%E4%BD%95%E5%BC%80%E5%A7%8B/</loc>
-    
-    <lastmod>2018-06-29T04:38:41.467Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://seniorzhai.github.io/2016/01/17/ReactNative-Navigator/</loc>
     
     <lastmod>2018-06-29T04:38:41.467Z</lastmod>
@@ -989,9 +996,9 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/12/05/Python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</loc>
+    <loc>http://seniorzhai.github.io/2015/09/24/ReactNative-%E5%A6%82%E4%BD%95%E5%BC%80%E5%A7%8B/</loc>
     
-    <lastmod>2018-06-29T04:38:41.466Z</lastmod>
+    <lastmod>2018-06-29T04:38:41.467Z</lastmod>
     
   </url>
   
@@ -1003,9 +1010,23 @@
   </url>
   
   <url>
+    <loc>http://seniorzhai.github.io/2014/12/05/Python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</loc>
+    
+    <lastmod>2018-06-29T04:38:41.466Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://seniorzhai.github.io/2014/09/27/Python%E9%81%8D%E5%8E%86/</loc>
     
     <lastmod>2018-06-29T04:38:41.466Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/09/27/Python%E6%A8%A1%E5%9D%97/</loc>
+    
+    <lastmod>2018-06-29T04:38:41.465Z</lastmod>
     
   </url>
   
@@ -1024,9 +1045,9 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/09/27/Python%E6%A8%A1%E5%9D%97/</loc>
+    <loc>http://seniorzhai.github.io/2014/10/13/Python%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
     
-    <lastmod>2018-06-29T04:38:41.465Z</lastmod>
+    <lastmod>2018-06-29T04:38:41.464Z</lastmod>
     
   </url>
   
@@ -1045,9 +1066,9 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/10/13/Python%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
+    <loc>http://seniorzhai.github.io/2014/06/14/Python-%E5%9B%9B---%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</loc>
     
-    <lastmod>2018-06-29T04:38:41.464Z</lastmod>
+    <lastmod>2018-06-29T04:38:41.463Z</lastmod>
     
   </url>
   
@@ -1059,9 +1080,9 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/06/14/Python-%E5%9B%9B---%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</loc>
+    <loc>http://seniorzhai.github.io/2014/06/18/Python-%E5%85%AD---%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/</loc>
     
-    <lastmod>2018-06-29T04:38:41.463Z</lastmod>
+    <lastmod>2018-06-29T04:38:41.462Z</lastmod>
     
   </url>
   
@@ -1073,9 +1094,9 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/06/18/Python-%E5%85%AD---%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/</loc>
+    <loc>http://seniorzhai.github.io/2014/06/16/Python-%E4%BA%94---%E6%A8%A1%E5%9D%97/</loc>
     
-    <lastmod>2018-06-29T04:38:41.462Z</lastmod>
+    <lastmod>2018-06-29T04:38:41.461Z</lastmod>
     
   </url>
   
@@ -1087,14 +1108,7 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/06/16/Python-%E4%BA%94---%E6%A8%A1%E5%9D%97/</loc>
-    
-    <lastmod>2018-06-29T04:38:41.461Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/10/11/Python-%E4%B8%83---%E9%94%99%E8%AF%AF%E4%B8%8E%E8%B0%83%E8%AF%95/</loc>
+    <loc>http://seniorzhai.github.io/2014/06/13/Python-%E4%B8%89---%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7/</loc>
     
     <lastmod>2018-06-29T04:38:41.460Z</lastmod>
     
@@ -1108,7 +1122,7 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/06/13/Python-%E4%B8%89---%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7/</loc>
+    <loc>http://seniorzhai.github.io/2014/10/11/Python-%E4%B8%83---%E9%94%99%E8%AF%AF%E4%B8%8E%E8%B0%83%E8%AF%95/</loc>
     
     <lastmod>2018-06-29T04:38:41.460Z</lastmod>
     
@@ -1122,6 +1136,13 @@
   </url>
   
   <url>
+    <loc>http://seniorzhai.github.io/2014/11/24/Paint%E7%B1%BB/</loc>
+    
+    <lastmod>2018-06-29T04:38:41.459Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://seniorzhai.github.io/2016/04/11/ProGuard%E8%AF%A6%E8%A7%A3/</loc>
     
     <lastmod>2018-06-29T04:38:41.459Z</lastmod>
@@ -1129,9 +1150,9 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/11/24/Paint%E7%B1%BB/</loc>
+    <loc>http://seniorzhai.github.io/2014/12/15/PagerAdapter%E4%B8%8EViewPager/</loc>
     
-    <lastmod>2018-06-29T04:38:41.459Z</lastmod>
+    <lastmod>2018-06-29T04:38:41.458Z</lastmod>
     
   </url>
   
@@ -1150,9 +1171,16 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/12/15/PagerAdapter%E4%B8%8EViewPager/</loc>
+    <loc>http://seniorzhai.github.io/2015/02/27/NanoTasks/</loc>
     
-    <lastmod>2018-06-29T04:38:41.458Z</lastmod>
+    <lastmod>2018-06-29T04:38:41.457Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/03/31/NSUserDefaults/</loc>
+    
+    <lastmod>2018-06-29T04:38:41.457Z</lastmod>
     
   </url>
   
@@ -1164,16 +1192,16 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/02/27/NanoTasks/</loc>
+    <loc>http://seniorzhai.github.io/2014/02/22/NDK-Samples/</loc>
     
-    <lastmod>2018-06-29T04:38:41.457Z</lastmod>
+    <lastmod>2018-06-29T04:38:41.456Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/03/31/NSUserDefaults/</loc>
+    <loc>http://seniorzhai.github.io/2015/02/25/Meteor%E5%88%9D%E8%AF%86/</loc>
     
-    <lastmod>2018-06-29T04:38:41.457Z</lastmod>
+    <lastmod>2018-06-29T04:38:41.456Z</lastmod>
     
   </url>
   
@@ -1192,28 +1220,7 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/02/25/Meteor%E5%88%9D%E8%AF%86/</loc>
-    
-    <lastmod>2018-06-29T04:38:41.456Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/02/22/NDK-Samples/</loc>
-    
-    <lastmod>2018-06-29T04:38:41.456Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://seniorzhai.github.io/2015/04/15/Masonry%E5%B8%83%E5%B1%80%E6%A1%86%E6%9E%B6/</loc>
-    
-    <lastmod>2018-06-29T04:38:41.455Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/10/14/Material/</loc>
     
     <lastmod>2018-06-29T04:38:41.455Z</lastmod>
     
@@ -1227,6 +1234,13 @@
   </url>
   
   <url>
+    <loc>http://seniorzhai.github.io/2014/10/14/Material/</loc>
+    
+    <lastmod>2018-06-29T04:38:41.455Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://seniorzhai.github.io/2015/02/02/LitePal%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
     
     <lastmod>2018-06-29T04:38:41.454Z</lastmod>
@@ -1234,14 +1248,14 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/08/04/Loader%E6%9C%BA%E5%88%B6/</loc>
+    <loc>http://seniorzhai.github.io/2014/08/01/MD%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
     
     <lastmod>2018-06-29T04:38:41.454Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/08/01/MD%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
+    <loc>http://seniorzhai.github.io/2014/08/04/Loader%E6%9C%BA%E5%88%B6/</loc>
     
     <lastmod>2018-06-29T04:38:41.454Z</lastmod>
     
@@ -1318,13 +1332,6 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/12/13/JSONModel%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
-    
-    <lastmod>2018-06-29T04:38:41.450Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://seniorzhai.github.io/2014/09/17/IntentService/</loc>
     
     <lastmod>2018-06-29T04:38:41.450Z</lastmod>
@@ -1332,9 +1339,9 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2016/06/26/Hit-Testing/</loc>
+    <loc>http://seniorzhai.github.io/2014/12/13/JSONModel%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
     
-    <lastmod>2018-06-29T04:38:41.449Z</lastmod>
+    <lastmod>2018-06-29T04:38:41.450Z</lastmod>
     
   </url>
   
@@ -1346,9 +1353,9 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/02/13/Handler%E8%AF%A6%E8%A7%A3/</loc>
+    <loc>http://seniorzhai.github.io/2016/06/26/Hit-Testing/</loc>
     
-    <lastmod>2018-06-29T04:38:41.448Z</lastmod>
+    <lastmod>2018-06-29T04:38:41.449Z</lastmod>
     
   </url>
   
@@ -1360,14 +1367,21 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/09/10/Gson%E8%A7%A3%E6%9E%90Json/</loc>
+    <loc>http://seniorzhai.github.io/2015/02/13/Handler%E8%AF%A6%E8%A7%A3/</loc>
+    
+    <lastmod>2018-06-29T04:38:41.448Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/06/24/Gradle/</loc>
     
     <lastmod>2018-06-29T04:38:41.447Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/06/24/Gradle/</loc>
+    <loc>http://seniorzhai.github.io/2014/09/10/Gson%E8%A7%A3%E6%9E%90Json/</loc>
     
     <lastmod>2018-06-29T04:38:41.447Z</lastmod>
     
@@ -1388,13 +1402,6 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/09/19/Git%E5%88%86%E6%94%AF%E4%B8%8E%E5%8D%8F%E4%BD%9C/</loc>
-    
-    <lastmod>2018-06-29T04:38:41.445Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://seniorzhai.github.io/2015/01/24/Github%E9%A1%B9%E7%9B%AE%E6%95%B4%E7%90%86/</loc>
     
     <lastmod>2018-06-29T04:38:41.445Z</lastmod>
@@ -1402,14 +1409,21 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/09/04/Fragment/</loc>
+    <loc>http://seniorzhai.github.io/2014/09/19/Git%E5%88%86%E6%94%AF%E4%B8%8E%E5%8D%8F%E4%BD%9C/</loc>
+    
+    <lastmod>2018-06-29T04:38:41.445Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/03/04/Foundation%E6%A1%86%E6%9E%B6(%E4%BA%8C)/</loc>
     
     <lastmod>2018-06-29T04:38:41.444Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/03/04/Foundation%E6%A1%86%E6%9E%B6(%E4%BA%8C)/</loc>
+    <loc>http://seniorzhai.github.io/2014/09/04/Fragment/</loc>
     
     <lastmod>2018-06-29T04:38:41.444Z</lastmod>
     
@@ -1451,14 +1465,14 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/07/04/Drawerlayout/</loc>
+    <loc>http://seniorzhai.github.io/2015/08/16/Data-Binding%EF%BC%88%E4%BA%8C%EF%BC%89/</loc>
     
     <lastmod>2018-06-29T04:38:41.441Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/08/16/Data-Binding%EF%BC%88%E4%BA%8C%EF%BC%89/</loc>
+    <loc>http://seniorzhai.github.io/2014/07/04/Drawerlayout/</loc>
     
     <lastmod>2018-06-29T04:38:41.441Z</lastmod>
     
@@ -1472,14 +1486,14 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/08/16/Data-Binding%EF%BC%88%E4%B8%80%EF%BC%89/</loc>
+    <loc>http://seniorzhai.github.io/2014/08/07/CursorLoader/</loc>
     
     <lastmod>2018-06-29T04:38:41.440Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/08/07/CursorLoader/</loc>
+    <loc>http://seniorzhai.github.io/2015/08/16/Data-Binding%EF%BC%88%E4%B8%80%EF%BC%89/</loc>
     
     <lastmod>2018-06-29T04:38:41.440Z</lastmod>
     
@@ -1500,7 +1514,7 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/03/21/Collection-Views/</loc>
+    <loc>http://seniorzhai.github.io/2014/06/25/ContentProvider/</loc>
     
     <lastmod>2018-06-29T04:38:41.438Z</lastmod>
     
@@ -1514,16 +1528,9 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/06/25/ContentProvider/</loc>
+    <loc>http://seniorzhai.github.io/2014/03/21/Collection-Views/</loc>
     
     <lastmod>2018-06-29T04:38:41.438Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/03/31/Cocos2d-X-%E5%9D%90%E6%A0%87%E7%B3%BB%E8%AF%A6%E8%A7%A3/</loc>
-    
-    <lastmod>2018-06-29T04:38:41.437Z</lastmod>
     
   </url>
   
@@ -1535,14 +1542,21 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/06/23/Cocos2d-X-30-Hello-World-%E5%88%86%E6%9E%90/</loc>
+    <loc>http://seniorzhai.github.io/2014/03/31/Cocos2d-X-%E5%9D%90%E6%A0%87%E7%B3%BB%E8%AF%A6%E8%A7%A3/</loc>
+    
+    <lastmod>2018-06-29T04:38:41.437Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/03/18/Cocos2d-X-V30-%E5%A6%82%E4%BD%95%E5%9C%A8Android%E4%B8%8A%E8%BF%90%E8%A1%8CCpp-tests/</loc>
     
     <lastmod>2018-06-29T04:38:41.436Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/03/18/Cocos2d-X-V30-%E5%A6%82%E4%BD%95%E5%9C%A8Android%E4%B8%8A%E8%BF%90%E8%A1%8CCpp-tests/</loc>
+    <loc>http://seniorzhai.github.io/2014/06/23/Cocos2d-X-30-Hello-World-%E5%88%86%E6%9E%90/</loc>
     
     <lastmod>2018-06-29T04:38:41.436Z</lastmod>
     
@@ -1563,14 +1577,14 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2016/06/25/CALayer/</loc>
+    <loc>http://seniorzhai.github.io/2014/09/16/BroadCastReceiver/</loc>
     
     <lastmod>2018-06-29T04:38:41.434Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/09/16/BroadCastReceiver/</loc>
+    <loc>http://seniorzhai.github.io/2016/06/25/CALayer/</loc>
     
     <lastmod>2018-06-29T04:38:41.434Z</lastmod>
     
@@ -1612,14 +1626,14 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/04/16/Android%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B7%A5%E5%85%B7%E7%B1%BB/</loc>
+    <loc>http://seniorzhai.github.io/2014/12/19/AnroidAnninotations/</loc>
     
     <lastmod>2018-06-29T04:38:41.418Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/12/19/AnroidAnninotations/</loc>
+    <loc>http://seniorzhai.github.io/2014/04/16/Android%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B7%A5%E5%85%B7%E7%B1%BB/</loc>
     
     <lastmod>2018-06-29T04:38:41.418Z</lastmod>
     
@@ -1633,7 +1647,7 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/01/05/Android%E6%A8%A1%E6%8B%9F%E4%BA%8B%E4%BB%B6/</loc>
+    <loc>http://seniorzhai.github.io/2015/07/13/Android%E5%BC%95%E5%AF%BC%E5%8A%9F%E8%83%BD%E7%9A%84%E5%AE%9E%E7%8E%B0/</loc>
     
     <lastmod>2018-06-29T04:38:41.417Z</lastmod>
     
@@ -1647,14 +1661,14 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/07/13/Android%E5%BC%95%E5%AF%BC%E5%8A%9F%E8%83%BD%E7%9A%84%E5%AE%9E%E7%8E%B0/</loc>
+    <loc>http://seniorzhai.github.io/2015/01/05/Android%E6%A8%A1%E6%8B%9F%E4%BA%8B%E4%BB%B6/</loc>
     
     <lastmod>2018-06-29T04:38:41.417Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/02/28/Android%E5%BC%80%E5%8F%91%E8%B4%B4%E5%A3%AB/</loc>
+    <loc>http://seniorzhai.github.io/2015/03/26/Android%E5%BC%80%E5%8F%91%E5%87%BD%E6%95%B0%E5%BA%93caffeine/</loc>
     
     <lastmod>2018-06-29T04:38:41.416Z</lastmod>
     
@@ -1668,16 +1682,9 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/03/26/Android%E5%BC%80%E5%8F%91%E5%87%BD%E6%95%B0%E5%BA%93caffeine/</loc>
+    <loc>http://seniorzhai.github.io/2015/02/28/Android%E5%BC%80%E5%8F%91%E8%B4%B4%E5%A3%AB/</loc>
     
     <lastmod>2018-06-29T04:38:41.416Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/03/03/Android%E5%AE%89%E5%85%A8(%E4%B8%80)/</loc>
-    
-    <lastmod>2018-06-29T04:38:41.415Z</lastmod>
     
   </url>
   
@@ -1690,6 +1697,13 @@
   
   <url>
     <loc>http://seniorzhai.github.io/2014/10/24/Android%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D%E7%9F%A5%E8%AF%86/</loc>
+    
+    <lastmod>2018-06-29T04:38:41.415Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/03/03/Android%E5%AE%89%E5%85%A8(%E4%B8%80)/</loc>
     
     <lastmod>2018-06-29T04:38:41.415Z</lastmod>
     
@@ -1710,14 +1724,14 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/08/29/Android%E5%8A%A8%E7%94%BB/</loc>
+    <loc>http://seniorzhai.github.io/2014/10/14/Android%E5%88%86%E8%BE%A8%E7%8E%87%E9%80%82%E9%85%8D/</loc>
     
     <lastmod>2018-06-29T04:38:41.413Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/10/14/Android%E5%88%86%E8%BE%A8%E7%8E%87%E9%80%82%E9%85%8D/</loc>
+    <loc>http://seniorzhai.github.io/2014/08/29/Android%E5%8A%A8%E7%94%BB/</loc>
     
     <lastmod>2018-06-29T04:38:41.413Z</lastmod>
     
@@ -1738,13 +1752,6 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/11/06/Android%E4%B8%ADinclude%E5%92%8Cmerge%E6%A0%87%E8%AE%B0%E7%9A%84%E5%8C%BA%E5%88%AB%E5%92%8C%E4%BD%BF%E7%94%A8/</loc>
-    
-    <lastmod>2018-06-29T04:38:41.412Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://seniorzhai.github.io/2015/02/04/Android%E4%BA%8B%E4%BB%B6/</loc>
     
     <lastmod>2018-06-29T04:38:41.412Z</lastmod>
@@ -1752,14 +1759,21 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/12/11/Android%E3%80%81iOS%E5%A4%A7%E4%B8%8D%E5%90%8C%E2%80%94%E2%80%94%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
+    <loc>http://seniorzhai.github.io/2014/11/06/Android%E4%B8%ADinclude%E5%92%8Cmerge%E6%A0%87%E8%AE%B0%E7%9A%84%E5%8C%BA%E5%88%AB%E5%92%8C%E4%BD%BF%E7%94%A8/</loc>
+    
+    <lastmod>2018-06-29T04:38:41.412Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2015/09/01/Android%E3%80%81iOS%E5%A4%A7%E4%B8%8D%E5%90%8C-%E5%85%AB-%E6%96%B0%E7%9A%84%E5%BC%80%E5%A7%8B/</loc>
     
     <lastmod>2018-06-29T04:38:41.411Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/09/01/Android%E3%80%81iOS%E5%A4%A7%E4%B8%8D%E5%90%8C-%E5%85%AB-%E6%96%B0%E7%9A%84%E5%BC%80%E5%A7%8B/</loc>
+    <loc>http://seniorzhai.github.io/2014/12/11/Android%E3%80%81iOS%E5%A4%A7%E4%B8%8D%E5%90%8C%E2%80%94%E2%80%94%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
     
     <lastmod>2018-06-29T04:38:41.411Z</lastmod>
     
@@ -1773,14 +1787,14 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/09/03/Android%E3%80%81iOS%E5%A4%A7%E4%B8%8D%E5%90%8C(%E4%B8%89)/</loc>
+    <loc>http://seniorzhai.github.io/2014/09/01/Android%E3%80%81iOS%E5%A4%A7%E4%B8%8D%E5%90%8C(%E4%BA%8C)/</loc>
     
     <lastmod>2018-06-29T04:38:41.410Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/09/01/Android%E3%80%81iOS%E5%A4%A7%E4%B8%8D%E5%90%8C(%E4%BA%8C)/</loc>
+    <loc>http://seniorzhai.github.io/2014/09/03/Android%E3%80%81iOS%E5%A4%A7%E4%B8%8D%E5%90%8C(%E4%B8%89)/</loc>
     
     <lastmod>2018-06-29T04:38:41.410Z</lastmod>
     
@@ -1815,13 +1829,6 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/08/18/AndroidStudio%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</loc>
-    
-    <lastmod>2018-06-29T04:38:41.408Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://seniorzhai.github.io/2015/02/28/AndroidStudio%E5%9B%BE%E6%A0%87%E6%8F%92%E4%BB%B6/</loc>
     
     <lastmod>2018-06-29T04:38:41.408Z</lastmod>
@@ -1829,21 +1836,21 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/03/19/AndroidStudio%E4%B8%8A%E4%BD%BF%E7%94%A8NDK/</loc>
+    <loc>http://seniorzhai.github.io/2014/08/18/AndroidStudio%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</loc>
     
-    <lastmod>2018-06-29T04:38:41.407Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/11/06/AndroidDialog/</loc>
-    
-    <lastmod>2018-06-29T04:38:41.407Z</lastmod>
+    <lastmod>2018-06-29T04:38:41.408Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://seniorzhai.github.io/2014/06/17/Android-WebView%E4%B8%8EJS%E4%BA%A4%E4%BA%92/</loc>
+    
+    <lastmod>2018-06-29T04:38:41.407Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2015/03/19/AndroidStudio%E4%B8%8A%E4%BD%BF%E7%94%A8NDK/</loc>
     
     <lastmod>2018-06-29T04:38:41.407Z</lastmod>
     
@@ -1857,14 +1864,21 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/05/05/Android-Universal-Image-Loader/</loc>
+    <loc>http://seniorzhai.github.io/2014/11/06/AndroidDialog/</loc>
+    
+    <lastmod>2018-06-29T04:38:41.407Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2015/08/03/Android-Support-Annotations/</loc>
     
     <lastmod>2018-06-29T04:38:41.406Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/08/03/Android-Support-Annotations/</loc>
+    <loc>http://seniorzhai.github.io/2014/05/05/Android-Universal-Image-Loader/</loc>
     
     <lastmod>2018-06-29T04:38:41.406Z</lastmod>
     
@@ -1878,7 +1892,7 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/07/04/Android-Sqlite-Tips/</loc>
+    <loc>http://seniorzhai.github.io/2015/06/04/Android-M-meterial-%E6%8E%A7%E4%BB%B6-Snackbar/</loc>
     
     <lastmod>2018-06-29T04:38:41.405Z</lastmod>
     
@@ -1892,16 +1906,9 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/06/04/Android-M-meterial-%E6%8E%A7%E4%BB%B6-Snackbar/</loc>
+    <loc>http://seniorzhai.github.io/2014/07/04/Android-Sqlite-Tips/</loc>
     
     <lastmod>2018-06-29T04:38:41.405Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/07/21/Android-Animation/</loc>
-    
-    <lastmod>2018-06-29T04:38:41.404Z</lastmod>
     
   </url>
   
@@ -1913,9 +1920,9 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/06/18/Activity%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>http://seniorzhai.github.io/2014/07/21/Android-Animation/</loc>
     
-    <lastmod>2018-06-29T04:38:41.403Z</lastmod>
+    <lastmod>2018-06-29T04:38:41.404Z</lastmod>
     
   </url>
   
@@ -1928,6 +1935,13 @@
   
   <url>
     <loc>http://seniorzhai.github.io/2014/03/21/Android-ADB%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
+    
+    <lastmod>2018-06-29T04:38:41.403Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/06/18/Activity%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F/</loc>
     
     <lastmod>2018-06-29T04:38:41.403Z</lastmod>
     
@@ -1990,7 +2004,7 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/06/16/-%E8%BD%AC-Android-%E6%89%8B%E6%9C%BA%E5%B1%8F%E5%B9%95%E5%BD%95%E5%88%B6%E5%B9%B6%E5%88%B6%E4%BD%9C%E6%88%90-GIF-%E6%BC%94%E7%A4%BA%E5%9B%BE%E7%89%87/</loc>
+    <loc>http://seniorzhai.github.io/2015/05/28/-%E8%BD%AC-json%E5%AE%9E%E4%BD%93%E7%B1%BB%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E6%8F%92%E4%BB%B6/</loc>
     
     <lastmod>2018-06-29T04:38:41.399Z</lastmod>
     
@@ -2004,21 +2018,21 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/05/28/-%E8%BD%AC-json%E5%AE%9E%E4%BD%93%E7%B1%BB%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E6%8F%92%E4%BB%B6/</loc>
+    <loc>http://seniorzhai.github.io/2015/06/16/-%E8%BD%AC-Android-%E6%89%8B%E6%9C%BA%E5%B1%8F%E5%B9%95%E5%BD%95%E5%88%B6%E5%B9%B6%E5%88%B6%E4%BD%9C%E6%88%90-GIF-%E6%BC%94%E7%A4%BA%E5%9B%BE%E7%89%87/</loc>
     
     <lastmod>2018-06-29T04:38:41.399Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/02/04/-%E8%BD%AC-8%E7%A7%8D%E7%A7%BB%E5%8A%A8APP%E5%AF%BC%E8%88%AA%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%A4%A7%E5%AF%B9%E6%AF%94/</loc>
+    <loc>http://seniorzhai.github.io/2016/01/12/-ViewDebug-ExportedProperty%E6%B3%A8%E8%A7%A3/</loc>
     
     <lastmod>2018-06-29T04:38:41.398Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2016/01/12/-ViewDebug-ExportedProperty%E6%B3%A8%E8%A7%A3/</loc>
+    <loc>http://seniorzhai.github.io/2015/02/04/-%E8%BD%AC-8%E7%A7%8D%E7%A7%BB%E5%8A%A8APP%E5%AF%BC%E8%88%AA%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%A4%A7%E5%AF%B9%E6%AF%94/</loc>
     
     <lastmod>2018-06-29T04:38:41.398Z</lastmod>
     
@@ -2088,14 +2102,14 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/11/30/%E7%89%9B%E9%80%BC%E5%88%B0%E5%A4%A9%E4%B8%8A%E7%9A%84Atom%E6%8F%92%E4%BB%B6/</loc>
+    <loc>http://seniorzhai.github.io/2015/12/02/Xcode%E4%B8%8A%E7%9A%84ActivatePowerMode%E4%B9%9F%E6%9D%A5%E4%BA%86/</loc>
     
     <lastmod>2018-06-29T04:38:29.078Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/12/02/Xcode%E4%B8%8A%E7%9A%84ActivatePowerMode%E4%B9%9F%E6%9D%A5%E4%BA%86/</loc>
+    <loc>http://seniorzhai.github.io/2015/11/30/%E7%89%9B%E9%80%BC%E5%88%B0%E5%A4%A9%E4%B8%8A%E7%9A%84Atom%E6%8F%92%E4%BB%B6/</loc>
     
     <lastmod>2018-06-29T04:38:29.078Z</lastmod>
     
@@ -2179,13 +2193,6 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/03/09/Git%E4%B9%8BBug%E5%88%86%E6%94%AF/</loc>
-    
-    <lastmod>2018-06-29T04:38:27.901Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://seniorzhai.github.io/2015/02/13/AndroidStudio%E8%B0%83%E7%94%A8so%E6%96%87%E4%BB%B6/</loc>
     
     <lastmod>2018-06-29T04:38:27.901Z</lastmod>
@@ -2193,14 +2200,21 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/02/09/Express-Session/</loc>
+    <loc>http://seniorzhai.github.io/2015/03/09/Git%E4%B9%8BBug%E5%88%86%E6%94%AF/</loc>
+    
+    <lastmod>2018-06-29T04:38:27.901Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2015/01/27/Android%E6%89%8B%E6%9C%BA%E8%BF%9E%E6%8E%A5%E4%B8%8D%E4%B8%8AMac%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</loc>
     
     <lastmod>2018-06-29T04:38:27.629Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/01/27/Android%E6%89%8B%E6%9C%BA%E8%BF%9E%E6%8E%A5%E4%B8%8D%E4%B8%8AMac%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</loc>
+    <loc>http://seniorzhai.github.io/2015/02/09/Express-Session/</loc>
     
     <lastmod>2018-06-29T04:38:27.629Z</lastmod>
     
@@ -2249,14 +2263,14 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/01/06/Palette%E5%8F%96%E8%89%B2/</loc>
+    <loc>http://seniorzhai.github.io/2015/01/05/-%E8%BD%AC-Storyboard%E4%B8%AD%E7%9A%84UIScrollView%E4%BD%BF%E7%94%A8%E8%87%AA%E5%8A%A8%E5%B8%83%E5%B1%80%EF%BC%8C%E4%BD%BF%E5%85%B6%E8%83%BD%E5%A4%9F%E6%BB%9A%E5%8A%A8/</loc>
     
     <lastmod>2018-06-29T04:38:27.036Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2015/01/05/-%E8%BD%AC-Storyboard%E4%B8%AD%E7%9A%84UIScrollView%E4%BD%BF%E7%94%A8%E8%87%AA%E5%8A%A8%E5%B8%83%E5%B1%80%EF%BC%8C%E4%BD%BF%E5%85%B6%E8%83%BD%E5%A4%9F%E6%BB%9A%E5%8A%A8/</loc>
+    <loc>http://seniorzhai.github.io/2015/01/06/Palette%E5%8F%96%E8%89%B2/</loc>
     
     <lastmod>2018-06-29T04:38:27.036Z</lastmod>
     
@@ -2284,14 +2298,14 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/12/09/%E5%B8%B8%E7%94%A8AndroidStudio%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
+    <loc>http://seniorzhai.github.io/2014/12/09/%E6%A8%A1%E7%B3%8A%E5%B7%A5%E5%85%B7%E7%B1%BB/</loc>
     
     <lastmod>2018-06-29T04:38:26.536Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/12/09/%E6%A8%A1%E7%B3%8A%E5%B7%A5%E5%85%B7%E7%B1%BB/</loc>
+    <loc>http://seniorzhai.github.io/2014/12/09/%E5%B8%B8%E7%94%A8AndroidStudio%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
     
     <lastmod>2018-06-29T04:38:26.536Z</lastmod>
     
@@ -2326,14 +2340,14 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/11/05/%E5%8F%AF%E8%A7%86%E5%8C%96%E9%BB%91%E5%AE%A2%E6%94%BB%E5%87%BB/</loc>
+    <loc>http://seniorzhai.github.io/2014/11/16/TextView%E5%B1%9E%E6%80%A7%E8%AF%A6%E8%A7%A3/</loc>
     
     <lastmod>2018-06-29T04:38:25.579Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/11/16/TextView%E5%B1%9E%E6%80%A7%E8%AF%A6%E8%A7%A3/</loc>
+    <loc>http://seniorzhai.github.io/2014/11/05/%E5%8F%AF%E8%A7%86%E5%8C%96%E9%BB%91%E5%AE%A2%E6%94%BB%E5%87%BB/</loc>
     
     <lastmod>2018-06-29T04:38:25.579Z</lastmod>
     
@@ -2347,13 +2361,6 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/11/05/FastApple/</loc>
-    
-    <lastmod>2018-06-29T04:38:25.578Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://seniorzhai.github.io/2014/11/17/GridView%E5%B1%9E%E6%80%A7/</loc>
     
     <lastmod>2018-06-29T04:38:25.578Z</lastmod>
@@ -2361,14 +2368,21 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/10/27/PopupWindow%E7%94%A8%E6%B3%95/</loc>
+    <loc>http://seniorzhai.github.io/2014/11/05/FastApple/</loc>
+    
+    <lastmod>2018-06-29T04:38:25.578Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/10/29/AutoCompleteTextView/</loc>
     
     <lastmod>2018-06-29T04:38:25.434Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/10/29/AutoCompleteTextView/</loc>
+    <loc>http://seniorzhai.github.io/2014/10/27/PopupWindow%E7%94%A8%E6%B3%95/</loc>
     
     <lastmod>2018-06-29T04:38:25.434Z</lastmod>
     
@@ -2480,14 +2494,14 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/08/27/%E5%8D%95%E9%80%89ListView/</loc>
+    <loc>http://seniorzhai.github.io/2014/08/26/%E6%82%B2%E5%89%A7%E7%9A%84%E5%BC%80%E5%A7%8B/</loc>
     
     <lastmod>2018-06-29T04:38:23.356Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/08/26/%E6%82%B2%E5%89%A7%E7%9A%84%E5%BC%80%E5%A7%8B/</loc>
+    <loc>http://seniorzhai.github.io/2014/08/27/%E5%8D%95%E9%80%89ListView/</loc>
     
     <lastmod>2018-06-29T04:38:23.356Z</lastmod>
     
@@ -2536,6 +2550,13 @@
   </url>
   
   <url>
+    <loc>http://seniorzhai.github.io/2014/08/08/RandomUtils%E9%9A%8F%E6%9C%BA%E5%B7%A5%E5%85%B7%E7%B1%BB/</loc>
+    
+    <lastmod>2018-06-29T04:37:14.968Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://seniorzhai.github.io/2014/04/08/Shutdown/</loc>
     
     <lastmod>2018-06-29T04:37:14.968Z</lastmod>
@@ -2550,133 +2571,14 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/08/08/RandomUtils%E9%9A%8F%E6%9C%BA%E5%B7%A5%E5%85%B7%E7%B1%BB/</loc>
+    <loc>http://seniorzhai.github.io/2014/07/17/RelativeLayout%E5%B8%B8%E8%A7%81%E5%B1%9E%E6%80%A7%E4%BB%8B%E7%BB%8D/</loc>
     
-    <lastmod>2018-06-29T04:37:14.968Z</lastmod>
+    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://seniorzhai.github.io/2014/05/24/%E6%97%A5%E6%9C%9F%E9%80%89%E6%8B%A9%E5%99%A8/</loc>
-    
-    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/06/11/LayoutInflater%E7%9A%84inflate%E5%87%BD%E6%95%B0/</loc>
-    
-    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/04/08/NSFile%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/</loc>
-    
-    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/04/24/%E5%88%A4%E6%96%AD%E6%89%8B%E6%9C%BA%E4%B8%BA%E5%B0%8F%E7%B1%B3%E8%BF%98%E6%98%AF%E9%AD%85%E6%97%8F/</loc>
-    
-    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/08/08/SerializeUtils/</loc>
-    
-    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/06/23/SQLite/</loc>
-    
-    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/06/19/Android-permission%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E5%A4%A7%E5%85%A8/</loc>
-    
-    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/02/27/NSBundle/</loc>
-    
-    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/03/04/ReactiveCocoa%E6%A1%86%E6%9E%B6/</loc>
-    
-    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/03/13/Android%E5%BC%82%E6%AD%A5%E5%8A%A0%E8%BD%BD%E5%9B%BE%E7%89%87%E5%B9%B6%E7%BC%93%E5%AD%98%E5%88%B0%E6%9C%AC%E5%9C%B0%E8%BD%AF%E5%BC%95%E7%94%A8/</loc>
-    
-    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/03/09/NSURLSession/</loc>
-    
-    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/03/20/Objective-C%E4%B8%AD%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%9A%84%E7%94%A8%E6%B3%95/</loc>
-    
-    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/07/02/Eclipse%E5%AF%BC%E5%85%A5Gradle%E9%A1%B9%E7%9B%AE/</loc>
-    
-    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/03/08/Objective-C%E5%9D%97%E8%AF%AD%E6%B3%95/</loc>
-    
-    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/07/02/EclipseADT%E8%BF%81%E7%A7%BB%E5%88%B0AndroidStudio/</loc>
-    
-    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/02/28/Objective-C%E5%B0%8F%E7%9F%A5%E8%AF%86/</loc>
-    
-    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/04/08/PendulemView/</loc>
-    
-    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/08/06/Camera/</loc>
     
     <lastmod>2015-08-25T03:13:07.000Z</lastmod>
     
@@ -2690,35 +2592,7 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/07/17/RelativeLayout%E5%B8%B8%E8%A7%81%E5%B1%9E%E6%80%A7%E4%BB%8B%E7%BB%8D/</loc>
-    
-    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/08/23/Anroid-Studio%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E6%96%B0%E7%89%B9%E6%80%A7%5BGoogle-IO-2014-Session%5D/</loc>
-    
-    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/07/10/%E7%90%86%E8%A7%A3Optional/</loc>
-    
-    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/06/12/Android%E5%B8%83%E5%B1%80%E5%B0%8F%E9%97%AE%E9%A2%98/</loc>
-    
-    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/08/08/ResourceUtils/</loc>
+    <loc>http://seniorzhai.github.io/2014/02/24/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AF%BC%E8%88%AA%E6%A0%8F/</loc>
     
     <lastmod>2015-08-25T03:13:07.000Z</lastmod>
     
@@ -2739,49 +2613,7 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/05/23/%E8%A1%A8%E6%A0%BC(UITableView)%E5%92%8C%E8%A1%A8%E6%A0%BC%E6%8E%A7%E5%88%B6%E5%99%A8(UITableViewController)/</loc>
-    
-    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/02/24/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AF%BC%E8%88%AA%E6%A0%8F/</loc>
-    
-    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/08/08/PixelUtils/</loc>
-    
-    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/08/19/Android-Activity-Fragment%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
-    
-    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/08/08/PreferencesUtils/</loc>
-    
-    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/08/04/%E5%8F%8B%E7%9B%9F%E7%94%A8%E6%88%B7%E5%8F%8D%E9%A6%88/</loc>
-    
-    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://seniorzhai.github.io/2014/02/26/%E7%BC%96%E8%BE%91%E8%A1%A8%E6%A0%BC/</loc>
+    <loc>http://seniorzhai.github.io/2014/06/19/Android-permission%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E5%A4%A7%E5%85%A8/</loc>
     
     <lastmod>2015-08-25T03:13:07.000Z</lastmod>
     
@@ -2795,7 +2627,119 @@
   </url>
   
   <url>
-    <loc>http://seniorzhai.github.io/2014/07/30/%E5%88%A4%E6%96%ADListView%E6%98%AF%E5%90%A6%E5%9C%A8%E9%A1%B6%E7%AB%AF%E6%88%96%E8%80%85%E5%9C%A8%E5%BA%95%E9%83%A8/</loc>
+    <loc>http://seniorzhai.github.io/2014/08/04/%E5%8F%8B%E7%9B%9F%E7%94%A8%E6%88%B7%E5%8F%8D%E9%A6%88/</loc>
+    
+    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/03/13/Android%E5%BC%82%E6%AD%A5%E5%8A%A0%E8%BD%BD%E5%9B%BE%E7%89%87%E5%B9%B6%E7%BC%93%E5%AD%98%E5%88%B0%E6%9C%AC%E5%9C%B0%E8%BD%AF%E5%BC%95%E7%94%A8/</loc>
+    
+    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/08/08/SerializeUtils/</loc>
+    
+    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/08/08/ResourceUtils/</loc>
+    
+    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/05/23/%E8%A1%A8%E6%A0%BC(UITableView)%E5%92%8C%E8%A1%A8%E6%A0%BC%E6%8E%A7%E5%88%B6%E5%99%A8(UITableViewController)/</loc>
+    
+    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/03/04/ReactiveCocoa%E6%A1%86%E6%9E%B6/</loc>
+    
+    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/02/26/%E7%BC%96%E8%BE%91%E8%A1%A8%E6%A0%BC/</loc>
+    
+    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/08/08/PreferencesUtils/</loc>
+    
+    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/04/08/PendulemView/</loc>
+    
+    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/08/08/PixelUtils/</loc>
+    
+    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/02/28/Objective-C%E5%B0%8F%E7%9F%A5%E8%AF%86/</loc>
+    
+    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/03/08/Objective-C%E5%9D%97%E8%AF%AD%E6%B3%95/</loc>
+    
+    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/03/20/Objective-C%E4%B8%AD%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%9A%84%E7%94%A8%E6%B3%95/</loc>
+    
+    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/03/09/NSURLSession/</loc>
+    
+    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/04/08/NSFile%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/</loc>
+    
+    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/02/27/NSBundle/</loc>
+    
+    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/06/11/LayoutInflater%E7%9A%84inflate%E5%87%BD%E6%95%B0/</loc>
     
     <lastmod>2015-08-25T03:13:07.000Z</lastmod>
     
@@ -2803,6 +2747,76 @@
   
   <url>
     <loc>http://seniorzhai.github.io/2014/08/03/GsonRequest/</loc>
+    
+    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/07/10/%E7%90%86%E8%A7%A3Optional/</loc>
+    
+    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/07/02/Eclipse%E5%AF%BC%E5%85%A5Gradle%E9%A1%B9%E7%9B%AE/</loc>
+    
+    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/07/02/EclipseADT%E8%BF%81%E7%A7%BB%E5%88%B0AndroidStudio/</loc>
+    
+    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/08/06/Camera/</loc>
+    
+    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/08/23/Anroid-Studio%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E6%96%B0%E7%89%B9%E6%80%A7%5BGoogle-IO-2014-Session%5D/</loc>
+    
+    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/06/12/Android%E5%B8%83%E5%B1%80%E5%B0%8F%E9%97%AE%E9%A2%98/</loc>
+    
+    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/04/24/%E5%88%A4%E6%96%AD%E6%89%8B%E6%9C%BA%E4%B8%BA%E5%B0%8F%E7%B1%B3%E8%BF%98%E6%98%AF%E9%AD%85%E6%97%8F/</loc>
+    
+    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/07/30/%E5%88%A4%E6%96%ADListView%E6%98%AF%E5%90%A6%E5%9C%A8%E9%A1%B6%E7%AB%AF%E6%88%96%E8%80%85%E5%9C%A8%E5%BA%95%E9%83%A8/</loc>
+    
+    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/08/19/Android-Activity-Fragment%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
+    
+    <lastmod>2015-08-25T03:13:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://seniorzhai.github.io/2014/06/23/SQLite/</loc>
     
     <lastmod>2015-08-25T03:13:07.000Z</lastmod>
     

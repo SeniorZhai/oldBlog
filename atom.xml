@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://seniorzhai.github.io/"/>
-  <updated>2018-07-24T06:40:34.198Z</updated>
+  <updated>2018-09-04T09:16:12.437Z</updated>
   <id>http://seniorzhai.github.io/</id>
   
   <author>
@@ -15,6 +15,53 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>OpenCV contrib</title>
+    <link href="http://seniorzhai.github.io/2018/09/04/OpenCV-contrib/"/>
+    <id>http://seniorzhai.github.io/2018/09/04/OpenCV-contrib/</id>
+    <published>2018-09-04T09:10:19.000Z</published>
+    <updated>2018-09-04T09:16:12.437Z</updated>
+    
+    <content type="html"><![CDATA[<p>在OpenCV 3.0中，一些不稳定的功能被移动到独立的库(Open contrib)[<a href="https://github.com/itseez/opencv_contrib/]中" target="_blank" rel="noopener">https://github.com/itseez/opencv_contrib/]中</a><br><a id="more"></a><br>需要使用的话，可以下载后，将需要的模块复制到<code>opencv/modules</code>中，然后用CMAKE编译安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/opencv/opencv_contrib/ --branch 3.4 #当前版本OpenCV为3.4.3</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在OpenCV 3.0中，一些不稳定的功能被移动到独立的库(Open contrib)[&lt;a href=&quot;https://github.com/itseez/opencv_contrib/]中&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/itseez/opencv_contrib/]中&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="OpenCV" scheme="http://seniorzhai.github.io/categories/OpenCV/"/>
+    
+    
+      <category term="OpenCV" scheme="http://seniorzhai.github.io/tags/OpenCV/"/>
+    
+      <category term="C++" scheme="http://seniorzhai.github.io/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Charles与SS冲突</title>
+    <link href="http://seniorzhai.github.io/2018/08/01/Charles%E4%B8%8ESS%E5%86%B2%E7%AA%81/"/>
+    <id>http://seniorzhai.github.io/2018/08/01/Charles与SS冲突/</id>
+    <published>2018-08-01T06:26:52.000Z</published>
+    <updated>2018-08-01T06:27:53.703Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a><p>网络设置里-&gt;高级-&gt;代理-&gt;取消自动代理配置</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;网络设置里-&amp;gt;高级-&amp;gt;代理-&amp;gt;取消自动代理配置&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>electron初识</title>
@@ -127,9 +174,9 @@
     <link href="http://seniorzhai.github.io/2017/02/28/vim%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
     <id>http://seniorzhai.github.io/2017/02/28/vim常用命令/</id>
     <published>2017-02-28T08:43:01.000Z</published>
-    <updated>2018-06-29T04:42:18.710Z</updated>
+    <updated>2018-08-01T06:27:56.381Z</updated>
     
-    <content type="html"><![CDATA[<a id="more"></a><p><code>/&lt;关键字&gt;</code><br><code>:&lt;行号&gt;</code><br><code>dd</code>剪切<br><code>yy</code>复制<br><code>p</code>粘贴<br><code>u</code>撤销<br><code>ctrl+r</code>重做<br><code>w</code> 保存<br><code>wq</code>保存退出<br><code>q!</code>退出</p><p>find + xargs + grep<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">find -name Activity.java</span><br><span class="line">find -name &apos;*.java&apos;</span><br><span class="line">find -name &apos;*.java&apos; | xarfs grep &apos;extends[ \t\n]+ActiviyManagerNative&apos;</span><br></pre></td></tr></table></figure></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Android.mk</span><br><span class="line">LOCAL_SHARED_LIBRARIES := libutils</span><br><span class="line"></span><br><span class="line">#include &lt;utils/Call.Stack.h&gt;</span><br><span class="line"></span><br><span class="line">CallStack stack;</span><br><span class="line">stack.update();</span><br><span class="line">stack.log(&quot;tag&quot;);</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ninja: build stopped: subcommand failed.</span><br><span class="line">build/core/ninja.mk:148: recipe for target &apos;ninja_wrapper&apos; failed</span><br><span class="line">make: *** [ninja_wrapper] Error 1</span><br><span class="line"></span><br><span class="line">/******/</span><br><span class="line">cd external/doclava &amp;&amp; mm -B USE_NINJA=false</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include/unistd.h:733:6: note: &apos;syscall&apos; has been explicitly marked deprecated here</span><br><span class="line">int      syscall(int, ...);</span><br><span class="line">         ^</span><br><span class="line">1 error generated.</span><br><span class="line">[  1% 408/31742] host C++: libc++abi &lt;...xternal/libcxxabi/src/cxa_demangle.cpp</span><br><span class="line">ninja: build stopped: subcommand failed.</span><br><span class="line">make: *** [ninja_wrapper] Error</span><br></pre></td></tr></table></figure><p>去到/Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs，发现MacOSX10.11.sdk已经被删除，只剩下MacOSX10.12.sdk，所以首先要去下载10.11的SDK。可以去MacOSX-SDKs下载MacOSX10.11.sdk，解压拷贝到/Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs。为了避免下次升级的时候再被删除，可以放到~/Document/MacOSX10.11.sdk，再给它创建一个软链接：</p><p>1<br>$ ln -s ~/Document/MacOSX10.11.sdk /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk<br>然后确保AOSP源码下build/core/combo/mac_version.mk文件中<br>mac_sdk_versions_supported := 10.9 10.10 10.11<br>后面不要写10.12。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Unsupported curl, please use a curl not based on SecureTransport</span><br><span class="line">Jack server installation not found</span><br><span class="line">Unsupported curl, please use a curl not based on SecureTransport</span><br><span class="line">Unsupported curl, please use a curl not based on SecureTransport</span><br><span class="line">[  4% 842/20846] host C++: dexdump2 &lt;= art/dexdump/dexdump.cc</span><br><span class="line">ninja: build stopped: subcommand failed.</span><br><span class="line">make: *** [ninja_wrapper] Error 1</span><br><span class="line"></span><br><span class="line">#### make failed to build some targets (01:37 (mm:ss)) ####</span><br></pre></td></tr></table></figure><p>首先下载curl源码，然后执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./configure --prefix=/usr/local/curl --with-ssl=/usr/local/Cellar/openssl/1.0.2d_1</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure></p><p>jack-admin kill-server<br>jack-admin uninstall-server<br>cd prebuilts/sdk/tools<br>jack-admin install-server jack-launcher.jar  jack-server-4.7.ALPHA.jar</p>]]></content>
+    <content type="html"><![CDATA[<a id="more"></a><p><code>/&lt;关键字&gt;</code><br><code>:&lt;行号&gt;</code><br><code>dd</code>剪切<br><code>yy</code>复制<br><code>p</code>粘贴<br><code>u</code>撤销<br><code>ctrl+r</code>重做<br><code>w</code> 保存<br><code>wq</code>保存退出<br><code>q!</code>退出</p>]]></content>
     
     <summary type="html">
     
@@ -470,56 +517,6 @@
       <category term="Android" scheme="http://seniorzhai.github.io/tags/Android/"/>
     
       <category term="weex" scheme="http://seniorzhai.github.io/tags/weex/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>UIStackView的使用</title>
-    <link href="http://seniorzhai.github.io/2016/04/25/UIStackView%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-    <id>http://seniorzhai.github.io/2016/04/25/UIStackView的使用/</id>
-    <published>2016-04-25T06:28:56.000Z</published>
-    <updated>2018-06-29T04:38:41.478Z</updated>
-    
-    <content type="html"><![CDATA[<p>Stack View是一个方便垂直或水平排布subView，与Android中的LinearLayout非常相似。<br><a id="more"></a></p><h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><p>使用Stack View在Attributes Inspector中，Axis表示Stack View的SubView是水平排布还是垂直布局。Alignment控制SubView的对齐方式。Distribution定义SubView的分布方式。Spacing为SubView间的最小间距。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Stack View是一个方便垂直或水平排布subView，与Android中的LinearLayout非常相似。&lt;br&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>ProGuard详解</title>
-    <link href="http://seniorzhai.github.io/2016/04/11/ProGuard%E8%AF%A6%E8%A7%A3/"/>
-    <id>http://seniorzhai.github.io/2016/04/11/ProGuard详解/</id>
-    <published>2016-04-11T06:16:42.000Z</published>
-    <updated>2018-06-29T04:38:41.459Z</updated>
-    
-    <content type="html"><![CDATA[<a id="more"></a><p>ProGuard包括4各功能：</p><ul><li>压缩(Shrink) 移除代码中无用的类、字段、方法、和特性</li><li>优化(Optimize) 对字节码进行优化，移除无用的指令</li><li>混淆(Obfuscate) 使用剪短无意义的名称对类、字段、方法重命名</li><li>预检(Preveirfy) 在Java平台上对处理后的代码进行预检</li></ul><h2 id="ProGuard的工作原理"><a href="#ProGuard的工作原理" class="headerlink" title="ProGuard的工作原理"></a>ProGuard的工作原理</h2><p>ProGuard由<code>Shrink</code>,<code>Optimize</code>,<code>Obfuscate</code>,<code>Preveirfy</code>四个步骤组成，其中每个步骤都是可选的</p><h2 id="编写ProGuard文件"><a href="#编写ProGuard文件" class="headerlink" title="编写ProGuard文件"></a>编写ProGuard文件</h2><ol><li>基本指令</li></ol><ul><li>代码混淆压缩比，在0~7之间，默认为5，<code>-optimizationpasses 5</code></li><li>混淆时不使用大小写混合，混淆的类名为小写 <code>-dontusemixedcaseclassnames</code></li><li>指定不去忽略废公共的库的类 <code>-dontskipnonpubliclibaryclasses</code></li><li>指定不去忽略废公共的库的类的成员 <code>-dontskipnonpubliclibaryclassesmembers</code></li><li>不做预校验 <code>-dontpreverify</code></li><li>生成映射文件 <code>-verbose</code></li><li>使用printmapping指定映射文件的名称 <code>-printmapping proguardMapping.txt</code></li><li>指定混淆时采用的算法 <code>-optimizations ! code/ simplification/ arithmetic,!fiedld/*,class/merging/*</code></li><li>保护代码中的Annotation不被混淆 <code>-keepattributes *Annotation*</code></li><li>避免混淆泛型 <code>-keepattributes Signature</code></li><li>抛出异常时保留代码行数 <code>-keepattributes SourceFile,LineNumberTable</code></li></ul><ol start="2"><li>需要保留的</li></ol><ul><li><p>保留本地native方法不被混淆</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- keepclasseswithmembernames class * &#123;</span><br><span class="line">  native &lt;methods&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>保留某些子类不被混淆</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- keep public class * extends android.app.Activity</span><br></pre></td></tr></table></figure></li><li><p>保护在XML中设置onClick不被影响</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- keepclassmembers class * extends android.app.Activity &#123;</span><br><span class="line">  public void *(android.view.View);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>保护Fragment <code>- keep public class android.support.v4.app.Fragment.** {*;}</code></p></li><li><p>保留枚举不被混淆</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- keepclassmembers enum * &#123;</span><br><span class="line">  public static **&#123;&#125; values();</span><br><span class="line">  public static ** valueOf(Java.lang.String);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>保留自定义控件不被混淆</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- keep public class * extends android.view.View &#123;</span><br><span class="line">  *** get*();</span><br><span class="line">  void set*(***);</span><br><span class="line">  public &lt;init&gt;(android.content.Context);</span><br><span class="line">  public &lt;init&gt;(android.content.Context,android.util.ArrtibuteSet);</span><br><span class="line">  public &lt;init&gt;(android.content.Context,android.util.ArrtibuteSet,int);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>保留Parcelable序列化不被混淆</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- keep class * implements android.os.Parcelable &#123;</span><br><span class="line">  public static final android.os.Parcelable$Creator *;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>保留Serializable序列化类不被混淆</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- keepclassemembers class * implements java.io.Serializable &#123;</span><br><span class="line">  static final long serialVersionID;</span><br><span class="line">  private static final java.io.ObjectStreamField[] serialPersistentFields;</span><br><span class="line">  private void writeObject(java.io.ObjectOutputStream);</span><br><span class="line">  private void readObject(java.io.ObjectInputStream);</span><br><span class="line">  java.lang.Object writeReplace();</span><br><span class="line">  java.lang.Object readResolve();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>保留R文件下的资源不被混淆</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- keep class **.R$&#123;*;&#125;</span><br></pre></td></tr></table></figure></li><li><p>保留内部类不被混淆</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- keep class com.example.app.ui.MainActivity$*&#123;*;&#125;</span><br></pre></td></tr></table></figure></li><li><p>对WebView的处理</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- keepclassmembers class * extends android.webkit.webViewClient &#123;</span><br><span class="line">  public void *(android.webkit.WebView,java.lang.String,android.graphics.Bitmap);</span><br><span class="line">  public boolean *(android.webkit.WebView,java.lang.String);</span><br><span class="line">&#125;</span><br><span class="line">- keepclassmembers class * extends android.webkit.webViewClient &#123;</span><br><span class="line">  public void *(android.webkit.webView,java.lang.String);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>对JavaScript</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- keepclassemembers class com.example.app.MainActivity$JSInterface &#123;</span><br><span class="line">  &lt;methods&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><ol start="3"><li>针对第三方库的混淆保护<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- libraryjas libs/android-support-v4.jar</span><br><span class="line">- dontwarn android.support.v4.**</span><br><span class="line">- keep class android.support.v4.**&#123;*;&#125;</span><br><span class="line">- kepp interface android.support.v4.app.**&#123;*;&#125;</span><br><span class="line">- kepp public class * extends android.support.v4.**</span><br><span class="line">- keep public class * extends android.app.Fragment</span><br></pre></td></tr></table></figure></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;ProGuard包括4各功能：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;压缩(Shrink) 移除代码中无用的类、字段、方法、和特性&lt;/li&gt;
-&lt;li&gt;优化(Optimize) 对字节码进行优化，移除无用的指令&lt;/li&gt;
-&lt;li&gt;混淆(Obfuscat
-      
-    
-    </summary>
-    
-      <category term="Android" scheme="http://seniorzhai.github.io/categories/Android/"/>
-    
-    
-      <category term="ProGuard" scheme="http://seniorzhai.github.io/tags/ProGuard/"/>
-    
-      <category term="混淆" scheme="http://seniorzhai.github.io/tags/%E6%B7%B7%E6%B7%86/"/>
     
   </entry>
   
